@@ -10,5 +10,6 @@ module.exports = {
         },
       },
     },
+    "storybook-addon-themes",
   ],
 };
