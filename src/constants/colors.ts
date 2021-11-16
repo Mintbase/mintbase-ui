@@ -79,7 +79,7 @@ export const colorsArray: TColorDetail[] = [
     sectionTitle: "Actions",
     colors: [
       {
-        class: "blue-300-default",
+        class: "blue-300",
         hex: "#4F58A3",
       },
       {
@@ -91,7 +91,7 @@ export const colorsArray: TColorDetail[] = [
         hex: "#EBEDFB",
       },
       {
-        class: "blue-100-default",
+        class: "blue-100",
         hex: "#C5D0FF",
       },
       {
