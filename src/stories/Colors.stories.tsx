@@ -128,7 +128,7 @@ export const Colors = () => (
         <div>
           <div className="w-24 h-24 bg-blue-100-15 rounded-md"></div>
           <div className="text-sm font-bold">blue-100-15</div>
-          <div className="text-sm">#F6F8FE</div>
+          <div className="text-sm">#2B2E42</div>
         </div>
       </div>
     </section>
