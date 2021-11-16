@@ -1,4 +1,5 @@
 import { TColorDetail } from "../types/colors.type";
+import tailwindConfig from "./../../tailwind.config";
 
 export const colorsArray: TColorDetail[] = [
   {
@@ -6,19 +7,19 @@ export const colorsArray: TColorDetail[] = [
     colors: [
       {
         class: "mb-blackblue",
-        hex: "#070C2B",
+        hex: tailwindConfig.theme.extend.colors["mb-blackblue"],
       },
       {
         class: "mb-red",
-        hex: "#FF2424",
+        hex: tailwindConfig.theme.extend.colors["mb-red"],
       },
       {
         class: "mb-red-35",
-        hex: "#3A1C2A",
+        hex: tailwindConfig.theme.extend.colors["mb-red-35"],
       },
       {
         class: "mb-red-15",
-        hex: "#FFDEDE",
+        hex: tailwindConfig.theme.extend.colors["mb-red-15"],
       },
     ],
   },
@@ -27,51 +28,51 @@ export const colorsArray: TColorDetail[] = [
     colors: [
       {
         class: "gray-900",
-        hex: "#101223",
+        hex: tailwindConfig.theme.extend.colors.gray[900],
       },
       {
         class: "gray-850",
-        hex: "#1E2030",
+        hex: tailwindConfig.theme.extend.colors.gray[850],
       },
       {
         class: "gray-800",
-        hex: "#282A3A",
+        hex: tailwindConfig.theme.extend.colors.gray[800],
       },
       {
         class: "gray-700",
-        hex: "#404252",
+        hex: tailwindConfig.theme.extend.colors.gray[700],
       },
       {
         class: "gray-600",
-        hex: "#404252",
+        hex: tailwindConfig.theme.extend.colors.gray[600],
       },
       {
         class: "gray-500",
-        hex: "#777986",
+        hex: tailwindConfig.theme.extend.colors.gray[500],
       },
       {
         class: "gray-400",
-        hex: "#9496A1",
+        hex: tailwindConfig.theme.extend.colors.gray[400],
       },
       {
         class: "gray-300",
-        hex: "#B3B5BD",
+        hex: tailwindConfig.theme.extend.colors.gray[300],
       },
       {
         class: "gray-200",
-        hex: "#D2D4DA",
+        hex: tailwindConfig.theme.extend.colors.gray[200],
       },
       {
         class: "gray-150",
-        hex: "#E8EAF0",
+        hex: tailwindConfig.theme.extend.colors.gray[150],
       },
       {
         class: "gray-100",
-        hex: "#F3F4F8",
+        hex: tailwindConfig.theme.extend.colors.gray[100],
       },
       {
         class: "gray-50",
-        hex: "#F9F9F9",
+        hex: tailwindConfig.theme.extend.colors.gray[50],
       },
     ],
   },
@@ -80,27 +81,27 @@ export const colorsArray: TColorDetail[] = [
     colors: [
       {
         class: "blue-300",
-        hex: "#4F58A3",
+        hex: tailwindConfig.theme.extend.colors["blue-300"],
       },
       {
         class: "blue-300-35",
-        hex: "#C2C5DD",
+        hex: tailwindConfig.theme.extend.colors.blue[300][35],
       },
       {
         class: "blue-300-15",
-        hex: "#EBEDFB",
+        hex: tailwindConfig.theme.extend.colors.blue[300][15],
       },
       {
         class: "blue-100",
-        hex: "#C5D0FF",
+        hex: tailwindConfig.theme.extend.colors["blue-100"],
       },
       {
         class: "blue-100-35",
-        hex: "#3F4254",
+        hex: tailwindConfig.theme.extend.colors.blue[100][35],
       },
       {
         class: "blue-100-15",
-        hex: "#2B2E42",
+        hex: tailwindConfig.theme.extend.colors.blue[100][15],
       },
     ],
   },
@@ -109,27 +110,27 @@ export const colorsArray: TColorDetail[] = [
     colors: [
       {
         class: "success-300",
-        hex: "#0A7D6C",
+        hex: tailwindConfig.theme.extend.colors.success[300],
       },
       {
         class: "success-100",
-        hex: "#9FED8F",
+        hex: tailwindConfig.theme.extend.colors.success[100],
       },
       {
         class: "warning-300",
-        hex: "#FFE855",
+        hex: tailwindConfig.theme.extend.colors.warning[300],
       },
       {
         class: "warning-100",
-        hex: "#FFF4CD",
+        hex: tailwindConfig.theme.extend.colors.warning[100],
       },
       {
         class: "error-300",
-        hex: "#C74C4C",
+        hex: tailwindConfig.theme.extend.colors.error[300],
       },
       {
         class: "error-100",
-        hex: "#ED5A5A",
+        hex: tailwindConfig.theme.extend.colors.error[100],
       },
     ],
   },
