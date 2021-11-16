@@ -1,32 +1,44 @@
 import React from "react";
 
-interface ButtonProps {
-  primary?: boolean;
-  size?: "small" | "medium" | "large";
-  label: string;
-  outlined?: boolean;
-  onClick?: () => void;
+enum ButtonState {
+  NORMAL,
+  DANGER,
+  DISABLED,
 }
 
-const BASE_BUTTON =
-  "rounded outline-none shadow py-3 px-12 font-normal uppercase tracking-wider text-lg";
-const CONTAINED_BUTTON = `${BASE_BUTTON} bg-teal-400 border border-teal-400 text-white`;
-const OUTLINED_BUTTON = `${BASE_BUTTON} border border-teal-400 text-teal-400`;
+type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+  label: string;
+  loading?: boolean;
+  state?: ButtonState;
+};
+
+const BASE_BUTTON = `rounded py-3 px-12 font-normal focus:ring-2 dark:bg-white dark:text-black bg-black text-white max-w-min w-full`;
+const NORMAL = `${BASE_BUTTON} hover:bg-blue-300 dark:hover:bg-blue-100`;
+const DISABLED = `${BASE_BUTTON} bg-gray-200 dark:bg-gray-700 dark:text-gray-300 text-gray-500 dark:text-black cursor-not-allowed`;
+const DANGER = `${BASE_BUTTON} dark:bg-state-error-300 bg-state-error-300`;
+
+const styles = {
+  [ButtonState.NORMAL]: NORMAL,
+  [ButtonState.DANGER]: DANGER,
+  [ButtonState.DISABLED]: DISABLED,
+};
+
+const LoadingAnimation = () => (
+  <div className="animate-pulse flex justify-center">
+    <div className="rounded-full bg-white h-8 w-8"></div>
+  </div>
+);
 
 const Button = ({
-  primary = false,
-  size = "medium",
-  outlined = false,
-  label,
+  label = "",
+  loading = false,
+  state = ButtonState.NORMAL,
   ...props
 }: ButtonProps) => {
+  if (props.disabled) state = ButtonState.DISABLED;
   return (
-    <button
-      type="button"
-      className={outlined ? OUTLINED_BUTTON : CONTAINED_BUTTON}
-      {...props}
-    >
-      <span>{label}</span>
+    <button type="button" className={styles[state]} {...props}>
+      {!loading ? <span>{label}</span> : <LoadingAnimation />}
     </button>
   );
 };
