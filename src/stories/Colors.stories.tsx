@@ -12,7 +12,7 @@ export const Colors = () => (
       <div className="flex gap-8">
         <div>
           <div className="w-24 h-24 bg-mbBlackblue rounded-md"></div>
-          <div className="text-sm font-bold">mbBlackblue</div>
+          <div className="text-sm font-bold">mbBlackblu de</div>
           <div className="text-sm">#070C2B</div>
         </div>
         <div>
