@@ -24,9 +24,12 @@ module.exports = {
         "4xl": "2rem",
       },
       colors: {
-        mintbaseRed: "#FF2424",
-        mintbaseBlue: "#070C2B",
+        mbRed: "#FF2424",
+        mbRed35: "#3A1C2A",
+        mbRed15: "#FFDEDE",
+        mbBlackblue: "#070C2B",
         gray: {
+          50: "#F9F9F9",
           100: "#F3F4F8",
           150: "#E8EAF0",
           200: "#D2D4DA",
@@ -40,22 +43,29 @@ module.exports = {
           900: "#101223",
         },
         blue: {
-          100: "#C5D0FF",
-          300: "#4F58A3",
+          100: {
+            15: "#F6F8FE",
+            35: "#3F4254",
+            100:"#C5D0FF",
+          },
+          300: {
+            15: "#EBECFB",
+            35: "#C2C5DD",
+            100: "#4F58A3"
+          },
         },
         state: {
           success: {
-            500: "#0A7D6C",
-            300: "#C8FDBD",
+            100: "#C8FDBD",
+            300: "#0A7D6C"
           },
-          error: {
-            500: "#C74C4C",
-            300: "#ED5A5A",
+          error: {            
+            100: "#ED5A5A",
+            300: "#C74C4C"
           },
           warning: {
-            500: "#FFD53D",
-            300: "#FFE999",
             100: "#FFF4CD",
+            300: "#FFE855",
           },
         },
       },
