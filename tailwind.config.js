@@ -24,10 +24,10 @@ module.exports = {
         "4xl": "2rem",
       },
       colors: {
-        mbRed: "#FF2424",
-        mbRed35: "#3A1C2A",
-        mbRed15: "#FFDEDE",
-        mbBlackblue: "#070C2B",
+        'mb-red': "#FF2424",
+        'mb-red-35': "#3A1C2A",
+        'mb-red-15': "#FFDEDE",
+        'mb-blackblue': "#070C2B",
         gray: {
           50: "#F9F9F9",
           100: "#F3F4F8",
@@ -46,12 +46,12 @@ module.exports = {
           100: {
             15: "#F6F8FE",
             35: "#3F4254",
-            main:"#C5D0FF",
+            'default':"#C5D0FF",
           },
           300: {
             15: "#EBECFB",
             35: "#C2C5DD",
-            main: "#4F58A3"
+            'default': "#4F58A3"
           },
         },
         success: {

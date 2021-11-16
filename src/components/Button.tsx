@@ -13,7 +13,7 @@ type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 };
 
 const BASE_BUTTON = `rounded py-3 px-12 font-normal focus:ring-2 dark:bg-white dark:text-black bg-black text-white max-w-min w-full`;
-const NORMAL = `${BASE_BUTTON} hover:bg-blue-300-main dark:hover:bg-blue-100-main`;
+const NORMAL = `${BASE_BUTTON} hover:bg-blue-300-default dark:hover:bg-blue-100-default`;
 const DISABLED = `${BASE_BUTTON} bg-gray-200 dark:bg-gray-700 dark:text-gray-300 text-gray-500 dark:text-black cursor-not-allowed`;
 const DANGER = `${BASE_BUTTON} dark:bg-error-300 bg-error-300`;
 

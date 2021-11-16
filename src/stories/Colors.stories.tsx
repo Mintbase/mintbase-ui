@@ -11,23 +11,23 @@ export const Colors = () => (
       <p className="text-xl font-bold mb-4">Brand</p>
       <div className="flex gap-8">
         <div>
-          <div className="w-24 h-24 bg-mbBlackblue rounded-md"></div>
-          <div className="text-sm font-bold">mbBlackblu de</div>
+          <div className="w-24 h-24 bg-mb-blackblue rounded-md"></div>
+          <div className="text-sm font-bold">mb-blackblue</div>
           <div className="text-sm">#070C2B</div>
         </div>
         <div>
-          <div className="w-24 h-24 bg-mbRed rounded-md"></div>
-          <div className="text-sm font-bold">mbRed</div>
+          <div className="w-24 h-24 bg-mb-red rounded-md"></div>
+          <div className="text-sm font-bold">mb-red</div>
           <div className="text-sm">#FF2424</div>
         </div>
         <div>
-          <div className="w-24 h-24 bg-mbRed35 rounded-md"></div>
-          <div className="text-sm font-bold">mbRed35</div>
+          <div className="w-24 h-24 bg-mb-red-35 rounded-md"></div>
+          <div className="text-sm font-bold">mb-red-35</div>
           <div className="text-sm">#3A1C2A</div>
         </div>
         <div>
-          <div className="w-24 h-24 bg-mbRed15 rounded-md"></div>
-          <div className="text-sm font-bold">mbRed15</div>
+          <div className="w-24 h-24 bg-mb-red-15 rounded-md"></div>
+          <div className="text-sm font-bold">mb-red-15</div>
           <div className="text-sm">#FFDEDE</div>
         </div>
       </div>
@@ -101,8 +101,8 @@ export const Colors = () => (
       <p className="text-xl font-bold mb-4">Actions</p>
       <div className="flex flex-wrap gap-8">
         <div>
-          <div className="w-24 h-24 bg-blue-300-main rounded-md"></div>
-          <div className="text-sm font-bold">blue-300-main</div>
+          <div className="w-24 h-24 bg-blue-300-default rounded-md"></div>
+          <div className="text-sm font-bold">blue-300-default</div>
           <div className="text-sm">#4F58A3</div>
         </div>
         <div>
@@ -116,8 +116,8 @@ export const Colors = () => (
           <div className="text-sm">#EBECFB</div>
         </div>
         <div>
-          <div className="w-24 h-24 bg-blue-100-main rounded-md"></div>
-          <div className="text-sm font-bold">blue-100-main</div>
+          <div className="w-24 h-24 bg-blue-100-default rounded-md"></div>
+          <div className="text-sm font-bold">blue-100-default</div>
           <div className="text-sm">#C5D0FF</div>
         </div>
         <div>
