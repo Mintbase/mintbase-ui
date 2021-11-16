@@ -46,27 +46,25 @@ module.exports = {
           100: {
             15: "#F6F8FE",
             35: "#3F4254",
-            100:"#C5D0FF",
+            main:"#C5D0FF",
           },
           300: {
             15: "#EBECFB",
             35: "#C2C5DD",
-            100: "#4F58A3"
+            main: "#4F58A3"
           },
         },
-        state: {
-          success: {
-            100: "#C8FDBD",
-            300: "#0A7D6C"
-          },
-          error: {            
-            100: "#ED5A5A",
-            300: "#C74C4C"
-          },
-          warning: {
-            100: "#FFF4CD",
-            300: "#FFE855",
-          },
+        success: {
+          100: "#C8FDBD",
+          300: "#0A7D6C"
+        },
+        error: {            
+          100: "#ED5A5A",
+          300: "#C74C4C"
+        },
+        warning: {
+          100: "#FFF4CD",
+          300: "#FFE855",
         },
       },
     },
