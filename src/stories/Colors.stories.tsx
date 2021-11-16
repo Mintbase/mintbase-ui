@@ -6,9 +6,6 @@ export default {
 
 export const Colors = () => (
   <>
-    <section className="mb-4">
-      <p className="text-xs">* all the classes must have the prefix 'bg-'</p>
-    </section>
     {colorsArray.map((elm) => (
       <section className="mb-8">
         <p className="text-xl font-bold mb-4">{elm.sectionTitle}</p>
