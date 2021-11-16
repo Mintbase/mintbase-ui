@@ -143,7 +143,7 @@ export const colorsArray: TColorDetail[] = [
       },
       {
         class: "white",
-        hex: "#ffffff",
+        hex: "#FFFFFF",
       },
     ],
   },
