@@ -113,7 +113,7 @@ export const Colors = () => (
         <div>
           <div className="w-24 h-24 bg-blue-300-15 rounded-md"></div>
           <div className="text-sm font-bold">blue-300-15</div>
-          <div className="text-sm">#EBECFB</div>
+          <div className="text-sm">#EBEDFB</div>
         </div>
         <div>
           <div className="w-24 h-24 bg-blue-100-default rounded-md"></div>
@@ -143,7 +143,7 @@ export const Colors = () => (
         <div>
           <div className="w-24 h-24 bg-success-100 rounded-md"></div>
           <div className="text-sm font-bold">success-100</div>
-          <div className="text-sm">#C8FDBD</div>
+          <div className="text-sm">#9FED8F</div>
         </div>
         <div>
           <div className="w-24 h-24 bg-warning-300 rounded-md"></div>

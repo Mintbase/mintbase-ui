@@ -49,13 +49,13 @@ module.exports = {
             'default':"#C5D0FF",
           },
           300: {
-            15: "#EBECFB",
+            15: "#EBEDFB",
             35: "#C2C5DD",
             'default': "#4F58A3"
           },
         },
         success: {
-          100: "#C8FDBD",
+          100: "#9FED8F",
           300: "#0A7D6C"
         },
         error: {            
