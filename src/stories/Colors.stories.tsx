@@ -8,9 +8,7 @@ export const Colors = () => (
   <>
     {colorsArray.map((elm) => (
       <section className="mb-8" key={elm.sectionTitle}>
-        <p className="text-xl font-bold mb-4 font-authentic-sans-130">
-          {elm.sectionTitle}
-        </p>
+        <p className="heading-bold mb-4">{elm.sectionTitle}</p>
         <div className="flex flex-wrap gap-8">
           {elm.colors.map((color) => (
             <div key={color.class}>
@@ -19,10 +17,8 @@ export const Colors = () => (
                   color.class.includes("white") ? "border-2 border-black" : ""
                 }`}
               ></div>
-              <div className="text-sm font-authentic-sans-130">
-                {color.class}
-              </div>
-              <div className="text-sm font-authentic-sans-90">{color.hex}</div>
+              <div className="med-p-bold">{color.class}</div>
+              <div className="med-p">{color.hex}</div>
             </div>
           ))}
         </div>
