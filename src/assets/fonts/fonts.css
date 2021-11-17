@@ -21,11 +21,3 @@
     url(./authentic-sans/woff/AUTHENTICSans-130.woff) format("woff"),
     url(./authentic-sans/woff2/AUTHENTICSans-130.woff2) format("woff2");
 }
-
-@font-face {
-  font-family: "AuthenticSans-150";
-  src: local("AUTHENTICSans-150"),
-    url(./authentic-sans/otf/AUTHENTICSans-150.otf) format("otf"),
-    url(./authentic-sans/woff/AUTHENTICSans-150.woff) format("woff"),
-    url(./authentic-sans/woff2/AUTHENTICSans-150.woff2) format("woff2");
-}
