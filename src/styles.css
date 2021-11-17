@@ -3,4 +3,4 @@
 @tailwind utilities;
 
 /* Global styles */
-@import "/public/assets/fonts/fonts.css";
+@import "./assets/fonts/fonts.css";
