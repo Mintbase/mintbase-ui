@@ -12,7 +12,6 @@ module.exports = {
     },
 
     fontFamily: {
-      "authentic-sans-60": ["AuthenticSans-60", "sans-serif"],
       "authentic-sans-90": ["AuthenticSans-90", "sans-serif"],
       "authentic-sans-130": ["AuthenticSans-130", "sans-serif"],
     },
