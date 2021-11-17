@@ -14,8 +14,7 @@ module.exports = {
     fontFamily: {
       'authentic-sans-60': ["AuthenticSans-60", "sans-serif"],
       'authentic-sans-90': ["AuthenticSans-90", "sans-serif"],
-      'authentic-sans-130': ["AuthenticSans-130", "sans-serif"],
-      'authentic-sans-150': ["AuthenticSans-150", "sans-serif"],
+      'authentic-sans-130': ["AuthenticSans-130", "sans-serif"]
     },
     extend: {
       spacing: {
@@ -64,8 +63,8 @@ module.exports = {
           300: "#C74C4C"
         },
         warning: {
-          100: "#FFF4CD",
-          300: "#FFE855",
+          100: "#FFE855",
+          300: "#F2D413",
         },
       },
     },
