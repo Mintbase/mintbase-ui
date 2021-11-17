@@ -1,0 +1,43 @@
+@font-face {
+  font-family: "AuthenticSans-60";
+  src: local("AUTHENTICSans-60"),
+    url(/public/assets/fonts/authentic-sans/otf/AUTHENTICSans-60.otf)
+      format("otf"),
+    url(/public/assets/fonts/authentic-sans/woff/AUTHENTICSans-60.woff)
+      format("woff"),
+    url(/public/assets/fonts/authentic-sans/woff2/AUTHENTICSans-60.woff2)
+      format("woff2");
+}
+
+@font-face {
+  font-family: "AuthenticSans-90";
+  src: local("AUTHENTICSans-90"),
+    url(/public/assets/fonts/authentic-sans/otf/AUTHENTICSans-90.otf)
+      format("otf"),
+    url(/public/assets/fonts/authentic-sans/woff/AUTHENTICSans-90.woff)
+      format("woff"),
+    url(/public/assets/fonts/authentic-sans/woff2/AUTHENTICSans-90.woff2)
+      format("woff2");
+}
+
+@font-face {
+  font-family: "AuthenticSans-130";
+  src: local("AUTHENTICSans-130"),
+    url(/public/assets/fonts/authentic-sans/otf/AUTHENTICSans-130.otf)
+      format("otf"),
+    url(/public/assets/fonts/authentic-sans/woff/AUTHENTICSans-130.woff)
+      format("woff"),
+    url(/public/assets/fonts/authentic-sans/woff2/AUTHENTICSans-130.woff2)
+      format("woff2");
+}
+
+@font-face {
+  font-family: "AuthenticSans-150";
+  src: local("AUTHENTICSans-150"),
+    url(/public/assets/fonts/authentic-sans/otf/AUTHENTICSans-150.otf)
+      format("otf"),
+    url(/public/assets/fonts/authentic-sans/woff/AUTHENTICSans-150.woff)
+      format("woff"),
+    url(/public/assets/fonts/authentic-sans/woff2/AUTHENTICSans-150.woff2)
+      format("woff2");
+}
