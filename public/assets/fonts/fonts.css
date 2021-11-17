@@ -22,6 +22,8 @@
 
 @font-face {
   font-family: "AuthenticSans-130";
+  font-style: normal;
+  font-weight: 500;
   src: local("AUTHENTICSans-130"),
     url(/public/assets/fonts/authentic-sans/otf/AUTHENTICSans-130.otf)
       format("otf"),
