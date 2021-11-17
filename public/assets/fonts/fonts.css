@@ -30,14 +30,3 @@
     url(/public/assets/fonts/authentic-sans/woff2/AUTHENTICSans-130.woff2)
       format("woff2");
 }
-
-@font-face {
-  font-family: "AuthenticSans-150";
-  src: local("AUTHENTICSans-150"),
-    url(/public/assets/fonts/authentic-sans/otf/AUTHENTICSans-150.otf)
-      format("otf"),
-    url(/public/assets/fonts/authentic-sans/woff/AUTHENTICSans-150.woff)
-      format("woff"),
-    url(/public/assets/fonts/authentic-sans/woff2/AUTHENTICSans-150.woff2)
-      format("woff2");
-}
