@@ -12,9 +12,8 @@ module.exports = {
     },
 
     fontFamily: {
-      'authentic-sans-60': ["AuthenticSans-60", "sans-serif"],
-      'authentic-sans-90': ["AuthenticSans-90", "sans-serif"],
-      'authentic-sans-130': ["AuthenticSans-130", "sans-serif"]
+      "authentic-sans-90": ["AuthenticSans-90", "sans-serif"],
+      "authentic-sans-130": ["AuthenticSans-130", "sans-serif"],
     },
     extend: {
       spacing: {
@@ -25,10 +24,10 @@ module.exports = {
         "4xl": "2rem",
       },
       colors: {
-        'mb-red': "#FF2424",
-        'mb-red-35': "#3A1C2A",
-        'mb-red-15': "#FFDEDE",
-        'mb-blackblue': "#070C2B",
+        "mb-red": "#FF2424",
+        "mb-red-35": "#3A1C2A",
+        "mb-red-15": "#FFDEDE",
+        "mb-blackblue": "#070C2B",
         gray: {
           50: "#F9F9F9",
           100: "#F3F4F8",
@@ -43,24 +42,25 @@ module.exports = {
           850: "#1E2030",
           900: "#101223",
         },
-        'blue-100': '#C5D0FF',
-        'blue-300': '#4F58A3',
+        "blue-100": "#C5D0FF",
+        "blue-300": "#4F58A3",
         blue: {
           100: {
             15: "#2B2E42",
-            35: "#3F4254"          },
+            35: "#3F4254",
+          },
           300: {
             15: "#EBEDFB",
-            35: "#C2C5DD"
+            35: "#C2C5DD",
           },
         },
         success: {
           100: "#9FED8F",
-          300: "#0A7D6C"
+          300: "#0A7D6C",
         },
-        error: {            
+        error: {
           100: "#ED5A5A",
-          300: "#C74C4C"
+          300: "#C74C4C",
         },
         warning: {
           100: "#FFE855",
