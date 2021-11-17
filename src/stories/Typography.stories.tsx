@@ -3,177 +3,32 @@ export default {
 };
 
 export const Typography = () => (
-  <>
-    <p className="text-xl font-bold font-authentic-sans-130">Typography</p>
-    <p className="text-sm mb-4 font-authentic-sans-130">
-      font-family: Authentic Sans
-    </p>
-    <table>
-      <thead>
-        <tr>
-          <th>Style</th>
-          <th>Tailwind Class</th>
-          <th>Weight</th>
-          <th>Size D/M</th>
-          <th>Line Height D/M</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Heading display 130</td>
-          <td>authentic-sans-130</td>
-          <td>Bold</td>
-          <td>35/29px</td>
-          <td>38/34px</td>
-        </tr>
-        <tr>
-          <td>Heading display 90</td>
-          <td>authentic-sans-90</td>
-          <td>Regular</td>
-          <td>35/29px</td>
-          <td>38/34px</td>
-        </tr>
-        <tr>
-          <td>Heading H1 130</td>
-          <td>authentic-sans-130</td>
-          <td>Bold</td>
-          <td>29/24px</td>
-          <td>32/28px</td>
-        </tr>
-        <tr>
-          <td>Heading H1 90</td>
-          <td>authentic-sans-90</td>
-          <td>Regular</td>
-          <td>29/24px</td>
-          <td>32/28px</td>
-        </tr>
-        <tr>
-          <td>Heading H2 130</td>
-          <td>authentic-sans-130</td>
-          <td>Bold</td>
-          <td>24/20px</td>
-          <td>24/22px</td>
-        </tr>
-        <tr>
-          <td>Heading H2 90</td>
-          <td>authentic-sans-90</td>
-          <td>Regular</td>
-          <td>24/20px</td>
-          <td>24/22px</td>
-        </tr>
-        <tr>
-          <td>Heading H3 130</td>
-          <td>authentic-sans-130</td>
-          <td>Bold</td>
-          <td>20/17px</td>
-          <td>22/18px</td>
-        </tr>
-        <tr>
-          <td>Heading H3 90</td>
-          <td>authentic-sans-90</td>
-          <td>Regular</td>
-          <td>20/17px</td>
-          <td>22/18px</td>
-        </tr>
-        <tr>
-          <td>Subheading P 130</td>
-          <td>authentic-sans-130</td>
-          <td>Bold</td>
-          <td>18/-px</td>
-          <td>22/-px</td>
-        </tr>
-        <tr>
-          <td>Subheading P 90</td>
-          <td>authentic-sans-90</td>
-          <td>Regular</td>
-          <td>18/-px</td>
-          <td>22/-px</td>
-        </tr>
-        <tr>
-          <td>Big P 130</td>
-          <td>authentic-sans-130</td>
-          <td>Bold</td>
-          <td>16/-px</td>
-          <td>18/-px</td>
-        </tr>
-        <tr>
-          <td>Big P 90</td>
-          <td>authentic-sans-90</td>
-          <td>Regular</td>
-          <td>16/-px</td>
-          <td>18/-px</td>
-        </tr>
-        <tr>
-          <td>Medium P 130</td>
-          <td>authentic-sans-130</td>
-          <td>Bold</td>
-          <td>14/-px</td>
-          <td>16/-px</td>
-        </tr>
-        <tr>
-          <td>Medium P 90</td>
-          <td>authentic-sans-90</td>
-          <td>Regular</td>
-          <td>14/-px</td>
-          <td>26/-px</td>
-        </tr>
-        <tr>
-          <td>Small P 130</td>
-          <td>authentic-sans-130</td>
-          <td>Bold</td>
-          <td>12/-px</td>
-          <td>14/-px</td>
-        </tr>
-        <tr>
-          <td>Small P 90</td>
-          <td>authentic-sans-90</td>
-          <td>Regular</td>
-          <td>12/-px</td>
-          <td>14/-px</td>
-        </tr>
-        <tr>
-          <td>Big Caption 130</td>
-          <td>authentic-sans-130</td>
-          <td>Bold</td>
-          <td>10/-px</td>
-          <td>12/-px</td>
-        </tr>
-        <tr>
-          <td>Big Caption 90</td>
-          <td>authentic-sans-90</td>
-          <td>Regular</td>
-          <td>10/-px</td>
-          <td>12/-px</td>
-        </tr>
-        <tr>
-          <td>Medium Caption 130</td>
-          <td>authentic-sans-130</td>
-          <td>Bold</td>
-          <td>9/-px</td>
-          <td>11/-px</td>
-        </tr>
-        <tr>
-          <td>Medium Caption 90</td>
-          <td>authentic-sans-90</td>
-          <td>Regular</td>
-          <td>9/-px</td>
-          <td>11/-px</td>
-        </tr>
-        <tr>
-          <td>Small Caption 130</td>
-          <td>authentic-sans-130</td>
-          <td>Bold</td>
-          <td>8/-px</td>
-          <td>10/-px</td>
-        </tr>
-        <tr>
-          <td>Small Caption 90</td>
-          <td>authentic-sans-90</td>
-          <td>Regular</td>
-          <td>8/-px</td>
-          <td>10/-px</td>
-        </tr>
-      </tbody>
-    </table>
-  </>
+  <section>
+    <p className="text-xl heading-bold mb-2">Typography</p>
+    <p className="small-p mb-4">font-family: Authentic Sans</p>
+    <p className="med-p mb-4">use [typoname] in the class</p>
+    <p className="heading-bold mb-2">heading-bold</p>
+    <p className="heading mb-2">heading</p>
+    <p className="h1-bold mb-2">h1-bold</p>
+    <p className="h1 mb-2">h1</p>
+    <p className="h2-bold mb-2">h2-bold</p>
+    <p className="h2 mb-2">h2</p>
+    <p className="h3-bold mb-2">h3-bold</p>
+    <p className="h3 mb-2">h3</p>
+    <p className="sub-p-bold mb-2">sub-p-bold</p>
+    <p className="sub-p mb-2">sub-p</p>
+    <p className="big-p-bold mb-2">big-p-bold</p>
+    <p className="big-p mb-2">big-p</p>
+    <p className="med-p-bold mb-2">med-p-bold</p>
+    <p className="med-p mb-2">med-p</p>
+    <p className="small-p-bold mb-2">small-p-bold</p>
+    <p className="small-p mb-2">small-p</p>
+    <p className="big-cap-bold mb-2">big-cap-bold</p>
+    <p className="big-cap mb-2">big-cap</p>
+    <p className="med-cap-bold mb-2">med-cap-bold</p>
+    <p className="med-cap mb-2">med-cap</p>
+    <p className="small-cap-bold mb-2">small-cap-bold</p>
+    <p className="small-cap mb-2">small-cap</p>
+    <p className="action-cap mb-2">action-cap</p>
+  </section>
 );
