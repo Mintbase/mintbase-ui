@@ -12,8 +12,10 @@ module.exports = {
     },
 
     fontFamily: {
-      sans: ["Graphik", "sans-serif"],
-      serif: ["Merriweather", "serif"],
+      'authentic-sans-60': ["AuthenticSans-60", "sans-serif"],
+      'authentic-sans-90': ["AuthenticSans-90", "sans-serif"],
+      'authentic-sans-130': ["AuthenticSans-130", "sans-serif"],
+      'authentic-sans-150': ["AuthenticSans-150", "sans-serif"],
     },
     extend: {
       spacing: {
