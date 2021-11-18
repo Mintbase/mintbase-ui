@@ -96,6 +96,14 @@ module.exports = {
         38: "38px",
       },
     },
+    space: {
+      4: "4px",
+      8: "8px",
+      12: "12px",
+      24: "24px",
+      48: "28px",
+      64: "64px",
+    },
   },
   variants: {
     extend: {},
