@@ -1,4 +1,4 @@
-import { colorsArray } from "../constants/colors";
+import { colorsArray } from "../../constants/colors";
 
 export default {
   title: "Core/Colors",
