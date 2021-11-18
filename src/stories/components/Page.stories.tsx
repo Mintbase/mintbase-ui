@@ -1,7 +1,7 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import Page from "../components/Page";
+import Page from "../../components/Page";
 import * as HeaderStories from "./Header.stories";
 
 export default {
