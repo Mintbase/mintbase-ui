@@ -1,7 +1,7 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-
-import Button, { ButtonSize, ButtonState } from "../../components/Button";
+import { Button } from "../../components";
+import { ButtonSize, ButtonState, ButtonType } from "../../components/Button";
 
 export default {
   title: "Components/Button",
@@ -13,8 +13,15 @@ const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
 export const Normal = Template.bind({});
 Normal.args = {
-  label: "Save",
+  label: "Primary",
   disabled: false,
+};
+
+export const Secondary = Template.bind({});
+Secondary.args = {
+  label: "Secondary",
+  disabled: false,
+  btnType: ButtonType.SECONDARY,
 };
 
 export const Disabled = Template.bind({});

@@ -101,23 +101,61 @@
 
 /* Buttons */
 
-.btn-big {
+.big {
   @apply big-p;
   padding: 12px 52px;
   min-width: 145px;
   min-height: 42px;
 }
 
-.btn-medium {
+.medium {
   @apply med-p;
   padding: 8px 32px;
   min-width: 100px;
   min-height: 32px;
 }
 
-.btn-small {
+.small {
   @apply small-p;
   padding: 6px 24px;
   min-width: 80px;
   min-height: 26px;
+}
+
+.primary {
+  @apply rounded dark:bg-white dark:text-black bg-black text-white;
+}
+
+.primary:focus {
+  @apply ring-2 ring-blue-300-35;
+}
+
+.primary.normal {
+  @apply hover:bg-blue-300 dark:hover:bg-blue-100;
+}
+
+.primary.disabled {
+  @apply bg-gray-200 dark:bg-gray-700 dark:text-gray-300 text-gray-500 dark:text-black cursor-not-allowed;
+}
+
+.primary.caution {
+  @apply dark:bg-error-300 bg-error-300;
+}
+
+.secondary {
+  @apply rounded ring-1 dark:bg-white dark:text-black bg-white text-black ring-black hover:bg-blue-300-15;
+}
+
+.secondary:focus {
+  @apply ring-2 ring-blue-300-35 bg-blue-300-15;
+}
+
+.secondary.normal {
+}
+
+.secondary.disabled {
+  @apply bg-white text-gray-400 cursor-not-allowed ring-gray-400;
+}
+
+.secondary.caution {
 }

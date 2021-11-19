@@ -1,5 +1,9 @@
 import React from "react";
 
+export enum ButtonType {
+  PRIMARY = "primary",
+  SECONDARY = "secondary",
+}
 export enum ButtonState {
   NORMAL = "normal",
   CAUTION = "caution",
@@ -13,24 +17,14 @@ export enum ButtonSize {
 }
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
-  label: string;
+  label?: string;
   loading?: boolean;
+  btnType?: ButtonType;
   state?: ButtonState;
   size?: ButtonSize;
 };
 
-const BASE_BUTTON = `rounded focus:ring-2 dark:bg-white dark:text-black bg-black text-white focus:rounded-0.25 focus:border-blue-300 focus:border-opacity-50`;
-const NORMAL = `${BASE_BUTTON} hover:bg-blue-300 dark:hover:bg-blue-100`;
-const DISABLED = `${BASE_BUTTON} bg-gray-200 dark:bg-gray-700 dark:text-gray-300 text-gray-500 dark:text-black cursor-not-allowed`;
-const CAUTION = `${BASE_BUTTON} dark:bg-error-300 bg-error-300`;
-
-const styles = {
-  [ButtonState.NORMAL]: NORMAL,
-  [ButtonState.CAUTION]: CAUTION,
-  [ButtonState.DISABLED]: DISABLED,
-};
-
-const getLoadingSize = (currentSize: ButtonSize) => {
+const getLoadingSize = (currentSize: string) => {
   switch (currentSize) {
     case "small":
       return "w-3.5 h-3.5";
@@ -41,7 +35,7 @@ const getLoadingSize = (currentSize: ButtonSize) => {
   }
 };
 
-const LoadingAnimation = ({ size }: { size: ButtonSize }) => (
+const LoadingAnimation = ({ size }: { size: string }) => (
   <div className="animate-pulse absolute inline w-full left-0">
     <div
       className={`rounded-full bg-white ${getLoadingSize(size)} m-auto`}
@@ -54,13 +48,14 @@ const Button = ({
   loading = false,
   state = ButtonState.NORMAL,
   size = ButtonSize.MEDIUM,
+  btnType = ButtonType.PRIMARY,
   ...props
 }: ButtonProps) => {
   if (props.disabled) state = ButtonState.DISABLED;
   return (
     <button
       type="button"
-      className={`${styles[state]} btn-${size} relative`}
+      className={`${btnType} ${state} ${size} relative`}
       {...props}
     >
       <span className={loading ? "invisible" : "visible"}>{label}</span>
