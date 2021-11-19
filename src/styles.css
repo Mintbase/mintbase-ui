@@ -98,3 +98,26 @@
 .action-cap {
   @apply font-authentic-sans-130 text-10 leading-12 uppercase;
 }
+
+/* Buttons */
+
+.btn-big {
+  @apply big-p;
+  padding: 12px 52px;
+  min-width: 145px;
+  min-height: 42px;
+}
+
+.btn-medium {
+  @apply med-p;
+  padding: 8px 32px;
+  min-width: 100px;
+  min-height: 32px;
+}
+
+.btn-small {
+  @apply small-p;
+  padding: 6px 24px;
+  min-width: 80px;
+  min-height: 26px;
+}
