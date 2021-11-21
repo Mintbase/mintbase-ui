@@ -10,7 +10,22 @@ module.exports = {
       lg: "976px",
       xl: "1440px",
     },
-
+    padding: {
+      4: "4px",
+      8: "8px",
+      12: "12px",
+      24: "24px",
+      48: "28px",
+      64: "64px",
+    },
+    margin: {
+      4: "4px",
+      8: "8px",
+      12: "12px",
+      24: "24px",
+      48: "28px",
+      64: "64px",
+    },
     fontFamily: {
       "authentic-sans-90": ["AuthenticSans-90", "sans-serif"],
       "authentic-sans-130": ["AuthenticSans-130", "sans-serif"],
