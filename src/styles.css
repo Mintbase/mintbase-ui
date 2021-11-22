@@ -6,7 +6,6 @@
 @import "./assets/fonts/fonts.css";
 
 /* Typography */
-
 .heading-bold {
   @apply font-authentic-sans-130 text-29 md:text-35 leading-34 md:leading-38;
 }
@@ -126,8 +125,8 @@
   @apply rounded dark:bg-white dark:text-black bg-black text-white;
 }
 
-.primary:focus {
-  @apply ring-2 ring-blue-300-35;
+.primary:not(.disabled):focus {
+  @apply ring-2 ring-blue-300-35 dark:ring-blue-100;
 }
 
 .primary.normal {
@@ -135,27 +134,29 @@
 }
 
 .primary.disabled {
-  @apply bg-gray-200 dark:bg-gray-700 dark:text-gray-300 text-gray-500 dark:text-black cursor-not-allowed;
+  @apply bg-gray-200 dark:bg-gray-700 dark:text-gray-300 text-gray-700 cursor-not-allowed;
 }
 
 .primary.caution {
-  @apply dark:bg-error-300 bg-error-300;
+  @apply dark:bg-error-100 bg-error-300;
 }
 
 .secondary {
-  @apply rounded ring-1 dark:bg-white dark:text-black bg-white text-black ring-black hover:bg-blue-300-15;
+  @apply rounded ring-1 dark:text-white dark:ring-white dark:ring-white bg-transparent text-black ring-black;
 }
 
-.secondary:focus {
-  @apply ring-2 ring-blue-300-35 bg-blue-300-15;
+.secondary:not(.disabled):focus {
+  @apply ring-2 ring-blue-300-35 bg-blue-300-15 dark:bg-blue-100-15;
 }
 
 .secondary.normal {
+  @apply dark:hover:bg-blue-100-15 hover:bg-blue-300-15;
 }
 
 .secondary.disabled {
-  @apply bg-white text-gray-400 cursor-not-allowed ring-gray-400;
+  @apply bg-transparent text-gray-400 cursor-not-allowed ring-gray-400;
 }
 
 .secondary.caution {
+  @apply bg-transparent text-error-300 ring-error-300 dark:text-error-100 dark:ring-error-100;
 }

@@ -24,12 +24,6 @@ Secondary.args = {
   btnType: ButtonType.SECONDARY,
 };
 
-export const Disabled = Template.bind({});
-Disabled.args = {
-  label: "Disabled",
-  disabled: true,
-};
-
 export const Loading = Template.bind({});
 Loading.args = {
   loading: true,
