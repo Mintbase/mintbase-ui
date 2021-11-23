@@ -67,9 +67,8 @@ const Button = ({
       className={`${btnType} ${state} ${size} ${getFontType(size)} relative`}
       {...props}
     >
-      <span className={loading ? "invisible" : "visible"}>{label}</span>
-      {loading && <LoadingAnimation btnType={btnType} size={size} />}
-
+      <span className={isLoading ? "invisible" : "visible"}>{label}</span>
+      {isLoading && <LoadingAnimation btnType={btnType} size={size} />}
     </button>
   );
 };
