@@ -1,3 +1,6 @@
+import { getFontType } from "../../constants/fontType";
+import "./action.css";
+
 export enum ActionType {
   PRIMARY = "primary",
   SECONDARY = "secondary",
@@ -28,7 +31,7 @@ const Action = ({
 }: ActionProps) => {
   if (props.disabled) state = ActionState.DISABLED;
   return (
-    <button className={`action ${state} ${size}`} {...props}>
+    <button className={`action ${state} ${getFontType(size)}`} {...props}>
       <span>{label}</span>
     </button>
   );
