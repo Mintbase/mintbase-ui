@@ -24,7 +24,7 @@ Object.defineProperty(exports, "Page", {
 
 require("tailwindcss/tailwind.css");
 
-var _Button = _interopRequireDefault(require("./Button"));
+var _Button = _interopRequireDefault(require("./button/Button"));
 
 var _Header = _interopRequireDefault(require("./Header"));
 

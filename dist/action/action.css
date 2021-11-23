@@ -1,0 +1,16 @@
+.action {
+  @apply cursor-pointer rounded text-blue-300 dark:text-blue-100;
+  padding: 12px;
+}
+
+.action.disabled {
+  @apply text-gray-500 cursor-not-allowed;
+}
+
+.action:not(.disabled):hover {
+  @apply bg-blue-300-15 dark:bg-blue-100-15;
+}
+
+.action:not(.disabled):focus {
+  @apply bg-blue-300-15 dark:bg-blue-100-15 ring-2 ring-blue-300-35 dark:ring-blue-100-35;
+}
