@@ -1,5 +1,5 @@
 .action {
-  @apply cursor-pointer rounded text-blue-300 dark:text-blue-100;
+  @apply cursor-pointer rounded text-blue-300 dark:text-blue-100 transition-all duration-500;
   padding: 12px;
 }
 

@@ -7,9 +7,10 @@ export enum ButtonType {
   SECONDARY = "secondary",
 }
 export enum ButtonState {
-  NORMAL = "normal",
+  ACTIVE = "active",
   CAUTION = "caution",
   DISABLED = "disabled",
+  LOADING = "loading",
 }
 
 export enum ButtonSize {
@@ -20,7 +21,6 @@ export enum ButtonSize {
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   label?: string;
-  loading?: boolean;
   btnType?: ButtonType;
   state?: ButtonState;
   size?: ButtonSize;
@@ -55,13 +55,12 @@ const LoadingAnimation = ({
 
 const Button = ({
   label = "default",
-  loading = false,
-  state = ButtonState.NORMAL,
+  state = ButtonState.ACTIVE,
   size = ButtonSize.MEDIUM,
   btnType = ButtonType.PRIMARY,
   ...props
 }: ButtonProps) => {
-  if (props.disabled) state = ButtonState.DISABLED;
+  const isLoading = state === ButtonState.LOADING;
   return (
     <button
       type="button"
@@ -70,6 +69,7 @@ const Button = ({
     >
       <span className={loading ? "invisible" : "visible"}>{label}</span>
       {loading && <LoadingAnimation btnType={btnType} size={size} />}
+
     </button>
   );
 };

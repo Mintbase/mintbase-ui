@@ -29,7 +29,8 @@
   @apply ring-2 ring-blue-300-35 dark:ring-blue-100;
 }
 
-.primary.normal {
+
+.primary.active {
   @apply hover:bg-blue-300 dark:hover:bg-blue-100;
 }
 
@@ -49,7 +50,7 @@
   @apply ring-2 ring-blue-300-35 bg-blue-300-15 dark:bg-blue-100-15;
 }
 
-.secondary.normal {
+.secondary.active {
   @apply dark:hover:bg-blue-100-15 hover:bg-blue-300-15;
 }
 

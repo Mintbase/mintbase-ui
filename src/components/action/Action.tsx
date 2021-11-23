@@ -6,7 +6,7 @@ export enum ActionType {
   SECONDARY = "secondary",
 }
 export enum ActionState {
-  NORMAL = "normal",
+  ACTIVE = "active",
   DISABLED = "disabled",
 }
 
@@ -18,18 +18,16 @@ export enum ActionSize {
 
 type ActionProps = {
   label: string;
-  disabled?: boolean;
   state?: ActionState;
   size?: ActionSize;
 };
 
 const Action = ({
   label = "",
-  state = ActionState.NORMAL,
+  state = ActionState.ACTIVE,
   size = ActionSize.MEDIUM,
   ...props
 }: ActionProps) => {
-  if (props.disabled) state = ActionState.DISABLED;
   return (
     <button className={`action ${state} ${getFontType(size)}`} {...props}>
       <span>{label}</span>
