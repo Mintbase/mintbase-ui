@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import Action, { ActionSize } from "../../components/actions/Action";
+import Action, { ActionSize } from "../../components/action/Action";
 
 export default {
   title: "Components/Action",

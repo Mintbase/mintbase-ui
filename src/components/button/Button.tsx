@@ -1,4 +1,6 @@
 import React from "react";
+import { getFontType } from "../../constants/fontType";
+import "./button.css";
 
 export enum ButtonType {
   PRIMARY = "primary",
@@ -55,7 +57,7 @@ const Button = ({
   return (
     <button
       type="button"
-      className={`${btnType} ${state} ${size} relative`}
+      className={`${btnType} ${state} ${size} ${getFontType(size)} relative`}
       {...props}
     >
       <span className={loading ? "invisible" : "visible"}>{label}</span>
