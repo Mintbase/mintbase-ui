@@ -6,7 +6,6 @@
 @import "./assets/fonts/fonts.css";
 
 /* Typography */
-
 .heading-bold {
   @apply font-authentic-sans-130 text-29 md:text-35 leading-34 md:leading-38;
 }
