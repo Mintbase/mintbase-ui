@@ -22,7 +22,7 @@
 }
 
 .primary {
-  @apply rounded dark:bg-white dark:text-black bg-black text-white;
+  @apply rounded dark:bg-white dark:text-black bg-black text-white transition-all duration-500;
 }
 
 .primary:not(.disabled):focus {
@@ -42,7 +42,7 @@
 }
 
 .secondary {
-  @apply rounded ring-1 dark:text-white dark:ring-white dark:ring-white bg-transparent text-black ring-black;
+  @apply rounded ring-1 dark:text-white dark:ring-white dark:ring-white bg-transparent text-black ring-black transition-all duration-500;
 }
 
 .secondary:not(.disabled):focus {
