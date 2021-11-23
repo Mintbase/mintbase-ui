@@ -7,6 +7,7 @@ export enum ButtonType {
   SECONDARY = "secondary",
 }
 export enum ButtonState {
+
   ACTIVE = "active",
   CAUTION = "caution",
   DISABLED = "disabled",
@@ -47,11 +48,13 @@ const LoadingAnimation = ({ size }: { size: string }) => (
 
 const Button = ({
   label = "default",
+
   state = ButtonState.ACTIVE,
   size = ButtonSize.MEDIUM,
   btnType = ButtonType.PRIMARY,
   ...props
 }: ButtonProps) => {
+
   const isLoading = state === ButtonState.LOADING;
   return (
     <button

@@ -29,6 +29,7 @@
   @apply ring-2 ring-blue-300-35 dark:ring-blue-100;
 }
 
+
 .primary.active {
   @apply hover:bg-blue-300 dark:hover:bg-blue-100;
 }

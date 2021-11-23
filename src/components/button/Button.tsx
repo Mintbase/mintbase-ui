@@ -37,10 +37,18 @@ const getLoadingSize = (currentSize: string) => {
   }
 };
 
-const LoadingAnimation = ({ size }: { size: string }) => (
+const LoadingAnimation = ({
+  size,
+  btnType,
+}: {
+  size: string;
+  btnType: string;
+}) => (
   <div className="animate-pulse absolute inline w-full left-0">
     <div
-      className={`rounded-full bg-white ${getLoadingSize(size)} m-auto`}
+      className={`rounded-full ${
+        btnType === ButtonType.SECONDARY ? "bg-black" : "bg-white"
+      } ${getLoadingSize(size)} m-auto`}
     ></div>
   </div>
 );
@@ -59,8 +67,9 @@ const Button = ({
       className={`${btnType} ${state} ${size} ${getFontType(size)} relative`}
       {...props}
     >
-      <span className={isLoading ? "invisible" : "visible"}>{label}</span>
-      {isLoading && <LoadingAnimation size={size} />}
+      <span className={loading ? "invisible" : "visible"}>{label}</span>
+      {loading && <LoadingAnimation btnType={btnType} size={size} />}
+
     </button>
   );
 };
