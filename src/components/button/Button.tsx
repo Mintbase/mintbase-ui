@@ -1,29 +1,13 @@
 import React from "react";
 import { getFontType } from "../../constants/fontType";
+import { ESize, EState, EType } from "../../constants/properties";
 import "./button.css";
-
-export enum ButtonType {
-  PRIMARY = "primary",
-  SECONDARY = "secondary",
-}
-export enum ButtonState {
-  ACTIVE = "active",
-  CAUTION = "caution",
-  DISABLED = "disabled",
-  LOADING = "loading",
-}
-
-export enum ButtonSize {
-  SMALL = "small",
-  MEDIUM = "medium",
-  BIG = "big",
-}
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   label?: string;
-  btnType?: ButtonType;
-  state?: ButtonState;
-  size?: ButtonSize;
+  btnType?: EType;
+  state?: EState;
+  size?: ESize;
 };
 
 const getLoadingSize = (currentSize: string) => {
@@ -47,7 +31,7 @@ const LoadingAnimation = ({
   <div className="animate-pulse absolute inline w-full left-0">
     <div
       className={`rounded-full ${
-        btnType === ButtonType.SECONDARY ? "bg-black" : "bg-white"
+        btnType === EType.SECONDARY ? "bg-black" : "bg-white"
       } ${getLoadingSize(size)} m-auto`}
     ></div>
   </div>
@@ -55,12 +39,12 @@ const LoadingAnimation = ({
 
 const Button = ({
   label = "default",
-  state = ButtonState.ACTIVE,
-  size = ButtonSize.MEDIUM,
-  btnType = ButtonType.PRIMARY,
+  state = EState.ACTIVE,
+  size = ESize.MEDIUM,
+  btnType = EType.PRIMARY,
   ...props
 }: ButtonProps) => {
-  const isLoading = state === ButtonState.LOADING;
+  const isLoading = state === EState.LOADING;
   return (
     <button
       type="button"
