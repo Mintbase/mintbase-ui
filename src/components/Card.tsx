@@ -8,6 +8,7 @@ const BASE_CARD = `dark:bg-gray-850 bg-white rounded p-12 mt-4 max-w-md mx-auto 
 type CardProps = React.ComponentProps<"div"> & {
   loading?: boolean;
   title?: string;
+  handleLike: Event;
 };
 
 const LoadingCard = () => {
@@ -34,17 +35,16 @@ const LoadingCard = () => {
   );
 };
 
-const Card = ({ loading = false, title = "" }: CardProps) => {
+const Card = ({ loading = false, title = "", handleLike }: CardProps) => {
   if (loading) return <LoadingCard />;
   return (
     <div className={`${BASE_CARD} ${loading && `animate-pulse`}`}>
       <div className="flex flex-row justify-between items-center text-black dark:text-white mb-12">
         <div className="flex space-x-12 items-center">
-          <HeartIcon className="h-4 w-4" />
-          <p className="big-cap text-gray-700 dark:text-gray-300">2</p>
+          <HeartIcon className="h-4 w-4" onClick={() => handleLike} />
+          <p className="small-p text-gray-700 dark:text-gray-300">2</p>
         </div>
-
-        <DotsHorizontalIcon className="h-5 w-5" />
+        <DotsHorizontalIcon className="h-4 w-4" />
       </div>
       <div className="flex flex-col justify-center items-center">
         <div className="h-48 w-full rounded bg-mb-red"></div>
@@ -55,11 +55,10 @@ const Card = ({ loading = false, title = "" }: CardProps) => {
       </div>
       <div className="flex flex-row justify-between text-gray-200 mt-12">
         <div className="inline object-cover w-5 h-5 rounded-full bg-mb-red"></div>
-
-        <div className="med-p flex flex-row items-center">
-          <div className="align-middle">1/1</div>
+        <div className="med-p flex flex-row items-center text-black dark:text-white space-x-8">
+          <div className="med-p">1/1</div>
           <div>
-            <DocumentDuplicateIcon className="h-5 w-5" />
+            <DocumentDuplicateIcon className="h-5 w-5 text-gray-500" />
           </div>
         </div>
       </div>
