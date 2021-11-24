@@ -1,0 +1,19 @@
+.card-image {
+  width: 241px;
+  height: 208px;
+}
+
+@screen sm {
+  .card-image {
+    width: 283px;
+    height: 266px;
+  }
+}
+
+.heart svg.full {
+  @apply text-mb-red;
+}
+
+.heart svg:not(.full):hover {
+  @apply text-mb-red;
+}
