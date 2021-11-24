@@ -1,11 +1,7 @@
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { Button } from "../../components";
-import {
-  ButtonSize,
-  ButtonState,
-  ButtonType,
-} from "../../components/button/Button";
+import { ESize, EState, EType } from "../../constants/properties";
 
 export default {
   title: "Components/Button",
@@ -18,30 +14,30 @@ const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 export const Primary = Template.bind({});
 Primary.args = {
   label: "Primary",
-  state: ButtonState.ACTIVE,
-  btnType: ButtonType.PRIMARY,
-  size: ButtonSize.MEDIUM,
+  state: EState.ACTIVE,
+  btnType: EType.PRIMARY,
+  size: ESize.MEDIUM,
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
   label: "Secondary",
-  state: ButtonState.ACTIVE,
-  btnType: ButtonType.SECONDARY,
-  size: ButtonSize.MEDIUM,
+  state: EState.ACTIVE,
+  btnType: EType.SECONDARY,
+  size: ESize.MEDIUM,
 };
 
 export const Loading = Template.bind({});
 Loading.args = {
-  btnType: ButtonType.PRIMARY,
-  size: ButtonSize.MEDIUM,
-  state: ButtonState.LOADING,
+  btnType: EType.PRIMARY,
+  size: ESize.MEDIUM,
+  state: EState.LOADING,
 };
 
 export const Caution = Template.bind({});
 Caution.args = {
   label: "Caution",
-  state: ButtonState.CAUTION,
-  btnType: ButtonType.PRIMARY,
-  size: ButtonSize.MEDIUM,
+  state: EState.CAUTION,
+  btnType: EType.PRIMARY,
+  size: ESize.MEDIUM,
 };

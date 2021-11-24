@@ -1,8 +1,6 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import Action, {
-  ActionSize,
-  ActionState,
-} from "../../components/action/Action";
+import { Action } from "../../components";
+import { ESize, EState } from "../../constants/properties";
 
 export default {
   title: "Components/Button",
@@ -15,6 +13,6 @@ const Template: ComponentStory<typeof Action> = (args) => <Action {...args} />;
 export const Actions = Template.bind({});
 Actions.args = {
   label: "See Transactions",
-  state: ActionState.ACTIVE,
-  size: ActionSize.MEDIUM,
+  state: EState.ACTIVE,
+  size: ESize.MEDIUM,
 };

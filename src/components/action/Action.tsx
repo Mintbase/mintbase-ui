@@ -1,31 +1,17 @@
 import { getFontType } from "../../constants/fontType";
+import { ESize, EState } from "../../constants/properties";
 import "./action.css";
-
-export enum ActionType {
-  PRIMARY = "primary",
-  SECONDARY = "secondary",
-}
-export enum ActionState {
-  ACTIVE = "active",
-  DISABLED = "disabled",
-}
-
-export enum ActionSize {
-  SMALL = "small",
-  MEDIUM = "medium",
-  BIG = "big",
-}
 
 type ActionProps = {
   label: string;
-  state?: ActionState;
-  size?: ActionSize;
+  state?: EState.ACTIVE | EState.DISABLED;
+  size?: ESize;
 };
 
 const Action = ({
   label = "",
-  state = ActionState.ACTIVE,
-  size = ActionSize.MEDIUM,
+  state = EState.ACTIVE,
+  size = ESize.MEDIUM,
   ...props
 }: ActionProps) => {
   return (
