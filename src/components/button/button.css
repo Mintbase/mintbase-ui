@@ -25,7 +25,7 @@
   @apply rounded dark:bg-white dark:text-black bg-black text-white transition-all duration-500;
 }
 
-.primary:not(.disabled):focus {
+.primary:not(.disabled):not(.loading):focus {
   @apply ring-2 ring-blue-300-35 dark:ring-blue-100;
 }
 
@@ -45,7 +45,7 @@
   @apply rounded ring-1 dark:text-white dark:ring-white dark:ring-white bg-transparent text-black ring-black transition-all duration-500;
 }
 
-.secondary:not(.disabled):focus {
+.secondary:not(.disabled):not(.loading):focus {
   @apply ring-2 ring-blue-300-35 bg-blue-300-15 dark:bg-blue-100-15;
 }
 

@@ -31,7 +31,9 @@ const LoadingAnimation = ({
   <div className="animate-pulse absolute inline w-full left-0">
     <div
       className={`rounded-full ${
-        btnType === EType.SECONDARY ? "bg-black" : "bg-white"
+        btnType === EType.SECONDARY
+          ? "bg-black dark:bg-white"
+          : "bg-white dark:bg-black"
       } ${getLoadingSize(size)} m-auto`}
     ></div>
   </div>
