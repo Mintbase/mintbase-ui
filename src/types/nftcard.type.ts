@@ -1,5 +1,5 @@
 export type TNftCard = {
-  title?: string;
+  title: string;
   nftImg: string;
   price: string;
   likeAmount: number;
