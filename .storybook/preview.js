@@ -28,11 +28,11 @@ export const parameters = {
     default: "light-1",
     values: [
       {
-        name: "ligth-1",
+        name: "light-1",
         value: "#ffffff",
       },
       {
-        name: "ligth-2",
+        name: "light-2",
         value: "#F3F4F8",
       },
       {
