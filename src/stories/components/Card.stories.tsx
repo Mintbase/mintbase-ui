@@ -12,22 +12,21 @@ const Template: ComponentStory<typeof ThingCard> = (args) => (
   <ThingCard {...args} />
 );
 
-export const Architecture = Template.bind({});
-Architecture.args = {
-  nftInfo: {
-    title: "Thing Name",
-    price: "10 N",
-    likeAmount: 50,
-    availableEditions: 5,
-    totalEditions: 10,
-    nftImg:
+export const Card = Template.bind({});
+Card.args = {
+  cardInfo: {
+    upperLeftText: "1",
+    centerImage:
       "https://coldcdn.com/api/cdn/bronil/JXl58b_p9iYzeFutFC5GcDCjsxppyFt5rRkQt4Su4LU",
-    thingId:
-      "2rrn46P9WAd_-taOOG9ns-M09f2zz69U56tLAwXbIC0:communitymints.mintbase1.near",
-    ownerId: "communitymints.mintbase1.near",
-    ownerImg:
+    midLeftText: "Thing Name",
+    midRightText: "10 N",
+    botLeftImage:
       "https://coldcdn.com/api/cdn/bronil/JXl58b_p9iYzeFutFC5GcDCjsxppyFt5rRkQt4Su4LU",
-    liked: true,
+    botRightText: "5/10",
+    onBotLeftImageClick: () => {},
+    onCenterImageClick: () => {},
+    onUpperLeftClick: () => {},
+    onUpperRightClick: () => {},
   },
 };
 

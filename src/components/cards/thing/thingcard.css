@@ -9,11 +9,3 @@
     height: 266px;
   }
 }
-
-.heart svg.full {
-  @apply text-mb-red;
-}
-
-.heart svg:not(.full):hover {
-  @apply text-mb-red;
-}

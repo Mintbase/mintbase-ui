@@ -1,12 +1,15 @@
 export type TThingCard = {
-  title: string;
-  nftImg: string;
-  price: string;
-  likeAmount: number;
-  thingId: string;
-  ownerId: string;
-  ownerImg: string;
-  availableEditions: number;
-  totalEditions: number;
-  liked: boolean;
+  upperLeftIcon?: string; // TO DO ICON: change when we have our icons in storybook
+  upperLeftText?: string;
+  upperRightIcon?: string; // TO DO ICON: change when we have our icons in storybook
+  centerImage: string;
+  midLeftText: string;
+  midRightText: string;
+  botLeftImage?: string;
+  botRightText?: string;
+  botRightIcon?: string; // TO DO ICON: change when we have our icons in storybook
+  onUpperLeftClick?: () => void;
+  onUpperRightClick?: () => void;
+  onCenterImageClick?: () => void;
+  onBotLeftImageClick?: () => void;
 };
