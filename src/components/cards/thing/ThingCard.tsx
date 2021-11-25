@@ -18,7 +18,7 @@ const LoadingCard = () => {
         <div className="h-4 w-8 rounded bg-gray-600"></div>
         <div className="h-4 w-8 rounded bg-gray-600"></div>
       </div>
-      <div className="flex flex-col justify-center items-center animate-pulse card-image">
+      <div className="flex flex-col justify-center items-center animate-pulse thing-card-image ">
         <div className="h-full w-full rounded bg-gray-600"></div>
       </div>
       <div className="flex flex-row justify-between mt-12 animate-pulse">
@@ -48,7 +48,7 @@ const ThingCard = ({ loading = false, cardInfo }: CardProps) => {
     botRightIcon,
     botRightText,
     onBotLeftImageClick,
-    onCenterImageClick,
+    onCenterElementClick,
     onUpperLeftClick,
     onUpperRightClick,
   } = cardInfo;
@@ -74,10 +74,10 @@ const ThingCard = ({ loading = false, cardInfo }: CardProps) => {
           <DotsHorizontalIcon />
         </div>
       </div>
-      <div className="flex flex-col justify-center items-center card-image">
+      <div className="flex flex-col justify-center items-center thing-card-image ">
         <div
           className="h-full w-full rounded object-fit"
-          onClick={onCenterImageClick}
+          onClick={onCenterElementClick}
         >
           {centerElement}
         </div>

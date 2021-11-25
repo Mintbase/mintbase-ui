@@ -10,6 +10,6 @@ export type TThingCard = {
   botRightIcon?: string; // TO DO ICON: change when we have our icons in storybook
   onUpperLeftClick?: () => void;
   onUpperRightClick?: () => void;
-  onCenterImageClick?: () => void;
+  onCenterElementClick?: () => void;
   onBotLeftImageClick?: () => void;
 };

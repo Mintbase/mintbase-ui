@@ -28,7 +28,7 @@ Card.args = {
       "https://coldcdn.com/api/cdn/bronil/JXl58b_p9iYzeFutFC5GcDCjsxppyFt5rRkQt4Su4LU",
     botRightText: "5/10",
     onBotLeftImageClick: () => {},
-    onCenterImageClick: () => {},
+    onCenterElementClick: () => {},
     onUpperLeftClick: () => {},
     onUpperRightClick: () => {},
   },
