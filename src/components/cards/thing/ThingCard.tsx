@@ -53,7 +53,7 @@ const ThingCard = ({ loading = false, cardInfo }: CardProps) => {
     onUpperRightClick,
   } = cardInfo;
   return (
-    <div className={`${BASE_CARD} ${loading && `animate-pulse`}`}>
+    <div className={`${BASE_CARD}`}>
       <div className="flex flex-row justify-between items-center text-black dark:text-white mb-12">
         <div className="flex space-x-8 items-center">
           <div className="w-4 h-4" onClick={onUpperLeftClick}>
