@@ -41,7 +41,7 @@ const ThingCard = ({ loading = false, cardInfo }: CardProps) => {
     upperLeftIcon,
     upperLeftText,
     upperRightIcon,
-    centerImage,
+    centerElement,
     midLeftText,
     midRightText,
     botLeftImage,
@@ -79,7 +79,7 @@ const ThingCard = ({ loading = false, cardInfo }: CardProps) => {
           className="h-full w-full rounded object-fit"
           onClick={onCenterImageClick}
         >
-          {centerImage}
+          {centerElement}
         </div>
       </div>
       <div className="flex flex-row justify-between text-black dark:text-white mt-12">

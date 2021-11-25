@@ -9,7 +9,3 @@
     height: 266px;
   }
 }
-
-.img-container span {
-  @apply h-full rounded;
-}
