@@ -3,14 +3,14 @@ import { HeartIcon } from "@heroicons/react/outline";
 import { HeartIcon as FullHeartIcon } from "@heroicons/react/solid";
 import { DotsHorizontalIcon } from "@heroicons/react/solid";
 import { DocumentDuplicateIcon } from "@heroicons/react/outline";
-import "./nftcard.css";
-import { TNftCard } from "../../types/nftcard.type";
+import "./thingcard.css";
+import { TThingCard } from "../../../types/thingcard";
 
 const BASE_CARD = `dark:bg-gray-850 bg-white rounded p-12 dark:hover:bg-gray-800 hover:bg-gray-50 cursor-pointer inline-block`;
 
 type CardProps = React.ComponentProps<"div"> & {
   loading?: boolean;
-  nftInfo: TNftCard;
+  nftInfo: TThingCard;
   handleLike: Event;
 };
 
@@ -38,7 +38,8 @@ const LoadingCard = () => {
   );
 };
 
-const NftCard = ({ loading = false, nftInfo, handleLike }: CardProps) => {
+const ThingCard = ({ loading = false, nftInfo, handleLike }: CardProps) => {
+  if (loading) return <LoadingCard />;
   const {
     title,
     liked,
@@ -51,7 +52,6 @@ const NftCard = ({ loading = false, nftInfo, handleLike }: CardProps) => {
     thingId,
     totalEditions,
   } = nftInfo;
-  if (loading) return <LoadingCard />;
   return (
     <div className={`${BASE_CARD} ${loading && `animate-pulse`}`}>
       <div className="flex flex-row justify-between items-center text-black dark:text-white mb-12">
@@ -115,4 +115,4 @@ const NftCard = ({ loading = false, nftInfo, handleLike }: CardProps) => {
   );
 };
 
-export default NftCard;
+export default ThingCard;

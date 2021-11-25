@@ -1,15 +1,15 @@
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-import NftCard from "../../components/cards/NftCard";
+import ThingCard from "../../components/cards/thing/ThingCard";
 
 export default {
-  title: "Components/Cards/NftCard",
-  component: NftCard,
+  title: "Components/Cards/Thing",
+  component: ThingCard,
   argTypes: {},
-} as ComponentMeta<typeof NftCard>;
+} as ComponentMeta<typeof ThingCard>;
 
-const Template: ComponentStory<typeof NftCard> = (args) => (
-  <NftCard {...args} />
+const Template: ComponentStory<typeof ThingCard> = (args) => (
+  <ThingCard {...args} />
 );
 
 export const Architecture = Template.bind({});

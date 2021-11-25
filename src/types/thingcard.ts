@@ -1,4 +1,4 @@
-export type TNftCard = {
+export type TThingCard = {
   title: string;
   nftImg: string;
   price: string;
