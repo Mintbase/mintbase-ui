@@ -1,0 +1,11 @@
+.card-image {
+  width: 241px;
+  height: 208px;
+}
+
+@screen sm {
+  .card-image {
+    width: 283px;
+    height: 266px;
+  }
+}

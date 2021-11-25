@@ -12,6 +12,7 @@
     "url": "URL_OF_YOUR_REPOSITORY"
   },
   "dependencies": {
+    "@heroicons/react": "^1.0.5",
     "@storybook/addon-storyshots": "^6.3.8",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
