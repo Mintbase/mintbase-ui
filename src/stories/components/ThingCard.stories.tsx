@@ -3,7 +3,7 @@ import React from "react";
 import ThingCard from "../../components/cards/thing/ThingCard";
 
 export default {
-  title: "Components/Cards/Thing",
+  title: "Components/Cards",
   component: ThingCard,
   argTypes: {},
 } as ComponentMeta<typeof ThingCard>;
@@ -12,8 +12,8 @@ const Template: ComponentStory<typeof ThingCard> = (args) => (
   <ThingCard {...args} />
 );
 
-export const Card = Template.bind({});
-Card.args = {
+export const Thing = Template.bind({});
+Thing.args = {
   cardInfo: {
     upperLeftText: "1",
     centerElement: (
@@ -28,13 +28,8 @@ Card.args = {
       "https://coldcdn.com/api/cdn/bronil/JXl58b_p9iYzeFutFC5GcDCjsxppyFt5rRkQt4Su4LU",
     botRightText: "5/10",
     onBotLeftImageClick: () => {},
-    onCenterElementClick: () => {},
+    onCenterImageClick: () => {},
     onUpperLeftClick: () => {},
     onUpperRightClick: () => {},
   },
-};
-
-export const Loading = Template.bind({});
-Loading.args = {
-  loading: true,
 };
