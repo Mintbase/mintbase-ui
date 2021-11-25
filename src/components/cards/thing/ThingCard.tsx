@@ -17,21 +17,21 @@ type CardProps = React.ComponentProps<"div"> & {
 const LoadingCard = () => {
   return (
     <div className={`${BASE_CARD}`}>
-      <div className="flex flex-row justify-between text-gray-200 mb-12 animate-pulse">
-        <div className="h-6 w-12 rounded bg-gray-600"></div>
-        <div className="h-6 w-12 rounded bg-gray-600"></div>
+      <div className="flex flex-row justify-between mb-12 animate-pulse">
+        <div className="h-4 w-8 rounded bg-gray-600"></div>
+        <div className="h-4 w-8 rounded bg-gray-600"></div>
       </div>
       <div className="flex flex-col justify-center items-center animate-pulse card-image">
-        <div className="h-full w-full  rounded bg-gray-600"></div>
+        <div className="h-full w-full rounded bg-gray-600"></div>
       </div>
-      <div className="flex flex-row justify-between text-gray-200 mt-12 animate-pulse">
-        <div className="h-6 w-12 rounded bg-gray-600"></div>
-        <div className="h-6 w-12 rounded bg-gray-600"></div>
+      <div className="flex flex-row justify-between mt-12 animate-pulse">
+        <div className="h-4 w-8 rounded bg-gray-600"></div>
+        <div className="h-4 w-8 rounded bg-gray-600"></div>
       </div>
-      <div className="flex flex-row justify-between text-gray-200 mt-12 animate-pulse">
-        <div className="inline object-cover w-5 h-5 rounded-full bg-gray-600"></div>
-        <div className="med-p flex flex-row items-center">
-          <div className="h-6 w-12 rounded bg-gray-600"></div>
+      <div className="flex flex-row justify-between mt-12 animate-pulse">
+        <div className=" w-5 h-5 rounded-full bg-gray-600"></div>
+        <div className="flex flex-row items-center">
+          <div className="h-4 w-8 rounded bg-gray-600"></div>
         </div>
       </div>
     </div>
