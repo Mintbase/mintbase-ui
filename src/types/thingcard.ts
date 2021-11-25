@@ -2,7 +2,7 @@ export type TThingCard = {
   upperLeftIcon?: string; // TO DO ICON: change when we have our icons in storybook
   upperLeftText?: string;
   upperRightIcon?: string; // TO DO ICON: change when we have our icons in storybook
-  centerImage: string;
+  centerImage: JSX.Element;
   midLeftText: string;
   midRightText: string;
   botLeftImage?: string;
