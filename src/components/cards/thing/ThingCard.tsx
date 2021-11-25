@@ -6,10 +6,10 @@ import "./thingcard.css";
 
 const BASE_CARD = `dark:bg-gray-850 bg-white rounded p-12 dark:hover:bg-gray-800 hover:bg-gray-50 cursor-pointer inline-block`;
 
-type CardProps = React.ComponentProps<"div"> & {
+interface CardProps extends React.ComponentProps<"div"> {
   loading?: boolean;
   cardInfo: TThingCard;
-};
+}
 
 const LoadingCard = () => {
   return (

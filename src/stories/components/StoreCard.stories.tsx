@@ -3,7 +3,7 @@ import React from "react";
 import StoreCard from "../../components/cards/store/StoreCard";
 
 export default {
-  title: "Components/Cards/Store",
+  title: "Components/Cards",
   component: StoreCard,
   argTypes: {},
 } as ComponentMeta<typeof StoreCard>;
@@ -12,8 +12,8 @@ const Template: ComponentStory<typeof StoreCard> = (args) => (
   <StoreCard {...args} />
 );
 
-export const Card = Template.bind({});
-Card.args = {
+export const Store = Template.bind({});
+Store.args = {
   centerElement: (
     <img
       className="h-full w-full rounded object-cover"
