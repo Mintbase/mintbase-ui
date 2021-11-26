@@ -14,3 +14,8 @@ export enum ESize {
   MEDIUM = "medium",
   BIG = "big",
 }
+
+export enum ESmallCardType {
+  PROFILE = "profile",
+  STORE = "store",
+}

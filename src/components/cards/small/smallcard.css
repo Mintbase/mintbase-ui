@@ -1,0 +1,30 @@
+.store {
+  @apply p-12;
+}
+
+.store .card-wrapper {
+  width: 191px;
+  height: 68px;
+}
+
+@screen sm {
+  .store .card-wrapper {
+    width: 283px;
+    height: 94px;
+  }
+}
+
+.profile {
+  @apply py-12 px-64;
+}
+.profile .card-wrapper {
+  width: 94px;
+  height: 94px;
+  margin: 0 auto;
+}
+
+.small .med-p,
+.small .big-p,
+.small .small-p {
+  @apply break-words;
+}

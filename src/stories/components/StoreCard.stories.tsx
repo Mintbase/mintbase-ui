@@ -1,24 +1,26 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import React from "react";
-import StoreCard from "../../components/cards/store/StoreCard";
+import SmallCard from "../../components/cards/small/smallCard";
 
 export default {
   title: "Components/Cards",
-  component: StoreCard,
+  component: SmallCard,
   argTypes: {},
-} as ComponentMeta<typeof StoreCard>;
+} as ComponentMeta<typeof SmallCard>;
 
-const Template: ComponentStory<typeof StoreCard> = (args) => (
-  <StoreCard {...args} />
+const Template: ComponentStory<typeof SmallCard> = (args) => (
+  <SmallCard {...args} />
 );
 
 export const Store = Template.bind({});
 Store.args = {
-  centerElement: (
-    <img
-      className="h-full w-full rounded object-cover"
-      src="https://coldcdn.com/api/cdn/bronil/JXl58b_p9iYzeFutFC5GcDCjsxppyFt5rRkQt4Su4LU"
-    />
-  ),
-  title: "Store Name",
+  card: {
+    centerElement: (
+      <img
+        className="h-full w-full rounded object-cover"
+        src="https://coldcdn.com/api/cdn/bronil/JXl58b_p9iYzeFutFC5GcDCjsxppyFt5rRkQt4Su4LU"
+      />
+    ),
+    title: "Store Name",
+  },
 };
