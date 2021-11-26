@@ -74,7 +74,7 @@ const ThingCard = ({ loading = false, cardInfo }: CardProps) => {
       </div>
       <div className="flex flex-col justify-center items-center thing-card-image ">
         <div
-          className="h-full w-full rounded object-fit"
+          className="h-full w-full rounded overflow-hidden object-fit"
           onClick={onCenterElementClick}
         >
           {centerElement}
@@ -86,10 +86,10 @@ const ThingCard = ({ loading = false, cardInfo }: CardProps) => {
       </div>
       <div className="flex flex-row justify-between text-gray-200 mt-12">
         <div
-          className="inline object-fit w-5 h-5 rounded-full"
+          className="inline object-fit w-5 h-5 rounded-full overflow-hidden"
           onClick={onBotLeftImageClick}
         >
-          <img className="h-full rounded-full" src={botLeftImage} />
+          <img className="h-full" src={botLeftImage} />
         </div>
         <div className="med-p flex flex-row items-center text-black dark:text-white space-x-8">
           <div className="med-p w-8/12">{botRightText}</div>

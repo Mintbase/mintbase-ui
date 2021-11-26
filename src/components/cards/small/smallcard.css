@@ -5,6 +5,7 @@
 .store .card-wrapper {
   width: 191px;
   height: 68px;
+  @apply rounded overflow-hidden;
 }
 
 @screen sm {
@@ -21,6 +22,7 @@
   width: 94px;
   height: 94px;
   margin: 0 auto;
+  @apply rounded-full overflow-hidden;
 }
 
 .small .med-p,

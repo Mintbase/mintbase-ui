@@ -17,7 +17,7 @@ Store.args = {
   card: {
     centerElement: (
       <img
-        className="h-full w-full rounded object-cover"
+        className="h-full w-full"
         src="https://coldcdn.com/api/cdn/bronil/JXl58b_p9iYzeFutFC5GcDCjsxppyFt5rRkQt4Su4LU"
       />
     ),
