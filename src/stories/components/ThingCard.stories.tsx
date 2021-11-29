@@ -18,7 +18,7 @@ Thing.args = {
     upperLeftText: "1",
     centerElement: (
       <img
-        className="h-full"
+        className="h-full object-cover"
         src="https://coldcdn.com/api/cdn/bronil/JXl58b_p9iYzeFutFC5GcDCjsxppyFt5rRkQt4Su4LU"
       />
     ),
