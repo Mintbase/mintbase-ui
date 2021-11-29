@@ -13,3 +13,9 @@ export type TThingCard = {
   onCenterElementClick?: () => void;
   onBotLeftImageClick?: () => void;
 };
+
+export type TSmallCard = {
+  centerElement: JSX.Element;
+  title: string;
+  onCardClick?: () => void;
+};

@@ -1,11 +1,17 @@
 .thing-card-image {
-  width: 241px;
+  width: 240px;
   height: 208px;
 }
 
 @screen sm {
   .thing-card-image {
-    width: 283px;
+    width: 280px;
     height: 266px;
   }
+}
+
+.thing .med-p,
+.thing .big-p,
+.thing .small-p {
+  @apply truncate;
 }
