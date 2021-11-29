@@ -7,16 +7,18 @@ type InputProps = React.ButtonHTMLAttributes<HTMLInputElement> & {
 
 const InputField = ({ label = "", hasIcon, ...props }: InputProps) => {
   return (
-    <div className="flex flex-col">
-      <label>{label}</label>
-      <div className="relative inline-block">
-        <input className="p-16 bg-gray-100 big-p text-gray-500" />
+    <>
+      {label && <label>{label}</label>}
+      <div className="p-16 bg-gray-100 flex items-center justify-between rounded">
+        <input className="bg-gray-100 big-p text-gray-500 focus:outline-none w-full" />
         {/* TO DO: WHEN ICONS ADDED CHANGE THIS */}
         {hasIcon && (
-          <InformationCircleIcon className="w-5 h-5 absolute top-1/2 translate-y-2/4" />
+          <div>
+            <InformationCircleIcon className="w-5 h-5" />
+          </div>
         )}
       </div>
-    </div>
+    </>
   );
 };
 
