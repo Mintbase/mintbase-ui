@@ -33,4 +33,13 @@ export enum EIconName {
   ERROR = "error",
   SUCCESS = "check_circle",
   EDITIONS = "filter_none",
+  FACEBOOK = "facebook",
+  INSTAGRAM = "instagram",
+  PINTEREST = "pinterest",
+  TWITTER = "twitter",
+  TELEGRAM = "telegram",
+  MEDIUM = "medium",
+  LINKEDIN = "linkedin",
+  YOUTUBE = "youtube",
+  MINTBASE = "mintbase",
 }
