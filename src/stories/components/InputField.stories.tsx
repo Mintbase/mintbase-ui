@@ -3,10 +3,21 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import InputField, {
   EControlStatus,
 } from "../../components/input-fields/inputField";
+import { ESize } from "../../constants/properties";
 
 export default {
   title: "Components/Inputs",
   component: InputField,
+  argTypes: {
+    controlStatus: {
+      options: ["empty", "valid", "invalid"],
+      control: { type: "radio" },
+    },
+    inputSize: {
+      options: ["small", "medium", "big"],
+      control: { type: "radio" },
+    },
+  },
 } as ComponentMeta<typeof InputField>;
 
 const Template: ComponentStory<typeof InputField> = (args) => (
@@ -22,6 +33,7 @@ Input.args = {
   type: "text",
   required: true,
   controlStatus: EControlStatus.EMPTY,
+  inputSize: ESize.MEDIUM,
   onChange: (event: any) => {
     console.log(event.target.value);
   },
