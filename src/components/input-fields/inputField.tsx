@@ -1,34 +1,40 @@
 import { InformationCircleIcon, CheckCircleIcon } from "@heroicons/react/solid";
+import { getFontType } from "../../constants/fontType";
+import { ESize } from "../../constants/properties";
+import "./inputfield.css";
 
 export enum EControlStatus {
   EMPTY = "empty",
   VALID = "valid",
   INVALID = "invalid",
 }
+
 type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   label?: string;
   hasIcon?: boolean;
   controlStatus: EControlStatus;
+  inputSize: ESize;
 };
 
 const InputField = ({
   label = "",
   hasIcon,
   controlStatus = EControlStatus.EMPTY,
+  inputSize = ESize.MEDIUM,
   ...props
 }: InputProps) => {
   return (
     <>
       {label && (
-        <label className="block mb-8 med-p dark:text-white">
+        <label
+          className={`block mb-8 dark:text-white ${getFontType(inputSize)}`}
+        >
           {label} {props.required && <span>*</span>}
         </label>
       )}
       <div
-        className={`p-16 flex items-center justify-between rounded ${
-          props.disabled
-            ? "bg-gray-200 dark:bg-gray-700"
-            : "bg-gray-100 hover:bg-blue-300-15 focus-within:ring-1 focus-within:ring-bg-blue-300-35 dark:bg-gray-900 dark:hover:bg-mb-blackblue dark:focus-within:ring-bg-blue-100-35"
+        className={`input-wrapper ${inputSize} flex items-center justify-between rounded ${
+          props.disabled ? "disabled" : "default " + controlStatus
         }`}
       >
         <input
@@ -38,21 +44,19 @@ const InputField = ({
           value={props.value}
           name={props.name}
           required={props.required}
-          className="bg-transparent big-p text-gray-500 focus:outline-none w-full"
+          className={`input-field ${getFontType(inputSize)}`}
           onChange={props.onChange}
         />
         {/* TO DO: WHEN ICONS ADDED CHANGE THIS */}
         {hasIcon && (
           <div>
             {controlStatus === EControlStatus.VALID ? (
-              <CheckCircleIcon className="w-5 h-5 fill text-success-300 dark:text-success-100" />
+              <CheckCircleIcon
+                className={`icon w-5 h-5 fill ${controlStatus}`}
+              />
             ) : (
               <InformationCircleIcon
-                className={`w-5 h-5 fill ${
-                  controlStatus === EControlStatus.INVALID
-                    ? "text-error-300 dark:text-error-100"
-                    : "text-blue-300 dark:text-blue-100"
-                }`}
+                className={`icon w-5 h-5 fill ${controlStatus}`}
               />
             )}
           </div>
