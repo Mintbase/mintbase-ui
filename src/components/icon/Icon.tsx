@@ -18,7 +18,6 @@ const Icon = ({
       >
         {name}
       </span>
-      {/* <span className="material-icons-outlined">pie_chart</span>{" "} */}
     </>
   );
 };
