@@ -6,9 +6,10 @@ export default {
 
 export const Colors = () => (
   <>
+    <p className="heading-bold mb-8">Colors</p>
     {colorsArray.map((elm) => (
       <section className="mb-8" key={elm.sectionTitle}>
-        <p className="heading-bold mb-4">{elm.sectionTitle}</p>
+        <p className="h1-bold mb-4">{elm.sectionTitle}</p>
         <div className="flex flex-wrap gap-8">
           {elm.colors.map((color) => (
             <div key={color.class}>
