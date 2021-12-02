@@ -4,7 +4,7 @@ export default {
 
 export const Spacing = () => (
   <>
-    <p className="heading-bold mb-4">Spacing</p>
+    <p className="heading-bold mb-8">Spacing</p>
     <p className="med-p mb-24">use class name to space elements.</p>
     <div className="flex flex-col mt-8">
       <div className="inline-block min-w-full overflow-hidden align-middle border-b border-gray-200 shadow sm:rounded-lg">
@@ -95,7 +95,7 @@ export const Spacing = () => (
       </div>
     </div>
     <p className="med-p mt-12">
-      *space, p or m and all derivates from this classes.{" "}
+      *space-x, p or m and all derivates from this classes.{" "}
       <a
         className="text-blue-100-35 hover:text-blue-300"
         href="https://tailwindcss.com/docs/padding"

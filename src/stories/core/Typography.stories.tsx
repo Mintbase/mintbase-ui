@@ -4,8 +4,8 @@ export default {
 
 export const Typography = () => (
   <section>
-    <p className="text-xl heading-bold mb-2">Typography</p>
-    <p className="small-p mb-4">font-family: Authentic Sans</p>
+    <p className="heading-bold mb-8">Typography</p>
+    <p className="small-p mb-12">font-family: Authentic Sans</p>
     <p className="med-p mb-4">use [typoname] in the class</p>
     <p className="heading-bold mb-2">heading-bold</p>
     <p className="heading mb-2">heading</p>
