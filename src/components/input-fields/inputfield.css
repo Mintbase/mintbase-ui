@@ -33,15 +33,3 @@
 .input-wrapper.small {
   @apply p-10;
 }
-
-.icon.valid {
-  @apply text-success-300 dark:text-success-100;
-}
-
-.icon.invalid {
-  @apply text-error-300 dark:text-error-100;
-}
-
-.icon.empty {
-  @apply text-blue-300 dark:text-blue-100;
-}
