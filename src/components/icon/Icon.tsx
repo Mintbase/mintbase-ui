@@ -1,7 +1,7 @@
 import "material-icons/iconfont/material-icons.css";
 import { useEffect, useState } from "react";
+import InlineSVG from "react-inlinesvg";
 import { EIconName } from "../../constants/icons";
-import SVG from "react-inlinesvg";
 
 const mintbaseIcons = [
   "facebook",
@@ -25,6 +25,7 @@ const Icon = ({
   size?: string;
 }) => {
   const [isMintbaseIcon, setIsMintbaseIcon] = useState<boolean>(false);
+
   useEffect(() => {
     checkIfMaterialIcon();
   }, []);
@@ -36,7 +37,12 @@ const Icon = ({
   return (
     <>
       {isMintbaseIcon ? (
-        <SVG src={`/${name}.svg`} />
+        <InlineSVG
+          src={`./assets/icons/${name}.svg`}
+          width={size}
+          height={size}
+          className={`fill-current text-${color}`}
+        />
       ) : (
         <span
           className={`material-icons text-${color}`}
