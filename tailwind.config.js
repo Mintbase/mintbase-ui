@@ -29,6 +29,7 @@ module.exports = {
       24: "24px",
       48: "28px",
       64: "64px",
+      96: "96px",
     },
     fontFamily: {
       "authentic-sans-90": ["AuthenticSans-90", "sans-serif"],

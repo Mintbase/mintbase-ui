@@ -10,7 +10,14 @@ export default {
 } as ComponentMeta<typeof MbTooltip>;
 
 const Template: ComponentStory<typeof MbTooltip> = (args) => (
-  <MbTooltip {...args} />
+  <>
+    <p className="med-p mb-12">
+      hover the icon. place can be 'top', 'bottom', 'left' or 'right'
+    </p>
+    <div className="w-full md:w-3/4 flex items-center mt-96 ml-96">
+      <MbTooltip {...args} />
+    </div>
+  </>
 );
 
 export const Tooltip = Template.bind({});
