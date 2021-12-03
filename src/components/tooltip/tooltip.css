@@ -1,0 +1,6 @@
+#tooltip {
+  padding: 8px;
+  border-radius: 4px;
+  max-height: 28px;
+  display: flex;
+}
