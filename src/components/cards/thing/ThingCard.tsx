@@ -38,7 +38,7 @@ const LoadingCard = () => {
 const ThingCard = ({ loading = false, cardInfo }: CardProps) => {
   if (loading) return <LoadingCard />;
   const {
-    upperLeftIcon,
+    upperLeftIcon = EIconName.LIKE,
     upperLeftText,
     upperRightIcon = EIconName.MORE,
     centerElement,
@@ -56,10 +56,8 @@ const ThingCard = ({ loading = false, cardInfo }: CardProps) => {
     <div className="base-card thing p-12">
       <div className="flex flex-row justify-between items-center text-black dark:text-white mb-12">
         <div className="flex space-x-8 items-center">
-          <div className="w-4 h-4" onClick={onUpperLeftClick}>
-            {/* TO DO: Change when we have icons in storybook */}
-            {/* {upperLeftIcon} */}
-            <HeartIcon />
+          <div className="flex" onClick={onUpperLeftClick}>
+            <Icon name={upperLeftIcon} size="20px" color="black" />
           </div>
           <p
             className="small-p text-gray-700 dark:text-gray-300"
