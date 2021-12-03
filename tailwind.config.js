@@ -13,7 +13,9 @@ module.exports = {
     padding: {
       4: "4px",
       8: "8px",
+      10: "10px",
       12: "12px",
+      16: "16px",
       24: "24px",
       48: "28px",
       64: "64px",
@@ -22,6 +24,7 @@ module.exports = {
       auto: "0 auto",
       4: "4px",
       8: "8px",
+      10: "10px",
       12: "12px",
       24: "24px",
       48: "28px",
