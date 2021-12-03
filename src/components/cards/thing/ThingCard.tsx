@@ -24,7 +24,7 @@ const LoadingCard = () => {
         <div className="h-4 w-8 rounded bg-gray-600"></div>
       </div>
       <div className="flex flex-row justify-between mt-12 animate-pulse">
-        <div className=" w-5 h-5 rounded-full bg-gray-600"></div>
+        <div className=" w-6 h-6 rounded-full bg-gray-600"></div>
         <div className="flex flex-row items-center">
           <div className="h-4 w-8 rounded bg-gray-600"></div>
         </div>
@@ -86,7 +86,7 @@ const ThingCard = ({ loading = false, cardInfo }: CardProps) => {
       </div>
       <div className="flex flex-row justify-between text-gray-200 mt-12">
         <div
-          className="inline object-fit w-5 h-5 rounded-full overflow-hidden"
+          className="inline object-fit w-6 h-6 rounded-full overflow-hidden"
           onClick={onBotLeftImageClick}
         >
           <img className="h-full" src={botLeftImage} />
