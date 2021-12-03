@@ -9,7 +9,7 @@ export enum EControlStatus {
   INVALID = "invalid",
 }
 
-type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
+interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   hasIcon?: boolean;
   controlStatus: EControlStatus;
