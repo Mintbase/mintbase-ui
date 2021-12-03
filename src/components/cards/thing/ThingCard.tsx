@@ -4,6 +4,8 @@ import React from "react";
 import { TThingCard } from "../../../types/cards.type";
 import "./thingcard.css";
 import "./../cards.css";
+import Icon from "../../icon/Icon";
+import { EIconName } from "../../../constants/icons";
 interface CardProps extends React.ComponentProps<"div"> {
   loading?: boolean;
   cardInfo: TThingCard;
@@ -43,7 +45,7 @@ const ThingCard = ({ loading = false, cardInfo }: CardProps) => {
     midLeftText,
     midRightText,
     botLeftImage,
-    botRightIcon,
+    botRightIcon = EIconName.EDITIONS,
     botRightText,
     onBotLeftImageClick,
     onCenterElementClick,
@@ -92,12 +94,9 @@ const ThingCard = ({ loading = false, cardInfo }: CardProps) => {
           <img className="h-full" src={botLeftImage} />
         </div>
         <div className="med-p flex flex-row items-center text-black dark:text-white space-x-8">
-          <div className="med-p w-8/12">{botRightText}</div>
-          <div className="w-5 h-5">
-            {/* TO DO: Change when we have icons in storybook */}
-            {/* {botRightIcon} */}
-
-            <DocumentDuplicateIcon />
+          <div className="small-p w-8/12">{botRightText}</div>
+          <div>
+            <Icon name={botRightIcon} size="12px" color="mb-gray-500" />
           </div>
         </div>
       </div>
