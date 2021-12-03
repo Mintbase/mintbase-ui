@@ -25,6 +25,7 @@ Thing.args = {
         src="https://coldcdn.com/api/cdn/bronil/JXl58b_p9iYzeFutFC5GcDCjsxppyFt5rRkQt4Su4LU"
       />
     ),
+    isCenterImage: true,
     midLeftText: "Thing Name",
     midRightText: "10 N",
     botLeftImage:

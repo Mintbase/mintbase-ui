@@ -1,15 +1,16 @@
 import { EIconName } from "../constants/icons";
 
 export type TThingCard = {
-  upperLeftIcon?: EIconName; // TO DO ICON: change when we have our icons in storybook
+  upperLeftIcon?: EIconName;
   upperLeftText?: string;
-  upperRightIcon?: EIconName; // TO DO ICON: change when we have our icons in storybook
+  upperRightIcon?: EIconName;
   centerElement: JSX.Element;
+  isCenterImage: boolean;
   midLeftText: string;
   midRightText: string;
   botLeftImage?: string;
   botRightText?: string;
-  botRightIcon?: EIconName; // TO DO ICON: change when we have our icons in storybook
+  botRightIcon?: EIconName;
   onUpperLeftClick?: () => void;
   onUpperRightClick?: () => void;
   onCenterElementClick?: () => void;

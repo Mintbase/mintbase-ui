@@ -42,6 +42,7 @@ const ThingCard = ({ loading = false, cardInfo }: CardProps) => {
     upperLeftText,
     upperRightIcon = EIconName.MORE,
     centerElement,
+    isCenterImage,
     midLeftText,
     midRightText,
     botLeftImage,
@@ -72,9 +73,15 @@ const ThingCard = ({ loading = false, cardInfo }: CardProps) => {
       </div>
       <div className="flex flex-col justify-center items-center thing-card-image ">
         <div
-          className="h-full w-full rounded overflow-hidden object-fit"
+          className="h-full w-full rounded overflow-hidden object-fit relative"
           onClick={onCenterElementClick}
         >
+          {isCenterImage && (
+            <div className="w-5 h-5 bg-black rounded-full absolute top-3 left-3 flex items-center justify-center">
+              <Icon name={EIconName.IMAGE} size="14px" color="white" />
+            </div>
+          )}
+
           {centerElement}
         </div>
       </div>
