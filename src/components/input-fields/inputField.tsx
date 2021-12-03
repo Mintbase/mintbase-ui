@@ -1,6 +1,7 @@
-import { InformationCircleIcon, CheckCircleIcon } from "@heroicons/react/solid";
 import { getFontType } from "../../constants/fontType";
+import { EIconName } from "../../constants/icons";
 import { ESize } from "../../constants/properties";
+import Icon from "../icon/Icon";
 import "./inputfield.css";
 
 export enum EControlStatus {
@@ -14,7 +15,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   hasIcon?: boolean;
   controlStatus: EControlStatus;
   inputSize: ESize;
-};
+}
 
 const InputField = ({
   label = "",
@@ -47,16 +48,28 @@ const InputField = ({
           className={`input-field ${getFontType(inputSize)}`}
           onChange={props.onChange}
         />
-        {/* TO DO: WHEN ICONS ADDED CHANGE THIS */}
         {hasIcon && (
           <div>
             {controlStatus === EControlStatus.VALID ? (
-              <CheckCircleIcon
-                className={`icon w-5 h-5 fill ${controlStatus}`}
+              <Icon
+                name={EIconName.SUCCESS}
+                size="24px"
+                color="success-300"
+                darkColor="success-100"
+              />
+            ) : controlStatus === EControlStatus.INVALID ? (
+              <Icon
+                name={EIconName.ERROR}
+                size="24px"
+                color="error-300 "
+                darkColor="error-100"
               />
             ) : (
-              <InformationCircleIcon
-                className={`icon w-5 h-5 fill ${controlStatus}`}
+              <Icon
+                name={EIconName.INFO}
+                size="24px"
+                color="blue-300"
+                darkColor="blue-100"
               />
             )}
           </div>
