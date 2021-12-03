@@ -1,4 +1,4 @@
 .base-card {
-  @apply bg-white dark:bg-gray-850 rounded dark:hover:bg-gray-800 hover:bg-gray-50 cursor-pointer inline-block;
+  @apply bg-white dark:bg-gray-850 rounded dark:hover:bg-gray-800 hover:bg-gray-50 cursor-pointer inline-block transition-all duration-500;
   max-width: 304px;
 }

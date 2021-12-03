@@ -4,6 +4,8 @@ import React from "react";
 import { TThingCard } from "../../../types/cards.type";
 import "./thingcard.css";
 import "./../cards.css";
+import Icon from "../../icon/Icon";
+import { EIconName } from "../../../constants/icons";
 interface CardProps extends React.ComponentProps<"div"> {
   loading?: boolean;
   cardInfo: TThingCard;
@@ -24,7 +26,7 @@ const LoadingCard = () => {
         <div className="h-4 w-8 rounded bg-gray-600"></div>
       </div>
       <div className="flex flex-row justify-between mt-12 animate-pulse">
-        <div className=" w-5 h-5 rounded-full bg-gray-600"></div>
+        <div className=" w-6 h-6 rounded-full bg-gray-600"></div>
         <div className="flex flex-row items-center">
           <div className="h-4 w-8 rounded bg-gray-600"></div>
         </div>
@@ -36,14 +38,15 @@ const LoadingCard = () => {
 const ThingCard = ({ loading = false, cardInfo }: CardProps) => {
   if (loading) return <LoadingCard />;
   const {
-    upperLeftIcon,
+    upperLeftIcon = EIconName.LIKE,
     upperLeftText,
-    upperRightIcon,
+    upperRightIcon = EIconName.MORE,
     centerElement,
+    isCenterImage,
     midLeftText,
     midRightText,
     botLeftImage,
-    botRightIcon,
+    botRightIcon = EIconName.EDITIONS,
     botRightText,
     onBotLeftImageClick,
     onCenterElementClick,
@@ -54,10 +57,8 @@ const ThingCard = ({ loading = false, cardInfo }: CardProps) => {
     <div className="base-card thing p-12">
       <div className="flex flex-row justify-between items-center text-black dark:text-white mb-12">
         <div className="flex space-x-8 items-center">
-          <div className="w-4 h-4" onClick={onUpperLeftClick}>
-            {/* TO DO: Change when we have icons in storybook */}
-            {/* {upperLeftIcon} */}
-            <HeartIcon />
+          <div className="flex" onClick={onUpperLeftClick}>
+            <Icon name={upperLeftIcon} size="20px" color="black" />
           </div>
           <p
             className="small-p text-gray-700 dark:text-gray-300"
@@ -66,17 +67,21 @@ const ThingCard = ({ loading = false, cardInfo }: CardProps) => {
             {upperLeftText}
           </p>
         </div>
-        <div className="w-4 h-4" onClick={onUpperRightClick}>
-          {/* TO DO: Change when we have icons in storybook */}
-          {/* {upperRightIcon} */}
-          <DotsHorizontalIcon />
+        <div className="flex" onClick={onUpperRightClick}>
+          <Icon name={upperRightIcon} size="24px" color="black" />
         </div>
       </div>
       <div className="flex flex-col justify-center items-center thing-card-image ">
         <div
-          className="h-full w-full rounded overflow-hidden object-fit"
+          className="h-full w-full rounded overflow-hidden object-fit relative"
           onClick={onCenterElementClick}
         >
+          {isCenterImage && (
+            <div className="w-5 h-5 bg-black rounded-full absolute top-3 left-3 flex items-center justify-center">
+              <Icon name={EIconName.IMAGE} size="14px" color="white" />
+            </div>
+          )}
+
           {centerElement}
         </div>
       </div>
@@ -86,18 +91,15 @@ const ThingCard = ({ loading = false, cardInfo }: CardProps) => {
       </div>
       <div className="flex flex-row justify-between text-gray-200 mt-12">
         <div
-          className="inline object-fit w-5 h-5 rounded-full overflow-hidden"
+          className="inline object-fit w-6 h-6 rounded-full overflow-hidden"
           onClick={onBotLeftImageClick}
         >
-          <img className="h-full" src={botLeftImage} />
+          <img className="h-full object-cover" src={botLeftImage} />
         </div>
         <div className="med-p flex flex-row items-center text-black dark:text-white space-x-8">
-          <div className="med-p w-8/12">{botRightText}</div>
-          <div className="w-5 h-5">
-            {/* TO DO: Change when we have icons in storybook */}
-            {/* {botRightIcon} */}
-
-            <DocumentDuplicateIcon />
+          <div className="small-p w-8/12">{botRightText}</div>
+          <div>
+            <Icon name={botRightIcon} size="12px" color="mb-gray-500" />
           </div>
         </div>
       </div>
