@@ -12,7 +12,7 @@ const MbTooltip = ({
 }) => {
   return (
     <>
-      <span data-tip data-for="tooltip" className="w-min flex">
+      <span data-tip data-for="tooltip" className="w-min flex cursor-pointer">
         {component}
       </span>
 
