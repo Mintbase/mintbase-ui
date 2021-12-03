@@ -18,10 +18,12 @@ const mintbaseIcons = [
 const Icon = ({
   name,
   color = "mb-blackblue",
+  darkColor,
   size = "24px",
 }: {
   name: EIconName;
   color: string;
+  darkColor?: string;
   size?: string;
 }) => {
   const [isMintbaseIcon, setIsMintbaseIcon] = useState<boolean>(false);
@@ -41,11 +43,11 @@ const Icon = ({
           src={`./assets/icons/${name}.svg`}
           width={size}
           height={size}
-          className={`fill-current text-${color}`}
+          className={`fill-current text-${color} dark:text-${darkColor}`}
         />
       ) : (
         <span
-          className={`material-icons text-${color}`}
+          className={`material-icons text-${color} dark:text-${darkColor}`}
           style={{ fontSize: size }}
         >
           {name}
