@@ -40,7 +40,7 @@ const ThingCard = ({ loading = false, cardInfo }: CardProps) => {
   const {
     upperLeftIcon,
     upperLeftText,
-    upperRightIcon,
+    upperRightIcon = EIconName.MORE,
     centerElement,
     midLeftText,
     midRightText,
@@ -68,10 +68,8 @@ const ThingCard = ({ loading = false, cardInfo }: CardProps) => {
             {upperLeftText}
           </p>
         </div>
-        <div className="w-4 h-4" onClick={onUpperRightClick}>
-          {/* TO DO: Change when we have icons in storybook */}
-          {/* {upperRightIcon} */}
-          <DotsHorizontalIcon />
+        <div className="flex" onClick={onUpperRightClick}>
+          <Icon name={upperRightIcon} size="24px" color="black" />
         </div>
       </div>
       <div className="flex flex-col justify-center items-center thing-card-image ">
@@ -91,7 +89,7 @@ const ThingCard = ({ loading = false, cardInfo }: CardProps) => {
           className="inline object-fit w-6 h-6 rounded-full overflow-hidden"
           onClick={onBotLeftImageClick}
         >
-          <img className="h-full" src={botLeftImage} />
+          <img className="h-full object-cover" src={botLeftImage} />
         </div>
         <div className="med-p flex flex-row items-center text-black dark:text-white space-x-8">
           <div className="small-p w-8/12">{botRightText}</div>

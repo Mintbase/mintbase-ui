@@ -3,7 +3,7 @@ import { EIconName } from "../constants/icons";
 export type TThingCard = {
   upperLeftIcon?: string; // TO DO ICON: change when we have our icons in storybook
   upperLeftText?: string;
-  upperRightIcon?: string; // TO DO ICON: change when we have our icons in storybook
+  upperRightIcon?: EIconName; // TO DO ICON: change when we have our icons in storybook
   centerElement: JSX.Element;
   midLeftText: string;
   midRightText: string;

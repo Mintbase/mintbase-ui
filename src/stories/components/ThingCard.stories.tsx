@@ -18,6 +18,7 @@ export const Thing = Template.bind({});
 Thing.args = {
   cardInfo: {
     upperLeftText: "1",
+    upperRightIcon: EIconName.MORE,
     centerElement: (
       <img
         className="h-full object-cover"
