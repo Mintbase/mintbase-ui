@@ -4,7 +4,7 @@
 @tailwind screens;
 
 /* Global styles */
-@import "./assets/fonts/fonts.css";
+@import "/public/assets/fonts/fonts.css";
 
 /* Typography */
 .heading-bold {
