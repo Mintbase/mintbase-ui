@@ -1,4 +1,5 @@
 export enum EIconName {
+  NONE = "none",
   CHECK = "check",
   VERIFIED = "verified",
   CLOSE = "close",
