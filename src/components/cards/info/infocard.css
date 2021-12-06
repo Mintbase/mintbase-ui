@@ -1,0 +1,5 @@
+.info-card {
+  @apply rounded p-12 bg-gray-50 dark:bg-gray-800;
+  min-width: 218px;
+  min-height: 72px;
+}
