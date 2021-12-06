@@ -32,3 +32,11 @@ InfoWithAction.args = {
   upperIcon: EIconName.INFO,
   handleDescriptionClick: () => console.log("clicked"),
 };
+
+export const InfoWithIconDescription = Template.bind({});
+InfoWithIconDescription.args = {
+  title: "Info with action",
+  description: "Click me",
+  descriptionIcon: EIconName.IMAGE,
+  handleDescriptionClick: () => console.log("clicked"),
+};
