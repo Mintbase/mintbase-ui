@@ -8,12 +8,14 @@ const InfoBox = ({
   upperIcon = EIconName.NONE,
   bigDescription = true,
   descriptionIcon = EIconName.NONE,
+  descriptionImage,
   handleDescriptionClick,
 }: {
   title: string;
   description?: string;
   upperIcon?: EIconName;
   descriptionIcon?: EIconName;
+  descriptionImage?: string;
   bigDescription?: boolean;
   handleDescriptionClick?: () => void;
 }) => {
@@ -34,13 +36,18 @@ const InfoBox = ({
         )}
       </div>
       <div className="flex space-x-12 items-center">
-        {descriptionIcon !== EIconName.NONE && (
+        {descriptionIcon !== EIconName.NONE && !descriptionImage && (
           <Icon
             name={descriptionIcon}
             size="24px"
             color="blue-300"
             darkColor="blue-100"
           ></Icon>
+        )}
+        {descriptionImage && descriptionIcon === EIconName.NONE && (
+          <div className="object-fit w-6 h-6 rounded-full overflow-hidden">
+            <img className="h-full object-fit" src={descriptionImage} />
+          </div>
         )}
 
         {description && (

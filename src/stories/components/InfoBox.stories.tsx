@@ -40,3 +40,13 @@ InfoWithIconDescription.args = {
   descriptionIcon: EIconName.IMAGE,
   handleDescriptionClick: () => console.log("clicked"),
 };
+
+export const InfoWithImage = Template.bind({});
+InfoWithImage.args = {
+  title: "Info with action",
+  description: "Click me",
+  descriptionIcon: EIconName.NONE,
+  descriptionImage:
+    "https://coldcdn.com/api/cdn/bronil/JXl58b_p9iYzeFutFC5GcDCjsxppyFt5rRkQt4Su4LU",
+  handleDescriptionClick: () => console.log("clicked"),
+};
