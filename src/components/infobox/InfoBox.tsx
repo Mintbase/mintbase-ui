@@ -1,8 +1,8 @@
-import { EIconName } from "../../../constants/icons";
-import Icon from "../../icon/Icon";
-import "./infocard.css";
+import { EIconName } from "../../constants/icons";
+import Icon from "../icon/Icon";
+import "./infobox.css";
 
-const InfoCard = ({
+const InfoBox = ({
   title,
   description,
   upperIcon = EIconName.NONE,
@@ -47,4 +47,4 @@ const InfoCard = ({
   );
 };
 
-export default InfoCard;
+export default InfoBox;
