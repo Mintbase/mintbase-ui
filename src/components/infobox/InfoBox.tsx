@@ -1,4 +1,5 @@
 import { EIconName } from "../../constants/icons";
+import { ESize } from "../../constants/properties";
 import Icon from "../icon/Icon";
 import "./infobox.css";
 
@@ -6,9 +7,10 @@ const InfoBox = ({
   title,
   description,
   upperIcon = EIconName.NONE,
-  bigDescription = true,
+  isBigDescription = true,
   descriptionIcon = EIconName.NONE,
   descriptionImage,
+  size = ESize.MEDIUM,
   handleDescriptionClick,
 }: {
   title: string;
@@ -16,13 +18,34 @@ const InfoBox = ({
   upperIcon?: EIconName;
   descriptionIcon?: EIconName;
   descriptionImage?: string;
-  bigDescription?: boolean;
+  isBigDescription?: boolean;
+  size?: ESize;
   handleDescriptionClick?: () => void;
 }) => {
+  const getDescriptionFont = (size: string, isBigDescription: boolean) => {
+    if (size === "small") {
+      return isBigDescription ? "big-p" : "small-p";
+    }
+    return isBigDescription ? "sub-p" : "big-p";
+  };
+
+  const getTitleFont = (size: string) => {
+    if (size === "small") {
+      return "big-cap";
+    }
+    return "small-p";
+  };
+
   return (
-    <div className="info-card">
-      <div className="flex justify-between items-center pb-12 relative">
-        <div className="small-p text-gray-700 dark:text-gray-300">{title}</div>
+    <div className={`info-card ${size}`}>
+      <div
+        className={`flex justify-between items-center title-wrapper ${size} relative`}
+      >
+        <div
+          className={`${getTitleFont(size)} text-gray-700 dark:text-gray-300`}
+        >
+          {title}
+        </div>
 
         {upperIcon !== EIconName.NONE && (
           <div className="absolute right-0 mt-4">
@@ -53,7 +76,7 @@ const InfoBox = ({
         {description && (
           <div>
             <div
-              className={`${bigDescription ? "sub-p" : "med-p"} ${
+              className={`${getDescriptionFont(size, isBigDescription)} ${
                 handleDescriptionClick
                   ? "text-blue-300 dark:text-blue-100 cursor-pointer"
                   : "text-black dark:text-white"

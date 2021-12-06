@@ -1,5 +1,25 @@
 .info-card {
   @apply rounded p-12 bg-gray-50 dark:bg-gray-800;
+}
+
+.info-card.medium,
+.info-card.big {
+  @apply p-12;
   min-width: 218px;
   min-height: 72px;
+}
+
+.info-card.small {
+  @apply p-8;
+  min-width: 160px;
+  min-height: 46px;
+}
+
+.info-card .title-wrapper.medium,
+.info-card .title-wrapper.big {
+  @apply pb-12;
+}
+
+.info-card .title-wrapper.small {
+  @apply pb-8;
 }
