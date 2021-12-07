@@ -24,6 +24,10 @@ const InputField = ({
   inputSize = ESize.MEDIUM,
   ...props
 }: InputProps) => {
+  const getIconSize = () => {
+    return inputSize === "big" ? "24px" : "20px";
+  };
+
   return (
     <>
       {label && (
@@ -49,25 +53,25 @@ const InputField = ({
           onChange={props.onChange}
         />
         {hasIcon && (
-          <div>
+          <div className="flex">
             {controlStatus === EControlStatus.VALID ? (
               <Icon
                 name={EIconName.SUCCESS}
-                size="24px"
+                size={getIconSize()}
                 color="success-300"
                 darkColor="success-100"
               />
             ) : controlStatus === EControlStatus.INVALID ? (
               <Icon
                 name={EIconName.ERROR}
-                size="24px"
+                size={getIconSize()}
                 color="error-300 "
                 darkColor="error-100"
               />
             ) : (
               <Icon
                 name={EIconName.INFO}
-                size="24px"
+                size={getIconSize()}
                 color="blue-300"
                 darkColor="blue-100"
               />

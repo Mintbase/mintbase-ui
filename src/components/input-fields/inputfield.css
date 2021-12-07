@@ -24,12 +24,15 @@
 
 .input-wrapper.big {
   @apply p-16;
+  max-height: 48px;
 }
 
 .input-wrapper.medium {
   @apply p-12;
+  max-height: 40px;
 }
 
 .input-wrapper.small {
   @apply p-10;
+  max-height: 34px;
 }
