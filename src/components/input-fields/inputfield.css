@@ -1,5 +1,5 @@
 .input-field {
-  @apply bg-transparent text-gray-500 focus:outline-none w-full transition-all duration-500;
+  @apply bg-transparent text-gray-500 focus:outline-none w-full;
 }
 
 .input-wrapper.disabled {
