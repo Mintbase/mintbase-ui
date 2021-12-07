@@ -50,7 +50,9 @@ const Button = ({
   return (
     <button
       type="button"
-      className={`${btnType} ${state} ${size} ${getFontType(size)} relative`}
+      className={`button ${btnType} ${state} ${size} ${getFontType(
+        size
+      )} relative`}
       {...props}
     >
       <span className={isLoading ? "invisible" : "visible"}>{label}</span>

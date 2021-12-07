@@ -1,7 +1,6 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import React from "react";
 import ThingCard from "../../components/cards/thing/ThingCard";
-import Icon from "../../components/icon/Icon";
 import { EIconName } from "../../constants/icons";
 
 export default {
