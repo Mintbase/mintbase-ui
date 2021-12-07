@@ -80,8 +80,8 @@ const InfoBox = ({ boxInfo }: { boxInfo: TInfoBox }) => {
           ></Icon>
         )}
         {descriptionImage && descriptionIcon === EIconName.NONE && (
-          <div className="object-fit w-6 h-6 rounded-full overflow-hidden">
-            <img className="h-full object-fit" src={descriptionImage} />
+          <div className="w-6 h-6 rounded-full overflow-hidden">
+            <img className="h-full object-cover" src={descriptionImage} />
           </div>
         )}
 

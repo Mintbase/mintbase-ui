@@ -20,6 +20,16 @@ Info.args = {
     description: "300",
   },
 };
+
+export const InfoLoading = Template.bind({});
+InfoLoading.args = {
+  boxInfo: {
+    loading: true,
+    title: "Listed Tokens",
+    description: "300",
+  },
+};
+
 export const InfoWithIcon = Template.bind({});
 InfoWithIcon.args = {
   boxInfo: {
@@ -42,8 +52,8 @@ InfoWithAction.args = {
 export const InfoWithIconDescription = Template.bind({});
 InfoWithIconDescription.args = {
   boxInfo: {
-    title: "Info with action",
-    description: "Click me",
+    title: "Info with Icon Description",
+    description: "Icon Description",
     descriptionIcon: EIconName.IMAGE,
   },
 };
@@ -51,8 +61,8 @@ InfoWithIconDescription.args = {
 export const InfoWithImage = Template.bind({});
 InfoWithImage.args = {
   boxInfo: {
-    title: "Info with action",
-    description: "Click me",
+    title: "Info with Image",
+    description: "Image Description",
     descriptionIcon: EIconName.NONE,
     descriptionImage:
       "https://coldcdn.com/api/cdn/bronil/JXl58b_p9iYzeFutFC5GcDCjsxppyFt5rRkQt4Su4LU",
