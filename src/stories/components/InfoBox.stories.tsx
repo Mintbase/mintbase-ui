@@ -15,38 +15,46 @@ const Template: ComponentStory<typeof InfoBox> = (args) => (
 
 export const Info = Template.bind({});
 Info.args = {
-  title: "Listed Tokens",
-  description: "300",
+  boxInfo: {
+    title: "Listed Tokens",
+    description: "300",
+  },
 };
 export const InfoWithIcon = Template.bind({});
 InfoWithIcon.args = {
-  title: "Info with icon",
-  description: "300",
-  upperIcon: EIconName.INFO,
+  boxInfo: {
+    title: "Info with icon",
+    description: "300",
+    upperIcon: EIconName.INFO,
+  },
 };
 
 export const InfoWithAction = Template.bind({});
 InfoWithAction.args = {
-  title: "Info with action",
-  description: "Click me",
-  upperIcon: EIconName.INFO,
-  handleDescriptionClick: () => console.log("clicked"),
+  boxInfo: {
+    title: "Info with action",
+    description: "Click me",
+    upperIcon: EIconName.INFO,
+    handleDescriptionClick: () => console.log("clicked"),
+  },
 };
 
 export const InfoWithIconDescription = Template.bind({});
 InfoWithIconDescription.args = {
-  title: "Info with action",
-  description: "Click me",
-  descriptionIcon: EIconName.IMAGE,
-  handleDescriptionClick: () => console.log("clicked"),
+  boxInfo: {
+    title: "Info with action",
+    description: "Click me",
+    descriptionIcon: EIconName.IMAGE,
+  },
 };
 
 export const InfoWithImage = Template.bind({});
 InfoWithImage.args = {
-  title: "Info with action",
-  description: "Click me",
-  descriptionIcon: EIconName.NONE,
-  descriptionImage:
-    "https://coldcdn.com/api/cdn/bronil/JXl58b_p9iYzeFutFC5GcDCjsxppyFt5rRkQt4Su4LU",
-  handleDescriptionClick: () => console.log("clicked"),
+  boxInfo: {
+    title: "Info with action",
+    description: "Click me",
+    descriptionIcon: EIconName.NONE,
+    descriptionImage:
+      "https://coldcdn.com/api/cdn/bronil/JXl58b_p9iYzeFutFC5GcDCjsxppyFt5rRkQt4Su4LU",
+  },
 };
