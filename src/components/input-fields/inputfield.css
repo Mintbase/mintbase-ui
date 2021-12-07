@@ -7,7 +7,7 @@
 }
 
 .default {
-  @apply bg-gray-100 hover:bg-blue-300-15 dark:bg-gray-900 dark:hover:bg-mb-blackblue focus-within:ring-1;
+  @apply bg-gray-100 hover:bg-blue-300-15 dark:bg-gray-900 dark:hover:bg-mb-blackblue focus-within:ring-1 transition-all duration-500;
 }
 
 .input-wrapper.empty {
@@ -24,12 +24,15 @@
 
 .input-wrapper.big {
   @apply p-16;
+  max-height: 48px;
 }
 
 .input-wrapper.medium {
   @apply p-12;
+  max-height: 40px;
 }
 
 .input-wrapper.small {
   @apply p-10;
+  max-height: 34px;
 }
