@@ -34,14 +34,14 @@ const InfoBox = ({ boxInfo }: { boxInfo: TInfoBox }) => {
 
   if (loading) return <LoadingInfoBox size={size} />;
 
-  const getDescriptionFont = (size: string, isBigDescription: boolean) => {
+  const getDescriptionFont = () => {
     if (size === "small") {
       return isBigDescription ? "big-p" : "small-p";
     }
     return isBigDescription ? "sub-p" : "big-p";
   };
 
-  const getTitleFont = (size: string) => {
+  const getTitleFont = () => {
     if (size === "small") {
       return "big-cap";
     }
@@ -53,9 +53,7 @@ const InfoBox = ({ boxInfo }: { boxInfo: TInfoBox }) => {
       <div
         className={`flex justify-between items-center title-wrapper ${size} relative`}
       >
-        <div
-          className={`${getTitleFont(size)} text-gray-700 dark:text-gray-300`}
-        >
+        <div className={`${getTitleFont()} text-gray-700 dark:text-gray-300`}>
           {title}
         </div>
 
@@ -88,7 +86,7 @@ const InfoBox = ({ boxInfo }: { boxInfo: TInfoBox }) => {
         {description && (
           <div>
             <div
-              className={`${getDescriptionFont(size, isBigDescription)} ${
+              className={`${getDescriptionFont()} ${
                 handleDescriptionClick
                   ? "text-blue-300 dark:text-blue-100 cursor-pointer"
                   : "text-black dark:text-white"
