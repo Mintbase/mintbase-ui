@@ -3,7 +3,23 @@ import { ESize } from "../../constants/properties";
 import Icon from "../icon/Icon";
 import "./infobox.css";
 
+const LoadingInfoBox = ({ size }: { size: ESize }) => {
+  return (
+    <div className={`info-card ${size}`}>
+      <div
+        className={`flex justify-between items-center title-wrapper ${size} relative animate-pulse`}
+      >
+        <div className="h-4 w-16 bg-gray-600 rounded"></div>
+      </div>
+      <div className="flex space-x-12 items-center animate-pulse">
+        <div className="h-6 w-32 rounded bg-gray-600"></div>
+      </div>
+    </div>
+  );
+};
+
 const InfoBox = ({
+  loading = false,
   title,
   description,
   upperIcon = EIconName.NONE,
@@ -13,6 +29,7 @@ const InfoBox = ({
   size = ESize.MEDIUM,
   handleDescriptionClick,
 }: {
+  loading: boolean;
   title: string;
   description?: string;
   upperIcon?: EIconName;
@@ -22,6 +39,8 @@ const InfoBox = ({
   size?: ESize;
   handleDescriptionClick?: () => void;
 }) => {
+  if (loading) return <LoadingInfoBox size={size} />;
+
   const getDescriptionFont = (size: string, isBigDescription: boolean) => {
     if (size === "small") {
       return isBigDescription ? "big-p" : "small-p";
