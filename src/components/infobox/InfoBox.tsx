@@ -1,5 +1,6 @@
 import { EIconName } from "../../constants/icons";
 import { ESize } from "../../constants/properties";
+import { TInfoBox } from "../../types/infobox.type";
 import Icon from "../icon/Icon";
 import "./infobox.css";
 
@@ -18,27 +19,19 @@ const LoadingInfoBox = ({ size }: { size: ESize }) => {
   );
 };
 
-const InfoBox = ({
-  loading = false,
-  title,
-  description,
-  upperIcon = EIconName.NONE,
-  isBigDescription = true,
-  descriptionIcon = EIconName.NONE,
-  descriptionImage,
-  size = ESize.MEDIUM,
-  handleDescriptionClick,
-}: {
-  loading: boolean;
-  title: string;
-  description?: string;
-  upperIcon?: EIconName;
-  descriptionIcon?: EIconName;
-  descriptionImage?: string;
-  isBigDescription?: boolean;
-  size?: ESize;
-  handleDescriptionClick?: () => void;
-}) => {
+const InfoBox = ({ boxInfo }: { boxInfo: TInfoBox }) => {
+  const {
+    loading = false,
+    title,
+    description,
+    descriptionIcon = EIconName.NONE,
+    descriptionImage,
+    handleDescriptionClick,
+    upperIcon = EIconName.NONE,
+    isBigDescription = true,
+    size = ESize.MEDIUM,
+  } = boxInfo;
+
   if (loading) return <LoadingInfoBox size={size} />;
 
   const getDescriptionFont = (size: string, isBigDescription: boolean) => {
