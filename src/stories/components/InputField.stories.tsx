@@ -32,7 +32,7 @@ Input.args = {
   placeholder: "Placeholder",
   type: "text",
   required: true,
-  controlStatus: EControlStatus.EMPTY,
+  controlStatus: EControlStatus.NORMAL,
   inputSize: ESize.MEDIUM,
   onChange: (event: any) => {
     console.log(event.target.value);
