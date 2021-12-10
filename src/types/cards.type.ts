@@ -1,4 +1,5 @@
 import { EIconName } from "../constants/icons";
+import { ESize } from "../constants/properties";
 
 export type TThingCard = {
   upperLeftIcon?: EIconName;
@@ -21,4 +22,16 @@ export type TSmallCard = {
   centerElement: JSX.Element;
   title: string;
   onCardClick?: () => void;
+};
+
+export type TInfoCard = {
+  loading?: boolean;
+  title: string;
+  description?: string;
+  upperIcon?: EIconName;
+  descriptionIcon?: EIconName;
+  descriptionImage?: string;
+  isBigDescription?: boolean;
+  size?: ESize;
+  handleDescriptionClick?: () => void;
 };

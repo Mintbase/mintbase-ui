@@ -1,16 +1,16 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import React from "react";
-import InfoBox from "../../components/infobox/InfoBox";
+import InfoCard from "../../components/cards/info/InfoCard";
 import { EIconName } from "../../constants/icons";
 
 export default {
-  title: "Components/InfoBox",
-  component: InfoBox,
+  title: "Components/Cards/InfoCard",
+  component: InfoCard,
   argTypes: {},
-} as ComponentMeta<typeof InfoBox>;
+} as ComponentMeta<typeof InfoCard>;
 
-const Template: ComponentStory<typeof InfoBox> = (args) => (
-  <InfoBox {...args} />
+const Template: ComponentStory<typeof InfoCard> = (args) => (
+  <InfoCard {...args} />
 );
 
 export const Info = Template.bind({});
