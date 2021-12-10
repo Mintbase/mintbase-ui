@@ -1,8 +1,8 @@
-import { EIconName } from "../../constants/icons";
-import { ESize } from "../../constants/properties";
-import { TInfoBox } from "../../types/infobox.type";
-import Icon from "../icon/Icon";
-import "./infobox.css";
+import { EIconName } from "../../../constants/icons";
+import { ESize } from "../../../constants/properties";
+import { TInfoCard } from "../../../types/cards.type";
+import Icon from "../../icon/Icon";
+import "./infocard.css";
 
 const LoadingInfoBox = ({ size }: { size: ESize }) => {
   return (
@@ -19,7 +19,7 @@ const LoadingInfoBox = ({ size }: { size: ESize }) => {
   );
 };
 
-const InfoBox = ({ boxInfo }: { boxInfo: TInfoBox }) => {
+const InfoCard = ({ boxInfo }: { boxInfo: TInfoCard }) => {
   const {
     loading = false,
     title,
@@ -102,4 +102,4 @@ const InfoBox = ({ boxInfo }: { boxInfo: TInfoBox }) => {
   );
 };
 
-export default InfoBox;
+export default InfoCard;
