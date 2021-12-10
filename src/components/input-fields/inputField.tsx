@@ -28,12 +28,21 @@ const InputField = ({
     return inputSize === "big" ? "24px" : "20px";
   };
 
+  const getLabelFontType = () => {
+    switch (inputSize) {
+      case "big":
+        return "med-p";
+      case "medium":
+        return "small-p";
+      case "small":
+        return "big-cap";
+    }
+  };
+
   return (
     <>
       {label && (
-        <label
-          className={`block mb-8 dark:text-white ${getFontType(inputSize)}`}
-        >
+        <label className={`block mb-8 dark:text-white ${getLabelFontType()}`}>
           {label}{" "}
           {props.required && (
             <span className="text-error-300 dark: text-error-100">*</span>
