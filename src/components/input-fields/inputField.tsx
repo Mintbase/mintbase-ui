@@ -5,7 +5,7 @@ import Icon from "../icon/Icon";
 import "./inputfield.css";
 
 export enum EControlStatus {
-  EMPTY = "empty",
+  NORMAL = "normal",
   VALID = "valid",
   INVALID = "invalid",
 }
@@ -20,7 +20,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 const InputField = ({
   label = "",
   hasIcon,
-  controlStatus = EControlStatus.EMPTY,
+  controlStatus = EControlStatus.NORMAL,
   inputSize = ESize.MEDIUM,
   ...props
 }: InputProps) => {
