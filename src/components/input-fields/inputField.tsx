@@ -45,7 +45,7 @@ const InputField = ({
         <label className={`block mb-8 dark:text-white ${getLabelFontType()}`}>
           {label}{" "}
           {props.required && (
-            <span className="text-error-300 dark: text-error-100">*</span>
+            <span className="text-error-300 dark:text-error-100">*</span>
           )}
         </label>
       )}
