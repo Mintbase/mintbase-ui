@@ -1,16 +1,19 @@
-import { useState } from "react";
+import {
+  ButtonHTMLAttributes,
+  ReactChild,
+  ReactFragment,
+  ReactPortal,
+  useState,
+} from "react";
 import { EIconName } from "../../constants/icons";
 import Icon from "../icon/Icon";
 
-const Accordion = ({
-  title,
-  hasIcon,
-  content,
-}: {
+interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
   title: string;
   hasIcon?: boolean;
-  content: JSX.Element;
-}) => {
+}
+
+const Accordion = (props: AccordionProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const toggle = () => {
     setIsExpanded(!isExpanded);
@@ -18,10 +21,10 @@ const Accordion = ({
   return (
     <main className="rounded dark:bg-gray-850 cursor-pointer dark:text-white">
       <header
-        className="flex justify-between items-center p-24"
+        className="flex justify-between items-center p-24 border-b border-gray-150 dark:border-gray-700"
         onClick={toggle}
       >
-        <div>{title}</div>
+        <div>{props.title}</div>
         <Icon
           name={
             isExpanded
@@ -33,11 +36,7 @@ const Accordion = ({
           darkColor="white"
         ></Icon>
       </header>
-      {isExpanded && (
-        <section className="p-24 border-t border-gray-150 dark:border-gray-700">
-          {content}
-        </section>
-      )}
+      {isExpanded && <section className="p-24">{props.children}</section>}
     </main>
   );
 };
