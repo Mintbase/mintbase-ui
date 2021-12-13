@@ -4,7 +4,7 @@ import Icon from "../icon/Icon";
 
 interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
   title: string;
-  hasIcon?: boolean;
+  hasInfoIcon?: boolean;
 }
 
 const Accordion = (props: AccordionProps) => {
@@ -19,16 +19,26 @@ const Accordion = (props: AccordionProps) => {
         onClick={toggle}
       >
         <div>{props.title}</div>
-        <Icon
-          name={
-            isExpanded
-              ? EIconName.ARROW_EXPAND_MORE
-              : EIconName.ARROW_EXPAND_LESS
-          }
-          size="20px"
-          color="black"
-          darkColor="white"
-        ></Icon>
+        <div className="space-x-24 flex">
+          {props.hasInfoIcon && (
+            <Icon
+              name={EIconName.INFO}
+              size="20px"
+              color="blue-300"
+              darkColor="blue-100"
+            />
+          )}
+          <Icon
+            name={
+              isExpanded
+                ? EIconName.ARROW_EXPAND_MORE
+                : EIconName.ARROW_EXPAND_LESS
+            }
+            size="20px"
+            color="black"
+            darkColor="white"
+          />
+        </div>
       </header>
       {isExpanded && <section className="p-24">{props.children}</section>}
     </main>
