@@ -34,7 +34,7 @@ const Group = ({ children }) => {
 
 const Header = ({ logoUrl }) => {
   return (
-    <div className="bg-gray-800 flex justify-around items-center p-10">
+    <div className="bg-gray-850 flex justify-around items-center p-10 border-b border-solid border-gray-800">
       <Group>
         <Logo src={logoUrl} />
         <SearchBar />
