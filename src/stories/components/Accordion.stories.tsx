@@ -14,5 +14,6 @@ const Template: ComponentStory<typeof Accordion> = (args) => (
 
 export const Accordions = Template.bind({});
 Accordions.args = {
-  title: "Accounts",
+  title: "Header Title",
+  content: <p>This is the description.</p>,
 };
