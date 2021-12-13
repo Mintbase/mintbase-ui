@@ -25,6 +25,8 @@ export enum EIconName {
   ARROW_RIGHT_BIG = "arrow_forward_ios",
   ARROW_LEFT_SMALL = "navigate_before",
   ARROW_RIGHT_SMALL = "navigate_next",
+  ARROW_EXPAND_MORE = "expand_more",
+  ARROW_EXPAND_LESS = "expand_less",
   OPEN_NEW_TAB = "launch",
   LINK = "link",
   UNLINK = "link_off",
