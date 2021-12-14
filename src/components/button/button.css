@@ -1,0 +1,62 @@
+/* Buttons */
+
+.button.big {
+  /* @apply big-p; */
+  padding: 12px 52px;
+  min-width: 145px;
+  min-height: 42px;
+}
+
+.button.medium {
+  /* @apply med-p; */
+  padding: 8px 32px;
+  min-width: 100px;
+  min-height: 32px;
+}
+
+.button.small {
+  /* @apply small-p; */
+  padding: 6px 24px;
+  min-width: 80px;
+  min-height: 26px;
+}
+
+.button.primary {
+  @apply rounded dark:bg-white dark:text-black bg-black text-white transition-all duration-500;
+}
+
+.button.primary:not(.disabled):not(.loading):focus {
+  @apply ring-2 ring-blue-300-35 dark:ring-blue-100-35 dark:bg-blue-100 bg-blue-300;
+}
+
+.button.primary.active {
+  @apply hover:bg-blue-300 dark:hover:bg-blue-100;
+}
+
+.button.primary.disabled {
+  @apply bg-gray-200 dark:bg-gray-700 dark:text-gray-300 text-gray-700 cursor-not-allowed;
+}
+
+.button.primary.caution {
+  @apply dark:bg-error-100 bg-error-300;
+}
+
+.button.secondary {
+  @apply rounded ring-1 dark:text-white dark:ring-white dark:ring-white bg-transparent text-black ring-black transition-all duration-500;
+}
+
+.button.secondary:not(.disabled):not(.loading):focus {
+  @apply ring-2 ring-blue-300-35 bg-blue-300-15 dark:bg-blue-100-15;
+}
+
+.button.secondary.active {
+  @apply dark:hover:bg-blue-100-15 hover:bg-blue-300-15;
+}
+
+.button.secondary.disabled {
+  @apply bg-transparent text-gray-400 cursor-not-allowed ring-gray-400;
+}
+
+.button.secondary.caution {
+  @apply bg-transparent text-error-300 ring-error-300 dark:text-error-100 dark:ring-error-100;
+}
