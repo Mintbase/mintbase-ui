@@ -1,18 +1,20 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { Action } from "../../components";
+import MbAction from "../../components/action/Action";
 import { ESize, EState } from "../../constants/properties";
 
 export default {
-  title: "Components/Button",
-  component: Action,
+  title: "Components/Action",
+  component: MbAction,
   argTypes: {},
-} as ComponentMeta<typeof Action>;
+} as ComponentMeta<typeof MbAction>;
 
-const Template: ComponentStory<typeof Action> = (args) => <Action {...args} />;
+const Template: ComponentStory<typeof MbAction> = (args) => (
+  <MbAction {...args} />
+);
 
-export const Actions = Template.bind({});
-Actions.args = {
-  label: "See Transactions",
+export const Action = Template.bind({});
+Action.args = {
+  label: "See TransMbActions",
   state: EState.ACTIVE,
   size: ESize.MEDIUM,
 };
