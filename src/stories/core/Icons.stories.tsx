@@ -11,7 +11,7 @@ export const Icons = () => (
       <p className="heading-130 mb-8">Icons</p>
       <p className="p-med-90 mb-12">
         how to use:{" "}
-        {`<Icon name={EIconName.[name]} color="color-name" size="sizepx"/>`}
+        {`<MbIcon name={EIconName.[name]} color="color-name" size="sizepx"/>`}
       </p>
     </div>
     <div className="w-full md:w-3/4 m-auto">
