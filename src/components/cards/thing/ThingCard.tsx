@@ -56,17 +56,27 @@ const ThingCard = ({ loading = false, cardInfo }: CardProps) => {
       <div className="flex flex-row justify-between items-center text-black dark:text-white mb-12">
         <div className="flex space-x-8 items-center">
           <div className="flex" onClick={onUpperLeftClick}>
-            <Icon name={upperLeftIcon} size="20px" color="black" darkColor="white" />
+            <Icon
+              name={upperLeftIcon}
+              size="20px"
+              color="black"
+              darkColor="white"
+            />
           </div>
           <p
-            className="small-p text-gray-700 dark:text-gray-300"
+            className="p-small-90 text-gray-700 dark:text-gray-300"
             style={{ marginTop: "4px" }}
           >
             {upperLeftText}
           </p>
         </div>
         <div className="flex" onClick={onUpperRightClick}>
-          <Icon name={upperRightIcon} size="24px" color="black" darkColor="white" />
+          <Icon
+            name={upperRightIcon}
+            size="24px"
+            color="black"
+            darkColor="white"
+          />
         </div>
       </div>
       <div className="flex flex-col justify-center items-center thing-card-image ">
@@ -84,8 +94,8 @@ const ThingCard = ({ loading = false, cardInfo }: CardProps) => {
         </div>
       </div>
       <div className="flex flex-row justify-between text-black dark:text-white mt-12">
-        <div className="big-p w-10/12">{midLeftText}</div>
-        <div className="big-p">{midRightText}</div>
+        <div className="p-big-90 w-10/12">{midLeftText}</div>
+        <div className="p-big-90">{midRightText}</div>
       </div>
       <div className="flex flex-row justify-between text-gray-200 mt-12">
         <div
@@ -94,8 +104,8 @@ const ThingCard = ({ loading = false, cardInfo }: CardProps) => {
         >
           <img className="h-full object-cover" src={botLeftImage} />
         </div>
-        <div className="med-p flex flex-row items-center text-black dark:text-white space-x-8">
-          <div className="small-p w-8/12">{botRightText}</div>
+        <div className="p-med-90 flex flex-row items-center text-black dark:text-white space-x-8">
+          <div className="p-small-90 w-8/12">{botRightText}</div>
           <div>
             <Icon name={botRightIcon} size="12px" color="mb-gray-500" />
           </div>

@@ -8,8 +8,8 @@ export default {
 export const Icons = () => (
   <section>
     <div className="w-full md:w-3/4">
-      <p className="heading-bold mb-8">Icons</p>
-      <p className="med-p mb-12">
+      <p className="heading-130 mb-8">Icons</p>
+      <p className="p-med-90 mb-12">
         how to use:{" "}
         {`<Icon name={EIconName.[name]} color="color-name" size="sizepx"/>`}
       </p>
@@ -24,7 +24,7 @@ export const Icons = () => (
             <Icon name={name} color="mb-blackblue" size="40px" />
           </div>
           <div className="bg-gray-200 py-8">
-            <p className="big-cap">{icon}</p>
+            <p className="cap-big-90">{icon}</p>
           </div>
         </div>
       ))}

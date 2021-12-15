@@ -1,10 +1,10 @@
 export const getFontType = (size: string) => {
   switch (size) {
     case "big":
-      return "big-p";
+      return "p-big-90";
     case "medium":
-      return "med-p";
+      return "p-med-90";
     case "small":
-      return "small-p";
+      return "p-small-90";
   }
 };

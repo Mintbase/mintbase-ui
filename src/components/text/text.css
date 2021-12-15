@@ -1,89 +1,89 @@
 /* Typography */
-.heading-bold {
+.heading-130 {
   @apply font-authentic-sans-130 text-29 md:text-35 leading-34 md:leading-38;
 }
 
-.heading {
+.heading-90 {
   @apply font-authentic-sans-90 text-29 md:text-35 leading-34 md:leading-38;
 }
 
-.h1-bold {
+.h1-130 {
   @apply font-authentic-sans-130 text-24 md:text-29 leading-28 md:leading-32;
 }
 
-.h1 {
+.h1-90 {
   @apply font-authentic-sans-90 text-24 md:text-29 leading-28 md:leading-32;
 }
 
-.h2-bold {
+.h2-130 {
   @apply font-authentic-sans-130 text-20 md:text-24 leading-22 md:leading-24;
 }
 
-.h2 {
+.h2-90 {
   @apply font-authentic-sans-90 text-20 md:text-24 leading-22 md:leading-24;
 }
 
-.h3-bold {
+.h3-130 {
   @apply font-authentic-sans-130 text-17 md:text-20 leading-18 md:leading-22;
 }
 
-.h3 {
+.h3-90 {
   @apply font-authentic-sans-90 text-17 md:text-20 leading-18 md:leading-22;
 }
 
-.sub-p-bold {
+.p-sub-130 {
   @apply font-authentic-sans-130 text-18 leading-22;
 }
 
-.sub-p {
+.p-sub-90 {
   @apply font-authentic-sans-90 text-18 leading-22;
 }
 
-.big-p-bold {
+.p-big-130 {
   @apply font-authentic-sans-130 text-16 leading-18;
 }
 
-.big-p {
+.p-big-90 {
   @apply font-authentic-sans-90 text-16 leading-18;
 }
 
-.med-p-bold {
+.p-med-130 {
   @apply font-authentic-sans-130 text-14 leading-16;
 }
 
-.med-p {
+.p-med-90 {
   @apply font-authentic-sans-90 text-14 leading-16;
 }
 
-.small-p-bold {
+.p-small-130 {
   @apply font-authentic-sans-130 text-12 leading-14;
 }
 
-.small-p {
+.p-small-90 {
   @apply font-authentic-sans-90 text-12 leading-14;
 }
 
-.big-cap-bold {
+.cap-big-130 {
   @apply font-authentic-sans-130 text-10 leading-12;
 }
 
-.big-cap {
+.cap-big-90 {
   @apply font-authentic-sans-90 text-10 leading-12;
 }
 
-.med-cap-bold {
+.cap-med-130 {
   @apply font-authentic-sans-130 text-9 leading-11;
 }
 
-.med-cap {
+.cap-med-90 {
   @apply font-authentic-sans-90 text-9 leading-11;
 }
 
-.small-cap-bold {
+.cap-small-130 {
   @apply font-authentic-sans-130 text-9 leading-11;
 }
 
-.small-cap {
+.cap-small-90 {
   @apply font-authentic-sans-90 text-9 leading-11;
 }
 

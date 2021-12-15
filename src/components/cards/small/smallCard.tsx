@@ -39,7 +39,7 @@ const SmallCard = ({
         {centerElement}
       </div>
       <div className="text-center text-black dark:text-white mt-12">
-        <div className="big-p">{title}</div>
+        <div className="p-big-90">{title}</div>
       </div>
     </div>
   );
