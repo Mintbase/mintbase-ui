@@ -25,7 +25,7 @@ const LoadingCard = ({ cardType }: { cardType: string }) => {
   );
 };
 
-const SmallCard = ({
+const MbSmallCard = ({
   loading = false,
   cardType = ESmallCardType.STORE,
   card,
@@ -45,4 +45,4 @@ const SmallCard = ({
   );
 };
 
-export default SmallCard;
+export default MbSmallCard;

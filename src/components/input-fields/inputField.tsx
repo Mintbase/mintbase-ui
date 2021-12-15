@@ -1,7 +1,7 @@
 import { getFontType } from "../../constants/fontType";
 import { EIconName } from "../../constants/icons";
 import { ESize } from "../../constants/properties";
-import Icon from "../icon/Icon";
+import MbIcon from "../icon/Icon";
 import "./inputfield.css";
 
 export enum EControlStatus {
@@ -17,7 +17,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   inputSize: ESize;
 }
 
-const InputField = ({
+const MbInput = ({
   label = "",
   hasIcon,
   controlStatus = EControlStatus.NORMAL,
@@ -67,21 +67,21 @@ const InputField = ({
         {hasIcon && (
           <div className="flex">
             {controlStatus === EControlStatus.VALID ? (
-              <Icon
+              <MbIcon
                 name={EIconName.SUCCESS}
                 size={getIconSize()}
                 color="success-300"
                 darkColor="success-100"
               />
             ) : controlStatus === EControlStatus.INVALID ? (
-              <Icon
+              <MbIcon
                 name={EIconName.ERROR}
                 size={getIconSize()}
                 color="error-300 "
                 darkColor="error-100"
               />
             ) : (
-              <Icon
+              <MbIcon
                 name={EIconName.INFO}
                 size={getIconSize()}
                 color="blue-300"
@@ -95,4 +95,4 @@ const InputField = ({
   );
 };
 
-export default InputField;
+export default MbInput;

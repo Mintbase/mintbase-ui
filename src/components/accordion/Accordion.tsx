@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { EIconName } from "../../constants/icons";
-import Icon from "../icon/Icon";
+import MbIcon from "../icon/Icon";
 
 interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
   title: string;
   hasInfoIcon?: boolean;
 }
 
-const Accordion = (props: AccordionProps) => {
+const MbAccordion = (props: AccordionProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const toggle = () => {
     setIsExpanded(!isExpanded);
@@ -21,14 +21,14 @@ const Accordion = (props: AccordionProps) => {
         <div>{props.title}</div>
         <div className="space-x-24 flex">
           {props.hasInfoIcon && (
-            <Icon
+            <MbIcon
               name={EIconName.INFO}
               size="20px"
               color="blue-300"
               darkColor="blue-100"
             />
           )}
-          <Icon
+          <MbIcon
             name={
               isExpanded
                 ? EIconName.ARROW_EXPAND_MORE
@@ -45,4 +45,4 @@ const Accordion = (props: AccordionProps) => {
   );
 };
 
-export default Accordion;
+export default MbAccordion;

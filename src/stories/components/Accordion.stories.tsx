@@ -1,20 +1,19 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import Accordion from "../../components/accordion/Accordion";
-import { ESize, EState } from "../../constants/properties";
+import MbAccordion from "../../components/accordion/Accordion";
 
 export default {
   title: "Components/Accordion",
-  component: Accordion,
+  component: MbAccordion,
   argTypes: {},
-} as ComponentMeta<typeof Accordion>;
+} as ComponentMeta<typeof MbAccordion>;
 
-const Template: ComponentStory<typeof Accordion> = (args) => (
-  <Accordion {...args}>
+const Template: ComponentStory<typeof MbAccordion> = (args) => (
+  <MbAccordion {...args}>
     <p>This is the description.</p>
-  </Accordion>
+  </MbAccordion>
 );
 
-export const Accordions = Template.bind({});
-Accordions.args = {
+export const Accordion = Template.bind({});
+Accordion.args = {
   title: "Header Title",
 };

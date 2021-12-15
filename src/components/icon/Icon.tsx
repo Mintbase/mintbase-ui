@@ -15,7 +15,7 @@ const mintbaseIcons = [
   "mintbase",
 ];
 
-const Icon = ({
+const MbIcon = ({
   name,
   color = "mb-blackblue",
   darkColor,
@@ -57,4 +57,4 @@ const Icon = ({
   );
 };
 
-export default Icon;
+export default MbIcon;

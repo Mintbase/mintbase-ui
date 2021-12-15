@@ -1,15 +1,17 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import React from "react";
-import { Button } from "../../components";
+import MbButton from "../../components/button/Button";
 import { ESize, EState, EType } from "../../constants/properties";
 
 export default {
   title: "Components/Button",
-  component: Button,
+  component: MbButton,
   argTypes: {},
-} as ComponentMeta<typeof Button>;
+} as ComponentMeta<typeof MbButton>;
 
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+const Template: ComponentStory<typeof MbButton> = (args) => (
+  <MbButton {...args} />
+);
 
 export const Primary = Template.bind({});
 Primary.args = {

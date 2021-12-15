@@ -1,16 +1,16 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import React from "react";
-import ThingCard from "../../components/cards/thing/ThingCard";
+import MbThingCard from "../../components/cards/thing/ThingCard";
 import { EIconName } from "../../constants/icons";
 
 export default {
   title: "Components/Cards",
-  component: ThingCard,
+  component: MbThingCard,
   argTypes: {},
-} as ComponentMeta<typeof ThingCard>;
+} as ComponentMeta<typeof MbThingCard>;
 
-const Template: ComponentStory<typeof ThingCard> = (args) => (
-  <ThingCard {...args} />
+const Template: ComponentStory<typeof MbThingCard> = (args) => (
+  <MbThingCard {...args} />
 );
 
 export const Thing = Template.bind({});

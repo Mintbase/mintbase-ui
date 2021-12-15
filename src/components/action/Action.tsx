@@ -8,7 +8,7 @@ type ActionProps = {
   size?: ESize;
 };
 
-const Action = ({
+const MbAction = ({
   label = "",
   state = EState.ACTIVE,
   size = ESize.MEDIUM,
@@ -21,4 +21,4 @@ const Action = ({
   );
 };
 
-export default Action;
+export default MbAction;

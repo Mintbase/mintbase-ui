@@ -1,7 +1,7 @@
 import React from "react";
 import "./thingcard.css";
 import "./../cards.css";
-import Icon from "../../icon/Icon";
+import MbIcon from "../../icon/Icon";
 import { TThingCard } from "../../../types/cards.type";
 import { EIconName } from "../../../constants/icons";
 interface CardProps extends React.ComponentProps<"div"> {
@@ -33,7 +33,7 @@ const LoadingCard = () => {
   );
 };
 
-const ThingCard = ({ loading = false, cardInfo }: CardProps) => {
+const MbThingCard = ({ loading = false, cardInfo }: CardProps) => {
   if (loading) return <LoadingCard />;
   const {
     upperLeftIcon = EIconName.LIKE,
@@ -56,7 +56,7 @@ const ThingCard = ({ loading = false, cardInfo }: CardProps) => {
       <div className="flex flex-row justify-between items-center text-black dark:text-white mb-12">
         <div className="flex space-x-8 items-center">
           <div className="flex" onClick={onUpperLeftClick}>
-            <Icon
+            <MbIcon
               name={upperLeftIcon}
               size="20px"
               color="black"
@@ -71,7 +71,7 @@ const ThingCard = ({ loading = false, cardInfo }: CardProps) => {
           </p>
         </div>
         <div className="flex" onClick={onUpperRightClick}>
-          <Icon
+          <MbIcon
             name={upperRightIcon}
             size="24px"
             color="black"
@@ -86,7 +86,7 @@ const ThingCard = ({ loading = false, cardInfo }: CardProps) => {
         >
           {isCenterImage && (
             <div className="w-5 h-5 bg-black rounded-full absolute top-3 left-3 flex items-center justify-center">
-              <Icon name={EIconName.IMAGE} size="14px" color="white" />
+              <MbIcon name={EIconName.IMAGE} size="14px" color="white" />
             </div>
           )}
 
@@ -107,7 +107,7 @@ const ThingCard = ({ loading = false, cardInfo }: CardProps) => {
         <div className="p-med-90 flex flex-row items-center text-black dark:text-white space-x-8">
           <div className="p-small-90 w-8/12">{botRightText}</div>
           <div>
-            <Icon name={botRightIcon} size="12px" color="mb-gray-500" />
+            <MbIcon name={botRightIcon} size="12px" color="mb-gray-500" />
           </div>
         </div>
       </div>
@@ -115,4 +115,4 @@ const ThingCard = ({ loading = false, cardInfo }: CardProps) => {
   );
 };
 
-export default ThingCard;
+export default MbThingCard;

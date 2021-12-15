@@ -1,7 +1,7 @@
 import { EIconName } from "../../../constants/icons";
 import { ESize } from "../../../constants/properties";
 import { TInfoCard } from "../../../types/cards.type";
-import Icon from "../../icon/Icon";
+import MbIcon from "../../icon/Icon";
 import "./infocard.css";
 
 const LoadingInfoBox = ({ size }: { size: ESize }) => {
@@ -19,7 +19,7 @@ const LoadingInfoBox = ({ size }: { size: ESize }) => {
   );
 };
 
-const InfoCard = ({ boxInfo }: { boxInfo: TInfoCard }) => {
+const MbInfoCard = ({ boxInfo }: { boxInfo: TInfoCard }) => {
   const {
     loading = false,
     title,
@@ -59,23 +59,23 @@ const InfoCard = ({ boxInfo }: { boxInfo: TInfoCard }) => {
 
         {upperIcon !== EIconName.NONE && (
           <div className="absolute right-0 mt-4">
-            <Icon
+            <MbIcon
               name={upperIcon}
               size="20px"
               color="blue-300"
               darkColor="blue-100"
-            ></Icon>
+            ></MbIcon>
           </div>
         )}
       </div>
       <div className="flex space-x-12 items-center">
         {descriptionIcon !== EIconName.NONE && !descriptionImage && (
-          <Icon
+          <MbIcon
             name={descriptionIcon}
             size="24px"
             color="blue-300"
             darkColor="blue-100"
-          ></Icon>
+          ></MbIcon>
         )}
         {descriptionImage && descriptionIcon === EIconName.NONE && (
           <div className="w-6 h-6 rounded-full overflow-hidden">
@@ -102,4 +102,4 @@ const InfoCard = ({ boxInfo }: { boxInfo: TInfoCard }) => {
   );
 };
 
-export default InfoCard;
+export default MbInfoCard;
