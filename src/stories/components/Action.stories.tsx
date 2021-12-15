@@ -14,7 +14,7 @@ const Template: ComponentStory<typeof MbAction> = (args) => (
 
 export const Action = Template.bind({});
 Action.args = {
-  label: "See TransMbActions",
+  label: "See Transactions",
   state: EState.ACTIVE,
   size: ESize.MEDIUM,
 };
