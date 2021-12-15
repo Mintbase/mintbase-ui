@@ -36,16 +36,16 @@ const InfoCard = ({ boxInfo }: { boxInfo: TInfoCard }) => {
 
   const getDescriptionFont = () => {
     if (size === "small") {
-      return isBigDescription ? "big-p" : "small-p";
+      return isBigDescription ? "p-big-90" : "p-small-90";
     }
-    return isBigDescription ? "sub-p" : "big-p";
+    return isBigDescription ? "p-sub-90" : "p-big-90";
   };
 
   const getTitleFont = () => {
     if (size === "small") {
-      return "big-cap";
+      return "cap-big-90";
     }
-    return "small-p";
+    return "p-small-90";
   };
 
   return (
