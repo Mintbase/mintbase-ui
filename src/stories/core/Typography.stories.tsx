@@ -1,34 +1,89 @@
+import Text from "../../components/text/Text";
+
 export default {
   title: "Core/Typography",
 };
 
 export const Typography = () => (
   <section>
-    <p className="heading-bold mb-8">Typography</p>
-    <p className="small-p mb-12">font-family: Authentic Sans</p>
-    <p className="med-p mb-4">use [typoname] in the class</p>
-    <p className="heading-bold mb-2">heading-bold</p>
-    <p className="heading mb-2">heading</p>
-    <p className="h1-bold mb-2">h1-bold</p>
-    <p className="h1 mb-2">h1</p>
-    <p className="h2-bold mb-2">h2-bold</p>
-    <p className="h2 mb-2">h2</p>
-    <p className="h3-bold mb-2">h3-bold</p>
-    <p className="h3 mb-2">h3</p>
-    <p className="sub-p-bold mb-2">sub-p-bold</p>
-    <p className="sub-p mb-2">sub-p</p>
-    <p className="big-p-bold mb-2">big-p-bold</p>
-    <p className="big-p mb-2">big-p</p>
-    <p className="med-p-bold mb-2">med-p-bold</p>
-    <p className="med-p mb-2">med-p</p>
-    <p className="small-p-bold mb-2">small-p-bold</p>
-    <p className="small-p mb-2">small-p</p>
-    <p className="big-cap-bold mb-2">big-cap-bold</p>
-    <p className="big-cap mb-2">big-cap</p>
-    <p className="med-cap-bold mb-2">med-cap-bold</p>
-    <p className="med-cap mb-2">med-cap</p>
-    <p className="small-cap-bold mb-2">small-cap-bold</p>
-    <p className="small-cap mb-2">small-cap</p>
-    <p className="action-cap mb-2">action-cap</p>
+    <Text tag="heading-bold" className="mb-8">
+      Typography
+    </Text>
+    <Text tag="small-p" className="mb-12">
+      font-family: Authentic Sans
+    </Text>
+    <Text tag="med-p" className="mb-8 mt-8">
+      use the class in Text component:
+      {`<Text tag="[typoname]"></Text>`}
+    </Text>
+    <Text tag="heading-bold" className="mb-2">
+      heading-bold
+    </Text>
+    <Text tag="heading" className="mb-2">
+      heading
+    </Text>
+    <Text tag="h1-bold" className="mb-2">
+      h1-bold
+    </Text>
+    <Text tag="h1" className="mb-2">
+      h1
+    </Text>
+    <Text tag="h2-bold" className="mb-2">
+      h2-bold
+    </Text>
+    <Text tag="h2" className="mb-2">
+      h2
+    </Text>
+    <Text tag="h3-bold" className="mb-2">
+      h3-bold
+    </Text>
+    <Text tag="h3" className="mb-2">
+      h3
+    </Text>
+    <Text tag="sub-p-bold" className="mb-2">
+      sub-p-bold
+    </Text>
+    <Text tag="sub-p" className="mb-2">
+      sub-p
+    </Text>
+    <Text tag="big-p-bold" className="mb-2">
+      big-p-bold
+    </Text>
+    <Text tag="big-p" className="mb-2">
+      big-p
+    </Text>
+    <Text tag="med-p-bold" className="mb-2">
+      med-p-bold
+    </Text>
+    <Text tag="med-p" className="mb-2">
+      med-p
+    </Text>
+    <Text tag="small-p-bold" className="mb-2">
+      small-p-bold
+    </Text>
+    <Text tag="small-p" className="mb-2">
+      small-p
+    </Text>
+    <Text tag="big-cap-bold" className="mb-2">
+      big-cap-bold
+    </Text>
+    <Text tag="big-cap" className="mb-2">
+      big-cap
+    </Text>
+    <Text tag="med-cap-bold" className="mb-2">
+      med-cap-bold
+    </Text>
+    <Text tag="med-cap" className="mb-2">
+      med-cap
+    </Text>
+    <Text tag="small-cap-bold" className="mb-2">
+      small-cap-bold
+    </Text>
+    <Text tag="small-cap" className="mb-2">
+      small-cap
+    </Text>
+    <Text tag="action-cap" className="mb-2">
+      action-cap
+    </Text>
   </section>
 );
