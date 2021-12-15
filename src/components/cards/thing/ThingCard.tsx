@@ -1,10 +1,8 @@
-import { DocumentDuplicateIcon, HeartIcon } from "@heroicons/react/outline";
-import { DotsHorizontalIcon } from "@heroicons/react/solid";
 import React from "react";
-import { TThingCard } from "../../../types/cards.type";
 import "./thingcard.css";
 import "./../cards.css";
 import Icon from "../../icon/Icon";
+import { TThingCard } from "../../../types/cards.type";
 import { EIconName } from "../../../constants/icons";
 interface CardProps extends React.ComponentProps<"div"> {
   loading?: boolean;
@@ -58,7 +56,7 @@ const ThingCard = ({ loading = false, cardInfo }: CardProps) => {
       <div className="flex flex-row justify-between items-center text-black dark:text-white mb-12">
         <div className="flex space-x-8 items-center">
           <div className="flex" onClick={onUpperLeftClick}>
-            <Icon name={upperLeftIcon} size="20px" color="black" />
+            <Icon name={upperLeftIcon} size="20px" color="black" darkColor="white" />
           </div>
           <p
             className="small-p text-gray-700 dark:text-gray-300"
@@ -68,7 +66,7 @@ const ThingCard = ({ loading = false, cardInfo }: CardProps) => {
           </p>
         </div>
         <div className="flex" onClick={onUpperRightClick}>
-          <Icon name={upperRightIcon} size="24px" color="black" />
+          <Icon name={upperRightIcon} size="24px" color="black" darkColor="white" />
         </div>
       </div>
       <div className="flex flex-col justify-center items-center thing-card-image ">
