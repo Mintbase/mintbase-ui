@@ -1,23 +1,20 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import Tab from "../../components/tabs/Tab";
-import Tabs from "../../components/tabs/Tabs";
+import MbTab from "../../components/tabs/Tab";
+import MbTabs from "../../components/tabs/Tabs";
 
 export default {
   title: "Components/Tabs",
-  component: Tabs,
+  component: MbTabs,
   argTypes: {},
-} as ComponentMeta<typeof Tabs>;
+} as ComponentMeta<typeof MbTabs>;
 
-const Template: ComponentStory<typeof Tabs> = (args) => (
+const Template: ComponentStory<typeof MbTabs> = (args) => (
   <>
-    <Tabs {...args}>
-      <Tab title="Active auctions">List of active auctions</Tab>
-      <Tab title="Latest Listings">List of latest listings</Tab>
-    </Tabs>
+    <MbTabs {...args}>
+      <MbTab title="Active auctions">List of active auctions</MbTab>
+      <MbTab title="Latest Listings">List of latest listings</MbTab>
+    </MbTabs>
   </>
 );
 
-export const TabMb = Template.bind({});
-TabMb.args = {
-  className: "p-big-90",
-};
+export const Tabs = Template.bind({});

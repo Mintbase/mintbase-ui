@@ -4,7 +4,7 @@ interface TabProps extends React.HTMLAttributes<HTMLDivElement> {
   isActive?: boolean;
 }
 
-const Tab = (props: TabProps) => {
+const MbTab = (props: TabProps) => {
   return (
     <>
       <div className="flex">
@@ -16,4 +16,4 @@ const Tab = (props: TabProps) => {
   );
 };
 
-export default Tab;
+export default MbTab;
