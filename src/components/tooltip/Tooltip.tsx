@@ -24,7 +24,7 @@ const MbTooltip = ({
         backgroundColor="rgba(0,0,0,0.6)"
         arrowColor="transparent"
         getContent={() => {
-          return <span className="big-cap">{text}</span>;
+          return <span className="cap-big-90">{text}</span>;
         }}
       />
     </>
