@@ -1,4 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
+import Tab from "../../components/tabs/Tab";
 import Tabs from "../../components/tabs/Tabs";
 
 export default {
@@ -10,12 +11,12 @@ export default {
 const Template: ComponentStory<typeof Tabs> = (args) => (
   <>
     <Tabs {...args}>
-      <p>testing this</p>
+      <Tab>tes</Tab>
     </Tabs>
   </>
 );
 
-export const Tab = Template.bind({});
-Tab.args = {
+export const TabMb = Template.bind({});
+TabMb.args = {
   className: "p-big-90",
 };
