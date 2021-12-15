@@ -1,22 +1,19 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import Icon from "../../components/icon/Icon";
-import Text from "../../components/text/Text";
-import MbTooltip from "../../components/tooltip/Tooltip";
-import { EIconName } from "../../constants/icons";
+import MbText from "../../components/text/Text";
 
 export default {
   title: "Components/Text",
-  component: Text,
+  component: MbText,
   argTypes: {},
-} as ComponentMeta<typeof Text>;
+} as ComponentMeta<typeof MbText>;
 
-const Template: ComponentStory<typeof Text> = (args) => (
-  <Text {...args}>
-    This is your simple text. Change the tag to get different styles.
-  </Text>
+const Template: ComponentStory<typeof MbText> = (args) => (
+  <MbText {...args}>
+    This is your simple MbText. Change the tag to get different styles.
+  </MbText>
 );
 
-export const SimpleText = Template.bind({});
-SimpleText.args = {
+export const Text = Template.bind({});
+Text.args = {
   tag: "big-p",
 };
