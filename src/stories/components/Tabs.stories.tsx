@@ -11,7 +11,8 @@ export default {
 const Template: ComponentStory<typeof Tabs> = (args) => (
   <>
     <Tabs {...args}>
-      <Tab>tes</Tab>
+      <Tab title="Active auctions">List of active auctions</Tab>
+      <Tab title="Latest Listings">List of latest listings</Tab>
     </Tabs>
   </>
 );

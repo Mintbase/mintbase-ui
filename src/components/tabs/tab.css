@@ -1,0 +1,7 @@
+.tab {
+  @apply rounded text-blue-300 dark:text-blue-100 p-16 focus:ring-1 focus:ring-blue-300 dark:focus:ring-blue-100 focus:bg-blue-300-15 dark:focus:bg-blue-100-35 hover:bg-blue-300-15 dark:hover:bg-blue-100-35 cursor-pointer transition-all duration-500;
+}
+
+.tab.active {
+  @apply bg-mb-red-15 dark:bg-mb-red-35 focus:ring-mb-red text-mb-red;
+}
