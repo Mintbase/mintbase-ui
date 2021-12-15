@@ -1,13 +1,13 @@
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-import InputField, {
+import MbInput, {
   EControlStatus,
 } from "../../components/input-fields/inputField";
 import { ESize } from "../../constants/properties";
 
 export default {
-  title: "Components/Inputs",
-  component: InputField,
+  title: "Components/Input",
+  component: MbInput,
   argTypes: {
     controlStatus: {
       options: ["empty", "valid", "invalid"],
@@ -18,10 +18,10 @@ export default {
       control: { type: "radio" },
     },
   },
-} as ComponentMeta<typeof InputField>;
+} as ComponentMeta<typeof MbInput>;
 
-const Template: ComponentStory<typeof InputField> = (args) => (
-  <InputField {...args} />
+const Template: ComponentStory<typeof MbInput> = (args) => (
+  <MbInput {...args} />
 );
 
 export const Input = Template.bind({});

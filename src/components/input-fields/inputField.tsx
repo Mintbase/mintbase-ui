@@ -17,7 +17,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   inputSize: ESize;
 }
 
-const InputField = ({
+const MbInput = ({
   label = "",
   hasIcon,
   controlStatus = EControlStatus.NORMAL,
@@ -95,4 +95,4 @@ const InputField = ({
   );
 };
 
-export default InputField;
+export default MbInput;
