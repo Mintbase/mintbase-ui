@@ -7,7 +7,7 @@ interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
   hasInfoIcon?: boolean;
 }
 
-const Accordion = (props: AccordionProps) => {
+const MbAccordion = (props: AccordionProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const toggle = () => {
     setIsExpanded(!isExpanded);
@@ -45,4 +45,4 @@ const Accordion = (props: AccordionProps) => {
   );
 };
 
-export default Accordion;
+export default MbAccordion;
