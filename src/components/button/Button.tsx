@@ -39,7 +39,7 @@ const LoadingAnimation = ({
   </div>
 );
 
-const Button = ({
+const MbButton = ({
   label = "default",
   state = EState.ACTIVE,
   size = ESize.MEDIUM,
@@ -61,4 +61,4 @@ const Button = ({
   );
 };
 
-export default Button;
+export default MbButton;
