@@ -1,16 +1,16 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import React from "react";
-import SmallCard from "../../components/cards/small/smallCard";
+import MbSmallCard from "../../components/cards/small/smallCard";
 import { ESmallCardType } from "../../constants/properties";
 
 export default {
   title: "Components/Cards",
-  component: SmallCard,
+  component: MbSmallCard,
   argTypes: {},
-} as ComponentMeta<typeof SmallCard>;
+} as ComponentMeta<typeof MbSmallCard>;
 
-const Template: ComponentStory<typeof SmallCard> = (args) => (
-  <SmallCard {...args} />
+const Template: ComponentStory<typeof MbSmallCard> = (args) => (
+  <MbSmallCard {...args} />
 );
 
 export const Profile = Template.bind({});
