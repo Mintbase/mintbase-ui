@@ -5,7 +5,9 @@ interface TextProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 const Text = (props: TextProps) => {
-  return <div className={`${props.tag}`}>{props.children}</div>;
+  return (
+    <div className={`${props.tag} ${props.className}`}>{props.children}</div>
+  );
 };
 
 export default Text;
