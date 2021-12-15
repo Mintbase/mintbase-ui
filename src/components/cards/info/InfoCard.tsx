@@ -19,7 +19,7 @@ const LoadingInfoBox = ({ size }: { size: ESize }) => {
   );
 };
 
-const InfoCard = ({ boxInfo }: { boxInfo: TInfoCard }) => {
+const MbInfoCard = ({ boxInfo }: { boxInfo: TInfoCard }) => {
   const {
     loading = false,
     title,
@@ -102,4 +102,4 @@ const InfoCard = ({ boxInfo }: { boxInfo: TInfoCard }) => {
   );
 };
 
-export default InfoCard;
+export default MbInfoCard;
