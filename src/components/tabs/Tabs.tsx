@@ -1,18 +1,16 @@
-import React, { Children, HTMLAttributes } from "react";
-
-const Tab = () => {};
+import React from "react";
 
 const Tabs = (props: React.HTMLAttributes<HTMLDivElement>) => {
   if (!props.children) return <></>;
+  const allTabs = React.Children.map(props.children, (child: any) => child);
+  const validtabs = allTabs?.filter((tab) => tab.type.name === "Tab");
 
-  {
-    React.Children.map(props.children, (child: any) =>
-      console.log(props.children, child?.type)
-    );
-  }
-
-  // const tabs = React.Children.map(fn: (child: any)  => child.type.displayName === 'Tab');
-  return <></>;
+  return (
+    <>
+      {validtabs?.length &&
+        validtabs.map((tab, index) => <div key={index}>{tab}</div>)}
+    </>
+  );
 };
 
 export default Tabs;
