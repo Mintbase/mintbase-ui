@@ -15,5 +15,5 @@ const Template: ComponentStory<typeof MbText> = (args) => (
 
 export const Text = Template.bind({});
 Text.args = {
-  tag: "big-p",
+  className: "big-p",
 };
