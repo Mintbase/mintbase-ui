@@ -9,7 +9,7 @@ export default {
 
 const Template: ComponentStory<typeof MbText> = (args) => (
   <MbText {...args}>
-    This is your simple MbText. Change the tag to get different styles.
+    This is your simple Text. Change the tag to get different styles.
   </MbText>
 );
 
