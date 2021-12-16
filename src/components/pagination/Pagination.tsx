@@ -20,7 +20,16 @@ const MbPagination = (props: PaginationProps) => {
   return (
     <div className="flex flex-col ">
       <div className="flex items-center justify-center">
-        <div className="cursor-pointer flex items-center">
+        <div
+          className={`${
+            current === 1 ? "cursor-not-allowed" : "cursor-pointer"
+          } flex items-center`}
+          onClick={() => {
+            if (current > 1) {
+              setCurrent(current - 1);
+            }
+          }}
+        >
           <MbIcon
             size="24px"
             name={EIconName.ARROW_LEFT_SMALL}
@@ -43,7 +52,18 @@ const MbPagination = (props: PaginationProps) => {
             ))}
           </ul>
         )}
-        <div className="cursor-pointer flex items-center">
+        <div
+          className={`${
+            current === props.totalPages
+              ? "cursor-not-allowed"
+              : "cursor-pointer"
+          } flex items-center`}
+          onClick={() => {
+            if (current < props.totalPages) {
+              setCurrent(current + 1);
+            }
+          }}
+        >
           <MbIcon
             size="24px"
             name={EIconName.ARROW_RIGHT_SMALL}
