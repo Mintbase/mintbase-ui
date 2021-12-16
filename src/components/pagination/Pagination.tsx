@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { EIconName } from "../../constants/icons";
 import MbIcon from "../icon/Icon";
+import "./pagination.css";
 
 interface PaginationProps {
   totalPages: number;
@@ -10,32 +11,48 @@ interface PaginationProps {
 
 const MbPagination = (props: PaginationProps) => {
   const [pages, setPages] = useState<number[]>([]);
+  const [current, setCurrent] = useState<number>(1);
 
   useEffect(() => {
     setPages([...Array(props.totalPages).keys()].map((i) => i + 1));
   }, []);
+
   return (
     <>
       <div className="flex items-center">
-        <MbIcon
-          size="24px"
-          name={EIconName.ARROW_LEFT_SMALL}
-          color="blue-300"
-          darkColor="blue-100"
-        />
+        <div className="cursor-pointer flex items-center">
+          <MbIcon
+            size="24px"
+            name={EIconName.ARROW_LEFT_SMALL}
+            color={`${current === 1 ? "gray-400" : "blue-300"}`}
+            darkColor={`${current === 1 ? "gray-400" : "blue-100"}`}
+          />
+        </div>
+
         {pages.length && (
-          <ul className="px-24 flex justify-center space-x-12 text-blue-300 dark:text-blue-100">
+          <ul className="px-24 flex justify-center items-center space-x-12 text-blue-300 dark:text-blue-100">
             {pages.map((page) => (
-              <li>{page}</li>
+              <li
+                className={`page-number p-med-90 ${
+                  current === page ? "active" : ""
+                }`}
+                onClick={() => setCurrent(page)}
+              >
+                {page}
+              </li>
             ))}
           </ul>
         )}
-        <MbIcon
-          size="24px"
-          name={EIconName.ARROW_RIGHT_SMALL}
-          color="blue-300"
-          darkColor="blue-100"
-        />
+        <div className="cursor-pointer flex items-center">
+          <MbIcon
+            size="24px"
+            name={EIconName.ARROW_RIGHT_SMALL}
+            color={`${current === props.totalPages ? "gray-400" : "blue-300"}`}
+            darkColor={`${
+              current === props.totalPages ? "gray-400" : "blue-100"
+            }`}
+          />
+        </div>
       </div>
     </>
   );
