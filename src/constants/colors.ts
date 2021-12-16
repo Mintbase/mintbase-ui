@@ -1,6 +1,39 @@
 import { TColorDetail } from "../types/colors.type";
 import tailwindConfig from "./../../tailwind.config";
 
+export const backgroundColorMap: { [key: string]: string }  = {
+  'mb-blackblue': 'bg-mb-blackblue',
+  'mb-red': 'bg-mb-red',
+  'mb-red-15': 'bg-mb-red-15',
+  'mb-red-35': 'bg-mb-red-35',
+  'gray-900': 'bg-gray-900',
+  'gray-850': 'bg-gray-850',
+  'gray-800': 'bg-gray-800',
+  'gray-700': 'bg-gray-700',
+  'gray-600': 'bg-gray-600',
+  'gray-500': 'bg-gray-500',
+  'gray-400': 'bg-gray-400',
+  'gray-300': 'bg-gray-300',
+  'gray-200': 'bg-gray-200',
+  'gray-150': 'bg-gray-150',
+  'gray-100': 'bg-gray-100',
+  'gray-50': 'bg-gray-50',
+  'blue-300': 'bg-blue-300',
+  'blue-300-35': 'bg-blue-300-35',
+  'blue-300-15': 'bg-blue-300-15',
+  'blue-100': 'bg-blue-100',
+  'blue-100-35': 'bg-blue-100-35',
+  'blue-100-15': 'bg-blue-100-15',
+  'success-300': 'bg-success-300',
+  'success-100': 'bg-success-100',
+  'warning-300': 'bg-warning-300',
+  'warning-100': 'bg-warning-100',
+  'error-300': 'bg-error-300',
+  'error-100': 'bg-error-100',
+  'black': 'bg-black',
+  'white': 'bg-white',
+}
+
 export const colorsArray: TColorDetail[] = [
   {
     sectionTitle: "Brand",
