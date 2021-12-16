@@ -18,8 +18,8 @@ const MbPagination = (props: PaginationProps) => {
   }, []);
 
   return (
-    <>
-      <div className="flex items-center">
+    <div className="flex flex-col ">
+      <div className="flex items-center justify-center">
         <div className="cursor-pointer flex items-center">
           <MbIcon
             size="24px"
@@ -54,7 +54,10 @@ const MbPagination = (props: PaginationProps) => {
           />
         </div>
       </div>
-    </>
+      <div className="text-center pt-24 p-small-90 text-gray-700 dark:text-gray-300">
+        Showing {props.itemsPerPage} of {props.totalItems} NFTs
+      </div>
+    </div>
   );
 };
 
