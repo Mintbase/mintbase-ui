@@ -31,6 +31,8 @@ const MbPagination = (props: PaginationProps) => {
       setPaginationRange(range(1, totalPageCount));
     }
 
+    if (totalPageCount <= 5) return;
+
     const leftSiblingIndex = Math.max(currentPage - 1, 1);
     const rightSiblingIndex = Math.min(currentPage + 1, totalPageCount);
 
@@ -41,14 +43,14 @@ const MbPagination = (props: PaginationProps) => {
     const lastPageIndex = totalPageCount;
 
     if (!shouldShowLeftDots && shouldShowRightDots) {
-      let leftItemCount = 3 + 2;
+      let leftItemCount = 5;
       let leftRange = range(1, leftItemCount);
 
       setPaginationRange([...leftRange, DOTS, totalPageCount]);
     }
 
     if (shouldShowLeftDots && !shouldShowRightDots) {
-      let rightItemCount = 3 + 2;
+      let rightItemCount = 5;
       let rightRange = range(
         totalPageCount - rightItemCount + 1,
         totalPageCount

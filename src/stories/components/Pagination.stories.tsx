@@ -8,10 +8,6 @@ export default {
   argTypes: {},
 } as ComponentMeta<typeof MbPagination>;
 
-// const Template: ComponentStory<typeof MbPagination> = (args) => (
-//   <MbPagination {...args} />
-// );
-
 const Template = (args: any) => {
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -24,7 +20,7 @@ const Template = (args: any) => {
       onPageChange={handle}
       currentPage={currentPage}
       itemsPerPage={15}
-      totalItems={200}
+      totalItems={150}
     />
   );
 };
