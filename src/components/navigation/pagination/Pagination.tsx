@@ -8,6 +8,7 @@ interface PaginationProps {
   totalItems: number;
   currentPage: any;
   itemsPerPage: number;
+  hasLabel?: boolean;
 }
 
 const DOTS = "...";
@@ -19,7 +20,13 @@ const range = (start: any, end: any) => {
 };
 
 const MbPagination = (props: PaginationProps) => {
-  const { onPageChange, currentPage, itemsPerPage, totalItems } = props;
+  const {
+    onPageChange,
+    currentPage,
+    itemsPerPage,
+    totalItems,
+    hasLabel,
+  } = props;
 
   const [paginationRange, setPaginationRange] = useState<any[]>([]);
   const totalPageCount = Math.ceil(totalItems / itemsPerPage);
@@ -154,9 +161,11 @@ const MbPagination = (props: PaginationProps) => {
           />
         </div>
       </div>
-      <div className="text-center pt-24 p-small-90 text-gray-700 dark:text-gray-300">
-        Showing {props.itemsPerPage} of {props.totalItems} NFTs
-      </div>
+      {hasLabel && (
+        <div className="text-center pt-24 p-small-90 text-gray-700 dark:text-gray-300">
+          Showing {props.itemsPerPage} of {props.totalItems} NFTs
+        </div>
+      )}
     </div>
   );
 };

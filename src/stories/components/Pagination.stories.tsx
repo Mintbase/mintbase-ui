@@ -8,7 +8,7 @@ export default {
   argTypes: {},
 } as ComponentMeta<typeof MbPagination>;
 
-const Template = (args: any) => {
+const Template: ComponentStory<typeof MbPagination> = (args: any) => {
   const [currentPage, setCurrentPage] = useState(1);
 
   const handle = (newPage: number) => {
@@ -21,8 +21,13 @@ const Template = (args: any) => {
       currentPage={currentPage}
       itemsPerPage={15}
       totalItems={150}
+      {...args}
     />
   );
 };
 
 export const Pagination = Template.bind({});
+
+Pagination.args = {
+  hasLabel: true,
+};
