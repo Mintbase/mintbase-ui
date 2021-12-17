@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import React from "react";
+import React, { useState } from "react";
 import MbPagination from "../../components/pagination/Pagination";
 
 export default {
@@ -8,13 +8,25 @@ export default {
   argTypes: {},
 } as ComponentMeta<typeof MbPagination>;
 
-const Template: ComponentStory<typeof MbPagination> = (args) => (
-  <MbPagination {...args} />
-);
+// const Template: ComponentStory<typeof MbPagination> = (args) => (
+//   <MbPagination {...args} />
+// );
+
+const Template = (args: any) => {
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const handle = (newPage: number) => {
+    setCurrentPage(newPage);
+  };
+
+  return (
+    <MbPagination
+      onPageChange={handle}
+      currentPage={currentPage}
+      itemsPerPage={15}
+      totalItems={200}
+    />
+  );
+};
 
 export const Pagination = Template.bind({});
-Pagination.args = {
-  itemsPerPage: 25,
-  totalItems: 500,
-  totalPages: 15,
-};
