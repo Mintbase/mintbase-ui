@@ -1,3 +1,4 @@
+import { ESize } from "constants/properties";
 import React from "react";
 
 import Button from "./button/Button";
@@ -38,13 +39,12 @@ const Header = ({ user, onLogin, onLogout, onCreateAccount }: HeaderProps) => (
       </div>
       <div>
         {user ? (
-          <Button size="small" onClick={onLogout} label="Log out" />
+          <Button size={ESize.SMALL} onClick={onLogout} label="Log out" />
         ) : (
           <>
-            <Button size="small" onClick={onLogin} label="Log in" />
+            <Button size={ESize.SMALL} onClick={onLogin} label="Log in" />
             <Button
-              primary
-              size="small"
+              size={ESize.SMALL}
               onClick={onCreateAccount}
               label="Sign up"
             />

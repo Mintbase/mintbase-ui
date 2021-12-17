@@ -1,7 +1,8 @@
 {
-  "name": "react-tailwind",
+  "name": "mintbase-ui",
   "version": "0.1.0",
   "private": true,
+  "main": "./dist/src/components/index.js",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
@@ -22,6 +23,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "build:ts": "tsc",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
