@@ -1,9 +1,9 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import React, { useState } from "react";
-import MbPagination from "../../components/pagination/Pagination";
+import MbPagination from "../../components/navigation/pagination/Pagination";
 
 export default {
-  title: "Components/Pagination",
+  title: "Components/Navigation/Pagination",
   component: MbPagination,
   argTypes: {},
 } as ComponentMeta<typeof MbPagination>;
