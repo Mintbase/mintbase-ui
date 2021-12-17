@@ -1,3 +1,4 @@
+import React from 'react'
 import { EIconName } from "../../../constants/icons";
 import { ESize } from "../../../constants/properties";
 import { TInfoCard } from "../../../types/cards.type";

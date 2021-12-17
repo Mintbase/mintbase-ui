@@ -1,8 +1,7 @@
-const colors = require("tailwindcss/colors");
-
 module.exports = {
   content: [
-    "./src/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx,js,jsx}",
+    "./stories/**/*.{ts,tsx,js,jsx}"
   ],
   theme: {
     screens: {
@@ -125,9 +124,6 @@ module.exports = {
       48: "28px",
       64: "64px",
     },
-  },
-  variants: {
-    extend: {},
   },
   plugins: [],
 }

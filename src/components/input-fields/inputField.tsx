@@ -1,3 +1,4 @@
+import React from 'react'
 import { getFontType } from "../../constants/fontType";
 import { EIconName } from "../../constants/icons";
 import { ESize } from "../../constants/properties";
@@ -29,6 +30,7 @@ const InputField = ({
   };
 
   const getLabelFontType = () => {
+    // TODO: add default to switch statement
     switch (inputSize) {
       case "big":
         return "med-p";

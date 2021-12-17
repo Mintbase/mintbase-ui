@@ -1,5 +1,4 @@
-import "material-icons/iconfont/material-icons.css";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import InlineSVG from "react-inlinesvg";
 import { EIconName } from "../../constants/icons";
 
@@ -40,7 +39,7 @@ const Icon = ({
     <>
       {isMintbaseIcon ? (
         <InlineSVG
-          src={`./assets/icons/${name}.svg`}
+          src={`./public/assets/icons/${name}.svg`}
           width={size}
           height={size}
           className={`fill-current text-${color} dark:text-${darkColor}`}

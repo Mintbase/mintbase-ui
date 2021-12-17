@@ -11,6 +11,7 @@ type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 };
 
 const getLoadingSize = (currentSize: string) => {
+  // TODO: add default to the switch statement
   switch (currentSize) {
     case "small":
       return "w-3.5 h-3.5";

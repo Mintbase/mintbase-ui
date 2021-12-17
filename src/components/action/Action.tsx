@@ -1,3 +1,4 @@
+import React from 'react'
 import { getFontType } from "../../constants/fontType";
 import { ESize, EState } from "../../constants/properties";
 import "./action.css";

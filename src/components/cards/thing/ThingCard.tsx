@@ -1,5 +1,3 @@
-import { DocumentDuplicateIcon, HeartIcon } from "@heroicons/react/outline";
-import { DotsHorizontalIcon } from "@heroicons/react/solid";
 import React from "react";
 import { TThingCard } from "../../../types/cards.type";
 import "./thingcard.css";
