@@ -19,11 +19,32 @@ Table.args = {
   headers: ["Offer", "From", "Created", "Expires", "TX"],
   data: [
     {
-      col1: "557.6 N",
-      col2: "microchipgnu.near",
-      col3: "1 hour ago",
-      col4: "1 hour ago",
-      col5: "...",
+      amount: "557.6 N",
+      account: "mintbase.near",
+      created: "1 hour ago",
+      expires: "1 hour ago",
+      tx: "...",
+    },
+    {
+      amount: "222 N",
+      account: "mintbase.near",
+      created: "3 hours ago",
+      expires: "4 hours ago",
+      tx: "...",
+    },
+    {
+      amount: "312,67 N",
+      account: "mintbase.near",
+      created: "10 hours ago",
+      expires: "1 hour ago",
+      tx: "...",
+    },
+    {
+      amount: "10.6 N",
+      account: "mintbase.near",
+      created: "1 hour ago",
+      expires: "1 hour ago",
+      tx: "...",
     },
   ],
 };
