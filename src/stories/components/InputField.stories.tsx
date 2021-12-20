@@ -10,7 +10,7 @@ export default {
   component: MbInput,
   argTypes: {
     controlStatus: {
-      options: ["empty", "valid", "invalid"],
+      options: ["normal", "valid", "invalid"],
       control: { type: "radio" },
     },
     inputSize: {
