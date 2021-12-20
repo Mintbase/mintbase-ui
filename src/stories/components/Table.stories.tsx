@@ -15,5 +15,15 @@ const Template: ComponentStory<typeof MbTable> = (args) => (
 
 export const Table = Template.bind({});
 Table.args = {
+  name: "Trading History",
   headers: ["Offer", "From", "Created", "Expires", "TX"],
+  data: [
+    {
+      col1: "557.6 N",
+      col2: "microchipgnu.near",
+      col3: "1 hour ago",
+      col4: "1 hour ago",
+      col5: "...",
+    },
+  ],
 };
