@@ -1,7 +1,7 @@
-import { getFontType } from "../../constants/fontType";
-import { EIconName } from "../../constants/icons";
-import { ESize } from "../../constants/properties";
-import MbIcon from "../icon/Icon";
+import { getFontType } from "../../../constants/fontType";
+import { EIconName } from "../../../constants/icons";
+import { ESize } from "../../../constants/properties";
+import MbIcon from "../../icon/Icon";
 import "./inputfield.css";
 
 export enum EControlStatus {
