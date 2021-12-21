@@ -1,5 +1,5 @@
-const MediaImport = () => {
+const MbMediaImport = () => {
   return <></>;
 };
 
-export default MediaImport;
+export default MbMediaImport;
