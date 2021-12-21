@@ -32,7 +32,6 @@ const MbTable = (props: TableProps) => {
   const allChildren = React.Children.map(children, (child: any) => child);
   const headers = allChildren?.filter((child) => child.type.name === "MbHead");
   const body = allChildren?.filter((child) => child.type.name === "MbBody");
-  console.log(body);
 
   return (
     <section className="bg-white dark:bg-gray-850">

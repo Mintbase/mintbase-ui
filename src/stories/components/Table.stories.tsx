@@ -130,7 +130,6 @@ const Template: ComponentStory<typeof MbTable> = (args) => {
   };
 
   useEffect(() => {
-    console.log(currentPage);
     setItems(
       bodyItems.slice(
         currentPage > 1
