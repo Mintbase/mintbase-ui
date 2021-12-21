@@ -1,0 +1,11 @@
+.headers td {
+  @apply pl-24 py-16;
+}
+
+.body-table tr {
+  @apply border-b border-gray-200 dark:border-gray-800;
+}
+
+.body-table td {
+  @apply p-24 dark:text-white;
+}
