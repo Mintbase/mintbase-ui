@@ -1,6 +1,7 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import MbTable, { MbBody, MbHead } from "../../components/table/Table";
+import { Pagination } from "./Pagination.stories";
 
 export default {
   title: "Components/Table",
@@ -8,74 +9,175 @@ export default {
   argTypes: {},
 } as ComponentMeta<typeof MbTable>;
 
-const Template: ComponentStory<typeof MbTable> = (args) => (
-  <MbTable {...args}>
-    <MbHead>
-      <tr id="headers">
-        <td>Offer</td>
-        <td>From</td>
-        <td>Created</td>
-        <td>Expires</td>
-        <td>TX</td>
-      </tr>
-    </MbHead>
-    <MbBody>
-      <tr id="headers">
-        <td>557.6 N</td>
-        <td>mintbase.near</td>
-        <td>1 hour ago</td>
-        <td>1 hour ago</td>
-        <td>...</td>
-      </tr>
-      <tr id="headers">
-        <td>222 N</td>
-        <td>mintbase.near</td>
-        <td>1 hour ago</td>
-        <td>3 hours ago</td>
-        <td>...</td>
-      </tr>
-      <tr id="headers">
-        <td>104,7 N</td>
-        <td>mintbase.near</td>
-        <td>1 hour ago</td>
-        <td>1 hour ago</td>
-        <td>...</td>
-      </tr>
-    </MbBody>
-  </MbTable>
-);
+const bodyItems = [
+  {
+    amount: "557.6 N",
+    account: "mintbase.near",
+    created: "1 hour ago",
+    expired: "1 day",
+    tx: "...",
+  },
+  {
+    amount: "237 N",
+    account: "mintbase.near",
+    created: "1 hour ago",
+    expired: "1 day",
+    tx: "...",
+  },
+  {
+    amount: "2 N",
+    account: "mintbase.near",
+    created: "1 hour ago",
+    expired: "1 day",
+    tx: "...",
+  },
+  {
+    amount: "3.4 N",
+    account: "mintbase.near",
+    created: "1 hour ago",
+    expired: "1 day",
+    tx: "...",
+  },
+  {
+    amount: "557.6 N",
+    account: "mintbase.near",
+    created: "1 hour ago",
+    expired: "1 day",
+    tx: "...",
+  },
+  {
+    amount: "557.6 N",
+    account: "mintbase.near",
+    created: "1 hour ago",
+    expired: "1 day",
+    tx: "...",
+  },
+  {
+    amount: "5 N",
+    account: "mintbase.near",
+    created: "1 hour ago",
+    expired: "1 day",
+    tx: "...",
+  },
+  {
+    amount: "17.6 N",
+    account: "mintbase.near",
+    created: "1 hour ago",
+    expired: "1 day",
+    tx: "...",
+  },
+  {
+    amount: "107.6 N",
+    account: "mintbase.near",
+    created: "1 hour ago",
+    expired: "1 day",
+    tx: "...",
+  },
+  {
+    amount: "227.6 N",
+    account: "mintbase.near",
+    created: "1 hour ago",
+    expired: "1 day",
+    tx: "...",
+  },
+  {
+    amount: "307.6 N",
+    account: "mintbase.near",
+    created: "1 hour ago",
+    expired: "1 day",
+    tx: "...",
+  },
+  {
+    amount: "237.6 N",
+    account: "mintbase.near",
+    created: "1 hour ago",
+    expired: "1 day",
+    tx: "...",
+  },
+  {
+    amount: "57.6 N",
+    account: "mintbase.near",
+    created: "1 hour ago",
+    expired: "1 day",
+    tx: "...",
+  },
+  {
+    amount: "107.6 N",
+    account: "mintbase.near",
+    created: "1 hour ago",
+    expired: "1 day",
+    tx: "...",
+  },
+];
+
+const Template: ComponentStory<typeof MbTable> = (args) => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage, setItemsPerPage] = useState(10);
+  const [items, setItems] = useState<any[]>([]);
+
+  const handle = (newPage: number) => {
+    setCurrentPage(newPage);
+  };
+
+  const paginationProps = {
+    currentPage: currentPage,
+    itemsPerPage: itemsPerPage,
+    totalItems: bodyItems.length,
+    onPageChange: handle,
+  };
+  const changeAmountPerPage = (nr: number) => {
+    setItemsPerPage(nr);
+  };
+
+  useEffect(() => {
+    console.log(currentPage);
+    setItems(
+      bodyItems.slice(
+        currentPage > 1
+          ? currentPage > 2
+            ? currentPage * itemsPerPage
+            : itemsPerPage
+          : 0,
+        currentPage > 1
+          ? currentPage * itemsPerPage + itemsPerPage
+          : itemsPerPage
+      )
+    );
+  }, [currentPage, itemsPerPage]);
+
+  return (
+    <MbTable
+      {...args}
+      pagination={paginationProps}
+      onAmountItemsChange={changeAmountPerPage}
+    >
+      <MbHead>
+        <tr id="headers">
+          <td>Offer</td>
+          <td>From</td>
+          <td>Created</td>
+          <td>Expires</td>
+          <td>TX</td>
+        </tr>
+      </MbHead>
+      <MbBody>
+        {items.map((elm, index) => {
+          return (
+            <tr key={index}>
+              <td>{elm.amount}</td>
+              <td>{elm.account}</td>
+              <td>{elm.created}</td>
+              <td>{elm.expired}</td>
+              <td>{elm.tx}</td>
+            </tr>
+          );
+        })}
+      </MbBody>
+    </MbTable>
+  );
+};
 
 export const Table = Template.bind({});
 Table.args = {
   title: "Trading History",
-  // data: [
-  //   {
-  //     amount: "557.6 N",
-  //     account: "mintbase.near",
-  //     created: "1 hour ago",
-  //     expires: "1 hour ago",
-  //     tx: "...",
-  //   },
-  //   {
-  //     amount: "222 N",
-  //     account: "mintbase.near",
-  //     created: "3 hours ago",
-  //     expires: "4 hours ago",
-  //     tx: "...",
-  //   },
-  //   {
-  //     amount: "312,67 N",
-  //     account: "mintbase.near",
-  //     created: "10 hours ago",
-  //     expires: "1 hour ago",
-  //     tx: "...",
-  //   },
-  //   {
-  //     amount: "10.6 N",
-  //     account: "mintbase.near",
-  //     created: "1 hour ago",
-  //     expires: "1 hour ago",
-  //     tx: "...",
-  //   },
-  // ],
 };
