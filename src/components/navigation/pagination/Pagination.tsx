@@ -3,7 +3,7 @@ import { EIconName } from "../../../constants/icons";
 import MbIcon from "../../icon/Icon";
 import "./pagination.css";
 
-interface PaginationProps {
+export interface PaginationProps {
   onPageChange: (currentPage: number) => void;
   totalItems: number;
   currentPage: any;
