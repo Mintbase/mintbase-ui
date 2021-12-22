@@ -1,8 +1,8 @@
-import { useEffect } from "@storybook/addon-storyshots/node_modules/@storybook/addons";
 import { useRef, useState } from "react";
-import tailwindConfig from "../../../../tailwind.config";
 import { EIconName } from "../../../constants/icons";
+import { isMobile } from "../../../constants/mobile";
 import MbIcon from "../../icon/Icon";
+import AcceptedFormats from "./acceptedFormats";
 
 interface MediaImportProps {
   isProfileImage: boolean;
@@ -85,15 +85,6 @@ const MbMediaImport = (props: MediaImportProps) => {
     uploadImage(file);
   };
 
-  const isMobile = () => {
-    console.log(window.innerWidth);
-    console.log(Number(tailwindConfig.theme.screens.sm.replace("px", "")));
-    return (
-      window.innerWidth <
-      Number(tailwindConfig.theme.screens.sm.replace("px", ""))
-    );
-  };
-
   return (
     <>
       {imageUrl && (
@@ -167,32 +158,11 @@ const MbMediaImport = (props: MediaImportProps) => {
             />
           </label>
         </div>
-        <p className="hidden sm:block p-med-90 text-gray-700 dark:text-gray-500 pt-12 text-center">
-          {acceptedFormats && (
-            <>
-              Accepted Formats:{" "}
-              <span className="text-black dark:text-white">
-                {acceptedFormats.join(" / ")}
-              </span>{" "}
-              {(idealDimensions || maxSize) && <>|</>}{" "}
-            </>
-          )}
-          {idealDimensions && (
-            <>
-              Ideal dimension:{" "}
-              <span className="text-black dark:text-white">
-                {idealDimensions}
-              </span>{" "}
-              {maxSize && <>|</>}{" "}
-            </>
-          )}
-          {maxSize && (
-            <>
-              Max size:{" "}
-              <span className="text-black dark:text-white">{maxSize}mb</span>
-            </>
-          )}
-        </p>
+        <AcceptedFormats
+          acceptedFormats={acceptedFormats}
+          idealDimensions={idealDimensions}
+          maxSize={maxSize}
+        />
       </div>
     </>
   );
