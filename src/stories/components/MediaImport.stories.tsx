@@ -17,5 +17,5 @@ MediaImport.args = {
   isProfileImage: true,
   acceptedFormats: [".jpeg", ".gif", ".png"],
   idealDimensions: "500x500px",
-  maxSize: "500mb",
+  maxSize: 5,
 };

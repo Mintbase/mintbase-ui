@@ -7,7 +7,7 @@ interface MediaImportProps {
   uploadText: string;
   acceptedFormats: string[];
   idealDimensions: string;
-  maxSize: string;
+  maxSize: number;
 }
 
 const MbMediaImport = (props: MediaImportProps) => {
@@ -25,12 +25,18 @@ const MbMediaImport = (props: MediaImportProps) => {
     if (!(e?.target?.files.length > 0)) return;
     const file = e.target.files[0];
     const type = file.type.split("/").pop();
+    const size = file.size;
+    console.log(size / 1024 / 1024);
 
     if (
       acceptedFormats.map((format) => format.split(".").pop()).includes(type)
     ) {
-      setErrorMessage("");
-      setImageUrl(URL.createObjectURL(file));
+      if (size / 1024 / 1024 <= maxSize) {
+        setErrorMessage("");
+        setImageUrl(URL.createObjectURL(file));
+      } else {
+        setErrorMessage(`This file exceeds ${maxSize}mb`);
+      }
     } else {
       setErrorMessage("This media type is not accepted");
     }
@@ -107,7 +113,7 @@ const MbMediaImport = (props: MediaImportProps) => {
         {maxSize && (
           <>
             Max size:{" "}
-            <span className="text-black dark:text-white">{maxSize}</span>
+            <span className="text-black dark:text-white">{maxSize}mb</span>
           </>
         )}
       </p>
