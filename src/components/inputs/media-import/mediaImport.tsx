@@ -23,15 +23,24 @@ const MbMediaImport = (props: MediaImportProps) => {
     const file = e.target.files[0];
 
     setImageUrl(URL.createObjectURL(file));
-    console.log(setImageUrl);
   };
 
   return (
     <>
       {imageUrl && (
         <div className="pb-12">
-          <div className="flex items-center justify-center w-full rounded-lg bg-gray-100 dark:bg-gray-900 w-full py-24">
-            <div className="h-32 w-32 rounded-full overflow-hidden">
+          <div
+            className={`flex items-center justify-center w-full rounded-lg bg-gray-100 dark:bg-gray-900 w-full ${
+              isProfileImage ? "py-24" : "overflow-hidden"
+            }`}
+          >
+            <div
+              className={` ${
+                isProfileImage
+                  ? "h-32 w-32 rounded-full overflow-hidden"
+                  : "h-48 w-full"
+              }`}
+            >
               <img className="w-full h-full object-cover" src={imageUrl} />
             </div>
           </div>
