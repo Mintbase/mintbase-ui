@@ -38,6 +38,7 @@ const InputField = ({
         return "small-p";
       case "small":
         return "big-cap";
+      default: return "";
     }
   };
 

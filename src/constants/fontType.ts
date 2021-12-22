@@ -6,5 +6,6 @@ export const getFontType = (size: string) => {
       return "med-p";
     case "small":
       return "small-p";
+    default: return "";
   }
 };

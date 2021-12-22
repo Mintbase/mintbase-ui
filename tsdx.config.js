@@ -1,10 +1,25 @@
-let static_files = require('rollup-plugin-static-files');
+const staticFiles = require('rollup-plugin-static-files');
+const postcss = require('rollup-plugin-postcss');
+const autoprefixer = require('autoprefixer');
+const cssnano = require('cssnano');
 
 module.exports = {
-  rollup(config) {
+  rollup(config, options) {
     config.plugins.push(
-      static_files({
+      staticFiles({
         include: ['./assets'],
+      }),
+      postcss({
+        modules: true,
+        plugins: [
+          autoprefixer(),
+          cssnano({
+            preset: 'default',
+          }),
+        ],
+        inject: false,
+        // only write out CSS for the first bundle (avoids pointless extra files):
+        extract: !!options.writeMeta,
       })
     );
     return config;
