@@ -1,6 +1,21 @@
 import { useState } from "react";
 
-const MbMediaImport = () => {
+interface MediaImportProps {
+  isProfileImage: boolean;
+  uploadText: string;
+  acceptedFormats: string[];
+  idealDimensions: string;
+  maxSize: string;
+}
+
+const MbMediaImport = (props: MediaImportProps) => {
+  const {
+    isProfileImage,
+    uploadText = "Upload Image",
+    acceptedFormats,
+    idealDimensions,
+    maxSize,
+  } = props;
   const [imageUrl, setImageUrl] = useState<any>("");
 
   const uploadImage = (e: any) => {
@@ -25,9 +40,7 @@ const MbMediaImport = () => {
       <div className="flex items-center justify-center w-full">
         <label className="flex flex-col rounded-lg bg-blue-300-15 dark:bg-blue-100-15 w-full py-48 group text-center cursor-pointer">
           <div className="h-full w-full text-center flex flex-col items-center justify-center p-med-90">
-            <p className="text-blue-300 dark:text-blue-100">
-              Upload Profile Image
-            </p>
+            <p className="text-blue-300 dark:text-blue-100">{uploadText}</p>
             <p className="text-gray-600 dark:text-gray-300">
               (or just drop your file here)
             </p>
@@ -36,14 +49,35 @@ const MbMediaImport = () => {
         </label>
       </div>
       <p className="p-med-90 text-gray-700 dark:text-gray-500 pt-12 text-center">
-        Accepted Formats:{" "}
-        <span className="text-black dark:text-white">.jpg / .gif / .png</span> |
-        Ideal dimension:{" "}
-        <span className="text-black dark:text-white">500x500px</span> | Max
-        size: <span className="text-black dark:text-white">500mb</span>
+        {acceptedFormats && (
+          <>
+            Accepted Formats:{" "}
+            <span className="text-black dark:text-white">
+              {acceptedFormats.join(" / ")}
+            </span>{" "}
+            |{" "}
+          </>
+        )}
+        {idealDimensions && (
+          <>
+            Ideal dimension:{" "}
+            <span className="text-black dark:text-white">
+              {idealDimensions}
+            </span>{" "}
+            |{" "}
+          </>
+        )}
+        {maxSize && (
+          <>
+            Max size:{" "}
+            <span className="text-black dark:text-white">{maxSize}</span>
+          </>
+        )}
       </p>
     </>
   );
 };
+
+// Accepted Formats: .jpg / .gif / .png | Ideal dimension: 1500x500px | Max size: 500mb
 
 export default MbMediaImport;
