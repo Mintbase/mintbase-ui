@@ -15,7 +15,7 @@ export const MediaImport = Template.bind({});
 MediaImport.args = {
   uploadText: "Upload Profile Image",
   isProfileImage: true,
-  acceptedFormats: [".jpg", ".gif", ".png"],
+  acceptedFormats: [".jpeg", ".gif", ".png"],
   idealDimensions: "500x500px",
   maxSize: "500mb",
 };
