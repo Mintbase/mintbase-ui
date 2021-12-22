@@ -55,7 +55,7 @@ const MbMediaImport = (props: MediaImportProps) => {
             <span className="text-black dark:text-white">
               {acceptedFormats.join(" / ")}
             </span>{" "}
-            |{" "}
+            {(idealDimensions || maxSize) && <>|</>}{" "}
           </>
         )}
         {idealDimensions && (
@@ -64,7 +64,7 @@ const MbMediaImport = (props: MediaImportProps) => {
             <span className="text-black dark:text-white">
               {idealDimensions}
             </span>{" "}
-            |{" "}
+            {maxSize && <>|</>}{" "}
           </>
         )}
         {maxSize && (
