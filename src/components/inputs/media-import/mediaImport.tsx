@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { EIconName } from "../../../constants/icons";
 import MbIcon from "../../icon/Icon";
 
@@ -9,6 +9,11 @@ interface MediaImportProps {
   idealDimensions: string;
   maxSize: number;
 }
+
+const preventBrowserDefaults = (e: Event) => {
+  e.preventDefault();
+  e.stopPropagation();
+};
 
 const MbMediaImport = (props: MediaImportProps) => {
   const {
@@ -21,13 +26,42 @@ const MbMediaImport = (props: MediaImportProps) => {
   const [imageUrl, setImageUrl] = useState<any>("");
   const [errorMessage, setErrorMessage] = useState("");
 
-  const uploadImage = (e: any) => {
-    if (!(e?.target?.files.length > 0)) return;
-    const file = e.target.files[0];
+  const dragRef = useRef(0);
+  const [dragOverlay, setDragOverlay] = useState(false);
+
+  const handleDrag = (event: any) => {
+    preventBrowserDefaults(event);
+  };
+
+  const handleDragIn = (event: any) => {
+    preventBrowserDefaults(event);
+    dragRef.current++;
+    setDragOverlay(true);
+  };
+
+  const handleDragOut = async (event: any) => {
+    preventBrowserDefaults(event);
+    dragRef.current--;
+    if (dragRef.current === 0) {
+      setDragOverlay(false);
+    }
+  };
+
+  const handleDrop = async (event: any) => {
+    preventBrowserDefaults(event);
+    setDragOverlay(false);
+
+    dragRef.current = 0;
+
+    if (!event.dataTransfer.files.length) {
+      return;
+    }
+    uploadImage(event.dataTransfer.files[0]);
+  };
+
+  const uploadImage = (file: any) => {
     const type = file.type.split("/").pop();
     const size = file.size;
-    console.log(size / 1024 / 1024);
-
     if (
       acceptedFormats.map((format) => format.split(".").pop()).includes(type)
     ) {
@@ -40,6 +74,13 @@ const MbMediaImport = (props: MediaImportProps) => {
     } else {
       setErrorMessage("This media type is not accepted");
     }
+  };
+
+  const handleImageChange = (e: any) => {
+    if (!(e?.target?.files.length > 0)) return;
+    const file = e.target.files[0];
+
+    uploadImage(file);
   };
 
   return (
@@ -65,7 +106,15 @@ const MbMediaImport = (props: MediaImportProps) => {
       )}
       <div className="flex items-center justify-center w-full">
         <label
-          className={`flex flex-col rounded-lg bg-blue-300-15 dark:bg-blue-100-15 w-full py-48 group text-center cursor-pointer ${
+          onDragEnter={handleDragIn}
+          onDragLeave={handleDragOut}
+          onDragOver={handleDrag}
+          onDrop={handleDrop}
+          className={`flex flex-col rounded-lg ${
+            dragOverlay
+              ? "bg-gray-100 dark:bg-gray-900"
+              : "bg-blue-300-15 dark:bg-blue-100-15"
+          } w-full py-48 group text-center cursor-pointer ${
             errorMessage ? "ring-1 ring-error-300 dark:ring-error-100" : ""
           }`}
         >
@@ -88,7 +137,7 @@ const MbMediaImport = (props: MediaImportProps) => {
               />
             </div>
           )}
-          <input type="file" className="hidden" onChange={uploadImage} />
+          <input type="file" className="hidden" onChange={handleImageChange} />
         </label>
       </div>
       <p className="p-med-90 text-gray-700 dark:text-gray-500 pt-12 text-center">
