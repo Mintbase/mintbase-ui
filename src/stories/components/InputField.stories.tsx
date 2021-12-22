@@ -7,7 +7,7 @@ import MbInput, {
 import { ESize } from "../../constants/properties";
 
 export default {
-  title: "Components/Inputs/InputField",
+  title: "Components/Inputs",
   component: MbInput,
   argTypes: {
     controlStatus: {
