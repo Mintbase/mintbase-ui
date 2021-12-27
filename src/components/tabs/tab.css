@@ -10,3 +10,15 @@
   left: 50%;
   transform: translateX(-50%);
 }
+
+.order-by {
+  @apply cursor-pointer rounded-full transition-all duration-500;
+}
+
+.order-by.selected {
+  @apply bg-mb-red-15 dark:bg-mb-red-35;
+}
+
+.order-by.unselected {
+  @apply hover:bg-blue-300-15 dark:hover:bg-blue-100-35;
+}

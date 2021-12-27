@@ -49,11 +49,9 @@ const MbTabs = (props: TabsProps) => {
           <>
             <div className="ml-auto relative">
               <div
-                className={`${
-                  selectedOrder
-                    ? "bg-mb-red-15 dark:bg-mb-red-35"
-                    : "hover:bg-blue-300-15 dark:hover:bg-blue-100-35"
-                } cursor-pointer rounded-full`}
+                className={`order-by ${
+                  selectedOrder ? "selected" : "unselected"
+                }`}
               >
                 <div
                   className="flex p-16"
