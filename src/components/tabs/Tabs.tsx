@@ -14,9 +14,7 @@ const OrderOptions = ({ onSelect }: { onSelect: (option: string) => void }) => {
     <>
       <div className="bg-gray-50 dark:bg-gray-800 rounded-b absolute flex flex-col top-12 py-12 w-max center-sub-menu">
         {labels.map((label) => (
-          <div onClick={() => onSelect(label)}>
-            <MbAction label={label} />
-          </div>
+          <MbAction label={label} onClick={() => onSelect(label)} />
         ))}
       </div>
     </>
