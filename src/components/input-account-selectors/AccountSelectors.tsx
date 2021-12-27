@@ -36,29 +36,31 @@ const MbAccountSelectors = () => {
           <p className="dark:text-white p-med-90 mb-8">Add up to 20 accounts</p>
         </header>
 
-        <body className="flex items-center space-x-12 mb-24">
+        <body className="mb-24">
           {inputList.length > 0 &&
-            inputList.map((e, i) => {
-              <>
-                <MbInput
-                  type="text"
-                  placeholder="mintbase.near"
-                  inputSize={ESize.BIG}
-                  controlStatus={EControlStatus.NORMAL}
-                />
-                ;
-                <div
-                  className="cursor-pointer"
-                  onClick={() => handleRemoveClick(i)}
-                >
-                  <MbIcon
-                    name={EIconName.DELETE}
-                    size="24px"
-                    color="blue-300"
-                    darkColor="blue-100"
+            inputList.map((i) => {
+              return (
+                <div key={i} className="flex items-center space-x-12 mb-12">
+                  <MbInput
+                    type="text"
+                    placeholder="mintbase.near"
+                    inputSize={ESize.BIG}
+                    controlStatus={EControlStatus.NORMAL}
                   />
+                  <div
+                    className="cursor-pointer"
+                    onClick={() => handleRemoveClick(i)}
+                  >
+                    <MbIcon
+                      name={EIconName.DELETE}
+                      size="24px"
+                      color="blue-300"
+                      darkColor="blue-100"
+                    />
+                  </div>
+                  )
                 </div>
-              </>;
+              );
             })}
         </body>
         <footer className="text-center">
