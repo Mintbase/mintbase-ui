@@ -28,16 +28,18 @@ const MbTabs = (props: TabsProps) => {
             </>
           ))}
         {props.hasFilters && (
-          <div>
-            <div className="text-blue-300 dark:text-blue-100 p-med-90">
-              Order By
+          <div className="hover:bg-blue-300-15 cursor-pointer rounded-full">
+            <div className="flex p-16">
+              <div className="text-blue-300 dark:text-blue-100 p-med-90">
+                Order By
+              </div>
+              <MbIcon
+                name={EIconName.ARROW_DROP_DOWN}
+                size="16px"
+                color="blue-300"
+                darkColor="blue-100"
+              />
             </div>
-            <MbIcon
-              name={EIconName.ARROW_DROP_DOWN}
-              size="16px"
-              color="blue-300"
-              darkColor="blue-100"
-            />
           </div>
         )}
       </div>
