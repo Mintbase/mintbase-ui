@@ -5,3 +5,8 @@
 .tab.active {
   @apply bg-mb-red-15 dark:bg-mb-red-35 focus:ring-mb-red text-mb-red;
 }
+
+.center-sub-menu {
+  left: 50%;
+  transform: translateX(-50%);
+}
