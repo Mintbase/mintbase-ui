@@ -117,6 +117,9 @@ module.exports = {
         34: "34px",
         38: "38px",
       },
+      translate: {
+        "minus-50": "-50%",
+      },
     },
     space: {
       4: "4px",
