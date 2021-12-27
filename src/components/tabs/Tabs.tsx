@@ -18,32 +18,35 @@ const MbTabs = (props: TabsProps) => {
 
   return (
     <>
-      <div className="flex bg-gray-50 dark:bg-gray-800 md:px-64 justify-center md:justify-start items-center space-x-24 overflow-scroll">
-        {tabsTitle?.length &&
-          tabsTitle.map((title, index) => (
-            <>
-              <div onClick={() => setSelectedTab(index)} key={index}>
-                <MbTab isActive={index === selectedTab} title={title}></MbTab>
-              </div>
-            </>
-          ))}
+      <div className="flex bg-gray-50 dark:bg-gray-800 md:px-64">
+        <div className="flex justify-center md:justify-start items-center space-x-24 overflow-scroll">
+          {tabsTitle?.length &&
+            tabsTitle.map((title, index) => (
+              <>
+                <div onClick={() => setSelectedTab(index)} key={index}>
+                  <MbTab isActive={index === selectedTab} title={title}></MbTab>
+                </div>
+              </>
+            ))}
+        </div>
         {props.hasFilters && (
-          <div className="hover:bg-blue-300-15 cursor-pointer rounded-full">
-            <div className="flex p-16">
-              <div className="text-blue-300 dark:text-blue-100 p-med-90">
-                Order By
+          <div className="ml-auto">
+            <div className="hover:bg-blue-300-15 cursor-pointer rounded-full">
+              <div className="flex p-16">
+                <div className="text-blue-300 dark:text-blue-100 p-med-90 pr-10">
+                  Order By
+                </div>
+                <MbIcon
+                  name={EIconName.ARROW_DROP_DOWN}
+                  size="16px"
+                  color="blue-300"
+                  darkColor="blue-100"
+                />
               </div>
-              <MbIcon
-                name={EIconName.ARROW_DROP_DOWN}
-                size="16px"
-                color="blue-300"
-                darkColor="blue-100"
-              />
             </div>
           </div>
         )}
       </div>
-
       {tabsContent?.length &&
         tabsContent?.map((content, index) => {
           return index === selectedTab && <div>{content}</div>;
