@@ -1,7 +1,13 @@
 import React, { useState } from "react";
+import { EIconName } from "../../constants/icons";
+import MbIcon from "../icon/Icon";
 import MbTab from "./Tab";
 
-const MbTabs = (props: React.HTMLAttributes<HTMLDivElement>) => {
+interface TabsProps extends React.HTMLAttributes<HTMLDivElement> {
+  hasFilters: boolean;
+}
+
+const MbTabs = (props: TabsProps) => {
   const [selectedTab, setSelectedTab] = useState(0);
 
   if (!props.children) return <></>;
@@ -21,7 +27,21 @@ const MbTabs = (props: React.HTMLAttributes<HTMLDivElement>) => {
               </div>
             </>
           ))}
+        {props.hasFilters && (
+          <div>
+            <div className="text-blue-300 dark:text-blue-100 p-med-90">
+              Order By
+            </div>
+            <MbIcon
+              name={EIconName.ARROW_DROP_DOWN}
+              size="16px"
+              color="blue-300"
+              darkColor="blue-100"
+            />
+          </div>
+        )}
       </div>
+
       {tabsContent?.length &&
         tabsContent?.map((content, index) => {
           return index === selectedTab && <div>{content}</div>;
