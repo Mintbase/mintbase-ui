@@ -36,3 +36,7 @@
   @apply p-10;
   max-height: 34px;
 }
+
+.input-wrapper {
+  @apply w-full;
+}
