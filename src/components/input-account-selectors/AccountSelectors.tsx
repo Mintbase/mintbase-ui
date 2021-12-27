@@ -58,7 +58,6 @@ const MbAccountSelectors = () => {
                       darkColor="blue-100"
                     />
                   </div>
-                  )
                 </div>
               );
             })}
