@@ -8,7 +8,7 @@ export default {
 } as ComponentMeta<typeof MbAccountSelectors>;
 
 const Template: ComponentStory<typeof MbAccountSelectors> = (args) => (
-  <MbAccountSelectors {...args} />
+  <MbAccountSelectors />
 );
 
 export const AccountSelectors = Template.bind({});
