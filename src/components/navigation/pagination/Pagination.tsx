@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { EIconName } from "../../../constants/icons";
 import MbIcon from "../../icon/Icon";
 import "./pagination.css";

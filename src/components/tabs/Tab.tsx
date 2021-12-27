@@ -1,3 +1,4 @@
+import React from 'react'
 import "./tab.css";
 
 interface TabProps extends React.HTMLAttributes<HTMLDivElement> {

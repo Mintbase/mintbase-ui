@@ -2,14 +2,19 @@
   "name": "mintbase-react-components",
   "version": "0.1.0",
   "private": true,
-  "main": "dist/index.js",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
   "files": [
-    "dist",
-    "README.md"
+    "dist"
   ],
+  "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "URL_OF_YOUR_REPOSITORY"
+  },
+  "peerDependencies": {
+    "react": ">=16",
+    "react-dom": ">=16"
   },
   "dependencies": {
     "@heroicons/react": "^1.0.5",
@@ -22,8 +27,6 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "material-icons": "^1.10.4",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
     "react-inlinesvg": "^2.3.0",
     "react-scripts": "4.0.3",
     "react-test-renderer": "^17.0.2",
@@ -32,10 +35,9 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "build:tsc": "tsc",
+    "build": "npm run clean && rollup -c",
+    "lint:types": "tsc --noEmit",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "clean": "rimraf dist",
@@ -73,6 +75,9 @@
     "@babel/cli": "^7.15.7",
     "@babel/preset-env": "^7.15.6",
     "@babel/preset-react": "^7.14.5",
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.1.1",
+    "@rollup/plugin-typescript": "^8.3.0",
     "@storybook/addon-actions": "^6.4.4",
     "@storybook/addon-essentials": "^6.4.4",
     "@storybook/addon-links": "^6.4.4",
@@ -82,9 +87,15 @@
     "@storybook/react": "^6.4.4",
     "autoprefixer": "^10.3.5",
     "cross-env": "^7.0.3",
+    "eslint": "^7.32.0",
     "postcss": "^8.3.7",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^6.7.0",
+    "rollup": "^2.62.0",
+    "rollup-plugin-dts": "^4.1.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-terser": "^7.0.2",
     "storybook-addon-themes": "^6.1.0",
     "tailwindcss": "^2.2.15"
   }

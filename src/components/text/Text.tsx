@@ -1,3 +1,4 @@
+import React from 'react'
 import "./text.css";
 
 interface TextProps extends React.HTMLAttributes<HTMLDivElement> {}

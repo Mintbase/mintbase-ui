@@ -1,3 +1,4 @@
+import React from 'react'
 import ReactTooltip, { Place } from "react-tooltip";
 import "./tooltip.css";
 
