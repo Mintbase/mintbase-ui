@@ -12,6 +12,4 @@ const Template: ComponentStory<typeof MbAccountSelectors> = (args) => (
 );
 
 export const AccountSelectors = Template.bind({});
-AccountSelectors.args = {
-  title: "Header Title",
-};
+AccountSelectors.args = {};
