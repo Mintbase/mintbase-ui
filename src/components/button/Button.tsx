@@ -34,7 +34,7 @@ const LoadingAnimation = ({
         btnType === EType.SECONDARY
           ? "bg-black dark:bg-white"
           : "bg-white dark:bg-black"
-      } ${getLoadingSize(size)} m-auto`}
+      } ${getLoadingSize(size)} m-0-auto`}
     ></div>
   </div>
 );
