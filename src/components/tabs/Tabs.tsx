@@ -92,16 +92,6 @@ const MbTabs = (props: TabsProps) => {
                   />
                 </div>
               </div>
-              {
-                /* {showOrderOpts && ( */
-                // <OrderOptions
-                //   onSelect={(option) => {
-                //     setShowOrderOpts(!showOrderOpts);
-                //     setSelectedOrder(option);
-                //   }}
-                // />
-                /* )} */
-              }
             </div>
           </>
         )}
