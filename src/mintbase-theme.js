@@ -16,7 +16,8 @@ module.exports = {
     64: "64px",
   },
   margin: {
-    auto: "0 auto",
+    auto: "auto",
+    "0-auto": "0 auto",
     0: "0px",
     4: "4px",
     8: "8px",
