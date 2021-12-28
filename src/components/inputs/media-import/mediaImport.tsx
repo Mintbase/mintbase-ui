@@ -1,6 +1,7 @@
 import React from 'react'
 import { useRef, useState } from 'react'
-import { EIconName, MbIcon } from '../../..'
+import { MbIcon } from '../..'
+import { EIconName } from '../../..'
 import { isMobile } from '../../../consts/mobile'
 
 import AcceptedFormats from './acceptedFormats'
