@@ -1,9 +1,10 @@
+import React from "react";
 import { useState } from "react";
-import { EIconName } from "../../constants/icons";
-import { ESize } from "../../constants/properties";
-import MbAccordion from "../accordion/Accordion";
-import MbIcon from "../icon/Icon";
-import MbInput, { EControlStatus } from "../input-fields/inputField";
+import { EIconName } from "../../../consts/icons";
+import { ESize } from "../../../consts/properties";
+import { MbAccordion } from "../../accordion/Accordion";
+import { MbIcon } from "../../icon/Icon";
+import { MbInput, EControlStatus } from "../input-field/inputField";
 
 const MbAccountSelectors = () => {
   const [inputList, setInputList] = useState([
