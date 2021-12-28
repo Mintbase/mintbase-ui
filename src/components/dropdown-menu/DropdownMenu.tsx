@@ -8,7 +8,7 @@ interface Item {
 }
 
 // TODO: fix className type
-export const DropdownMenu = ({ items, isOpen, className }: { items: Item[], isOpen: boolean, className: string }) => {
+export const MbDropdownMenu = ({ items, isOpen, className }: { items: Item[], isOpen: boolean, className: string }) => {
 
   return ! isOpen ? null : (
     <div  className={`bg-gray-50 dark:bg-gray-700 text-mb-blackblue dark:text-white shadow-md rounded-md w-64 mt-4 ${className}`}>

@@ -1,15 +1,15 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import React from "react";
 import { MbButton } from "../../components/button/Button";
-import { DropdownMenu } from "../../components/dropdown-menu/DropdownMenu";
+import { MbDropdownMenu } from "../../components/dropdown-menu/DropdownMenu";
 import { MbIcon } from "../../components/icon/Icon";
 import { EIconName } from "../../consts/icons";
 
 export default {
   title: "Components/DropdownMenu",
-  component: DropdownMenu,
+  component: MbDropdownMenu,
   argTypes: {},
-} as ComponentMeta<typeof DropdownMenu>;
+} as ComponentMeta<typeof MbDropdownMenu>;
 
 const defaultItems = [
     { text: 'Docs', icon: <MbIcon name={EIconName.OPEN_NEW_TAB} color={'white'} />, onClick: () => { console.log('pressed menu button 1') } },
@@ -21,8 +21,8 @@ const defaultItems = [
     { text: 'Data', icon: <MbIcon name={EIconName.OPEN_NEW_TAB} color={'white'} />, onClick: () => { console.log('pressed menu button 1') } }
   ]
 
-const DropdownMenuTemplate: ComponentStory<typeof DropdownMenu> = (args) => (
-  <DropdownMenu {...args} />
+const DropdownMenuTemplate: ComponentStory<typeof MbDropdownMenu> = (args) => (
+  <MbDropdownMenu {...args} />
 );
 
 export const MenuTemplate = DropdownMenuTemplate.bind({});
@@ -31,7 +31,7 @@ MenuTemplate.args = {
   isOpen: true,
 };
 
-const DropdownMenuAnimated: ComponentStory<typeof DropdownMenu> = (args) => {
+const DropdownMenuAnimated: ComponentStory<typeof MbDropdownMenu> = (args) => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false)
 
   const handleButtonClick = () => {
@@ -40,7 +40,7 @@ const DropdownMenuAnimated: ComponentStory<typeof DropdownMenu> = (args) => {
   return (
   <div>
     <MbButton onClick={handleButtonClick} />
-    <DropdownMenu {...args} isOpen={isMenuOpen} />
+    <MbDropdownMenu {...args} isOpen={isMenuOpen} />
   </div>
 );
   }
