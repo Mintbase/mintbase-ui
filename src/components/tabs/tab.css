@@ -7,8 +7,8 @@
 }
 
 .center-sub-menu {
-  left: 50%;
-  transform: translateX(-50%);
+  right: 0;
+  position: absolute;
 }
 
 .order-by {

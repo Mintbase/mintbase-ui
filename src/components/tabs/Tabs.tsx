@@ -3,28 +3,46 @@ import { MbTab } from "./Tab";
 import { MbAction } from "../action/Action";
 import { MbIcon } from "../icon/Icon";
 import { EIconName } from "../../consts/icons";
+import { MbDropdownMenu } from "../../components/dropdown-menu/DropdownMenu";
 
 interface TabsProps extends React.HTMLAttributes<HTMLDivElement> {
   hasFilters: boolean;
 }
 
-const OrderOptions = ({ onSelect }: { onSelect: (option: string) => void }) => {
-  const labels = ["Newest", "Oldest", "Cheapest", "Most expensive"];
-  return (
-    <>
-      <div className="bg-gray-50 dark:bg-gray-800 rounded-b absolute flex flex-col top-12 py-12 w-max center-sub-menu">
-        {labels.map((label) => (
-          <MbAction label={label} onClick={() => onSelect(label)} />
-        ))}
-      </div>
-    </>
-  );
-};
-
 const MbTabs = (props: TabsProps) => {
   const [selectedTab, setSelectedTab] = useState(0);
   const [showOrderOpts, setShowOrderOpts] = useState(false);
   const [selectedOrder, setSelectedOrder] = useState("");
+  const options = [
+    {
+      text: "Newest",
+      onClick: () => {
+        setShowOrderOpts(!showOrderOpts);
+        setSelectedOrder("Newest");
+      },
+    },
+    {
+      text: "Oldest",
+      onClick: () => {
+        setShowOrderOpts(!showOrderOpts);
+        setSelectedOrder("Oldest");
+      },
+    },
+    {
+      text: "Cheapest",
+      onClick: () => {
+        setShowOrderOpts(!showOrderOpts);
+        setSelectedOrder("Cheapest");
+      },
+    },
+    {
+      text: "Most expensive",
+      onClick: () => {
+        setShowOrderOpts(!showOrderOpts);
+        setSelectedOrder("Most expensive");
+      },
+    },
+  ];
 
   if (!props.children) return <></>;
   const allTabs = React.Children.map(props.children, (child: any) => child);
@@ -47,7 +65,7 @@ const MbTabs = (props: TabsProps) => {
         </div>
         {props.hasFilters && (
           <>
-            <div className="ml-auto relative">
+            <div className="ml-auto">
               <div
                 className={`order-by ${
                   selectedOrder ? "selected" : "unselected"
@@ -74,18 +92,25 @@ const MbTabs = (props: TabsProps) => {
                   />
                 </div>
               </div>
-              {showOrderOpts && (
-                <OrderOptions
-                  onSelect={(option) => {
-                    setShowOrderOpts(!showOrderOpts);
-                    setSelectedOrder(option);
-                  }}
-                />
-              )}
+              {
+                /* {showOrderOpts && ( */
+                // <OrderOptions
+                //   onSelect={(option) => {
+                //     setShowOrderOpts(!showOrderOpts);
+                //     setSelectedOrder(option);
+                //   }}
+                // />
+                /* )} */
+              }
             </div>
           </>
         )}
       </div>
+      <MbDropdownMenu
+        isOpen={showOrderOpts}
+        items={options}
+        className="center-sub-menu"
+      />
       {tabsContent?.length &&
         tabsContent?.map((content, index) => {
           return index === selectedTab && <div>{content}</div>;
