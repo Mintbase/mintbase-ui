@@ -6,7 +6,7 @@ import { MbAccordion } from "../../accordion/Accordion";
 import { MbIcon } from "../../icon/Icon";
 import { MbInput, EControlStatus } from "../input-field/inputField";
 
-const MbAccountSelectors = () => {
+const MbAccountSelector = () => {
   const [inputList, setInputList] = useState([
     { placeholder: "mintbase.near", value: "" },
   ]);
@@ -79,4 +79,4 @@ const MbAccountSelectors = () => {
   );
 };
 
-export default MbAccountSelectors;
+export default MbAccountSelector;
