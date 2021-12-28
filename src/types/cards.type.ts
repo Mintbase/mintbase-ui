@@ -1,5 +1,4 @@
-import { EIconName } from "../constants/icons";
-import { ESize } from "../constants/properties";
+import { EIconName, ESize } from "consts";
 
 export type TThingCard = {
   upperLeftIcon?: EIconName;

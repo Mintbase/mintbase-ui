@@ -1,0 +1,1 @@
+export { MbText } from './Text'

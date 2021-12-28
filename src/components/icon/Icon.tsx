@@ -1,7 +1,7 @@
 import "material-icons/iconfont/material-icons.css";
 import React, { useEffect, useState } from "react";
 import InlineSVG from "react-inlinesvg";
-import { EIconName } from "../../constants/icons";
+import { EIconName } from "consts/icons";
 
 const mintbaseIcons = [
   "facebook",
@@ -15,7 +15,7 @@ const mintbaseIcons = [
   "mintbase",
 ];
 
-const MbIcon = ({
+export const MbIcon = ({
   name,
   color = "mb-blackblue",
   darkColor,
@@ -56,5 +56,3 @@ const MbIcon = ({
     </>
   );
 };
-
-export default MbIcon;

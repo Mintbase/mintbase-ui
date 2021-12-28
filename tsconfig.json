@@ -13,6 +13,7 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "allowJs": true,
+    "baseUrl": "src",
     "forceConsistentCasingInFileNames": true,
     "emitDeclarationOnly": true
   },

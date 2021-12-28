@@ -1,6 +1,6 @@
 import React from 'react'
-import { getFontType } from "../../constants/fontType";
-import { ESize, EState } from "../../constants/properties";
+import { ESize, EState } from "consts/properties";
+import { getFontType } from 'consts/fontType';
 import "./action.css";
 
 type ActionProps = {
@@ -9,7 +9,7 @@ type ActionProps = {
   size?: ESize;
 };
 
-const MbAction = ({
+export const MbAction = ({
   label = "",
   state = EState.ACTIVE,
   size = ESize.MEDIUM,
@@ -21,5 +21,3 @@ const MbAction = ({
     </button>
   );
 };
-
-export default MbAction;

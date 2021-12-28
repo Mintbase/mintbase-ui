@@ -1,8 +1,8 @@
 import React from 'react'
-import { getFontType } from "../../constants/fontType";
-import { EIconName } from "../../constants/icons";
-import { ESize } from "../../constants/properties";
-import MbIcon from "../icon/Icon";
+import { getFontType } from "consts/fontType";
+import { EIconName } from "consts/icons";
+import { ESize } from "consts/properties"
+import { MbIcon } from "components/icon";
 import "./inputfield.css";
 
 export enum EControlStatus {
@@ -18,7 +18,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   inputSize: ESize;
 }
 
-const MbInput = ({
+export const MbInput = ({
   label = "",
   hasIcon,
   controlStatus = EControlStatus.NORMAL,
@@ -95,5 +95,3 @@ const MbInput = ({
     </>
   );
 };
-
-export default MbInput;

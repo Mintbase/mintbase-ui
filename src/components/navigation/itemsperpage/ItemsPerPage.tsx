@@ -1,7 +1,7 @@
 import React from 'react'
 import "./itemsperpage.css";
 
-const MbItemsPerPage = ({
+export const MbItemsPerPage = ({
   onItemsPage,
   currentValue,
 }: {
@@ -23,5 +23,3 @@ const MbItemsPerPage = ({
     </ul>
   );
 };
-
-export default MbItemsPerPage;

@@ -1,0 +1,1 @@
+export { MbTooltip } from './Tooltip'
