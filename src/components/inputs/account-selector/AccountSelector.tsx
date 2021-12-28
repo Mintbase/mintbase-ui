@@ -2,12 +2,12 @@ import React from "react";
 import { useState } from "react";
 import { MbAction } from "../../..";
 import { EIconName } from "../../../consts/icons";
-import { ESize } from "../../../consts/properties";
+import { ESize, EState } from "../../../consts/properties";
 import { MbAccordion } from "../../accordion/Accordion";
 import { MbIcon } from "../../icon/Icon";
 import { MbInput, EControlStatus } from "../input-field/inputField";
 
-const MbAccountSelector = () => {
+const MbAccountSelector = ({ maxAmount }: { maxAmount: number }) => {
   const [inputList, setInputList] = useState([
     { placeholder: "mintbase.near", value: "" },
   ]);
@@ -26,7 +26,12 @@ const MbAccountSelector = () => {
   };
 
   const handleAddClick = () => {
+    if (checkIfMax()) return;
     setInputList([...inputList, { placeholder: "mintbase.near", value: "" }]);
+  };
+
+  const checkIfMax = () => {
+    return inputList.length + 1 === maxAmount;
   };
 
   return (
@@ -36,7 +41,9 @@ const MbAccountSelector = () => {
           <p className="p-big-90 text-gray-700 dark:text-gray-300 mb-16">
             Add accounts to easily switch between.
           </p>
-          <p className="dark:text-white p-med-90 mb-8">Add up to 20 accounts</p>
+          <p className="dark:text-white p-med-90 mb-8">
+            Add up to {maxAmount} accounts
+          </p>
         </header>
 
         <body className="mb-24 max-h-64 p-8 overflow-scroll">
@@ -68,7 +75,11 @@ const MbAccountSelector = () => {
             })}
         </body>
         <footer className="text-center">
-          <MbAction label="Add Another Account" onClick={handleAddClick} />
+          <MbAction
+            label="Add Another Account"
+            state={checkIfMax() ? EState.DISABLED : EState.ACTIVE}
+            onClick={handleAddClick}
+          />
         </footer>
       </section>
     </MbAccordion>
