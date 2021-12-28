@@ -1,32 +1,32 @@
-import React from "react";
-import { useState } from "react";
-import { EIconName } from "../../../consts/icons";
-import { ESize } from "../../../consts/properties";
-import { MbAccordion } from "../../accordion/Accordion";
-import { MbIcon } from "../../icon/Icon";
-import { MbInput, EControlStatus } from "../input-field/inputField";
+import React from 'react'
+import { useState } from 'react'
+import { EIconName } from '../../../consts/icons'
+import { ESize } from '../../../consts/properties'
+import { MbAccordion } from '../../accordion/Accordion'
+import { MbIcon } from '../../icon/Icon'
+import { MbInput, EControlStatus } from '../input-field/inputField'
 
 const MbAccountSelectors = () => {
   const [inputList, setInputList] = useState([
-    { placeholder: "mintbase.near", value: "" },
-  ]);
+    { placeholder: 'mintbase.near', value: '' },
+  ])
 
   const handleInputChange = (e: any, index: number) => {
-    const { value } = e.target;
-    const list = [...inputList];
-    list[index]["value"] = value;
-    setInputList(list);
-  };
+    const { value } = e.target
+    const list = [...inputList]
+    list[index]['value'] = value
+    setInputList(list)
+  }
 
   const handleRemoveClick = (index: number) => {
-    const list = [...inputList];
-    list.splice(index, 1);
-    setInputList(list);
-  };
+    const list = [...inputList]
+    list.splice(index, 1)
+    setInputList(list)
+  }
 
   const handleAddClick = () => {
-    setInputList([...inputList, { placeholder: "mintbase.near", value: "" }]);
-  };
+    setInputList([...inputList, { placeholder: 'mintbase.near', value: '' }])
+  }
 
   return (
     <MbAccordion title="Accounts" hasInfoIcon>
@@ -63,7 +63,7 @@ const MbAccountSelectors = () => {
                     />
                   </div>
                 </div>
-              );
+              )
             })}
         </body>
         <footer className="text-center">
@@ -76,7 +76,7 @@ const MbAccountSelectors = () => {
         </footer>
       </section>
     </MbAccordion>
-  );
-};
+  )
+}
 
-export default MbAccountSelectors;
+export default MbAccountSelectors

@@ -1,15 +1,15 @@
 import React from 'react'
-import ReactTooltip, { Place } from "react-tooltip";
-import "./tooltip.css";
+import ReactTooltip, { Place } from 'react-tooltip'
+import './tooltip.css'
 
 export const MbTooltip = ({
   text,
-  place = "bottom",
+  place = 'bottom',
   component,
 }: {
-  text: string;
-  place: Place;
-  component: JSX.Element;
+  text: string
+  place: Place
+  component: JSX.Element
 }) => {
   return (
     <>
@@ -25,9 +25,9 @@ export const MbTooltip = ({
         backgroundColor="rgba(0,0,0,0.6)"
         arrowColor="transparent"
         getContent={() => {
-          return <span className="cap-big-90">{text}</span>;
+          return <span className="cap-big-90">{text}</span>
         }}
       />
     </>
-  );
-};
+  )
+}

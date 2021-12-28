@@ -1,21 +1,21 @@
-import { ComponentMeta, ComponentStory } from "@storybook/react";
-import MbMediaImport from "./../../components/inputs/media-import/mediaImport";
+import { ComponentMeta, ComponentStory } from '@storybook/react'
+import MbMediaImport from './../../components/inputs/media-import/mediaImport'
 
 export default {
-  title: "Components/Inputs",
+  title: 'Components/Inputs',
   component: MbMediaImport,
   argTypes: {},
-} as ComponentMeta<typeof MbMediaImport>;
+} as ComponentMeta<typeof MbMediaImport>
 
 const Template: ComponentStory<typeof MbMediaImport> = (args) => (
   <MbMediaImport {...args}></MbMediaImport>
-);
+)
 
-export const MediaImport = Template.bind({});
+export const MediaImport = Template.bind({})
 MediaImport.args = {
-  uploadText: "Upload Profile Image",
+  uploadText: 'Upload Profile Image',
   isProfileImage: true,
-  acceptedFormats: [".jpeg", ".gif", ".png"],
-  idealDimensions: "500x500px",
+  acceptedFormats: ['.jpeg', '.gif', '.png'],
+  idealDimensions: '500x500px',
   maxSize: 5,
-};
+}

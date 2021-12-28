@@ -1,8 +1,5 @@
-import tailwindConfig from "../mintbase-theme";
+import tailwindConfig from '../mintbase-theme'
 
 export const isMobile = () => {
-  return (
-    window.innerWidth <
-    Number(tailwindConfig.screens.sm.replace("px", ""))
-  );
-};
+  return window.innerWidth < Number(tailwindConfig.screens.sm.replace('px', ''))
+}

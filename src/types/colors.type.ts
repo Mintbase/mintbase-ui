@@ -1,9 +1,9 @@
 export type TColorDetail = {
-  sectionTitle: string;
-  colors: TColor[];
-};
+  sectionTitle: string
+  colors: TColor[]
+}
 
 export type TColor = {
-  class: string;
-  hex: string;
-};
+  class: string
+  hex: string
+}

@@ -1,39 +1,39 @@
-import React, { useEffect, useState } from "react";
-import InlineSVG from "react-inlinesvg";
-import { EIconName } from "../../consts/icons";
+import React, { useEffect, useState } from 'react'
+import InlineSVG from 'react-inlinesvg'
+import { EIconName } from '../../consts/icons'
 
 const mintbaseIcons = [
-  "facebook",
-  "instagram",
-  "pinterest",
-  "twitter",
-  "telegram",
-  "medium",
-  "linkedin",
-  "youtube",
-  "mintbase",
-];
+  'facebook',
+  'instagram',
+  'pinterest',
+  'twitter',
+  'telegram',
+  'medium',
+  'linkedin',
+  'youtube',
+  'mintbase',
+]
 
 export const MbIcon = ({
   name,
-  color = "mb-blackblue",
+  color = 'mb-blackblue',
   darkColor,
-  size = "24px",
+  size = '24px',
 }: {
-  name: EIconName;
-  color: string;
-  darkColor?: string;
-  size?: string;
+  name: EIconName
+  color: string
+  darkColor?: string
+  size?: string
 }) => {
-  const [isMintbaseIcon, setIsMintbaseIcon] = useState<boolean>(false);
+  const [isMintbaseIcon, setIsMintbaseIcon] = useState<boolean>(false)
 
   useEffect(() => {
-    checkIfMaterialIcon();
-  }, []);
+    checkIfMaterialIcon()
+  }, [])
 
   const checkIfMaterialIcon = () => {
-    setIsMintbaseIcon(mintbaseIcons.includes(name));
-  };
+    setIsMintbaseIcon(mintbaseIcons.includes(name))
+  }
 
   return (
     <>
@@ -53,5 +53,5 @@ export const MbIcon = ({
         </span>
       )}
     </>
-  );
-};
+  )
+}
