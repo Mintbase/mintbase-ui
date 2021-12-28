@@ -31,9 +31,9 @@ Thing.args = {
       "https://coldcdn.com/api/cdn/bronil/JXl58b_p9iYzeFutFC5GcDCjsxppyFt5rRkQt4Su4LU",
     botRightText: "5/10",
     botRightIcon: EIconName.EDITIONS,
-    onBotLeftImageClick: () => {},
-    onCenterElementClick: () => {},
-    onUpperLeftClick: () => {},
-    onUpperRightClick: () => {},
+    onBotLeftImageClick: () => null,
+    onCenterElementClick: () => null,
+    onUpperLeftClick: () => null,
+    onUpperRightClick: () => null,
   },
 };
