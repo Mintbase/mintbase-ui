@@ -14,7 +14,7 @@ export interface PaginationProps {
 const DOTS = "...";
 
 const range = (start: any, end: any) => {
-  let length = end - start + 1;
+  const length = end - start + 1;
 
   return Array.from({ length }, (_, idx) => idx + start);
 };
@@ -50,15 +50,15 @@ export const MbPagination = (props: PaginationProps) => {
     const lastPageIndex = totalPageCount;
 
     if (!shouldShowLeftDots && shouldShowRightDots) {
-      let leftItemCount = 5;
-      let leftRange = range(1, leftItemCount);
+      const leftItemCount = 5;
+      const leftRange = range(1, leftItemCount);
 
       setPaginationRange([...leftRange, DOTS, totalPageCount]);
     }
 
     if (shouldShowLeftDots && !shouldShowRightDots) {
-      let rightItemCount = 5;
-      let rightRange = range(
+      const rightItemCount = 5;
+      const rightRange = range(
         totalPageCount - rightItemCount + 1,
         totalPageCount
       );
@@ -66,7 +66,7 @@ export const MbPagination = (props: PaginationProps) => {
     }
 
     if (shouldShowLeftDots && shouldShowRightDots) {
-      let middleRange = range(leftSiblingIndex, rightSiblingIndex);
+      const middleRange = range(leftSiblingIndex, rightSiblingIndex);
       setPaginationRange([
         firstPageIndex,
         DOTS,
