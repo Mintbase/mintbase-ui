@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import React from "react";
-import MbThingCard from "../../components/cards/thing/ThingCard";
-import { EIconName } from "../../constants/icons";
+import { MbThingCard } from "../../components/cards/thing/ThingCard";
+import { EIconName } from "../../consts/icons";
 
 export default {
   title: "Components/Cards",

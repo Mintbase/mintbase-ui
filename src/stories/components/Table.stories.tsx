@@ -1,7 +1,6 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { useEffect, useRef, useState } from "react";
-import MbTable, { MbBody, MbHead } from "../../components/table/Table";
-import { Pagination } from "./Pagination.stories";
+import { useEffect, useState } from "react";
+import { MbTable, MbBody, MbHead } from "../../components/table/Table";
 
 export default {
   title: "Components/Table",

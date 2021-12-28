@@ -1,5 +1,5 @@
-import MbIcon from "../../components/icon/Icon";
-import { EIconName } from "../../constants/icons";
+import { MbIcon } from "../../components/icon/Icon";
+import { EIconName } from "../../consts/icons";
 
 export default {
   title: "Core/Icons",

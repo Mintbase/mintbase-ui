@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { EIconName } from "../../constants/icons";
-import MbAction from "../action/Action";
-import MbIcon from "../icon/Icon";
-import MbTab from "./Tab";
+import { MbTab } from "./Tab";
+import { MbAction } from "../action/Action";
+import { MbIcon } from "../icon/Icon";
+import { EIconName } from "../../consts/icons";
 
 interface TabsProps extends React.HTMLAttributes<HTMLDivElement> {
   hasFilters: boolean;

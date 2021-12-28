@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import React from "react";
-import MbSmallCard from "../../components/cards/small/smallCard";
-import { ESmallCardType } from "../../constants/properties";
+import { MbSmallCard } from "../../components/cards/small/smallCard";
+import { ESmallCardType } from "../../consts/properties";
 
 export default {
   title: "Components/Cards",

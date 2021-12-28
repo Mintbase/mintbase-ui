@@ -1,6 +1,6 @@
 import React from "react";
-import { getFontType } from "../../constants/fontType";
-import { ESize, EState, EType } from "../../constants/properties";
+import { getFontType } from "../../consts/fontType";
+import { ESize, EState, EType } from "../../consts/properties";
 import "./button.css";
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
@@ -39,7 +39,7 @@ const LoadingAnimation = ({
   </div>
 );
 
-const MbButton = ({
+export const MbButton = ({
   label = "default",
   state = EState.ACTIVE,
   size = ESize.MEDIUM,
@@ -60,5 +60,3 @@ const MbButton = ({
     </button>
   );
 };
-
-export default MbButton;
