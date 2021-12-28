@@ -15,7 +15,6 @@ const MbAccountSelectors = () => {
     const list = [...inputList];
     list[index]["value"] = value;
     setInputList(list);
-    console.log(inputList);
   };
 
   const handleRemoveClick = (index: number) => {
@@ -25,7 +24,6 @@ const MbAccountSelectors = () => {
   };
 
   const handleAddClick = () => {
-    console.log(inputList);
     setInputList([...inputList, { placeholder: "mintbase.near", value: "" }]);
   };
 
