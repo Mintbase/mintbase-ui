@@ -1,4 +1,4 @@
-const mintbaseTheme = require('./src/mintbase-theme')
+const mintbaseTheme = require("./src/mintbase-theme");
 
 module.exports = {
   purge: [],
