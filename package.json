@@ -23,8 +23,7 @@
   },
   "peerDependencies": {
     "react": ">=16",
-    "react-dom": ">=16",
-    "react-inlinesvg": "^2.3.0"
+    "react-dom": ">=16"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^21.0.1",
@@ -62,7 +61,8 @@
   },
   "dependencies": {
     "material-icons": "^1.10.4",
-    "react-tooltip": "^4.2.21"
+    "react-tooltip": "^4.2.21",
+    "react-inlinesvg": "^2.3.0"
   },
   "eslintConfig": {
     "extends": [

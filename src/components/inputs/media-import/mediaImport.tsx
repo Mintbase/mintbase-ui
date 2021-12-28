@@ -1,7 +1,8 @@
+import React from "react";
 import { useRef, useState } from "react";
-import { EIconName } from "../../../constants/icons";
-import { isMobile } from "../../../constants/mobile";
-import MbIcon from "../../icon/Icon";
+import { EIconName, MbIcon } from "../../..";
+import { isMobile } from "../../../consts/mobile";
+
 import AcceptedFormats from "./acceptedFormats";
 
 interface MediaImportProps {
@@ -167,4 +168,5 @@ const MbMediaImport = (props: MediaImportProps) => {
     </>
   );
 };
+
 export default MbMediaImport;

@@ -2,6 +2,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import React from "react";
 
 import { ESize } from "../../consts/properties";
+import { MbInput, EControlStatus } from "./../../index";
 
 export default {
   title: "Components/Inputs",
