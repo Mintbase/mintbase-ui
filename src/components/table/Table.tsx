@@ -1,6 +1,7 @@
-import React, { useState } from "react";
-import MbItemsPerPage from "../navigation/itemsperpage/ItemsPerPage";
-import MbPagination, {
+import React from "react";
+import { MbItemsPerPage } from "../navigation/itemsperpage/ItemsPerPage";
+import { MbPagination } from "../navigation/pagination/Pagination";
+import{
   PaginationProps,
 } from "../navigation/pagination/Pagination";
 import "./table.css";
@@ -26,7 +27,7 @@ export const MbBody = (props: React.HTMLAttributes<HTMLDivElement>) => {
   );
 };
 
-const MbTable = (props: TableProps) => {
+export const MbTable = (props: TableProps) => {
   const { title, children, pagination, onAmountItemsChange } = props;
 
   const allChildren = React.Children.map(children, (child: any) => child);
@@ -73,5 +74,3 @@ const MbTable = (props: TableProps) => {
     </section>
   );
 };
-
-export default MbTable;

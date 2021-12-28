@@ -1,10 +1,11 @@
+import React from 'react'
 import "./tab.css";
 
 interface TabProps extends React.HTMLAttributes<HTMLDivElement> {
   isActive?: boolean;
 }
 
-const MbTab = (props: TabProps) => {
+export const MbTab = (props: TabProps) => {
   return (
     <>
       <div className="flex">
@@ -15,5 +16,3 @@ const MbTab = (props: TabProps) => {
     </>
   );
 };
-
-export default MbTab;

@@ -1,4 +1,4 @@
-import MbText from "../../components/text/Text";
+import { MbText } from "../../components/text/Text";
 
 export default {
   title: "Core/Typography",
