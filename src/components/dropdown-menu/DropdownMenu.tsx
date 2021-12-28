@@ -1,4 +1,5 @@
 import React from 'react'
+import { MbText } from '../text/Text'
 
 interface Item {
   text: string
@@ -15,7 +16,7 @@ export const DropdownMenu = ({ items, isOpen, className }: { items: Item[], isOp
         // TODO: fix over rounded corners for the first and last element
         return (
           <div key={`${text}-${index}`} className={'flex hover:bg-gray-500 p-8'} onClick={onClick}>
-            <div className={'flex justify-center w-full text-center'}>{text}</div>
+            <MbText className={'w-full justify-center flex'}>{text}</MbText>
             <div className={'flex items-center ml-4 w-6'}>{icon}</div>
           </div>
         )
