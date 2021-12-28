@@ -1,9 +1,9 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import React from "react";
-import { Button } from "../../components";
+import { MbButton } from "../../components/button/Button";
 import { DropdownMenu } from "../../components/dropdown-menu/DropdownMenu";
-import MbIcon from "../../components/icon/Icon";
-import { EIconName } from "../../constants/icons";
+import { MbIcon } from "../../components/icon/Icon";
+import { EIconName } from "../../consts/icons";
 
 export default {
   title: "Components/DropdownMenu",
@@ -39,12 +39,11 @@ const DropdownMenuAnimated: ComponentStory<typeof DropdownMenu> = (args) => {
   }
   return (
   <div>
-    <Button onClick={handleButtonClick} />
+    <MbButton onClick={handleButtonClick} />
     <DropdownMenu {...args} isOpen={isMenuOpen} />
   </div>
 );
   }
-
 
 export const Animated = DropdownMenuAnimated.bind({})
 Animated.args = {
