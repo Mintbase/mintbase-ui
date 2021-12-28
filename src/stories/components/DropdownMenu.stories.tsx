@@ -10,16 +10,62 @@ export default {
   component: MbDropdownMenu,
   argTypes: {},
 } as ComponentMeta<typeof MbDropdownMenu>;
-
 const defaultItems = [
-    { text: 'Docs', icon: <MbIcon name={EIconName.OPEN_NEW_TAB} color={'white'} />, onClick: () => { console.log('pressed menu button 1') } },
-    { text: 'Developers', icon: <MbIcon name={EIconName.OPEN_NEW_TAB} color={'white'} />, onClick: () => { console.log('pressed menu button 1') } },
-    { text: 'Community', icon: <MbIcon name={EIconName.OPEN_NEW_TAB} color={'white'} />, onClick: () => { console.log('pressed menu button 1') } },
-    { text: 'Store', onClick: () => { console.log('pressed menu button 1') } },
-    { text: 'Careers', onClick: () => { console.log('pressed menu button 1') } },
-    { text: 'Royalties', onClick: () => { console.log('pressed menu button 1') } },
-    { text: 'Data', icon: <MbIcon name={EIconName.OPEN_NEW_TAB} color={'white'} />, onClick: () => { console.log('pressed menu button 1') } }
-  ]
+  {
+    text: "Docs",
+    icon: (
+      <MbIcon name={EIconName.OPEN_NEW_TAB} color={"blue-300"} size="16px" />
+    ),
+    onClick: () => {
+      console.log("pressed menu button 1");
+    },
+  },
+  {
+    text: "Developers",
+    icon: (
+      <MbIcon name={EIconName.OPEN_NEW_TAB} color={"blue-300"} size="16px" />
+    ),
+    onClick: () => {
+      console.log("pressed menu button 1");
+    },
+  },
+  {
+    text: "Community",
+    icon: (
+      <MbIcon name={EIconName.OPEN_NEW_TAB} color={"blue-300"} size="16px" />
+    ),
+    onClick: () => {
+      console.log("pressed menu button 1");
+    },
+  },
+  {
+    text: "Store",
+    onClick: () => {
+      console.log("pressed menu button 1");
+    },
+  },
+  {
+    text: "Careers",
+    onClick: () => {
+      console.log("pressed menu button 1");
+    },
+  },
+  {
+    text: "Royalties",
+    onClick: () => {
+      console.log("pressed menu button 1");
+    },
+  },
+  {
+    text: "Data",
+    icon: (
+      <MbIcon name={EIconName.OPEN_NEW_TAB} color={"blue-300"} size="16px" />
+    ),
+    onClick: () => {
+      console.log("pressed menu button 1");
+    },
+  },
+];
 
 const DropdownMenuTemplate: ComponentStory<typeof MbDropdownMenu> = (args) => (
   <MbDropdownMenu {...args} />
@@ -32,20 +78,20 @@ MenuTemplate.args = {
 };
 
 const DropdownMenuAnimated: ComponentStory<typeof MbDropdownMenu> = (args) => {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false)
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   const handleButtonClick = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
+    setIsMenuOpen(!isMenuOpen);
+  };
   return (
-  <div>
-    <MbButton onClick={handleButtonClick} />
-    <MbDropdownMenu {...args} isOpen={isMenuOpen} />
-  </div>
-);
-  }
+    <div>
+      <MbButton onClick={handleButtonClick} />
+      <MbDropdownMenu {...args} isOpen={isMenuOpen} />
+    </div>
+  );
+};
 
-export const Animated = DropdownMenuAnimated.bind({})
+export const Animated = DropdownMenuAnimated.bind({});
 Animated.args = {
   items: defaultItems,
 };
