@@ -6,13 +6,16 @@ import MbIcon from "../icon/Icon";
 import MbInput, { EControlStatus } from "../input-fields/inputField";
 
 const MbAccountSelectors = () => {
-  const [inputList, setInputList] = useState([0]);
+  const [inputList, setInputList] = useState([
+    { placeholder: "mintbase.near", value: "" },
+  ]);
 
   const handleInputChange = (e: any, index: number) => {
     const { value } = e.target;
     const list = [...inputList];
-    list[index] = value;
+    list[index]["value"] = value;
     setInputList(list);
+    console.log(inputList);
   };
 
   const handleRemoveClick = (index: number) => {
@@ -23,7 +26,7 @@ const MbAccountSelectors = () => {
 
   const handleAddClick = () => {
     console.log(inputList);
-    setInputList([...inputList, inputList.length]);
+    setInputList([...inputList, { placeholder: "mintbase.near", value: "" }]);
   };
 
   return (
@@ -38,18 +41,20 @@ const MbAccountSelectors = () => {
 
         <body className="mb-24">
           {inputList.length > 0 &&
-            inputList.map((i) => {
+            inputList.map((input, index) => {
               return (
-                <div key={i} className="flex items-center space-x-12 mb-12">
+                <div key={index} className="flex items-center space-x-12 mb-12">
                   <MbInput
                     type="text"
-                    placeholder="mintbase.near"
+                    placeholder={input.placeholder}
+                    value={input.value}
                     inputSize={ESize.BIG}
                     controlStatus={EControlStatus.NORMAL}
+                    onChange={(e: any) => handleInputChange(e, index)}
                   />
                   <div
                     className="cursor-pointer"
-                    onClick={() => handleRemoveClick(i)}
+                    onClick={() => handleRemoveClick(index)}
                   >
                     <MbIcon
                       name={EIconName.DELETE}
