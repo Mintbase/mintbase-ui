@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import MbAccountSelectors from "../../components/input-account-selectors/AccountSelectors";
+import MbAccountSelectors from "../../components/inputs/input-account-selectors/AccountSelectors";
 
 export default {
   title: "Components/Input",
