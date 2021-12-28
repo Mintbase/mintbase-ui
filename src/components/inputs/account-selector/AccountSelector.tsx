@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { MbAction } from "../../..";
 import { EIconName } from "../../../consts/icons";
 import { ESize } from "../../../consts/properties";
 import { MbAccordion } from "../../accordion/Accordion";
@@ -38,7 +39,7 @@ const MbAccountSelector = () => {
           <p className="dark:text-white p-med-90 mb-8">Add up to 20 accounts</p>
         </header>
 
-        <body className="mb-24">
+        <body className="mb-24 max-h-64 p-8 overflow-scroll">
           {inputList.length > 0 &&
             inputList.map((input, index) => {
               return (
@@ -67,12 +68,7 @@ const MbAccountSelector = () => {
             })}
         </body>
         <footer className="text-center">
-          <p
-            className="text-blue-300 dark:text-blue-100 p-big-90 cursor-pointer"
-            onClick={handleAddClick}
-          >
-            Add Another Account
-          </p>
+          <MbAction label="Add Another Account" onClick={handleAddClick} />
         </footer>
       </section>
     </MbAccordion>
