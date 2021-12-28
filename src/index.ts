@@ -15,6 +15,7 @@ export { MbTab } from './components/tabs/Tab'
 export { MbTabs } from './components/tabs/Tabs'
 export { MbText } from './components/text/Text'
 export { MbTooltip } from './components/tooltip/Tooltip'
+export { MbLogo } from './components/logo/Logo';
 export { MbDropdownMenu } from './components/dropdown-menu/DropdownMenu'
 
 export * from './consts/colors'

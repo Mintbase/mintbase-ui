@@ -39,7 +39,7 @@ export const MbIcon = ({
     <>
       {isMintbaseIcon ? (
         <InlineSVG
-          src={`./assets/icons/${name}.svg`}
+          src={`/assets/icons/${name}.svg`}
           width={size}
           height={size}
           className={`fill-current text-${color} dark:text-${darkColor}`}
