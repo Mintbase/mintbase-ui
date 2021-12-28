@@ -7,7 +7,8 @@
 }
 
 .center-sub-menu {
-  @apply right-0 absolute;
+  right: 40px;
+  @apply absolute;
 }
 
 .order-by {
