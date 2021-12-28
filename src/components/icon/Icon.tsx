@@ -1,4 +1,3 @@
-import "material-icons/iconfont/material-icons.css";
 import React, { useEffect, useState } from "react";
 import InlineSVG from "react-inlinesvg";
 import { EIconName } from "../../consts/icons";

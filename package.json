@@ -22,6 +22,7 @@
   },
   "peerDependencies": {
     "react": ">=16",
+    "react-inlinesvg": "^2.3.0",
     "react-dom": ">=16"
   },
   "devDependencies": {
@@ -60,7 +61,6 @@
   },
   "dependencies": {
     "material-icons": "^1.10.4",
-    "react-inlinesvg": "^2.3.0",
     "react-tooltip": "^4.2.21"
   },
   "eslintConfig": {
