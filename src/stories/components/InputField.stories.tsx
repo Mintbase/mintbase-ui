@@ -1,39 +1,37 @@
-import { ComponentMeta, ComponentStory } from "@storybook/react";
-import React from "react";
+import { ComponentMeta, ComponentStory } from '@storybook/react'
+import React from 'react'
 
-import { ESize } from "../../consts/properties";
-import { MbInput, EControlStatus } from "./../../index";
+import { ESize } from '../../consts/properties'
+import { MbInput, EControlStatus } from './../../index'
 
 export default {
-  title: "Components/Inputs",
+  title: 'Components/Inputs',
   component: MbInput,
   argTypes: {
     controlStatus: {
-      options: ["normal", "valid", "invalid"],
-      control: { type: "radio" },
+      options: ['normal', 'valid', 'invalid'],
+      control: { type: 'radio' },
     },
     inputSize: {
-      options: ["small", "medium", "big"],
-      control: { type: "radio" },
+      options: ['small', 'medium', 'big'],
+      control: { type: 'radio' },
     },
   },
-} as ComponentMeta<typeof MbInput>;
+} as ComponentMeta<typeof MbInput>
 
-const Template: ComponentStory<typeof MbInput> = (args) => (
-  <MbInput {...args} />
-);
+const Template: ComponentStory<typeof MbInput> = (args) => <MbInput {...args} />
 
-export const Input = Template.bind({});
+export const Input = Template.bind({})
 Input.args = {
-  label: "Label",
+  label: 'Label',
   hasIcon: true,
   disabled: false,
-  placeholder: "Placeholder",
-  type: "text",
+  placeholder: 'Placeholder',
+  type: 'text',
   required: true,
   controlStatus: EControlStatus.NORMAL,
   inputSize: ESize.MEDIUM,
   onChange: (event: any) => {
-    console.log(event.target.value);
+    console.log(event.target.value)
   },
-};
+}

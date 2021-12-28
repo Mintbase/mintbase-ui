@@ -16,7 +16,9 @@
   "scripts": {
     "build:tsc": "tsc",
     "build": "npm run clean && rollup -c",
+    "lint": "eslint src --ext .ts,tsx,js,jsx",
     "lint:types": "tsc --noEmit",
+    "prettier:write": "prettier --w src",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "clean": "rm -rf dist"
@@ -42,12 +44,17 @@
     "@types/node": "^17.0.5",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.8.1",
+    "@typescript-eslint/parser": "^5.8.1",
     "autoprefixer": "^10.3.5",
     "cross-env": "^7.0.3",
     "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
     "postcss": "^8.3.7",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^6.7.0",
+    "prettier": "^2.5.1",
     "react-test-renderer": "^17.0.2",
     "rollup": "^2.62.0",
     "rollup-plugin-dts": "^4.1.0",
@@ -61,23 +68,7 @@
   },
   "dependencies": {
     "material-icons": "^1.10.4",
-    "react-tooltip": "^4.2.21",
-    "react-inlinesvg": "^2.3.0"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ],
-    "overrides": [
-      {
-        "files": [
-          "**/*.stories.*"
-        ],
-        "rules": {
-          "import/no-anonymous-default-export": "off"
-        }
-      }
-    ]
+    "react-inlinesvg": "^2.3.0",
+    "react-tooltip": "^4.2.21"
   }
 }

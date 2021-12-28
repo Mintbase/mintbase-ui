@@ -1,6 +1,6 @@
 export default {
-  title: "Core/Spacing",
-};
+  title: 'Core/Spacing',
+}
 
 export const Spacing = () => (
   <>
@@ -95,7 +95,7 @@ export const Spacing = () => (
       </div>
     </div>
     <p className="p-med-90 mt-12">
-      *space-x, p or m and all derivates from this classes.{" "}
+      *space-x, p or m and all derivates from this classes.{' '}
       <a
         className="text-blue-100-35 hover:text-blue-300"
         href="https://tailwindcss.com/docs/padding"
@@ -105,4 +105,4 @@ export const Spacing = () => (
       </a>
     </p>
   </>
-);
+)

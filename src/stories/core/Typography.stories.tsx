@@ -1,8 +1,8 @@
-import { MbText } from "../../components/text/Text";
+import { MbText } from '../../components/text/Text'
 
 export default {
-  title: "Core/Typography",
-};
+  title: 'Core/Typography',
+}
 
 export const Typography = () => (
   <section>
@@ -36,4 +36,4 @@ export const Typography = () => (
     <MbText className="cap-small-90 mb-2">cap-small-90</MbText>
     <MbText className="action-cap mb-2">action-cap</MbText>
   </section>
-);
+)

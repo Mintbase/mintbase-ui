@@ -1,14 +1,12 @@
-import React from "react";
-import { MbItemsPerPage } from "../navigation/itemsperpage/ItemsPerPage";
-import { MbPagination } from "../navigation/pagination/Pagination";
-import{
-  PaginationProps,
-} from "../navigation/pagination/Pagination";
-import "./table.css";
+import React from 'react'
+import { MbItemsPerPage } from '../navigation/itemsperpage/ItemsPerPage'
+import { MbPagination } from '../navigation/pagination/Pagination'
+import { PaginationProps } from '../navigation/pagination/Pagination'
+import './table.css'
 interface TableProps extends React.HTMLAttributes<HTMLDivElement> {
-  title: string;
-  pagination?: PaginationProps;
-  onAmountItemsChange?: (page: number) => void;
+  title: string
+  pagination?: PaginationProps
+  onAmountItemsChange?: (page: number) => void
 }
 
 export const MbHead = (props: React.HTMLAttributes<HTMLDivElement>) => {
@@ -16,23 +14,23 @@ export const MbHead = (props: React.HTMLAttributes<HTMLDivElement>) => {
     <thead className="headers table-fixed border-b-2 border-gray-200 text-left dark:border-gray-900 text-gray-700 dark:text-gray-300 p-med-90">
       {props.children}
     </thead>
-  );
-};
+  )
+}
 
 export const MbBody = (props: React.HTMLAttributes<HTMLDivElement>) => {
   return (
     <tbody className="p-24 dark:text-white p-med-90 body-table">
       {props.children}
     </tbody>
-  );
-};
+  )
+}
 
 export const MbTable = (props: TableProps) => {
-  const { title, children, pagination, onAmountItemsChange } = props;
+  const { title, children, pagination, onAmountItemsChange } = props
 
-  const allChildren = React.Children.map(children, (child: any) => child);
-  const headers = allChildren?.filter((child) => child.type.name === "MbHead");
-  const body = allChildren?.filter((child) => child.type.name === "MbBody");
+  const allChildren = React.Children.map(children, (child: any) => child)
+  const headers = allChildren?.filter((child) => child.type.name === 'MbHead')
+  const body = allChildren?.filter((child) => child.type.name === 'MbBody')
 
   return (
     <section className="bg-white dark:bg-gray-850">
@@ -58,7 +56,7 @@ export const MbTable = (props: TableProps) => {
             {pagination.itemsPerPage * pagination.currentPage <
             pagination.totalItems
               ? `1 - ${pagination.itemsPerPage}`
-              : pagination.totalItems}{" "}
+              : pagination.totalItems}{' '}
             of {pagination.totalItems}
           </div>
           <div className="flex justify-center md:justify-end mb-24 md:mb-0 order-1 md:order-3">
@@ -72,5 +70,5 @@ export const MbTable = (props: TableProps) => {
         </footer>
       )}
     </section>
-  );
-};
+  )
+}

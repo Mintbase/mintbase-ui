@@ -1,8 +1,8 @@
-import { colorsArray } from "../../consts/colors";
+import { colorsArray } from '../../consts/colors'
 
 export default {
-  title: "Core/Colors",
-};
+  title: 'Core/Colors',
+}
 
 export const Colors = () => (
   <>
@@ -15,7 +15,7 @@ export const Colors = () => (
             <div key={color.class}>
               <div
                 className={`w-24 h-24 bg-${color.class} rounded-md ${
-                  color.class.includes("white") ? "border-2 border-black" : ""
+                  color.class.includes('white') ? 'border-2 border-black' : ''
                 }`}
               ></div>
               <div className="p-med-130">{color.class}</div>
@@ -26,4 +26,4 @@ export const Colors = () => (
       </section>
     ))}
   </>
-);
+)

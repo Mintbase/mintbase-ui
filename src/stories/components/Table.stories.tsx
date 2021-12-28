@@ -1,132 +1,132 @@
-import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { useEffect, useState } from "react";
-import { MbTable, MbBody, MbHead } from "../../components/table/Table";
+import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { useEffect, useState } from 'react'
+import { MbTable, MbBody, MbHead } from '../../components/table/Table'
 
 export default {
-  title: "Components/Table",
+  title: 'Components/Table',
   component: MbTable,
   argTypes: {},
-} as ComponentMeta<typeof MbTable>;
+} as ComponentMeta<typeof MbTable>
 
 const bodyItems = [
   {
-    amount: "557.6 N",
-    account: "mintbase.near",
-    created: "1 hour ago",
-    expired: "1 day",
-    tx: "...",
+    amount: '557.6 N',
+    account: 'mintbase.near',
+    created: '1 hour ago',
+    expired: '1 day',
+    tx: '...',
   },
   {
-    amount: "237 N",
-    account: "mintbase.near",
-    created: "1 hour ago",
-    expired: "1 day",
-    tx: "...",
+    amount: '237 N',
+    account: 'mintbase.near',
+    created: '1 hour ago',
+    expired: '1 day',
+    tx: '...',
   },
   {
-    amount: "2 N",
-    account: "mintbase.near",
-    created: "1 hour ago",
-    expired: "1 day",
-    tx: "...",
+    amount: '2 N',
+    account: 'mintbase.near',
+    created: '1 hour ago',
+    expired: '1 day',
+    tx: '...',
   },
   {
-    amount: "3.4 N",
-    account: "mintbase.near",
-    created: "1 hour ago",
-    expired: "1 day",
-    tx: "...",
+    amount: '3.4 N',
+    account: 'mintbase.near',
+    created: '1 hour ago',
+    expired: '1 day',
+    tx: '...',
   },
   {
-    amount: "557.6 N",
-    account: "mintbase.near",
-    created: "1 hour ago",
-    expired: "1 day",
-    tx: "...",
+    amount: '557.6 N',
+    account: 'mintbase.near',
+    created: '1 hour ago',
+    expired: '1 day',
+    tx: '...',
   },
   {
-    amount: "557.6 N",
-    account: "mintbase.near",
-    created: "1 hour ago",
-    expired: "1 day",
-    tx: "...",
+    amount: '557.6 N',
+    account: 'mintbase.near',
+    created: '1 hour ago',
+    expired: '1 day',
+    tx: '...',
   },
   {
-    amount: "5 N",
-    account: "mintbase.near",
-    created: "1 hour ago",
-    expired: "1 day",
-    tx: "...",
+    amount: '5 N',
+    account: 'mintbase.near',
+    created: '1 hour ago',
+    expired: '1 day',
+    tx: '...',
   },
   {
-    amount: "17.6 N",
-    account: "mintbase.near",
-    created: "1 hour ago",
-    expired: "1 day",
-    tx: "...",
+    amount: '17.6 N',
+    account: 'mintbase.near',
+    created: '1 hour ago',
+    expired: '1 day',
+    tx: '...',
   },
   {
-    amount: "107.6 N",
-    account: "mintbase.near",
-    created: "1 hour ago",
-    expired: "1 day",
-    tx: "...",
+    amount: '107.6 N',
+    account: 'mintbase.near',
+    created: '1 hour ago',
+    expired: '1 day',
+    tx: '...',
   },
   {
-    amount: "227.6 N",
-    account: "mintbase.near",
-    created: "1 hour ago",
-    expired: "1 day",
-    tx: "...",
+    amount: '227.6 N',
+    account: 'mintbase.near',
+    created: '1 hour ago',
+    expired: '1 day',
+    tx: '...',
   },
   {
-    amount: "307.6 N",
-    account: "mintbase.near",
-    created: "1 hour ago",
-    expired: "1 day",
-    tx: "...",
+    amount: '307.6 N',
+    account: 'mintbase.near',
+    created: '1 hour ago',
+    expired: '1 day',
+    tx: '...',
   },
   {
-    amount: "237.6 N",
-    account: "mintbase.near",
-    created: "1 hour ago",
-    expired: "1 day",
-    tx: "...",
+    amount: '237.6 N',
+    account: 'mintbase.near',
+    created: '1 hour ago',
+    expired: '1 day',
+    tx: '...',
   },
   {
-    amount: "57.6 N",
-    account: "mintbase.near",
-    created: "1 hour ago",
-    expired: "1 day",
-    tx: "...",
+    amount: '57.6 N',
+    account: 'mintbase.near',
+    created: '1 hour ago',
+    expired: '1 day',
+    tx: '...',
   },
   {
-    amount: "107.6 N",
-    account: "mintbase.near",
-    created: "1 hour ago",
-    expired: "1 day",
-    tx: "...",
+    amount: '107.6 N',
+    account: 'mintbase.near',
+    created: '1 hour ago',
+    expired: '1 day',
+    tx: '...',
   },
-];
+]
 
 const Template: ComponentStory<typeof MbTable> = (args) => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage, setItemsPerPage] = useState(10);
-  const [items, setItems] = useState<any[]>([]);
+  const [currentPage, setCurrentPage] = useState(1)
+  const [itemsPerPage, setItemsPerPage] = useState(10)
+  const [items, setItems] = useState<any[]>([])
 
   const handle = (newPage: number) => {
-    setCurrentPage(newPage);
-  };
+    setCurrentPage(newPage)
+  }
 
   const paginationProps = {
     currentPage: currentPage,
     itemsPerPage: itemsPerPage,
     totalItems: bodyItems.length,
     onPageChange: handle,
-  };
+  }
   const changeAmountPerPage = (nr: number) => {
-    setItemsPerPage(nr);
-  };
+    setItemsPerPage(nr)
+  }
 
   useEffect(() => {
     setItems(
@@ -140,8 +140,8 @@ const Template: ComponentStory<typeof MbTable> = (args) => {
           ? currentPage * itemsPerPage + itemsPerPage
           : itemsPerPage
       )
-    );
-  }, [currentPage, itemsPerPage]);
+    )
+  }, [currentPage, itemsPerPage])
 
   return (
     <MbTable
@@ -168,14 +168,14 @@ const Template: ComponentStory<typeof MbTable> = (args) => {
               <td>{elm.expired}</td>
               <td>{elm.tx}</td>
             </tr>
-          );
+          )
         })}
       </MbBody>
     </MbTable>
-  );
-};
+  )
+}
 
-export const Table = Template.bind({});
+export const Table = Template.bind({})
 Table.args = {
-  title: "Trading History",
-};
+  title: 'Trading History',
+}

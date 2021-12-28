@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import { MbTab } from "./Tab";
+import React, { useState } from 'react'
+import { MbTab } from './Tab'
 
 export const MbTabs = (props: React.HTMLAttributes<HTMLDivElement>) => {
-  const [selectedTab, setSelectedTab] = useState(0);
+  const [selectedTab, setSelectedTab] = useState(0)
 
-  if (!props.children) return <></>;
-  const allTabs = React.Children.map(props.children, (child: any) => child);
-  const validtabs = allTabs?.filter((tab) => tab.type.name === "MbTab");
-  const tabsTitle = validtabs?.map((tab) => tab.props.title);
-  const tabsContent = validtabs?.map((tab) => tab.props.children);
+  if (!props.children) return <></>
+  const allTabs = React.Children.map(props.children, (child: any) => child)
+  const validtabs = allTabs?.filter((tab) => tab.type.name === 'MbTab')
+  const tabsTitle = validtabs?.map((tab) => tab.props.title)
+  const tabsContent = validtabs?.map((tab) => tab.props.children)
 
   return (
     <>
@@ -24,10 +24,10 @@ export const MbTabs = (props: React.HTMLAttributes<HTMLDivElement>) => {
       </div>
       {tabsContent?.length &&
         tabsContent?.map((content, index) => {
-          return index === selectedTab && <div>{content}</div>;
+          return index === selectedTab && <div>{content}</div>
         })}
     </>
-  );
-};
+  )
+}
 
-export default MbTabs;
+export default MbTabs

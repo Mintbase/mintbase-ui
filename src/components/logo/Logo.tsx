@@ -1,11 +1,11 @@
 import React from 'react'
-import InlineSVG from "react-inlinesvg/esm";
+import InlineSVG from 'react-inlinesvg/esm'
 
 interface LogoProps {
   src: string
   width?: string
 }
-export const MbLogo = ({ src, width = "140px" }: LogoProps) => (
+export const MbLogo = ({ src, width = '140px' }: LogoProps) => (
   <div className="m-10">
     <InlineSVG
       src={src}
@@ -13,4 +13,4 @@ export const MbLogo = ({ src, width = "140px" }: LogoProps) => (
       className={`fill-current text-black dark:text-white`}
     />
   </div>
-);
+)
