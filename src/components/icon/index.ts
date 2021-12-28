@@ -1,1 +1,0 @@
-export { MbIcon } from './Icon'

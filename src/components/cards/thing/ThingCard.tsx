@@ -1,7 +1,7 @@
 import React from "react";
-import { MbIcon } from "components/icon";
-import { TThingCard } from "types/cards.type";
-import { EIconName } from "consts/icons";
+import { MbIcon } from "../../icon/Icon";
+import { TThingCard } from "../../../types/cards.type";
+import { EIconName } from "../../../consts/icons";
 import "./thingcard.css";
 import "./../cards.css";
 interface CardProps extends React.ComponentProps<"div"> {

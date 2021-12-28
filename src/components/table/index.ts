@@ -1,1 +1,0 @@
-export { MbTable } from './Table'

@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import MbAccordion from "../../components/accordion/Accordion";
+import { MbAccordion } from "../../components/accordion/Accordion";
 
 export default {
   title: "Components/Accordion",

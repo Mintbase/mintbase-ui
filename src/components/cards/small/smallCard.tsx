@@ -1,8 +1,8 @@
 import React from "react";
 import "./smallcard.css";
 import "./../cards.css";
-import { TSmallCard } from "types/cards.type";
-import { ESmallCardType } from "consts/properties";
+import { TSmallCard } from "../../../types/cards.type";
+import { ESmallCardType } from "../../../consts/properties";
 
 interface CardProps extends React.ComponentProps<"div"> {
   loading?: boolean;

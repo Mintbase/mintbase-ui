@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import React, { useState } from "react";
-import MbItemsPerPage from "../../components/navigation/itemsperpage/ItemsPerPage";
+import { MbItemsPerPage } from "../../components/navigation/itemsperpage/ItemsPerPage";
 
 export default {
   title: "Components/Navigation/Items",

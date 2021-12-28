@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { EIconName } from "consts/icons";
-import { MbIcon } from "components/icon";
+import { EIconName } from "../../consts/icons";
+import { MbIcon } from "../icon/Icon";
 
 interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
   title: string;

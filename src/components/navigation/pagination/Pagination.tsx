@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { EIconName } from "../../../consts/icons";
-import { MbIcon } from "components/icon";
+import { MbIcon } from "../../icon/Icon";
 import "./pagination.css";
 
 export interface PaginationProps {

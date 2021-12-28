@@ -56,7 +56,6 @@
     "rollup-plugin-terser": "^7.0.2",
     "storybook-addon-themes": "^6.1.0",
     "tailwindcss": "^2.2.15",
-    "tsconfig-paths-webpack-plugin": "^3.5.2",
     "typescript": "^4.5.4"
   },
   "dependencies": {
