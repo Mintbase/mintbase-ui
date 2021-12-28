@@ -16,7 +16,7 @@
   "scripts": {
     "build:tsc": "tsc",
     "build": "npm run clean && rollup -c",
-    "lint": "eslint src --ext .ts,tsx",
+    "lint": "eslint src --ext .ts,tsx,js,jsx",
     "lint:types": "tsc --noEmit",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
@@ -50,8 +50,6 @@
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "husky": "^7.0.4",
-    "lint-staged": "^12.1.4",
     "postcss": "^8.3.7",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^6.7.0",
@@ -71,21 +69,5 @@
     "material-icons": "^1.10.4",
     "react-inlinesvg": "^2.3.0",
     "react-tooltip": "^4.2.21"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ],
-    "overrides": [
-      {
-        "files": [
-          "**/*.stories.*"
-        ],
-        "rules": {
-          "import/no-anonymous-default-export": "off"
-        }
-      }
-    ]
   }
 }
