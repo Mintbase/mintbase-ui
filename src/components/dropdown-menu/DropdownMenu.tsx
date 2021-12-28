@@ -12,7 +12,7 @@ interface Item {
 export const MbDropdownMenu = ({
   items,
   isOpen,
-  className,
+  className = "",
 }: {
   items: Item[];
   isOpen: boolean;
@@ -20,7 +20,7 @@ export const MbDropdownMenu = ({
 }) => {
   return !isOpen ? null : (
     <div
-      className={`bg-gray-50 dark:bg-gray-800 text-mb-blackblue dark:text-white shadow-md rounded-md w-64 mt-4 overflow-hidden ${className}`}
+      className={`bg-gray-50 dark:bg-gray-800 text-mb-blackblue dark:text-white shadow-md rounded-md w-48 mt-4 overflow-hidden ${className}`}
     >
       {items.map(({ text, icon, onClick }, index) => {
         // TODO: fix over rounded corners for the first and last element
@@ -28,14 +28,12 @@ export const MbDropdownMenu = ({
           <div
             key={`${text}-${index}`}
             className={
-              "flex hover:bg-blue-300-15 dark:hover:bg-blue-100-35 p-8 cursor-pointer relative"
+              "flex hover:bg-blue-300-15 dark:hover:bg-blue-100-35 py-8 px-16 cursor-pointer justify-center text-center relative"
             }
             onClick={onClick}
           >
             <MbText
-              className={
-                "w-full justify-center flex p-med-90 text-blue-300 dark:text-blue-100"
-              }
+              className={"p-med-90 text-blue-300 dark:text-blue-100 max-w-80%"}
             >
               {text}
             </MbText>

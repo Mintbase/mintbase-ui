@@ -114,6 +114,13 @@ module.exports = {
       34: "34px",
       38: "38px",
     },
+    maxWidth: {
+      64: "16rem",
+      "80%": "80%",
+    },
+    minWidth: {
+      48: "12rem",
+    },
   },
   space: {
     4: "4px",
