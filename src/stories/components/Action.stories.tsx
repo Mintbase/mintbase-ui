@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import MbAction from "../../components/action/Action";
-import { ESize, EState } from "../../constants/properties";
+import { MbAction } from "../../components/action/Action";
+import { ESize, EState } from "../../consts/properties";
 
 export default {
   title: "Components/Action",

@@ -2,7 +2,7 @@ import React from "react";
 import "./smallcard.css";
 import "./../cards.css";
 import { TSmallCard } from "../../../types/cards.type";
-import { ESmallCardType } from "../../../constants/properties";
+import { ESmallCardType } from "../../../consts/properties";
 
 interface CardProps extends React.ComponentProps<"div"> {
   loading?: boolean;
@@ -25,7 +25,7 @@ const LoadingCard = ({ cardType }: { cardType: string }) => {
   );
 };
 
-const MbSmallCard = ({
+export const MbSmallCard = ({
   loading = false,
   cardType = ESmallCardType.STORE,
   card,
@@ -44,5 +44,3 @@ const MbSmallCard = ({
     </div>
   );
 };
-
-export default MbSmallCard;
