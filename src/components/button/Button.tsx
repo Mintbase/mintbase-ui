@@ -3,12 +3,12 @@ import { getFontType } from "../../consts/fontType";
 import { ESize, EState, EType } from "../../consts/properties";
 import "./button.css";
 
-type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   label?: string;
   btnType?: EType;
   state?: EState;
   size?: ESize;
-};
+}
 
 const getLoadingSize = (currentSize: string) => {
   switch (currentSize) {
