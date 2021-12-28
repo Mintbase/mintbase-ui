@@ -1,8 +1,8 @@
-import React from 'react'
-import { getFontType } from "../../consts/fontType";
-import { EIconName } from "../../consts/icons";
-import { ESize } from "../../consts/properties"
-import { MbIcon } from "../icon/Icon";
+import React from "react";
+import { getFontType } from "../../../consts/fontType";
+import { EIconName } from "../../../consts/icons";
+import { ESize } from "../../../consts/properties";
+import { MbIcon } from "../../icon/Icon";
 import "./inputfield.css";
 
 export enum EControlStatus {
