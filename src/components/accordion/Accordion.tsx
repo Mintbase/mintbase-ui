@@ -13,9 +13,9 @@ export const MbAccordion = (props: AccordionProps) => {
     setIsExpanded(!isExpanded);
   };
   return (
-    <main className="rounded dark:bg-gray-850 cursor-pointer dark:text-white">
+    <main className="rounded bg-white dark:bg-gray-850 dark:text-white">
       <header
-        className="flex justify-between items-center p-24 border-b border-gray-150 dark:border-gray-700"
+        className="flex justify-between items-center p-24 border-b border-gray-150 dark:border-gray-700 cursor-pointer"
         onClick={toggle}
       >
         <div>{props.title}</div>
