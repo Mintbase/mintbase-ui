@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import MbTab from "./Tab";
+import { MbTab } from "./Tab";
 
-const MbTabs = (props: React.HTMLAttributes<HTMLDivElement>) => {
+export const MbTabs = (props: React.HTMLAttributes<HTMLDivElement>) => {
   const [selectedTab, setSelectedTab] = useState(0);
 
   if (!props.children) return <></>;

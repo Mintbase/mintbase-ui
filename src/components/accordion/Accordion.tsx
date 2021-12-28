@@ -1,13 +1,13 @@
-import { useState } from "react";
-import { EIconName } from "../../constants/icons";
-import MbIcon from "../icon/Icon";
+import React, { useState } from "react";
+import { EIconName } from "../../consts/icons";
+import { MbIcon } from "../icon/Icon";
 
 interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
   title: string;
   hasInfoIcon?: boolean;
 }
 
-const MbAccordion = (props: AccordionProps) => {
+export const MbAccordion = (props: AccordionProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const toggle = () => {
     setIsExpanded(!isExpanded);
@@ -44,5 +44,3 @@ const MbAccordion = (props: AccordionProps) => {
     </main>
   );
 };
-
-export default MbAccordion;

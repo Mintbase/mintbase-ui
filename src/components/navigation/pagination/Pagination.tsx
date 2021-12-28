@@ -1,9 +1,9 @@
-import { useEffect, useMemo, useState } from "react";
-import { EIconName } from "../../../constants/icons";
-import MbIcon from "../../icon/Icon";
+import React, { useEffect, useMemo, useState } from "react";
+import { EIconName } from "../../../consts/icons";
+import { MbIcon } from "../../icon/Icon";
 import "./pagination.css";
 
-interface PaginationProps {
+export interface PaginationProps {
   onPageChange: (currentPage: number) => void;
   totalItems: number;
   currentPage: any;
@@ -19,7 +19,7 @@ const range = (start: any, end: any) => {
   return Array.from({ length }, (_, idx) => idx + start);
 };
 
-const MbPagination = (props: PaginationProps) => {
+export const MbPagination = (props: PaginationProps) => {
   const {
     onPageChange,
     currentPage,
@@ -169,5 +169,3 @@ const MbPagination = (props: PaginationProps) => {
     </div>
   );
 };
-
-export default MbPagination;

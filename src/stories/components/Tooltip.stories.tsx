@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import Icon from "../../components/icon/Icon";
-import MbTooltip from "../../components/tooltip/Tooltip";
-import { EIconName } from "../../constants/icons";
+import { MbTooltip } from "../../components/tooltip/Tooltip";
+import  { MbIcon } from '../../components/icon/Icon'
+import { EIconName } from "../../consts/icons";
 
 export default {
   title: "Components/Tooltip",
@@ -24,7 +24,7 @@ export const Tooltip = Template.bind({});
 Tooltip.args = {
   text: "Tooltip text!",
   component: (
-    <Icon size="26px" name={EIconName.MINTBASE} color="mb-blackblue" />
+    <MbIcon size="26px" name={EIconName.MINTBASE} color="mb-blackblue" />
   ),
   place: "left",
 };

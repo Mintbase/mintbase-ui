@@ -1,7 +1,8 @@
-import { EIconName } from "../../../constants/icons";
-import { ESize } from "../../../constants/properties";
+import React from 'react'
+import { EIconName } from "../../../consts/icons";
+import { ESize } from "../../../consts/properties"
 import { TInfoCard } from "../../../types/cards.type";
-import MbIcon from "../../icon/Icon";
+import { MbIcon } from "../../icon/Icon";
 import "./infocard.css";
 
 const LoadingInfoBox = ({ size }: { size: ESize }) => {
@@ -19,7 +20,7 @@ const LoadingInfoBox = ({ size }: { size: ESize }) => {
   );
 };
 
-const MbInfoCard = ({ boxInfo }: { boxInfo: TInfoCard }) => {
+export const MbInfoCard = ({ boxInfo }: { boxInfo: TInfoCard }) => {
   const {
     loading = false,
     title,
@@ -102,4 +103,3 @@ const MbInfoCard = ({ boxInfo }: { boxInfo: TInfoCard }) => {
   );
 };
 
-export default MbInfoCard;

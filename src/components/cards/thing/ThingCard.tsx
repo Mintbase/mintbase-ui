@@ -1,9 +1,9 @@
 import React from "react";
+import { MbIcon } from "../../icon/Icon";
+import { TThingCard } from "../../../types/cards.type";
+import { EIconName } from "../../../consts/icons";
 import "./thingcard.css";
 import "./../cards.css";
-import MbIcon from "../../icon/Icon";
-import { TThingCard } from "../../../types/cards.type";
-import { EIconName } from "../../../constants/icons";
 interface CardProps extends React.ComponentProps<"div"> {
   loading?: boolean;
   cardInfo: TThingCard;
@@ -33,7 +33,7 @@ const LoadingCard = () => {
   );
 };
 
-const MbThingCard = ({ loading = false, cardInfo }: CardProps) => {
+export const MbThingCard = ({ loading = false, cardInfo }: CardProps) => {
   if (loading) return <LoadingCard />;
   const {
     upperLeftIcon = EIconName.LIKE,
@@ -114,5 +114,3 @@ const MbThingCard = ({ loading = false, cardInfo }: CardProps) => {
     </div>
   );
 };
-
-export default MbThingCard;

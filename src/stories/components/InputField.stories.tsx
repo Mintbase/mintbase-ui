@@ -1,10 +1,7 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import React from "react";
-import MbInput, {
-  EControlStatus,
-} from "../../components/inputs/input-field/inputField";
 
-import { ESize } from "../../constants/properties";
+import { ESize } from "../../consts/properties";
 
 export default {
   title: "Components/Inputs",
