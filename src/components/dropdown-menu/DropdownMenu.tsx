@@ -20,10 +20,9 @@ export const MbDropdownMenu = ({
 }) => {
   return !isOpen ? null : (
     <div
-      className={`bg-gray-50 dark:bg-gray-800 text-mb-blackblue dark:text-white shadow-md rounded-md w-48 mt-4 overflow-hidden ${className}`}
+      className={`bg-gray-50 dark:bg-gray-800 text-mb-blackblue dark:text-white rounded-md w-48 mt-4 overflow-hidden ${className}`}
     >
       {items.map(({ text, icon, onClick }, index) => {
-        // TODO: fix over rounded corners for the first and last element
         return (
           <div
             key={`${text}-${index}`}
