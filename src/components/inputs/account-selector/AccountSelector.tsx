@@ -20,6 +20,7 @@ const MbAccountSelector = ({ maxAmount }: { maxAmount: number }) => {
   };
 
   const handleRemoveClick = (index: number) => {
+    if (index < 1) return;
     const list = [...inputList];
     list.splice(index, 1);
     setInputList(list);
@@ -60,7 +61,9 @@ const MbAccountSelector = ({ maxAmount }: { maxAmount: number }) => {
                     onChange={(e: any) => handleInputChange(e, index)}
                   />
                   <div
-                    className="cursor-pointer"
+                    className={`${
+                      index > 0 ? "cursor-pointer" : "cursor-not-allowed"
+                    }`}
                     onClick={() => handleRemoveClick(index)}
                   >
                     <MbIcon
