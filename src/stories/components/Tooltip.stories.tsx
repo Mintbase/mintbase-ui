@@ -1,13 +1,13 @@
-import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { MbTooltip } from "../../components/tooltip/Tooltip";
-import  { MbIcon } from '../../components/icon/Icon'
-import { EIconName } from "../../consts/icons";
+import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { MbTooltip } from '../../components/tooltip/Tooltip'
+import { MbIcon } from '../../components/icon/Icon'
+import { EIconName } from '../../consts/icons'
 
 export default {
-  title: "Components/Tooltip",
+  title: 'Components/Tooltip',
   component: MbTooltip,
   argTypes: {},
-} as ComponentMeta<typeof MbTooltip>;
+} as ComponentMeta<typeof MbTooltip>
 
 const Template: ComponentStory<typeof MbTooltip> = (args) => (
   <>
@@ -18,13 +18,13 @@ const Template: ComponentStory<typeof MbTooltip> = (args) => (
       <MbTooltip {...args} />
     </div>
   </>
-);
+)
 
-export const Tooltip = Template.bind({});
+export const Tooltip = Template.bind({})
 Tooltip.args = {
-  text: "Tooltip text!",
+  text: 'Tooltip text!',
   component: (
     <MbIcon size="26px" name={EIconName.MINTBASE} color="mb-blackblue" />
   ),
-  place: "left",
-};
+  place: 'left',
+}

@@ -1,17 +1,17 @@
-import React, { useState } from "react";
-import { EIconName } from "../../consts/icons";
-import { MbIcon } from "../icon/Icon";
+import React, { useState } from 'react'
+import { MbIcon } from '..'
+import { EIconName } from '../..'
 
 interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
-  title: string;
-  hasInfoIcon?: boolean;
+  title: string
+  hasInfoIcon?: boolean
 }
 
 export const MbAccordion = (props: AccordionProps) => {
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false)
   const toggle = () => {
-    setIsExpanded(!isExpanded);
-  };
+    setIsExpanded(!isExpanded)
+  }
   return (
     <main className="rounded bg-white dark:bg-gray-850 dark:text-white">
       <header
@@ -42,5 +42,5 @@ export const MbAccordion = (props: AccordionProps) => {
       </header>
       {isExpanded && <section>{props.children}</section>}
     </main>
-  );
-};
+  )
+}

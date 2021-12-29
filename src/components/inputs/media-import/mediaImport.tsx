@@ -1,90 +1,91 @@
-import React from "react";
-import { useRef, useState } from "react";
-import { EIconName, MbIcon } from "../../..";
-import { isMobile } from "../../../consts/mobile";
+import React from 'react'
+import { useRef, useState } from 'react'
+import { MbIcon } from '../..'
+import { EIconName } from '../../..'
+import { isMobile } from '../../../consts/mobile'
 
-import AcceptedFormats from "./acceptedFormats";
+import AcceptedFormats from './acceptedFormats'
 
 interface MediaImportProps {
-  isProfileImage: boolean;
-  uploadText: string;
-  acceptedFormats: string[];
-  idealDimensions: string;
-  maxSize: number;
+  isProfileImage: boolean
+  uploadText: string
+  acceptedFormats: string[]
+  idealDimensions: string
+  maxSize: number
 }
 
 const preventBrowserDefaults = (e: Event) => {
-  e.preventDefault();
-  e.stopPropagation();
-};
+  e.preventDefault()
+  e.stopPropagation()
+}
 
 const MbMediaImport = (props: MediaImportProps) => {
   const {
     isProfileImage,
-    uploadText = "Upload Image",
+    uploadText = 'Upload Image',
     acceptedFormats,
     idealDimensions,
     maxSize,
-  } = props;
-  const [imageUrl, setImageUrl] = useState<any>("");
-  const [errorMessage, setErrorMessage] = useState("");
+  } = props
+  const [imageUrl, setImageUrl] = useState<any>('')
+  const [errorMessage, setErrorMessage] = useState('')
 
-  const dragRef = useRef(0);
-  const [dragOverlay, setDragOverlay] = useState(false);
+  const dragRef = useRef(0)
+  const [dragOverlay, setDragOverlay] = useState(false)
 
   const handleDrag = (event: any) => {
-    preventBrowserDefaults(event);
-  };
+    preventBrowserDefaults(event)
+  }
 
   const handleDragIn = (event: any) => {
-    preventBrowserDefaults(event);
-    dragRef.current++;
-    setDragOverlay(true);
-  };
+    preventBrowserDefaults(event)
+    dragRef.current++
+    setDragOverlay(true)
+  }
 
   const handleDragOut = async (event: any) => {
-    preventBrowserDefaults(event);
-    dragRef.current--;
+    preventBrowserDefaults(event)
+    dragRef.current--
     if (dragRef.current === 0) {
-      setDragOverlay(false);
+      setDragOverlay(false)
     }
-  };
+  }
 
   const handleDrop = async (event: any) => {
-    preventBrowserDefaults(event);
-    setDragOverlay(false);
+    preventBrowserDefaults(event)
+    setDragOverlay(false)
 
-    dragRef.current = 0;
+    dragRef.current = 0
 
     if (!event.dataTransfer.files.length) {
-      return;
+      return
     }
-    uploadImage(event.dataTransfer.files[0]);
-  };
+    uploadImage(event.dataTransfer.files[0])
+  }
 
   const uploadImage = (file: any) => {
-    const type = file.type.split("/").pop();
-    const size = file.size;
+    const type = file.type.split('/').pop()
+    const size = file.size
     if (
-      acceptedFormats.map((format) => format.split(".").pop()).includes(type)
+      acceptedFormats.map((format) => format.split('.').pop()).includes(type)
     ) {
       if (size / 1024 / 1024 <= maxSize) {
-        setErrorMessage("");
-        setImageUrl(URL.createObjectURL(file));
+        setErrorMessage('')
+        setImageUrl(URL.createObjectURL(file))
       } else {
-        setErrorMessage(`This file exceeds ${maxSize}mb`);
+        setErrorMessage(`This file exceeds ${maxSize}mb`)
       }
     } else {
-      setErrorMessage("This media type is not accepted");
+      setErrorMessage('This media type is not accepted')
     }
-  };
+  }
 
   const handleImageChange = (e: any) => {
-    if (!(e?.target?.files.length > 0)) return;
-    const file = e.target.files[0];
+    if (!(e?.target?.files.length > 0)) return
+    const file = e.target.files[0]
 
-    uploadImage(file);
-  };
+    uploadImage(file)
+  }
 
   return (
     <>
@@ -93,14 +94,14 @@ const MbMediaImport = (props: MediaImportProps) => {
           <div className="pb-12">
             <div
               className={`flex items-center justify-center w-full rounded-lg bg-gray-100 dark:bg-gray-900 w-full ${
-                isProfileImage ? "py-24" : "overflow-hidden"
+                isProfileImage ? 'py-24' : 'overflow-hidden'
               }`}
             >
               <div
                 className={` ${
                   isProfileImage
-                    ? "w-24 h-24 sm:h-32 sm:w-32 rounded-full overflow-hidden"
-                    : "h-32 sm:h-48 w-full"
+                    ? 'w-24 h-24 sm:h-32 sm:w-32 rounded-full overflow-hidden'
+                    : 'h-32 sm:h-48 w-full'
                 }`}
               >
                 <img className="w-full h-full object-cover" src={imageUrl} />
@@ -118,7 +119,7 @@ const MbMediaImport = (props: MediaImportProps) => {
           </label>
         </>
       )}
-      <div className={`${imageUrl && isMobile() ? "hidden" : ""}`}>
+      <div className={`${imageUrl && isMobile() ? 'hidden' : ''}`}>
         <div className="flex items-center justify-center w-full">
           <label
             onDragEnter={handleDragIn}
@@ -127,10 +128,10 @@ const MbMediaImport = (props: MediaImportProps) => {
             onDrop={handleDrop}
             className={`flex flex-col rounded-lg ${
               dragOverlay
-                ? "bg-gray-100 dark:bg-gray-900"
-                : "bg-blue-300-15 dark:bg-blue-100-15"
+                ? 'bg-gray-100 dark:bg-gray-900'
+                : 'bg-blue-300-15 dark:bg-blue-100-15'
             } w-full py-32 sm:py-48 group text-center cursor-pointer ${
-              errorMessage ? "ring-1 ring-error-300 dark:ring-error-100" : ""
+              errorMessage ? 'ring-1 ring-error-300 dark:ring-error-100' : ''
             }`}
           >
             <div className="h-full w-full text-center flex flex-col items-center justify-center p-med-90">
@@ -166,7 +167,7 @@ const MbMediaImport = (props: MediaImportProps) => {
         />
       </div>
     </>
-  );
-};
+  )
+}
 
-export default MbMediaImport;
+export default MbMediaImport

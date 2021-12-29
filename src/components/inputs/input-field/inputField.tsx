@@ -1,44 +1,44 @@
-import React from "react";
-import { getFontType } from "../../../consts/fontType";
-import { EIconName } from "../../../consts/icons";
-import { ESize } from "../../../consts/properties";
-import { MbIcon } from "../../icon/Icon";
-import "./inputfield.css";
+import React from 'react'
+import { getFontType } from '../../../consts/fontType'
+import { EIconName } from '../../../consts/icons'
+import { ESize } from '../../../consts/properties'
+import { MbIcon } from '../../icon/Icon'
+import './inputfield.css'
 
 export enum EControlStatus {
-  NORMAL = "normal",
-  VALID = "valid",
-  INVALID = "invalid",
+  NORMAL = 'normal',
+  VALID = 'valid',
+  INVALID = 'invalid',
 }
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  label?: string;
-  hasIcon?: boolean;
-  controlStatus: EControlStatus;
-  inputSize: ESize;
+  label?: string
+  hasIcon?: boolean
+  controlStatus: EControlStatus
+  inputSize: ESize
 }
 
 export const MbInput = ({
-  label = "",
+  label = '',
   hasIcon,
   controlStatus = EControlStatus.NORMAL,
   inputSize = ESize.MEDIUM,
   ...props
 }: InputProps) => {
   const getIconSize = () => {
-    return inputSize === "big" ? "24px" : "20px";
-  };
+    return inputSize === 'big' ? '24px' : '20px'
+  }
 
   const getLabelFontType = () => {
     switch (inputSize) {
-      case "big":
-        return "p-med-90";
-      case "medium":
-        return "p-small-90";
-      case "small":
-        return "cap-big-90";
+      case 'big':
+        return 'p-med-90'
+      case 'medium':
+        return 'p-small-90'
+      case 'small':
+        return 'cap-big-90'
     }
-  };
+  }
 
   return (
     <>
@@ -52,7 +52,7 @@ export const MbInput = ({
       )}
       <div
         className={`input-wrapper ${inputSize} flex items-center justify-between rounded ${
-          props.disabled ? "disabled" : "default " + controlStatus
+          props.disabled ? 'disabled' : 'default ' + controlStatus
         } ${props.className}`}
       >
         <input
@@ -93,5 +93,5 @@ export const MbInput = ({
         )}
       </div>
     </>
-  );
-};
+  )
+}

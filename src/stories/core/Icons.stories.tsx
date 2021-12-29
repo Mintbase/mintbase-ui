@@ -1,20 +1,20 @@
-import { MbIcon } from "../../components/icon/Icon";
-import { EIconName } from "../../consts/icons";
+import { MbIcon } from '../../components/icon/Icon'
+import { EIconName } from '../../consts/icons'
 
 export default {
-  title: "Core/Icons",
-};
+  title: 'Core/Icons',
+}
 
 export const Icons = () => (
   <section>
     <div className="w-full md:w-3/4">
       <p className="heading-130 mb-8">Icons</p>
       <p className="p-med-90 mb-12">
-        how to use:{" "}
+        how to use:{' '}
         {`<MbIcon name={EIconName.[name]} color="color-name" size="sizepx"/>`}
       </p>
     </div>
-    <div className="w-full md:w-3/4 m-auto">
+    <div className="w-full md:w-3/4 m-0-auto">
       {Object.entries(EIconName).map(([icon, name]) => (
         <div
           key={name}
@@ -30,4 +30,4 @@ export const Icons = () => (
       ))}
     </div>
   </section>
-);
+)

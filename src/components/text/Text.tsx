@@ -1,8 +1,8 @@
 import React from 'react'
-import "./text.css";
+import './text.css'
 
-interface TextProps extends React.HTMLAttributes<HTMLDivElement> {}
+type TextProps = React.HTMLAttributes<HTMLDivElement>
 
 export const MbText = (props: TextProps) => {
-  return <div className={`${props.className}`}>{props.children}</div>;
-};
+  return <div className={`${props.className}`}>{props.children}</div>
+}
