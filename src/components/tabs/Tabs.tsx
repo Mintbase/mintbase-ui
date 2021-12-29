@@ -8,7 +8,7 @@ interface TabsProps extends React.HTMLAttributes<HTMLDivElement> {
   hasFilters: boolean
 }
 
-const MbTabs = (props: TabsProps) => {
+export const MbTabs = (props: TabsProps) => {
   const [selectedTab, setSelectedTab] = useState(0)
   const [showOrderOpts, setShowOrderOpts] = useState(false)
   const [selectedOrder, setSelectedOrder] = useState('')
@@ -107,5 +107,3 @@ const MbTabs = (props: TabsProps) => {
     </>
   )
 }
-
-export default MbTabs
