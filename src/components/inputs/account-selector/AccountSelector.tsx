@@ -57,6 +57,7 @@ const MbAccountSelector = (props: AccountSelectorProps) => {
                   >
                     <MbInput
                       type="text"
+                      hasIcon
                       placeholder={input.placeholder}
                       value={input.value}
                       inputSize={ESize.BIG}

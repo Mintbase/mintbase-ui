@@ -11,7 +11,11 @@ export default {
 
 const Template: ComponentStory<typeof MbAccountSelector> = (args) => {
   const [inputList, setInputList] = useState([
-    { placeholder: "mintbase.near", value: "", status: EControlStatus.NORMAL },
+    {
+      placeholder: "mintbase.near",
+      value: "mintbase.near",
+      status: EControlStatus.VALID,
+    },
   ]);
 
   const handleInputChange = (e: any, index: number) => {
@@ -29,15 +33,16 @@ const Template: ComponentStory<typeof MbAccountSelector> = (args) => {
   };
 
   const handleAddClick = () => {
-    if (inputList.length + 1 === 20) return;
-    setInputList([
-      ...inputList,
-      {
-        placeholder: "mintbase.near",
-        value: "",
-        status: EControlStatus.NORMAL,
-      },
-    ]);
+    // if (inputList.length + 1 === 20) return;
+    // setInputList([
+    //   ...inputList,
+    //   {
+    //     placeholder: "mintbase.near",
+    //     value: "",
+    //     status: EControlStatus.NORMAL,
+    //   },
+    // ]);
+    console.log("add another account action");
   };
 
   return (
