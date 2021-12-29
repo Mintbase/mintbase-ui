@@ -20,7 +20,7 @@ export const MbDropdownMenu = ({
 }) => {
   return !isOpen ? null : (
     <div
-      className={`bg-gray-50 dark:bg-gray-800 text-mb-blackblue dark:text-white rounded-md w-48 mt-4 overflow-hidden ${className}`}
+      className={`bg-gray-50 dark:bg-gray-800 text-mb-blackblue dark:text-white rounded w-48 mt-4 overflow-hidden ${className}`}
     >
       {items.map(({ text, icon, onClick }, index) => {
         return (
