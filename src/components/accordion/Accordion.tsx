@@ -40,7 +40,7 @@ export const MbAccordion = (props: AccordionProps) => {
           />
         </div>
       </header>
-      {isExpanded && <section className="p-24">{props.children}</section>}
+      {isExpanded && <section className="pt-24">{props.children}</section>}
     </main>
   );
 };
