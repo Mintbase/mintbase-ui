@@ -62,7 +62,7 @@ export const MbInput = ({
           value={props.value}
           name={props.name}
           required={props.required}
-          className={`input-field ${getFontType(inputSize)}`}
+          className={`input-field ${getFontType(inputSize)} ${props.className}`}
           onChange={props.onChange}
         />
         {hasIcon && (
