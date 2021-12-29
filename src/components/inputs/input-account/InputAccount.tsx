@@ -1,5 +1,5 @@
 import React from "react";
-import { MbAction } from "../../..";
+import { MbAction, MbButton } from "../../..";
 import { EIconName } from "../../../consts/icons";
 import { ESize, EState } from "../../../consts/properties";
 import { MbAccordion } from "../../accordion/Accordion";
@@ -23,6 +23,7 @@ interface InputAccountProps {
   smallSubtitle: string;
   inputList: TInputListGroup[];
   footerTitle: string;
+  hasFooterExtraActions?: boolean;
   removeInputHandler: (index: number) => void;
   accountInputChangeHandler: (e: any, index: number) => void;
   amountInputChangeHandler?: (e: any, index: number) => void;
@@ -36,6 +37,7 @@ const MbInputAccount = (props: InputAccountProps) => {
     smallSubtitle,
     inputList,
     footerTitle,
+    hasFooterExtraActions,
     footerAction,
     removeInputHandler,
     accountInputChangeHandler,
@@ -114,6 +116,12 @@ const MbInputAccount = (props: InputAccountProps) => {
             }
             onClick={footerAction}
           />
+          {hasFooterExtraActions && (
+            <div>
+              <MbButton label="Cancel" />
+              <MbButton label="Transfer Tokens" />
+            </div>
+          )}
         </footer>
       </main>
     </MbAccordion>
