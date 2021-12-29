@@ -12,31 +12,47 @@ export default {
 const Template: ComponentStory<typeof MbInputAccount> = (args) => {
   const [inputList, setInputList] = useState([
     {
-      wallet: {
-        placeholder: "mintbase.near",
+      amount: {
+        placeholder: "%",
         value: "",
         status: EControlStatus.NORMAL,
       },
       account: {
-        placeholder: "mintbase.near",
+        placeholder: "Name of the account",
         value: "",
         status: EControlStatus.NORMAL,
       },
     },
   ]);
 
-  const handleInputChange = (e: any, index: number) => {
+  const handleAccountInputChange = (e: any, index: number) => {
     const { value } = e.target;
     const list = [...inputList];
-    list[index]["value"] = value;
+    list[index]["account"]["value"] = value;
     if (value.split(".").pop() !== "near") {
       if (value !== "") {
-        list[index]["status"] = EControlStatus.INVALID;
+        list[index]["account"]["status"] = EControlStatus.INVALID;
       } else {
-        list[index]["status"] = EControlStatus.NORMAL;
+        list[index]["account"]["status"] = EControlStatus.NORMAL;
       }
     } else {
-      list[index]["status"] = EControlStatus.VALID;
+      list[index]["account"]["status"] = EControlStatus.VALID;
+    }
+    setInputList(list);
+  };
+
+  const handleAmountInputChange = (e: any, index: number) => {
+    const { value } = e.target;
+    const list = [...inputList];
+    list[index]["amount"]["value"] = value;
+    if (value > 100 && value < 0) {
+      if (value !== "") {
+        list[index]["amount"]["status"] = EControlStatus.INVALID;
+      } else {
+        list[index]["amount"]["status"] = EControlStatus.NORMAL;
+      }
+    } else {
+      list[index]["amount"]["status"] = EControlStatus.VALID;
     }
     setInputList(list);
   };
@@ -53,13 +69,13 @@ const Template: ComponentStory<typeof MbInputAccount> = (args) => {
     setInputList([
       ...inputList,
       {
-        wallet: {
-          placeholder: "mintbase.near",
+        amount: {
+          placeholder: "%",
           value: "",
           status: EControlStatus.NORMAL,
         },
         account: {
-          placeholder: "mintbase.near",
+          placeholder: "Name of the account",
           value: "",
           status: EControlStatus.NORMAL,
         },
@@ -72,7 +88,8 @@ const Template: ComponentStory<typeof MbInputAccount> = (args) => {
       maxAmount={25}
       inputList={inputList}
       removeInputHandler={handleRemoveClick}
-      inputChangeHandler={handleInputChange}
+      accountInputChangeHandler={handleAccountInputChange}
+      amountInputChangeHandler={handleAmountInputChange}
       title="Forever Royalties"
       subtitle="Royalties are perpetual and represent 10% of the total sale. You can add up to 25 wallet adresses, including yours."
       smallSubtitle="Select up to 25 accounts"

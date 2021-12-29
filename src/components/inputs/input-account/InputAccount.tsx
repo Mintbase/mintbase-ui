@@ -24,7 +24,8 @@ interface InputAccountProps {
   inputList: TInputListGroup[];
   footerTitle: string;
   removeInputHandler: (index: number) => void;
-  inputChangeHandler: (e: any, index: number) => void;
+  accountInputChangeHandler: (e: any, index: number) => void;
+  amountInputChangeHandler?: (e: any, index: number) => void;
   footerAction: () => void;
 }
 const MbInputAccount = (props: InputAccountProps) => {
@@ -37,7 +38,8 @@ const MbInputAccount = (props: InputAccountProps) => {
     footerTitle,
     footerAction,
     removeInputHandler,
-    inputChangeHandler,
+    accountInputChangeHandler,
+    amountInputChangeHandler,
   } = props;
 
   return (
@@ -59,6 +61,20 @@ const MbInputAccount = (props: InputAccountProps) => {
                     key={index}
                     className="flex items-center space-x-12 mb-12"
                   >
+                    {input.amount && amountInputChangeHandler && (
+                      <div className="w-24">
+                        <MbInput
+                          type="number"
+                          placeholder={input.amount.placeholder}
+                          value={input.amount.value}
+                          inputSize={ESize.BIG}
+                          controlStatus={input.amount.status}
+                          onChange={(e: any) =>
+                            amountInputChangeHandler(e, index)
+                          }
+                        />
+                      </div>
+                    )}
                     <MbInput
                       type="text"
                       hasIcon={input.account.status !== EControlStatus.NORMAL}
@@ -66,7 +82,7 @@ const MbInputAccount = (props: InputAccountProps) => {
                       value={input.account.value}
                       inputSize={ESize.BIG}
                       controlStatus={input.account.status}
-                      onChange={(e: any) => inputChangeHandler(e, index)}
+                      onChange={(e: any) => accountInputChangeHandler(e, index)}
                     />
                     <div
                       className={`${

@@ -20,18 +20,18 @@ const Template: ComponentStory<typeof MbInputAccount> = (args) => {
     },
   ]);
 
-  const handleInputChange = (e: any, index: number) => {
+  const handleAccountInputChange = (e: any, index: number) => {
     const { value } = e.target;
     const list = [...inputList];
-    list[index]["value"] = value;
+    list[index]["account"]["value"] = value;
     if (value.split(".").pop() !== "near") {
       if (value !== "") {
-        list[index]["status"] = EControlStatus.INVALID;
+        list[index]["account"]["status"] = EControlStatus.INVALID;
       } else {
-        list[index]["status"] = EControlStatus.NORMAL;
+        list[index]["account"]["status"] = EControlStatus.NORMAL;
       }
     } else {
-      list[index]["status"] = EControlStatus.VALID;
+      list[index]["account"]["status"] = EControlStatus.VALID;
     }
     setInputList(list);
   };
@@ -52,7 +52,7 @@ const Template: ComponentStory<typeof MbInputAccount> = (args) => {
       maxAmount={20}
       inputList={inputList}
       removeInputHandler={handleRemoveClick}
-      inputChangeHandler={handleInputChange}
+      accountInputChangeHandler={handleAccountInputChange}
       title="Accounts"
       subtitle="Add accounts to easily switch between."
       smallSubtitle="Add up to 20 accounts"
