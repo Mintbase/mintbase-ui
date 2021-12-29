@@ -7,12 +7,17 @@ import { MbAccordion } from "../../accordion/Accordion";
 import { MbIcon } from "../../icon/Icon";
 import { MbInput, EControlStatus } from "../input-field/inputField";
 
+type TInputList = {
+  placeholder: string;
+  value: string | number;
+  status: EControlStatus;
+};
 interface AccountSelectorProps {
   maxAmount: number;
   title: string;
   subtitle: string;
   smallSubtitle: string;
-  inputList: any[];
+  inputList: TInputList[];
   footerTitle: string;
   removeInputHandler: (index: number) => void;
   inputChangeHandler: (e: any, index: number) => void;
@@ -55,7 +60,7 @@ const MbAccountSelector = (props: AccountSelectorProps) => {
                       placeholder={input.placeholder}
                       value={input.value}
                       inputSize={ESize.BIG}
-                      controlStatus={EControlStatus.NORMAL}
+                      controlStatus={input.status}
                       onChange={(e: any) => inputChangeHandler(e, index)}
                     />
                     <div

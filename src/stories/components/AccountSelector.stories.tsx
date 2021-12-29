@@ -1,6 +1,7 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { useState } from "react";
 import MbAccountSelector from "../../components/inputs/account-selector/AccountSelector";
+import { EControlStatus } from "../../components/inputs/input-field/inputField";
 
 export default {
   title: "Components/Inputs",
@@ -10,7 +11,7 @@ export default {
 
 const Template: ComponentStory<typeof MbAccountSelector> = (args) => {
   const [inputList, setInputList] = useState([
-    { placeholder: "mintbase.near", value: "" },
+    { placeholder: "mintbase.near", value: "", status: EControlStatus.NORMAL },
   ]);
 
   const handleInputChange = (e: any, index: number) => {
@@ -29,7 +30,14 @@ const Template: ComponentStory<typeof MbAccountSelector> = (args) => {
 
   const handleAddClick = () => {
     if (inputList.length + 1 === 20) return;
-    setInputList([...inputList, { placeholder: "mintbase.near", value: "" }]);
+    setInputList([
+      ...inputList,
+      {
+        placeholder: "mintbase.near",
+        value: "",
+        status: EControlStatus.NORMAL,
+      },
+    ]);
   };
 
   return (
