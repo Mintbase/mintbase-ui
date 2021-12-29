@@ -1,33 +1,33 @@
-import React from "react";
-import { MbAction, MbButton } from "../../..";
-import { EIconName } from "../../../consts/icons";
-import { ESize, EState, EType } from "../../../consts/properties";
-import { MbAccordion } from "../../accordion/Accordion";
-import { MbIcon } from "../../icon/Icon";
-import { EControlStatus, MbInput } from "../input-field/inputField";
+import React from 'react'
+import { MbAction, MbButton } from '../../..'
+import { EIconName } from '../../../consts/icons'
+import { ESize, EState, EType } from '../../../consts/properties'
+import { MbAccordion } from '../../accordion/Accordion'
+import { MbIcon } from '../../icon/Icon'
+import { EControlStatus, MbInput } from '../input-field/inputField'
 
 type TInputListGroup = {
-  amount?: TInput;
-  account: TInput;
-};
+  amount?: TInput
+  account: TInput
+}
 
 type TInput = {
-  placeholder: string;
-  value: string | number;
-  status: EControlStatus;
-};
+  placeholder: string
+  value: string | number
+  status: EControlStatus
+}
 interface InputAccountProps {
-  maxAmount: number;
-  title: string;
-  subtitle: string;
-  smallSubtitle: string;
-  inputList: TInputListGroup[];
-  footerTitle: string;
-  hasFooterExtraActions?: boolean;
-  removeInputHandler: (index: number) => void;
-  accountInputChangeHandler: (e: any, index: number) => void;
-  amountInputChangeHandler?: (e: any, index: number) => void;
-  footerAction: () => void;
+  maxAmount: number
+  title: string
+  subtitle: string
+  smallSubtitle: string
+  inputList: TInputListGroup[]
+  footerTitle: string
+  hasFooterExtraActions?: boolean
+  removeInputHandler: (index: number) => void
+  accountInputChangeHandler: (e: any, index: number) => void
+  amountInputChangeHandler?: (e: any, index: number) => void
+  footerAction: () => void
 }
 const MbInputAccount = (props: InputAccountProps) => {
   const {
@@ -42,7 +42,7 @@ const MbInputAccount = (props: InputAccountProps) => {
     removeInputHandler,
     accountInputChangeHandler,
     amountInputChangeHandler,
-  } = props;
+  } = props
 
   return (
     <MbAccordion title={title} hasInfoIcon>
@@ -55,7 +55,7 @@ const MbInputAccount = (props: InputAccountProps) => {
             <p className="dark:text-white p-med-90 mb-8">{smallSubtitle}</p>
           </header>
 
-          <body>
+          <div>
             {inputList.length > 0 &&
               inputList.map((input, index) => {
                 return (
@@ -89,8 +89,8 @@ const MbInputAccount = (props: InputAccountProps) => {
                     <div
                       className={`${
                         inputList.length > 1
-                          ? "cursor-pointer"
-                          : "cursor-not-allowed"
+                          ? 'cursor-pointer'
+                          : 'cursor-not-allowed'
                       }`}
                       onClick={() => removeInputHandler(index)}
                     >
@@ -102,9 +102,9 @@ const MbInputAccount = (props: InputAccountProps) => {
                       />
                     </div>
                   </div>
-                );
+                )
               })}
-          </body>
+          </div>
         </section>
         <footer className="text-center py-24 sm:py-32 border-t border-gray-150 dark:border-gray-700 flex justify-center">
           <MbAction
@@ -129,7 +129,7 @@ const MbInputAccount = (props: InputAccountProps) => {
         </footer>
       </main>
     </MbAccordion>
-  );
-};
+  )
+}
 
-export default MbInputAccount;
+export default MbInputAccount
