@@ -22,6 +22,15 @@ const Template: ComponentStory<typeof MbAccountSelector> = (args) => {
     const { value } = e.target;
     const list = [...inputList];
     list[index]["value"] = value;
+    if (value.split(".").pop() !== "near") {
+      if (value !== "") {
+        list[index]["status"] = EControlStatus.INVALID;
+      } else {
+        list[index]["status"] = EControlStatus.NORMAL;
+      }
+    } else {
+      list[index]["status"] = EControlStatus.VALID;
+    }
     setInputList(list);
   };
 
