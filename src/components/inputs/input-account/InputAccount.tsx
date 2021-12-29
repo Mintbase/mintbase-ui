@@ -1,18 +1,17 @@
 import React from "react";
-import { useState } from "react";
 import { MbAction } from "../../..";
 import { EIconName } from "../../../consts/icons";
 import { ESize, EState } from "../../../consts/properties";
 import { MbAccordion } from "../../accordion/Accordion";
 import { MbIcon } from "../../icon/Icon";
-import { MbInput, EControlStatus } from "../input-field/inputField";
+import { EControlStatus, MbInput } from "../input-field/inputField";
 
 type TInputList = {
   placeholder: string;
   value: string | number;
   status: EControlStatus;
 };
-interface AccountSelectorProps {
+interface InputAccountProps {
   maxAmount: number;
   title: string;
   subtitle: string;
@@ -23,7 +22,7 @@ interface AccountSelectorProps {
   inputChangeHandler: (e: any, index: number) => void;
   footerAction: () => void;
 }
-const MbAccountSelector = (props: AccountSelectorProps) => {
+const MbInputAccount = (props: InputAccountProps) => {
   const {
     maxAmount,
     title,
@@ -100,4 +99,4 @@ const MbAccountSelector = (props: AccountSelectorProps) => {
   );
 };
 
-export default MbAccountSelector;
+export default MbInputAccount;

@@ -1,15 +1,15 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { useState } from "react";
-import MbAccountSelector from "../../components/inputs/account-selector/AccountSelector";
+import MbInputAccount from "../../components/inputs/input-account/InputAccount";
 import { EControlStatus } from "../../components/inputs/input-field/inputField";
 
 export default {
   title: "Components/Inputs",
-  component: MbAccountSelector,
+  component: MbInputAccount,
   argTypes: {},
-} as ComponentMeta<typeof MbAccountSelector>;
+} as ComponentMeta<typeof MbInputAccount>;
 
-const Template: ComponentStory<typeof MbAccountSelector> = (args) => {
+const Template: ComponentStory<typeof MbInputAccount> = (args) => {
   const [inputList, setInputList] = useState([
     {
       placeholder: "mintbase.near",
@@ -55,7 +55,7 @@ const Template: ComponentStory<typeof MbAccountSelector> = (args) => {
   };
 
   return (
-    <MbAccountSelector
+    <MbInputAccount
       maxAmount={20}
       inputList={inputList}
       removeInputHandler={handleRemoveClick}
