@@ -13,7 +13,7 @@ const Template: ComponentStory<typeof MbInputAccount> = (args) => {
   const [inputList, setInputList] = useState([
     {
       amount: {
-        placeholder: "%",
+        placeholder: "5",
         value: "",
         status: EControlStatus.NORMAL,
       },
@@ -70,7 +70,7 @@ const Template: ComponentStory<typeof MbInputAccount> = (args) => {
       ...inputList,
       {
         amount: {
-          placeholder: "%",
+          placeholder: "5",
           value: "",
           status: EControlStatus.NORMAL,
         },
@@ -90,14 +90,15 @@ const Template: ComponentStory<typeof MbInputAccount> = (args) => {
       removeInputHandler={handleRemoveClick}
       accountInputChangeHandler={handleAccountInputChange}
       amountInputChangeHandler={handleAmountInputChange}
-      title="Forever Royalties"
-      subtitle="Royalties are perpetual and represent 10% of the total sale. You can add up to 25 wallet adresses, including yours."
-      smallSubtitle="Select up to 25 accounts"
-      footerTitle="Add Split"
+      title="Transfer Tokens"
+      subtitle="Airdrop to multiple accounts, up to 100 accounts."
+      smallSubtitle="Amount of tokens and recipient account"
+      footerTitle="Add Account"
+      hasFooterExtraActions
       footerAction={handleAddClick}
     />
   );
 };
 
-export const AccountPercentage = Template.bind({});
-AccountPercentage.args = {};
+export const AccountAmount = Template.bind({});
+AccountAmount.args = {};
