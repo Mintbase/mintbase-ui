@@ -53,7 +53,7 @@ export const MbInput = ({
       <div
         className={`input-wrapper ${inputSize} flex items-center justify-between rounded ${
           props.disabled ? "disabled" : "default " + controlStatus
-        }`}
+        } ${props.className}`}
       >
         <input
           disabled={props.disabled}
@@ -62,7 +62,7 @@ export const MbInput = ({
           value={props.value}
           name={props.name}
           required={props.required}
-          className={`input-field ${getFontType(inputSize)} ${props.className}`}
+          className={`input-field ${getFontType(inputSize)}`}
           onChange={props.onChange}
         />
         {hasIcon && (
