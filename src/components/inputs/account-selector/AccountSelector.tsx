@@ -20,7 +20,7 @@ const MbAccountSelector = ({ maxAmount }: { maxAmount: number }) => {
   };
 
   const handleRemoveClick = (index: number) => {
-    if (index < 1) return;
+    if (inputList.length === 1) return;
     const list = [...inputList];
     list.splice(index, 1);
     setInputList(list);
@@ -37,54 +37,61 @@ const MbAccountSelector = ({ maxAmount }: { maxAmount: number }) => {
 
   return (
     <MbAccordion title="Accounts" hasInfoIcon>
-      <section>
-        <header>
-          <p className="p-big-90 text-gray-700 dark:text-gray-300 mb-16">
-            Add accounts to easily switch between.
-          </p>
-          <p className="dark:text-white p-med-90 mb-8">
-            Add up to {maxAmount} accounts
-          </p>
-        </header>
+      <main>
+        <section className="p-24 h-72 overflow-scroll">
+          <header>
+            <p className="p-big-90 text-gray-700 dark:text-gray-300 mb-16">
+              Add accounts to easily switch between.
+            </p>
+            <p className="dark:text-white p-med-90 mb-8">
+              Add up to {maxAmount} accounts
+            </p>
+          </header>
 
-        <body className="mb-24 max-h-64 p-8 overflow-scroll">
-          {inputList.length > 0 &&
-            inputList.map((input, index) => {
-              return (
-                <div key={index} className="flex items-center space-x-12 mb-12">
-                  <MbInput
-                    type="text"
-                    placeholder={input.placeholder}
-                    value={input.value}
-                    inputSize={ESize.BIG}
-                    controlStatus={EControlStatus.NORMAL}
-                    onChange={(e: any) => handleInputChange(e, index)}
-                  />
+          <body>
+            {inputList.length > 0 &&
+              inputList.map((input, index) => {
+                return (
                   <div
-                    className={`${
-                      index > 0 ? "cursor-pointer" : "cursor-not-allowed"
-                    }`}
-                    onClick={() => handleRemoveClick(index)}
+                    key={index}
+                    className="flex items-center space-x-12 mb-12"
                   >
-                    <MbIcon
-                      name={EIconName.DELETE}
-                      size="24px"
-                      color="blue-300"
-                      darkColor="blue-100"
+                    <MbInput
+                      type="text"
+                      placeholder={input.placeholder}
+                      value={input.value}
+                      inputSize={ESize.BIG}
+                      controlStatus={EControlStatus.NORMAL}
+                      onChange={(e: any) => handleInputChange(e, index)}
                     />
+                    <div
+                      className={`${
+                        inputList.length > 1
+                          ? "cursor-pointer"
+                          : "cursor-not-allowed"
+                      }`}
+                      onClick={() => handleRemoveClick(index)}
+                    >
+                      <MbIcon
+                        name={EIconName.DELETE}
+                        size="24px"
+                        color="blue-300"
+                        darkColor="blue-100"
+                      />
+                    </div>
                   </div>
-                </div>
-              );
-            })}
-        </body>
-        <footer className="text-center">
+                );
+              })}
+          </body>
+        </section>
+        <footer className="text-center py-32 border-t border-gray-150">
           <MbAction
             label="Add Another Account"
             state={checkIfMax() ? EState.DISABLED : EState.ACTIVE}
             onClick={handleAddClick}
           />
         </footer>
-      </section>
+      </main>
     </MbAccordion>
   );
 };
