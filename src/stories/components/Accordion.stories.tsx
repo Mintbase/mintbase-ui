@@ -9,7 +9,7 @@ export default {
 
 const Template: ComponentStory<typeof MbAccordion> = (args) => (
   <MbAccordion {...args}>
-    <p>This is the description.</p>
+    <p className="p-24">This is the description.</p>
   </MbAccordion>
 );
 
