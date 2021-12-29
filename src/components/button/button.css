@@ -1,24 +1,21 @@
 /* Buttons */
 
 .button.big {
-  /* @apply big-p; */
   padding: 12px 52px;
   min-width: 145px;
-  min-height: 42px;
+  height: 42px;
 }
 
 .button.medium {
-  /* @apply med-p; */
   padding: 8px 32px;
   min-width: 100px;
-  min-height: 32px;
+  height: 32px;
 }
 
 .button.small {
-  /* @apply small-p; */
   padding: 6px 24px;
   min-width: 80px;
-  min-height: 26px;
+  height: 26px;
 }
 
 .button.primary {

@@ -1,7 +1,7 @@
 import React from "react";
 import { MbAction, MbButton } from "../../..";
 import { EIconName } from "../../../consts/icons";
-import { ESize, EState } from "../../../consts/properties";
+import { ESize, EState, EType } from "../../../consts/properties";
 import { MbAccordion } from "../../accordion/Accordion";
 import { MbIcon } from "../../icon/Icon";
 import { EControlStatus, MbInput } from "../input-field/inputField";
@@ -106,7 +106,7 @@ const MbInputAccount = (props: InputAccountProps) => {
               })}
           </body>
         </section>
-        <footer className="text-center py-24 sm:py-32 border-t border-gray-150 dark:border-gray-700">
+        <footer className="text-center py-24 sm:py-32 border-t border-gray-150 dark:border-gray-700 flex justify-center">
           <MbAction
             label={footerTitle}
             state={
@@ -117,9 +117,13 @@ const MbInputAccount = (props: InputAccountProps) => {
             onClick={footerAction}
           />
           {hasFooterExtraActions && (
-            <div>
-              <MbButton label="Cancel" />
-              <MbButton label="Transfer Tokens" />
+            <div className="flex space-x-12 items-center ml-auto">
+              <MbButton
+                size={ESize.SMALL}
+                btnType={EType.SECONDARY}
+                label="Cancel"
+              />
+              <MbButton size={ESize.SMALL} label="Transfer Tokens" />
             </div>
           )}
         </footer>
