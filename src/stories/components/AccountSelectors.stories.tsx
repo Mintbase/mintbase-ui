@@ -2,7 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 import MbAccountSelectors from '../../components/inputs/input-account-selectors/AccountSelectors'
 
 export default {
-  title: 'Components/Input',
+  title: 'Components/Inputs',
   component: MbAccountSelectors,
   argTypes: {},
 } as ComponentMeta<typeof MbAccountSelectors>

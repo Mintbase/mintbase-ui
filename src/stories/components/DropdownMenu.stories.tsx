@@ -10,25 +10,30 @@ export default {
   component: MbDropdownMenu,
   argTypes: {},
 } as ComponentMeta<typeof MbDropdownMenu>
-
 const defaultItems = [
   {
     text: 'Docs',
-    icon: <MbIcon name={EIconName.OPEN_NEW_TAB} color={'white'} />,
+    icon: (
+      <MbIcon name={EIconName.OPEN_NEW_TAB} color={'blue-300'} size="16px" />
+    ),
     onClick: () => {
       console.log('pressed menu button 1')
     },
   },
   {
     text: 'Developers',
-    icon: <MbIcon name={EIconName.OPEN_NEW_TAB} color={'white'} />,
+    icon: (
+      <MbIcon name={EIconName.OPEN_NEW_TAB} color={'blue-300'} size="16px" />
+    ),
     onClick: () => {
       console.log('pressed menu button 1')
     },
   },
   {
     text: 'Community',
-    icon: <MbIcon name={EIconName.OPEN_NEW_TAB} color={'white'} />,
+    icon: (
+      <MbIcon name={EIconName.OPEN_NEW_TAB} color={'blue-300'} size="16px" />
+    ),
     onClick: () => {
       console.log('pressed menu button 1')
     },
@@ -53,7 +58,9 @@ const defaultItems = [
   },
   {
     text: 'Data',
-    icon: <MbIcon name={EIconName.OPEN_NEW_TAB} color={'white'} />,
+    icon: (
+      <MbIcon name={EIconName.OPEN_NEW_TAB} color={'blue-300'} size="16px" />
+    ),
     onClick: () => {
       console.log('pressed menu button 1')
     },

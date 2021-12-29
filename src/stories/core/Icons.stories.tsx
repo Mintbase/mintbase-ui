@@ -14,7 +14,7 @@ export const Icons = () => (
         {`<MbIcon name={EIconName.[name]} color="color-name" size="sizepx"/>`}
       </p>
     </div>
-    <div className="w-full md:w-3/4 m-auto">
+    <div className="w-full md:w-3/4 m-0-auto">
       {Object.entries(EIconName).map(([icon, name]) => (
         <div
           key={name}

@@ -17,7 +17,9 @@ module.exports = {
     64: '64px',
   },
   margin: {
-    auto: '0 auto',
+    auto: 'auto',
+    '0-auto': '0 auto',
+    0: '0px',
     4: '4px',
     8: '8px',
     10: '10px',
@@ -111,6 +113,13 @@ module.exports = {
       32: '32px',
       34: '34px',
       38: '38px',
+    },
+    maxWidth: {
+      64: '16rem',
+      '80%': '80%',
+    },
+    minWidth: {
+      48: '12rem',
     },
   },
   space: {
