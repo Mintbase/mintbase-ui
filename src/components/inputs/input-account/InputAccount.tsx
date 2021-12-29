@@ -6,7 +6,12 @@ import { MbAccordion } from "../../accordion/Accordion";
 import { MbIcon } from "../../icon/Icon";
 import { EControlStatus, MbInput } from "../input-field/inputField";
 
-type TInputList = {
+type TInputListGroup = {
+  amount?: TInput;
+  account: TInput;
+};
+
+type TInput = {
   placeholder: string;
   value: string | number;
   status: EControlStatus;
@@ -16,7 +21,7 @@ interface InputAccountProps {
   title: string;
   subtitle: string;
   smallSubtitle: string;
-  inputList: TInputList[];
+  inputList: TInputListGroup[];
   footerTitle: string;
   removeInputHandler: (index: number) => void;
   inputChangeHandler: (e: any, index: number) => void;
@@ -56,11 +61,11 @@ const MbInputAccount = (props: InputAccountProps) => {
                   >
                     <MbInput
                       type="text"
-                      hasIcon={input.status !== EControlStatus.NORMAL}
-                      placeholder={input.placeholder}
-                      value={input.value}
+                      hasIcon={input.account.status !== EControlStatus.NORMAL}
+                      placeholder={input.account.placeholder}
+                      value={input.account.value}
                       inputSize={ESize.BIG}
-                      controlStatus={input.status}
+                      controlStatus={input.account.status}
                       onChange={(e: any) => inputChangeHandler(e, index)}
                     />
                     <div
