@@ -5,6 +5,7 @@ import { ESize, EState, EType } from '../../../consts/properties'
 import { MbAccordion } from '../../accordion/Accordion'
 import { MbIcon } from '../../icon/Icon'
 import { EControlStatus, MbInput } from '../input-field/inputField'
+import './inputaccount.css'
 
 type TInputListGroup = {
   amount?: TInput
@@ -24,6 +25,8 @@ interface InputAccountProps {
   inputList: TInputListGroup[]
   footerTitle: string
   hasFooterExtraActions?: boolean
+  handleCancelBtn?: () => void
+  handleTransferBtn?: () => void
   removeInputHandler: (index: number) => void
   accountInputChangeHandler: (e: any, index: number) => void
   amountInputChangeHandler?: (e: any, index: number) => void
@@ -42,6 +45,8 @@ const MbInputAccount = (props: InputAccountProps) => {
     removeInputHandler,
     accountInputChangeHandler,
     amountInputChangeHandler,
+    handleCancelBtn,
+    handleTransferBtn,
   } = props
 
   return (
@@ -106,7 +111,7 @@ const MbInputAccount = (props: InputAccountProps) => {
               })}
           </div>
         </section>
-        <footer className="text-center py-24 sm:py-32 border-t border-gray-150 dark:border-gray-700 flex justify-center">
+        <footer className="text-center py-24 sm:py-32 border-t border-gray-150 dark:border-gray-700 flex justify-center relative">
           <MbAction
             label={footerTitle}
             state={
@@ -116,14 +121,20 @@ const MbInputAccount = (props: InputAccountProps) => {
             }
             onClick={footerAction}
           />
+
           {hasFooterExtraActions && (
-            <div className="flex space-x-12 items-center ml-auto">
+            <div className="flex space-x-12 center-extra-btns">
               <MbButton
                 size={ESize.SMALL}
                 btnType={EType.SECONDARY}
                 label="Cancel"
+                onClick={handleCancelBtn}
               />
-              <MbButton size={ESize.SMALL} label="Transfer Tokens" />
+              <MbButton
+                size={ESize.SMALL}
+                label="Transfer Tokens"
+                onClick={handleTransferBtn}
+              />
             </div>
           )}
         </footer>

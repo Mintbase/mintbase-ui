@@ -1,0 +1,4 @@
+.center-extra-btns {
+  @apply absolute right-0 top-1/2;
+  transform: translate(0, -50%);
+}
