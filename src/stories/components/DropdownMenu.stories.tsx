@@ -14,7 +14,12 @@ const defaultItems = [
   {
     text: 'Docs',
     icon: (
-      <MbIcon name={EIconName.OPEN_NEW_TAB} color={'blue-300'} size="16px" />
+      <MbIcon
+        name={EIconName.OPEN_NEW_TAB}
+        color={'blue-300'}
+        darkColor={'blue-100'}
+        size="16px"
+      />
     ),
     onClick: () => {
       console.log('pressed menu button 1')
@@ -23,7 +28,12 @@ const defaultItems = [
   {
     text: 'Developers',
     icon: (
-      <MbIcon name={EIconName.OPEN_NEW_TAB} color={'blue-300'} size="16px" />
+      <MbIcon
+        name={EIconName.OPEN_NEW_TAB}
+        color={'blue-300'}
+        darkColor={'blue-100'}
+        size="16px"
+      />
     ),
     onClick: () => {
       console.log('pressed menu button 1')
@@ -32,7 +42,12 @@ const defaultItems = [
   {
     text: 'Community',
     icon: (
-      <MbIcon name={EIconName.OPEN_NEW_TAB} color={'blue-300'} size="16px" />
+      <MbIcon
+        name={EIconName.OPEN_NEW_TAB}
+        color={'blue-300'}
+        darkColor={'blue-100'}
+        size="16px"
+      />
     ),
     onClick: () => {
       console.log('pressed menu button 1')
@@ -59,7 +74,12 @@ const defaultItems = [
   {
     text: 'Data',
     icon: (
-      <MbIcon name={EIconName.OPEN_NEW_TAB} color={'blue-300'} size="16px" />
+      <MbIcon
+        name={EIconName.OPEN_NEW_TAB}
+        color={'blue-300'}
+        darkColor={'blue-100'}
+        size="16px"
+      />
     ),
     onClick: () => {
       console.log('pressed menu button 1')
