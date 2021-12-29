@@ -1,12 +1,12 @@
-import React from "react";
-import { MbIcon } from "../../icon/Icon";
-import { TThingCard } from "../../../types/cards.type";
-import { EIconName } from "../../../consts/icons";
-import "./thingcard.css";
-import "./../cards.css";
-interface CardProps extends React.ComponentProps<"div"> {
-  loading?: boolean;
-  cardInfo: TThingCard;
+import React from 'react'
+import { MbIcon } from '../../icon/Icon'
+import { TThingCard } from '../../../types/cards.type'
+import { EIconName } from '../../../consts/icons'
+import './thingcard.css'
+import './../cards.css'
+interface CardProps extends React.ComponentProps<'div'> {
+  loading?: boolean
+  cardInfo: TThingCard
 }
 
 const LoadingCard = () => {
@@ -30,11 +30,11 @@ const LoadingCard = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
 export const MbThingCard = ({ loading = false, cardInfo }: CardProps) => {
-  if (loading) return <LoadingCard />;
+  if (loading) return <LoadingCard />
   const {
     upperLeftIcon = EIconName.LIKE,
     upperLeftText,
@@ -50,7 +50,7 @@ export const MbThingCard = ({ loading = false, cardInfo }: CardProps) => {
     onCenterElementClick,
     onUpperLeftClick,
     onUpperRightClick,
-  } = cardInfo;
+  } = cardInfo
   return (
     <div className="base-card thing p-12">
       <div className="flex flex-row justify-between items-center text-black dark:text-white mb-12">
@@ -65,7 +65,7 @@ export const MbThingCard = ({ loading = false, cardInfo }: CardProps) => {
           </div>
           <p
             className="p-small-90 text-gray-700 dark:text-gray-300"
-            style={{ marginTop: "4px" }}
+            style={{ marginTop: '4px' }}
           >
             {upperLeftText}
           </p>
@@ -112,5 +112,5 @@ export const MbThingCard = ({ loading = false, cardInfo }: CardProps) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

@@ -3,36 +3,36 @@ const AcceptedFormats = ({
   idealDimensions,
   maxSize,
 }: {
-  acceptedFormats: string[];
-  idealDimensions: string;
-  maxSize: number;
+  acceptedFormats: string[]
+  idealDimensions: string
+  maxSize: number
 }) => {
   return (
     <p className="hidden sm:block p-med-90 text-gray-700 dark:text-gray-500 pt-12 text-center">
       {acceptedFormats && (
         <>
-          Accepted Formats:{" "}
+          Accepted Formats:{' '}
           <span className="text-black dark:text-white">
-            {acceptedFormats.join(" / ")}
-          </span>{" "}
-          {(idealDimensions || maxSize) && <>|</>}{" "}
+            {acceptedFormats.join(' / ')}
+          </span>{' '}
+          {(idealDimensions || maxSize) && <>|</>}{' '}
         </>
       )}
       {idealDimensions && (
         <>
-          Ideal dimension:{" "}
-          <span className="text-black dark:text-white">{idealDimensions}</span>{" "}
-          {maxSize && <>|</>}{" "}
+          Ideal dimension:{' '}
+          <span className="text-black dark:text-white">{idealDimensions}</span>{' '}
+          {maxSize && <>|</>}{' '}
         </>
       )}
       {maxSize && (
         <>
-          Max size:{" "}
+          Max size:{' '}
           <span className="text-black dark:text-white">{maxSize}mb</span>
         </>
       )}
     </p>
-  );
-};
+  )
+}
 
-export default AcceptedFormats;
+export default AcceptedFormats

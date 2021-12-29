@@ -1,54 +1,53 @@
-import React, { useState } from "react";
-import { MbTab } from "./Tab";
-import { MbAction } from "../action/Action";
-import { MbIcon } from "../icon/Icon";
-import { EIconName } from "../../consts/icons";
-import { MbDropdownMenu } from "../../components/dropdown-menu/DropdownMenu";
+import React, { useState } from 'react'
+import { MbDropdownMenu } from '../../components/dropdown-menu/DropdownMenu'
+import { EIconName } from '../../consts/icons'
+import { MbIcon } from '../icon/Icon'
+import { MbTab } from './Tab'
 
 interface TabsProps extends React.HTMLAttributes<HTMLDivElement> {
-  hasFilters: boolean;
+  hasFilters: boolean
 }
 
 const MbTabs = (props: TabsProps) => {
-  const [selectedTab, setSelectedTab] = useState(0);
-  const [showOrderOpts, setShowOrderOpts] = useState(false);
-  const [selectedOrder, setSelectedOrder] = useState("");
+  const [selectedTab, setSelectedTab] = useState(0)
+  const [showOrderOpts, setShowOrderOpts] = useState(false)
+  const [selectedOrder, setSelectedOrder] = useState('')
   const options = [
     {
-      text: "Newest",
+      text: 'Newest',
       onClick: () => {
-        setShowOrderOpts(!showOrderOpts);
-        setSelectedOrder("Newest");
+        setShowOrderOpts(!showOrderOpts)
+        setSelectedOrder('Newest')
       },
     },
     {
-      text: "Oldest",
+      text: 'Oldest',
       onClick: () => {
-        setShowOrderOpts(!showOrderOpts);
-        setSelectedOrder("Oldest");
+        setShowOrderOpts(!showOrderOpts)
+        setSelectedOrder('Oldest')
       },
     },
     {
-      text: "Cheapest",
+      text: 'Cheapest',
       onClick: () => {
-        setShowOrderOpts(!showOrderOpts);
-        setSelectedOrder("Cheapest");
+        setShowOrderOpts(!showOrderOpts)
+        setSelectedOrder('Cheapest')
       },
     },
     {
-      text: "Most expensive",
+      text: 'Most expensive',
       onClick: () => {
-        setShowOrderOpts(!showOrderOpts);
-        setSelectedOrder("Most expensive");
+        setShowOrderOpts(!showOrderOpts)
+        setSelectedOrder('Most expensive')
       },
     },
-  ];
+  ]
 
-  if (!props.children) return <></>;
-  const allTabs = React.Children.map(props.children, (child: any) => child);
-  const validtabs = allTabs?.filter((tab) => tab.type.name === "MbTab");
-  const tabsTitle = validtabs?.map((tab) => tab.props.title);
-  const tabsContent = validtabs?.map((tab) => tab.props.children);
+  if (!props.children) return <></>
+  const allTabs = React.Children.map(props.children, (child: any) => child)
+  const validtabs = allTabs?.filter((tab) => tab.type.name === 'MbTab')
+  const tabsTitle = validtabs?.map((tab) => tab.props.title)
+  const tabsContent = validtabs?.map((tab) => tab.props.children)
 
   return (
     <>
@@ -68,7 +67,7 @@ const MbTabs = (props: TabsProps) => {
             <div className="ml-auto">
               <div
                 className={`order-by ${
-                  selectedOrder ? "selected" : "unselected"
+                  selectedOrder ? 'selected' : 'unselected'
                 }`}
               >
                 <div
@@ -78,11 +77,11 @@ const MbTabs = (props: TabsProps) => {
                   <div
                     className={`${
                       selectedOrder
-                        ? "text-mb-red"
-                        : "text-blue-300 dark:text-blue-100"
+                        ? 'text-mb-red'
+                        : 'text-blue-300 dark:text-blue-100'
                     } p-med-90 pr-10`}
                   >
-                    {selectedOrder ? selectedOrder : "Order By"}
+                    {selectedOrder ? selectedOrder : 'Order By'}
                   </div>
                   <MbIcon
                     name={EIconName.ARROW_DROP_DOWN}
@@ -103,10 +102,10 @@ const MbTabs = (props: TabsProps) => {
       />
       {tabsContent?.length &&
         tabsContent?.map((content, index) => {
-          return index === selectedTab && <div>{content}</div>;
+          return index === selectedTab && <div>{content}</div>
         })}
     </>
-  );
-};
+  )
+}
 
-export default MbTabs;
+export default MbTabs

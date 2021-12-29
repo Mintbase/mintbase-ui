@@ -1,22 +1,22 @@
-import { ComponentMeta, ComponentStory } from "@storybook/react";
-import React from "react";
-import { MbThingCard } from "../../components/cards/thing/ThingCard";
-import { EIconName } from "../../consts/icons";
+import { ComponentMeta, ComponentStory } from '@storybook/react'
+import React from 'react'
+import { MbThingCard } from '../../components/cards/thing/ThingCard'
+import { EIconName } from '../../consts/icons'
 
 export default {
-  title: "Components/Cards",
+  title: 'Components/Cards',
   component: MbThingCard,
   argTypes: {},
-} as ComponentMeta<typeof MbThingCard>;
+} as ComponentMeta<typeof MbThingCard>
 
 const Template: ComponentStory<typeof MbThingCard> = (args) => (
   <MbThingCard {...args} />
-);
+)
 
-export const Thing = Template.bind({});
+export const Thing = Template.bind({})
 Thing.args = {
   cardInfo: {
-    upperLeftText: "1",
+    upperLeftText: '1',
     upperRightIcon: EIconName.MORE,
     centerElement: (
       <img
@@ -25,15 +25,15 @@ Thing.args = {
       />
     ),
     isCenterImage: true,
-    midLeftText: "Thing Name",
-    midRightText: "10 N",
+    midLeftText: 'Thing Name',
+    midRightText: '10 N',
     botLeftImage:
-      "https://coldcdn.com/api/cdn/bronil/JXl58b_p9iYzeFutFC5GcDCjsxppyFt5rRkQt4Su4LU",
-    botRightText: "5/10",
+      'https://coldcdn.com/api/cdn/bronil/JXl58b_p9iYzeFutFC5GcDCjsxppyFt5rRkQt4Su4LU',
+    botRightText: '5/10',
     botRightIcon: EIconName.EDITIONS,
-    onBotLeftImageClick: () => {},
-    onCenterElementClick: () => {},
-    onUpperLeftClick: () => {},
-    onUpperRightClick: () => {},
+    onBotLeftImageClick: () => null,
+    onCenterElementClick: () => null,
+    onUpperLeftClick: () => null,
+    onUpperRightClick: () => null,
   },
-};
+}

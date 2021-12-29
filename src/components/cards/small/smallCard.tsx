@@ -1,13 +1,13 @@
-import React from "react";
-import "./smallcard.css";
-import "./../cards.css";
-import { TSmallCard } from "../../../types/cards.type";
-import { ESmallCardType } from "../../../consts/properties";
+import React from 'react'
+import './smallcard.css'
+import './../cards.css'
+import { TSmallCard } from '../../../types/cards.type'
+import { ESmallCardType } from '../../../consts/properties'
 
-interface CardProps extends React.ComponentProps<"div"> {
-  loading?: boolean;
-  card: TSmallCard;
-  cardType: ESmallCardType;
+interface CardProps extends React.ComponentProps<'div'> {
+  loading?: boolean
+  card: TSmallCard
+  cardType: ESmallCardType
 }
 
 const LoadingCard = ({ cardType }: { cardType: string }) => {
@@ -22,16 +22,16 @@ const LoadingCard = ({ cardType }: { cardType: string }) => {
         <div className="h-6 w-24 rounded bg-gray-600"></div>
       </div>
     </div>
-  );
-};
+  )
+}
 
 export const MbSmallCard = ({
   loading = false,
   cardType = ESmallCardType.STORE,
   card,
 }: CardProps) => {
-  if (loading) return <LoadingCard cardType={cardType} />;
-  const { title, centerElement, onCardClick } = card;
+  if (loading) return <LoadingCard cardType={cardType} />
+  const { title, centerElement, onCardClick } = card
 
   return (
     <div className={`base-card small ${cardType}`} onClick={onCardClick}>
@@ -42,5 +42,5 @@ export const MbSmallCard = ({
         <div className="p-big-90">{title}</div>
       </div>
     </div>
-  );
-};
+  )
+}

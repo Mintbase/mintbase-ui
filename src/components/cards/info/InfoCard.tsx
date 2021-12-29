@@ -1,9 +1,9 @@
 import React from 'react'
-import { EIconName } from "../../../consts/icons";
-import { ESize } from "../../../consts/properties"
-import { TInfoCard } from "../../../types/cards.type";
-import { MbIcon } from "../../icon/Icon";
-import "./infocard.css";
+import { EIconName } from '../../../consts/icons'
+import { ESize } from '../../../consts/properties'
+import { TInfoCard } from '../../../types/cards.type'
+import { MbIcon } from '../../icon/Icon'
+import './infocard.css'
 
 const LoadingInfoBox = ({ size }: { size: ESize }) => {
   return (
@@ -17,8 +17,8 @@ const LoadingInfoBox = ({ size }: { size: ESize }) => {
         <div className="h-6 w-32 rounded bg-gray-600"></div>
       </div>
     </div>
-  );
-};
+  )
+}
 
 export const MbInfoCard = ({ boxInfo }: { boxInfo: TInfoCard }) => {
   const {
@@ -31,23 +31,23 @@ export const MbInfoCard = ({ boxInfo }: { boxInfo: TInfoCard }) => {
     upperIcon = EIconName.NONE,
     isBigDescription = true,
     size = ESize.MEDIUM,
-  } = boxInfo;
+  } = boxInfo
 
-  if (loading) return <LoadingInfoBox size={size} />;
+  if (loading) return <LoadingInfoBox size={size} />
 
   const getDescriptionFont = () => {
-    if (size === "small") {
-      return isBigDescription ? "p-big-90" : "p-small-90";
+    if (size === 'small') {
+      return isBigDescription ? 'p-big-90' : 'p-small-90'
     }
-    return isBigDescription ? "p-sub-90" : "p-big-90";
-  };
+    return isBigDescription ? 'p-sub-90' : 'p-big-90'
+  }
 
   const getTitleFont = () => {
-    if (size === "small") {
-      return "cap-big-90";
+    if (size === 'small') {
+      return 'cap-big-90'
     }
-    return "p-small-90";
-  };
+    return 'p-small-90'
+  }
 
   return (
     <div className={`info-card ${size}`}>
@@ -89,8 +89,8 @@ export const MbInfoCard = ({ boxInfo }: { boxInfo: TInfoCard }) => {
             <div
               className={`${getDescriptionFont()} ${
                 handleDescriptionClick
-                  ? "text-blue-300 dark:text-blue-100 cursor-pointer"
-                  : "text-black dark:text-white"
+                  ? 'text-blue-300 dark:text-blue-100 cursor-pointer'
+                  : 'text-black dark:text-white'
               } inline-flex align-middle`}
               onClick={handleDescriptionClick}
             >
@@ -100,6 +100,5 @@ export const MbInfoCard = ({ boxInfo }: { boxInfo: TInfoCard }) => {
         )}
       </div>
     </div>
-  );
-};
-
+  )
+}

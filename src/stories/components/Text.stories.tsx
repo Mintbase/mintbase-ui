@@ -1,11 +1,11 @@
-import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { MbText } from "../../components/text/Text";
+import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { MbText } from '../../components/text/Text'
 
 export default {
-  title: "Components/Text",
+  title: 'Components/Text',
   component: MbText,
   argTypes: {},
-} as ComponentMeta<typeof MbText>;
+} as ComponentMeta<typeof MbText>
 
 const Template: ComponentStory<typeof MbText> = (args) => (
   <>
@@ -13,7 +13,7 @@ const Template: ComponentStory<typeof MbText> = (args) => (
       This is your simple Text. Change the className to get different styles.
     </MbText>
     <MbText className="p-small-90 mt-4">
-      view{" "}
+      view{' '}
       <a
         className="text-blue-100-35 hover:text-blue-300 cursor-pointer"
         href="/?path=/story/core-typography--typography"
@@ -23,9 +23,9 @@ const Template: ComponentStory<typeof MbText> = (args) => (
       </a>
     </MbText>
   </>
-);
+)
 
-export const Text = Template.bind({});
+export const Text = Template.bind({})
 Text.args = {
-  className: "p-big-90",
-};
+  className: 'p-big-90',
+}
