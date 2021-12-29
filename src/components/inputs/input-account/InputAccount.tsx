@@ -83,7 +83,7 @@ const MbInputAccount = (props: InputAccountProps) => {
               })}
           </body>
         </section>
-        <footer className="text-center py-32 border-t border-gray-150">
+        <footer className="text-center py-32 border-t border-gray-150 dark:border-gray-700">
           <MbAction
             label={footerTitle}
             state={
