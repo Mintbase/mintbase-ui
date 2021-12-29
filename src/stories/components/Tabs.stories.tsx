@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { MbTab } from '../../components/tabs/Tab'
-import MbTabs from '../../components/tabs/Tabs'
+import { MbTabs } from '../../components/tabs/Tabs'
 
 export default {
   title: 'Components/Tabs',
