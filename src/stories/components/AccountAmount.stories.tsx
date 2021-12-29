@@ -65,7 +65,7 @@ const Template: ComponentStory<typeof MbInputAccount> = (args) => {
   }
 
   const handleAddClick = () => {
-    if (inputList.length + 1 === 25) return
+    if (inputList.length + 1 === 100) return
     setInputList([
       ...inputList,
       {
@@ -85,7 +85,7 @@ const Template: ComponentStory<typeof MbInputAccount> = (args) => {
 
   return (
     <MbInputAccount
-      maxAmount={25}
+      maxAmount={100}
       inputList={inputList}
       removeInputHandler={handleRemoveClick}
       accountInputChangeHandler={handleAccountInputChange}
