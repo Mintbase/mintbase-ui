@@ -19,11 +19,13 @@ export const MbIcon = ({
   color = 'mb-blackblue',
   darkColor,
   size = '24px',
+  className=''
 }: {
   name: EIconName
   color: string
   darkColor?: string
   size?: string
+  className?: string
 }) => {
   const [isMintbaseIcon, setIsMintbaseIcon] = useState<boolean>(false)
 
@@ -36,7 +38,7 @@ export const MbIcon = ({
   }
 
   return (
-    <>
+    <div className={`flex justify-center ${className}`}>
       {isMintbaseIcon ? (
         <InlineSVG
           src={`/assets/icons/${name}.svg`}
@@ -52,6 +54,6 @@ export const MbIcon = ({
           {name}
         </span>
       )}
-    </>
+    </div>
   )
 }
