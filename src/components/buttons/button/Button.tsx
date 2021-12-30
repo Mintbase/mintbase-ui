@@ -1,6 +1,6 @@
 import React from 'react'
-import { getFontType } from '../../consts/fontType'
-import { ESize, EState, EType } from '../../consts/properties'
+import { getFontType } from '../../../consts/fontType'
+import { ESize, EState, EType } from '../../../consts/properties'
 import './button.css'
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
