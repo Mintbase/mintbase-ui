@@ -1,0 +1,7 @@
+.amount-button {
+  @apply bg-black rounded w-7 h-7 flex justify-center items-center hover:bg-blue-300 dark:bg-white dark:hover:bg-blue-100 border-2 border-transparent focus:border-blue-100-15 dark:focus:border-blue-300-15 focus:bg-blue-300 dark:focus:bg-blue-100;
+}
+
+.amount-button span {
+  @apply text-white dark:text-black;
+}

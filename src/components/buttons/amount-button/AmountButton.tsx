@@ -1,12 +1,40 @@
-const MbAmountButton = () => {
+import { useEffect, useState } from 'react'
+import './amountbutton.css'
+
+interface AmountButtonProps {
+  max: number
+  disabled: boolean
+  onValueChange: (amount: number) => void
+}
+
+const MbAmountButton = (props: AmountButtonProps) => {
+  const [amount, setAmount] = useState(1)
+  const { max, disabled, onValueChange } = props
+  const handlePlus = () => {
+    const updated = amount + 1
+    if (updated === max + 1) return
+    setAmount(amount + 1)
+  }
+
+  const handleMinus = () => {
+    if (amount === 0) return
+    const updated = amount - 1
+    if (updated <= 0) return
+    setAmount(amount - 1)
+  }
+
+  useEffect(() => {
+    ;() => onValueChange(amount)
+  }, [amount])
+
   return (
-    <div className="flex items-center space-x-24">
-      <button className="bg-black rounded w-8 h-7 flex justify-center items-center hover:bg-blue-300 dark:bg-white dark:hover:bg-blue-100 focus:border-2 focus:border-blue-100-15">
-        <span className="p-big-90 text-white dark:text-black">-</span>
+    <div className="flex items-end space-x-24">
+      <button className="amount-button" onClick={handleMinus}>
+        <span className="p-big-90">-</span>
       </button>
-      <div className="h2-90 dark:text-white">1</div>
-      <button className="bg-black rounded w-8 h-7 flex justify-center items-center hover:bg-blue-300 dark:bg-white dark:hover:bg-blue-100 focus:border-2 focus:border-blue-100-15">
-        <span className="p-big-90 text-white dark:text-black">+</span>
+      <p className="h2-90 dark:text-white">{amount}</p>
+      <button className="amount-button" onClick={handlePlus}>
+        <span className="p-big-90">+</span>
       </button>
     </div>
   )

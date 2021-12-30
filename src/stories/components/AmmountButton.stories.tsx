@@ -13,4 +13,6 @@ const Template: ComponentStory<typeof MbAmountButton> = (args) => (
 )
 
 export const AmountButton = Template.bind({})
-AmountButton.args = {}
+AmountButton.args = {
+  max: 20,
+}
