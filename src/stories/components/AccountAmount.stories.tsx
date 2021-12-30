@@ -1,13 +1,33 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { useState } from 'react'
+import { ESize, EType } from '../../consts/properties'
 import MbInputAccount from '../../components/inputs/input-account/InputAccount'
 import { EControlStatus } from '../../components/inputs/input-field/inputField'
+import { MbButton } from '../../components/button/Button'
 
 export default {
   title: 'Components/Inputs',
   component: MbInputAccount,
   argTypes: {},
 } as ComponentMeta<typeof MbInputAccount>
+
+const LeftFooterActions = () => {
+  return (
+    <div className="flex space-x-12">
+      <MbButton
+        size={ESize.SMALL}
+        btnType={EType.SECONDARY}
+        label="Cancel"
+        onClick={() => console.log('cancel')}
+      />
+      <MbButton
+        size={ESize.SMALL}
+        label="Transfer Tokens"
+        onClick={() => console.log('transfer')}
+      />
+    </div>
+  )
+}
 
 const Template: ComponentStory<typeof MbInputAccount> = (args) => {
   const [inputList, setInputList] = useState([
@@ -94,9 +114,7 @@ const Template: ComponentStory<typeof MbInputAccount> = (args) => {
       subtitle="Airdrop to multiple accounts, up to 100 accounts."
       smallSubtitle="Amount of tokens and recipient account"
       footerTitle="Add Account"
-      hasFooterExtraActions
-      handleCancelBtn={() => console.log('cancel')}
-      handleTransferBtn={() => console.log('transfer')}
+      leftFooterContent={<LeftFooterActions />}
       footerAction={handleAddClick}
     />
   )

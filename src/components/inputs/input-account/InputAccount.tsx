@@ -24,9 +24,7 @@ interface InputAccountProps {
   smallSubtitle: string
   inputList: TInputListGroup[]
   footerTitle: string
-  hasFooterExtraActions?: boolean
-  handleCancelBtn?: () => void
-  handleTransferBtn?: () => void
+  leftFooterContent?: JSX.Element
   removeInputHandler: (index: number) => void
   accountInputChangeHandler: (e: any, index: number) => void
   amountInputChangeHandler?: (e: any, index: number) => void
@@ -40,13 +38,11 @@ const MbInputAccount = (props: InputAccountProps) => {
     smallSubtitle,
     inputList,
     footerTitle,
-    hasFooterExtraActions,
+    leftFooterContent,
     footerAction,
     removeInputHandler,
     accountInputChangeHandler,
     amountInputChangeHandler,
-    handleCancelBtn,
-    handleTransferBtn,
   } = props
 
   return (
@@ -122,20 +118,8 @@ const MbInputAccount = (props: InputAccountProps) => {
             onClick={footerAction}
           />
 
-          {hasFooterExtraActions && (
-            <div className="flex space-x-12 center-extra-btns">
-              <MbButton
-                size={ESize.SMALL}
-                btnType={EType.SECONDARY}
-                label="Cancel"
-                onClick={handleCancelBtn}
-              />
-              <MbButton
-                size={ESize.SMALL}
-                label="Transfer Tokens"
-                onClick={handleTransferBtn}
-              />
-            </div>
+          {leftFooterContent && (
+            <div className="center-extra-btns">{leftFooterContent}</div>
           )}
         </footer>
       </main>
