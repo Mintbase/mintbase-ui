@@ -15,4 +15,6 @@ const Template: ComponentStory<typeof MbAmountButton> = (args) => (
 export const AmountButton = Template.bind({})
 AmountButton.args = {
   max: 20,
+  disabled: true,
+  onValueChange: (amount) => console.log(amount),
 }
