@@ -31,7 +31,7 @@ const MbAmountButton = (props: AmountButtonProps) => {
     event.preventDefault()
     const value = event.target.value
 
-    if (value === '' || value === '0') {
+    if (value === '' || value === '0' || !RegExp(/^\d*?$/).test(value)) {
       setAmount(0)
       return
     }
