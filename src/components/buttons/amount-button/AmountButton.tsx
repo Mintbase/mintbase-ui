@@ -27,6 +27,19 @@ const MbAmountButton = (props: AmountButtonProps) => {
     setAmount(amount - 1)
   }
 
+  const handleContentChanges = (event: any) => {
+    event.preventDefault()
+    const value = event.target.value
+
+    if (value === '' || value === '0') {
+      setAmount(0)
+      return
+    }
+
+    const calValue = Math.min(Math.max(parseInt(value), 1), max)
+    setAmount(calValue)
+  }
+
   useEffect(() => {
     onValueChange(amount)
   }, [amount])
@@ -39,13 +52,13 @@ const MbAmountButton = (props: AmountButtonProps) => {
       >
         <span className="p-big-90">-</span>
       </button>
-      <p
-        className={`h2-90 dark:text-white mx-12 w-10 text-center ${
+      <input
+        className={`h2-90 dark:text-white mx-12 w-10 text-center outline-none ${
           disabled ? 'text-gray-500' : ''
         }`}
-      >
-        {amount}
-      </p>
+        value={amount}
+        onChange={handleContentChanges}
+      />
       <button
         className={`amount-button ${disabled ? 'disabled' : ''}`}
         onClick={handlePlus}
