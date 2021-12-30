@@ -15,13 +15,13 @@ const LeftFooterActions = () => {
   return (
     <div className="flex space-x-12">
       <MbButton
-        size={ESize.SMALL}
+        size={ESize.MEDIUM}
         btnType={EType.SECONDARY}
         label="Cancel"
         onClick={() => console.log('cancel')}
       />
       <MbButton
-        size={ESize.SMALL}
+        size={ESize.MEDIUM}
         label="Transfer Tokens"
         onClick={() => console.log('transfer')}
       />
