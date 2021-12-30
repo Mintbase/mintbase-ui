@@ -28,11 +28,11 @@ const MbAmountButton = (props: AmountButtonProps) => {
   }, [amount])
 
   return (
-    <div className="flex items-end space-x-24">
+    <div className="flex items-end">
       <button className="amount-button" onClick={handleMinus}>
         <span className="p-big-90">-</span>
       </button>
-      <p className="h2-90 dark:text-white">{amount}</p>
+      <p className="h2-90 dark:text-white mx-12 w-8 text-center">{amount}</p>
       <button className="amount-button" onClick={handlePlus}>
         <span className="p-big-90">+</span>
       </button>
