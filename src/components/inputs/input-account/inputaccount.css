@@ -1,0 +1,7 @@
+@screen sm {
+  .center-extra-btns {
+    @apply absolute  top-1/2;
+    right: 24px;
+    transform: translate(0, -50%);
+  }
+}

@@ -30,7 +30,7 @@ export const MbAccordion = (props: AccordionProps) => {
           )}
           <MbIcon
             name={
-              isExpanded
+              !isExpanded
                 ? EIconName.ARROW_EXPAND_MORE
                 : EIconName.ARROW_EXPAND_LESS
             }
@@ -40,7 +40,7 @@ export const MbAccordion = (props: AccordionProps) => {
           />
         </div>
       </header>
-      {isExpanded && <section className="p-24">{props.children}</section>}
+      {isExpanded && <section>{props.children}</section>}
     </main>
   )
 }
