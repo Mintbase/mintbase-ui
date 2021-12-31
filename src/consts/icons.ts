@@ -21,6 +21,7 @@ export enum EIconName {
   SHARE = 'share',
   MENU = 'menu',
   SEARCH = 'search',
+  CIRCLE = 'circle',
   ARROW_LEFT_BIG = 'arrow_back_ios',
   ARROW_RIGHT_BIG = 'arrow_forward_ios',
   ARROW_LEFT_SMALL = 'navigate_before',
