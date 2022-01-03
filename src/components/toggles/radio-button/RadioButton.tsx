@@ -1,3 +1,5 @@
+import './radiobutton.css'
+
 interface RadioButtonProps {
   label: string
   value: string
@@ -13,16 +15,18 @@ const MbRadioButton = (props: RadioButtonProps) => {
     handleChange(id)
   }
   return (
-    <div className="flex items-center">
+    <div className="flex items-center radio-item">
       <input
         type="radio"
-        className="cursor-pointer accent-blue-300 focus:accent-blue-100"
+        className="cursor-pointer"
         id={value}
         checked={isChecked}
         onChange={handleRadioChange}
       />
       <label htmlFor={value}>
-        <span className="p-med-90 pl-12 dark:text-white">{label}</span>
+        <span className="p-med-90 pl-12 dark:text-white cursor-pointer">
+          {label}
+        </span>
       </label>
     </div>
   )

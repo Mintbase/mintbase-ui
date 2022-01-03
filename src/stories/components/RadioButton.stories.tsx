@@ -18,16 +18,17 @@ const Template: ComponentStory<typeof MbRadioButton> = (args) => {
   return (
     <>
       {radioButtons.map((btn) => (
-        <MbRadioButton
-          {...args}
-          isChecked={btn.value === selected}
-          handleChange={(id) => {
-            setSelected(id)
-          }}
-          label={btn.label}
-          value={btn.value}
-          key={btn.value}
-        />
+        <div className="mb-4" key={btn.value}>
+          <MbRadioButton
+            {...args}
+            isChecked={btn.value === selected}
+            handleChange={(id) => {
+              setSelected(id)
+            }}
+            label={btn.label}
+            value={btn.value}
+          />
+        </div>
       ))}
     </>
   )
