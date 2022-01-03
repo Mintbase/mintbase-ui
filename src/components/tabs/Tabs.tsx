@@ -51,7 +51,7 @@ export const MbTabs = (props: TabsProps) => {
 
   return (
     <>
-      <div className="flex bg-gray-50 dark:bg-gray-800 md:px-64">
+      <div className="flex bg-gray-50 dark:bg-gray-800 md:px-64 overflow-scroll">
         <div className="flex justify-center md:justify-start items-center space-x-12 sm:space-x-24">
           {tabsTitle?.length &&
             tabsTitle.map((title, index) => (
@@ -71,7 +71,7 @@ export const MbTabs = (props: TabsProps) => {
               }`}
             >
               <div
-                className="flex p-12 sm:p-16"
+                className="flex p-12 sm:p-16 items-center"
                 onClick={() => setShowOrderOpts(!showOrderOpts)}
               >
                 <div
