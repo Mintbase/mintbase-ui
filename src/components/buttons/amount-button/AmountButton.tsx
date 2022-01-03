@@ -30,8 +30,9 @@ const MbAmountButton = (props: AmountButtonProps) => {
   const handleContentChanges = (event: React.ChangeEvent<HTMLInputElement>) => {
     event.preventDefault()
     const value = event.target.value
+    const isNumber = RegExp(/^\d*?$/).test(value)
 
-    if (value === '' || value === '0' || !RegExp(/^\d*?$/).test(value)) {
+    if (value === '' || value === '0' || !isNumber) {
       setAmount(0)
       return
     }
