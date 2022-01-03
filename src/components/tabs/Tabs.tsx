@@ -51,7 +51,7 @@ export const MbTabs = (props: TabsProps) => {
 
   return (
     <>
-      <div className="flex bg-gray-50 dark:bg-gray-800 md:px-64 items-center">
+      <div className="flex bg-gray-50 dark:bg-gray-800 md:px-64">
         <div className="flex justify-center md:justify-start items-center space-x-12 sm:space-x-24 overflow-scroll">
           {tabsTitle?.length &&
             tabsTitle.map((title, index) => (
@@ -62,39 +62,37 @@ export const MbTabs = (props: TabsProps) => {
               </>
             ))}
         </div>
-        <div className="w-0.5 bg-gray-200 h-10 rounded sm:hidden"></div>
-        {props.hasFilters && (
-          <>
-            <div className="ml-auto">
+        <div className="ml-auto flex items-center">
+          <div className="w-0.5 bg-gray-200 h-10 rounded sm:hidden mx-12"></div>
+          {props.hasFilters && (
+            <div
+              className={`order-by ${
+                selectedOrder ? 'selected' : 'unselected'
+              }`}
+            >
               <div
-                className={`order-by ${
-                  selectedOrder ? 'selected' : 'unselected'
-                }`}
+                className="flex p-12 sm:p-16"
+                onClick={() => setShowOrderOpts(!showOrderOpts)}
               >
                 <div
-                  className="flex p-16"
-                  onClick={() => setShowOrderOpts(!showOrderOpts)}
+                  className={`${
+                    selectedOrder
+                      ? 'text-mb-red'
+                      : 'text-blue-300 dark:text-blue-100'
+                  } p-med-90 pr-10 whitespace-nowrap`}
                 >
-                  <div
-                    className={`${
-                      selectedOrder
-                        ? 'text-mb-red'
-                        : 'text-blue-300 dark:text-blue-100'
-                    } p-med-90 pr-10`}
-                  >
-                    {selectedOrder ? selectedOrder : 'Order By'}
-                  </div>
-                  <MbIcon
-                    name={EIconName.ARROW_DROP_DOWN}
-                    size="16px"
-                    color="blue-300"
-                    darkColor="blue-100"
-                  />
+                  {selectedOrder ? selectedOrder : 'Order By'}
                 </div>
+                <MbIcon
+                  name={EIconName.ARROW_DROP_DOWN}
+                  size="16px"
+                  color="blue-300"
+                  darkColor="blue-100"
+                />
               </div>
             </div>
-          </>
-        )}
+          )}
+        </div>
       </div>
       <MbDropdownMenu
         isOpen={showOrderOpts}
