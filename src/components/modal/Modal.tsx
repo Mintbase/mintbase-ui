@@ -1,3 +1,7 @@
+import { MbIcon } from '../icon/Icon'
+import { EIconName } from '../../consts/icons'
+import './modal.css'
+
 interface ModalProps extends React.HTMLAttributes<HTMLDivElement> {
   title: string
   open: boolean
@@ -8,11 +12,22 @@ const MbModal = (props: ModalProps) => {
   return (
     <>
       {open && (
-        <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
-          <div className="relative w-auto my-6 mx-auto max-w-3xl bg-white dark:bg-gray-850 rounded">
-            <header className="flex items-center p-32">{title}</header>
-            {children}
-          </div>{' '}
+        <div className="modal">
+          <section className="modal-section">
+            <header className="flex items-center p-24 border-b border-gray-150 justify-between">
+              <div>{title}</div>
+              <div onClick={onClose}>
+                <MbIcon
+                  name={EIconName.CLOSE}
+                  size="20px"
+                  color="blue-300"
+                  darkColor="blue-100"
+                  className="cursor-pointer"
+                />
+              </div>
+            </header>
+            <div className="p-24">{children}</div>
+          </section>
         </div>
       )}
     </>

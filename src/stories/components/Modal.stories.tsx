@@ -21,7 +21,12 @@ const Template: ComponentStory<typeof MbModal> = (args) => {
         size={ESize.MEDIUM}
         onClick={() => setIsOpen(true)}
       />
-      <MbModal {...args} open={open} title="Info">
+      <MbModal
+        {...args}
+        open={open}
+        title="Info"
+        onClose={() => setIsOpen(false)}
+      >
         <p>This is a modal content example.</p>
       </MbModal>
     </>

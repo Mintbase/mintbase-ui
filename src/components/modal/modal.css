@@ -1,0 +1,14 @@
+.modal {
+  @apply justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none;
+}
+
+.modal-section {
+  width: 366px;
+  @apply relative w-auto my-4 mx-auto max-w-3xl bg-white dark:bg-gray-850 rounded;
+}
+
+@screen sm {
+  .modal-section {
+    width: 528px;
+  }
+}
