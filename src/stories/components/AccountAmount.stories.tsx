@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { ESize, EType } from '../../consts/properties'
 import MbInputAccount from '../../components/inputs/input-account/InputAccount'
 import { EControlStatus } from '../../components/inputs/input-field/inputField'
-import { MbButton } from '../../components/button/Button'
+import { MbButton } from '../../components/buttons/button/Button'
 
 export default {
   title: 'Components/Inputs',

@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import React from 'react'
-import { MbButton } from '../../components/button/Button'
+import { MbButton } from '../../components/buttons/button/Button'
 import { MbDropdownMenu } from '../../components/dropdown-menu/DropdownMenu'
 import { MbIcon } from '../../components/icon/Icon'
 import { EIconName } from '../../consts/icons'

@@ -1,10 +1,10 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import React from 'react'
-import { MbButton } from '../../components/button/Button'
+import { MbButton } from '../../components/buttons/button/Button'
 import { ESize, EState, EType } from '../../consts/properties'
 
 export default {
-  title: 'Components/Button',
+  title: 'Components/Buttons/Button',
   component: MbButton,
   argTypes: {},
 } as ComponentMeta<typeof MbButton>
