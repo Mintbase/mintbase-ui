@@ -63,7 +63,7 @@ export const MbTabs = (props: TabsProps) => {
             ))}
         </div>
         <div className="ml-auto flex items-center">
-          <div className="w-0.5 bg-gray-200 h-8 rounded sm:hidden mx-12"></div>
+          <div className="w-0.5 bg-gray-200 dark:bg-gray-600 h-8 rounded sm:hidden mx-12"></div>
           {props.hasFilters && (
             <div
               className={`order-by ${
