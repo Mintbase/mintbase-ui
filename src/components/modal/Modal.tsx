@@ -14,11 +14,7 @@ const MbModal = (props: ModalProps) => {
       {open && (
         <>
           <div className="fixed inset-0 bg-gray-150 dark:border-gray-700 bg-opacity-50 overflow-y-auto h-full w-full"></div>
-          <div
-            className={`modal transition-all ease-in-out duration-500 ${
-              open ? 'opacity-100' : 'opacity-0'
-            }`}
-          >
+          <div className="modal">
             <section className="modal-section">
               <header className="flex items-center p-24 border-b border-gray-150 dark:border-gray-700 justify-between">
                 <div className="p-big-130">{title}</div>
