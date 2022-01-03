@@ -51,8 +51,8 @@ export const MbTabs = (props: TabsProps) => {
 
   return (
     <>
-      <div className="flex bg-gray-50 dark:bg-gray-800 md:px-64">
-        <div className="flex justify-center md:justify-start items-center space-x-24 overflow-scroll">
+      <div className="flex bg-gray-50 dark:bg-gray-800 md:px-64 items-center">
+        <div className="flex justify-center md:justify-start items-center space-x-12 sm:space-x-24 overflow-scroll">
           {tabsTitle?.length &&
             tabsTitle.map((title, index) => (
               <>
@@ -62,6 +62,7 @@ export const MbTabs = (props: TabsProps) => {
               </>
             ))}
         </div>
+        <div className="w-0.5 bg-gray-200 h-10 rounded sm:hidden"></div>
         {props.hasFilters && (
           <>
             <div className="ml-auto">
