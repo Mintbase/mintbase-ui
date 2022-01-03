@@ -4,7 +4,7 @@
 
 .modal-section {
   width: 366px;
-  @apply relative w-auto my-4 mx-auto max-w-3xl bg-white dark:bg-gray-850 rounded;
+  @apply relative my-4 max-w-3xl bg-white dark:bg-gray-850 rounded;
 }
 
 @screen sm {

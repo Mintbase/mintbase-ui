@@ -15,7 +15,7 @@ const MbModal = (props: ModalProps) => {
         <div className="modal">
           <section className="modal-section">
             <header className="flex items-center p-24 border-b border-gray-150 justify-between">
-              <div>{title}</div>
+              <div className="p-big-130">{title}</div>
               <div onClick={onClose}>
                 <MbIcon
                   name={EIconName.CLOSE}
