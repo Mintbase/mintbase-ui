@@ -12,6 +12,7 @@ const Template: ComponentStory<typeof MbTabs> = (args) => (
   <>
     <MbTabs {...args}>
       <MbTab title="Active auctions">List of active auctions</MbTab>
+      <MbTab title="Active stores">List of active stores</MbTab>
       <MbTab title="Latest Listings">List of latest listings</MbTab>
     </MbTabs>
   </>
