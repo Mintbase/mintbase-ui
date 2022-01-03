@@ -27,7 +27,7 @@ const MbAmountButton = (props: AmountButtonProps) => {
     setAmount(amount - 1)
   }
 
-  const handleContentChanges = (event: any) => {
+  const handleContentChanges = (event: React.ChangeEvent<HTMLInputElement>) => {
     event.preventDefault()
     const value = event.target.value
 
