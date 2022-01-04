@@ -33,4 +33,6 @@ const Template: ComponentStory<typeof MbRadioButton> = (args) => {
 }
 
 export const RadioButton = Template.bind({})
-RadioButton.args = {}
+RadioButton.args = {
+  disabled: false,
+}
