@@ -5,15 +5,21 @@ import './chip.css'
 interface ChipProps {
   label: string
   isChecked: boolean
+  disabled: boolean
   handleClick: () => void
 }
 
 const MbChip = (props: ChipProps) => {
-  const { label, isChecked, handleClick } = props
+  const { label, isChecked, disabled, handleClick } = props
   return (
     <div
-      className={`chip ${isChecked ? 'active' : ''}`}
-      onClick={() => handleClick()}
+      className={`chip ${isChecked ? 'active' : ''} ${
+        disabled ? 'disabled' : ''
+      }`}
+      onClick={() => {
+        if (disabled) return
+        handleClick()
+      }}
     >
       {isChecked && (
         <div className="icon">
