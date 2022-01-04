@@ -1,15 +1,12 @@
+import { TToggle } from '../../../types/toggles.type'
 import './radiobutton.css'
 
-interface RadioButtonProps {
-  label: string
-  value: string
-  isChecked: boolean
-  disabled: boolean
+interface RadioButtonProps extends TToggle {
   handleChange: (id: string) => void
 }
 
 const MbRadioButton = (props: RadioButtonProps) => {
-  const { label, value, isChecked, disabled, handleChange } = props
+  const { label, id, isChecked, disabled, handleChange } = props
 
   return (
     <div
@@ -18,14 +15,14 @@ const MbRadioButton = (props: RadioButtonProps) => {
       <input
         type="radio"
         className="cursor-pointer"
-        id={value}
+        id={id}
         checked={isChecked}
         onChange={(e) => {
           if (disabled) return
           handleChange(e.target.id)
         }}
       />
-      <label htmlFor={value}>
+      <label htmlFor={id}>
         <span className="p-med-90 pl-12 dark:text-white cursor-pointer">
           {label}
         </span>

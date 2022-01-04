@@ -1,11 +1,9 @@
 import { MbIcon } from '../../icon/Icon'
 import { EIconName } from '../../../consts/icons'
 import './switch.css'
+import { TToggle } from '../../../types/toggles.type'
 
-interface SwitchProps {
-  id: string
-  isChecked: boolean
-  disabled: boolean
+interface SwitchProps extends TToggle {
   handleChange: (checked: boolean) => void
 }
 

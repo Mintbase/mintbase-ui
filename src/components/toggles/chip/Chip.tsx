@@ -1,11 +1,9 @@
 import { MbIcon } from '../../icon/Icon'
 import { EIconName } from '../../../consts/icons'
 import './chip.css'
+import { TToggle } from '../../../types/toggles.type'
 
-interface ChipProps {
-  label: string
-  isChecked: boolean
-  disabled: boolean
+interface ChipProps extends TToggle {
   handleClick: () => void
 }
 
