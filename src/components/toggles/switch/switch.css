@@ -12,15 +12,6 @@
   height: 18px;
 }
 
-.toggle-switch-disabled {
-  background-color: #ddd;
-  cursor: not-allowed;
-}
-.toggle-switch-disabled :before {
-  background-color: #ddd;
-  cursor: not-allowed;
-}
-
 .switch-btn {
   @apply block absolute bg-gray-300 dark:bg-gray-600 rounded-full;
   width: 24px;
@@ -37,4 +28,13 @@
 .switch-checkbox:checked + label .switch-btn {
   @apply bg-blue-300 dark:bg-blue-100;
   right: 0px;
+}
+
+.switch.disabled .switch-label {
+  @apply cursor-not-allowed;
+}
+
+.switch.disabled .switch-btn,
+.switch.disabled .switch-checkbox:checked + label .switch-btn {
+  @apply cursor-not-allowed bg-gray-200 dark:bg-gray-800;
 }

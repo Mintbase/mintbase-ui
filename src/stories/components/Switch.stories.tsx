@@ -22,4 +22,6 @@ const Template: ComponentStory<typeof MbSwitch> = (args) => {
 }
 
 export const Switch = Template.bind({})
-Switch.args = {}
+Switch.args = {
+  disabled: false,
+}
