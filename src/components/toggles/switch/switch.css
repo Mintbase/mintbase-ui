@@ -13,7 +13,7 @@
 }
 
 .switch-btn {
-  @apply block absolute bg-gray-300 dark:bg-gray-600 rounded-full;
+  @apply flex items-center justify-center absolute bg-gray-300 dark:bg-gray-600 rounded-full;
   width: 24px;
   height: 24px;
   top: 0;

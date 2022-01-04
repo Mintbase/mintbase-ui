@@ -1,4 +1,5 @@
-import { EState } from '../../..'
+import { MbIcon } from '../..'
+import { EIconName, EState } from '../../..'
 import './switch.css'
 
 interface SwitchProps {
@@ -23,7 +24,14 @@ const MbSwitch = (props: SwitchProps) => {
         }}
       />
       <label className="switch-label" htmlFor={id}>
-        <span className="switch-btn" />
+        <span className="switch-btn">
+          <MbIcon
+            name={isChecked ? EIconName.CHECK : EIconName.CLOSE}
+            size="16px"
+            color="white"
+            darkColor="black"
+          />
+        </span>
       </label>
     </div>
   )
