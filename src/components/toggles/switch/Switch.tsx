@@ -1,5 +1,5 @@
-import { MbIcon } from '../..'
-import { EIconName, EState } from '../../..'
+import { MbIcon } from '../../icon/Icon'
+import { EIconName } from '../../../consts/icons'
 import './switch.css'
 
 interface SwitchProps {
