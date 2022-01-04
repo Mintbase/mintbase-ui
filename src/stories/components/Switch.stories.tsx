@@ -13,7 +13,7 @@ const Template: ComponentStory<typeof MbSwitch> = (args) => {
   return (
     <MbSwitch
       {...args}
-      id={'switch1'}
+      id="switch1"
       isChecked={checked}
       handleChange={(val) => setChecked(val)}
     />
