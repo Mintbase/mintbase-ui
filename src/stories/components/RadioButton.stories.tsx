@@ -22,9 +22,7 @@ const Template: ComponentStory<typeof MbRadioButton> = (args) => {
           <MbRadioButton
             {...args}
             isChecked={btn.value === selected}
-            handleChange={(id) => {
-              setSelected(id)
-            }}
+            handleChange={(id) => setSelected(id)}
             label={btn.label}
             value={btn.value}
           />

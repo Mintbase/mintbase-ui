@@ -10,10 +10,6 @@ interface RadioButtonProps {
 const MbRadioButton = (props: RadioButtonProps) => {
   const { label, value, isChecked, handleChange } = props
 
-  const handleRadioChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { id } = event.currentTarget
-    handleChange(id)
-  }
   return (
     <div className="flex items-center radio-item">
       <input
@@ -21,7 +17,7 @@ const MbRadioButton = (props: RadioButtonProps) => {
         className="cursor-pointer"
         id={value}
         checked={isChecked}
-        onChange={handleRadioChange}
+        onChange={(e) => handleChange(e.target.id)}
       />
       <label htmlFor={value}>
         <span className="p-med-90 pl-12 dark:text-white cursor-pointer">
