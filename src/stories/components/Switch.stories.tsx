@@ -1,4 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { useState } from 'react'
 import MbSwitch from '../../components/toggles/switch/Switch'
 import { ESize, EState } from '../../consts/properties'
 
@@ -8,9 +9,17 @@ export default {
   argTypes: {},
 } as ComponentMeta<typeof MbSwitch>
 
-const Template: ComponentStory<typeof MbSwitch> = (args) => (
-  <MbSwitch {...args} />
-)
+const Template: ComponentStory<typeof MbSwitch> = (args) => {
+  const [checked, setChecked] = useState(false)
+  return (
+    <MbSwitch
+      {...args}
+      id={'switch1'}
+      isChecked={checked}
+      handleChange={(val) => setChecked(val)}
+    />
+  )
+}
 
 export const Switch = Template.bind({})
 Switch.args = {}
