@@ -1,7 +1,6 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { useState } from 'react'
 import MbSwitch from '../../components/toggles/switch/Switch'
-import { ESize, EState } from '../../consts/properties'
 
 export default {
   title: 'Components/Toggles',
