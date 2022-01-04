@@ -24,7 +24,9 @@ const MbCheckbox = (props: CheckboxProps) => {
           }}
         />
         <div
-          className={`checkbox-item ${isChecked ? 'active' : ''}`}
+          className={`checkbox-item ${disabled ? 'disabled' : ''} ${
+            isChecked ? 'active' : ''
+          }`}
           aria-hidden="true"
         >
           {isChecked && (
