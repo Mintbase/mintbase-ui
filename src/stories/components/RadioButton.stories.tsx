@@ -16,7 +16,7 @@ const Template: ComponentStory<typeof MbRadioButton> = (args) => {
   ]
 
   return (
-    <>
+    <div className="flex">
       {radioButtons.map((btn) => (
         <div className="mb-4" key={btn.value}>
           <MbRadioButton
@@ -30,7 +30,7 @@ const Template: ComponentStory<typeof MbRadioButton> = (args) => {
           />
         </div>
       ))}
-    </>
+    </div>
   )
 }
 
