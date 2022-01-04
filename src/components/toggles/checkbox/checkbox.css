@@ -6,10 +6,12 @@ input[type='checkbox'] {
   @apply cursor-pointer rounded border border-gray-500 flex items-center justify-center hover:border-blue-300 dark:hover:border-blue-100;
   height: 20px;
   width: 20px;
+  transition: all 0.5s ease-out 0s;
 }
 
 .checkbox-item.active {
   @apply border-blue-300 bg-blue-300 dark:border-blue-100 dark:bg-blue-100;
+  transition: all 0.5s ease-in 0s;
 }
 
 .checkbox-item.disabled {

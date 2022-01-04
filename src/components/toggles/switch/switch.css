@@ -19,7 +19,7 @@
   top: 0;
   bottom: 0;
   right: 26px;
-  transition: all 0.3s ease-in 0s;
+  transition: all 0.5s ease-in 0s;
   z-index: 1;
   top: 50%;
   transform: translateY(-50%);

@@ -1,5 +1,6 @@
 .chip {
   @apply py-8 px-32 bg-blue-300-15 dark:bg-blue-100-35 rounded-full w-max cursor-pointer relative;
+  transition: all 0.5s ease-in 0s;
 }
 
 .chip .icon {
@@ -11,4 +12,5 @@
 
 .chip.active {
   @apply bg-blue-300 dark:bg-blue-100;
+  transition: all 0.5s ease-in 0s;
 }
