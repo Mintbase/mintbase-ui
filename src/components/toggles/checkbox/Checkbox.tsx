@@ -1,5 +1,5 @@
-import { MbIcon } from '../..'
-import { EIconName } from '../../..'
+import { MbIcon } from '../../icon/Icon'
+import { EIconName } from '../../../consts/icons'
 import './checkbox.css'
 interface CheckboxProps {
   label: string
