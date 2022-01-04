@@ -1,0 +1,13 @@
+input[type='checkbox'] {
+  @apply hidden;
+}
+
+.checkbox-item {
+  @apply cursor-pointer rounded border border-gray-500 flex items-center justify-center;
+  height: 20px;
+  width: 20px;
+}
+
+.checkbox-item.active {
+  @apply border-blue-300 bg-blue-300 dark:border-blue-100 dark:bg-blue-100;
+}

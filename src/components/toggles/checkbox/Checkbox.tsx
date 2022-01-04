@@ -1,32 +1,43 @@
+import { MbIcon } from '../..'
+import { EIconName } from '../../..'
+import './checkbox.css'
 interface CheckboxProps {
   label: string
-  value: string
+  id: string
   isChecked: boolean
   disabled: boolean
-  handleChange: (id: string) => void
+  handleChange: (checked: boolean) => void
 }
 
 const MbCheckbox = (props: CheckboxProps) => {
-  const { label, value, isChecked, disabled, handleChange } = props
+  const { label, id, isChecked, disabled, handleChange } = props
   return (
     <>
-      <div className={`flex items-center radio-item `}>
+      <label className="flex items-end">
         <input
           type="checkbox"
-          className="cursor-pointer"
-          id={value}
-          checked={isChecked}
-          onChange={(e) => {
-            if (disabled) return
-            handleChange(e.target.id)
+          id={id}
+          onChange={() => {
+            handleChange(!isChecked)
           }}
         />
-        <label htmlFor={value}>
-          <span className="p-med-90 pl-12 dark:text-white cursor-pointer">
-            {label}
-          </span>
-        </label>
-      </div>
+        <div
+          className={`checkbox-item ${isChecked ? 'active' : ''}`}
+          aria-hidden="true"
+        >
+          {isChecked && (
+            <MbIcon
+              name={EIconName.CHECK}
+              size="14px"
+              color="white"
+              darkColor="black"
+            />
+          )}
+        </div>
+        <span className="p-med-90 pl-12 dark:text-white cursor-pointer">
+          {label}
+        </span>
+      </label>
     </>
   )
 }

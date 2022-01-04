@@ -9,12 +9,12 @@ export default {
 } as ComponentMeta<typeof MbCheckbox>
 
 const Template: ComponentStory<typeof MbCheckbox> = (args) => {
-  const [checked, setChecked] = useState('')
+  const [checked, setChecked] = useState(false)
   return (
     <MbCheckbox
       {...args}
       label="Checkbox 1"
-      isChecked={false}
+      isChecked={checked}
       handleChange={(val) => setChecked(val)}
     />
   )
