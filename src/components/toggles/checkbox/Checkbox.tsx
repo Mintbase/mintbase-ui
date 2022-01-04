@@ -17,8 +17,10 @@ const MbCheckbox = (props: CheckboxProps) => {
         <input
           type="checkbox"
           id={id}
-          onChange={() => {
-            handleChange(!isChecked)
+          checked={isChecked}
+          onChange={(e) => {
+            if (disabled) return
+            handleChange(e.target.checked)
           }}
         />
         <div
