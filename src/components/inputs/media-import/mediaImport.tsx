@@ -13,6 +13,7 @@ interface MediaImportProps {
   acceptedFormats: EMediaType
   idealDimensions: string
   maxSize: number
+  handleUpload: (file: File) => void
 }
 
 const preventBrowserDefaults = (e: Event) => {
@@ -27,6 +28,7 @@ const MbMediaImport = (props: MediaImportProps) => {
     acceptedFormats,
     idealDimensions,
     maxSize,
+    handleUpload,
   } = props
   const [imageUrl, setImageUrl] = useState<any>('')
   const [errorMessage, setErrorMessage] = useState('')
@@ -64,32 +66,20 @@ const MbMediaImport = (props: MediaImportProps) => {
     uploadImage(event.dataTransfer.files[0])
   }
 
-  const uploadImage = (file: any) => {
-    // const type = file.type.split('/').pop()
+  const uploadImage = (file: File) => {
     const size = file.size
 
     if (VALID_FILE_FORMATS[acceptedFormats].includes(file.type)) {
       if (size / 1024 / 1024 <= maxSize) {
         setErrorMessage('')
         setImageUrl(URL.createObjectURL(file))
+        handleUpload(file)
       } else {
         setErrorMessage(`This file exceeds ${maxSize}mb`)
       }
     } else {
       setErrorMessage('This media type is not accepted')
     }
-    // if (
-    //   acceptedFormats.map((format) => format.split('.').pop()).includes(type)
-    // ) {
-    //   if (size / 1024 / 1024 <= maxSize) {
-    //     setErrorMessage('')
-    //     setImageUrl(URL.createObjectURL(file))
-    //   } else {
-    //     setErrorMessage(`This file exceeds ${maxSize}mb`)
-    //   }
-    // } else {
-    //   setErrorMessage('This media type is not accepted')
-    // }
   }
 
   const handleImageChange = (e: any) => {

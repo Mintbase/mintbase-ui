@@ -23,4 +23,5 @@ MediaImport.args = {
   isProfileImage: true,
   idealDimensions: '500x500px',
   maxSize: 5,
+  handleUpload: (file: File) => console.log(file),
 }
