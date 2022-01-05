@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import React from 'react'
-import { MbButton } from '../../components/buttons/button/Button'
-import { ESize, EState, EType } from '../../consts/properties'
+import { MbButton } from '../../../components/buttons/button/Button'
+import { ESize, EState, EType } from '../../../consts/properties'
 
 export default {
   title: 'Components/Buttons/Button',

@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import React from 'react'
-import MbAmountButton from './../../components/buttons/amount-button/AmountButton'
+import MbAmountButton from '../../../components/buttons/amount-button/AmountButton'
 
 export default {
   title: 'Components/Buttons',
