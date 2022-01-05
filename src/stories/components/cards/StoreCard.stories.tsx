@@ -1,7 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import React from 'react'
-import { MbSmallCard } from '../../components/cards/small/smallCard'
-import { ESmallCardType } from '../../consts/properties'
+import { MbSmallCard } from '../../../components/cards/small/smallCard'
 
 export default {
   title: 'Components/Cards',
@@ -13,9 +12,8 @@ const Template: ComponentStory<typeof MbSmallCard> = (args) => (
   <MbSmallCard {...args} />
 )
 
-export const Profile = Template.bind({})
-Profile.args = {
-  cardType: ESmallCardType.PROFILE,
+export const Store = Template.bind({})
+Store.args = {
   card: {
     centerElement: (
       <img
@@ -23,6 +21,6 @@ Profile.args = {
         src="https://coldcdn.com/api/cdn/bronil/JXl58b_p9iYzeFutFC5GcDCjsxppyFt5rRkQt4Su4LU"
       />
     ),
-    title: 'Account Name',
+    title: 'Store Name',
   },
 }
