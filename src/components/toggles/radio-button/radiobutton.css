@@ -1,0 +1,41 @@
+.radio-item {
+  @apply inline-block relative;
+  padding: 0 6px;
+}
+
+.radio-item input[type='radio'] {
+  @apply hidden;
+}
+
+.radio-item label:before {
+  content: ' ';
+  @apply inline-block relative border-2 rounded-full border-gray-200 dark:border-gray-700 w-5 h-5 cursor-pointer;
+  top: 5px;
+}
+
+.radio-item input[type='radio']:checked + label:before {
+  @apply border-blue-300 dark:border-blue-100;
+}
+
+.radio-item input[type='radio']:checked + label:after {
+  width: 12px;
+  height: 12px;
+  top: 9px;
+  left: 10px;
+  content: ' ';
+  @apply block absolute cursor-pointer border-2 rounded-full border-blue-300 dark:border-blue-100 bg-blue-300 dark:bg-blue-100;
+}
+
+.radio-item.disabled label:before,
+.radio-item.disabled input[type='radio']:checked + label:before {
+  @apply border-gray-150 dark:border-gray-800 cursor-not-allowed;
+}
+
+.radio-item.disabled input[type='radio']:checked + label:after {
+  @apply border-gray-150 dark:border-gray-800 bg-gray-150 dark:bg-gray-800 cursor-not-allowed;
+}
+
+.radio-item.disabled input[type='radio'],
+.radio-item.disabled span {
+  @apply cursor-not-allowed;
+}
