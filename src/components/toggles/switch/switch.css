@@ -1,0 +1,40 @@
+.switch {
+  @apply relative inline-block;
+  width: 50px;
+}
+
+.switch-checkbox {
+  @apply hidden;
+}
+
+.switch-label {
+  @apply block overflow-hidden cursor-pointer bg-gray-150 dark:bg-gray-700 rounded-full static;
+  height: 18px;
+}
+
+.switch-btn {
+  @apply flex items-center justify-center absolute bg-gray-300 dark:bg-gray-600 rounded-full;
+  width: 24px;
+  height: 24px;
+  top: 0;
+  bottom: 0;
+  right: 26px;
+  transition: all 0.5s ease-in 0s;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.switch-checkbox:checked + label .switch-btn {
+  @apply bg-blue-300 dark:bg-blue-100;
+  right: 0px;
+}
+
+.switch.disabled .switch-label {
+  @apply cursor-not-allowed;
+}
+
+.switch.disabled .switch-btn,
+.switch.disabled .switch-checkbox:checked + label .switch-btn {
+  @apply cursor-not-allowed bg-gray-200 dark:bg-gray-800;
+}
