@@ -1,9 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { useState } from 'react'
-import { ESize, EType } from '../../consts/properties'
-import MbInputAccount from '../../components/inputs/input-account/InputAccount'
-import { EControlStatus } from '../../components/inputs/input-field/inputField'
-import { MbButton } from '../../components/buttons/button/Button'
+import MbInputAccount from '../../../components/inputs/input-account/InputAccount'
+import { EControlStatus } from '../../../components/inputs/input-field/inputField'
 
 export default {
   title: 'Components/Inputs',
@@ -11,29 +9,11 @@ export default {
   argTypes: {},
 } as ComponentMeta<typeof MbInputAccount>
 
-const LeftFooterActions = () => {
-  return (
-    <div className="flex space-x-12">
-      <MbButton
-        size={ESize.MEDIUM}
-        btnType={EType.SECONDARY}
-        label="Cancel"
-        onClick={() => console.log('cancel')}
-      />
-      <MbButton
-        size={ESize.MEDIUM}
-        label="Transfer Tokens"
-        onClick={() => console.log('transfer')}
-      />
-    </div>
-  )
-}
-
 const Template: ComponentStory<typeof MbInputAccount> = (args) => {
   const [inputList, setInputList] = useState([
     {
       amount: {
-        placeholder: '5',
+        placeholder: '%',
         value: '',
         status: EControlStatus.NORMAL,
       },
@@ -85,12 +65,12 @@ const Template: ComponentStory<typeof MbInputAccount> = (args) => {
   }
 
   const handleAddClick = () => {
-    if (inputList.length + 1 === 100) return
+    if (inputList.length + 1 === 25) return
     setInputList([
       ...inputList,
       {
         amount: {
-          placeholder: '5',
+          placeholder: '%',
           value: '',
           status: EControlStatus.NORMAL,
         },
@@ -105,20 +85,19 @@ const Template: ComponentStory<typeof MbInputAccount> = (args) => {
 
   return (
     <MbInputAccount
-      maxAmount={100}
+      maxAmount={25}
       inputList={inputList}
       removeInputHandler={handleRemoveClick}
       accountInputChangeHandler={handleAccountInputChange}
       amountInputChangeHandler={handleAmountInputChange}
-      title="Transfer Tokens"
-      subtitle="Airdrop to multiple accounts, up to 100 accounts."
-      smallSubtitle="Amount of tokens and recipient account"
-      footerTitle="Add Account"
-      leftFooterContent={<LeftFooterActions />}
+      title="Forever Royalties"
+      subtitle="Royalties are perpetual and represent 10% of the total sale. You can add up to 25 wallet adresses, including yours."
+      smallSubtitle="Select up to 25 accounts"
+      footerTitle="Add Split"
       footerAction={handleAddClick}
     />
   )
 }
 
-export const AccountAmount = Template.bind({})
-AccountAmount.args = {}
+export const AccountPercentage = Template.bind({})
+AccountPercentage.args = {}

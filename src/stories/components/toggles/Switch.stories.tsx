@@ -1,26 +1,26 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { useState } from 'react'
-import MbCheckbox from '../../components/toggles/checkbox/Checkbox'
+import MbSwitch from '../../../components/toggles/switch/Switch'
 
 export default {
   title: 'Components/Toggles',
-  component: MbCheckbox,
+  component: MbSwitch,
   argTypes: {},
-} as ComponentMeta<typeof MbCheckbox>
+} as ComponentMeta<typeof MbSwitch>
 
-const Template: ComponentStory<typeof MbCheckbox> = (args) => {
+const Template: ComponentStory<typeof MbSwitch> = (args) => {
   const [checked, setChecked] = useState(false)
   return (
-    <MbCheckbox
+    <MbSwitch
       {...args}
-      label="Checkbox 1"
+      id="switch1"
       isChecked={checked}
       handleChange={(val) => setChecked(val)}
     />
   )
 }
 
-export const Checkbox = Template.bind({})
-Checkbox.args = {
+export const Switch = Template.bind({})
+Switch.args = {
   disabled: false,
 }
