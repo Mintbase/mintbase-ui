@@ -98,8 +98,6 @@ const MbMediaImport = (props: MediaImportProps) => {
 
     uploadImage(file)
   }
-  console.log(acceptedFormats)
-  console.log('oa:', VALID_FILE_FORMATS['image'])
   return (
     <>
       {imageUrl && (
