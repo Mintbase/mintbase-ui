@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { useState } from 'react'
-import MbRadioButton from '../../components/toggles/radio-button/RadioButton'
+import MbRadioButton from '../../../components/toggles/radio-button/RadioButton'
 
 export default {
   title: 'Components/Toggles',

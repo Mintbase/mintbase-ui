@@ -1,8 +1,8 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { useState } from 'react'
 import { ESize, EState, EType } from '../../consts/properties'
-import { MbButton } from './../../components/buttons/button/Button'
-import MbModal from './../../components/modal/Modal'
+import { MbButton } from '../../components/buttons/button/Button'
+import MbModal from '../../components/modal/Modal'
 
 export default {
   title: 'Components/Modal',
