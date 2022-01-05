@@ -10,7 +10,7 @@ export const VALID_FILE_FORMATS = {
     'image/png',
     'image/jpeg',
     'image/gif',
-    'image/svg',
+    'image/svg+xml',
     'audio/ogg',
     'video/webm',
     'video/mp4',

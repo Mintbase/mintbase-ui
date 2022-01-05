@@ -2,6 +2,7 @@ import React from 'react'
 import { useRef, useState } from 'react'
 import { MbIcon } from '../..'
 import { EIconName } from '../../..'
+import { EMediaType, VALID_FILE_FORMATS } from '../../../consts/fileFormats'
 import { isMobile } from '../../../consts/mobile'
 
 import AcceptedFormats from './acceptedFormats'
@@ -9,7 +10,7 @@ import AcceptedFormats from './acceptedFormats'
 interface MediaImportProps {
   isProfileImage: boolean
   uploadText: string
-  acceptedFormats: string[]
+  acceptedFormats: EMediaType
   idealDimensions: string
   maxSize: number
 }
@@ -64,11 +65,10 @@ const MbMediaImport = (props: MediaImportProps) => {
   }
 
   const uploadImage = (file: any) => {
-    const type = file.type.split('/').pop()
+    // const type = file.type.split('/').pop()
     const size = file.size
-    if (
-      acceptedFormats.map((format) => format.split('.').pop()).includes(type)
-    ) {
+
+    if (VALID_FILE_FORMATS[acceptedFormats].includes(file.type)) {
       if (size / 1024 / 1024 <= maxSize) {
         setErrorMessage('')
         setImageUrl(URL.createObjectURL(file))
@@ -78,6 +78,18 @@ const MbMediaImport = (props: MediaImportProps) => {
     } else {
       setErrorMessage('This media type is not accepted')
     }
+    // if (
+    //   acceptedFormats.map((format) => format.split('.').pop()).includes(type)
+    // ) {
+    //   if (size / 1024 / 1024 <= maxSize) {
+    //     setErrorMessage('')
+    //     setImageUrl(URL.createObjectURL(file))
+    //   } else {
+    //     setErrorMessage(`This file exceeds ${maxSize}mb`)
+    //   }
+    // } else {
+    //   setErrorMessage('This media type is not accepted')
+    // }
   }
 
   const handleImageChange = (e: any) => {
@@ -86,7 +98,8 @@ const MbMediaImport = (props: MediaImportProps) => {
 
     uploadImage(file)
   }
-
+  console.log(acceptedFormats)
+  console.log('oa:', VALID_FILE_FORMATS['image'])
   return (
     <>
       {imageUrl && (
@@ -161,7 +174,7 @@ const MbMediaImport = (props: MediaImportProps) => {
           </label>
         </div>
         <AcceptedFormats
-          acceptedFormats={acceptedFormats}
+          acceptedFormats={VALID_FILE_FORMATS[acceptedFormats]}
           idealDimensions={idealDimensions}
           maxSize={maxSize}
         />
