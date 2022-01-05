@@ -1,4 +1,4 @@
-enum EMediaType {
+export enum EMediaType {
   IMAGE = 'image',
   ANIMATION = 'animation',
   DOCUMENT = 'document',
