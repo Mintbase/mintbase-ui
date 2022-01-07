@@ -6,7 +6,11 @@ interface LogoProps {
   width?: string
   className?: string
 }
-export const MbLogo = ({ src, width = '140px', className = '' }: LogoProps) => (
+export const MbLogo = ({
+  src,
+  width = '128px',
+  className = '',
+}: LogoProps) => (
   <div className={className}>
     <InlineSVG
       src={src}
