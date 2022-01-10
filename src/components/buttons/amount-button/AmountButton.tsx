@@ -54,7 +54,7 @@ const MbAmountButton = (props: AmountButtonProps) => {
         <span className="p-big-90">-</span>
       </button>
       <input
-        className={`h2-90 dark:text-white mx-12 w-10 h-7 text-center outline-none bg-transparent ${
+        className={`h2-90 dark:text-white mx-12 w-10 h-6 text-center outline-none bg-transparent ${
           disabled ? 'text-gray-500' : ''
         }`}
         value={amount}
