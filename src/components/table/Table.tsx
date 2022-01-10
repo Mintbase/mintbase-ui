@@ -33,7 +33,7 @@ export const MbTable = (props: TableProps) => {
   const body = allChildren?.filter((child) => child.type.name === 'MbBody')
 
   return (
-    <section className="bg-white dark:bg-gray-850">
+    <section className="bg-white dark:bg-gray-850 rounded">
       <header className="p-24 border-b border-gray-200 dark:border-gray-800 dark:text-white p-big-130">
         {title}
       </header>
