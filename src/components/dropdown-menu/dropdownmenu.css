@@ -3,7 +3,7 @@
 }
 
 .dropdown-item {
-  @apply flex hover:bg-blue-300-15 dark:hover:bg-blue-100-35 py-8 px-16 cursor-pointer justify-center text-center relative;
+  @apply flex hover:bg-blue-300-15 dark:hover:bg-blue-100-35 py-8 px-16 cursor-pointer justify-center text-center relative transition-all duration-500;
 }
 
 .dropdown-icon {
