@@ -56,7 +56,13 @@ export const MbTabs = (props: TabsProps) => {
           {tabsTitle?.length &&
             tabsTitle.map((title, index) => (
               <>
-                <div onClick={() => setSelectedTab(index)} key={index}>
+                <div
+                  onClick={() => {
+                    setSelectedOrder('')
+                    setSelectedTab(index)
+                  }}
+                  key={index}
+                >
                   <MbTab isActive={index === selectedTab} title={title}></MbTab>
                 </div>
               </>
