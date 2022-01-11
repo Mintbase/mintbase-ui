@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { useState } from 'react'
-import { ESize, EType } from '../../../consts/properties'
+import { ESize, EType, EState } from '../../../consts/properties'
 import MbInputAccount from '../../../components/inputs/input-account/InputAccount'
 import { EControlStatus } from '../../../components/inputs/input-field/inputField'
 import { MbButton } from '../../../components/buttons/button/Button'
@@ -11,7 +11,11 @@ export default {
   argTypes: {},
 } as ComponentMeta<typeof MbInputAccount>
 
-const LeftFooterActions = () => {
+const LeftFooterActions = ({
+  isReadyForTransfer,
+}: {
+  isReadyForTransfer: boolean
+}) => {
   return (
     <div className="flex space-x-12">
       <MbButton
@@ -23,6 +27,7 @@ const LeftFooterActions = () => {
       <MbButton
         size={ESize.MEDIUM}
         label="Transfer Tokens"
+        state={isReadyForTransfer ? EState.ACTIVE : EState.DISABLED}
         onClick={() => console.log('transfer')}
       />
     </div>
@@ -114,7 +119,17 @@ const Template: ComponentStory<typeof MbInputAccount> = (args) => {
       subtitle="Airdrop to multiple accounts, up to 100 accounts."
       smallSubtitle="Amount of tokens and recipient account"
       footerTitle="Add Account"
-      leftFooterContent={<LeftFooterActions />}
+      leftFooterContent={
+        <LeftFooterActions
+          isReadyForTransfer={
+            inputList.filter(
+              (elm) =>
+                elm.account.status === EControlStatus.VALID &&
+                elm.amount.status === EControlStatus.VALID
+            ).length === inputList.length
+          }
+        />
+      }
       footerAction={handleAddClick}
     />
   )
