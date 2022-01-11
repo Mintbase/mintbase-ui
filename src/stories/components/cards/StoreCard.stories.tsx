@@ -1,6 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import React from 'react'
 import { MbSmallCard } from '../../../components/cards/small/smallCard'
+import { ESmallCardType } from '../../../consts/properties'
 
 export default {
   title: 'Components/Cards',
@@ -14,6 +15,7 @@ const Template: ComponentStory<typeof MbSmallCard> = (args) => (
 
 export const Store = Template.bind({})
 Store.args = {
+  cardType: ESmallCardType.STORE,
   card: {
     centerElement: (
       <img
