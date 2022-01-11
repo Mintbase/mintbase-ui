@@ -16,6 +16,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   hasIcon?: boolean
   controlStatus: EControlStatus
   inputSize: ESize
+  hasPercentageLabel?: boolean
 }
 
 export const MbInput = ({
@@ -55,16 +56,22 @@ export const MbInput = ({
           props.disabled ? 'disabled' : 'default ' + controlStatus
         } ${props.className}`}
       >
-        <input
-          disabled={props.disabled}
-          placeholder={props.placeholder}
-          type={props.type}
-          value={props.value}
-          name={props.name}
-          required={props.required}
-          className={`input-field ${getFontType(inputSize)}`}
-          onChange={props.onChange}
-        />
+        <label className="flex">
+          <input
+            disabled={props.disabled}
+            placeholder={props.hasPercentageLabel ? '' : props.placeholder}
+            type={props.type}
+            value={props.value}
+            name={props.name}
+            required={props.required}
+            className={`input-field ${getFontType(inputSize)}`}
+            onChange={props.onChange}
+          />
+          {props.hasPercentageLabel && (
+            <span className={`${getFontType(inputSize)} text-gray-500`}>%</span>
+          )}
+        </label>
+
         {hasIcon && (
           <div className="flex">
             {controlStatus === EControlStatus.VALID ? (
