@@ -21,7 +21,6 @@ const Template: ComponentStory<typeof MbPagination> = (args: any) => {
       currentPage={currentPage}
       itemsPerPage={15}
       totalItems={150}
-      {...args}
     />
   )
 }
