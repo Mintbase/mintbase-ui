@@ -75,6 +75,7 @@ const MbInputAccount = (props: InputAccountProps) => {
                           onChange={(e: any) =>
                             amountInputChangeHandler(e, index)
                           }
+                          hasPercentageLabel
                         />
                       </div>
                     )}
