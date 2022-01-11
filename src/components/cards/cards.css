@@ -1,9 +1,9 @@
 .base-card {
   @apply bg-white dark:bg-gray-850 rounded dark:hover:bg-gray-800 hover:bg-gray-50 cursor-pointer inline-block transition-all duration-500;
-  max-width: 176px;
+  /* max-width: 176px; */
 }
 
-@screen sm {
+/* @screen sm {
   .base-card {
     max-width: 264px;
   }
@@ -13,4 +13,4 @@
   .base-card {
     max-width: 304px;
   }
-}
+} */

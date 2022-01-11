@@ -1,4 +1,4 @@
-.thing-card-image {
+/* .thing-card-image {
   width: 152px;
   height: 140px;
 }
@@ -15,6 +15,10 @@
     width: 280px;
     height: 266px;
   }
+} */
+
+.thing-card-image {
+  width: 100%;
 }
 
 .thing .med-p,
