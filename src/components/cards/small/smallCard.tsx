@@ -12,9 +12,9 @@ interface CardProps extends React.ComponentProps<'div'> {
 
 const LoadingCard = ({ cardType }: { cardType: string }) => {
   return (
-    <div className="base-card">
+    <div className={`base-card ${cardType}`}>
       <div
-        className={`flex flex-col justify-center items-center animate-pulse ${cardType} `}
+        className="flex flex-col justify-center items-center animate-pulse card-wrapper"
       >
         <div className="h-full w-full rounded bg-gray-600"></div>
       </div>
