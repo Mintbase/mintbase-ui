@@ -45,9 +45,8 @@ export const MbTabs = (props: TabsProps) => {
 
   if (!props.children) return <></>
   const allTabs = React.Children.map(props.children, (child: any) => child)
-  const validtabs = allTabs?.filter((tab) => tab.type.name === 'MbTab')
-  const tabsTitle = validtabs?.map((tab) => tab.props.title)
-  const tabsContent = validtabs?.map((tab) => tab.props.children)
+  const tabsTitle = allTabs?.map((tab) => tab.props.title)
+  const tabsContent = allTabs?.map((tab) => tab.props.children)
 
   return (
     <>
