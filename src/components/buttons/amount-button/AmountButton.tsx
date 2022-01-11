@@ -51,20 +51,22 @@ const MbAmountButton = (props: AmountButtonProps) => {
         className={`amount-button ${disabled ? 'disabled' : ''}`}
         onClick={handleMinus}
       >
-        <span className="p-big-90">-</span>
+        <span className="p-big-90 mt-2">-</span>
       </button>
-      <input
-        className={`h2-90 dark:text-white mx-12 w-10 h-7 text-center outline-none ${
-          disabled ? 'text-gray-500' : ''
-        }`}
-        value={amount}
-        onChange={handleContentChanges}
-      />
+      <div className="h-7 flex items-center">
+        <input
+          className={`h2-90 dark:text-white mx-12 w-10 text-center outline-none bg-transparent mt-2 ${
+            disabled ? 'text-gray-500' : ''
+          }`}
+          value={amount}
+          onChange={handleContentChanges}
+        />
+      </div>
       <button
         className={`amount-button ${disabled ? 'disabled' : ''}`}
         onClick={handlePlus}
       >
-        <span className="p-big-90">+</span>
+        <span className="p-big-90 mt-2">+</span>
       </button>
     </div>
   )
