@@ -25,4 +25,5 @@ Profile.args = {
     ),
     title: 'Account Name',
   },
+  loading: false,
 }

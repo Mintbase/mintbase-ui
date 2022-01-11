@@ -36,4 +36,5 @@ Thing.args = {
     onUpperLeftClick: () => null,
     onUpperRightClick: () => null,
   },
+  loading: false,
 }
