@@ -9,7 +9,6 @@ import AcceptedFormats from './acceptedFormats'
 
 interface MediaImportProps {
   isProfileImage: boolean
-  uploadText: string
   acceptedFormats: EMediaType
   idealDimensions: string
   maxSize: number
@@ -24,7 +23,6 @@ const preventBrowserDefaults = (e: Event) => {
 const MbMediaImport = (props: MediaImportProps) => {
   const {
     isProfileImage,
-    uploadText = 'Upload Image',
     acceptedFormats,
     idealDimensions,
     maxSize,
@@ -136,7 +134,7 @@ const MbMediaImport = (props: MediaImportProps) => {
             }`}
           >
             <div className="h-full w-full text-center flex flex-col items-center justify-center p-med-90">
-              <p className="text-blue-300 dark:text-blue-100">{uploadText}</p>
+              <p className="text-blue-300 dark:text-blue-100">Upload File</p>
               <p className="text-gray-600 dark:text-gray-300 hidden sm:block">
                 (or just drop your file here)
               </p>

@@ -19,7 +19,6 @@ const Template: ComponentStory<typeof MbMediaImport> = (args) => (
 
 export const MediaImport = Template.bind({})
 MediaImport.args = {
-  uploadText: 'Upload Profile Image',
   isProfileImage: true,
   idealDimensions: '500x500px',
   maxSize: 5,
