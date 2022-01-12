@@ -1,5 +1,4 @@
 export enum EIconName {
-  NONE = 'none',
   CHECK = 'check',
   VERIFIED = 'verified',
   CLOSE = 'close',
@@ -49,4 +48,5 @@ export enum EIconName {
   LINKEDIN = 'linkedin',
   YOUTUBE = 'youtube',
   MINTBASE = 'mintbase',
+  NONE = 'none'
 }
