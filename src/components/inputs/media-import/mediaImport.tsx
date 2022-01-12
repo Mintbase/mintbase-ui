@@ -72,7 +72,6 @@ const MbMediaImport = (props: MediaImportProps) => {
   const uploadFile = (file: File) => {
     const size = file.size
     const correctFile = checkIfFileIs3D(file)
-    console.log(file)
 
     if (VALID_FILE_FORMATS[acceptedFormats].includes(correctFile.type)) {
       if (size / 1024 / 1024 <= maxSize) {
