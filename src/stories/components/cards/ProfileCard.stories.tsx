@@ -10,7 +10,9 @@ export default {
 } as ComponentMeta<typeof MbSmallCard>
 
 const Template: ComponentStory<typeof MbSmallCard> = (args) => (
-  <MbSmallCard {...args} />
+  <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-24">
+    <MbSmallCard {...args} />
+  </div>
 )
 
 export const Profile = Template.bind({})

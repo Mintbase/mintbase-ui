@@ -3,16 +3,8 @@
 }
 
 .store .card-wrapper {
-  width: 191px;
   height: 68px;
   @apply rounded overflow-hidden;
-}
-
-@screen sm {
-  .store .card-wrapper {
-    width: 283px;
-    height: 94px;
-  }
 }
 
 .profile {
