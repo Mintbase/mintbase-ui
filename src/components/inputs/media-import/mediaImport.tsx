@@ -1,12 +1,14 @@
-import React from 'react'
-import { useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { MbIcon } from '../..'
 import { EIconName } from '../../..'
-import { EMediaType, VALID_FILE_FORMATS } from '../../../consts/fileFormats'
+import {
+  EMediaType,
+  IMAGE_TYPES,
+  VALID_FILE_FORMATS,
+} from '../../../consts/fileFormats'
 import { isMobile } from '../../../consts/mobile'
-
 import AcceptedFormats from './acceptedFormats'
-import { checkIfFileIs3D } from './check3DFile'
+import { checkIfFileIs3D, iconType } from './fileFunctions'
 
 interface MediaImportProps {
   isProfileImage: boolean
@@ -31,7 +33,7 @@ const MbMediaImport = (props: MediaImportProps) => {
   } = props
 
   const [imageUrl, setImageUrl] = useState<any>('')
-  const [isFileUploaded, setIsFileUploaded] = useState(false)
+  const [fileUploaded, setFileUploaded] = useState<File>()
   const [errorMessage, setErrorMessage] = useState('')
 
   const dragRef = useRef(0)
@@ -70,18 +72,15 @@ const MbMediaImport = (props: MediaImportProps) => {
   const uploadFile = (file: File) => {
     const size = file.size
     const correctFile = checkIfFileIs3D(file)
+    console.log(file)
 
     if (VALID_FILE_FORMATS[acceptedFormats].includes(correctFile.type)) {
       if (size / 1024 / 1024 <= maxSize) {
         setErrorMessage('')
-        setIsFileUploaded(true)
+        setFileUploaded(correctFile)
         setImageUrl('')
 
-        if (
-          ['image/png', 'image/jpeg', 'image/gif', 'image/svg+xml'].includes(
-            correctFile.type
-          )
-        ) {
+        if (IMAGE_TYPES.includes(correctFile.type)) {
           setImageUrl(URL.createObjectURL(correctFile))
         }
 
@@ -100,25 +99,46 @@ const MbMediaImport = (props: MediaImportProps) => {
 
     uploadFile(file)
   }
+
+  const handleFileRemove = (e:any) => {
+    e.preventDefault()
+    setFileUploaded(undefined)
+    setImageUrl('')
+  }
+
   return (
     <>
-      {isFileUploaded && (
+      {fileUploaded && (
         <>
           <div className="pb-12">
             <div
-              className={`flex items-center justify-center w-full rounded-lg bg-gray-100 dark:bg-gray-900 w-full ${
+              className={`flex items-center justify-center w-full rounded-lg bg-gray-100 dark:bg-gray-900 w-full py-24 ${
                 isProfileImage && imageUrl ? 'py-24' : 'overflow-hidden'
               }`}
             >
-              {imageUrl && (
+              {imageUrl ? (
                 <div
                   className={` ${
                     isProfileImage
                       ? 'w-24 h-24 sm:h-32 sm:w-32 rounded-full overflow-hidden'
-                      : 'h-32 sm:h-48 w-full'
+                      : 'h-32 sm:h-64 w-full'
                   }`}
                 >
                   <img className="w-full h-full object-cover" src={imageUrl} />
+                </div>
+              ) : (
+                <div className="flex items-center py-32 space-x-24 max-w-80% sm:max-w-40%">
+                  <MbIcon
+                    name={iconType(fileUploaded.type)}
+                    color="black"
+                    darkColor="white"
+                    size="64px"
+                  />
+                  <div>
+                    <p className="p-med-90 text-black dark:text-white break-words">
+                      {fileUploaded.name}
+                    </p>
+                  </div>
                 </div>
               )}
             </div>
@@ -130,7 +150,7 @@ const MbMediaImport = (props: MediaImportProps) => {
           </label>
         </>
       )}
-      <div className={`${imageUrl && isMobile() ? 'hidden' : ''}`}>
+      <div className={`${fileUploaded && isMobile() ? 'hidden' : ''}`}>
         <div className="flex items-center justify-center w-full">
           <label
             onDragEnter={handleDragIn}
@@ -150,6 +170,14 @@ const MbMediaImport = (props: MediaImportProps) => {
               <p className="text-gray-600 dark:text-gray-300 hidden sm:block">
                 (or just drop your file here)
               </p>
+              {fileUploaded && (
+                <p
+                  className="text-error-300 dark:text-error-100 hidden sm:block pt-24"
+                  onClick={handleFileRemove}
+                >
+                  Remove File
+                </p>
+              )}
             </div>
             {errorMessage && (
               <div className="flex justify-center items-center pt-16">
