@@ -6,6 +6,7 @@ import { EMediaType, VALID_FILE_FORMATS } from '../../../consts/fileFormats'
 import { isMobile } from '../../../consts/mobile'
 
 import AcceptedFormats from './acceptedFormats'
+import { checkIfFileIs3D } from './check3DFile'
 
 interface MediaImportProps {
   isProfileImage: boolean
@@ -28,7 +29,9 @@ const MbMediaImport = (props: MediaImportProps) => {
     maxSize,
     handleUpload,
   } = props
+
   const [imageUrl, setImageUrl] = useState<any>('')
+  const [isFileUploaded, setIsFileUploaded] = useState(false)
   const [errorMessage, setErrorMessage] = useState('')
 
   const dragRef = useRef(0)
@@ -66,12 +69,26 @@ const MbMediaImport = (props: MediaImportProps) => {
 
   const uploadFile = (file: File) => {
     const size = file.size
+    console.log(file)
 
-    if (VALID_FILE_FORMATS[acceptedFormats].includes(file.type)) {
+    const correctFile = checkIfFileIs3D(file)
+
+    console.log(correctFile)
+
+    if (VALID_FILE_FORMATS[acceptedFormats].includes(correctFile.type)) {
       if (size / 1024 / 1024 <= maxSize) {
         setErrorMessage('')
-        setImageUrl(URL.createObjectURL(file))
-        handleUpload(file)
+        setIsFileUploaded(true)
+
+        if (
+          ['image/png', 'image/jpeg', 'image/gif', 'image/svg+xml'].includes(
+            correctFile.type
+          )
+        ) {
+          setImageUrl(URL.createObjectURL(correctFile))
+        }
+
+        handleUpload(correctFile)
       } else {
         setErrorMessage(`This file exceeds ${maxSize}mb`)
       }
@@ -88,23 +105,25 @@ const MbMediaImport = (props: MediaImportProps) => {
   }
   return (
     <>
-      {imageUrl && (
+      {isFileUploaded && (
         <>
           <div className="pb-12">
             <div
               className={`flex items-center justify-center w-full rounded-lg bg-gray-100 dark:bg-gray-900 w-full ${
-                isProfileImage ? 'py-24' : 'overflow-hidden'
+                isProfileImage && imageUrl ? 'py-24' : 'overflow-hidden'
               }`}
             >
-              <div
-                className={` ${
-                  isProfileImage
-                    ? 'w-24 h-24 sm:h-32 sm:w-32 rounded-full overflow-hidden'
-                    : 'h-32 sm:h-48 w-full'
-                }`}
-              >
-                <img className="w-full h-full object-cover" src={imageUrl} />
-              </div>
+              {imageUrl && (
+                <div
+                  className={` ${
+                    isProfileImage
+                      ? 'w-24 h-24 sm:h-32 sm:w-32 rounded-full overflow-hidden'
+                      : 'h-32 sm:h-48 w-full'
+                  }`}
+                >
+                  <img className="w-full h-full object-cover" src={imageUrl} />
+                </div>
+              )}
             </div>
           </div>
 
