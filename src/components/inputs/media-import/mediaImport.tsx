@@ -61,10 +61,10 @@ const MbMediaImport = (props: MediaImportProps) => {
     if (!event.dataTransfer.files.length) {
       return
     }
-    uploadImage(event.dataTransfer.files[0])
+    uploadFile(event.dataTransfer.files[0])
   }
 
-  const uploadImage = (file: File) => {
+  const uploadFile = (file: File) => {
     const size = file.size
 
     if (VALID_FILE_FORMATS[acceptedFormats].includes(file.type)) {
@@ -80,11 +80,11 @@ const MbMediaImport = (props: MediaImportProps) => {
     }
   }
 
-  const handleImageChange = (e: any) => {
+  const handleFileChange = (e: any) => {
     if (!(e?.target?.files.length > 0)) return
     const file = e.target.files[0]
 
-    uploadImage(file)
+    uploadFile(file)
   }
   return (
     <>
@@ -109,12 +109,8 @@ const MbMediaImport = (props: MediaImportProps) => {
           </div>
 
           <label className="block sm:hidden text-blue-300 dark:text-blue-100 p-med-90 text-center">
-            Change Image
-            <input
-              type="file"
-              className="hidden"
-              onChange={handleImageChange}
-            />
+            Change File
+            <input type="file" className="hidden" onChange={handleFileChange} />
           </label>
         </>
       )}
@@ -152,11 +148,7 @@ const MbMediaImport = (props: MediaImportProps) => {
                 />
               </div>
             )}
-            <input
-              type="file"
-              className="hidden"
-              onChange={handleImageChange}
-            />
+            <input type="file" className="hidden" onChange={handleFileChange} />
           </label>
         </div>
         <AcceptedFormats
