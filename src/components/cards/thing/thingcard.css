@@ -1,22 +1,3 @@
-/* .thing-card-image {
-  width: 152px;
-  height: 140px;
-}
-
-@screen sm {
-  .thing-card-image {
-    width: 240px;
-    height: 208px;
-  }
-}
-
-@screen md {
-  .thing-card-image {
-    width: 280px;
-    height: 266px;
-  }
-} */
-
 .thing-card-image {
   width: 100%;
 }
