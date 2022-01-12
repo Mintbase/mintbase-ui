@@ -1,6 +1,6 @@
-name: CI
+name: CD
 on:
-  pull_request:
+  push:
     branches: [ main ]
 
 jobs:
@@ -16,3 +16,10 @@ jobs:
         run: npm ci
       - name: build
         run: npm run build
+      - name: release
+        uses: EndBug/add-and-commit@v7
+        with:
+          default_author: github_actions
+          message: update release
+          add: 'dist package.json public --force'
+          branch: release

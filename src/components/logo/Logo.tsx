@@ -4,9 +4,14 @@ import InlineSVG from 'react-inlinesvg/esm'
 interface LogoProps {
   src: string
   width?: string
+  className?: string
 }
-export const MbLogo = ({ src, width = '140px' }: LogoProps) => (
-  <div className="m-10">
+export const MbLogo = ({
+  src,
+  width = '128px',
+  className = '',
+}: LogoProps) => (
+  <div className={className}>
     <InlineSVG
       src={src}
       width={width}
