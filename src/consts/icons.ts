@@ -1,5 +1,4 @@
 export enum EIconName {
-  NONE = 'none',
   CHECK = 'check',
   VERIFIED = 'verified',
   CLOSE = 'close',
@@ -9,7 +8,9 @@ export enum EIconName {
   TICKET = 'local_activity',
   THREED = '3d_rotation',
   VIDEO = 'videocam',
+  FILE = 'insert_drive_file',
   IMAGE = 'image',
+  AUDIO = 'music_note',
   COMPARE_ARROWS = 'compare_arrows',
   REPORT = 'report_problem',
   ARROW_DROP_DOWN = 'arrow_drop_down',
@@ -37,7 +38,7 @@ export enum EIconName {
   ERROR = 'error',
   SUCCESS = 'check_circle',
   EDITIONS = 'filter_none',
-  BURN = 'local_fire_department',
+  BURN = 'local_fire_department',  
   FACEBOOK = 'facebook',
   INSTAGRAM = 'instagram',
   PINTEREST = 'pinterest',
@@ -47,4 +48,5 @@ export enum EIconName {
   LINKEDIN = 'linkedin',
   YOUTUBE = 'youtube',
   MINTBASE = 'mintbase',
+  NONE = 'none'
 }
