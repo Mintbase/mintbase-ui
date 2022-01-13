@@ -12,8 +12,6 @@ export default {
 const Template: ComponentStory<typeof MbSmallCard> = (args) => (
   <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-24">
     <MbSmallCard {...args} />
-    <MbSmallCard {...args} />
-    <MbSmallCard {...args} />
   </div>
 )
 
