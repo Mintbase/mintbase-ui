@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import { MbTab } from '../../components/tabs/Tab'
+import { MbTab } from '../../components/tabs/tab/Tab'
 import { MbTabs } from '../../components/tabs/Tabs'
 
 export default {
@@ -11,7 +11,12 @@ export default {
 const Template: ComponentStory<typeof MbTabs> = (args) => (
   <>
     <MbTabs {...args}>
-      <MbTab title="Active auctions">List of active auctions</MbTab>
+      <MbTab title="Active auctions">
+        <MbTabFilters>
+          
+        </MbTabFilters>
+        List of active auctions
+      </MbTab>
       <MbTab title="Active stores">List of active stores</MbTab>
       <MbTab title="Latest Listings">List of latest listings</MbTab>
     </MbTabs>

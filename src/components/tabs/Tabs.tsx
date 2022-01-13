@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { MbDropdownMenu } from '../../components/dropdown-menu/DropdownMenu'
 import { EIconName } from '../../consts/icons'
 import { MbIcon } from '../icon/Icon'
-import { MbTab } from './Tab'
+import { MbTab } from './tab/Tab'
 
 interface TabsProps extends React.HTMLAttributes<HTMLDivElement> {
   hasFilters: boolean
