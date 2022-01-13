@@ -4,7 +4,7 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  release:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2.4.0
@@ -17,9 +17,10 @@ jobs:
       - name: build
         run: npm run build
       - name: release
-        uses: EndBug/add-and-commit@v7
+        uses: EndBug/add-and-commit@v7.5.0
         with:
           default_author: github_actions
           message: update release
           add: 'dist package.json public --force'
+          pull: '--rebase --autostash'
           branch: release
