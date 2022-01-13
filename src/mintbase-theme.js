@@ -123,6 +123,10 @@ module.exports = {
     minWidth: {
       48: '12rem',
     },
+    gap: {
+      12: '12px',
+      24: '24px',
+    },
   },
   space: {
     4: '4px',
