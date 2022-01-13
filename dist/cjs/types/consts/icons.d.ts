@@ -1,5 +1,4 @@
 export declare enum EIconName {
-    NONE = "none",
     CHECK = "check",
     VERIFIED = "verified",
     CLOSE = "close",
@@ -9,7 +8,9 @@ export declare enum EIconName {
     TICKET = "local_activity",
     THREED = "3d_rotation",
     VIDEO = "videocam",
+    FILE = "insert_drive_file",
     IMAGE = "image",
+    AUDIO = "music_note",
     COMPARE_ARROWS = "compare_arrows",
     REPORT = "report_problem",
     ARROW_DROP_DOWN = "arrow_drop_down",
@@ -46,5 +47,6 @@ export declare enum EIconName {
     MEDIUM = "medium",
     LINKEDIN = "linkedin",
     YOUTUBE = "youtube",
-    MINTBASE = "mintbase"
+    MINTBASE = "mintbase",
+    NONE = "none"
 }

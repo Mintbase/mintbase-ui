@@ -44,7 +44,6 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 declare const MbButton: ({ label, state, size, btnType, ...props }: ButtonProps) => JSX.Element;
 
 declare enum EIconName {
-    NONE = "none",
     CHECK = "check",
     VERIFIED = "verified",
     CLOSE = "close",
@@ -54,7 +53,9 @@ declare enum EIconName {
     TICKET = "local_activity",
     THREED = "3d_rotation",
     VIDEO = "videocam",
+    FILE = "insert_drive_file",
     IMAGE = "image",
+    AUDIO = "music_note",
     COMPARE_ARROWS = "compare_arrows",
     REPORT = "report_problem",
     ARROW_DROP_DOWN = "arrow_drop_down",
@@ -91,7 +92,8 @@ declare enum EIconName {
     MEDIUM = "medium",
     LINKEDIN = "linkedin",
     YOUTUBE = "youtube",
-    MINTBASE = "mintbase"
+    MINTBASE = "mintbase",
+    NONE = "none"
 }
 
 declare type TThingCard = {
