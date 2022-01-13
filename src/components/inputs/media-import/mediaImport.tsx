@@ -156,7 +156,7 @@ const MbMediaImport = (props: MediaImportProps) => {
             onDragLeave={handleDragOut}
             onDragOver={handleDrag}
             onDrop={handleDrop}
-            className={`flex flex-col rounded-lg ${
+            className={`flex flex-col rounded-lg transition-all duration-500 ${
               dragOverlay
                 ? 'bg-gray-100 dark:bg-gray-900'
                 : 'bg-blue-300-15 dark:bg-blue-100-15 hover:bg-gray-100 dark:hover:bg-gray-900'
