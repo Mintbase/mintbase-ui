@@ -3,15 +3,13 @@
 }
 
 .store .card-wrapper {
-  width: 191px;
-  height: 68px;
+  height: 96px;
   @apply rounded overflow-hidden;
 }
 
-@screen sm {
+@screen lg {
   .store .card-wrapper {
-    width: 283px;
-    height: 94px;
+    height: 72px;
   }
 }
 
