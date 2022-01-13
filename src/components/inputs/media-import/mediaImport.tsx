@@ -1,18 +1,14 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { MbIcon } from '../..'
 import { EIconName } from '../../..'
-import {
-  EMediaType,
-  IMAGE_TYPES,
-  VALID_FILE_FORMATS,
-} from '../../../consts/fileFormats'
+import { IMAGE_TYPES } from '../../../consts/fileFormats'
 import { isMobile } from '../../../consts/mobile'
 import AcceptedFormats from './acceptedFormats'
 import { iconType } from './fileFunctions'
 
 interface MediaImportProps {
   isProfileImage: boolean
-  acceptedFormats: EMediaType
+  acceptedFormats: string[]
   idealDimensions: string
   maxSize: number
   uploadedFile: File
@@ -182,7 +178,7 @@ const MbMediaImport = (props: MediaImportProps) => {
           </label>
         </div>
         <AcceptedFormats
-          acceptedFormats={VALID_FILE_FORMATS[acceptedFormats]}
+          acceptedFormats={acceptedFormats}
           idealDimensions={idealDimensions}
           maxSize={maxSize}
         />

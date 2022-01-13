@@ -1,18 +1,12 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { useState } from 'react'
-import { EMediaType, VALID_FILE_FORMATS } from '../../../consts/fileFormats'
+import { IMAGE_TYPES } from '../../../consts/fileFormats'
 import MbMediaImport from './../../../components/inputs/media-import/mediaImport'
 
 export default {
   title: 'Components/Inputs',
   component: MbMediaImport,
-  argTypes: {
-    acceptedFormats: {
-      options: ['image', 'animation', 'document'],
-      defaultValue: ['image'],
-      control: { type: 'radio' },
-    },
-  },
+  argTypes: {},
 } as ComponentMeta<typeof MbMediaImport>
 
 const Template: ComponentStory<typeof MbMediaImport> = (args) => {
@@ -39,7 +33,7 @@ const Template: ComponentStory<typeof MbMediaImport> = (args) => {
     const size = file.size
     const correctFile = checkIfFileIs3D(file)
 
-    if (VALID_FILE_FORMATS[EMediaType.IMAGE].includes(correctFile.type)) {
+    if (args.acceptedFormats.includes(correctFile.type)) {
       if (size / 1024 / 1024 <= maxSize) {
         setErrorMessage('')
         setFileUploaded(correctFile)
@@ -61,13 +55,15 @@ const Template: ComponentStory<typeof MbMediaImport> = (args) => {
       errorMessage={errorMessage}
       uploadedFile={fileUploaded}
       idealDimensions="500x500px"
-      acceptedFormats={EMediaType.IMAGE}
       maxSize={maxSize}
       handleFileAdd={uploadFile}
       handleFileRemove={removeFile}
+      {...args}
     />
   )
 }
 
 export const MediaImport = Template.bind({})
-MediaImport.args = {}
+MediaImport.args = {
+  acceptedFormats: IMAGE_TYPES,
+}
