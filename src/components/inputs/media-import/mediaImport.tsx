@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { MbIcon } from '../..'
 import { EIconName } from '../../..'
 import {
@@ -8,14 +8,17 @@ import {
 } from '../../../consts/fileFormats'
 import { isMobile } from '../../../consts/mobile'
 import AcceptedFormats from './acceptedFormats'
-import { checkIfFileIs3D, iconType } from './fileFunctions'
+import { iconType } from './fileFunctions'
 
 interface MediaImportProps {
   isProfileImage: boolean
   acceptedFormats: EMediaType
   idealDimensions: string
   maxSize: number
-  handleUpload: (file: File) => void
+  uploadedFile: File
+  errorMessage?: string
+  handleFileAdd: (file: File) => void
+  handleFileRemove: (file: File) => void
 }
 
 const preventBrowserDefaults = (e: Event) => {
@@ -29,12 +32,13 @@ const MbMediaImport = (props: MediaImportProps) => {
     acceptedFormats,
     idealDimensions,
     maxSize,
-    handleUpload,
+    uploadedFile,
+    errorMessage,
+    handleFileAdd,
+    handleFileRemove,
   } = props
 
   const [imageUrl, setImageUrl] = useState<any>('')
-  const [fileUploaded, setFileUploaded] = useState<File>()
-  const [errorMessage, setErrorMessage] = useState('')
 
   const dragRef = useRef(0)
   const [dragOverlay, setDragOverlay] = useState(false)
@@ -66,48 +70,31 @@ const MbMediaImport = (props: MediaImportProps) => {
     if (!event.dataTransfer.files.length) {
       return
     }
-    uploadFile(event.dataTransfer.files[0])
-  }
 
-  const uploadFile = (file: File) => {
-    const size = file.size
-    const correctFile = checkIfFileIs3D(file)
-
-    if (VALID_FILE_FORMATS[acceptedFormats].includes(correctFile.type)) {
-      if (size / 1024 / 1024 <= maxSize) {
-        setErrorMessage('')
-        setFileUploaded(correctFile)
-        setImageUrl('')
-
-        if (IMAGE_TYPES.includes(correctFile.type)) {
-          setImageUrl(URL.createObjectURL(correctFile))
-        }
-
-        handleUpload(correctFile)
-      } else {
-        setErrorMessage(`This file exceeds ${maxSize}mb`)
-      }
-    } else {
-      setErrorMessage('This media type is not accepted')
-    }
+    handleFileAdd(event.dataTransfer.files[0])
   }
 
   const handleFileChange = (e: any) => {
     if (!(e?.target?.files.length > 0)) return
     const file = e.target.files[0]
 
-    uploadFile(file)
+    handleFileAdd(file)
   }
 
-  const handleFileRemove = (e: any) => {
+  const removeFile = (e: any) => {
     e.preventDefault()
-    setFileUploaded(undefined)
-    setImageUrl('')
+    handleFileRemove
   }
+
+  useEffect(() => {
+    if (IMAGE_TYPES.includes(uploadedFile.type)) {
+      setImageUrl(URL.createObjectURL(uploadedFile))
+    }
+  }, [uploadedFile])
 
   return (
     <>
-      {fileUploaded && (
+      {uploadedFile && (
         <>
           <div className="pb-12">
             <div
@@ -128,14 +115,14 @@ const MbMediaImport = (props: MediaImportProps) => {
               ) : (
                 <div className="flex items-center py-32 space-x-24 max-w-80% sm:max-w-40%">
                   <MbIcon
-                    name={iconType(fileUploaded.type)}
+                    name={iconType(uploadedFile.type)}
                     color="black"
                     darkColor="white"
                     size="64px"
                   />
                   <div>
                     <p className="p-med-90 text-black dark:text-white break-words">
-                      {fileUploaded.name}
+                      {uploadedFile.name}
                     </p>
                   </div>
                 </div>
@@ -149,7 +136,7 @@ const MbMediaImport = (props: MediaImportProps) => {
           </label>
         </>
       )}
-      <div className={`${fileUploaded && isMobile() ? 'hidden' : ''}`}>
+      <div className={`${uploadedFile && isMobile() ? 'hidden' : ''}`}>
         <div className="flex items-center justify-center w-full">
           <label
             onDragEnter={handleDragIn}
@@ -169,10 +156,10 @@ const MbMediaImport = (props: MediaImportProps) => {
               <p className="text-gray-600 dark:text-gray-300 hidden sm:block">
                 (or just drop your file here)
               </p>
-              {fileUploaded && (
+              {uploadedFile && (
                 <p
                   className="text-error-300 dark:text-error-100 hidden sm:block pt-24"
-                  onClick={handleFileRemove}
+                  onClick={removeFile}
                 >
                   Remove File
                 </p>
