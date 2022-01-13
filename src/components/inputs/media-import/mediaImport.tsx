@@ -99,7 +99,7 @@ const MbMediaImport = (props: MediaImportProps) => {
     uploadFile(file)
   }
 
-  const handleFileRemove = (e:any) => {
+  const handleFileRemove = (e: any) => {
     e.preventDefault()
     setFileUploaded(undefined)
     setImageUrl('')
@@ -159,7 +159,7 @@ const MbMediaImport = (props: MediaImportProps) => {
             className={`flex flex-col rounded-lg ${
               dragOverlay
                 ? 'bg-gray-100 dark:bg-gray-900'
-                : 'bg-blue-300-15 dark:bg-blue-100-15'
+                : 'bg-blue-300-15 dark:bg-blue-100-15 hover:bg-gray-100 dark:hover:bg-gray-900'
             } w-full py-32 sm:py-48 group text-center cursor-pointer ${
               errorMessage ? 'ring-1 ring-error-300 dark:ring-error-100' : ''
             }`}
