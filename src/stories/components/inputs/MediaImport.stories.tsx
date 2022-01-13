@@ -17,7 +17,7 @@ export default {
 
 const Template: ComponentStory<typeof MbMediaImport> = (args) => {
   const [errorMessage, setErrorMessage] = useState('')
-  const [fileUploaded, setFileUploaded] = useState(null)
+  const [fileUploaded, setFileUploaded] = useState<File>()
 
   const maxSize = 5
 
@@ -51,7 +51,9 @@ const Template: ComponentStory<typeof MbMediaImport> = (args) => {
     }
   }
 
-  const removeFile = () => {}
+  const removeFile = () => {
+    setFileUploaded(undefined)
+  }
 
   return (
     <MbMediaImport

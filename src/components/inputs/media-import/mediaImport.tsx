@@ -18,7 +18,7 @@ interface MediaImportProps {
   uploadedFile: File
   errorMessage?: string
   handleFileAdd: (file: File) => void
-  handleFileRemove: (file: File) => void
+  handleFileRemove: () => void
 }
 
 const preventBrowserDefaults = (e: Event) => {
@@ -83,11 +83,11 @@ const MbMediaImport = (props: MediaImportProps) => {
 
   const removeFile = (e: any) => {
     e.preventDefault()
-    handleFileRemove
+    handleFileRemove()
   }
 
   useEffect(() => {
-    if (IMAGE_TYPES.includes(uploadedFile.type)) {
+    if (uploadedFile && IMAGE_TYPES.includes(uploadedFile.type)) {
       setImageUrl(URL.createObjectURL(uploadedFile))
     }
   }, [uploadedFile])
