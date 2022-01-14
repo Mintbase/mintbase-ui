@@ -45,15 +45,18 @@ export const MbTabs = (props: TabsProps) => {
 
   if (!props.children) return <></>
   const allTabs = React.Children.map(props.children, (child: any) => child)
+
+  console.log(allTabs)
   const tabsTitle = allTabs?.map((tab) => tab.props.title)
   const tabsContent = allTabs?.map((tab) => tab.props.children)
+  const tabsFilters = allTabs?.map((tab) => tab.props.filters)
 
   return (
     <>
       <div className="flex bg-gray-50 dark:bg-gray-800 md:px-64 overflow-scroll">
         <div className="flex justify-center md:justify-start items-center space-x-12 sm:space-x-24">
-          {tabsTitle?.length &&
-            tabsTitle.map((title, index) => (
+          {allTabs?.length &&
+            allTabs.map((tab, index) => (
               <>
                 <div
                   onClick={() => {
@@ -62,7 +65,7 @@ export const MbTabs = (props: TabsProps) => {
                   }}
                   key={index}
                 >
-                  <MbTab isActive={index === selectedTab} title={title}></MbTab>
+                  {/* <MbTab isActive={index === selectedTab} title={title} filters={tabsFilters}></MbTab> */}
                 </div>
               </>
             ))}
