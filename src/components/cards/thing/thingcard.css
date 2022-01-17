@@ -1,5 +1,28 @@
 .thing-card-image {
   width: 100%;
+  min-height: 120px;
+}
+
+.loading-card-image {
+  height: 120px;
+}
+
+@screen sm {
+  .thing-card-image {
+    min-height: 180px;
+  }
+  .loading-card-image {
+    height: 180px;
+  }
+}
+
+@screen md {
+  .thing-card-image {
+    min-height: 240px;
+  }
+  .loading-card-image {
+    height: 240px;
+  }
 }
 
 .thing .med-p,
