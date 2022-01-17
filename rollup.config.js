@@ -5,6 +5,7 @@ import { terser } from "rollup-plugin-terser";
 import external from "rollup-plugin-peer-deps-external";
 import postcss from "rollup-plugin-postcss";
 import dts from "rollup-plugin-dts";
+import url from "@rollup/plugin-url"
 import packageJson from './package.json'
 
 const config = [
@@ -27,6 +28,7 @@ const config = [
       external(),
       resolve(),
       postcss(),
+      url(),
       commonjs(),
       typescript({ tsconfig: "./tsconfig.json" }),
       terser(),
