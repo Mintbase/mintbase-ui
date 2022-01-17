@@ -1,6 +1,15 @@
 import React from 'react'
 import InlineSVG from 'react-inlinesvg'
 import { EIconName } from '../../consts/icons'
+import facebookIcon from './assets/facebook.svg'
+import instagramIcon from './assets/instagram.svg'
+import linkedinIcon from './assets/linkedin.svg'
+import mediumIcon from './assets/medium.svg'
+import mintbaseIcon from './assets/mintbase.svg'
+import pinterestIcon from './assets/pinterest.svg'
+import telegramIcon from './assets/telegram.svg'
+import twitterIcon from './assets/twitter.svg'
+import youtubeIcon from './assets/youtube.svg'
 
 enum IconType {
   MINTBASE = 'mintbase',
@@ -8,17 +17,17 @@ enum IconType {
   MATERIAL = 'material',
 }
 
-const mintbaseIcons = [
-  'facebook',
-  'instagram',
-  'pinterest',
-  'twitter',
-  'telegram',
-  'medium',
-  'linkedin',
-  'youtube',
-  'mintbase',
-]
+const customIcons: {[key: string]: string} = {
+  [EIconName.FACEBOOK]: facebookIcon,
+  [EIconName.INSTAGRAM]: instagramIcon,
+  [EIconName.PINTEREST]: pinterestIcon,
+  [EIconName.TWITTER]: twitterIcon,
+  [EIconName.TELEGRAM]: telegramIcon,
+  [EIconName.MEDIUM]: mediumIcon,
+  [EIconName.LINKEDIN]: linkedinIcon,
+  [EIconName.YOUTUBE]: youtubeIcon,
+  [EIconName.MINTBASE]: mintbaseIcon,
+}
 
 export const MbIcon = ({
   name,
@@ -34,7 +43,7 @@ export const MbIcon = ({
   className?: string
 }) => {
   const iconType = () => {
-    if (mintbaseIcons.includes(name)) return IconType.MINTBASE
+    if (Object.keys(customIcons).includes(name)) return IconType.MINTBASE
     if (name === EIconName.CIRCLE) return IconType.CIRCLE
     return IconType.MATERIAL
   }
@@ -46,7 +55,7 @@ export const MbIcon = ({
         {
           [IconType.MINTBASE]: (
             <InlineSVG
-              src={`/assets/icons/${name}.svg`}
+              src={customIcons[name as string]}
               width={size}
               height={size}
               className={`fill-current text-${color} dark:text-${darkColor}`}
