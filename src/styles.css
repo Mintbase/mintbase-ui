@@ -1,8 +1,8 @@
+@import '../public/assets/fonts/fonts.css';
+@import 'material-icons/iconfont/material-icons.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 @tailwind screens;
 
-/* Global styles */
-@import '/assets/fonts/fonts.css';
-@import '/assets/icons/material-icons.css';
