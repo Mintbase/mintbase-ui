@@ -16,7 +16,7 @@ const LoadingCard = () => {
         <div className="h-4 w-8 rounded bg-gray-600"></div>
         <div className="h-4 w-8 rounded bg-gray-600"></div>
       </div>
-      <div className="flex flex-col justify-center items-center animate-pulse thing-card-image ">
+      <div className="flex flex-col justify-center items-center animate-pulse loading-card-image">
         <div className="h-full w-full rounded bg-gray-600"></div>
       </div>
       <div className="flex flex-row justify-between mt-12 animate-pulse">
