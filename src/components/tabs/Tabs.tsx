@@ -5,11 +5,12 @@ import { MbIcon } from '../icon/Icon'
 import { MbTab } from './tab/Tab'
 
 interface TabsProps extends React.HTMLAttributes<HTMLDivElement> {
-  hasFilters: boolean
+  hasFilters?: boolean
+  activeTab: number
+  onTabChange: (index: number) => void
 }
 
 export const MbTabs = (props: TabsProps) => {
-  const [selectedTab, setSelectedTab] = useState(0)
   const [showOrderOpts, setShowOrderOpts] = useState(false)
   const [selectedOrder, setSelectedOrder] = useState('')
   const options = [
@@ -43,10 +44,11 @@ export const MbTabs = (props: TabsProps) => {
     },
   ]
 
-  if (!props.children) return <></>
-  const allTabs = React.Children.map(props.children, (child: any) => child)
+  const { children, activeTab, onTabChange, hasFilters } = props
 
-  console.log(allTabs)
+  if (!children) return <></>
+  const allTabs = React.Children.map(children, (child: any) => child)
+
   const tabsTitle = allTabs?.map((tab) => tab.props.title)
   const tabsContent = allTabs?.map((tab) => tab.props.children)
   const tabsFilters = allTabs?.map((tab) => tab.props.filters)
@@ -55,24 +57,24 @@ export const MbTabs = (props: TabsProps) => {
     <>
       <div className="flex bg-gray-50 dark:bg-gray-800 md:px-64 overflow-scroll">
         <div className="flex justify-center md:justify-start items-center space-x-12 sm:space-x-24">
-          {allTabs?.length &&
-            allTabs.map((tab, index) => (
+          {tabsTitle?.length &&
+            tabsTitle.map((tab, index) => (
               <>
                 <div
                   onClick={() => {
-                    setSelectedOrder('')
-                    setSelectedTab(index)
+                    console.log(index)
+                    onTabChange(index)
                   }}
                   key={index}
                 >
-                  {/* <MbTab isActive={index === selectedTab} title={title} filters={tabsFilters}></MbTab> */}
+                  <MbTab isActive={index === activeTab} title={tab}></MbTab>
                 </div>
               </>
             ))}
         </div>
         <div className="ml-auto flex items-center">
           <div className="w-0.5 bg-gray-200 dark:bg-gray-600 h-8 rounded sm:hidden mx-12"></div>
-          {props.hasFilters && (
+          {hasFilters && (
             <div
               className={`order-by ${
                 selectedOrder ? 'selected' : 'unselected'
@@ -109,7 +111,7 @@ export const MbTabs = (props: TabsProps) => {
       />
       {tabsContent?.length &&
         tabsContent?.map((content, index) => {
-          return index === selectedTab && <div>{content}</div>
+          return index === activeTab && <div>{content}</div>
         })}
     </>
   )
