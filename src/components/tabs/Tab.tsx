@@ -1,8 +1,10 @@
 import React from 'react'
-import './tab.css'
+import { TabFilters } from './Tabs'
+import './tabs.css'
 
 interface TabProps extends React.HTMLAttributes<HTMLDivElement> {
   isActive?: boolean
+  filters?: TabFilters[]
 }
 
 export const MbTab = (props: TabProps) => {

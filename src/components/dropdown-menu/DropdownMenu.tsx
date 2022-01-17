@@ -2,10 +2,11 @@ import React from 'react'
 import { MbText } from '../text/Text'
 import './dropdownmenu.css'
 
-interface Item {
+export interface Item {
   text: string
   icon?: JSX.Element
   onClick: () => void
+  selected?: boolean
 }
 
 export const MbDropdownMenu = ({
@@ -19,11 +20,13 @@ export const MbDropdownMenu = ({
 }) => {
   return !isOpen ? null : (
     <div className={`dropdown-menu ${className}`}>
-      {items.map(({ text, icon, onClick }, index) => {
+      {items.map(({ text, icon, onClick, selected }, index) => {
         return (
           <div
             key={`${text}-${index}`}
-            className={'dropdown-item'}
+            className={`dropdown-item ${
+              selected ? 'bg-blue-300-15 hover:bg-blue-100-35' : ''
+            }`}
             onClick={onClick}
           >
             <MbText
