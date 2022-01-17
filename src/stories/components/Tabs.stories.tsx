@@ -14,7 +14,6 @@ const Template: ComponentStory<typeof MbTabs> = (args) => {
   const [activeTab, setActiveTab] = useState(0)
 
   const handleTabChange = (index) => {
-    console.log('jkh')
     setActiveTab(index)
   }
   return (

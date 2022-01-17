@@ -62,7 +62,6 @@ export const MbTabs = (props: TabsProps) => {
               <>
                 <div
                   onClick={() => {
-                    console.log(index)
                     onTabChange(index)
                   }}
                   key={index}
