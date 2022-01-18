@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { useState } from 'react'
-import MbChip from '../../../components/toggles/chip/Chip'
+import { MbChip } from '../../../components/toggles/chip/Chip'
 
 export default {
   title: 'Components/Toggles',

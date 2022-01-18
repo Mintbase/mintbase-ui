@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { useState } from 'react'
 import { IMAGE_TYPES } from '../../../consts/fileFormats'
-import MbMediaImport from './../../../components/inputs/media-import/mediaImport'
+import { MbMediaImport } from './../../../components/inputs/media-import/mediaImport'
 
 export default {
   title: 'Components/Inputs',

@@ -30,7 +30,7 @@ interface InputAccountProps {
   amountInputChangeHandler?: (e: any, index: number) => void
   footerAction: () => void
 }
-const MbInputAccount = (props: InputAccountProps) => {
+export const MbInputAccount = (props: InputAccountProps) => {
   const {
     maxAmount,
     title,
@@ -128,5 +128,3 @@ const MbInputAccount = (props: InputAccountProps) => {
     </MbAccordion>
   )
 }
-
-export default MbInputAccount

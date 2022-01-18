@@ -7,7 +7,7 @@ interface SwitchProps extends TToggle {
   handleChange: (checked: boolean) => void
 }
 
-const MbSwitch = (props: SwitchProps) => {
+export const MbSwitch = (props: SwitchProps) => {
   const { id, isChecked, disabled, handleChange } = props
   return (
     <div className={`switch ${disabled ? 'disabled' : ''}`}>
@@ -34,5 +34,3 @@ const MbSwitch = (props: SwitchProps) => {
     </div>
   )
 }
-
-export default MbSwitch

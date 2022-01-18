@@ -7,7 +7,7 @@ interface ChipProps extends TToggle {
   handleClick: () => void
 }
 
-const MbChip = (props: ChipProps) => {
+export const MbChip = (props: ChipProps) => {
   const { label, isChecked, disabled, handleClick } = props
   return (
     <div
@@ -41,5 +41,3 @@ const MbChip = (props: ChipProps) => {
     </div>
   )
 }
-
-export default MbChip

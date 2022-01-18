@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { useState } from 'react'
-import MbInputAccount from '../../../components/inputs/input-account/InputAccount'
+import { MbInputAccount } from '../../../components/inputs/input-account/InputAccount'
 import { EControlStatus } from '../../../components/inputs/input-field/inputField'
 
 export default {

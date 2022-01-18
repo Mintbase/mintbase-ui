@@ -7,7 +7,7 @@ interface AmountButtonProps {
   onValueChange: (amount: number) => void
 }
 
-const MbAmountButton = (props: AmountButtonProps) => {
+export const MbAmountButton = (props: AmountButtonProps) => {
   const [amount, setAmount] = useState(1)
 
   const { max, disabled, onValueChange } = props
@@ -71,5 +71,3 @@ const MbAmountButton = (props: AmountButtonProps) => {
     </div>
   )
 }
-
-export default MbAmountButton

@@ -6,7 +6,7 @@ interface CheckboxProps extends TToggle {
   handleChange: (checked: boolean) => void
 }
 
-const MbCheckbox = (props: CheckboxProps) => {
+export const MbCheckbox = (props: CheckboxProps) => {
   const { label, id, isChecked, disabled, handleChange } = props
   return (
     <>
@@ -42,4 +42,3 @@ const MbCheckbox = (props: CheckboxProps) => {
     </>
   )
 }
-export default MbCheckbox
