@@ -15,28 +15,22 @@ const Template: ComponentStory<typeof MbTabs> = (args) => {
   const options: TabFilters[] = [
     {
       tabIndex: 0,
-      filters: [
-        {
-          label: 'Show Only Listed',
-          selectedFilter: '',
-          onFilterChange: (filter) => handleFilterChange(filter, 0, 0),
-        },
-        {
-          label: 'Order by',
-          options: ['Newest', 'Oldest', 'Cheapest', 'Most expensive'],
-          selectedFilter: '',
-          onFilterChange: (filter) => handleFilterChange(filter, 0, 1),
-        },
-      ],
+      filters: {
+        hasFixedFilter: true,
+        selectedFixedFilter: '',
+        onFixedFilterChange: (option: string) =>
+          handleFixedFilterChange(option, 0),
+      },
     },
   ]
 
-  const handleFilterChange = (
-    selectedFilter: string,
-    tab: number,
-    index: number
-  ) => {
-    options[tab].filters[index].selectedFilter = selectedFilter
+  const handleFixedFilterChange = (selectedFilter: string, tab: number) => {
+    options[tab].filters.selectedFixedFilter = selectedFilter
+    console.log(options[tab].filters.selectedFixedFilter)
+  }
+
+  const handleDropdownFilterChange = (selectedFilter: string, tab: number) => {
+    options[tab].filters.selectedDropdownFilter = selectedFilter
   }
 
   const handleTabChange = (index) => {
@@ -57,7 +51,3 @@ const Template: ComponentStory<typeof MbTabs> = (args) => {
 }
 
 export const Tabs = Template.bind({})
-
-Tabs.args = {
-  hasFilters: true,
-}
