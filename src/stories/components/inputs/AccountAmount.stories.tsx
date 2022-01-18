@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { useState } from 'react'
 import { ESize, EType, EState } from '../../../consts/properties'
-import MbInputAccount from '../../../components/inputs/input-account/InputAccount'
+import { MbInputAccount } from '../../../components/inputs/input-account/InputAccount'
 import { EControlStatus } from '../../../components/inputs/input-field/inputField'
 import { MbButton } from '../../../components/buttons/button/Button'
 

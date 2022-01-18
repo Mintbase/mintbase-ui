@@ -22,7 +22,7 @@ const preventBrowserDefaults = (e: Event) => {
   e.stopPropagation()
 }
 
-const MbMediaImport = (props: MediaImportProps) => {
+export const MbMediaImport = (props: MediaImportProps) => {
   const {
     isProfileImage,
     acceptedFormats,
@@ -186,5 +186,3 @@ const MbMediaImport = (props: MediaImportProps) => {
     </>
   )
 }
-
-export default MbMediaImport

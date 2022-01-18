@@ -7,7 +7,7 @@ interface ModalProps extends React.HTMLAttributes<HTMLDivElement> {
   open: boolean
   onClose: () => void
 }
-const MbModal = (props: ModalProps) => {
+export const MbModal = (props: ModalProps) => {
   const { open, onClose, title, children } = props
   return (
     <>
@@ -36,5 +36,3 @@ const MbModal = (props: ModalProps) => {
     </>
   )
 }
-
-export default MbModal
