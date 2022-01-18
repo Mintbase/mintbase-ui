@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { useState } from 'react'
-import MbCheckbox from '../../../components/toggles/checkbox/Checkbox'
+import { MbCheckbox } from '../../../components/toggles/checkbox/Checkbox'
 
 export default {
   title: 'Components/Toggles',

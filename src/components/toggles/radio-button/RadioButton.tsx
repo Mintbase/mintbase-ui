@@ -5,7 +5,7 @@ interface RadioButtonProps extends TToggle {
   handleChange: (id: string) => void
 }
 
-const MbRadioButton = (props: RadioButtonProps) => {
+export const MbRadioButton = (props: RadioButtonProps) => {
   const { label, id, isChecked, disabled, handleChange } = props
 
   return (
@@ -30,5 +30,3 @@ const MbRadioButton = (props: RadioButtonProps) => {
     </div>
   )
 }
-
-export default MbRadioButton
