@@ -4,5 +4,5 @@ import './radiobutton.css';
 interface RadioButtonProps extends TToggle {
     handleChange: (id: string) => void;
 }
-declare const MbRadioButton: (props: RadioButtonProps) => JSX.Element;
-export default MbRadioButton;
+export declare const MbRadioButton: (props: RadioButtonProps) => JSX.Element;
+export {};

@@ -9,5 +9,5 @@ interface MediaImportProps {
     handleFileAdd: (file: File) => void;
     handleFileRemove: () => void;
 }
-declare const MbMediaImport: (props: MediaImportProps) => JSX.Element;
-export default MbMediaImport;
+export declare const MbMediaImport: (props: MediaImportProps) => JSX.Element;
+export {};

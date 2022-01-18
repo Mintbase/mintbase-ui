@@ -5,5 +5,5 @@ interface AmountButtonProps {
     disabled: boolean;
     onValueChange: (amount: number) => void;
 }
-declare const MbAmountButton: (props: AmountButtonProps) => JSX.Element;
-export default MbAmountButton;
+export declare const MbAmountButton: (props: AmountButtonProps) => JSX.Element;
+export {};

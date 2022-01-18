@@ -23,5 +23,5 @@ interface InputAccountProps {
     amountInputChangeHandler?: (e: any, index: number) => void;
     footerAction: () => void;
 }
-declare const MbInputAccount: (props: InputAccountProps) => JSX.Element;
-export default MbInputAccount;
+export declare const MbInputAccount: (props: InputAccountProps) => JSX.Element;
+export {};

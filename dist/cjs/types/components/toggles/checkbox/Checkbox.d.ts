@@ -4,5 +4,5 @@ import { TToggle } from '../../../types/toggles.type';
 interface CheckboxProps extends TToggle {
     handleChange: (checked: boolean) => void;
 }
-declare const MbCheckbox: (props: CheckboxProps) => JSX.Element;
-export default MbCheckbox;
+export declare const MbCheckbox: (props: CheckboxProps) => JSX.Element;
+export {};

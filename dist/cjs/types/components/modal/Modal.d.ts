@@ -5,5 +5,5 @@ interface ModalProps extends React.HTMLAttributes<HTMLDivElement> {
     open: boolean;
     onClose: () => void;
 }
-declare const MbModal: (props: ModalProps) => JSX.Element;
-export default MbModal;
+export declare const MbModal: (props: ModalProps) => JSX.Element;
+export {};

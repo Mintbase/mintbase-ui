@@ -1,8 +1,8 @@
 /// <reference types="react" />
-import React from 'react';
+import React$1 from 'react';
 import { Place } from 'react-tooltip';
 
-interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
+interface AccordionProps extends React$1.HTMLAttributes<HTMLDivElement> {
     title: string;
     hasInfoIcon?: boolean;
 }
@@ -28,14 +28,14 @@ declare enum ESmallCardType {
     STORE = "store"
 }
 
-interface ActionProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface ActionProps extends React$1.ButtonHTMLAttributes<HTMLButtonElement> {
     label: string;
     state?: EState.ACTIVE | EState.DISABLED;
     size?: ESize;
 }
 declare const MbAction: ({ label, state, size, ...props }: ActionProps) => JSX.Element;
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends React$1.ButtonHTMLAttributes<HTMLButtonElement> {
     label?: string;
     btnType?: EType;
     state?: EState;
@@ -133,14 +133,14 @@ declare const MbInfoCard: ({ boxInfo }: {
     boxInfo: TInfoCard;
 }) => JSX.Element;
 
-interface CardProps$1 extends React.ComponentProps<'div'> {
+interface CardProps$1 extends React$1.ComponentProps<'div'> {
     loading?: boolean;
     card: TSmallCard;
     cardType: ESmallCardType;
 }
 declare const MbSmallCard: ({ loading, cardType, card, }: CardProps$1) => JSX.Element;
 
-interface CardProps extends React.ComponentProps<'div'> {
+interface CardProps extends React$1.ComponentProps<'div'> {
     loading?: boolean;
     cardInfo: TThingCard;
 }
@@ -159,7 +159,7 @@ declare enum EControlStatus {
     VALID = "valid",
     INVALID = "invalid"
 }
-interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+interface InputProps extends React$1.InputHTMLAttributes<HTMLInputElement> {
     label?: string;
     hasIcon?: boolean;
     controlStatus: EControlStatus;
@@ -182,24 +182,24 @@ interface PaginationProps {
 }
 declare const MbPagination: (props: PaginationProps) => JSX.Element | null;
 
-interface TableProps extends React.HTMLAttributes<HTMLDivElement> {
+interface TableProps extends React$1.HTMLAttributes<HTMLDivElement> {
     title: string;
     pagination?: PaginationProps;
     onAmountItemsChange?: (page: number) => void;
 }
 declare const MbTable: (props: TableProps) => JSX.Element;
 
-interface TabProps extends React.HTMLAttributes<HTMLDivElement> {
+interface TabProps extends React$1.HTMLAttributes<HTMLDivElement> {
     isActive?: boolean;
 }
 declare const MbTab: (props: TabProps) => JSX.Element;
 
-interface TabsProps extends React.HTMLAttributes<HTMLDivElement> {
+interface TabsProps extends React$1.HTMLAttributes<HTMLDivElement> {
     hasFilters: boolean;
 }
 declare const MbTabs: (props: TabsProps) => JSX.Element;
 
-declare type TextProps = React.HTMLAttributes<HTMLDivElement>;
+declare type TextProps = React$1.HTMLAttributes<HTMLDivElement>;
 declare const MbText: (props: TextProps) => JSX.Element;
 
 declare const MbTooltip: ({ text, place, component, }: {
@@ -230,9 +230,86 @@ interface MbStatefulButtonProps {
     indicator: JSX.Element;
     content: JSX.Element;
     className?: string;
-    onClick?: React.MouseEventHandler<HTMLDivElement>;
+    onClick?: React$1.MouseEventHandler<HTMLDivElement>;
 }
 declare const MbStatefulButton: ({ indicator, content, className, onClick, }: MbStatefulButtonProps) => JSX.Element;
+
+declare type TToggle = {
+    label: string;
+    id?: string;
+    isChecked: boolean;
+    disabled: boolean;
+};
+
+interface SwitchProps extends TToggle {
+    handleChange: (checked: boolean) => void;
+}
+declare const MbSwitch: (props: SwitchProps) => JSX.Element;
+
+interface CheckboxProps extends TToggle {
+    handleChange: (checked: boolean) => void;
+}
+declare const MbCheckbox: (props: CheckboxProps) => JSX.Element;
+
+interface ChipProps extends TToggle {
+    handleClick: () => void;
+}
+declare const MbChip: (props: ChipProps) => JSX.Element;
+
+interface RadioButtonProps extends TToggle {
+    handleChange: (id: string) => void;
+}
+declare const MbRadioButton: (props: RadioButtonProps) => JSX.Element;
+
+interface ModalProps extends React.HTMLAttributes<HTMLDivElement> {
+    title: string;
+    open: boolean;
+    onClose: () => void;
+}
+declare const MbModal: (props: ModalProps) => JSX.Element;
+
+interface MediaImportProps {
+    isProfileImage: boolean;
+    acceptedFormats: string[];
+    idealDimensions: string;
+    maxSize: number;
+    uploadedFile: File;
+    errorMessage?: string;
+    handleFileAdd: (file: File) => void;
+    handleFileRemove: () => void;
+}
+declare const MbMediaImport: (props: MediaImportProps) => JSX.Element;
+
+declare type TInputListGroup = {
+    amount?: TInput;
+    account: TInput;
+};
+declare type TInput = {
+    placeholder: string;
+    value: string | number;
+    status: EControlStatus;
+};
+interface InputAccountProps {
+    maxAmount: number;
+    title: string;
+    subtitle: string;
+    smallSubtitle: string;
+    inputList: TInputListGroup[];
+    footerTitle: string;
+    leftFooterContent?: JSX.Element;
+    removeInputHandler: (index: number) => void;
+    accountInputChangeHandler: (e: any, index: number) => void;
+    amountInputChangeHandler?: (e: any, index: number) => void;
+    footerAction: () => void;
+}
+declare const MbInputAccount: (props: InputAccountProps) => JSX.Element;
+
+interface AmountButtonProps {
+    max: number;
+    disabled: boolean;
+    onValueChange: (amount: number) => void;
+}
+declare const MbAmountButton: (props: AmountButtonProps) => JSX.Element;
 
 declare type TColorDetail = {
     sectionTitle: string;
@@ -247,4 +324,4 @@ declare const colorsArray: TColorDetail[];
 
 declare const getFontType: (size: string) => "p-big-90" | "p-med-90" | "p-small-90" | undefined;
 
-export { EControlStatus, EIconName, ESize, ESmallCardType, EState, EType, MbAccordion, MbAction, MbButton, MbDropdownMenu, MbIcon, MbInfoCard, MbInput, MbItemsPerPage, MbLogo, MbPagination, MbSmallCard, MbStatefulButton, MbTab, MbTable, MbTabs, MbText, MbThingCard, MbTooltip, TColor, TColorDetail, TInfoCard, TSmallCard, TThingCard, colorsArray, getFontType };
+export { EControlStatus, EIconName, ESize, ESmallCardType, EState, EType, MbAccordion, MbAction, MbAmountButton, MbButton, MbCheckbox, MbChip, MbDropdownMenu, MbIcon, MbInfoCard, MbInput, MbInputAccount, MbItemsPerPage, MbLogo, MbMediaImport, MbModal, MbPagination, MbRadioButton, MbSmallCard, MbStatefulButton, MbSwitch, MbTab, MbTable, MbTabs, MbText, MbThingCard, MbTooltip, TColor, TColorDetail, TInfoCard, TSmallCard, TThingCard, colorsArray, getFontType };
