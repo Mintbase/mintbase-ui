@@ -92,6 +92,8 @@ declare enum EIconName {
     MEDIUM = "medium",
     LINKEDIN = "linkedin",
     YOUTUBE = "youtube",
+    GITHUB = "github",
+    DISCORD = "discord",
     MINTBASE = "mintbase",
     NONE = "none"
 }
