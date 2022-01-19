@@ -10,6 +10,8 @@ import pinterestIcon from './assets/pinterest.svg'
 import telegramIcon from './assets/telegram.svg'
 import twitterIcon from './assets/twitter.svg'
 import youtubeIcon from './assets/youtube.svg'
+import githubIcon from './assets/github.svg'
+import discordIcon from './assets/discord.svg'
 
 enum IconType {
   MINTBASE = 'mintbase',
@@ -17,7 +19,7 @@ enum IconType {
   MATERIAL = 'material',
 }
 
-const customIcons: {[key: string]: string} = {
+const customIcons: { [key: string]: string } = {
   [EIconName.FACEBOOK]: facebookIcon,
   [EIconName.INSTAGRAM]: instagramIcon,
   [EIconName.PINTEREST]: pinterestIcon,
@@ -27,6 +29,8 @@ const customIcons: {[key: string]: string} = {
   [EIconName.LINKEDIN]: linkedinIcon,
   [EIconName.YOUTUBE]: youtubeIcon,
   [EIconName.MINTBASE]: mintbaseIcon,
+  [EIconName.GITHUB]: githubIcon,
+  [EIconName.DISCORD]: discordIcon,
 }
 
 export const MbIcon = ({
