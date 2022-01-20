@@ -1,11 +1,13 @@
 import './networkmenu.css'
 import { MbText } from '../../text/Text'
+import { TNetworkOption } from '../../../types/network.type'
 
 interface NetworkMenuProps {
+  options: TNetworkOption[]
   onOptionChange: (selected: string) => void
 }
 
-const MbNetworkMenu = (props: NetworkMenuProps) => {
+export const MbNetworkMenu = (props: NetworkMenuProps) => {
   const { onOptionChange } = props
   return (
     <div className="network-menu">
@@ -24,5 +26,3 @@ const MbNetworkMenu = (props: NetworkMenuProps) => {
     </div>
   )
 }
-
-export default MbNetworkMenu
