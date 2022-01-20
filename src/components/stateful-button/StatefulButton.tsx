@@ -15,7 +15,7 @@ export const MbStatefulButton = ({
 }: MbStatefulButtonProps) => {
   return (
     <div
-      className={`flex p-12 h-12 justify-center dark:text-white items-center rounded-md bg-gray-100 hover:bg-gray-150 dark:hover:bg-gray-900 dark:bg-gray-800 select-none cursor-pointer ${className}`}
+      className={`flex p-12 h-12 justify-center dark:text-white items-center rounded-md bg-gray-100 hover:bg-gray-150 dark:hover:bg-gray-900 dark:bg-gray-800 select-none cursor-pointer transition-all duration-500 ${className}`}
       onClick={onClick}
     >
       {indicator}
