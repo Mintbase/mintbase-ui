@@ -4,11 +4,13 @@ import { TNetworkOption } from '../../../types/network.type'
 
 interface NetworkMenuProps {
   options: TNetworkOption[]
+  isOpen: boolean
   onOptionChange: (selected: string) => void
 }
 
 export const MbNetworkMenu = (props: NetworkMenuProps) => {
-  const { options, onOptionChange } = props
+  const { options, isOpen, onOptionChange } = props
+  if (!isOpen) return null
   return (
     <div className="network-menu">
       {options.map((option) => (
