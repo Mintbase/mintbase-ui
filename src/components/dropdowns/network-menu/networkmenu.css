@@ -7,9 +7,17 @@
 }
 
 .network-menu.row {
-  @apply flex space-x-24;
+  @apply flex flex-wrap;
 }
 
 .network-item {
   @apply flex rounded bg-gray-50 dark:bg-gray-800 hover:bg-blue-300-15 dark:hover:bg-blue-100-35 px-12 py-16 cursor-pointer justify-start space-x-12 transition-all duration-500 whitespace-nowrap;
+}
+
+.network-menu.row .network-item:not(:last-child) {
+  @apply mr-12 sm:mr-24;
+}
+
+.network-menu.row .network-item {
+  @apply mb-12 sm:mb-0;
 }
