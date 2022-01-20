@@ -8,20 +8,19 @@ interface NetworkMenuProps {
 }
 
 export const MbNetworkMenu = (props: NetworkMenuProps) => {
-  const { onOptionChange } = props
+  const { options, onOptionChange } = props
   return (
     <div className="network-menu">
-      {[
-        { label: 'NEAR TESTNET', value: 'testnet' },
-        { label: 'NEAR MAINNET', value: 'mainnet' },
-        { label: 'ETHEREUM', value: 'ethereum' },
-      ].map((network) => (
-        <MbText
-          className={'ml-8 p-small-90 align-center tracking-wider'}
-          onClick={() => onOptionChange(network.value)}
-        >
-          {network.label}
-        </MbText>
+      {options.map((option) => (
+        <div className="network-item">
+          <div className={`w-3 h-3 rounded-full ${option.indicatorColor}`} />
+          <MbText
+            className={'ml-8 p-small-90 align-center tracking-wider'}
+            onClick={() => onOptionChange(option.value)}
+          >
+            {option.label}
+          </MbText>
+        </div>
       ))}
     </div>
   )
