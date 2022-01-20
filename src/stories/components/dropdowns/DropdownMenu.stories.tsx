@@ -1,12 +1,12 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import React from 'react'
-import { MbButton } from '../../components/buttons/button/Button'
-import { MbDropdownMenu } from '../../components/dropdown-menu/DropdownMenu'
-import { MbIcon } from '../../components/icon/Icon'
-import { EIconName } from '../../consts/icons'
+import { MbButton } from '../../../components/buttons/button/Button'
+import { MbDropdownMenu } from '../../../components/dropdowns/dropdown-menu/DropdownMenu'
+import { MbIcon } from '../../../components/icon/Icon'
+import { EIconName } from '../../../consts/icons'
 
 export default {
-  title: 'Components/DropdownMenu',
+  title: 'Components/Dropdowns/DropdownMenu',
   component: MbDropdownMenu,
   argTypes: {},
 } as ComponentMeta<typeof MbDropdownMenu>
