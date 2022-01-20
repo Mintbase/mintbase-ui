@@ -26,11 +26,16 @@ const options: TNetworkOption[] = [
   { label: 'ETHEREUM', value: 'testnet', indicatorColor: 'bg-blue-300' },
 ]
 
-const Template: ComponentStory<typeof MbNetworkMenu> = (args) => {
-  return <MbNetworkMenu {...args} options={options} isOpen></MbNetworkMenu>
-}
+const Template: ComponentStory<typeof MbNetworkMenu> = (args) => (
+   <MbNetworkMenu {...args}></MbNetworkMenu>
+)
 
 export const MenuTemplate = Template.bind({})
+MenuTemplate.args = {
+  options: options,
+  isOpen: true,
+  onOptionChange: () => console.log('open')
+}
 
 const DropdownMenuAnimated: ComponentStory<typeof MbNetworkMenu> = (args) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
