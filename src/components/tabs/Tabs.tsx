@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { MbDropdownMenu } from '../../components/dropdown-menu/DropdownMenu'
+import { MbDropdownMenu } from '../dropdowns/dropdown-menu/DropdownMenu'
 import { EIconName } from '../../consts/icons'
 import { MbIcon } from '../icon/Icon'
 import { MbTab } from './Tab'

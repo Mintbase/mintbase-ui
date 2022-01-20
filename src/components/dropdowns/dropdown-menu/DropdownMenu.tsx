@@ -1,5 +1,5 @@
 import React from 'react'
-import { MbText } from '../text/Text'
+import { MbText } from '../../text/Text'
 import './dropdownmenu.css'
 
 interface Item {
