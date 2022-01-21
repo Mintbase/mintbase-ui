@@ -23,7 +23,7 @@ const options: TNetworkOption[] = [
     value: 'mainnet',
     indicatorColor: 'bg-success-300',
   },
-  { label: 'ETHEREUM', value: 'testnet', indicatorColor: 'bg-blue-300' },
+  { label: 'ETHEREUM', value: 'ethereum', indicatorColor: 'bg-blue-300' },
 ]
 
 const Template: ComponentStory<typeof MbNetworkMenu> = (args) => (
