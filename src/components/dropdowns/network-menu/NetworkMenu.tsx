@@ -15,12 +15,13 @@ export const MbNetworkMenu = (props: NetworkMenuProps) => {
   return (
     <div className={`network-menu ${direction}`}>
       {options.map((option) => (
-        <div className="network-item">
+        <div
+          className="network-item"
+          onClick={() => onOptionChange(option.value)}
+          key={option.value}
+        >
           <div className={`w-3 h-3 rounded-full ${option.indicatorColor}`} />
-          <MbText
-            className={'ml-8 p-small-90 align-center tracking-wider'}
-            onClick={() => onOptionChange(option.value)}
-          >
+          <MbText className={'ml-8 p-small-90 align-center tracking-wider'}>
             {option.label}
           </MbText>
         </div>
