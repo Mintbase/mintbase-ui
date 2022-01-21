@@ -7,7 +7,7 @@
 }
 
 .network-menu.row {
-  @apply flex flex-wrap;
+  @apply flex;
 }
 
 .network-item {
