@@ -1,9 +1,11 @@
 .dropdown-menu {
-  @apply bg-gray-50 dark:bg-gray-800 text-mb-blackblue dark:text-white rounded-b w-48 mt-4 overflow-hidden;
+  @apply bg-gray-50 dark:bg-gray-800 text-mb-blackblue dark:text-white rounded-b overflow-hidden absolute min-w-48;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .dropdown-item {
-  @apply flex hover:bg-blue-300-15 dark:hover:bg-blue-100-35 py-8 px-16 cursor-pointer justify-center text-center relative transition-all duration-500;
+  @apply flex hover:bg-blue-300-15 dark:hover:bg-blue-100-35 py-12 px-16 cursor-pointer justify-center text-center relative transition-all duration-500;
 }
 
 .dropdown-icon {
