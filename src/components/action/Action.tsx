@@ -11,10 +11,14 @@ interface ActionProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 export const MbAction = ({
   state = EState.ACTIVE,
   size = ESize.MEDIUM,
+  className,
   ...props
 }: ActionProps) => {
   return (
-    <button className={`action ${state} ${getFontType(size)}`} {...props}>
+    <button
+      className={`action ${state} ${getFontType(size)} ${className}`}
+      {...props}
+    >
       {props.children}
     </button>
   )

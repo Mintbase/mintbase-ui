@@ -11,5 +11,9 @@
 }
 
 .network-item {
-  @apply flex bg-gray-100 dark:bg-gray-800 hover:bg-blue-300-15 dark:hover:bg-blue-100-35 px-12 py-16 cursor-pointer justify-start space-x-12 transition-all duration-500 whitespace-nowrap;
+  @apply flex bg-gray-100 dark:bg-gray-800 hover:bg-blue-300-15 dark:hover:bg-blue-100-15 px-12 py-16 cursor-pointer justify-start space-x-12 transition-all duration-500 whitespace-nowrap;
+}
+
+.network-menu.row .network-item {
+  @apply rounded
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import { MbText } from '../../text/Text'
 import './dropdownmenu.css'
 
-interface Item {
+export interface Item {
   text: string
   icon?: JSX.Element
   onClick: () => void

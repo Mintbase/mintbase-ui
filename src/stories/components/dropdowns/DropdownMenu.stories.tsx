@@ -104,7 +104,7 @@ const DropdownMenuAnimated: ComponentStory<typeof MbDropdownMenu> = (args) => {
     setIsMenuOpen(!isMenuOpen)
   }
   return (
-    <div>
+    <div className='text-center'>
       <MbButton onClick={handleButtonClick} />
       <MbDropdownMenu {...args} isOpen={isMenuOpen} />
     </div>
