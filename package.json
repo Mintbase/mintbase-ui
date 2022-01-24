@@ -16,6 +16,7 @@
   "scripts": {
     "build:tsc": "tsc",
     "build": "npm run clean && rollup -c",
+    "dev": "npm run build -- -w",
     "lint": "eslint src --ext .ts,tsx,js,jsx",
     "lint:types": "tsc --noEmit",
     "prettier:write": "prettier --w src",
