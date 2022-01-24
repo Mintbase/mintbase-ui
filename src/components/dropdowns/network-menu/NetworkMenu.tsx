@@ -23,7 +23,9 @@ export const MbNetworkMenu = (props: NetworkMenuProps) => {
   if (!isOpen) return null
   return (
     <div
-      className={`network-menu ${isInline ? 'row no-scrollbar' : 'col'} ${menuClassName}`}
+      className={`network-menu ${
+        isInline ? 'row no-scrollbar' : 'col'
+      } ${menuClassName}`}
     >
       {options.map((option) => (
         <div
