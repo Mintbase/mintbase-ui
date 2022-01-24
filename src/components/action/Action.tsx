@@ -14,7 +14,7 @@ export const MbAction = ({
   ...props
 }: ActionProps) => {
   return (
-    <button className={`action ${state} ${getFontType(size)}`} {...props}>
+    <button className={`action ${state} ${getFontType(size)} ${props.className}`} {...props}>
       {props.children}
     </button>
   )
