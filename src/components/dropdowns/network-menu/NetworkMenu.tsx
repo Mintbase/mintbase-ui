@@ -20,6 +20,7 @@ export const MbNetworkMenu = (props: NetworkMenuProps) => {
     itemClassName,
     onOptionChange,
   } = props
+
   if (!isOpen) return null
   return (
     <div
@@ -34,7 +35,7 @@ export const MbNetworkMenu = (props: NetworkMenuProps) => {
           key={option.value}
         >
           <div className={`w-3 h-3 rounded-full ${option.indicatorColor}`} />
-          <MbText className={'ml-8 p-small-90 align-center tracking-wider'}>
+          <MbText className={'p-small-90 align-center tracking-wider'}>
             {option.label}
           </MbText>
         </div>
