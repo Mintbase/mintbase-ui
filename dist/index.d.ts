@@ -29,11 +29,10 @@ declare enum ESmallCardType {
 }
 
 interface ActionProps extends React$1.ButtonHTMLAttributes<HTMLButtonElement> {
-    label: string;
     state?: EState.ACTIVE | EState.DISABLED;
     size?: ESize;
 }
-declare const MbAction: ({ label, state, size, ...props }: ActionProps) => JSX.Element;
+declare const MbAction: ({ state, size, ...props }: ActionProps) => JSX.Element;
 
 interface ButtonProps extends React$1.ButtonHTMLAttributes<HTMLButtonElement> {
     label?: string;
@@ -321,8 +320,10 @@ declare type TNetworkOption = {
 
 interface NetworkMenuProps {
     options: TNetworkOption[];
-    isOpen: boolean;
-    direction: 'col' | 'row';
+    isOpen?: boolean;
+    isInline?: boolean;
+    menuClassName?: string;
+    itemClassName?: string;
     onOptionChange: (selected: string) => void;
 }
 declare const MbNetworkMenu: (props: NetworkMenuProps) => JSX.Element | null;
