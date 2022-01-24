@@ -5,5 +5,5 @@ interface ActionProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     state?: EState.ACTIVE | EState.DISABLED;
     size?: ESize;
 }
-export declare const MbAction: ({ state, size, ...props }: ActionProps) => JSX.Element;
+export declare const MbAction: ({ state, size, className, ...props }: ActionProps) => JSX.Element;
 export {};

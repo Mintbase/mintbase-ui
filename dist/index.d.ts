@@ -32,7 +32,7 @@ interface ActionProps extends React$1.ButtonHTMLAttributes<HTMLButtonElement> {
     state?: EState.ACTIVE | EState.DISABLED;
     size?: ESize;
 }
-declare const MbAction: ({ state, size, ...props }: ActionProps) => JSX.Element;
+declare const MbAction: ({ state, size, className, ...props }: ActionProps) => JSX.Element;
 
 interface ButtonProps extends React$1.ButtonHTMLAttributes<HTMLButtonElement> {
     label?: string;
@@ -341,4 +341,4 @@ declare const colorsArray: TColorDetail[];
 
 declare const getFontType: (size: string) => "p-big-90" | "p-med-90" | "p-small-90" | undefined;
 
-export { EControlStatus, EIconName, ESize, ESmallCardType, EState, EType, MbAccordion, MbAction, MbAmountButton, MbButton, MbCheckbox, MbChip, MbDropdownMenu, MbIcon, MbInfoCard, MbInput, MbInputAccount, MbItemsPerPage, MbLogo, MbMediaImport, MbModal, MbNetworkMenu, MbPagination, MbRadioButton, MbSmallCard, MbStatefulButton, MbSwitch, MbTab, MbTable, MbTabs, MbText, MbThingCard, MbTooltip, TColor, TColorDetail, TInfoCard, TNetworkOption, TSmallCard, TThingCard, TToggle, colorsArray, getFontType };
+export { EControlStatus, EIconName, ESize, ESmallCardType, EState, EType, Item, MbAccordion, MbAction, MbAmountButton, MbButton, MbCheckbox, MbChip, MbDropdownMenu, MbIcon, MbInfoCard, MbInput, MbInputAccount, MbItemsPerPage, MbLogo, MbMediaImport, MbModal, MbNetworkMenu, MbPagination, MbRadioButton, MbSmallCard, MbStatefulButton, MbSwitch, MbTab, MbTable, MbTabs, MbText, MbThingCard, MbTooltip, TColor, TColorDetail, TInfoCard, TNetworkOption, TSmallCard, TThingCard, TToggle, colorsArray, getFontType };
