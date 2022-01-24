@@ -1,5 +1,5 @@
 .dropdown-menu {
-  @apply bg-gray-50 dark:bg-gray-800 text-mb-blackblue dark:text-white rounded w-48 mt-4 overflow-hidden;
+  @apply bg-gray-50 dark:bg-gray-800 text-mb-blackblue dark:text-white rounded-b w-48 mt-4 overflow-hidden;
 }
 
 .dropdown-item {

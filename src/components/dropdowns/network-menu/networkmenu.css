@@ -1,23 +1,15 @@
 .network-menu {
-  @apply text-black dark:text-white rounded overflow-hidden absolute z-10;
+  @apply text-black dark:text-white rounded-b overflow-hidden;
 }
 
 .network-menu.col {
-  @apply bg-gray-50 dark:bg-gray-800 inline-block;
+  @apply absolute z-10 bg-gray-50 dark:bg-gray-800 inline-block;
 }
 
 .network-menu.row {
-  @apply flex;
+  @apply flex space-x-24 overflow-scroll;
 }
 
 .network-item {
-  @apply flex rounded bg-gray-50 dark:bg-gray-800 hover:bg-blue-300-15 dark:hover:bg-blue-100-35 px-12 py-16 cursor-pointer justify-start space-x-12 transition-all duration-500 whitespace-nowrap;
-}
-
-.network-menu.row .network-item:not(:last-child) {
-  @apply mr-12 sm:mr-24;
-}
-
-.network-menu.row .network-item {
-  @apply mb-12 sm:mb-0;
+  @apply flex bg-gray-100 dark:bg-gray-800 hover:bg-blue-300-15 dark:hover:bg-blue-100-35 px-12 py-16 cursor-pointer justify-start space-x-12 transition-all duration-500 whitespace-nowrap;
 }
