@@ -56,7 +56,7 @@ export const MbInput = ({
           props.disabled ? 'disabled' : 'default ' + controlStatus
         } ${props.className}`}
       >
-        <label className="flex">
+        <label className="flex w-full">
           <input
             disabled={props.disabled}
             placeholder={props.hasPercentageLabel ? '' : props.placeholder}
