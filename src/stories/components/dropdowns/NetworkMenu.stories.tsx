@@ -27,14 +27,26 @@ const options: TNetworkOption[] = [
 ]
 
 const Template: ComponentStory<typeof MbNetworkMenu> = (args) => (
-   <MbNetworkMenu {...args}></MbNetworkMenu>
+  <MbNetworkMenu {...args}></MbNetworkMenu>
 )
 
 export const MenuTemplate = Template.bind({})
 MenuTemplate.args = {
   options: options,
   isOpen: true,
-  onOptionChange: () => console.log('open')
+  onOptionChange: () => console.log('open'),
+}
+
+const DropdownInlineMenu: ComponentStory<typeof MbNetworkMenu> = (args) => (
+  <MbNetworkMenu {...args}></MbNetworkMenu>
+)
+
+export const InlineMenu = Template.bind({})
+InlineMenu.args = {
+  options: options,
+  isOpen: true,
+  isInline: true,
+  onOptionChange: () => console.log('open'),
 }
 
 const DropdownMenuAnimated: ComponentStory<typeof MbNetworkMenu> = (args) => {
@@ -61,7 +73,7 @@ const DropdownMenuAnimated: ComponentStory<typeof MbNetworkMenu> = (args) => {
   return (
     <div className="inline-block">
       <MbStatefulButton
-      className='space-x-12'
+        className="space-x-12"
         indicator={Indicator}
         content={Content}
         onClick={() => setIsMenuOpen(!isMenuOpen)}

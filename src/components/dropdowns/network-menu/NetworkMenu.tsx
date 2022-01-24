@@ -4,18 +4,27 @@ import { TNetworkOption } from '../../../types/network.type'
 
 interface NetworkMenuProps {
   options: TNetworkOption[]
-  isOpen: boolean
+  isOpen?: boolean
+  isInline?: boolean
   menuClassName?: string
   itemClassName?: string
   onOptionChange: (selected: string) => void
 }
 
 export const MbNetworkMenu = (props: NetworkMenuProps) => {
-  const { options, isOpen, menuClassName, itemClassName, onOptionChange } =
-    props
+  const {
+    options,
+    isOpen,
+    isInline,
+    menuClassName,
+    itemClassName,
+    onOptionChange,
+  } = props
   if (!isOpen) return null
   return (
-    <div className={`network-menu ${menuClassName}`}>
+    <div
+      className={`network-menu ${isInline ? 'row no-scrollbar' : 'col'} ${menuClassName}`}
+    >
       {options.map((option) => (
         <div
           className={`network-item ${itemClassName}`}
