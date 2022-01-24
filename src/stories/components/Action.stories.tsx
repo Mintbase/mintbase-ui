@@ -9,12 +9,13 @@ export default {
 } as ComponentMeta<typeof MbAction>
 
 const Template: ComponentStory<typeof MbAction> = (args) => (
-  <MbAction {...args} />
+  <MbAction {...args}>
+    <span>See Transactions</span>
+  </MbAction>
 )
 
 export const Action = Template.bind({})
 Action.args = {
-  label: 'See Transactions',
   state: EState.ACTIVE,
   size: ESize.MEDIUM,
 }

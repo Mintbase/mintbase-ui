@@ -110,7 +110,6 @@ export const MbInputAccount = (props: InputAccountProps) => {
         </section>
         <footer className="text-center py-24 sm:py-32 border-t border-gray-150 dark:border-gray-700 flex flex-col sm:flex-row justify-center items-center sm:relative">
           <MbAction
-            label={footerTitle}
             state={
               inputList.length + 1 === maxAmount
                 ? EState.DISABLED
@@ -118,7 +117,9 @@ export const MbInputAccount = (props: InputAccountProps) => {
             }
             size={ESize.BIG}
             onClick={footerAction}
-          />
+          >
+            <span>{footerTitle}</span>
+          </MbAction>
 
           {leftFooterContent && (
             <div className="center-extra-btns">{leftFooterContent}</div>

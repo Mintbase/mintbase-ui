@@ -50,7 +50,7 @@ export const MbTabs = (props: TabsProps) => {
 
   return (
     <>
-      <div className="flex bg-gray-50 dark:bg-gray-800 md:px-64 overflow-scroll">
+      <div className="flex bg-gray-50 dark:bg-gray-800 md:px-64 overflow-scroll no-scrollbar">
         <div className="flex justify-center md:justify-start items-center space-x-12 sm:space-x-24">
           {tabsTitle?.length &&
             tabsTitle.map((title, index) => (
