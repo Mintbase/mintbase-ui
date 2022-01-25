@@ -49,10 +49,10 @@ export const MbTabs = (props: TabsProps) => {
   const tabsContent = allTabs?.map((tab) => tab.props.children)
 
   return (
-    <>
-      <ul className="flex items-center justify-between space-x-12 sm:space-x-24 bg-gray-50 dark:bg-gray-800 px-24 md:px-64">
+    <div className="relative md:initial">
+      <ul className="flex justify-between bg-gray-50 dark:bg-gray-800 px-24 md:px-64 overflow-x-scroll md:overflow-visible no-scrollbar">
         {tabsTitle?.length && (
-          <div className="flex items-center space-x-12 sm:space-x-24 overflow-x-scroll sm:overflow-visible no-scrollbar">
+          <div className="flex items-center space-x-12 sm:space-x-24">
             {tabsTitle.map((title, index) => (
               <li
                 onClick={() => {
@@ -67,39 +67,68 @@ export const MbTabs = (props: TabsProps) => {
           </div>
         )}
 
-        <li className="flex items-center">
-          <div className="w-0.5 bg-gray-200 dark:bg-gray-600 h-8 rounded sm:hidden"></div>
+        <li className="flex items-center mx-12 md:hidden">
+          <div className="w-0.5 bg-gray-200 dark:bg-gray-600 h-8 rounded"></div>
         </li>
 
-        <li
-          className={`order-by ${
-            selectedOrder ? 'selected' : 'unselected'
-          } relative justify-end`}
-        >
-          <div
-            className="flex p-12 sm:p-16 items-center"
-            onClick={() => setShowOrderOpts(!showOrderOpts)}
+        <div className="flex items-center space-x-12 sm:space-x-24">
+          <li
+            className={`order-by ${selectedOrder ? 'selected' : 'unselected'}`}
           >
-            <div
-              className={`${
-                selectedOrder
-                  ? 'text-mb-red'
-                  : 'text-blue-300 dark:text-blue-100'
-              } p-med-90 pr-10 whitespace-nowrap`}
-            >
-              {selectedOrder ? selectedOrder : 'Order By'}
+            <div className="flex p-12 sm:p-16 items-center">
+              <div
+                className={`${
+                  selectedOrder
+                    ? 'text-mb-red'
+                    : 'text-blue-300 dark:text-blue-100'
+                } p-med-90 pr-10 whitespace-nowrap`}
+              >
+                Show Only Listed
+              </div>
             </div>
-            <MbIcon
-              name={EIconName.ARROW_DROP_DOWN}
-              size="16px"
-              color="blue-300"
-              darkColor="blue-100"
-            />
-          </div>
-          <MbDropdownMenu isOpen={showOrderOpts} items={options} className='left-0' />
-        </li>
+          </li>
+
+          {props.hasFilters && (
+            <li
+              className={`order-by ${
+                selectedOrder ? 'selected' : 'unselected'
+              } relative`}
+            >
+              <div
+                className="flex p-12 sm:p-16 items-center"
+                onClick={() => setShowOrderOpts(!showOrderOpts)}
+              >
+                <div
+                  className={`${
+                    selectedOrder
+                      ? 'text-mb-red'
+                      : 'text-blue-300 dark:text-blue-100'
+                  } p-med-90 pr-10 whitespace-nowrap`}
+                >
+                  {selectedOrder ? selectedOrder : 'Order By'}
+                </div>
+                <MbIcon
+                  name={EIconName.ARROW_DROP_DOWN}
+                  size="16px"
+                  color="blue-300"
+                  darkColor="blue-100"
+                />
+              </div>
+              <MbDropdownMenu
+                isOpen={showOrderOpts}
+                items={options}
+                className="center-pos hidden md:block"
+              />
+            </li>
+          )}
+        </div>
       </ul>
-    </>
+      <MbDropdownMenu
+        isOpen={showOrderOpts}
+        items={options}
+        className="right-0 md:hidden"
+      />
+    </div>
     // <>
     //   <div className="inline-flex justify-between bg-gray-50 dark:bg-gray-800 md:px-64 overflow-scroll no-scrollbar">
     //     <div className="flex justify-center md:justify-start items-center space-x-12 sm:space-x-24">
