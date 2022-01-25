@@ -6,10 +6,11 @@ import { MbTab } from './Tab'
 
 interface TabsProps extends React.HTMLAttributes<HTMLDivElement> {
   hasFilters: boolean
+  activeIndex: number
+  onTabChange: (index: number) => void
 }
 
 export const MbTabs = (props: TabsProps) => {
-  const [selectedTab, setSelectedTab] = useState(0)
   const [showOrderOpts, setShowOrderOpts] = useState(false)
   const [selectedOrder, setSelectedOrder] = useState('')
   const options = [
@@ -58,11 +59,13 @@ export const MbTabs = (props: TabsProps) => {
                 <li
                   onClick={() => {
                     setSelectedOrder('')
-                    setSelectedTab(index)
                   }}
                   key={index}
                 >
-                  <MbTab isActive={index === selectedTab} title={title}></MbTab>
+                  <MbTab
+                    isActive={index === props.activeIndex}
+                    title={title}
+                  ></MbTab>
                 </li>
               ))}
             </div>
@@ -134,7 +137,7 @@ export const MbTabs = (props: TabsProps) => {
       </div>
       {tabsContent?.length &&
         tabsContent?.map((content, index) => {
-          return index === selectedTab && <div>{content}</div>
+          return index === props.activeIndex && <div>{content}</div>
         })}
     </>
   )
