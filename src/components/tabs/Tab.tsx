@@ -1,7 +1,7 @@
 import React from 'react'
 import './tab.css'
 
-interface TabProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface TabProps extends React.HTMLAttributes<HTMLDivElement> {
   isActive?: boolean
   extraFilter?: string
 }

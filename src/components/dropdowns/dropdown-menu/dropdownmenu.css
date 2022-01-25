@@ -11,7 +11,7 @@
 }
 
 .dropdown-item.selected {
-  @apply bg-mb-red-15 dark:bg-mb-red-35;
+  @apply bg-blue-300-15 dark:bg-blue-100-35;
 }
 
 .dropdown-icon {

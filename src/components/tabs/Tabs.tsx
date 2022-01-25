@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { MbDropdownMenu } from '../dropdowns/dropdown-menu/DropdownMenu'
+import { MbDropdownMenu, Item } from '../dropdowns/dropdown-menu/DropdownMenu'
 import { EIconName } from '../../consts/icons'
 import { MbIcon } from '../icon/Icon'
-import { MbTab } from './Tab'
+import { MbTab, TabProps } from './Tab'
 
 interface TabsProps extends React.HTMLAttributes<HTMLDivElement> {
   hasFilters?: boolean
@@ -11,50 +11,93 @@ interface TabsProps extends React.HTMLAttributes<HTMLDivElement> {
   onOrderByChange: (selected: string) => void
 }
 
+type TTab = {
+  props: TabProps
+}
+
 export const MbTabs = (props: TabsProps) => {
   const [showOrderOpts, setShowOrderOpts] = useState(false)
   const [selectedOrder, setSelectedOrder] = useState('')
 
   const { children, onTabChange, onOrderByChange, activeIndex } = props
 
-  const options = [
+  const options: Item[] = [
     {
       text: 'Newest',
       onClick: () => {
-        setShowOrderOpts(!showOrderOpts)
-        setSelectedOrder('Newest')
-        onOrderByChange('Newest')
+        handleOptionSelect('Newest')
       },
+      selected: selectedOrder === 'Newest',
+      icon:
+        selectedOrder === 'Newest' ? (
+          <MbIcon
+            name={EIconName.CHECK}
+            color={'blue-300'}
+            darkColor={'blue-100'}
+            size="16px"
+          />
+        ) : undefined,
     },
     {
       text: 'Oldest',
       onClick: () => {
-        setShowOrderOpts(!showOrderOpts)
-        setSelectedOrder('Oldest')
-        onOrderByChange('Oldest')
+        handleOptionSelect('Oldest')
       },
+      selected: selectedOrder === 'Oldest',
+      icon:
+        selectedOrder === 'Oldest' ? (
+          <MbIcon
+            name={EIconName.CHECK}
+            color={'blue-300'}
+            darkColor={'blue-100'}
+            size="16px"
+          />
+        ) : undefined,
     },
     {
       text: 'Cheapest',
       onClick: () => {
-        setShowOrderOpts(!showOrderOpts)
-        setSelectedOrder('Cheapest')
-        onOrderByChange('Cheapest')
+        handleOptionSelect('Cheapest')
       },
+      selected: selectedOrder === 'Cheapest',
+      icon:
+        selectedOrder === 'Cheapest' ? (
+          <MbIcon
+            name={EIconName.CHECK}
+            color={'blue-300'}
+            darkColor={'blue-100'}
+            size="16px"
+          />
+        ) : undefined,
     },
     {
       text: 'Most expensive',
       onClick: () => {
-        setShowOrderOpts(!showOrderOpts)
-        setSelectedOrder('Most expensive')
-        onOrderByChange('Most expensive')
+        handleOptionSelect('Most expensive')
       },
+      selected: selectedOrder === 'Most expensive',
+      icon:
+        selectedOrder === 'Most expensive' ? (
+          <MbIcon
+            name={EIconName.CHECK}
+            color={'blue-300'}
+            darkColor={'blue-100'}
+            size="16px"
+          />
+        ) : undefined,
     },
   ]
 
+  const handleOptionSelect = (option: string) => {
+    setShowOrderOpts(!showOrderOpts)
+    let auxOption = option === selectedOrder ? '' : option
+    setSelectedOrder(auxOption)
+    onOrderByChange(auxOption)
+  }
+
   const getExtraFiltersIndex = (array: any) => {
     let indexes: number[] = []
-    array.map((tab: { props: { extraFilter: string } }, index: number) => {
+    array.map((tab: TTab, index: number) => {
       if (tab.props.extraFilter) indexes.push(index)
     })
 
@@ -62,11 +105,9 @@ export const MbTabs = (props: TabsProps) => {
   }
 
   const allTabs = React.Children.map(children, (child: any) => child)
-  const tabsTitle = allTabs?.map((tab) => tab.props.title)
-  const tabsContent = allTabs?.map((tab) => tab.props.children)
+  const tabsTitle = allTabs?.map((tab: TTab) => tab.props.title)
+  const tabsContent = allTabs?.map((tab: TTab) => tab.props.children)
   const tabsWithExtraFilter = getExtraFiltersIndex(allTabs)
-
-  console.log(tabsWithExtraFilter)
 
   if (!children || !allTabs) return <></>
 
