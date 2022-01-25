@@ -4,6 +4,7 @@ import './tab.css'
 export interface TabProps extends React.HTMLAttributes<HTMLDivElement> {
   isActive?: boolean
   extraFilter?: string
+  onExtraFilterChange?: (isSelected: boolean) => void
 }
 
 export const MbTab = (props: TabProps) => {

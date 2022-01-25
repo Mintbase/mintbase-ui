@@ -18,7 +18,11 @@ const Template: ComponentStory<typeof MbTabs> = (args) => {
         onTabChange={(tab) => setTab(tab)}
         onOrderByChange={(selectedOrder) => console.log(selectedOrder)}
       >
-        <MbTab title="NFTs" extraFilter="Show only listed">
+        <MbTab
+          title="NFTs"
+          extraFilter="Show only listed"
+          onExtraFilterChange={(value) => console.log(value)}
+        >
           List of NFTs
         </MbTab>
         <MbTab title="Active auctions">List of active auctions</MbTab>

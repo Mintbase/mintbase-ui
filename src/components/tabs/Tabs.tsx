@@ -18,6 +18,7 @@ type TTab = {
 export const MbTabs = (props: TabsProps) => {
   const [showOrderOpts, setShowOrderOpts] = useState(false)
   const [selectedOrder, setSelectedOrder] = useState('')
+  const [selectedFilter, setSelectedFilter] = useState(false)
 
   const { children, onTabChange, onOrderByChange, activeIndex } = props
 
@@ -138,22 +139,29 @@ export const MbTabs = (props: TabsProps) => {
           <div className="flex items-center space-x-12 sm:space-x-24">
             {tabsWithExtraFilter?.length &&
               tabsWithExtraFilter.map((tabIndex) => {
+                const currentTab: TTab = allTabs[tabIndex]
+                const { extraFilter, onExtraFilterChange } = currentTab.props
                 if (tabIndex === activeIndex) {
                   return (
                     <li
                       className={`order-by ${
-                        selectedOrder ? 'selected' : 'unselected'
+                        selectedFilter ? 'selected' : 'unselected'
                       }`}
+                      onClick={() => {
+                        if (!onExtraFilterChange) return
+                        setSelectedFilter(!selectedFilter)
+                        onExtraFilterChange(!selectedFilter)
+                      }}
                     >
                       <div className="flex p-12 sm:p-16 items-center">
                         <div
                           className={`${
-                            selectedOrder
+                            selectedFilter
                               ? 'text-mb-red'
                               : 'text-blue-300 dark:text-blue-100'
                           } p-med-90 pr-10 whitespace-nowrap`}
                         >
-                          {allTabs[tabIndex].props.extraFilter}
+                          {extraFilter}
                         </div>
                       </div>
                     </li>
