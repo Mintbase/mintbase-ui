@@ -8,17 +8,22 @@ interface TabsProps extends React.HTMLAttributes<HTMLDivElement> {
   hasFilters?: boolean
   activeIndex: number
   onTabChange: (index: number) => void
+  onOrderByChange: (selected: string) => void
 }
 
 export const MbTabs = (props: TabsProps) => {
   const [showOrderOpts, setShowOrderOpts] = useState(false)
   const [selectedOrder, setSelectedOrder] = useState('')
+
+  const { children, onTabChange, onOrderByChange, activeIndex } = props
+
   const options = [
     {
       text: 'Newest',
       onClick: () => {
         setShowOrderOpts(!showOrderOpts)
         setSelectedOrder('Newest')
+        onOrderByChange('Newest')
       },
     },
     {
@@ -26,6 +31,7 @@ export const MbTabs = (props: TabsProps) => {
       onClick: () => {
         setShowOrderOpts(!showOrderOpts)
         setSelectedOrder('Oldest')
+        onOrderByChange('Oldest')
       },
     },
     {
@@ -33,6 +39,7 @@ export const MbTabs = (props: TabsProps) => {
       onClick: () => {
         setShowOrderOpts(!showOrderOpts)
         setSelectedOrder('Cheapest')
+        onOrderByChange('Cheapest')
       },
     },
     {
@@ -40,11 +47,10 @@ export const MbTabs = (props: TabsProps) => {
       onClick: () => {
         setShowOrderOpts(!showOrderOpts)
         setSelectedOrder('Most expensive')
+        onOrderByChange('Most expensive')
       },
     },
   ]
-
-  const { children, onTabChange, activeIndex } = props
 
   if (!children) return <></>
   const allTabs = React.Children.map(children, (child: any) => child)
