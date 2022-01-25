@@ -100,39 +100,37 @@ export const MbTabs = (props: TabsProps) => {
               </div>
             </li>
 
-            {props.hasFilters && (
-              <li
-                className={`order-by ${
-                  selectedOrder ? 'selected' : 'unselected'
-                } relative`}
+            <li
+              className={`order-by ${
+                selectedOrder ? 'selected' : 'unselected'
+              } relative`}
+            >
+              <div
+                className="flex p-12 sm:p-16 items-center"
+                onClick={() => setShowOrderOpts(!showOrderOpts)}
               >
                 <div
-                  className="flex p-12 sm:p-16 items-center"
-                  onClick={() => setShowOrderOpts(!showOrderOpts)}
+                  className={`${
+                    selectedOrder
+                      ? 'text-mb-red'
+                      : 'text-blue-300 dark:text-blue-100'
+                  } p-med-90 pr-10 whitespace-nowrap`}
                 >
-                  <div
-                    className={`${
-                      selectedOrder
-                        ? 'text-mb-red'
-                        : 'text-blue-300 dark:text-blue-100'
-                    } p-med-90 pr-10 whitespace-nowrap`}
-                  >
-                    {selectedOrder ? selectedOrder : 'Order By'}
-                  </div>
-                  <MbIcon
-                    name={EIconName.ARROW_DROP_DOWN}
-                    size="16px"
-                    color="blue-300"
-                    darkColor="blue-100"
-                  />
+                  {selectedOrder ? selectedOrder : 'Order By'}
                 </div>
-                <MbDropdownMenu
-                  isOpen={showOrderOpts}
-                  items={options}
-                  className="center-pos hidden md:block"
+                <MbIcon
+                  name={EIconName.ARROW_DROP_DOWN}
+                  size="16px"
+                  color="blue-300"
+                  darkColor="blue-100"
                 />
-              </li>
-            )}
+              </div>
+              <MbDropdownMenu
+                isOpen={showOrderOpts}
+                items={options}
+                className="center-pos hidden md:block"
+              />
+            </li>
           </div>
         </ul>
         <MbDropdownMenu
