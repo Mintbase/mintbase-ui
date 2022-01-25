@@ -48,66 +48,60 @@ export const MbTabs = (props: TabsProps) => {
   const tabsTitle = allTabs?.map((tab) => tab.props.title)
   const tabsContent = allTabs?.map((tab) => tab.props.children)
 
-  return (
-    <>
-      <div className="flex bg-gray-50 dark:bg-gray-800 md:px-64 overflow-scroll no-scrollbar">
-        <div className="flex justify-center md:justify-start items-center space-x-12 sm:space-x-24">
-          {tabsTitle?.length &&
-            tabsTitle.map((title, index) => (
-              <>
-                <div
-                  onClick={() => {
-                    setSelectedOrder('')
-                    setSelectedTab(index)
-                  }}
-                  key={index}
-                >
-                  <MbTab isActive={index === selectedTab} title={title}></MbTab>
-                </div>
-              </>
-            ))}
-        </div>
-        <div className="ml-auto flex items-center">
-          <div className="w-0.5 bg-gray-200 dark:bg-gray-600 h-8 rounded sm:hidden mx-12"></div>
-          {props.hasFilters && (
-            <div
-              className={`order-by ${
-                selectedOrder ? 'selected' : 'unselected'
-              }`}
-            >
-              <div
-                className="flex p-12 sm:p-16 items-center"
-                onClick={() => setShowOrderOpts(!showOrderOpts)}
-              >
-                <div
-                  className={`${
-                    selectedOrder
-                      ? 'text-mb-red'
-                      : 'text-blue-300 dark:text-blue-100'
-                  } p-med-90 pr-10 whitespace-nowrap`}
-                >
-                  {selectedOrder ? selectedOrder : 'Order By'}
-                </div>
-                <MbIcon
-                  name={EIconName.ARROW_DROP_DOWN}
-                  size="16px"
-                  color="blue-300"
-                  darkColor="blue-100"
-                />
-              </div>
-            </div>
-          )}
-        </div>
-      </div>
-      <MbDropdownMenu
-        isOpen={showOrderOpts}
-        items={options}
-        className="center-sub-menu"
-      />
-      {tabsContent?.length &&
-        tabsContent?.map((content, index) => {
-          return index === selectedTab && <div>{content}</div>
-        })}
-    </>
+  return (<></>
+    // <>
+    //   <div className="inline-flex justify-between bg-gray-50 dark:bg-gray-800 md:px-64 overflow-scroll no-scrollbar">
+    //     <div className="flex justify-center md:justify-start items-center space-x-12 sm:space-x-24">
+    //       {tabsTitle?.length &&
+    //         tabsTitle.map((title, index) => (
+    //           <>
+    //             <div
+    //               onClick={() => {
+    //                 setSelectedOrder('')
+    //                 setSelectedTab(index)
+    //               }}
+    //               key={index}
+    //             >
+    //               <MbTab isActive={index === selectedTab} title={title}></MbTab>
+    //             </div>
+    //           </>
+    //         ))}
+    //     </div>
+    //     <div className="relative inline-flex">
+    //       <div className="w-0.5 bg-gray-200 dark:bg-gray-600 h-8 rounded sm:hidden mx-12"></div>
+    //       {props.hasFilters && (
+    //         <div>
+    //           <div
+    //             className={`order-by ${
+    //               selectedOrder ? 'selected' : 'unselected'
+    //             }`}
+    //           >
+    //             <div
+    //               className="flex p-12 sm:p-16 items-center"
+    //               onClick={() => setShowOrderOpts(!showOrderOpts)}
+    //             >
+    //               <div
+    //                 className={`${
+    //                   selectedOrder
+    //                     ? 'text-mb-red'
+    //                     : 'text-blue-300 dark:text-blue-100'
+    //                 } p-med-90 pr-10 whitespace-nowrap`}
+    //               >
+    //                 {selectedOrder ? selectedOrder : 'Order By'}
+    //               </div>
+    //               <MbIcon
+    //                 name={EIconName.ARROW_DROP_DOWN}
+    //                 size="16px"
+    //                 color="blue-300"
+    //                 darkColor="blue-100"
+    //               />
+    //             </div>
+    //           </div>
+    //           <MbDropdownMenu isOpen={showOrderOpts} items={options} />
+    //         </div>
+    //       )}
+    //     </div>
+    //   </div>
+    // </>
   )
 }
