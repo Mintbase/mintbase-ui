@@ -18,10 +18,10 @@ export const MbDropdownMenu = ({
   className?: string
 }) => {
   return !isOpen ? null : (
-    <div className={`dropdown-menu ${className}`}>
+    <ul className={`dropdown-menu ${className}`}>
       {items.map(({ text, icon, onClick }, index) => {
         return (
-          <div
+          <li
             key={`${text}-${index}`}
             className={'dropdown-item'}
             onClick={onClick}
@@ -32,9 +32,9 @@ export const MbDropdownMenu = ({
               {text}
             </MbText>
             {icon && <div className={'dropdown-icon'}>{icon}</div>}
-          </div>
+          </li>
         )
       })}
-    </div>
+    </ul>
   )
 }
