@@ -49,55 +49,36 @@ export const MbTabs = (props: TabsProps) => {
   const tabsContent = allTabs?.map((tab) => tab.props.children)
 
   return (
-    <div className="relative md:initial">
-      <ul className="flex justify-between bg-gray-50 dark:bg-gray-800 px-24 md:px-64 overflow-x-scroll md:overflow-visible no-scrollbar">
-        {tabsTitle?.length && (
-          <div className="flex items-center space-x-12 sm:space-x-24">
-            {tabsTitle.map((title, index) => (
-              <li
-                onClick={() => {
-                  setSelectedOrder('')
-                  setSelectedTab(index)
-                }}
-                key={index}
-              >
-                <MbTab isActive={index === selectedTab} title={title}></MbTab>
-              </li>
-            ))}
-          </div>
-        )}
-
-        <li className="flex items-center mx-12 md:hidden">
-          <div className="w-0.5 bg-gray-200 dark:bg-gray-600 h-8 rounded"></div>
-        </li>
-
-        <div className="flex items-center space-x-12 sm:space-x-24">
-          <li
-            className={`order-by ${selectedOrder ? 'selected' : 'unselected'}`}
-          >
-            <div className="flex p-12 sm:p-16 items-center">
-              <div
-                className={`${
-                  selectedOrder
-                    ? 'text-mb-red'
-                    : 'text-blue-300 dark:text-blue-100'
-                } p-med-90 pr-10 whitespace-nowrap`}
-              >
-                Show Only Listed
-              </div>
+    <>
+      <div className="relative md:initial">
+        <ul className="flex justify-between bg-gray-50 dark:bg-gray-800 px-24 md:px-64 overflow-x-scroll md:overflow-visible no-scrollbar">
+          {tabsTitle?.length && (
+            <div className="flex items-center space-x-12 sm:space-x-24">
+              {tabsTitle.map((title, index) => (
+                <li
+                  onClick={() => {
+                    setSelectedOrder('')
+                    setSelectedTab(index)
+                  }}
+                  key={index}
+                >
+                  <MbTab isActive={index === selectedTab} title={title}></MbTab>
+                </li>
+              ))}
             </div>
+          )}
+
+          <li className="flex items-center mx-12 md:hidden">
+            <div className="w-0.5 bg-gray-200 dark:bg-gray-600 h-8 rounded"></div>
           </li>
 
-          {props.hasFilters && (
+          <div className="flex items-center space-x-12 sm:space-x-24">
             <li
               className={`order-by ${
                 selectedOrder ? 'selected' : 'unselected'
-              } relative`}
+              }`}
             >
-              <div
-                className="flex p-12 sm:p-16 items-center"
-                onClick={() => setShowOrderOpts(!showOrderOpts)}
-              >
+              <div className="flex p-12 sm:p-16 items-center">
                 <div
                   className={`${
                     selectedOrder
@@ -105,29 +86,56 @@ export const MbTabs = (props: TabsProps) => {
                       : 'text-blue-300 dark:text-blue-100'
                   } p-med-90 pr-10 whitespace-nowrap`}
                 >
-                  {selectedOrder ? selectedOrder : 'Order By'}
+                  Show Only Listed
                 </div>
-                <MbIcon
-                  name={EIconName.ARROW_DROP_DOWN}
-                  size="16px"
-                  color="blue-300"
-                  darkColor="blue-100"
-                />
               </div>
-              <MbDropdownMenu
-                isOpen={showOrderOpts}
-                items={options}
-                className="center-pos hidden md:block"
-              />
             </li>
-          )}
-        </div>
-      </ul>
-      <MbDropdownMenu
-        isOpen={showOrderOpts}
-        items={options}
-        className="right-0 md:hidden"
-      />
-    </div>
+
+            {props.hasFilters && (
+              <li
+                className={`order-by ${
+                  selectedOrder ? 'selected' : 'unselected'
+                } relative`}
+              >
+                <div
+                  className="flex p-12 sm:p-16 items-center"
+                  onClick={() => setShowOrderOpts(!showOrderOpts)}
+                >
+                  <div
+                    className={`${
+                      selectedOrder
+                        ? 'text-mb-red'
+                        : 'text-blue-300 dark:text-blue-100'
+                    } p-med-90 pr-10 whitespace-nowrap`}
+                  >
+                    {selectedOrder ? selectedOrder : 'Order By'}
+                  </div>
+                  <MbIcon
+                    name={EIconName.ARROW_DROP_DOWN}
+                    size="16px"
+                    color="blue-300"
+                    darkColor="blue-100"
+                  />
+                </div>
+                <MbDropdownMenu
+                  isOpen={showOrderOpts}
+                  items={options}
+                  className="center-pos hidden md:block"
+                />
+              </li>
+            )}
+          </div>
+        </ul>
+        <MbDropdownMenu
+          isOpen={showOrderOpts}
+          items={options}
+          className="right-0 md:hidden"
+        />
+      </div>
+      {tabsContent?.length &&
+        tabsContent?.map((content, index) => {
+          return index === selectedTab && <div>{content}</div>
+        })}
+    </>
   )
 }
