@@ -50,22 +50,25 @@ export const MbTabs = (props: TabsProps) => {
 
   return (
     <>
-      <ul className="flex items-center space-x-12 sm:space-x-24 bg-gray-50 dark:bg-gray-800 md:px-64 overflow-x-scroll sm:overflow-visible no-scrollbar">
-        {tabsTitle?.length &&
-          tabsTitle.map((title, index) => (
-            <li
-              onClick={() => {
-                setSelectedOrder('')
-                setSelectedTab(index)
-              }}
-              key={index}
-            >
-              <MbTab isActive={index === selectedTab} title={title}></MbTab>
-            </li>
-          ))}
+      <ul className="flex items-center justify-between space-x-12 sm:space-x-24 bg-gray-50 dark:bg-gray-800 px-24 md:px-64">
+        {tabsTitle?.length && (
+          <div className="flex items-center space-x-12 sm:space-x-24 overflow-x-scroll sm:overflow-visible no-scrollbar">
+            {tabsTitle.map((title, index) => (
+              <li
+                onClick={() => {
+                  setSelectedOrder('')
+                  setSelectedTab(index)
+                }}
+                key={index}
+              >
+                <MbTab isActive={index === selectedTab} title={title}></MbTab>
+              </li>
+            ))}
+          </div>
+        )}
 
         <li className="flex items-center">
-          <div className="w-0.5 bg-gray-200 dark:bg-gray-600 h-8 rounded sm:hidden mx-12"></div>
+          <div className="w-0.5 bg-gray-200 dark:bg-gray-600 h-8 rounded sm:hidden"></div>
         </li>
 
         <li
@@ -93,7 +96,7 @@ export const MbTabs = (props: TabsProps) => {
               darkColor="blue-100"
             />
           </div>
-          <MbDropdownMenu isOpen={showOrderOpts} items={options} />
+          <MbDropdownMenu isOpen={showOrderOpts} items={options} className='left-0' />
         </li>
       </ul>
     </>
