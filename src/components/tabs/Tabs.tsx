@@ -44,8 +44,10 @@ export const MbTabs = (props: TabsProps) => {
     },
   ]
 
-  if (!props.children) return <></>
-  const allTabs = React.Children.map(props.children, (child: any) => child)
+  const { children, onTabChange, activeIndex } = props
+
+  if (!children) return <></>
+  const allTabs = React.Children.map(children, (child: any) => child)
   const tabsTitle = allTabs?.map((tab) => tab.props.title)
   const tabsContent = allTabs?.map((tab) => tab.props.children)
 
@@ -59,14 +61,11 @@ export const MbTabs = (props: TabsProps) => {
                 <li
                   onClick={() => {
                     setSelectedOrder('')
-                    props.onTabChange(index)
+                    onTabChange(index)
                   }}
                   key={index}
                 >
-                  <MbTab
-                    isActive={index === props.activeIndex}
-                    title={title}
-                  ></MbTab>
+                  <MbTab isActive={index === activeIndex} title={title}></MbTab>
                 </li>
               ))}
             </div>
@@ -138,7 +137,7 @@ export const MbTabs = (props: TabsProps) => {
       </div>
       {tabsContent?.length &&
         tabsContent?.map((content, index) => {
-          return index === props.activeIndex && <div>{content}</div>
+          return index === activeIndex && <div>{content}</div>
         })}
     </>
   )
