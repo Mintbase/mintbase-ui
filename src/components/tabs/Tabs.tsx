@@ -48,7 +48,55 @@ export const MbTabs = (props: TabsProps) => {
   const tabsTitle = allTabs?.map((tab) => tab.props.title)
   const tabsContent = allTabs?.map((tab) => tab.props.children)
 
-  return (<></>
+  return (
+    <>
+      <ul className="flex space-x-12 sm:space-x-24 bg-gray-50 dark:bg-gray-800 md:px-64 overflow-x-scroll sm:overflow-visible no-scrollbar">
+        {tabsTitle?.length &&
+          tabsTitle.map((title, index) => (
+            <li
+              onClick={() => {
+                setSelectedOrder('')
+                setSelectedTab(index)
+              }}
+              key={index}
+            >
+              <MbTab isActive={index === selectedTab} title={title}></MbTab>
+            </li>
+          ))}
+
+        <li className="flex items-center">
+          <div className="w-0.5 bg-gray-200 dark:bg-gray-600 h-8 rounded sm:hidden mx-12"></div>
+        </li>
+
+        <li
+          className={`order-by ${
+            selectedOrder ? 'selected' : 'unselected'
+          } relative justify-end`}
+        >
+          <div
+            className="flex p-12 sm:p-16 items-center"
+            onClick={() => setShowOrderOpts(!showOrderOpts)}
+          >
+            <div
+              className={`${
+                selectedOrder
+                  ? 'text-mb-red'
+                  : 'text-blue-300 dark:text-blue-100'
+              } p-med-90 pr-10 whitespace-nowrap`}
+            >
+              {selectedOrder ? selectedOrder : 'Order By'}
+            </div>
+            <MbIcon
+              name={EIconName.ARROW_DROP_DOWN}
+              size="16px"
+              color="blue-300"
+              darkColor="blue-100"
+            />
+          </div>
+          <MbDropdownMenu isOpen={showOrderOpts} items={options} />
+        </li>
+      </ul>
+    </>
     // <>
     //   <div className="inline-flex justify-between bg-gray-50 dark:bg-gray-800 md:px-64 overflow-scroll no-scrollbar">
     //     <div className="flex justify-center md:justify-start items-center space-x-12 sm:space-x-24">
