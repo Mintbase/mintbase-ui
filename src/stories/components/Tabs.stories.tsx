@@ -1,4 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { useState } from 'react'
 import { MbTab } from '../../components/tabs/Tab'
 import { MbTabs } from '../../components/tabs/Tabs'
 
@@ -8,15 +9,18 @@ export default {
   argTypes: {},
 } as ComponentMeta<typeof MbTabs>
 
-const Template: ComponentStory<typeof MbTabs> = (args) => (
-  <>
-    <MbTabs {...args}>
-      <MbTab title="Active auctions">List of active auctions</MbTab>
-      <MbTab title="Active stores">List of active stores</MbTab>
-      <MbTab title="Latest Listings">List of latest listings</MbTab>
-    </MbTabs>
-  </>
-)
+const Template: ComponentStory<typeof MbTabs> = (args) => {
+  const [tab, setTab] = useState(0)
+  return (
+    <>
+      <MbTabs activeIndex={tab} onTabChange={(tab) => setTab(tab)}>
+        <MbTab title="Active auctions">List of active auctions</MbTab>
+        <MbTab title="Active stores">List of active stores</MbTab>
+        <MbTab title="Latest Listings">List of latest listings</MbTab>
+      </MbTabs>
+    </>
+  )
+}
 
 export const Tabs = Template.bind({})
 
