@@ -21,8 +21,11 @@ const Template: ComponentStory<typeof MbTabs> = (args) => {
         <MbTab title="NFTs" extraFilter="Show only listed">
           List of NFTs
         </MbTab>
-        <MbTab title="Active auctions"> List of active auctions</MbTab>
-        <MbTab title="Latest Listings">List of latest listings</MbTab>
+        <MbTab title="Active auctions" extraFilter="Show only jh">
+          {' '}
+          List of active auctions
+        </MbTab>
+        <MbTab title="Latest Listings" extraFilter="Show  jh">List of latest listings</MbTab>
       </MbTabs>
     </>
   )

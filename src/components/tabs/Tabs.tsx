@@ -52,10 +52,23 @@ export const MbTabs = (props: TabsProps) => {
     },
   ]
 
-  if (!children) return <></>
+  const getExtraFiltersIndex = (array: any) => {
+    let indexes: number[] = []
+    array.map((tab: { props: { extraFilter: string } }, index: number) => {
+      if (tab.props.extraFilter) indexes.push(index)
+    })
+
+    return indexes
+  }
+
   const allTabs = React.Children.map(children, (child: any) => child)
   const tabsTitle = allTabs?.map((tab) => tab.props.title)
   const tabsContent = allTabs?.map((tab) => tab.props.children)
+  const tabsWithExtraFilter = getExtraFiltersIndex(allTabs)
+
+  console.log(tabsWithExtraFilter)
+
+  if (!children || !allTabs) return <></>
 
   return (
     <>
@@ -82,23 +95,30 @@ export const MbTabs = (props: TabsProps) => {
           </li>
 
           <div className="flex items-center space-x-12 sm:space-x-24">
-            <li
-              className={`order-by ${
-                selectedOrder ? 'selected' : 'unselected'
-              }`}
-            >
-              <div className="flex p-12 sm:p-16 items-center">
-                <div
-                  className={`${
-                    selectedOrder
-                      ? 'text-mb-red'
-                      : 'text-blue-300 dark:text-blue-100'
-                  } p-med-90 pr-10 whitespace-nowrap`}
-                >
-                  Show Only Listed
-                </div>
-              </div>
-            </li>
+            {tabsWithExtraFilter?.length &&
+              tabsWithExtraFilter.map((tabIndex) => {
+                if (tabIndex === activeIndex) {
+                  return (
+                    <li
+                      className={`order-by ${
+                        selectedOrder ? 'selected' : 'unselected'
+                      }`}
+                    >
+                      <div className="flex p-12 sm:p-16 items-center">
+                        <div
+                          className={`${
+                            selectedOrder
+                              ? 'text-mb-red'
+                              : 'text-blue-300 dark:text-blue-100'
+                          } p-med-90 pr-10 whitespace-nowrap`}
+                        >
+                          {allTabs[tabIndex].props.extraFilter}
+                        </div>
+                      </div>
+                    </li>
+                  )
+                }
+              })}
 
             <li
               className={`order-by ${
