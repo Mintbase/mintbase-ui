@@ -151,6 +151,7 @@ export const MbTabs = (props: TabsProps) => {
                         setSelectedFilter(!selectedFilter)
                         onExtraFilterChange(!selectedFilter)
                       }}
+                      key={tabIndex}
                     >
                       <div className="flex p-12 sm:p-16 items-center">
                         <div
@@ -209,7 +210,7 @@ export const MbTabs = (props: TabsProps) => {
       </div>
       {tabsContent?.length &&
         tabsContent?.map((content, index) => {
-          return index === activeIndex && <div>{content}</div>
+          return index === activeIndex && <div key={index}>{content}</div>
         })}
     </>
   )
