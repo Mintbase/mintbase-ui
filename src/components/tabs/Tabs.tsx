@@ -5,7 +5,6 @@ import { MbIcon } from '../icon/Icon'
 import { MbTab, TabProps } from './Tab'
 
 interface TabsProps extends React.HTMLAttributes<HTMLDivElement> {
-  hasFilters?: boolean
   activeIndex: number
   onTabChange: (index: number) => void
   onOrderByChange: (selected: string) => void
