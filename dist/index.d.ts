@@ -304,6 +304,7 @@ interface InputAccountProps {
     inputList: TInputListGroup[];
     footerTitle: string;
     leftFooterContent?: JSX.Element;
+    fieldPercentageLabel?: boolean;
     removeInputHandler: (index: number) => void;
     accountInputChangeHandler: (e: any, index: number) => void;
     amountInputChangeHandler?: (e: any, index: number) => void;
