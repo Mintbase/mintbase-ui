@@ -4,6 +4,7 @@ export interface MbStatefulButtonProps {
   indicator: JSX.Element
   content: JSX.Element
   className?: string
+  hasEmptyStatus?: boolean
   onClick?: React.MouseEventHandler<HTMLDivElement>
 }
 
@@ -11,11 +12,17 @@ export const MbStatefulButton = ({
   indicator,
   content,
   className = '',
+  hasEmptyStatus = false,
   onClick,
 }: MbStatefulButtonProps) => {
+  console.log(hasEmptyStatus)
   return (
     <div
-      className={`flex p-12 justify-center text-black dark:text-white items-center rounded-md bg-gray-100 hover:bg-gray-150 dark:hover:bg-gray-900 dark:bg-gray-800 select-none cursor-pointer transition-all duration-500 ${className}`}
+      className={`flex p-12 justify-center items-center rounded-md select-none ${
+        hasEmptyStatus
+          ? 'dark:bg-white dark:text-black bg-black text-white hover:bg-blue-300 dark:hover:bg-blue-100'
+          : 'bg-gray-100 hover:bg-blue-300-15 dark:hover:bg-blue-100-15 dark:bg-gray-800 text-black dark:text-white'
+      }  cursor-pointer transition-all duration-500 ${className}`}
       onClick={onClick}
     >
       {indicator}
