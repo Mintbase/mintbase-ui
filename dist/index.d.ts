@@ -198,7 +198,6 @@ interface TabProps extends React$1.HTMLAttributes<HTMLDivElement> {
 declare const MbTab: (props: TabProps) => JSX.Element;
 
 interface TabsProps extends React$1.HTMLAttributes<HTMLDivElement> {
-    hasFilters?: boolean;
     activeIndex: number;
     onTabChange: (index: number) => void;
     onOrderByChange: (selected: string) => void;
