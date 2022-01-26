@@ -49,7 +49,7 @@ export const MbInputAccount = (props: InputAccountProps) => {
 
   return (
     <main>
-      <section className="p-24 h-72 overflow-scroll">
+      <section className="h-72 overflow-scroll">
         <header>
           <p className="p-big-90 text-gray-700 dark:text-gray-300 mb-16">
             {subtitle}
