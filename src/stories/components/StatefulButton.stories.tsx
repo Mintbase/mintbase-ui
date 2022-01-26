@@ -45,8 +45,8 @@ AccountDisconnected.args = {
   ),
 }
 
-export const NetworkNEAR = Template.bind({})
-NetworkNEAR.args = {
+export const NetworkNEARTESTNET = Template.bind({})
+NetworkNEARTESTNET.args = {
   indicator: <div className={'w-3 h-3 rounded-full bg-yellow-500'} />,
   content: (
     <MbText className={'ml-8 p-small-90 align-center tracking-wider'}>
@@ -55,8 +55,8 @@ NetworkNEAR.args = {
   )
 }
 
-export const NetworkNEARTESNET = Template.bind({})
-NetworkNEARTESNET.args = {
+export const NetworkNEARMAINNET = Template.bind({})
+NetworkNEARMAINNET.args = {
   indicator: <div className={'w-3 h-3 rounded-full bg-green-500'} />,
   content: (
     <MbText className={'ml-8 p-small-90 align-center tracking-wider'}>
