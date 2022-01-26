@@ -15,7 +15,6 @@ export const MbStatefulButton = ({
   hasEmptyStatus = false,
   onClick,
 }: MbStatefulButtonProps) => {
-  console.log(hasEmptyStatus)
   return (
     <div
       className={`flex p-12 justify-center items-center rounded-md select-none ${
