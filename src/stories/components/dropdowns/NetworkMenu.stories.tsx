@@ -56,7 +56,7 @@ const DropdownMenuAnimated: ComponentStory<typeof MbNetworkMenu> = (args) => {
   )
 
   const Content = (
-    <MbText className={'p-small-90 align-center tracking-wider'}>
+    <MbText className={'p-small-90 align-center tracking-widest'}>
       {selectedOption.label}
     </MbText>
   )
