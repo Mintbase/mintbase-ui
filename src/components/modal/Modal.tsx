@@ -1,6 +1,7 @@
 import { MbIcon } from '../icon/Icon'
 import { EIconName } from '../../consts/icons'
 import './modal.css'
+import { useEffect } from 'react'
 
 interface ModalProps extends React.HTMLAttributes<HTMLDivElement> {
   title: string
@@ -9,11 +10,19 @@ interface ModalProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 export const MbModal = (props: ModalProps) => {
   const { open, onClose, title, children } = props
+
+  useEffect(() => {
+    if (open) {
+      document.body.classList.add('overflow-hidden')
+    } else {
+      document.body.classList.remove('overflow-hidden')
+    }
+  }, [open])
   return (
     <>
       {open && (
         <>
-          <div className="fixed inset-0 bg-gray-150 dark:border-gray-700 bg-opacity-50 overflow-y-auto h-full w-full"></div>
+          <div className="fixed inset-0 bg-black bg-opacity-75 overflow-y-auto h-full w-full z-50"></div>
           <div className="modal">
             <section className="modal-section">
               <header className="flex items-center p-24 border-b border-gray-150 dark:border-gray-700 justify-between">
