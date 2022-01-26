@@ -3,12 +3,14 @@
 }
 
 .modal-section {
-  width: 366px;
-  @apply relative my-4 max-w-3xl bg-white dark:bg-gray-850 rounded dark:text-white;
+  min-height: 300px;
+  @apply relative my-4 max-w-3xl bg-white dark:bg-gray-850 rounded dark:text-white mx-24;
 }
 
-@screen sm {
+@screen md {
   .modal-section {
-    width: 528px;
+    @apply mx-0;
+    width: 600px;
+    min-height: 400px;
   }
 }
