@@ -5,6 +5,7 @@ import { MbStatefulButton } from '../../../components/stateful-button/StatefulBu
 import { useState } from 'react'
 import { MbText } from '../../../components/text/Text'
 import { useEffect } from '@storybook/addons'
+import { MbColorIndicator } from '../../..'
 
 export default {
   title: 'Components/Dropdowns/NetworkMenu',
@@ -16,29 +17,17 @@ const options: TNetworkOption[] = [
   {
     label: 'NEAR TESTNET',
     value: 'testnet',
-    indicator: (
-      <div className="flex items-center justify-center w-4 h-4">
-        <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-      </div>
-    ),
+    indicator: <MbColorIndicator childClassName="bg-yellow-500" />,
   },
   {
     label: 'NEAR MAINNET',
     value: 'mainnet',
-    indicator: (
-      <div className="flex items-center justify-center w-4 h-4">
-        <div className="w-3 h-3 rounded-full bg-success-300"></div>
-      </div>
-    ),
+    indicator: <MbColorIndicator childClassName="bg-success-300" />,
   },
   {
     label: 'ETHEREUM',
     value: 'ethereum',
-    indicator: (
-      <div className="flex items-center justify-center w-4 h-4">
-        <div className="w-3 h-3 rounded-full bg-blue-300"></div>
-      </div>
-    ),
+    indicator: <MbColorIndicator childClassName="bg-blue-300" />,
   },
 ]
 
@@ -77,8 +66,6 @@ const DropdownMenuAnimated: ComponentStory<typeof MbNetworkMenu> = (args) => {
     </MbText>
   )
 
-  const Indicator = selectedOption.indicator
-
   const handleMenuChange = (selected: string) => {
     setSelectedOption(options.find((opt) => opt.value === selected))
     setIsMenuOpen(!isMenuOpen)
@@ -88,7 +75,7 @@ const DropdownMenuAnimated: ComponentStory<typeof MbNetworkMenu> = (args) => {
     <div className="inline-block">
       <MbStatefulButton
         className="space-x-12"
-        indicator={Indicator}
+        indicator={selectedOption.indicator}
         content={Content}
         onClick={() => setIsMenuOpen(!isMenuOpen)}
       />
