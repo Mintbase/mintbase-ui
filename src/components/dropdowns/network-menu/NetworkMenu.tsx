@@ -34,8 +34,8 @@ export const MbNetworkMenu = (props: NetworkMenuProps) => {
           onClick={() => onOptionChange(option.value)}
           key={option.value}
         >
-          <div className={`w-3 h-3 rounded-full ${option.indicatorColor}`} />
-          <MbText className={'p-small-90 align-center tracking-wider'}>
+          {option.indicator}
+          <MbText className={'p-small-130 align-center tracking-widest'}>
             {option.label}
           </MbText>
         </div>
