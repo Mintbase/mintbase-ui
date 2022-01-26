@@ -62,7 +62,11 @@ const DropdownMenuAnimated: ComponentStory<typeof MbNetworkMenu> = (args) => {
   )
 
   const Indicator = (
-    <div className={`w-3 h-3 rounded-full ${selectedOption.indicatorColor}`} />
+    <div className="flex items-center justify-center w-4 h-4">
+      <div
+        className={`w-3 h-3 rounded-full ${selectedOption.indicatorColor}`}
+      ></div>
+    </div>
   )
 
   const handleMenuChange = (selected: string) => {
