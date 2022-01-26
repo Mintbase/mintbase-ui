@@ -1,7 +1,8 @@
 import React from 'react';
 import './tab.css';
-interface TabProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface TabProps extends React.HTMLAttributes<HTMLDivElement> {
     isActive?: boolean;
+    extraFilter?: string;
+    onExtraFilterChange?: (isSelected: boolean) => void;
 }
 export declare const MbTab: (props: TabProps) => JSX.Element;
-export {};

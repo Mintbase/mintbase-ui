@@ -192,11 +192,16 @@ declare const MbTable: (props: TableProps) => JSX.Element;
 
 interface TabProps extends React$1.HTMLAttributes<HTMLDivElement> {
     isActive?: boolean;
+    extraFilter?: string;
+    onExtraFilterChange?: (isSelected: boolean) => void;
 }
 declare const MbTab: (props: TabProps) => JSX.Element;
 
 interface TabsProps extends React$1.HTMLAttributes<HTMLDivElement> {
-    hasFilters: boolean;
+    hasFilters?: boolean;
+    activeIndex: number;
+    onTabChange: (index: number) => void;
+    onOrderByChange: (selected: string) => void;
 }
 declare const MbTabs: (props: TabsProps) => JSX.Element;
 
@@ -218,6 +223,7 @@ declare const MbLogo: ({ src, width, className, }: LogoProps) => JSX.Element;
 
 interface Item {
     text: string;
+    selected?: boolean;
     icon?: JSX.Element;
     onClick: () => void;
 }

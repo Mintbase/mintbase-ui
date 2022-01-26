@@ -2,6 +2,7 @@
 import './dropdownmenu.css';
 export interface Item {
     text: string;
+    selected?: boolean;
     icon?: JSX.Element;
     onClick: () => void;
 }
