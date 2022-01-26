@@ -95,6 +95,7 @@ const Template: ComponentStory<typeof MbInputAccount> = (args) => {
       smallSubtitle="Select up to 25 accounts"
       footerTitle="Add Split"
       footerAction={handleAddClick}
+      fieldPercentageLabel
     />
   )
 }
