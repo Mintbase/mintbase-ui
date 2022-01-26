@@ -14,12 +14,14 @@ const Template: ComponentStory<typeof MbStatefulButton> = ({
   indicator,
   content,
   className,
+  hasEmptyStatus,
 }) => (
   <div className={'flex'}>
     <MbStatefulButton
       className={className}
       indicator={indicator}
       content={content}
+      hasEmptyStatus={hasEmptyStatus}
     />
   </div>
 )
@@ -43,6 +45,7 @@ AccountDisconnected.args = {
   className: 'bg-color-black',
   indicator: <MbIcon name={EIconName.LINK} color={'inherit'} />,
   content: <MbText className={'flex ml-8 p-small-90'}>Connect Wallet</MbText>,
+  hasEmptyStatus: true,
 }
 
 export const NetworkNEARTESTNET = Template.bind({})
