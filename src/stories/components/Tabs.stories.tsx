@@ -34,6 +34,4 @@ const Template: ComponentStory<typeof MbTabs> = (args) => {
 
 export const Tabs = Template.bind({})
 
-Tabs.args = {
-  hasFilters: true,
-}
+Tabs.args = {}

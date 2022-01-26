@@ -49,7 +49,7 @@ export const MbInputAccount = (props: InputAccountProps) => {
 
   return (
     <main>
-      <section className="p-24 h-72 overflow-scroll">
+      <section className="h-72 overflow-scroll">
         <header>
           <p className="p-big-90 text-gray-700 dark:text-gray-300 mb-16">
             {subtitle}
@@ -106,7 +106,7 @@ export const MbInputAccount = (props: InputAccountProps) => {
             })}
         </div>
       </section>
-      <footer className="text-center py-24 sm:py-32 border-t border-gray-150 dark:border-gray-700 flex flex-col sm:flex-row justify-center items-center sm:relative">
+      <footer className="text-center py-24 lg:py-32 border-t border-gray-150 dark:border-gray-700 flex flex-col lg:flex-row justify-center items-center lg:relative">
         <MbAction
           state={
             inputList.length + 1 === maxAmount ? EState.DISABLED : EState.ACTIVE
