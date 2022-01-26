@@ -16,14 +16,30 @@ const options: TNetworkOption[] = [
   {
     label: 'NEAR TESTNET',
     value: 'testnet',
-    indicatorColor: 'bg-yellow-500',
+    indicator: (
+      <div className="flex items-center justify-center w-4 h-4">
+        <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+      </div>
+    ),
   },
   {
     label: 'NEAR MAINNET',
     value: 'mainnet',
-    indicatorColor: 'bg-success-300',
+    indicator: (
+      <div className="flex items-center justify-center w-4 h-4">
+        <div className="w-3 h-3 rounded-full bg-success-300"></div>
+      </div>
+    ),
   },
-  { label: 'ETHEREUM', value: 'ethereum', indicatorColor: 'bg-blue-300' },
+  {
+    label: 'ETHEREUM',
+    value: 'ethereum',
+    indicator: (
+      <div className="flex items-center justify-center w-4 h-4">
+        <div className="w-3 h-3 rounded-full bg-blue-300"></div>
+      </div>
+    ),
+  },
 ]
 
 const Template: ComponentStory<typeof MbNetworkMenu> = (args) => (
@@ -61,13 +77,7 @@ const DropdownMenuAnimated: ComponentStory<typeof MbNetworkMenu> = (args) => {
     </MbText>
   )
 
-  const Indicator = (
-    <div className="flex items-center justify-center w-4 h-4">
-      <div
-        className={`w-3 h-3 rounded-full ${selectedOption.indicatorColor}`}
-      ></div>
-    </div>
-  )
+  const Indicator = selectedOption.indicator
 
   const handleMenuChange = (selected: string) => {
     setSelectedOption(options.find((opt) => opt.value === selected))
