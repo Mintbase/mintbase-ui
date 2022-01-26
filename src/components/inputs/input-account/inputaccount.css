@@ -1,4 +1,4 @@
-@screen sm {
+@screen lg {
   .center-extra-btns {
     @apply absolute  top-1/2;
     right: 24px;
