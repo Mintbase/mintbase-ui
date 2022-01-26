@@ -1,79 +1,178 @@
 import React, { useState } from 'react'
-import { MbDropdownMenu } from '../dropdowns/dropdown-menu/DropdownMenu'
+import { MbDropdownMenu, Item } from '../dropdowns/dropdown-menu/DropdownMenu'
 import { EIconName } from '../../consts/icons'
 import { MbIcon } from '../icon/Icon'
-import { MbTab } from './Tab'
+import { MbTab, TabProps } from './Tab'
 
 interface TabsProps extends React.HTMLAttributes<HTMLDivElement> {
-  hasFilters: boolean
+  hasFilters?: boolean
+  activeIndex: number
+  onTabChange: (index: number) => void
+  onOrderByChange: (selected: string) => void
+}
+
+type TTab = {
+  props: TabProps
 }
 
 export const MbTabs = (props: TabsProps) => {
-  const [selectedTab, setSelectedTab] = useState(0)
   const [showOrderOpts, setShowOrderOpts] = useState(false)
   const [selectedOrder, setSelectedOrder] = useState('')
-  const options = [
+  const [selectedFilter, setSelectedFilter] = useState(false)
+
+  const { children, onTabChange, onOrderByChange, activeIndex } = props
+
+  const options: Item[] = [
     {
       text: 'Newest',
       onClick: () => {
-        setShowOrderOpts(!showOrderOpts)
-        setSelectedOrder('Newest')
+        handleOptionSelect('Newest')
       },
+      selected: selectedOrder === 'Newest',
+      icon:
+        selectedOrder === 'Newest' ? (
+          <MbIcon
+            name={EIconName.CHECK}
+            color={'blue-300'}
+            darkColor={'blue-100'}
+            size="16px"
+          />
+        ) : undefined,
     },
     {
       text: 'Oldest',
       onClick: () => {
-        setShowOrderOpts(!showOrderOpts)
-        setSelectedOrder('Oldest')
+        handleOptionSelect('Oldest')
       },
+      selected: selectedOrder === 'Oldest',
+      icon:
+        selectedOrder === 'Oldest' ? (
+          <MbIcon
+            name={EIconName.CHECK}
+            color={'blue-300'}
+            darkColor={'blue-100'}
+            size="16px"
+          />
+        ) : undefined,
     },
     {
       text: 'Cheapest',
       onClick: () => {
-        setShowOrderOpts(!showOrderOpts)
-        setSelectedOrder('Cheapest')
+        handleOptionSelect('Cheapest')
       },
+      selected: selectedOrder === 'Cheapest',
+      icon:
+        selectedOrder === 'Cheapest' ? (
+          <MbIcon
+            name={EIconName.CHECK}
+            color={'blue-300'}
+            darkColor={'blue-100'}
+            size="16px"
+          />
+        ) : undefined,
     },
     {
       text: 'Most expensive',
       onClick: () => {
-        setShowOrderOpts(!showOrderOpts)
-        setSelectedOrder('Most expensive')
+        handleOptionSelect('Most expensive')
       },
+      selected: selectedOrder === 'Most expensive',
+      icon:
+        selectedOrder === 'Most expensive' ? (
+          <MbIcon
+            name={EIconName.CHECK}
+            color={'blue-300'}
+            darkColor={'blue-100'}
+            size="16px"
+          />
+        ) : undefined,
     },
   ]
 
-  if (!props.children) return <></>
-  const allTabs = React.Children.map(props.children, (child: any) => child)
-  const tabsTitle = allTabs?.map((tab) => tab.props.title)
-  const tabsContent = allTabs?.map((tab) => tab.props.children)
+  const handleOptionSelect = (option: string) => {
+    setShowOrderOpts(!showOrderOpts)
+    let auxOption = option === selectedOrder ? '' : option
+    setSelectedOrder(auxOption)
+    onOrderByChange(auxOption)
+  }
+
+  const getExtraFiltersIndex = (array: any) => {
+    let indexes: number[] = []
+    array.map((tab: TTab, index: number) => {
+      if (tab.props.extraFilter) indexes.push(index)
+    })
+
+    return indexes
+  }
+
+  const allTabs = React.Children.map(children, (child: any) => child)
+  const tabsTitle = allTabs?.map((tab: TTab) => tab.props.title)
+  const tabsContent = allTabs?.map((tab: TTab) => tab.props.children)
+  const tabsWithExtraFilter = getExtraFiltersIndex(allTabs)
+
+  if (!children || !allTabs) return <></>
 
   return (
     <>
-      <div className="flex bg-gray-50 dark:bg-gray-800 md:px-64 overflow-scroll no-scrollbar">
-        <div className="flex justify-center md:justify-start items-center space-x-12 sm:space-x-24">
-          {tabsTitle?.length &&
-            tabsTitle.map((title, index) => (
-              <>
-                <div
+      <div className="relative md:initial">
+        <ul className="flex justify-between bg-gray-50 dark:bg-gray-800 px-24 md:px-64 overflow-x-scroll md:overflow-visible no-scrollbar">
+          {tabsTitle?.length && (
+            <div className="flex items-center space-x-12 sm:space-x-24">
+              {tabsTitle.map((title, index) => (
+                <li
                   onClick={() => {
                     setSelectedOrder('')
-                    setSelectedTab(index)
+                    onTabChange(index)
                   }}
                   key={index}
                 >
-                  <MbTab isActive={index === selectedTab} title={title}></MbTab>
-                </div>
-              </>
-            ))}
-        </div>
-        <div className="ml-auto flex items-center">
-          <div className="w-0.5 bg-gray-200 dark:bg-gray-600 h-8 rounded sm:hidden mx-12"></div>
-          {props.hasFilters && (
-            <div
+                  <MbTab isActive={index === activeIndex} title={title}></MbTab>
+                </li>
+              ))}
+            </div>
+          )}
+
+          <li className="flex items-center mx-12 md:hidden">
+            <div className="w-0.5 bg-gray-200 dark:bg-gray-600 h-8 rounded"></div>
+          </li>
+
+          <div className="flex items-center space-x-12 sm:space-x-24">
+            {tabsWithExtraFilter?.length &&
+              tabsWithExtraFilter.map((tabIndex) => {
+                const currentTab: TTab = allTabs[tabIndex]
+                const { extraFilter, onExtraFilterChange } = currentTab.props
+                if (tabIndex === activeIndex) {
+                  return (
+                    <li
+                      className={`order-by ${
+                        selectedFilter ? 'selected' : 'unselected'
+                      }`}
+                      onClick={() => {
+                        if (!onExtraFilterChange) return
+                        setSelectedFilter(!selectedFilter)
+                        onExtraFilterChange(!selectedFilter)
+                      }}
+                    >
+                      <div className="flex p-12 sm:p-16 items-center">
+                        <div
+                          className={`${
+                            selectedFilter
+                              ? 'text-mb-red'
+                              : 'text-blue-300 dark:text-blue-100'
+                          } p-med-90 pr-10 whitespace-nowrap`}
+                        >
+                          {extraFilter}
+                        </div>
+                      </div>
+                    </li>
+                  )
+                }
+              })}
+
+            <li
               className={`order-by ${
                 selectedOrder ? 'selected' : 'unselected'
-              }`}
+              } relative`}
             >
               <div
                 className="flex p-12 sm:p-16 items-center"
@@ -95,18 +194,23 @@ export const MbTabs = (props: TabsProps) => {
                   darkColor="blue-100"
                 />
               </div>
-            </div>
-          )}
-        </div>
+              <MbDropdownMenu
+                isOpen={showOrderOpts}
+                items={options}
+                className="center-pos hidden md:block"
+              />
+            </li>
+          </div>
+        </ul>
+        <MbDropdownMenu
+          isOpen={showOrderOpts}
+          items={options}
+          className="right-0 md:hidden"
+        />
       </div>
-      <MbDropdownMenu
-        isOpen={showOrderOpts}
-        items={options}
-        className="center-sub-menu"
-      />
       {tabsContent?.length &&
         tabsContent?.map((content, index) => {
-          return index === selectedTab && <div>{content}</div>
+          return index === activeIndex && <div>{content}</div>
         })}
     </>
   )

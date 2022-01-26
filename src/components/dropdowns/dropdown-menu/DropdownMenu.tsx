@@ -4,6 +4,7 @@ import './dropdownmenu.css'
 
 export interface Item {
   text: string
+  selected?: boolean
   icon?: JSX.Element
   onClick: () => void
 }
@@ -18,12 +19,12 @@ export const MbDropdownMenu = ({
   className?: string
 }) => {
   return !isOpen ? null : (
-    <div className={`dropdown-menu ${className}`}>
-      {items.map(({ text, icon, onClick }, index) => {
+    <ul className={`dropdown-menu ${className}`}>
+      {items.map(({ text, selected, icon, onClick }, index) => {
         return (
-          <div
+          <li
             key={`${text}-${index}`}
-            className={'dropdown-item'}
+            className={`dropdown-item ${selected ? 'selected' : ''}`}
             onClick={onClick}
           >
             <MbText
@@ -32,9 +33,9 @@ export const MbDropdownMenu = ({
               {text}
             </MbText>
             {icon && <div className={'dropdown-icon'}>{icon}</div>}
-          </div>
+          </li>
         )
       })}
-    </div>
+    </ul>
   )
 }

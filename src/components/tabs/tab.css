@@ -6,11 +6,6 @@
   @apply bg-mb-red-15 dark:bg-mb-red-35 focus:ring-mb-red text-mb-red;
 }
 
-.center-sub-menu {
-  right: 40px;
-  @apply absolute;
-}
-
 .order-by {
   @apply cursor-pointer rounded-full transition-all duration-500;
 }
