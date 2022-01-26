@@ -1,8 +1,6 @@
 import React from 'react'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import {
-  MbStatefulButton,
-} from '../../components/stateful-button/StatefulButton'
+import { MbStatefulButton } from '../../components/stateful-button/StatefulButton'
 import { MbText } from '../../components/text/Text'
 import { MbIcon } from '../../components/icon/Icon'
 import { EIconName } from '../../consts/icons'
@@ -18,7 +16,11 @@ const Template: ComponentStory<typeof MbStatefulButton> = ({
   className,
 }) => (
   <div className={'flex'}>
-    <MbStatefulButton className={className} indicator={indicator} content={content} />
+    <MbStatefulButton
+      className={className}
+      indicator={indicator}
+      content={content}
+    />
   </div>
 )
 
@@ -39,10 +41,8 @@ AccountConnected.args = {
 export const AccountDisconnected = Template.bind({})
 AccountDisconnected.args = {
   className: 'bg-color-black',
-  indicator: <MbIcon className={'flex justify-center'} name={EIconName.LINK} color={'inherit'} />,
-  content: (
-      <MbText className={'flex ml-8 p-small-90'}>Connect Wallet</MbText>
-  ),
+  indicator: <MbIcon name={EIconName.LINK} color={'inherit'} />,
+  content: <MbText className={'flex ml-8 p-small-90'}>Connect Wallet</MbText>,
 }
 
 export const NetworkNEARTESTNET = Template.bind({})
@@ -52,7 +52,7 @@ NetworkNEARTESTNET.args = {
     <MbText className={'ml-8 p-small-90 align-center tracking-wider'}>
       NEAR TESTNET
     </MbText>
-  )
+  ),
 }
 
 export const NetworkNEARMAINNET = Template.bind({})
@@ -62,7 +62,7 @@ NetworkNEARMAINNET.args = {
     <MbText className={'ml-8 p-small-90 align-center tracking-wider'}>
       NEAR MAINNET
     </MbText>
-  )
+  ),
 }
 
 export const NetworkETH = Template.bind({})
@@ -72,5 +72,5 @@ NetworkETH.args = {
     <MbText className={'ml-8 p-small-90 align-center tracking-wider'}>
       ETHEREUM
     </MbText>
-  )
+  ),
 }
