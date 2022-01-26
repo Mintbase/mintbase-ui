@@ -322,7 +322,7 @@ declare const MbAmountButton: (props: AmountButtonProps) => JSX.Element;
 declare type TNetworkOption = {
     label: string;
     value: string;
-    indicatorColor: string;
+    indicator: JSX.Element;
 };
 
 interface NetworkMenuProps {
@@ -334,6 +334,12 @@ interface NetworkMenuProps {
     onOptionChange: (selected: string) => void;
 }
 declare const MbNetworkMenu: (props: NetworkMenuProps) => JSX.Element | null;
+
+interface ColorIndicatorProps {
+    parentClassName?: string;
+    childClassName?: string;
+}
+declare const MbColorIndicator: (props: ColorIndicatorProps) => JSX.Element;
 
 declare type TColorDetail = {
     sectionTitle: string;
@@ -348,4 +354,4 @@ declare const colorsArray: TColorDetail[];
 
 declare const getFontType: (size: string) => "p-big-90" | "p-med-90" | "p-small-90" | undefined;
 
-export { EControlStatus, EIconName, ESize, ESmallCardType, EState, EType, Item, MbAccordion, MbAction, MbAmountButton, MbButton, MbCheckbox, MbChip, MbDropdownMenu, MbIcon, MbInfoCard, MbInput, MbInputAccount, MbItemsPerPage, MbLogo, MbMediaImport, MbModal, MbNetworkMenu, MbPagination, MbRadioButton, MbSmallCard, MbStatefulButton, MbSwitch, MbTab, MbTable, MbTabs, MbText, MbThingCard, MbTooltip, TColor, TColorDetail, TInfoCard, TNetworkOption, TSmallCard, TThingCard, TToggle, colorsArray, getFontType };
+export { EControlStatus, EIconName, ESize, ESmallCardType, EState, EType, Item, MbAccordion, MbAction, MbAmountButton, MbButton, MbCheckbox, MbChip, MbColorIndicator, MbDropdownMenu, MbIcon, MbInfoCard, MbInput, MbInputAccount, MbItemsPerPage, MbLogo, MbMediaImport, MbModal, MbNetworkMenu, MbPagination, MbRadioButton, MbSmallCard, MbStatefulButton, MbSwitch, MbTab, MbTable, MbTabs, MbText, MbThingCard, MbTooltip, TColor, TColorDetail, TInfoCard, TNetworkOption, TSmallCard, TThingCard, TToggle, colorsArray, getFontType };

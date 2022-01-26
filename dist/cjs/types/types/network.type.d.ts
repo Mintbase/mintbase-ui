@@ -1,5 +1,6 @@
+/// <reference types="react" />
 export declare type TNetworkOption = {
     label: string;
     value: string;
-    indicatorColor: string;
+    indicator: JSX.Element;
 };
