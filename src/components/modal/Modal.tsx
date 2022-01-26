@@ -1,6 +1,7 @@
 import { MbIcon } from '../icon/Icon'
 import { EIconName } from '../../consts/icons'
 import './modal.css'
+import { useEffect } from 'react'
 
 interface ModalProps extends React.HTMLAttributes<HTMLDivElement> {
   title: string
@@ -9,6 +10,14 @@ interface ModalProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 export const MbModal = (props: ModalProps) => {
   const { open, onClose, title, children } = props
+
+  useEffect(() => {
+    if (open) {
+      document.body.classList.add('overflow-hidden')
+    } else {
+      document.body.classList.remove('overflow-hidden')
+    }
+  }, [open])
   return (
     <>
       {open && (
