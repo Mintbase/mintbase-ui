@@ -3,6 +3,7 @@ import { MbDropdownMenu, Item } from '../dropdowns/dropdown-menu/DropdownMenu'
 import { EIconName } from '../../consts/icons'
 import { MbIcon } from '../icon/Icon'
 import { MbTab, TabProps } from './Tab'
+import { MbMenuWrapper } from '../dropdowns/menu-wrapper/MenuWrapper'
 
 interface TabsProps extends React.HTMLAttributes<HTMLDivElement> {
   activeIndex: number
@@ -169,39 +170,44 @@ export const MbTabs = (props: TabsProps) => {
                 }
               })}
 
-            <li
-              className={`order-by ${
-                selectedOrder ? 'selected' : 'unselected'
-              } relative`}
-            >
-              <div
-                className="flex p-12 sm:p-16 items-center"
-                onClick={() => setShowOrderOpts(!showOrderOpts)}
-              >
-                <div
-                  className={`${
-                    selectedOrder
-                      ? 'text-mb-red'
-                      : 'text-blue-300 dark:text-blue-100'
-                  } p-med-90 pr-10 whitespace-nowrap`}
+            <div>
+              <MbMenuWrapper setIsOpen={setShowOrderOpts}>
+                <li
+                  className={`order-by ${
+                    selectedOrder ? 'selected' : 'unselected'
+                  } relative`}
                 >
-                  {selectedOrder ? selectedOrder : 'Order By'}
-                </div>
-                <MbIcon
-                  name={EIconName.ARROW_DROP_DOWN}
-                  size="16px"
-                  color="blue-300"
-                  darkColor="blue-100"
-                />
-              </div>
-              <MbDropdownMenu
-                isOpen={showOrderOpts}
-                items={options}
-                className="center-pos hidden md:block"
-              />
-            </li>
+                  <div
+                    className="flex p-12 sm:p-16 items-center"
+                    onClick={() => setShowOrderOpts(!showOrderOpts)}
+                  >
+                    <div
+                      className={`${
+                        selectedOrder
+                          ? 'text-mb-red'
+                          : 'text-blue-300 dark:text-blue-100'
+                      } p-med-90 pr-10 whitespace-nowrap`}
+                    >
+                      {selectedOrder ? selectedOrder : 'Order By'}
+                    </div>
+                    <MbIcon
+                      name={EIconName.ARROW_DROP_DOWN}
+                      size="16px"
+                      color="blue-300"
+                      darkColor="blue-100"
+                    />
+                  </div>
+                  <MbDropdownMenu
+                    isOpen={showOrderOpts}
+                    items={options}
+                    className="center-pos hidden md:block"
+                  />
+                </li>
+              </MbMenuWrapper>
+            </div>
           </div>
         </ul>
+
         <MbDropdownMenu
           isOpen={showOrderOpts}
           items={options}

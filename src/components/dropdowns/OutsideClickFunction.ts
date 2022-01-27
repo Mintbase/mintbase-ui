@@ -5,7 +5,8 @@ export default function listenForOutsideClicks(
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
 ) {
   return () => {
-    if (menuRef) {
+    if (menuRef !== null) {
+      console.log(menuRef)
       if (listening) return
       if (!menuRef.current) return
       setListening(true)

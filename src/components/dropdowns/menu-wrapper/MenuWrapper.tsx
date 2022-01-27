@@ -10,12 +10,7 @@ export const MbMenuWrapper = (props: MenuWrapperProps) => {
   const [listening, setListening] = useState(false)
 
   useEffect(
-    listenForOutsideClicks(
-      listening,
-      setListening,
-      menuRef,
-      props.setIsOpen
-    )
+    listenForOutsideClicks(listening, setListening, menuRef, props.setIsOpen)
   )
 
   return <div ref={menuRef}>{props.children}</div>
