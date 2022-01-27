@@ -29,7 +29,7 @@ declare enum ESmallCardType {
 }
 
 interface ActionProps extends React$1.ButtonHTMLAttributes<HTMLButtonElement> {
-    state?: EState.ACTIVE | EState.DISABLED;
+    state?: EState.ACTIVE | EState.DISABLED | EState.CAUTION;
     size?: ESize;
 }
 declare const MbAction: ({ state, size, className, ...props }: ActionProps) => JSX.Element;
