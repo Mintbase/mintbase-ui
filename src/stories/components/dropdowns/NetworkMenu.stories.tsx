@@ -4,8 +4,8 @@ import { TNetworkOption } from '../../../types/network.type'
 import { MbStatefulButton } from '../../../components/stateful-button/StatefulButton'
 import { useState } from 'react'
 import { MbText } from '../../../components/text/Text'
-import { useEffect } from '@storybook/addons'
-import { MbColorIndicator } from '../../..'
+import { MbColorIndicator } from '../../../components/color-indicator/ColorIndicator'
+import { MbMenuWrapper } from '../../../components/dropdowns/menu-wrapper/MenuWrapper'
 
 export default {
   title: 'Components/Dropdowns/NetworkMenu',
@@ -73,18 +73,20 @@ const DropdownMenuAnimated: ComponentStory<typeof MbNetworkMenu> = (args) => {
 
   return (
     <div className="inline-block">
-      <MbStatefulButton
-        className="space-x-12"
-        indicator={selectedOption.indicator}
-        content={Content}
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
-      />
-      <MbNetworkMenu
-        {...args}
-        isOpen={isMenuOpen}
-        options={options}
-        onOptionChange={(value) => handleMenuChange(value)}
-      />
+      <MbMenuWrapper setIsOpen={setIsMenuOpen}>
+        <MbStatefulButton
+          className="space-x-12"
+          indicator={selectedOption.indicator}
+          content={Content}
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        />
+        <MbNetworkMenu
+          {...args}
+          isOpen={isMenuOpen}
+          options={options}
+          onOptionChange={(value) => handleMenuChange(value)}
+        />
+      </MbMenuWrapper>
     </div>
   )
 }
