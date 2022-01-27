@@ -3,7 +3,7 @@
 }
 
 .modal-section {
-  min-height: 300px;
+  height: 300px;
   @apply relative my-4 max-w-3xl bg-white dark:bg-gray-850 rounded dark:text-white mx-24;
 }
 
@@ -11,6 +11,6 @@
   .modal-section {
     @apply mx-0;
     width: 600px;
-    min-height: 400px;
+    height: 400px;
   }
 }
