@@ -25,7 +25,7 @@ export const MbModal = (props: ModalProps) => {
           <div className="fixed inset-0 bg-black bg-opacity-75 overflow-y-auto h-full w-full z-50"></div>
           <div className="modal">
             <section className="modal-section">
-              <header className="flex items-center p-24 border-b border-gray-150 dark:border-gray-700 justify-between">
+              <header className="flex items-center p-24 border-b border-gray-150 dark:border-gray-700 justify-between sticky">
                 <div className="p-big-130">{title}</div>
                 <div onClick={onClose}>
                   <MbIcon
@@ -37,7 +37,7 @@ export const MbModal = (props: ModalProps) => {
                   />
                 </div>
               </header>
-              <div className="p-24">{children}</div>
+              {children}
             </section>
           </div>
         </>
