@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import listenForOutsideClicks from '../OutsideClickFunction'
 
 interface MenuWrapperProps extends React.HTMLAttributes<HTMLDivElement> {
-  setIsMenuOpen: React.Dispatch<React.SetStateAction<boolean>>
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export const MbMenuWrapper = (props: MenuWrapperProps) => {
@@ -14,7 +14,7 @@ export const MbMenuWrapper = (props: MenuWrapperProps) => {
       listening,
       setListening,
       menuRef,
-      props.setIsMenuOpen
+      props.setIsOpen
     )
   )
 
