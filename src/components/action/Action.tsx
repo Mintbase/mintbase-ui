@@ -4,7 +4,7 @@ import { getFontType } from '../../consts/fontType'
 import './action.css'
 
 interface ActionProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  state?: EState.ACTIVE | EState.DISABLED
+  state?: EState.ACTIVE | EState.DISABLED | EState.CAUTION
   size?: ESize
 }
 
