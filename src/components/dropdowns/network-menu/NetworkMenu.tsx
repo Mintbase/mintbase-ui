@@ -35,7 +35,7 @@ export const MbNetworkMenu = (props: NetworkMenuProps) => {
           key={option.value}
         >
           {option.indicator}
-          <MbText className={'p-small-130 align-center tracking-widest'}>
+          <MbText className={'cap-big-130 align-center tracking-widest'}>
             {option.label}
           </MbText>
         </div>
