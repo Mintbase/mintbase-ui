@@ -226,11 +226,12 @@ interface Item {
     icon?: JSX.Element;
     onClick: () => void;
 }
-declare const MbDropdownMenu: ({ items, isOpen, className, }: {
+interface DropdownMenuProps {
     items: Item[];
     isOpen: boolean;
-    className?: string | undefined;
-}) => JSX.Element | null;
+    className?: string;
+}
+declare const MbDropdownMenu: (props: DropdownMenuProps) => JSX.Element | null;
 
 interface MbStatefulButtonProps {
     indicator: JSX.Element;
@@ -335,6 +336,11 @@ interface NetworkMenuProps {
 }
 declare const MbNetworkMenu: (props: NetworkMenuProps) => JSX.Element | null;
 
+interface MenuWrapperProps extends React.HTMLAttributes<HTMLDivElement> {
+    setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+declare const MbMenuWrapper: (props: MenuWrapperProps) => JSX.Element;
+
 interface ColorIndicatorProps {
     parentClassName?: string;
     childClassName?: string;
@@ -354,4 +360,4 @@ declare const colorsArray: TColorDetail[];
 
 declare const getFontType: (size: string) => "p-big-90" | "p-med-90" | "p-small-90" | undefined;
 
-export { EControlStatus, EIconName, ESize, ESmallCardType, EState, EType, Item, MbAccordion, MbAction, MbAmountButton, MbButton, MbCheckbox, MbChip, MbColorIndicator, MbDropdownMenu, MbIcon, MbInfoCard, MbInput, MbInputAccount, MbItemsPerPage, MbLogo, MbMediaImport, MbModal, MbNetworkMenu, MbPagination, MbRadioButton, MbSmallCard, MbStatefulButton, MbSwitch, MbTab, MbTable, MbTabs, MbText, MbThingCard, MbTooltip, TColor, TColorDetail, TInfoCard, TNetworkOption, TSmallCard, TThingCard, TToggle, colorsArray, getFontType };
+export { EControlStatus, EIconName, ESize, ESmallCardType, EState, EType, Item, MbAccordion, MbAction, MbAmountButton, MbButton, MbCheckbox, MbChip, MbColorIndicator, MbDropdownMenu, MbIcon, MbInfoCard, MbInput, MbInputAccount, MbItemsPerPage, MbLogo, MbMediaImport, MbMenuWrapper, MbModal, MbNetworkMenu, MbPagination, MbRadioButton, MbSmallCard, MbStatefulButton, MbSwitch, MbTab, MbTable, MbTabs, MbText, MbThingCard, MbTooltip, TColor, TColorDetail, TInfoCard, TNetworkOption, TSmallCard, TThingCard, TToggle, colorsArray, getFontType };

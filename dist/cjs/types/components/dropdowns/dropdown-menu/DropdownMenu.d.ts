@@ -6,8 +6,10 @@ export interface Item {
     icon?: JSX.Element;
     onClick: () => void;
 }
-export declare const MbDropdownMenu: ({ items, isOpen, className, }: {
+interface DropdownMenuProps {
     items: Item[];
     isOpen: boolean;
-    className?: string | undefined;
-}) => JSX.Element | null;
+    className?: string;
+}
+export declare const MbDropdownMenu: (props: DropdownMenuProps) => JSX.Element | null;
+export {};
