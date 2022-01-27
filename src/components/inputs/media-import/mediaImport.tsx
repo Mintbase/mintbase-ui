@@ -3,8 +3,8 @@ import { MbIcon } from '../..'
 import { EIconName } from '../../..'
 import { IMAGE_TYPES } from '../../../consts/fileFormats'
 import { isMobile } from '../../../consts/mobile'
-import AcceptedFormats from './AcceptedFormats'
-import { iconType } from './FileFunctions'
+import AcceptedFormats from './acceptedFormats'
+import { iconType } from './fileFunctions'
 
 interface MediaImportProps {
   isProfileImage: boolean
