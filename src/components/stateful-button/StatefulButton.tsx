@@ -11,13 +11,13 @@ export interface MbStatefulButtonProps {
 export const MbStatefulButton = ({
   indicator,
   content,
-  className = '',
+  className = 'p-12',
   hasEmptyStatus = false,
   onClick,
 }: MbStatefulButtonProps) => {
   return (
     <div
-      className={`flex p-12 justify-center items-center rounded-md select-none ${
+      className={`flex justify-center items-center rounded-md select-none ${
         hasEmptyStatus
           ? 'dark:bg-white dark:text-black bg-black text-white hover:bg-blue-300 dark:hover:bg-blue-100'
           : 'bg-gray-100 hover:bg-blue-300-15 dark:hover:bg-blue-100-15 dark:bg-gray-800 text-black dark:text-white'
