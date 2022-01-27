@@ -1,6 +1,6 @@
 import { MbIcon } from '../../icon/Icon'
 import { EIconName } from '../../../consts/icons'
-import './switch.css'
+import './Switch.css'
 import { TToggle } from '../../../types/toggles.type'
 
 interface SwitchProps extends TToggle {

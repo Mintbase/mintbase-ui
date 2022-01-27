@@ -1,6 +1,6 @@
 import React from 'react'
 import { MbText } from '../../text/Text'
-import './dropdownmenu.css'
+import './DropdownMenu.css'
 
 export interface Item {
   text: string

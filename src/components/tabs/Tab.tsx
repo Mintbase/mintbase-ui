@@ -1,5 +1,5 @@
 import React from 'react'
-import './tab.css'
+import './Tab.css'
 
 export interface TabProps extends React.HTMLAttributes<HTMLDivElement> {
   isActive?: boolean

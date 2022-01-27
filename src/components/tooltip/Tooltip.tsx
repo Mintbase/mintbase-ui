@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactTooltip, { Place } from 'react-tooltip'
-import './tooltip.css'
+import './Tooltip.css'
 
 export const MbTooltip = ({
   text,

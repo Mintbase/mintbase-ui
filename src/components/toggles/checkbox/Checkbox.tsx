@@ -1,6 +1,6 @@
 import { MbIcon } from '../../icon/Icon'
 import { EIconName } from '../../../consts/icons'
-import './checkbox.css'
+import './Checkbox.css'
 import { TToggle } from '../../../types/toggles.type'
 interface CheckboxProps extends TToggle {
   handleChange: (checked: boolean) => void

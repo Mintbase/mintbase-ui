@@ -1,6 +1,6 @@
 import { MbIcon } from '../icon/Icon'
 import { EIconName } from '../../consts/icons'
-import './modal.css'
+import './Modal.css'
 import { useEffect } from 'react'
 
 interface ModalProps extends React.HTMLAttributes<HTMLDivElement> {

@@ -1,6 +1,6 @@
 import React from 'react'
-import './smallcard.css'
-import './../cards.css'
+import './SmallCard.css'
+import './../BaseCard.css'
 import { TSmallCard } from '../../../types/cards.type'
 import { ESmallCardType } from '../../../consts/properties'
 

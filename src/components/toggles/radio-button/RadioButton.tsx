@@ -1,5 +1,5 @@
 import { TToggle } from '../../../types/toggles.type'
-import './radiobutton.css'
+import './RadioButton.css'
 
 interface RadioButtonProps extends TToggle {
   handleChange: (id: string) => void

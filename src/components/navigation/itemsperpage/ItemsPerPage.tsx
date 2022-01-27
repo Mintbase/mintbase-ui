@@ -1,5 +1,5 @@
 import React from 'react'
-import './itemsperpage.css'
+import './ItemsPerPage.css'
 
 export const MbItemsPerPage = ({
   onItemsPage,

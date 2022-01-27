@@ -2,8 +2,8 @@ import React from 'react'
 import { MbIcon } from '../../icon/Icon'
 import { TThingCard } from '../../../types/cards.type'
 import { EIconName } from '../../../consts/icons'
-import './thingcard.css'
-import './../cards.css'
+import './ThingCard.css'
+import './../BaseCard.css'
 interface CardProps extends React.ComponentProps<'div'> {
   loading?: boolean
   cardInfo: TThingCard

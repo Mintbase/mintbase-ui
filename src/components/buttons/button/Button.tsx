@@ -1,7 +1,7 @@
 import React from 'react'
 import { getFontType } from '../../../consts/fontType'
 import { ESize, EState, EType } from '../../../consts/properties'
-import './button.css'
+import './Button.css'
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   label?: string

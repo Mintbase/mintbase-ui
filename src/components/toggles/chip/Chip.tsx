@@ -1,6 +1,6 @@
 import { MbIcon } from '../../icon/Icon'
 import { EIconName } from '../../../consts/icons'
-import './chip.css'
+import './Chip.css'
 import { TToggle } from '../../../types/toggles.type'
 
 interface ChipProps extends TToggle {

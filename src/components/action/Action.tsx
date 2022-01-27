@@ -1,7 +1,7 @@
 import React from 'react'
 import { ESize, EState } from '../../consts/properties'
 import { getFontType } from '../../consts/fontType'
-import './action.css'
+import './Action.css'
 
 interface ActionProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   state?: EState.ACTIVE | EState.DISABLED | EState.CAUTION

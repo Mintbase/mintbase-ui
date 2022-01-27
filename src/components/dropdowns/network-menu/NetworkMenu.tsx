@@ -1,4 +1,4 @@
-import './networkmenu.css'
+import './NetworkMenu.css'
 import { MbText } from '../../text/Text'
 import { TNetworkOption } from '../../../types/network.type'
 

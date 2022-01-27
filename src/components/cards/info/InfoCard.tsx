@@ -3,7 +3,7 @@ import { EIconName } from '../../../consts/icons'
 import { ESize } from '../../../consts/properties'
 import { TInfoCard } from '../../../types/cards.type'
 import { MbIcon } from '../../icon/Icon'
-import './infocard.css'
+import './InfoCard.css'
 
 const LoadingInfoBox = ({ size }: { size: ESize }) => {
   return (

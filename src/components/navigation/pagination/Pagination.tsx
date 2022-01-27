@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { EIconName } from '../../../consts/icons'
 import { MbIcon } from '../../icon/Icon'
-import './pagination.css'
+import './Pagination.css'
 
 export interface PaginationProps {
   onPageChange: (currentPage: number) => void

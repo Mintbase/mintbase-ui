@@ -3,7 +3,7 @@ import { getFontType } from '../../../consts/fontType'
 import { EIconName } from '../../../consts/icons'
 import { ESize } from '../../../consts/properties'
 import { MbIcon } from '../../icon/Icon'
-import './inputfield.css'
+import './InputField.css'
 
 export enum EControlStatus {
   NORMAL = 'normal',

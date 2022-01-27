@@ -1,11 +1,10 @@
 import React from 'react'
-import { MbAction, MbButton } from '../../..'
+import { MbAction } from '../../..'
 import { EIconName } from '../../../consts/icons'
-import { ESize, EState, EType } from '../../../consts/properties'
-import { MbAccordion } from '../../accordion/Accordion'
+import { ESize, EState } from '../../../consts/properties'
 import { MbIcon } from '../../icon/Icon'
-import { EControlStatus, MbInput } from '../input-field/inputField'
-import './inputaccount.css'
+import { EControlStatus, MbInput } from '../input-field/InputField'
+import './InputAccount.css'
 
 type TInputListGroup = {
   amount?: TInput

@@ -1,5 +1,5 @@
 import React from 'react'
-import './text.css'
+import './Text.css'
 
 type TextProps = React.HTMLAttributes<HTMLDivElement>
 

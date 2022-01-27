@@ -2,7 +2,7 @@ import React from 'react'
 import { MbItemsPerPage } from '../navigation/itemsperpage/ItemsPerPage'
 import { MbPagination } from '../navigation/pagination/Pagination'
 import { PaginationProps } from '../navigation/pagination/Pagination'
-import './table.css'
+import './Table.css'
 interface TableProps extends React.HTMLAttributes<HTMLDivElement> {
   title: string
   pagination?: PaginationProps
