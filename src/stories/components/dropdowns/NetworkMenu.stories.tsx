@@ -61,7 +61,7 @@ const DropdownMenuAnimated: ComponentStory<typeof MbNetworkMenu> = (args) => {
   )
 
   const Content = (
-    <MbText className={'p-small-90 align-center tracking-widest'}>
+    <MbText className={'cap-big-130 align-center tracking-widest'}>
       {selectedOption.label}
     </MbText>
   )
@@ -75,7 +75,7 @@ const DropdownMenuAnimated: ComponentStory<typeof MbNetworkMenu> = (args) => {
     <div className="inline-block">
       <MbMenuWrapper setIsOpen={setIsMenuOpen}>
         <MbStatefulButton
-          className="space-x-12"
+          className="space-x-12 p-12"
           indicator={selectedOption.indicator}
           content={Content}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
