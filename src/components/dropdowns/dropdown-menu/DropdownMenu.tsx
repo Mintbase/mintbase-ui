@@ -9,15 +9,15 @@ export interface Item {
   onClick: () => void
 }
 
-export const MbDropdownMenu = ({
-  items,
-  isOpen,
-  className = '',
-}: {
+interface DropdownMenuProps {
   items: Item[]
   isOpen: boolean
   className?: string
-}) => {
+}
+
+export const MbDropdownMenu = (props: DropdownMenuProps) => {
+  const { isOpen, items, className } = props
+
   return !isOpen ? null : (
     <ul className={`dropdown-menu ${className}`}>
       {items.map(({ text, selected, icon, onClick }, index) => {

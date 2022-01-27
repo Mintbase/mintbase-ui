@@ -2,6 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 import React from 'react'
 import { MbButton } from '../../../components/buttons/button/Button'
 import { MbDropdownMenu } from '../../../components/dropdowns/dropdown-menu/DropdownMenu'
+import { MbMenuWrapper } from '../../../components/dropdowns/menu-wrapper/MenuWrapper'
 import { MbIcon } from '../../../components/icon/Icon'
 import { EIconName } from '../../../consts/icons'
 
@@ -105,8 +106,10 @@ const DropdownMenuAnimated: ComponentStory<typeof MbDropdownMenu> = (args) => {
   }
   return (
     <div className="text-center">
-      <MbButton onClick={handleButtonClick} />
-      <MbDropdownMenu {...args} isOpen={isMenuOpen} className="center-pos" />
+      <MbMenuWrapper setIsOpen={setIsMenuOpen}>
+        <MbButton onClick={handleButtonClick} />
+        <MbDropdownMenu {...args} isOpen={isMenuOpen} className="center-pos" />
+      </MbMenuWrapper>
     </div>
   )
 }
