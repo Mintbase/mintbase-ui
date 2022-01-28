@@ -1,5 +1,5 @@
 .dropdown-menu {
-  @apply bg-gray-50 dark:bg-gray-800 text-mb-blackblue dark:text-white rounded-b overflow-hidden absolute min-w-48;
+  @apply bg-gray-50 dark:bg-gray-800 text-mb-blackblue dark:text-white rounded-b overflow-hidden absolute min-w-48 z-10;
 }
 
 .dropdown-menu.center-pos {

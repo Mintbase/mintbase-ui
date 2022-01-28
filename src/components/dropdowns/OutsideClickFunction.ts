@@ -13,6 +13,10 @@ export default function listenForOutsideClicks(
         document.addEventListener(
           `click`,
           (evt: any) => {
+            if (menuRef.current === null) {
+              evt.preventDefault()
+            }
+            if (evt.defaultPrevented) return
             const cur = menuRef.current
             const node = evt.target
             if (cur.contains(node)) return
