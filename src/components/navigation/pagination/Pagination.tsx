@@ -118,6 +118,7 @@ export const MbPagination = (props: PaginationProps) => {
                         onPageChange(currentPage - 3)
                       }
                     }}
+                    key={pageNumber}
                   >
                     {DOTS}
                   </li>
