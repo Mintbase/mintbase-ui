@@ -15,6 +15,7 @@ export const MbItemsPerPage = ({
       {options.map((option) => (
         <li
           className={`item p-med-90 ${currentValue === option ? 'active' : ''}`}
+          key={option}
           onClick={() => onItemsPage(option)}
         >
           {option}

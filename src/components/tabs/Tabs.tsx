@@ -137,38 +137,38 @@ export const MbTabs = (props: TabsProps) => {
           </li>
 
           <div className="flex items-center space-x-12 sm:space-x-24">
-            {tabsWithExtraFilter?.length &&
-              tabsWithExtraFilter.map((tabIndex) => {
-                const currentTab: TTab = allTabs[tabIndex]
-                const { extraFilter, onExtraFilterChange } = currentTab.props
-                if (tabIndex === activeIndex) {
-                  return (
-                    <li
-                      className={`order-by ${
-                        selectedFilter ? 'selected' : 'unselected'
-                      }`}
-                      onClick={() => {
-                        if (!onExtraFilterChange) return
-                        setSelectedFilter(!selectedFilter)
-                        onExtraFilterChange(!selectedFilter)
-                      }}
-                      key={tabIndex}
-                    >
-                      <div className="flex p-12 sm:p-16 items-center">
-                        <div
-                          className={`${
-                            selectedFilter
-                              ? 'text-mb-red'
-                              : 'text-blue-300 dark:text-blue-100'
-                          } p-med-90 pr-10 whitespace-nowrap`}
-                        >
-                          {extraFilter}
+            {tabsWithExtraFilter?.length
+              ? tabsWithExtraFilter.map((tabIndex) => {
+                  const currentTab: TTab = allTabs[tabIndex]
+                  const { extraFilter, onExtraFilterChange } = currentTab.props
+                  if (tabIndex === activeIndex)
+                    return (
+                      <li
+                        className={`order-by ${
+                          selectedFilter ? 'selected' : 'unselected'
+                        }`}
+                        onClick={() => {
+                          if (!onExtraFilterChange) return
+                          setSelectedFilter(!selectedFilter)
+                          onExtraFilterChange(!selectedFilter)
+                        }}
+                        key={tabIndex}
+                      >
+                        <div className="flex p-12 sm:p-16 items-center">
+                          <div
+                            className={`${
+                              selectedFilter
+                                ? 'text-mb-red'
+                                : 'text-blue-300 dark:text-blue-100'
+                            } p-med-90 pr-10 whitespace-nowrap`}
+                          >
+                            {extraFilter}
+                          </div>
                         </div>
-                      </div>
-                    </li>
-                  )
-                }
-              })}
+                      </li>
+                    )
+                })
+              : null}
 
             <div>
               <MbMenuWrapper setIsOpen={setShowOrderOpts}>
