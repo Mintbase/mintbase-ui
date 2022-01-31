@@ -19,7 +19,6 @@ type TInput = {
 }
 interface InputAccountProps {
   maxAmount: number
-  title: string
   subtitle: string
   smallSubtitle: string
   inputList: TInputListGroup[]
@@ -34,7 +33,6 @@ interface InputAccountProps {
 export const MbInputAccount = (props: InputAccountProps) => {
   const {
     maxAmount,
-    title,
     subtitle,
     smallSubtitle,
     inputList,
