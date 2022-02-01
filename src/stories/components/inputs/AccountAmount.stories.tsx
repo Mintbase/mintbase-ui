@@ -115,7 +115,6 @@ const Template: ComponentStory<typeof MbInputAccount> = (args) => {
       removeInputHandler={handleRemoveClick}
       accountInputChangeHandler={handleAccountInputChange}
       amountInputChangeHandler={handleAmountInputChange}
-      title="Transfer Tokens"
       subtitle="Airdrop to multiple accounts, up to 100 accounts."
       smallSubtitle="Amount of tokens and recipient account"
       footerTitle="Add Account"
