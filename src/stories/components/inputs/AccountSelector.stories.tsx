@@ -53,7 +53,6 @@ const Template: ComponentStory<typeof MbInputAccount> = (args) => {
       inputList={inputList}
       removeInputHandler={handleRemoveClick}
       accountInputChangeHandler={handleAccountInputChange}
-      title="Accounts"
       subtitle="Add accounts to easily switch between."
       smallSubtitle="Add up to 20 accounts"
       footerTitle="Add Another Account"

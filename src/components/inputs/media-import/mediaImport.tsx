@@ -7,7 +7,7 @@ import AcceptedFormats from './acceptedFormats'
 import { iconType } from './fileFunctions'
 
 interface MediaImportProps {
-  isProfileImage: boolean
+  isProfileImage?: boolean
   acceptedFormats: string[]
   idealDimensions: string
   maxSize: number

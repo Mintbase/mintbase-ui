@@ -19,7 +19,6 @@ type TInput = {
 }
 interface InputAccountProps {
   maxAmount: number
-  title: string
   subtitle: string
   smallSubtitle: string
   inputList: TInputListGroup[]
@@ -34,7 +33,6 @@ interface InputAccountProps {
 export const MbInputAccount = (props: InputAccountProps) => {
   const {
     maxAmount,
-    title,
     subtitle,
     smallSubtitle,
     inputList,
@@ -49,7 +47,7 @@ export const MbInputAccount = (props: InputAccountProps) => {
 
   return (
     <main>
-      <section className="h-72 overflow-scroll">
+      <section className="p-2 h-72 overflow-y-scroll">
         <header>
           <p className="p-big-90 text-gray-700 dark:text-gray-300 mb-16">
             {subtitle}
