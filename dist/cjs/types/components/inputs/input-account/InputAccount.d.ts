@@ -12,7 +12,6 @@ declare type TInput = {
 };
 interface InputAccountProps {
     maxAmount: number;
-    title: string;
     subtitle: string;
     smallSubtitle: string;
     inputList: TInputListGroup[];

@@ -1,6 +1,6 @@
 export declare type TToggle = {
-    label: string;
+    label?: string;
     id?: string;
-    isChecked: boolean;
-    disabled: boolean;
+    isChecked?: boolean;
+    disabled?: boolean;
 };

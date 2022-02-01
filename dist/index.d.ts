@@ -164,7 +164,7 @@ interface InputProps extends React$1.InputHTMLAttributes<HTMLInputElement> {
     label?: string;
     hasIcon?: boolean;
     controlStatus: EControlStatus;
-    inputSize: ESize;
+    inputSize?: ESize;
     hasPercentageLabel?: boolean;
 }
 declare const MbInput: ({ label, hasIcon, controlStatus, inputSize, ...props }: InputProps) => JSX.Element;
@@ -243,10 +243,10 @@ interface MbStatefulButtonProps {
 declare const MbStatefulButton: ({ indicator, content, className, hasEmptyStatus, onClick, }: MbStatefulButtonProps) => JSX.Element;
 
 declare type TToggle = {
-    label: string;
+    label?: string;
     id?: string;
-    isChecked: boolean;
-    disabled: boolean;
+    isChecked?: boolean;
+    disabled?: boolean;
 };
 
 interface SwitchProps extends TToggle {
@@ -277,7 +277,7 @@ interface ModalProps extends React.HTMLAttributes<HTMLDivElement> {
 declare const MbModal: (props: ModalProps) => JSX.Element;
 
 interface MediaImportProps {
-    isProfileImage: boolean;
+    isProfileImage?: boolean;
     acceptedFormats: string[];
     idealDimensions: string;
     maxSize: number;
@@ -299,7 +299,6 @@ declare type TInput = {
 };
 interface InputAccountProps {
     maxAmount: number;
-    title: string;
     subtitle: string;
     smallSubtitle: string;
     inputList: TInputListGroup[];
@@ -315,7 +314,7 @@ declare const MbInputAccount: (props: InputAccountProps) => JSX.Element;
 
 interface AmountButtonProps {
     max: number;
-    disabled: boolean;
+    disabled?: boolean;
     onValueChange: (amount: number) => void;
 }
 declare const MbAmountButton: (props: AmountButtonProps) => JSX.Element;
@@ -360,4 +359,10 @@ declare const colorsArray: TColorDetail[];
 
 declare const getFontType: (size: string) => "p-big-90" | "p-med-90" | "p-small-90" | undefined;
 
-export { EControlStatus, EIconName, ESize, ESmallCardType, EState, EType, Item, MbAccordion, MbAction, MbAmountButton, MbButton, MbCheckbox, MbChip, MbColorIndicator, MbDropdownMenu, MbIcon, MbInfoCard, MbInput, MbInputAccount, MbItemsPerPage, MbLogo, MbMediaImport, MbMenuWrapper, MbModal, MbNetworkMenu, MbPagination, MbRadioButton, MbSmallCard, MbStatefulButton, MbSwitch, MbTab, MbTable, MbTabs, MbText, MbThingCard, MbTooltip, TColor, TColorDetail, TInfoCard, TNetworkOption, TSmallCard, TThingCard, TToggle, colorsArray, getFontType };
+declare const AUDIO_TYPES: string[];
+declare const VIDEO_TYPES: string[];
+declare const IMAGE_TYPES: string[];
+declare const THREED_TYPES: string[];
+declare const FILE_TYPES: string[];
+
+export { AUDIO_TYPES, EControlStatus, EIconName, ESize, ESmallCardType, EState, EType, FILE_TYPES, IMAGE_TYPES, Item, MbAccordion, MbAction, MbAmountButton, MbButton, MbCheckbox, MbChip, MbColorIndicator, MbDropdownMenu, MbIcon, MbInfoCard, MbInput, MbInputAccount, MbItemsPerPage, MbLogo, MbMediaImport, MbMenuWrapper, MbModal, MbNetworkMenu, MbPagination, MbRadioButton, MbSmallCard, MbStatefulButton, MbSwitch, MbTab, MbTable, MbTabs, MbText, MbThingCard, MbTooltip, TColor, TColorDetail, THREED_TYPES, TInfoCard, TNetworkOption, TSmallCard, TThingCard, TToggle, VIDEO_TYPES, colorsArray, getFontType };
