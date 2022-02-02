@@ -58,22 +58,30 @@ export const MbInput = ({
         } ${props.className}`}
       >
         <label className="flex w-full">
-          <input
-            disabled={props.disabled}
-            placeholder={props.hasPercentageLabel ? '' : props.placeholder}
-            type={props.type}
-            value={props.value}
-            name={props.name}
-            required={props.required}
-            className={`input-field ${getFontType(inputSize)}`}
-            onChange={props.onChange}
-          />
-          {props.hasPercentageLabel && (
-            <span className={`${getFontType(inputSize)} text-gray-500`}>%</span>
+          {props.textarea ? (
+            <textarea></textarea>
+          ) : (
+            <>
+              <input
+                disabled={props.disabled}
+                placeholder={props.hasPercentageLabel ? '' : props.placeholder}
+                type={props.type}
+                value={props.value}
+                name={props.name}
+                required={props.required}
+                className={`input-field ${getFontType(inputSize)}`}
+                onChange={props.onChange}
+              />
+              {props.hasPercentageLabel && (
+                <span className={`${getFontType(inputSize)} text-gray-500`}>
+                  %
+                </span>
+              )}
+            </>
           )}
         </label>
 
-        {hasIcon && (
+        {!props.textarea && hasIcon && (
           <div className="flex">
             {controlStatus === EControlStatus.VALID ? (
               <MbIcon
