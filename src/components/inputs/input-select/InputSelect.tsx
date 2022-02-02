@@ -1,3 +1,5 @@
+import { MbIcon } from '../..'
+import { EIconName } from '../../..'
 import './InputSelect.css'
 
 interface SelectProps extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -12,7 +14,7 @@ export const MbInputSelect = (props: SelectProps) => {
       }`}
     >
       <select
-        className="select-field"
+        className="select-field appearance-none"
         disabled={props.disabled}
         onChange={(event) => props.onValueChange(event.target.value)}
       >
@@ -20,6 +22,11 @@ export const MbInputSelect = (props: SelectProps) => {
         <option value="2">Option 2</option>
         <option value="3">Option 3</option>
       </select>
+      <MbIcon
+        name={EIconName.SELECT_ARROWS}
+        color="blue-300"
+        darkColor="blue-100"
+      />
     </div>
   )
 }
