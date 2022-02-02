@@ -16,7 +16,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   hasIcon?: boolean
   controlStatus: EControlStatus
   inputSize?: ESize
-  textarea: boolean
+  textarea?: boolean
   hasPercentageLabel?: boolean
 }
 
