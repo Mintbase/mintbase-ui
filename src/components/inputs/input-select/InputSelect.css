@@ -1,20 +1,16 @@
-.input-field {
+.select-field {
   @apply bg-transparent placeholder-gray-500 text-black dark:text-white focus:outline-none w-full;
 }
 
-.input-wrapper.disabled {
+.select-wrapper.disabled {
   @apply bg-gray-200 dark:bg-gray-700;
 }
 
-.default {
+.select-wrapper.default {
   @apply bg-gray-100 hover:bg-blue-300-15 dark:bg-gray-900 dark:hover:bg-mb-blackblue focus-within:ring-1 transition-all duration-500;
 }
 
-.input-wrapper.empty {
-  @apply focus-within:ring-blue-300-35 dark:focus-within:ring-blue-100-35;
-}
-
-.input-wrapper {
+.select-wrapper {
   @apply p-12 w-full;
   max-height: 40px;
 }

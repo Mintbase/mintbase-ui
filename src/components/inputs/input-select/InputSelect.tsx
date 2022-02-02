@@ -7,12 +7,12 @@ interface SelectProps extends React.InputHTMLAttributes<HTMLInputElement> {
 export const MbInputSelect = (props: SelectProps) => {
   return (
     <div
-      className={`input-wrapper default flex items-center justify-between rounded ${
-        props.disabled ? 'disabled' : 'default '
+      className={`select-wrapper flex items-center justify-between rounded ${
+        props.disabled ? 'disabled' : 'default'
       }`}
     >
       <select
-        className="input-field"
+        className="select-field"
         disabled={props.disabled}
         onChange={(event) => props.onValueChange(event.target.value)}
       >
