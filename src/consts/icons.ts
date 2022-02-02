@@ -29,6 +29,7 @@ export enum EIconName {
   ARROW_RIGHT_SMALL = 'navigate_next',
   ARROW_EXPAND_MORE = 'expand_more',
   ARROW_EXPAND_LESS = 'expand_less',
+  SELECT_ARROWS = 'unfold_more',
   OPEN_NEW_TAB = 'launch',
   LINK = 'link',
   UNLINK = 'link_off',
@@ -38,7 +39,7 @@ export enum EIconName {
   ERROR = 'error',
   SUCCESS = 'check_circle',
   EDITIONS = 'filter_none',
-  BURN = 'local_fire_department',  
+  BURN = 'local_fire_department',
   FACEBOOK = 'facebook',
   INSTAGRAM = 'instagram',
   PINTEREST = 'pinterest',
@@ -50,5 +51,5 @@ export enum EIconName {
   GITHUB = 'github',
   DISCORD = 'discord',
   MINTBASE = 'mintbase',
-  NONE = 'none'
+  NONE = 'none',
 }
