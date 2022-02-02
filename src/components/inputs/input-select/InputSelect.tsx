@@ -32,6 +32,7 @@ export const MbInputSelect = (props: SelectProps) => {
         name={EIconName.SELECT_ARROWS}
         color="blue-300"
         darkColor="blue-100"
+        className='cursor-pointer'
       />
     </div>
   )
