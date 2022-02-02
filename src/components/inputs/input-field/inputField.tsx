@@ -55,11 +55,15 @@ export const MbInput = ({
       <div
         className={`input-wrapper ${inputSize} flex items-center justify-between rounded ${
           props.disabled ? 'disabled' : 'default ' + controlStatus
-        } ${props.className}`}
+        } ${props.textarea ? 'textarea' : ''} ${props.className}`}
       >
         <label className="flex w-full">
           {props.textarea ? (
-            <textarea></textarea>
+            <textarea
+              className={`input-field textarea ${getFontType(inputSize)}`}
+              placeholder={props.placeholder}
+              onChange={() => props.onChange}
+            ></textarea>
           ) : (
             <>
               <input
