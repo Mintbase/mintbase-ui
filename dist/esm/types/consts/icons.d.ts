@@ -29,6 +29,7 @@ export declare enum EIconName {
     ARROW_RIGHT_SMALL = "navigate_next",
     ARROW_EXPAND_MORE = "expand_more",
     ARROW_EXPAND_LESS = "expand_less",
+    SELECT_ARROWS = "unfold_more",
     OPEN_NEW_TAB = "launch",
     LINK = "link",
     UNLINK = "link_off",

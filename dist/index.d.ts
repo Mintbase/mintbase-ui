@@ -73,6 +73,7 @@ declare enum EIconName {
     ARROW_RIGHT_SMALL = "navigate_next",
     ARROW_EXPAND_MORE = "expand_more",
     ARROW_EXPAND_LESS = "expand_less",
+    SELECT_ARROWS = "unfold_more",
     OPEN_NEW_TAB = "launch",
     LINK = "link",
     UNLINK = "link_off",
@@ -168,6 +169,11 @@ interface InputProps extends React$1.InputHTMLAttributes<HTMLInputElement> {
     hasPercentageLabel?: boolean;
 }
 declare const MbInput: ({ label, hasIcon, controlStatus, inputSize, ...props }: InputProps) => JSX.Element;
+
+interface SelectProps extends React.InputHTMLAttributes<HTMLInputElement> {
+    onValueChange: (value: string) => void;
+}
+declare const MbInputSelect: (props: SelectProps) => JSX.Element;
 
 declare const MbItemsPerPage: ({ onItemsPage, currentValue, }: {
     onItemsPage: (page: number) => void;
@@ -365,4 +371,4 @@ declare const IMAGE_TYPES: string[];
 declare const THREED_TYPES: string[];
 declare const FILE_TYPES: string[];
 
-export { AUDIO_TYPES, EControlStatus, EIconName, ESize, ESmallCardType, EState, EType, FILE_TYPES, IMAGE_TYPES, Item, MbAccordion, MbAction, MbAmountButton, MbButton, MbCheckbox, MbChip, MbColorIndicator, MbDropdownMenu, MbIcon, MbInfoCard, MbInput, MbInputAccount, MbItemsPerPage, MbLogo, MbMediaImport, MbMenuWrapper, MbModal, MbNetworkMenu, MbPagination, MbRadioButton, MbSmallCard, MbStatefulButton, MbSwitch, MbTab, MbTable, MbTabs, MbText, MbThingCard, MbTooltip, TColor, TColorDetail, THREED_TYPES, TInfoCard, TNetworkOption, TSmallCard, TThingCard, TToggle, VIDEO_TYPES, colorsArray, getFontType };
+export { AUDIO_TYPES, EControlStatus, EIconName, ESize, ESmallCardType, EState, EType, FILE_TYPES, IMAGE_TYPES, Item, MbAccordion, MbAction, MbAmountButton, MbButton, MbCheckbox, MbChip, MbColorIndicator, MbDropdownMenu, MbIcon, MbInfoCard, MbInput, MbInputAccount, MbInputSelect, MbItemsPerPage, MbLogo, MbMediaImport, MbMenuWrapper, MbModal, MbNetworkMenu, MbPagination, MbRadioButton, MbSmallCard, MbStatefulButton, MbSwitch, MbTab, MbTable, MbTabs, MbText, MbThingCard, MbTooltip, TColor, TColorDetail, THREED_TYPES, TInfoCard, TNetworkOption, TSmallCard, TThingCard, TToggle, VIDEO_TYPES, colorsArray, getFontType };
