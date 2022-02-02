@@ -1,6 +1,6 @@
 .switch {
   @apply relative inline-block;
-  width: 50px;
+  width: 40px;
 }
 
 .switch-checkbox {
@@ -14,11 +14,11 @@
 
 .switch-btn {
   @apply flex items-center justify-center absolute bg-gray-300 dark:bg-gray-600 rounded-full;
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   top: 0;
   bottom: 0;
-  right: 26px;
+  right: 18px;
   transition: all 0.5s ease-in 0s;
   z-index: 1;
   top: 50%;
