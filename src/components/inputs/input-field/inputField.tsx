@@ -16,6 +16,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   hasIcon?: boolean
   controlStatus: EControlStatus
   inputSize?: ESize
+  textarea: boolean
   hasPercentageLabel?: boolean
 }
 
@@ -54,25 +55,37 @@ export const MbInput = ({
       <div
         className={`input-wrapper ${inputSize} flex items-center justify-between rounded ${
           props.disabled ? 'disabled' : 'default ' + controlStatus
-        } ${props.className}`}
+        } ${props.textarea ? 'textarea' : ''} ${props.className}`}
       >
         <label className="flex w-full">
-          <input
-            disabled={props.disabled}
-            placeholder={props.hasPercentageLabel ? '' : props.placeholder}
-            type={props.type}
-            value={props.value}
-            name={props.name}
-            required={props.required}
-            className={`input-field ${getFontType(inputSize)}`}
-            onChange={props.onChange}
-          />
-          {props.hasPercentageLabel && (
-            <span className={`${getFontType(inputSize)} text-gray-500`}>%</span>
+          {props.textarea ? (
+            <textarea
+              className={`input-field textarea ${getFontType(inputSize)}`}
+              placeholder={props.placeholder}
+              onChange={() => props.onChange}
+            ></textarea>
+          ) : (
+            <>
+              <input
+                disabled={props.disabled}
+                placeholder={props.hasPercentageLabel ? '' : props.placeholder}
+                type={props.type}
+                value={props.value}
+                name={props.name}
+                required={props.required}
+                className={`input-field ${getFontType(inputSize)}`}
+                onChange={props.onChange}
+              />
+              {props.hasPercentageLabel && (
+                <span className={`${getFontType(inputSize)} text-gray-500`}>
+                  %
+                </span>
+              )}
+            </>
           )}
         </label>
 
-        {hasIcon && (
+        {!props.textarea && hasIcon && (
           <div className="flex">
             {controlStatus === EControlStatus.VALID ? (
               <MbIcon
