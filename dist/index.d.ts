@@ -172,8 +172,13 @@ interface InputProps extends React$1.InputHTMLAttributes<HTMLInputElement> {
 declare const MbInput: ({ label, hasIcon, controlStatus, inputSize, ...props }: InputProps) => JSX.Element;
 
 interface SelectProps extends React.InputHTMLAttributes<HTMLInputElement> {
+    options: TSelectOption[];
     onValueChange: (value: string) => void;
 }
+declare type TSelectOption = {
+    value: string;
+    label: string;
+};
 declare const MbInputSelect: (props: SelectProps) => JSX.Element;
 
 declare const MbItemsPerPage: ({ onItemsPage, currentValue, }: {
