@@ -3,7 +3,13 @@ import { EIconName } from '../../..'
 import './InputSelect.css'
 
 interface SelectProps extends React.InputHTMLAttributes<HTMLInputElement> {
+  options: TSelectOption[]
   onValueChange: (value: string) => void
+}
+
+type TSelectOption = {
+  value: string
+  label: string
 }
 
 export const MbInputSelect = (props: SelectProps) => {
@@ -18,14 +24,15 @@ export const MbInputSelect = (props: SelectProps) => {
         disabled={props.disabled}
         onChange={(event) => props.onValueChange(event.target.value)}
       >
-        <option value="1">Option 1</option>
-        <option value="2">Option 2</option>
-        <option value="3">Option 3</option>
+        {props.options.map((option) => (
+          <option value={option.value}>{option.label}</option>
+        ))}
       </select>
       <MbIcon
         name={EIconName.SELECT_ARROWS}
         color="blue-300"
         darkColor="blue-100"
+        className='cursor-pointer'
       />
     </div>
   )
