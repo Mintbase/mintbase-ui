@@ -166,6 +166,7 @@ interface InputProps extends React$1.InputHTMLAttributes<HTMLInputElement> {
     hasIcon?: boolean;
     controlStatus: EControlStatus;
     inputSize?: ESize;
+    textarea?: boolean;
     hasPercentageLabel?: boolean;
 }
 declare const MbInput: ({ label, hasIcon, controlStatus, inputSize, ...props }: InputProps) => JSX.Element;
