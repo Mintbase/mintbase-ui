@@ -19,11 +19,7 @@ export default {
   },
 } as ComponentMeta<typeof MbInput>
 
-const Template: ComponentStory<typeof MbInput> = (args) => (
-  <div className='h-72'>
-    <MbInput {...args} />
-  </div>
-)
+const Template: ComponentStory<typeof MbInput> = (args) => <MbInput {...args} />
 
 export const Input = Template.bind({})
 Input.args = {
