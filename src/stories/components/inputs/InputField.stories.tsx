@@ -29,6 +29,7 @@ Input.args = {
   placeholder: 'Placeholder',
   type: 'text',
   required: true,
+  textarea: false,
   controlStatus: EControlStatus.NORMAL,
   inputSize: ESize.MEDIUM,
   onChange: (event: any) => {
