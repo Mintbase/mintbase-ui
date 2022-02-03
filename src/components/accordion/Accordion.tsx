@@ -10,11 +10,15 @@ interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export const MbAccordion = (props: AccordionProps) => {
-  const [isExpanded, setIsExpanded] = useState(props.isOpen)
+  const { title, isOpen, isFixedAccordion, hasInfoIcon, children } = props
+
+  const [isExpanded, setIsExpanded] = useState(isOpen)
+
   const toggle = () => {
-    if (props.isFixedAccordion) return
+    if (isFixedAccordion) return
     setIsExpanded(!isExpanded)
   }
+
   return (
     <main className="rounded bg-white dark:bg-gray-850 dark:text-white">
       <header
@@ -23,9 +27,9 @@ export const MbAccordion = (props: AccordionProps) => {
         }`}
         onClick={toggle}
       >
-        <div>{props.title}</div>
+        <div>{title}</div>
         <div className="space-x-24 flex">
-          {props.hasInfoIcon && (
+          {hasInfoIcon && (
             <MbIcon
               name={EIconName.INFO}
               size="20px"
@@ -33,7 +37,7 @@ export const MbAccordion = (props: AccordionProps) => {
               darkColor="blue-100"
             />
           )}
-          {!props.isFixedAccordion && (
+          {!isFixedAccordion && (
             <MbIcon
               name={
                 !isExpanded
@@ -47,7 +51,7 @@ export const MbAccordion = (props: AccordionProps) => {
           )}
         </div>
       </header>
-      {isExpanded && <section>{props.children}</section>}
+      {isExpanded && <section>{children}</section>}
     </main>
   )
 }
