@@ -27,7 +27,7 @@ export const MbAccordion = (props: AccordionProps) => {
         }`}
         onClick={toggle}
       >
-        <div>{title}</div>
+        <div className='p-big-130'>{title}</div>
         <div className="space-x-24 flex">
           {hasInfoIcon && (
             <MbIcon
