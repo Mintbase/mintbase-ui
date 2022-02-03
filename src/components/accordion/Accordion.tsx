@@ -4,12 +4,15 @@ import { EIconName } from '../..'
 
 interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
   title: string
+  isOpen?: boolean
+  isFixedAccordion?: boolean
   hasInfoIcon?: boolean
 }
 
 export const MbAccordion = (props: AccordionProps) => {
-  const [isExpanded, setIsExpanded] = useState(false)
+  const [isExpanded, setIsExpanded] = useState(props.isOpen)
   const toggle = () => {
+    if (props.isFixedAccordion) return
     setIsExpanded(!isExpanded)
   }
   return (
@@ -30,16 +33,18 @@ export const MbAccordion = (props: AccordionProps) => {
               darkColor="blue-100"
             />
           )}
-          <MbIcon
-            name={
-              !isExpanded
-                ? EIconName.ARROW_EXPAND_MORE
-                : EIconName.ARROW_EXPAND_LESS
-            }
-            size="20px"
-            color="black"
-            darkColor="white"
-          />
+          {!props.isFixedAccordion && (
+            <MbIcon
+              name={
+                !isExpanded
+                  ? EIconName.ARROW_EXPAND_MORE
+                  : EIconName.ARROW_EXPAND_LESS
+              }
+              size="20px"
+              color="black"
+              darkColor="white"
+            />
+          )}
         </div>
       </header>
       {isExpanded && <section>{props.children}</section>}
