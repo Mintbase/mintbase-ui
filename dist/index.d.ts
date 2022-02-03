@@ -4,6 +4,8 @@ import { Place } from 'react-tooltip';
 
 interface AccordionProps extends React$1.HTMLAttributes<HTMLDivElement> {
     title: string;
+    isOpen?: boolean;
+    isFixedAccordion?: boolean;
     hasInfoIcon?: boolean;
 }
 declare const MbAccordion: (props: AccordionProps) => JSX.Element;
