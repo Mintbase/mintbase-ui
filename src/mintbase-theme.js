@@ -24,6 +24,9 @@ module.exports = {
     35: '35px',
   },
   extend: {
+    flex: {
+      2: '2 2 0%',
+    },
     padding: {
       2: '2px',
       4: '4px',
