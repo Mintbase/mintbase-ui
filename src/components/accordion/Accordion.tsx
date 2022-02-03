@@ -6,7 +6,7 @@ interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
   title: string
   isOpen?: boolean
   isFixedAccordion?: boolean
-  extraIcon: JSX.Element
+  extraIcon?: JSX.Element
 }
 
 export const MbAccordion = (props: AccordionProps) => {
