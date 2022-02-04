@@ -7,7 +7,7 @@ interface AmountButtonProps {
   onValueChange: (amount: number) => void
 }
 
-export const MbAmountButton = (props: AmountButtonProps) => {
+export const MbAmountInput = (props: AmountButtonProps) => {
   const [amount, setAmount] = useState(1)
 
   const { max, disabled, onValueChange } = props
