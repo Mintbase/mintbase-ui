@@ -4,6 +4,7 @@ import { MbButton } from '../../../components/buttons/button/Button'
 import { MbDropdownMenu } from '../../../components/dropdowns/dropdown-menu/DropdownMenu'
 import { MbMenuWrapper } from '../../../components/dropdowns/menu-wrapper/MenuWrapper'
 import { MbIcon } from '../../../components/icon/Icon'
+import { MbText } from '../../../components/text/Text'
 import { EIconName } from '../../../consts/icons'
 
 export default {
@@ -13,7 +14,11 @@ export default {
 } as ComponentMeta<typeof MbDropdownMenu>
 const defaultItems = [
   {
-    text: 'Docs',
+    content: (
+      <MbText className={'p-med-90 text-blue-300 dark:text-blue-100 max-w-80%'}>
+        Docs
+      </MbText>
+    ),
     icon: (
       <MbIcon
         name={EIconName.OPEN_NEW_TAB}
@@ -22,12 +27,13 @@ const defaultItems = [
         size="16px"
       />
     ),
-    onClick: () => {
-      console.log('pressed menu button 1')
-    },
   },
   {
-    text: 'Developers',
+    content: (
+      <MbText className={'p-med-90 text-blue-300 dark:text-blue-100 max-w-80%'}>
+        Developers
+      </MbText>
+    ),
     icon: (
       <MbIcon
         name={EIconName.OPEN_NEW_TAB}
@@ -36,12 +42,13 @@ const defaultItems = [
         size="16px"
       />
     ),
-    onClick: () => {
-      console.log('pressed menu button 1')
-    },
   },
   {
-    text: 'Community',
+    content: (
+      <MbText className={'p-med-90 text-blue-300 dark:text-blue-100 max-w-80%'}>
+        Community
+      </MbText>
+    ),
     icon: (
       <MbIcon
         name={EIconName.OPEN_NEW_TAB}
@@ -50,30 +57,34 @@ const defaultItems = [
         size="16px"
       />
     ),
-    onClick: () => {
-      console.log('pressed menu button 1')
-    },
   },
   {
-    text: 'Store',
-    onClick: () => {
-      console.log('pressed menu button 1')
-    },
+    content: (
+      <MbText className={'p-med-90 text-blue-300 dark:text-blue-100 max-w-80%'}>
+        Store
+      </MbText>
+    ),
   },
   {
-    text: 'Careers',
-    onClick: () => {
-      console.log('pressed menu button 1')
-    },
+    content: (
+      <MbText className={'p-med-90 text-blue-300 dark:text-blue-100 max-w-80%'}>
+        Careers
+      </MbText>
+    ),
   },
   {
-    text: 'Royalties',
-    onClick: () => {
-      console.log('pressed menu button 1')
-    },
+    content: (
+      <MbText className={'p-med-90 text-blue-300 dark:text-blue-100 max-w-80%'}>
+        Royalties
+      </MbText>
+    ),
   },
   {
-    text: 'Data',
+    content: (
+      <MbText className={'p-med-90 text-blue-300 dark:text-blue-100 max-w-80%'}>
+        Data
+      </MbText>
+    ),
     icon: (
       <MbIcon
         name={EIconName.OPEN_NEW_TAB}
@@ -82,9 +93,6 @@ const defaultItems = [
         size="16px"
       />
     ),
-    onClick: () => {
-      console.log('pressed menu button 1')
-    },
   },
 ]
 

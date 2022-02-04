@@ -3,10 +3,10 @@ import { MbText } from '../../text/Text'
 import './dropdownmenu.css'
 
 export interface Item {
-  text: string
+  content: JSX.Element
   selected?: boolean
   icon?: JSX.Element
-  onClick: () => void
+  onClick?: () => void
 }
 
 interface DropdownMenuProps {
@@ -20,17 +20,17 @@ export const MbDropdownMenu = (props: DropdownMenuProps) => {
 
   return !isOpen ? null : (
     <ul className={`dropdown-menu ${className}`}>
-      {items.map(({ text, selected, icon, onClick }, index) => {
+      {items.map(({ content, selected, icon, onClick }, index) => {
         return (
           <li
-            key={`${text}-${index}`}
+            key={`${index}`}
             className={`dropdown-item ${selected ? 'selected' : ''}`}
             onClick={onClick}
           >
             <MbText
               className={'p-med-90 text-blue-300 dark:text-blue-100 max-w-80%'}
             >
-              {text}
+              {content}
             </MbText>
             {icon && <div className={'dropdown-icon'}>{icon}</div>}
           </li>
