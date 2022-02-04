@@ -24,7 +24,7 @@ export const MbTabs = (props: TabsProps) => {
 
   const options: Item[] = [
     {
-      text: 'Newest',
+      content: <span>Newest</span>,
       onClick: () => {
         handleOptionSelect('Newest')
       },
@@ -40,7 +40,7 @@ export const MbTabs = (props: TabsProps) => {
         ) : undefined,
     },
     {
-      text: 'Oldest',
+      content: <span>Oldest</span>,
       onClick: () => {
         handleOptionSelect('Oldest')
       },
@@ -56,7 +56,7 @@ export const MbTabs = (props: TabsProps) => {
         ) : undefined,
     },
     {
-      text: 'Cheapest',
+      content: <span>Cheapest</span>,
       onClick: () => {
         handleOptionSelect('Cheapest')
       },
@@ -72,7 +72,7 @@ export const MbTabs = (props: TabsProps) => {
         ) : undefined,
     },
     {
-      text: 'Most expensive',
+      content: <span>Most expensive</span>,
       onClick: () => {
         handleOptionSelect('Most expensive')
       },
