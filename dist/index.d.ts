@@ -329,9 +329,10 @@ declare const MbInputAccount: (props: InputAccountProps) => JSX.Element;
 interface AmountButtonProps {
     max: number;
     disabled?: boolean;
+    size?: ESize;
     onValueChange: (amount: number) => void;
 }
-declare const MbAmountButton: (props: AmountButtonProps) => JSX.Element;
+declare const MbAmountInput: (props: AmountButtonProps) => JSX.Element;
 
 declare type TNetworkOption = {
     label: string;
@@ -379,4 +380,4 @@ declare const IMAGE_TYPES: string[];
 declare const THREED_TYPES: string[];
 declare const FILE_TYPES: string[];
 
-export { AUDIO_TYPES, EControlStatus, EIconName, ESize, ESmallCardType, EState, EType, FILE_TYPES, IMAGE_TYPES, Item, MbAccordion, MbAction, MbAmountButton, MbButton, MbCheckbox, MbChip, MbColorIndicator, MbDropdownMenu, MbIcon, MbInfoCard, MbInput, MbInputAccount, MbInputSelect, MbItemsPerPage, MbLogo, MbMediaImport, MbMenuWrapper, MbModal, MbNetworkMenu, MbPagination, MbRadioButton, MbSmallCard, MbStatefulButton, MbSwitch, MbTab, MbTable, MbTabs, MbText, MbThingCard, MbTooltip, TColor, TColorDetail, THREED_TYPES, TInfoCard, TNetworkOption, TSmallCard, TThingCard, TToggle, VIDEO_TYPES, colorsArray, getFontType };
+export { AUDIO_TYPES, EControlStatus, EIconName, ESize, ESmallCardType, EState, EType, FILE_TYPES, IMAGE_TYPES, Item, MbAccordion, MbAction, MbAmountInput, MbButton, MbCheckbox, MbChip, MbColorIndicator, MbDropdownMenu, MbIcon, MbInfoCard, MbInput, MbInputAccount, MbInputSelect, MbItemsPerPage, MbLogo, MbMediaImport, MbMenuWrapper, MbModal, MbNetworkMenu, MbPagination, MbRadioButton, MbSmallCard, MbStatefulButton, MbSwitch, MbTab, MbTable, MbTabs, MbText, MbThingCard, MbTooltip, TColor, TColorDetail, THREED_TYPES, TInfoCard, TNetworkOption, TSmallCard, TThingCard, TToggle, VIDEO_TYPES, colorsArray, getFontType };
