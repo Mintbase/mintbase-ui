@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import './amountbutton.css'
+import './AmountInput.css'
 
 interface AmountButtonProps {
   max: number
