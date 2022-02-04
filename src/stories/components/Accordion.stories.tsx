@@ -1,4 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { EIconName, MbIcon } from '../..'
 import { MbAccordion } from '../../components/accordion/Accordion'
 
 export default {
@@ -16,4 +17,12 @@ const Template: ComponentStory<typeof MbAccordion> = (args) => (
 export const Accordion = Template.bind({})
 Accordion.args = {
   title: 'Header Title',
+  extraIcon: (
+    <MbIcon
+      name={EIconName.INFO}
+      size="20px"
+      color="blue-300"
+      darkColor="blue-100"
+    />
+  ),
 }
