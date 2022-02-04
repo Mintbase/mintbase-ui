@@ -235,10 +235,10 @@ interface LogoProps {
 declare const MbLogo: ({ src, width, className, }: LogoProps) => JSX.Element;
 
 interface Item {
-    text: string;
+    content: JSX.Element;
     selected?: boolean;
     icon?: JSX.Element;
-    onClick: () => void;
+    onClick?: () => void;
 }
 interface DropdownMenuProps {
     items: Item[];
