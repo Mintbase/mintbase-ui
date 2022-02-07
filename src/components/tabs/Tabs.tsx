@@ -7,6 +7,7 @@ import { MbMenuWrapper } from '../dropdowns/menu-wrapper/MenuWrapper'
 
 interface TabsProps extends React.HTMLAttributes<HTMLDivElement> {
   activeIndex: number
+  filterOptions?: TFilterOptions
   onTabChange: (index: number) => void
   onOrderByChange: (selected: string) => void
 }
@@ -15,22 +16,26 @@ type TTab = {
   props: TabProps
 }
 
+type TFilterOptions = {
+  label: string
+  options: { id: string; label: string; isSelected: boolean }[]
+}
+
 export const MbTabs = (props: TabsProps) => {
   const [showOrderOpts, setShowOrderOpts] = useState(false)
   const [selectedOrder, setSelectedOrder] = useState('')
   const [selectedFilter, setSelectedFilter] = useState(false)
 
-  const { children, onTabChange, onOrderByChange, activeIndex } = props
+  const { children, onTabChange, onOrderByChange, activeIndex, filterOptions } =
+    props
 
-  const options: Item[] = [
-    {
-      content: <span>Newest</span>,
-      onClick: () => {
-        handleOptionSelect('Newest')
-      },
-      selected: selectedOrder === 'Newest',
+  const options: Item[] | undefined = filterOptions?.options.map((filter) => {
+    return {
+      content: <span>{filter.label}</span>,
+      onClick: () => handleOptionSelect(filter.id),
+      selected: filter.isSelected || selectedOrder === filter.id,
       icon:
-        selectedOrder === 'Newest' ? (
+        selectedOrder === filter.id ? (
           <MbIcon
             name={EIconName.CHECK}
             color={'blue-300'}
@@ -38,56 +43,8 @@ export const MbTabs = (props: TabsProps) => {
             size="16px"
           />
         ) : undefined,
-    },
-    {
-      content: <span>Oldest</span>,
-      onClick: () => {
-        handleOptionSelect('Oldest')
-      },
-      selected: selectedOrder === 'Oldest',
-      icon:
-        selectedOrder === 'Oldest' ? (
-          <MbIcon
-            name={EIconName.CHECK}
-            color={'blue-300'}
-            darkColor={'blue-100'}
-            size="16px"
-          />
-        ) : undefined,
-    },
-    {
-      content: <span>Cheapest</span>,
-      onClick: () => {
-        handleOptionSelect('Cheapest')
-      },
-      selected: selectedOrder === 'Cheapest',
-      icon:
-        selectedOrder === 'Cheapest' ? (
-          <MbIcon
-            name={EIconName.CHECK}
-            color={'blue-300'}
-            darkColor={'blue-100'}
-            size="16px"
-          />
-        ) : undefined,
-    },
-    {
-      content: <span>Most expensive</span>,
-      onClick: () => {
-        handleOptionSelect('Most expensive')
-      },
-      selected: selectedOrder === 'Most expensive',
-      icon:
-        selectedOrder === 'Most expensive' ? (
-          <MbIcon
-            name={EIconName.CHECK}
-            color={'blue-300'}
-            darkColor={'blue-100'}
-            size="16px"
-          />
-        ) : undefined,
-    },
-  ]
+    }
+  })
 
   const handleOptionSelect = (option: string) => {
     setShowOrderOpts(!showOrderOpts)
@@ -170,49 +127,57 @@ export const MbTabs = (props: TabsProps) => {
                 })
               : null}
 
-            <div>
-              <MbMenuWrapper setIsOpen={setShowOrderOpts}>
-                <li
-                  className={`order-by ${
-                    selectedOrder ? 'selected' : 'unselected'
-                  } relative`}
-                >
-                  <div
-                    className="flex p-12 sm:p-16 items-center"
-                    onClick={() => setShowOrderOpts(!showOrderOpts)}
+            {filterOptions && options && (
+              <div>
+                <MbMenuWrapper setIsOpen={setShowOrderOpts}>
+                  <li
+                    className={`order-by ${
+                      selectedOrder ? 'selected' : 'unselected'
+                    } relative`}
                   >
                     <div
-                      className={`${
-                        selectedOrder
-                          ? 'text-mb-red'
-                          : 'text-blue-300 dark:text-blue-100'
-                      } p-med-90 pr-10 whitespace-nowrap`}
+                      className="flex p-12 sm:p-16 items-center"
+                      onClick={() => setShowOrderOpts(!showOrderOpts)}
                     >
-                      {selectedOrder ? selectedOrder : 'Order By'}
+                      <div
+                        className={`${
+                          selectedOrder
+                            ? 'text-mb-red'
+                            : 'text-blue-300 dark:text-blue-100'
+                        } p-med-90 pr-10 whitespace-nowrap`}
+                      >
+                        {selectedOrder
+                          ? filterOptions.options.filter(
+                              (filter) => filter.id === selectedOrder
+                            )[0].label
+                          : filterOptions.label}
+                      </div>
+                      <MbIcon
+                        name={EIconName.ARROW_DROP_DOWN}
+                        size="16px"
+                        color="blue-300"
+                        darkColor="blue-100"
+                      />
                     </div>
-                    <MbIcon
-                      name={EIconName.ARROW_DROP_DOWN}
-                      size="16px"
-                      color="blue-300"
-                      darkColor="blue-100"
+                    <MbDropdownMenu
+                      isOpen={showOrderOpts}
+                      items={options}
+                      className="center-pos hidden md:block"
                     />
-                  </div>
-                  <MbDropdownMenu
-                    isOpen={showOrderOpts}
-                    items={options}
-                    className="center-pos hidden md:block"
-                  />
-                </li>
-              </MbMenuWrapper>
-            </div>
+                  </li>
+                </MbMenuWrapper>
+              </div>
+            )}
           </div>
         </ul>
 
-        <MbDropdownMenu
-          isOpen={showOrderOpts}
-          items={options}
-          className="right-0 md:hidden"
-        />
+        {filterOptions && options && (
+          <MbDropdownMenu
+            isOpen={showOrderOpts}
+            items={options}
+            className="right-0 md:hidden"
+          />
+        )}
       </div>
       {tabsContent?.length &&
         tabsContent?.map((content, index) => {

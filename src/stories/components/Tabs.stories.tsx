@@ -17,6 +17,18 @@ const Template: ComponentStory<typeof MbTabs> = (args) => {
         activeIndex={tab}
         onTabChange={(tab) => setTab(tab)}
         onOrderByChange={(selectedOrder) => console.log(selectedOrder)}
+        filterOptions={{
+          label: 'Order by',
+          options: [
+            { label: 'Newest', id: 'newest', isSelected: false },
+            { label: 'Cheapest', id: 'cheapest', isSelected: false },
+            {
+              label: 'Most expensive',
+              id: 'most-expensive',
+              isSelected: false,
+            },
+          ],
+        }}
       >
         <MbTab
           title="NFTs"
