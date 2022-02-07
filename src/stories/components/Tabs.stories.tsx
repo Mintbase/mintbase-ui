@@ -19,13 +19,14 @@ const Template: ComponentStory<typeof MbTabs> = (args) => {
         onOrderByChange={(selectedOrder) => console.log(selectedOrder)}
         filterOptions={{
           label: 'Order by',
+          defaultOptionId: 'newest',
           options: [
-            { label: 'Newest', id: 'newest', isSelected: false },
-            { label: 'Cheapest', id: 'cheapest', isSelected: false },
+            { label: 'Newest', id: 'newest' },
+            { label: 'Oldest', id: 'oldest' },
+            { label: 'Cheapest', id: 'cheapest' },
             {
               label: 'Most expensive',
               id: 'most-expensive',
-              isSelected: false,
             },
           ],
         }}

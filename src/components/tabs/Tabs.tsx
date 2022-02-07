@@ -18,22 +18,24 @@ type TTab = {
 
 type TFilterOptions = {
   label: string
-  options: { id: string; label: string; isSelected: boolean }[]
+  defaultOptionId?: string
+  options: { id: string; label: string }[]
 }
 
 export const MbTabs = (props: TabsProps) => {
-  const [showOrderOpts, setShowOrderOpts] = useState(false)
-  const [selectedOrder, setSelectedOrder] = useState('')
-  const [selectedFilter, setSelectedFilter] = useState(false)
-
   const { children, onTabChange, onOrderByChange, activeIndex, filterOptions } =
     props
+  const [showOrderOpts, setShowOrderOpts] = useState(false)
+  const [selectedOrder, setSelectedOrder] = useState(
+    filterOptions?.defaultOptionId ?? ''
+  )
+  const [selectedFilter, setSelectedFilter] = useState(false)
 
   const options: Item[] | undefined = filterOptions?.options.map((filter) => {
     return {
       content: <span>{filter.label}</span>,
       onClick: () => handleOptionSelect(filter.id),
-      selected: filter.isSelected || selectedOrder === filter.id,
+      selected: selectedOrder === filter.id,
       icon:
         selectedOrder === filter.id ? (
           <MbIcon
