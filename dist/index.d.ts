@@ -213,9 +213,18 @@ declare const MbTab: (props: TabProps) => JSX.Element;
 
 interface TabsProps extends React$1.HTMLAttributes<HTMLDivElement> {
     activeIndex: number;
+    filterOptions?: TFilterOptions;
     onTabChange: (index: number) => void;
     onOrderByChange: (selected: string) => void;
 }
+declare type TFilterOptions = {
+    label: string;
+    options: {
+        id: string;
+        label: string;
+        isSelected: boolean;
+    }[];
+};
 declare const MbTabs: (props: TabsProps) => JSX.Element;
 
 declare type TextProps = React$1.HTMLAttributes<HTMLDivElement>;
