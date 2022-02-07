@@ -130,6 +130,7 @@ export const MbPagination = (props: PaginationProps) => {
                     pageNumber === currentPage ? 'active' : ''
                   }`}
                   onClick={() => onPageChange(pageNumber)}
+                  key={pageNumber}
                 >
                   {pageNumber}
                 </li>
