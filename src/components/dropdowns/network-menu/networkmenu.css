@@ -11,7 +11,7 @@
 }
 
 .network-item {
-  @apply flex bg-gray-100 dark:bg-gray-800 hover:bg-blue-300-15 dark:hover:bg-blue-100-15 p-12 cursor-pointer justify-start items-center space-x-12 transition-all duration-500 whitespace-nowrap;
+  @apply flex bg-gray-100 dark:bg-gray-800 hover:bg-blue-300-15 dark:hover:bg-blue-100-15 p-12 cursor-pointer justify-start items-center space-x-8 transition-all duration-500 whitespace-nowrap;
 }
 
 .network-menu.row .network-item {
