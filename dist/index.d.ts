@@ -219,10 +219,10 @@ interface TabsProps extends React$1.HTMLAttributes<HTMLDivElement> {
 }
 declare type TFilterOptions = {
     label: string;
+    defaultOptionId?: string;
     options: {
         id: string;
         label: string;
-        isSelected: boolean;
     }[];
 };
 declare const MbTabs: (props: TabsProps) => JSX.Element;
