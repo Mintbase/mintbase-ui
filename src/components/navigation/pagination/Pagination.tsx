@@ -118,7 +118,7 @@ export const MbPagination = (props: PaginationProps) => {
                         onPageChange(currentPage - 3)
                       }
                     }}
-                    key={pageNumber}
+                    key={index}
                   >
                     {DOTS}
                   </li>
@@ -130,7 +130,7 @@ export const MbPagination = (props: PaginationProps) => {
                     pageNumber === currentPage ? 'active' : ''
                   }`}
                   onClick={() => onPageChange(pageNumber)}
-                  key={pageNumber}
+                  key={index}
                 >
                   {pageNumber}
                 </li>
