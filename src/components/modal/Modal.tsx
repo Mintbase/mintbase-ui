@@ -5,11 +5,12 @@ import { useEffect } from 'react'
 
 interface ModalProps extends React.HTMLAttributes<HTMLDivElement> {
   title: string
+  subtitle?: string
   open: boolean
   onClose: () => void
 }
 export const MbModal = (props: ModalProps) => {
-  const { open, onClose, title, children } = props
+  const { open, onClose, title, children, subtitle } = props
 
   useEffect(() => {
     if (open) {
@@ -26,7 +27,10 @@ export const MbModal = (props: ModalProps) => {
           <div className="modal">
             <section className="modal-section">
               <header className="flex items-center p-24 border-b border-gray-150 dark:border-gray-700 justify-between sticky">
-                <div className="p-big-130">{title}</div>
+                <div>
+                  <div className="p-big-130">{title}</div>
+                  {subtitle && <div className="pt-4 p-med-90">{subtitle}</div>}
+                </div>
                 <div onClick={onClose}>
                   <MbIcon
                     name={EIconName.CLOSE}
