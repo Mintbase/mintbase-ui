@@ -294,6 +294,7 @@ declare const MbRadioButton: (props: RadioButtonProps) => JSX.Element;
 
 interface ModalProps extends React.HTMLAttributes<HTMLDivElement> {
     title: string;
+    subtitle?: string;
     open: boolean;
     onClose: () => void;
 }

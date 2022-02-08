@@ -2,6 +2,7 @@
 import './modal.css';
 interface ModalProps extends React.HTMLAttributes<HTMLDivElement> {
     title: string;
+    subtitle?: string;
     open: boolean;
     onClose: () => void;
 }
