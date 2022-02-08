@@ -10,7 +10,7 @@ interface ModalProps extends React.HTMLAttributes<HTMLDivElement> {
   onClose: () => void
 }
 export const MbModal = (props: ModalProps) => {
-  const { open, onClose, title, children } = props
+  const { open, onClose, title, children, subtitle } = props
 
   useEffect(() => {
     if (open) {
@@ -28,6 +28,7 @@ export const MbModal = (props: ModalProps) => {
             <section className="modal-section">
               <header className="flex items-center p-24 border-b border-gray-150 dark:border-gray-700 justify-between sticky">
                 <div className="p-big-130">{title}</div>
+                {subtitle && <div className="pt-8 p-med-130">{subtitle}</div>}
                 <div onClick={onClose}>
                   <MbIcon
                     name={EIconName.CLOSE}
