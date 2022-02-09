@@ -31,6 +31,7 @@ export type TInfoCard = {
   upperIcon?: EIconName
   descriptionIcon?: EIconName
   descriptionImage?: string
+  lowerLeftText?: string
   isBigDescription?: boolean
   size?: ESize
   handleDescriptionClick?: () => void
