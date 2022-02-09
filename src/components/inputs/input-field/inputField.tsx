@@ -46,7 +46,6 @@ export const MbInput = (props: InputProps) => {
     label,
     onChange,
     hasPercentageLabel,
-    name,
     value,
     type,
     hasIcon,
@@ -83,10 +82,8 @@ export const MbInput = (props: InputProps) => {
                 placeholder={hasPercentageLabel ? '' : placeholder}
                 type={type}
                 value={value}
-                name={name}
                 required={required}
                 className={`input-field ${getFontType(inputSize)}`}
-                onChange={onChange}
                 {...restProps}
               />
               {hasPercentageLabel && (
