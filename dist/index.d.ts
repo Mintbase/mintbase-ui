@@ -171,7 +171,7 @@ interface InputProps extends React$1.InputHTMLAttributes<HTMLInputElement> {
     textarea?: boolean;
     hasPercentageLabel?: boolean;
 }
-declare const MbInput: ({ label, hasIcon, controlStatus, inputSize, ...props }: InputProps) => JSX.Element;
+declare const MbInput: (props: InputProps) => JSX.Element;
 
 interface SelectProps extends React.InputHTMLAttributes<HTMLInputElement> {
     options: TSelectOption[];
