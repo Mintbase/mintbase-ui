@@ -75,6 +75,7 @@ export const MbInput = ({
                 required={props.required}
                 className={`input-field ${getFontType(inputSize)}`}
                 onChange={props.onChange}
+                {...props}
               />
               {props.hasPercentageLabel && (
                 <span className={`${getFontType(inputSize)} text-gray-500`}>
