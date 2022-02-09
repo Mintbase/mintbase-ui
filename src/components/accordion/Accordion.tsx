@@ -22,16 +22,14 @@ export const MbAccordion = (props: AccordionProps) => {
   return (
     <main className="rounded bg-white dark:bg-gray-850 dark:text-white">
       <header
-        className={`flex justify-between items-center p-24 cursor-pointer ${
-          isExpanded ? 'border-b border-gray-150 dark:border-gray-700' : ''
-        }`}
+        className={`flex justify-between items-center p-24 ${
+          isFixedAccordion ? '' : 'cursor-pointer'
+        } ${isExpanded ? 'border-b border-gray-150 dark:border-gray-700' : ''}`}
         onClick={toggle}
       >
-        <div className='p-big-130'>{title}</div>
+        <div className="p-big-130">{title}</div>
         <div className="space-x-24 flex">
-          {extraIcon && (
-            extraIcon
-          )}
+          {extraIcon && extraIcon}
           {!isFixedAccordion && (
             <MbIcon
               name={
