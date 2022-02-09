@@ -20,13 +20,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   hasPercentageLabel?: boolean
 }
 
-export const MbInput = ({
-  label = '',
-  hasIcon,
-  controlStatus = EControlStatus.NORMAL,
-  inputSize = ESize.MEDIUM,
-  ...props
-}: InputProps) => {
+export const MbInput = (props: InputProps) => {
   const getIconSize = () => {
     return inputSize === 'big' ? '24px' : '20px'
   }
@@ -42,42 +36,60 @@ export const MbInput = ({
     }
   }
 
+  const {
+    required,
+    textarea,
+    disabled,
+    className,
+    placeholder,
+    controlStatus = EControlStatus.NORMAL,
+    label,
+    onChange,
+    hasPercentageLabel,
+    name,
+    value,
+    type,
+    hasIcon,
+    inputSize = ESize.MEDIUM,
+    ...restProps
+  } = props
+
   return (
     <>
       {label && (
         <label className={`block mb-8 dark:text-white ${getLabelFontType()}`}>
           {label}
-          {props.required && (
+          {required && (
             <span className="text-error-300 dark:text-error-100"> *</span>
           )}
         </label>
       )}
       <div
         className={`input-wrapper ${inputSize} flex items-center justify-between rounded ${
-          props.disabled ? 'disabled' : 'default ' + controlStatus
-        } ${props.textarea ? 'textarea' : ''} ${props.className}`}
+          disabled ? 'disabled' : 'default ' + controlStatus
+        } ${textarea ? 'textarea' : ''} ${className}`}
       >
         <label className="flex w-full">
-          {props.textarea ? (
+          {textarea ? (
             <textarea
               className={`input-field textarea ${getFontType(inputSize)}`}
-              placeholder={props.placeholder}
-              onChange={() => props.onChange}
+              placeholder={placeholder}
+              onChange={() => onChange}
             ></textarea>
           ) : (
             <>
               <input
-                disabled={props.disabled}
-                placeholder={props.hasPercentageLabel ? '' : props.placeholder}
-                type={props.type}
-                value={props.value}
-                name={props.name}
-                required={props.required}
+                disabled={disabled}
+                placeholder={hasPercentageLabel ? '' : placeholder}
+                type={type}
+                value={value}
+                name={name}
+                required={required}
                 className={`input-field ${getFontType(inputSize)}`}
-                onChange={props.onChange}
-                {...props}
+                onChange={onChange}
+                {...restProps}
               />
-              {props.hasPercentageLabel && (
+              {hasPercentageLabel && (
                 <span className={`${getFontType(inputSize)} text-gray-500`}>
                   %
                 </span>
@@ -86,7 +98,7 @@ export const MbInput = ({
           )}
         </label>
 
-        {!props.textarea && hasIcon && (
+        {!textarea && hasIcon && (
           <div className="flex">
             {controlStatus === EControlStatus.VALID ? (
               <MbIcon
