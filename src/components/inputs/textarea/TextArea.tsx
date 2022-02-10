@@ -3,6 +3,7 @@ import { getFontType, getInputLabelFontType } from '../../../consts/fontType'
 import { ESize } from '../../../consts/properties'
 import { EControlStatus } from '../../inputs/input-field/inputField'
 import './TextArea.css'
+import './../Input.css'
 
 interface TextareaProps
   extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
@@ -43,7 +44,7 @@ export const MbTextArea = forwardRef<HTMLTextAreaElement, TextareaProps>(
           </label>
         )}
         <div
-          className={`textarea-wrapper ${inputSize} rounded ${
+          className={`main-input textarea-wrapper ${inputSize} rounded ${
             disabled ? 'disabled' : 'default ' + controlStatus
           } ${className}`}
         >
