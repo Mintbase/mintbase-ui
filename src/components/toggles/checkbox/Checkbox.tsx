@@ -13,13 +13,18 @@ export const MbCheckbox = forwardRef<HTMLInputElement, CheckboxProps>(
     return (
       <>
         <label className="flex items-end">
-          <input type="checkbox" id={id} checked={checked} {...restProps} />
+          <input
+            type="checkbox"
+            id={id}
+            checked={checked}
+            {...restProps}
+            ref={ref}
+          />
           <div
             className={`checkbox-item ${disabled ? 'disabled' : ''} ${
               checked ? 'active' : ''
             }`}
             aria-hidden="true"
-            ref={ref}
           >
             {checked && (
               <MbIcon
