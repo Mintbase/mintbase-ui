@@ -30,7 +30,6 @@ export const MbTextArea = forwardRef<HTMLTextAreaElement, TextareaProps>(
   ) => {
     return (
       <>
-        {' '}
         {label && (
           <label
             className={`block mb-8 dark:text-white ${getInputLabelFontType(
@@ -42,13 +41,13 @@ export const MbTextArea = forwardRef<HTMLTextAreaElement, TextareaProps>(
               <span className="text-error-300 dark:text-error-100"> *</span>
             )}
           </label>
-        )}{' '}
+        )}
         <div
-          className={`input-wrapper ${inputSize} flex items-center justify-between rounded ${
+          className={`textarea-wrapper ${inputSize} rounded ${
             disabled ? 'disabled' : 'default ' + controlStatus
           } ${className}`}
         >
-          <label className="flex w-full">
+          <label className="w-full">
             <textarea
               className={`textarea ${getFontType(inputSize)}`}
               placeholder={placeholder}
