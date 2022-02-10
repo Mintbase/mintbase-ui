@@ -8,3 +8,14 @@ export const getFontType = (size: string) => {
       return 'p-small-90'
   }
 }
+
+export const getInputLabelFontType = (inputSize: string) => {
+  switch (inputSize) {
+    case 'big':
+      return 'p-med-90'
+    case 'medium':
+      return 'p-small-90'
+    case 'small':
+      return 'cap-big-90'
+  }
+}
