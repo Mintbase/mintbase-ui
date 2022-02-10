@@ -41,17 +41,6 @@
   @apply w-full;
 }
 
-.input-wrapper.medium.textarea,
-.input-wrapper.small.textarea,
-.input-wrapper.big.textarea {
-  max-height: 160px;
-}
-
-.input-field.textarea {
-  @apply resize-none;
-  height: 100px;
-}
-
 @screen md {
   .input-field.textarea {
     height: 136px;
