@@ -33,7 +33,7 @@ TextArea.args = {
   required: true,
   textarea: false,
   controlStatus: EControlStatus.NORMAL,
-  TextAreaSize: ESize.MEDIUM,
+  inputSize: ESize.MEDIUM,
   onChange: (event: any) => {
     console.log(event.target.value)
   },
