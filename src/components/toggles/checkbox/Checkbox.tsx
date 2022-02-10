@@ -1,14 +1,10 @@
 import { MbIcon } from '../../icon/Icon'
 import { EIconName } from '../../../consts/icons'
 import './checkbox.css'
-import { TToggle } from '../../../types/toggles.type'
 import { forwardRef } from 'react'
+import { ToggleProps } from '../../..'
 
-interface CheckboxProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  label?: string
-}
-
-export const MbCheckbox = forwardRef<HTMLInputElement, CheckboxProps>(
+export const MbCheckbox = forwardRef<HTMLInputElement, ToggleProps>(
   ({ id, label, checked, disabled, ...restProps }, ref) => {
     return (
       <>

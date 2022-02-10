@@ -1,14 +1,10 @@
 import { MbIcon } from '../../icon/Icon'
 import { EIconName } from '../../../consts/icons'
 import './switch.css'
-import { TToggle } from '../../../types/toggles.type'
 import { forwardRef } from 'react'
+import { ToggleProps } from '../../..'
 
-interface SwitchProps
-  extends TToggle,
-    React.InputHTMLAttributes<HTMLInputElement> {}
-
-export const MbSwitch = forwardRef<HTMLInputElement, SwitchProps>(
+export const MbSwitch = forwardRef<HTMLInputElement, ToggleProps>(
   ({ id, label, checked, disabled, ...restProps }, ref) => {
     return (
       <div className={`switch ${disabled ? 'disabled' : ''}`}>

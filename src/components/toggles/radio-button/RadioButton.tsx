@@ -1,12 +1,8 @@
 import { forwardRef } from 'react'
-import { TToggle } from '../../../types/toggles.type'
+import { ToggleProps } from '../../..'
 import './radiobutton.css'
 
-interface RadioProps
-  extends TToggle,
-    React.InputHTMLAttributes<HTMLInputElement> {}
-
-export const MbRadioButton = forwardRef<HTMLInputElement, RadioProps>(
+export const MbRadioButton = forwardRef<HTMLInputElement, ToggleProps>(
   ({ id, value, label, checked, disabled, ...restProps }, ref) => {
     return (
       <div
