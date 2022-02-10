@@ -1,6 +1,4 @@
-export declare type TToggle = {
+/// <reference types="react" />
+export interface ToggleProps extends React.InputHTMLAttributes<HTMLInputElement> {
     label?: string;
-    id?: string;
-    isChecked?: boolean;
-    disabled?: boolean;
-};
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import { ESize } from '../../../consts/properties';
 import './inputfield.css';
+import './../Input.css';
 export declare enum EControlStatus {
     NORMAL = "normal",
     VALID = "valid",
@@ -11,8 +12,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
     hasIcon?: boolean;
     controlStatus: EControlStatus;
     inputSize?: ESize;
-    textarea?: boolean;
     hasPercentageLabel?: boolean;
 }
-export declare const MbInput: (props: InputProps) => JSX.Element;
+export declare const MbInput: React.ForwardRefExoticComponent<InputProps & React.RefAttributes<HTMLInputElement>>;
 export {};

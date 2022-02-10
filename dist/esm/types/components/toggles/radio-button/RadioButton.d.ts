@@ -1,8 +1,4 @@
 /// <reference types="react" />
-import { TToggle } from '../../../types/toggles.type';
+import { ToggleProps } from '../../..';
 import './radiobutton.css';
-interface RadioButtonProps extends TToggle {
-    handleChange: (id: string) => void;
-}
-export declare const MbRadioButton: (props: RadioButtonProps) => JSX.Element;
-export {};
+export declare const MbRadioButton: import("react").ForwardRefExoticComponent<ToggleProps & import("react").RefAttributes<HTMLInputElement>>;

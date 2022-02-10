@@ -1,15 +1,13 @@
-/// <reference types="react" />
+import React from 'react';
 import { EControlStatus } from '../input-field/inputField';
 import './inputaccount.css';
 declare type TInputListGroup = {
     amount?: TInput;
     account: TInput;
 };
-declare type TInput = {
-    placeholder: string;
-    value: string | number;
+interface TInput extends React.InputHTMLAttributes<HTMLInputElement> {
     status: EControlStatus;
-};
+}
 interface InputAccountProps {
     maxAmount: number;
     subtitle: string;

@@ -1,8 +1,9 @@
 /// <reference types="react" />
-import React$1 from 'react';
+import * as React$1 from 'react';
+import React__default from 'react';
 import { Place } from 'react-tooltip';
 
-interface AccordionProps extends React$1.HTMLAttributes<HTMLDivElement> {
+interface AccordionProps extends React__default.HTMLAttributes<HTMLDivElement> {
     title: string;
     isOpen?: boolean;
     isFixedAccordion?: boolean;
@@ -30,13 +31,13 @@ declare enum ESmallCardType {
     STORE = "store"
 }
 
-interface ActionProps extends React$1.ButtonHTMLAttributes<HTMLButtonElement> {
+interface ActionProps extends React__default.ButtonHTMLAttributes<HTMLButtonElement> {
     state?: EState.ACTIVE | EState.DISABLED | EState.CAUTION;
     size?: ESize;
 }
 declare const MbAction: ({ state, size, className, ...props }: ActionProps) => JSX.Element;
 
-interface ButtonProps extends React$1.ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends React__default.ButtonHTMLAttributes<HTMLButtonElement> {
     label?: string;
     btnType?: EType;
     state?: EState;
@@ -138,14 +139,14 @@ declare const MbInfoCard: ({ boxInfo }: {
     boxInfo: TInfoCard;
 }) => JSX.Element;
 
-interface CardProps$1 extends React$1.ComponentProps<'div'> {
+interface CardProps$1 extends React__default.ComponentProps<'div'> {
     loading?: boolean;
     card: TSmallCard;
     cardType: ESmallCardType;
 }
 declare const MbSmallCard: ({ loading, cardType, card, }: CardProps$1) => JSX.Element;
 
-interface CardProps extends React$1.ComponentProps<'div'> {
+interface CardProps extends React__default.ComponentProps<'div'> {
     loading?: boolean;
     cardInfo: TThingCard;
 }
@@ -164,15 +165,21 @@ declare enum EControlStatus {
     VALID = "valid",
     INVALID = "invalid"
 }
-interface InputProps extends React$1.InputHTMLAttributes<HTMLInputElement> {
+interface InputProps extends React__default.InputHTMLAttributes<HTMLInputElement> {
     label?: string;
     hasIcon?: boolean;
     controlStatus: EControlStatus;
     inputSize?: ESize;
-    textarea?: boolean;
     hasPercentageLabel?: boolean;
 }
-declare const MbInput: (props: InputProps) => JSX.Element;
+declare const MbInput: React__default.ForwardRefExoticComponent<InputProps & React__default.RefAttributes<HTMLInputElement>>;
+
+interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
+    label?: string;
+    controlStatus: EControlStatus;
+    inputSize?: ESize;
+}
+declare const MbTextArea: React$1.ForwardRefExoticComponent<TextareaProps & React$1.RefAttributes<HTMLTextAreaElement>>;
 
 interface SelectProps extends React.InputHTMLAttributes<HTMLInputElement> {
     options: TSelectOption[];
@@ -198,21 +205,21 @@ interface PaginationProps {
 }
 declare const MbPagination: (props: PaginationProps) => JSX.Element | null;
 
-interface TableProps extends React$1.HTMLAttributes<HTMLDivElement> {
+interface TableProps extends React__default.HTMLAttributes<HTMLDivElement> {
     title: string;
     pagination?: PaginationProps;
     onAmountItemsChange?: (page: number) => void;
 }
 declare const MbTable: (props: TableProps) => JSX.Element;
 
-interface TabProps extends React$1.HTMLAttributes<HTMLDivElement> {
+interface TabProps extends React__default.HTMLAttributes<HTMLDivElement> {
     isActive?: boolean;
     extraFilter?: string;
     onExtraFilterChange?: (isSelected: boolean) => void;
 }
 declare const MbTab: (props: TabProps) => JSX.Element;
 
-interface TabsProps extends React$1.HTMLAttributes<HTMLDivElement> {
+interface TabsProps extends React__default.HTMLAttributes<HTMLDivElement> {
     activeIndex: number;
     filterOptions?: TFilterOptions;
     onTabChange: (index: number) => void;
@@ -228,7 +235,7 @@ declare type TFilterOptions = {
 };
 declare const MbTabs: (props: TabsProps) => JSX.Element;
 
-declare type TextProps = React$1.HTMLAttributes<HTMLDivElement>;
+declare type TextProps = React__default.HTMLAttributes<HTMLDivElement>;
 declare const MbText: (props: TextProps) => JSX.Element;
 
 declare const MbTooltip: ({ text, place, component, }: {
@@ -262,36 +269,22 @@ interface MbStatefulButtonProps {
     content: JSX.Element;
     className?: string;
     hasEmptyStatus?: boolean;
-    onClick?: React$1.MouseEventHandler<HTMLDivElement>;
+    onClick?: React__default.MouseEventHandler<HTMLDivElement>;
 }
 declare const MbStatefulButton: ({ indicator, content, className, hasEmptyStatus, onClick, }: MbStatefulButtonProps) => JSX.Element;
 
-declare type TToggle = {
-    label?: string;
-    id?: string;
-    isChecked?: boolean;
-    disabled?: boolean;
-};
+declare const MbSwitch: React$1.ForwardRefExoticComponent<ToggleProps & React$1.RefAttributes<HTMLInputElement>>;
 
-interface SwitchProps extends TToggle {
-    handleChange: (checked: boolean) => void;
-}
-declare const MbSwitch: (props: SwitchProps) => JSX.Element;
+declare const MbCheckbox: React$1.ForwardRefExoticComponent<ToggleProps & React$1.RefAttributes<HTMLInputElement>>;
 
-interface CheckboxProps extends TToggle {
-    handleChange: (checked: boolean) => void;
-}
-declare const MbCheckbox: (props: CheckboxProps) => JSX.Element;
-
-interface ChipProps extends TToggle {
+interface ChipProps extends ToggleProps {
+    isChecked: boolean;
+    disabled: boolean;
     handleClick: () => void;
 }
 declare const MbChip: (props: ChipProps) => JSX.Element;
 
-interface RadioButtonProps extends TToggle {
-    handleChange: (id: string) => void;
-}
-declare const MbRadioButton: (props: RadioButtonProps) => JSX.Element;
+declare const MbRadioButton: React$1.ForwardRefExoticComponent<ToggleProps & React$1.RefAttributes<HTMLInputElement>>;
 
 interface ModalProps extends React.HTMLAttributes<HTMLDivElement> {
     title: string;
@@ -317,11 +310,9 @@ declare type TInputListGroup = {
     amount?: TInput;
     account: TInput;
 };
-declare type TInput = {
-    placeholder: string;
-    value: string | number;
+interface TInput extends React__default.InputHTMLAttributes<HTMLInputElement> {
     status: EControlStatus;
-};
+}
 interface InputAccountProps {
     maxAmount: number;
     subtitle: string;
@@ -384,6 +375,7 @@ declare type TColor = {
 declare const colorsArray: TColorDetail[];
 
 declare const getFontType: (size: string) => "p-big-90" | "p-med-90" | "p-small-90" | undefined;
+declare const getInputLabelFontType: (inputSize: string) => "p-med-90" | "p-small-90" | "cap-big-90" | undefined;
 
 declare const AUDIO_TYPES: string[];
 declare const VIDEO_TYPES: string[];
@@ -391,4 +383,8 @@ declare const IMAGE_TYPES: string[];
 declare const THREED_TYPES: string[];
 declare const FILE_TYPES: string[];
 
-export { AUDIO_TYPES, EControlStatus, EIconName, ESize, ESmallCardType, EState, EType, FILE_TYPES, IMAGE_TYPES, Item, MbAccordion, MbAction, MbAmountInput, MbButton, MbCheckbox, MbChip, MbColorIndicator, MbDropdownMenu, MbIcon, MbInfoCard, MbInput, MbInputAccount, MbInputSelect, MbItemsPerPage, MbLogo, MbMediaImport, MbMenuWrapper, MbModal, MbNetworkMenu, MbPagination, MbRadioButton, MbSmallCard, MbStatefulButton, MbSwitch, MbTab, MbTable, MbTabs, MbText, MbThingCard, MbTooltip, TColor, TColorDetail, THREED_TYPES, TInfoCard, TNetworkOption, TSmallCard, TThingCard, TToggle, VIDEO_TYPES, colorsArray, getFontType };
+interface ToggleProps extends React.InputHTMLAttributes<HTMLInputElement> {
+    label?: string;
+}
+
+export { AUDIO_TYPES, EControlStatus, EIconName, ESize, ESmallCardType, EState, EType, FILE_TYPES, IMAGE_TYPES, Item, MbAccordion, MbAction, MbAmountInput, MbButton, MbCheckbox, MbChip, MbColorIndicator, MbDropdownMenu, MbIcon, MbInfoCard, MbInput, MbInputAccount, MbInputSelect, MbItemsPerPage, MbLogo, MbMediaImport, MbMenuWrapper, MbModal, MbNetworkMenu, MbPagination, MbRadioButton, MbSmallCard, MbStatefulButton, MbSwitch, MbTab, MbTable, MbTabs, MbText, MbTextArea, MbThingCard, MbTooltip, TColor, TColorDetail, THREED_TYPES, TInfoCard, TNetworkOption, TSmallCard, TThingCard, ToggleProps, VIDEO_TYPES, colorsArray, getFontType, getInputLabelFontType };
