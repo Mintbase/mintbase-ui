@@ -30,6 +30,7 @@ export const MbInfoCard = ({ boxInfo }: { boxInfo: TInfoCard }) => {
     handleDescriptionClick,
     upperIcon = EIconName.NONE,
     isBigDescription = true,
+    lowerLeftText,
     size = ESize.MEDIUM,
   } = boxInfo
 
@@ -84,20 +85,27 @@ export const MbInfoCard = ({ boxInfo }: { boxInfo: TInfoCard }) => {
           </div>
         )}
 
-        {description && (
-          <div>
-            <div
-              className={`${getDescriptionFont()} ${
-                handleDescriptionClick
-                  ? 'text-blue-300 dark:text-blue-100 cursor-pointer'
-                  : 'text-black dark:text-white'
-              } inline-flex align-middle`}
-              onClick={handleDescriptionClick}
-            >
-              {description}
+        <div className="flex justify-between w-full items-baseline">
+          {description && (
+            <div>
+              <div
+                className={`${getDescriptionFont()} ${
+                  handleDescriptionClick
+                    ? 'text-blue-300 dark:text-blue-100 cursor-pointer'
+                    : 'text-black dark:text-white'
+                } inline-flex align-middle`}
+                onClick={handleDescriptionClick}
+              >
+                {description}
+              </div>
             </div>
-          </div>
-        )}
+          )}
+          {lowerLeftText && (
+            <div className="p-med-90 text-gray-700 dark:text-gray-300">
+              {lowerLeftText}
+            </div>
+          )}
+        </div>
       </div>
     </div>
   )
