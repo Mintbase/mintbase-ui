@@ -4,22 +4,25 @@ import { EControlStatus } from '../../inputs/input-field/inputField'
 import { getFontType } from '../../../consts/fontType'
 import { ESize } from '../../../consts/properties'
 
-export const MbTextArea = forwardRef<HTMLTextAreaElement, InputProps>(
+interface TextareaProps
+  extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
+  label?: string
+  controlStatus: EControlStatus
+  inputSize?: ESize
+}
+
+export const MbTextArea = forwardRef<HTMLTextAreaElement, TextareaProps>(
   (
     {
       id,
       required,
-      textarea,
       disabled,
       className,
       placeholder,
       controlStatus = EControlStatus.NORMAL,
       label,
       onChange,
-      hasPercentageLabel,
       value,
-      type,
-      hasIcon,
       inputSize = ESize.MEDIUM,
       ...restProps
     },
@@ -30,6 +33,8 @@ export const MbTextArea = forwardRef<HTMLTextAreaElement, InputProps>(
         className={`input-field textarea ${getFontType(inputSize)}`}
         placeholder={placeholder}
         value={value}
+        {...restProps}
+        ref={ref}
       ></textarea>
     )
   }
