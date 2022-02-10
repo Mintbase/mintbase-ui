@@ -1,8 +1,7 @@
 import { forwardRef } from 'react'
-import { InputProps } from '../input-field/inputField'
-import { EControlStatus } from '../../inputs/input-field/inputField'
 import { getFontType } from '../../../consts/fontType'
 import { ESize } from '../../../consts/properties'
+import { EControlStatus } from '../../inputs/input-field/inputField'
 
 interface TextareaProps
   extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
