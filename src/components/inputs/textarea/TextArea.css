@@ -1,0 +1,18 @@
+.textarea {
+  @apply bg-transparent placeholder-gray-500 text-black dark:text-white focus:outline-none w-full h-full resize-none;
+}
+
+.textarea-wrapper.big {
+  @apply p-16;
+  height: 160px;
+}
+
+.textarea-wrapper.medium {
+  @apply p-12;
+  height: 130px;
+}
+
+.textarea-wrapper.small {
+  height: 100px;
+  @apply p-10;
+}

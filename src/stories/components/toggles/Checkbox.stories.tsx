@@ -14,8 +14,8 @@ const Template: ComponentStory<typeof MbCheckbox> = (args) => {
     <MbCheckbox
       {...args}
       label="Checkbox 1"
-      isChecked={checked}
-      handleChange={(val) => setChecked(val)}
+      checked={checked}
+      onChange={(e) => setChecked(e.target.checked)}
     />
   )
 }
