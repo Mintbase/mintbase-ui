@@ -7,7 +7,7 @@ interface RadioProps
     React.InputHTMLAttributes<HTMLInputElement> {}
 
 export const MbRadioButton = forwardRef<HTMLInputElement, RadioProps>(
-  ({ id, label, checked, disabled, ...restProps }, ref) => {
+  ({ id, value, label, checked, disabled, ...restProps }, ref) => {
     return (
       <div
         className={`flex items-center radio-item ${disabled ? 'disabled' : ''}`}
@@ -16,6 +16,7 @@ export const MbRadioButton = forwardRef<HTMLInputElement, RadioProps>(
           type="radio"
           className="cursor-pointer"
           id={id}
+          value={value}
           checked={checked}
           ref={ref}
           {...restProps}
