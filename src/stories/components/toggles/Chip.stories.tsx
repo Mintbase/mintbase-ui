@@ -13,7 +13,7 @@ const Template: ComponentStory<typeof MbChip> = (args) => {
   return (
     <MbChip
       {...args}
-      checked={checked}
+      isChecked={checked}
       handleClick={() => setChecked(!checked)}
     />
   )
