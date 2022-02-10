@@ -14,8 +14,8 @@ const Template: ComponentStory<typeof MbSwitch> = (args) => {
     <MbSwitch
       {...args}
       id="switch1"
-      isChecked={checked}
-      handleChange={(val) => setChecked(val)}
+      checked={checked}
+      onChange={(e) => setChecked(e.target.checked)}
     />
   )
 }
