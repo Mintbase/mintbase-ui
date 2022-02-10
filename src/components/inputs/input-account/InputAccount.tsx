@@ -12,9 +12,7 @@ type TInputListGroup = {
   account: TInput
 }
 
-type TInput = {
-  placeholder: string
-  value: string | number
+interface TInput extends React.InputHTMLAttributes<HTMLInputElement> {
   status: EControlStatus
 }
 interface InputAccountProps {
@@ -64,6 +62,7 @@ export const MbInputAccount = (props: InputAccountProps) => {
                     <div className="w-24">
                       <MbInput
                         type="number"
+                        id={input.amount.id}
                         placeholder={input.amount.placeholder}
                         value={input.amount.value}
                         inputSize={ESize.BIG}
@@ -72,17 +71,20 @@ export const MbInputAccount = (props: InputAccountProps) => {
                           amountInputChangeHandler(e, index)
                         }
                         hasPercentageLabel={fieldPercentageLabel}
+                        {...input.amount}
                       />
                     </div>
                   )}
                   <MbInput
                     type="text"
+                    id={input.account.id}
                     hasIcon={input.account.status !== EControlStatus.NORMAL}
                     placeholder={input.account.placeholder}
                     value={input.account.value}
                     inputSize={ESize.BIG}
                     controlStatus={input.account.status}
                     onChange={(e: any) => accountInputChangeHandler(e, index)}
+                    {...input.account}
                   />
                   <div
                     className={`${

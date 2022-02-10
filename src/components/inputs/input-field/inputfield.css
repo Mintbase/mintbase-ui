@@ -2,26 +2,6 @@
   @apply bg-transparent placeholder-gray-500 text-black dark:text-white focus:outline-none w-full;
 }
 
-.input-wrapper.disabled {
-  @apply bg-gray-200 dark:bg-gray-700;
-}
-
-.default {
-  @apply bg-gray-100 hover:bg-blue-300-15 dark:bg-gray-900 dark:hover:bg-mb-blackblue focus-within:ring-1 transition-all duration-500;
-}
-
-.input-wrapper.empty {
-  @apply focus-within:ring-blue-300-35 dark:focus-within:ring-blue-100-35;
-}
-
-.input-wrapper.valid {
-  @apply ring-1 ring-success-300 dark:ring-success-100;
-}
-
-.input-wrapper.invalid {
-  @apply ring-1 ring-error-300 dark:ring-error-100;
-}
-
 .input-wrapper.big {
   @apply p-16;
   max-height: 48px;
@@ -39,17 +19,6 @@
 
 .input-wrapper {
   @apply w-full;
-}
-
-.input-wrapper.medium.textarea,
-.input-wrapper.small.textarea,
-.input-wrapper.big.textarea {
-  max-height: 160px;
-}
-
-.input-field.textarea {
-  @apply resize-none;
-  height: 100px;
 }
 
 @screen md {
