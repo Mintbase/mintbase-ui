@@ -16,7 +16,6 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   hasIcon?: boolean
   controlStatus: EControlStatus
   inputSize?: ESize
-  textarea?: boolean
   hasPercentageLabel?: boolean
 }
 
@@ -25,13 +24,11 @@ export const MbInput = forwardRef<HTMLInputElement, InputProps>(
     {
       id,
       required,
-      textarea,
       disabled,
       className,
       placeholder,
       controlStatus = EControlStatus.NORMAL,
       label,
-      onChange,
       hasPercentageLabel,
       value,
       type,
@@ -69,38 +66,28 @@ export const MbInput = forwardRef<HTMLInputElement, InputProps>(
         <div
           className={`input-wrapper ${inputSize} flex items-center justify-between rounded ${
             disabled ? 'disabled' : 'default ' + controlStatus
-          } ${textarea ? 'textarea' : ''} ${className}`}
+          } ${className}`}
         >
           <label className="flex w-full">
-            {textarea ? (
-              <textarea
-                className={`input-field textarea ${getFontType(inputSize)}`}
-                placeholder={placeholder}
-                onChange={() => onChange}
-              ></textarea>
-            ) : (
-              <>
-                <input
-                  id={id}
-                  disabled={disabled}
-                  ref={ref}
-                  placeholder={hasPercentageLabel ? '' : placeholder}
-                  type={type}
-                  value={value}
-                  required={required}
-                  className={`input-field ${getFontType(inputSize)}`}
-                  {...restProps}
-                />
-                {hasPercentageLabel && (
-                  <span className={`${getFontType(inputSize)} text-gray-500`}>
-                    %
-                  </span>
-                )}
-              </>
+            <input
+              id={id}
+              disabled={disabled}
+              ref={ref}
+              placeholder={hasPercentageLabel ? '' : placeholder}
+              type={type}
+              value={value}
+              required={required}
+              className={`input-field ${getFontType(inputSize)}`}
+              {...restProps}
+            />
+            {hasPercentageLabel && (
+              <span className={`${getFontType(inputSize)} text-gray-500`}>
+                %
+              </span>
             )}
           </label>
 
-          {!textarea && hasIcon && (
+          {hasIcon && (
             <div className="flex">
               {controlStatus === EControlStatus.VALID ? (
                 <MbIcon
