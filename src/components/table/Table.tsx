@@ -28,19 +28,12 @@ export const MbBody = (props: React.HTMLAttributes<HTMLDivElement>) => {
 export const MbTable = (props: TableProps) => {
   const { title, children, pagination, onAmountItemsChange } = props
 
-  const allChildren = React.Children.map(children, (child: any) => child)
-  const headers = allChildren?.filter((child) => child.type.name === 'MbHead')
-  const body = allChildren?.filter((child) => child.type.name === 'MbBody')
-
   return (
     <section className="bg-white dark:bg-gray-850 rounded">
       <header className="p-24 border-b border-gray-200 dark:border-gray-800 dark:text-white p-big-130">
         {title}
       </header>
-      <table className="w-full">
-        {headers}
-        {body}
-      </table>
+      <table className="w-full">{children}</table>
       {pagination && (
         <footer className="border-t border-gray-200 dark:border-gray-800 p-24 grid md:grid-cols-3 items-center">
           {onAmountItemsChange && (
