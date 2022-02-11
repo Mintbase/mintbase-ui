@@ -210,6 +210,8 @@ interface TableProps extends React__default.HTMLAttributes<HTMLDivElement> {
     pagination?: PaginationProps;
     onAmountItemsChange?: (page: number) => void;
 }
+declare const MbHead: (props: React__default.HTMLAttributes<HTMLDivElement>) => JSX.Element;
+declare const MbBody: (props: React__default.HTMLAttributes<HTMLDivElement>) => JSX.Element;
 declare const MbTable: (props: TableProps) => JSX.Element;
 
 interface TabProps extends React__default.HTMLAttributes<HTMLDivElement> {
@@ -387,4 +389,4 @@ interface ToggleProps extends React.InputHTMLAttributes<HTMLInputElement> {
     label?: string;
 }
 
-export { AUDIO_TYPES, EControlStatus, EIconName, ESize, ESmallCardType, EState, EType, FILE_TYPES, IMAGE_TYPES, Item, MbAccordion, MbAction, MbAmountInput, MbButton, MbCheckbox, MbChip, MbColorIndicator, MbDropdownMenu, MbIcon, MbInfoCard, MbInput, MbInputAccount, MbInputSelect, MbItemsPerPage, MbLogo, MbMediaImport, MbMenuWrapper, MbModal, MbNetworkMenu, MbPagination, MbRadioButton, MbSmallCard, MbStatefulButton, MbSwitch, MbTab, MbTable, MbTabs, MbText, MbTextArea, MbThingCard, MbTooltip, TColor, TColorDetail, THREED_TYPES, TInfoCard, TNetworkOption, TSmallCard, TThingCard, ToggleProps, VIDEO_TYPES, colorsArray, getFontType, getInputLabelFontType };
+export { AUDIO_TYPES, EControlStatus, EIconName, ESize, ESmallCardType, EState, EType, FILE_TYPES, IMAGE_TYPES, Item, MbAccordion, MbAction, MbAmountInput, MbBody, MbButton, MbCheckbox, MbChip, MbColorIndicator, MbDropdownMenu, MbHead, MbIcon, MbInfoCard, MbInput, MbInputAccount, MbInputSelect, MbItemsPerPage, MbLogo, MbMediaImport, MbMenuWrapper, MbModal, MbNetworkMenu, MbPagination, MbRadioButton, MbSmallCard, MbStatefulButton, MbSwitch, MbTab, MbTable, MbTabs, MbText, MbTextArea, MbThingCard, MbTooltip, TColor, TColorDetail, THREED_TYPES, TInfoCard, TNetworkOption, TSmallCard, TThingCard, ToggleProps, VIDEO_TYPES, colorsArray, getFontType, getInputLabelFontType };
