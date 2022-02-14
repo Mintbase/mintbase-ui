@@ -33,7 +33,10 @@ export const MbTable = (props: TableProps) => {
       <header className="p-24 border-b border-gray-200 dark:border-gray-800 dark:text-white p-big-130">
         {title}
       </header>
-      <table className="w-full">{children}</table>
+      <div className="overflow-auto">
+        <table className="w-full">{children}</table>
+      </div>
+
       {pagination && (
         <footer className="border-t border-gray-200 dark:border-gray-800 p-24 grid md:grid-cols-3 items-center">
           {onAmountItemsChange && (
