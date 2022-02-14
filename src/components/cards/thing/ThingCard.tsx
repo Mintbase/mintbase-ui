@@ -102,7 +102,7 @@ export const MbThingCard = ({ loading = false, cardInfo }: CardProps) => {
           className="inline object-fit w-6 h-6 rounded-full overflow-hidden"
           onClick={onBotLeftImageClick}
         >
-          <img className="h-full object-cover" src={botLeftImage} />
+          <img className="h-full w-full object-cover" src={botLeftImage} />
         </div>
         <div className="p-med-90 flex flex-row items-center text-black dark:text-white space-x-8">
           <div className="p-small-90 w-8/12">{botRightText}</div>
