@@ -10,7 +10,9 @@ export default {
 } as ComponentMeta<typeof MbInfoCard>
 
 const Template: ComponentStory<typeof MbInfoCard> = (args) => (
-  <MbInfoCard {...args} />
+  <div className="w-64">
+    <MbInfoCard {...args} />
+  </div>
 )
 
 export const Info = Template.bind({})
@@ -75,6 +77,6 @@ InfoWithLowerLeftText.args = {
     title: 'Info with lower left text',
     description: 'Icon Description',
     descriptionIcon: EIconName.IMAGE,
-    lowerLeftText: 'Left Lower Text',
+    lowerLeftText: 'Text',
   },
 }
