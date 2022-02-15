@@ -9,7 +9,9 @@ export default {
 } as ComponentMeta<typeof MbAmountInput>
 
 const Template: ComponentStory<typeof MbAmountInput> = (args) => (
-  <MbAmountInput {...args} />
+  <div className="w-48">
+    <MbAmountInput {...args} />
+  </div>
 )
 
 export const AmountInput = Template.bind({})

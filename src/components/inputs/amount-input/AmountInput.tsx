@@ -58,8 +58,8 @@ export const MbAmountInput = (props: AmountButtonProps) => {
       >
         <input
           className={`${
-            size === ESize.SMALL ? 'my-2 w-16' : 'ml-4 mr-12 w-24'
-          } w-24 dark:text-white outline-none bg-transparent mt-2 ${
+            size === ESize.SMALL ? 'my-2' : 'ml-4 mr-12'
+          } w-full dark:text-white outline-none bg-transparent mt-2 ${
             disabled ? 'text-gray-500' : ''
           }`}
           value={amount}
