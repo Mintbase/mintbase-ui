@@ -52,7 +52,7 @@ export const MbAmountInput = (props: AmountButtonProps) => {
       <div
         className={` ${getFontType(
           size
-        )} flex bg-gray-100 dark:bg-gray-900 p-8 rounded ${
+        )} flex bg-gray-100 dark:bg-gray-900 p-8 rounded w-full ${
           disabled ? 'bg-gray-200 dark:bg-gray-700' : ''
         }`}
       >
