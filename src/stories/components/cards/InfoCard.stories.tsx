@@ -68,3 +68,13 @@ InfoWithImage.args = {
       'https://coldcdn.com/api/cdn/bronil/JXl58b_p9iYzeFutFC5GcDCjsxppyFt5rRkQt4Su4LU',
   },
 }
+
+export const InfoWithLowerLeftText = Template.bind({})
+InfoWithLowerLeftText.args = {
+  boxInfo: {
+    title: 'Info with Icon Description',
+    description: 'Icon Description',
+    descriptionIcon: EIconName.IMAGE,
+    lowerLeftText: 'Left Lower Text',
+  },
+}
