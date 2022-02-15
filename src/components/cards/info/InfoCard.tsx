@@ -81,7 +81,10 @@ export const MbInfoCard = ({ boxInfo }: { boxInfo: TInfoCard }) => {
         )}
         {descriptionImage && descriptionIcon === EIconName.NONE && (
           <div className="w-6 h-6 rounded-full overflow-hidden">
-            <img className="h-full object-cover" src={descriptionImage} />
+            <img
+              className="h-full w-full object-cover"
+              src={descriptionImage}
+            />
           </div>
         )}
 

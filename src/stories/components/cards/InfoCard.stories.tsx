@@ -10,7 +10,9 @@ export default {
 } as ComponentMeta<typeof MbInfoCard>
 
 const Template: ComponentStory<typeof MbInfoCard> = (args) => (
-  <MbInfoCard {...args} />
+  <div className="w-64">
+    <MbInfoCard {...args} />
+  </div>
 )
 
 export const Info = Template.bind({})
@@ -66,5 +68,15 @@ InfoWithImage.args = {
     descriptionIcon: EIconName.NONE,
     descriptionImage:
       'https://coldcdn.com/api/cdn/bronil/JXl58b_p9iYzeFutFC5GcDCjsxppyFt5rRkQt4Su4LU',
+  },
+}
+
+export const InfoWithLowerLeftText = Template.bind({})
+InfoWithLowerLeftText.args = {
+  boxInfo: {
+    title: 'Info with lower left text',
+    description: 'Icon Description',
+    descriptionIcon: EIconName.IMAGE,
+    lowerLeftText: 'Text',
   },
 }
