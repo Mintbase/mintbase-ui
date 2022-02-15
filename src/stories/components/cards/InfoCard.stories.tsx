@@ -72,7 +72,7 @@ InfoWithImage.args = {
 export const InfoWithLowerLeftText = Template.bind({})
 InfoWithLowerLeftText.args = {
   boxInfo: {
-    title: 'Info with Icon Description',
+    title: 'Info with lower left text',
     description: 'Icon Description',
     descriptionIcon: EIconName.IMAGE,
     lowerLeftText: 'Left Lower Text',
