@@ -1,3 +1,4 @@
+import { useRef } from 'react'
 import { MbIcon } from '../..'
 import { EIconName } from '../../..'
 import './InputSelect.css'
@@ -13,27 +14,30 @@ type TSelectOption = {
 }
 
 export const MbInputSelect = (props: SelectProps) => {
+  const { disabled, options, onValueChange } = props
   return (
     <div
       className={`select-wrapper flex items-center justify-between rounded ${
-        props.disabled ? 'disabled' : 'default'
+        disabled ? 'disabled' : 'default'
       }`}
     >
       <select
         className="select-field appearance-none"
-        disabled={props.disabled}
-        onChange={(event) => props.onValueChange(event.target.value)}
+        disabled={disabled}
+        onChange={(event) => onValueChange(event.target.value)}
       >
-        {props.options.map((option) => (
+        {options.map((option) => (
           <option value={option.value}>{option.label}</option>
         ))}
       </select>
-      <MbIcon
-        name={EIconName.SELECT_ARROWS}
-        color="blue-300"
-        darkColor="blue-100"
-        className='cursor-pointer'
-      />
+      <div>
+        <MbIcon
+          name={EIconName.SELECT_ARROWS}
+          color="blue-300"
+          darkColor="blue-100"
+          className="cursor-pointer"
+        />
+      </div>
     </div>
   )
 }
