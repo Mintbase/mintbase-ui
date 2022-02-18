@@ -38,7 +38,7 @@ export const MbThingCard = ({ loading = false, cardInfo }: CardProps) => {
   const {
     upperLeftIcon = EIconName.LIKE,
     upperLeftText,
-    upperRightIcon = EIconName.MORE,
+    upperRightElement,
     centerElement,
     isCenterImage,
     midLeftText,
@@ -70,9 +70,11 @@ export const MbThingCard = ({ loading = false, cardInfo }: CardProps) => {
             {upperLeftText}
           </p>
         </div>
-        <div className="flex" onClick={onUpperRightClick}>
-          {upperRightIcon}
-        </div>
+        {upperRightElement && (
+          <div className="flex" onClick={onUpperRightClick}>
+            {upperRightElement}
+          </div>
+        )}
       </div>
       <div className="flex flex-col justify-center items-center thing-card-image">
         <div
