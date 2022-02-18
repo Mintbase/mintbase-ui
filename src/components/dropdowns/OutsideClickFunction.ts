@@ -17,9 +17,9 @@ export default function listenForOutsideClicks(
               evt.preventDefault()
             }
             if (evt.defaultPrevented) return
-            const cur = menuRef.current
+            const firstElement = menuRef.current.firstChild
             const node = evt.target
-            if (cur.contains(node)) return
+            if (firstElement.contains(node)) return
             setIsOpen(false)
           },
           false
