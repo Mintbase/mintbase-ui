@@ -1,6 +1,8 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import React from 'react'
+import React, { useState } from 'react'
 import { MbThingCard } from '../../../components/cards/thing/ThingCard'
+import { MbDropdownMenu } from '../../../components/dropdowns/dropdown-menu/DropdownMenu'
+import { MbMenuWrapper } from '../../../components/dropdowns/menu-wrapper/MenuWrapper'
 import { MbIcon } from '../../../components/icon/Icon'
 import { EIconName } from '../../../consts/icons'
 
@@ -10,18 +12,23 @@ export default {
   argTypes: {},
 } as ComponentMeta<typeof MbThingCard>
 
-const Template: ComponentStory<typeof MbThingCard> = (args) => (
-  <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-24">
-    <MbThingCard {...args} />
-  </div>
-)
+const Template: ComponentStory<typeof MbThingCard> = (args) => {
+  const [openExtraMenu, setOpenExtraMenu] = useState(false)
 
-export const Thing = Template.bind({})
-Thing.args = {
-  cardInfo: {
-    upperLeftText: '1',
-    upperRightIcon: (
-      <div>
+  const items = [
+    {
+      content: <span>Share</span>,
+    },
+  ]
+
+  const icon = (
+    <MbMenuWrapper setIsOpen={setOpenExtraMenu}>
+      <div
+        onClick={() => {
+          console.log('marcel')
+          setOpenExtraMenu(!openExtraMenu)
+        }}
+      >
         <MbIcon
           name={EIconName.MORE}
           size="24px"
@@ -29,10 +36,24 @@ Thing.args = {
           darkColor="white"
         />
       </div>
-    ),
+      <MbDropdownMenu items={items} isOpen={openExtraMenu} />
+    </MbMenuWrapper>
+  )
+
+  return (
+    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-24">
+      <MbThingCard cardInfo={{...args.cardInfo, upperRightElement: icon}} />
+    </div>
+  )
+}
+
+export const Thing = Template.bind({})
+Thing.args = {
+  cardInfo: {
+    upperLeftText: '1',
     centerElement: (
       <img
-        className="h-full object-cover"
+        className="h-full w-full object-cover"
         src="https://coldcdn.com/api/cdn/bronil/JXl58b_p9iYzeFutFC5GcDCjsxppyFt5rRkQt4Su4LU"
       />
     ),
