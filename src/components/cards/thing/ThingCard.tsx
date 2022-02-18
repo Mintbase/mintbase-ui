@@ -71,12 +71,7 @@ export const MbThingCard = ({ loading = false, cardInfo }: CardProps) => {
           </p>
         </div>
         <div className="flex" onClick={onUpperRightClick}>
-          <MbIcon
-            name={upperRightIcon}
-            size="24px"
-            color="black"
-            darkColor="white"
-          />
+          {upperRightIcon}
         </div>
       </div>
       <div className="flex flex-col justify-center items-center thing-card-image">
