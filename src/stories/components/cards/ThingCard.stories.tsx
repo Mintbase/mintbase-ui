@@ -1,6 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import React from 'react'
 import { MbThingCard } from '../../../components/cards/thing/ThingCard'
+import { MbIcon } from '../../../components/icon/Icon'
 import { EIconName } from '../../../consts/icons'
 
 export default {
@@ -19,10 +20,19 @@ export const Thing = Template.bind({})
 Thing.args = {
   cardInfo: {
     upperLeftText: '1',
-    upperRightIcon: EIconName.MORE,
+    upperRightIcon: (
+      <div>
+        <MbIcon
+          name={EIconName.MORE}
+          size="24px"
+          color="black"
+          darkColor="white"
+        />
+      </div>
+    ),
     centerElement: (
       <img
-        className="h-full w-full object-cover"
+        className="h-full object-cover"
         src="https://coldcdn.com/api/cdn/bronil/JXl58b_p9iYzeFutFC5GcDCjsxppyFt5rRkQt4Su4LU"
       />
     ),
