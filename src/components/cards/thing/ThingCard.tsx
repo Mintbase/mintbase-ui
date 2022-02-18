@@ -79,18 +79,18 @@ export const MbThingCard = ({ loading = false, cardInfo }: CardProps) => {
           />
         </div>
       </div>
-      <div className="flex flex-col justify-center items-center thing-card-image ">
+      <div className="flex flex-col justify-center items-center thing-card-image">
         <div
-          className="h-full w-full rounded overflow-hidden object-fit relative"
+          className="h-full w-full rounded overflow-hidden relative pt-56 sm:pt-72 lg:pt-68"
           onClick={onCenterElementClick}
         >
           {isCenterImage && (
-            <div className="w-5 h-5 bg-black rounded-full absolute top-3 left-3 flex items-center justify-center">
+            <div className="w-5 h-5 bg-black rounded-full absolute top-3 left-3 z-10 flex items-center justify-center">
               <MbIcon name={EIconName.IMAGE} size="14px" color="white" />
             </div>
           )}
 
-          {centerElement}
+          <div className="absolute inset-0">{centerElement}</div>
         </div>
       </div>
       <div className="flex flex-row justify-between text-black dark:text-white mt-12">
