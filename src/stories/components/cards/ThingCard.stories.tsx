@@ -17,12 +17,12 @@ const Icon = () => {
 
   const items = [
     {
-      content: <span>Share</span>,
+      content: <span>Share...</span>,
+      onClick: () => console.log('share...'),
     },
   ]
 
   const handle = () => {
-    console.log('clicked')
     setOpenExtraMenu(!openExtraMenu)
   }
 
