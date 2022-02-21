@@ -4,7 +4,7 @@ import { ESize } from '../consts/properties'
 export type TThingCard = {
   upperLeftIcon?: EIconName
   upperLeftText?: string
-  upperRightIcon?: EIconName
+  upperRightElement?: JSX.Element
   centerElement: JSX.Element
   isCenterImage: boolean
   midLeftText: string

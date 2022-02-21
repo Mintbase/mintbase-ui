@@ -19,7 +19,11 @@ export const MbDropdownMenu = (props: DropdownMenuProps) => {
   const { isOpen, items, className } = props
 
   return !isOpen ? null : (
-    <ul className={`dropdown-menu ${className}`}>
+    <ul
+      className={`${className} dropdown-menu ${
+        items.find((item) => item.icon) ? 'min-w-48' : ''
+      }`}
+    >
       {items.map(({ content, selected, icon, onClick }, index) => {
         return (
           <li
@@ -28,7 +32,9 @@ export const MbDropdownMenu = (props: DropdownMenuProps) => {
             onClick={onClick}
           >
             <MbText
-              className={'p-med-90 text-blue-300 dark:text-blue-100 max-w-80%'}
+              className={`p-med-90 text-blue-300 dark:text-blue-100 ${
+                icon ? 'max-w-80%' : ''
+              }`}
             >
               {content}
             </MbText>
