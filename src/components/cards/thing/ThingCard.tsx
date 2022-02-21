@@ -51,6 +51,8 @@ export const MbThingCard = ({ loading = false, cardInfo }: CardProps) => {
     onUpperLeftClick,
     onUpperRightClick,
   } = cardInfo
+
+  console.log(upperRightElement)
   return (
     <div className="base-card thing p-12">
       <div className="flex flex-row justify-between items-center text-black dark:text-white mb-12">

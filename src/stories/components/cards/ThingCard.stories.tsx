@@ -12,7 +12,7 @@ export default {
   argTypes: {},
 } as ComponentMeta<typeof MbThingCard>
 
-const Template: ComponentStory<typeof MbThingCard> = (args) => {
+const Icon = () => {
   const [openExtraMenu, setOpenExtraMenu] = useState(false)
 
   const items = [
@@ -21,36 +21,43 @@ const Template: ComponentStory<typeof MbThingCard> = (args) => {
     },
   ]
 
-  const icon = (
-    <MbMenuWrapper setIsOpen={setOpenExtraMenu}>
-      <div
-        onClick={() => {
-          console.log('marcel')
-          setOpenExtraMenu(!openExtraMenu)
-        }}
-      >
-        <MbIcon
-          name={EIconName.MORE}
-          size="24px"
-          color="black"
-          darkColor="white"
-        />
-      </div>
-      <MbDropdownMenu items={items} isOpen={openExtraMenu} />
-    </MbMenuWrapper>
-  )
+  const handle = () => {
+    console.log('clicked')
+    setOpenExtraMenu(!openExtraMenu)
+  }
 
   return (
-    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-24">
-      <MbThingCard cardInfo={{...args.cardInfo, upperRightElement: icon}} />
+    <div className="relative">
+      <MbMenuWrapper setIsOpen={setOpenExtraMenu}>
+        <div onClick={handle}>
+          <MbIcon
+            name={EIconName.MORE}
+            size="24px"
+            color="black"
+            darkColor="white"
+          />
+        </div>
+        <MbDropdownMenu
+          items={items}
+          isOpen={openExtraMenu}
+          className="right-0"
+        />
+      </MbMenuWrapper>
     </div>
   )
 }
+
+const Template: ComponentStory<typeof MbThingCard> = (args) => (
+  <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-24">
+    <MbThingCard {...args} />
+  </div>
+)
 
 export const Thing = Template.bind({})
 Thing.args = {
   cardInfo: {
     upperLeftText: '1',
+    upperRightElement: <Icon></Icon>,
     centerElement: (
       <img
         className="h-full w-full object-cover"
