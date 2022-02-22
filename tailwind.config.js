@@ -2,7 +2,13 @@ const mintbaseTheme = require('./src/mintbase-theme')
 const plugin = require('tailwindcss/plugin')
 
 module.exports = {
-  purge: [],
+  purge: {
+    mode: 'all',
+    preserveHtmlElements: false,
+    content: [
+      './src/**/*.ts',
+    ],
+  },
   darkMode: 'class',
   theme: mintbaseTheme,
   variants: {
