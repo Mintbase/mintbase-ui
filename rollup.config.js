@@ -7,7 +7,6 @@ import postcss from 'rollup-plugin-postcss'
 import dts from 'rollup-plugin-dts'
 import url from '@rollup/plugin-url'
 import summary from 'rollup-plugin-summary'
-import { visualizer } from 'rollup-plugin-visualizer'
 import packageJson from './package.json'
 
 const config = [
@@ -39,7 +38,6 @@ const config = [
       commonjs(),
       typescript({ tsconfig: './tsconfig.json' }),
       terser(),
-      visualizer(),
       summary(),
     ],
   },
