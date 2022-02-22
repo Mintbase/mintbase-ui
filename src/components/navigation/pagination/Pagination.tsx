@@ -99,7 +99,7 @@ export const MbPagination = (props: PaginationProps) => {
         >
           <MbIcon
             size="24px"
-            name={EIconName.ARROW_LEFT_SMALL}
+            name={EIconName.ARROW_BACK_SMALL}
             color={`${currentPage === 1 ? 'gray-400' : 'blue-300'}`}
             darkColor={`${currentPage === 1 ? 'gray-400' : 'blue-100'}`}
           />
@@ -148,7 +148,7 @@ export const MbPagination = (props: PaginationProps) => {
         >
           <MbIcon
             size="24px"
-            name={EIconName.ARROW_RIGHT_SMALL}
+            name={EIconName.ARROW_FORWARD_SMALL}
             color={`${
               currentPage === totalPageCount ? 'gray-400' : 'blue-300'
             }`}
