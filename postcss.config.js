@@ -6,5 +6,6 @@ module.exports = {
     "postcss-url": {
       url: "inline",
     },
+    cssnano: {}
   },
 };
