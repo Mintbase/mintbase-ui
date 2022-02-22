@@ -4,11 +4,10 @@ const plugin = require('tailwindcss/plugin')
 module.exports = {
   purge: {
     enabled: true,
-    content: [
-      './src/**/*.ts',
-      './src/**/*.js',
-      './src/**/*.tsx'
-    ],
+    content: ['./src/**/*.ts', './src/**/*.js', './src/**/*.tsx'],
+    options: {
+      safelist: ['dark', 'light', 'sm', 'md', 'lg', 'xl'],
+    },
   },
   darkMode: 'class',
   theme: mintbaseTheme,
