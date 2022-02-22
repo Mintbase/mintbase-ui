@@ -3,10 +3,11 @@ const plugin = require('tailwindcss/plugin')
 
 module.exports = {
   purge: {
-    mode: 'all',
-    preserveHtmlElements: false,
+    enabled: true,
     content: [
       './src/**/*.ts',
+      './src/**/*.js',
+      './src/**/*.tsx'
     ],
   },
   darkMode: 'class',
