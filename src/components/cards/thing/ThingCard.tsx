@@ -49,7 +49,6 @@ export const MbThingCard = ({ loading = false, cardInfo }: CardProps) => {
     onBotLeftImageClick,
     onCenterElementClick,
     onUpperLeftClick,
-    onUpperRightClick,
   } = cardInfo
 
   return (
@@ -72,7 +71,7 @@ export const MbThingCard = ({ loading = false, cardInfo }: CardProps) => {
           </p>
         </div>
         {upperRightElement && (
-          <div className="flex" onClick={onUpperRightClick}>
+          <div className="flex">
             {upperRightElement}
           </div>
         )}
