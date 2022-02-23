@@ -13,7 +13,6 @@ export declare type TThingCard = {
     botRightText?: string;
     botRightIcon?: EIconName;
     onUpperLeftClick?: () => void;
-    onUpperRightClick?: () => void;
     onCenterElementClick?: () => void;
     onBotLeftImageClick?: () => void;
 };
