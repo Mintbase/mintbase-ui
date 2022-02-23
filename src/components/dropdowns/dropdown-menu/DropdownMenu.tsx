@@ -33,7 +33,7 @@ export const MbDropdownMenu = (props: DropdownMenuProps) => {
           >
             <MbText
               className={`p-med-90 text-blue-300 dark:text-blue-100 ${
-                icon ? 'max-w-80%' : ''
+                icon ? 'max-w-80%' : 'whitespace-nowrap'
               }`}
             >
               {content}
