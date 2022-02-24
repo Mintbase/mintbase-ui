@@ -180,7 +180,7 @@ interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement
 }
 declare const MbTextArea: React$1.ForwardRefExoticComponent<TextareaProps & React$1.RefAttributes<HTMLTextAreaElement>>;
 
-interface SelectProps extends React.InputHTMLAttributes<HTMLInputElement> {
+interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
     options: TSelectOption[];
     onValueChange: (value: string) => void;
 }
@@ -329,10 +329,10 @@ interface InputAccountProps {
 }
 declare const MbInputAccount: (props: InputAccountProps) => JSX.Element;
 
-interface AmountButtonProps {
-    max: number;
+interface AmountButtonProps extends React.InputHTMLAttributes<HTMLInputElement> {
+    maxAmount: number;
     disabled?: boolean;
-    size?: ESize;
+    btnSize?: ESize;
     onValueChange: (amount: number) => void;
 }
 declare const MbAmountInput: (props: AmountButtonProps) => JSX.Element;
