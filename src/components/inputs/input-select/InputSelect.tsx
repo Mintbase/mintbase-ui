@@ -2,7 +2,7 @@ import { MbIcon } from '../..'
 import { EIconName } from '../../..'
 import './InputSelect.css'
 
-interface SelectProps extends React.InputHTMLAttributes<HTMLInputElement> {
+interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
   options: TSelectOption[]
   onValueChange: (value: string) => void
 }
@@ -13,7 +13,7 @@ type TSelectOption = {
 }
 
 export const MbInputSelect = (props: SelectProps) => {
-  const { disabled, options, onValueChange } = props
+  const { disabled, options, onValueChange, ...restProps } = props
 
   return (
     <div
@@ -26,6 +26,7 @@ export const MbInputSelect = (props: SelectProps) => {
         className="select-field appearance-none relative z-10"
         disabled={disabled}
         onChange={(event) => onValueChange(event.target.value)}
+        {...restProps}
       >
         {options.map((option) => (
           <option value={option.value}>{option.label}</option>
