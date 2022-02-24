@@ -2,22 +2,29 @@ import { useEffect, useState } from 'react'
 import { ESize, getFontType } from '../../..'
 import './AmountInput.css'
 
-interface AmountButtonProps {
-  max: number
+interface AmountButtonProps
+  extends React.InputHTMLAttributes<HTMLInputElement> {
+  maxAmount: number
   disabled?: boolean
-  size?: ESize
+  btnSize?: ESize
   onValueChange: (amount: number) => void
 }
 
 export const MbAmountInput = (props: AmountButtonProps) => {
   const [amount, setAmount] = useState(1)
 
-  const { max, disabled, size = ESize.MEDIUM, onValueChange } = props
+  const {
+    maxAmount,
+    disabled,
+    btnSize = ESize.MEDIUM,
+    onValueChange,
+    ...restProps
+  } = props
 
   const handlePlus = () => {
     if (disabled) return
     const updated = amount + 1
-    if (updated === max + 1) return
+    if (updated === maxAmount + 1) return
     setAmount(amount + 1)
   }
 
@@ -39,7 +46,7 @@ export const MbAmountInput = (props: AmountButtonProps) => {
       return
     }
 
-    const calValue = Math.min(Math.max(parseInt(value), 1), max)
+    const calValue = Math.min(Math.max(parseInt(value), 1), maxAmount)
     setAmount(calValue)
   }
 
@@ -51,29 +58,30 @@ export const MbAmountInput = (props: AmountButtonProps) => {
     <div className="flex">
       <div
         className={` ${getFontType(
-          size
+          btnSize
         )} flex bg-gray-100 dark:bg-gray-900 p-8 rounded w-full ${
           disabled ? 'bg-gray-200 dark:bg-gray-700' : ''
         }`}
       >
         <input
           className={`${
-            size === ESize.SMALL ? 'my-2' : 'ml-4 mr-12'
+            btnSize === ESize.SMALL ? 'my-2' : 'ml-4 mr-12'
           } w-full dark:text-white outline-none bg-transparent mt-2 ${
             disabled ? 'text-gray-500' : ''
           }`}
           value={amount}
           onChange={handleContentChanges}
+          {...restProps}
         />
-        <div className={`flex ${size === ESize.SMALL ? 'gap-8' : 'gap-12'}`}>
+        <div className={`flex ${btnSize === ESize.SMALL ? 'gap-8' : 'gap-12'}`}>
           <button
-            className={`amount-button ${disabled ? 'disabled' : ''} ${size}`}
+            className={`amount-button ${disabled ? 'disabled' : ''} ${btnSize}`}
             onClick={handleMinus}
           >
             <span className="mt-2">-</span>
           </button>
           <button
-            className={`amount-button ${disabled ? 'disabled' : ''} ${size}`}
+            className={`amount-button ${disabled ? 'disabled' : ''} ${btnSize}`}
             onClick={handlePlus}
           >
             <span className="mt-2">+</span>
