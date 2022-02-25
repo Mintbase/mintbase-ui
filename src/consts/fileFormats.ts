@@ -12,3 +12,10 @@ export const THREED_TYPES = [
   'application/octet-stream',
 ]
 export const FILE_TYPES = ['application/pdf']
+
+export const ALL_TYPES = [
+  ...IMAGE_TYPES,
+  ...AUDIO_TYPES,
+  ...VIDEO_TYPES,
+  ...THREED_TYPES,
+]
