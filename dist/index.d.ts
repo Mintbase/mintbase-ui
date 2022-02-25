@@ -383,9 +383,10 @@ declare const VIDEO_TYPES: string[];
 declare const IMAGE_TYPES: string[];
 declare const THREED_TYPES: string[];
 declare const FILE_TYPES: string[];
+declare const ALL_TYPES: string[];
 
 interface ToggleProps extends React.InputHTMLAttributes<HTMLInputElement> {
     label?: string;
 }
 
-export { AUDIO_TYPES, EControlStatus, EIconName, ESize, ESmallCardType, EState, EType, FILE_TYPES, IMAGE_TYPES, Item, MbAccordion, MbAction, MbAmountInput, MbBody, MbButton, MbCheckbox, MbChip, MbColorIndicator, MbDropdownMenu, MbHead, MbIcon, MbInfoCard, MbInput, MbInputAccount, MbInputSelect, MbItemsPerPage, MbLogo, MbMediaImport, MbMenuWrapper, MbModal, MbNetworkMenu, MbPagination, MbRadioButton, MbSmallCard, MbStatefulButton, MbSwitch, MbTab, MbTable, MbTabs, MbText, MbTextArea, MbThingCard, MbTooltip, TColor, TColorDetail, THREED_TYPES, TInfoCard, TNetworkOption, TSmallCard, TThingCard, ToggleProps, VIDEO_TYPES, colorsArray, getFontType, getInputLabelFontType };
+export { ALL_TYPES, AUDIO_TYPES, EControlStatus, EIconName, ESize, ESmallCardType, EState, EType, FILE_TYPES, IMAGE_TYPES, Item, MbAccordion, MbAction, MbAmountInput, MbBody, MbButton, MbCheckbox, MbChip, MbColorIndicator, MbDropdownMenu, MbHead, MbIcon, MbInfoCard, MbInput, MbInputAccount, MbInputSelect, MbItemsPerPage, MbLogo, MbMediaImport, MbMenuWrapper, MbModal, MbNetworkMenu, MbPagination, MbRadioButton, MbSmallCard, MbStatefulButton, MbSwitch, MbTab, MbTable, MbTabs, MbText, MbTextArea, MbThingCard, MbTooltip, TColor, TColorDetail, THREED_TYPES, TInfoCard, TNetworkOption, TSmallCard, TThingCard, ToggleProps, VIDEO_TYPES, colorsArray, getFontType, getInputLabelFontType };
