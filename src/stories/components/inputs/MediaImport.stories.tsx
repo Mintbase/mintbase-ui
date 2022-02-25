@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { useState } from 'react'
-import { IMAGE_TYPES } from '../../../consts/fileFormats'
+import { ALL_TYPES, IMAGE_TYPES } from '../../../consts/fileFormats'
 import { MbMediaImport } from './../../../components/inputs/media-import/mediaImport'
 
 export default {
@@ -65,5 +65,5 @@ const Template: ComponentStory<typeof MbMediaImport> = (args) => {
 
 export const MediaImport = Template.bind({})
 MediaImport.args = {
-  acceptedFormats: IMAGE_TYPES,
+  acceptedFormats: ALL_TYPES,
 }
