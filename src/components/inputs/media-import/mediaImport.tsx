@@ -26,6 +26,7 @@ const preventBrowserDefaults = (e: Event) => {
 export const MbMediaImport = (props: MediaImportProps) => {
   const {
     isProfileImage,
+    isHeaderImage,
     acceptedFormats,
     idealDimensions,
     maxSize,
@@ -104,7 +105,9 @@ export const MbMediaImport = (props: MediaImportProps) => {
                   className={` ${
                     isProfileImage
                       ? 'w-24 h-24 sm:h-32 sm:w-32 rounded-full overflow-hidden'
-                      : 'h-32 sm:h-64 w-full'
+                      : isHeaderImage
+                      ? 'h-32 sm:h-64 w-full'
+                      : 'h-48 w-48 sm:h-64 sm:w-64'
                   }`}
                 >
                   <img className="w-full h-full object-cover" src={imageUrl} />
