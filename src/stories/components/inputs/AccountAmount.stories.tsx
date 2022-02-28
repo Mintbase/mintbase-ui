@@ -128,7 +128,6 @@ const Template: ComponentStory<typeof MbInputAccount> = (args) => {
                       inputSize={ESize.BIG}
                       controlStatus={input.amount.status}
                       onChange={(e) => handleAmountInputChange(e, index)}
-                      hasPercentageLabel
                       {...input.amount}
                     />
                   </div>
