@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback, useMemo } from 'react'
 import { MbAction, MbButton } from '../../..'
 import { EIconName } from '../../../consts/icons'
 import { ESize, EState, EType } from '../../../consts/properties'
@@ -6,6 +6,7 @@ import { MbAccordion } from '../../accordion/Accordion'
 import { MbIcon } from '../../icon/Icon'
 import { EControlStatus, MbInput } from '../input-field/inputField'
 import './inputaccount.css'
+import debounce from 'lodash.debounce'
 
 type TInputListGroup = {
   amount?: TInput
@@ -43,6 +44,14 @@ export const MbInputAccount = (props: InputAccountProps) => {
     amountInputChangeHandler,
   } = props
 
+  const debounceChangeAmountHandler = useMemo(() =>
+    debounce(async (event, index) => {
+      if (!amountInputChangeHandler) return
+      await amountInputChangeHandler(event, index)
+    }, 300),
+    []
+  )
+
   return (
     <main>
       <section className="p-2 h-72 overflow-y-scroll">
@@ -67,9 +76,10 @@ export const MbInputAccount = (props: InputAccountProps) => {
                         value={input.amount.value}
                         inputSize={ESize.BIG}
                         controlStatus={input.amount.status}
-                        onChange={(e: any) =>
-                          amountInputChangeHandler(e, index)
-                        }
+                        onChange={(e) => {
+                          console.log(e.target.value)
+                          debounceChangeAmountHandler(e, index)
+                        }}
                         hasPercentageLabel={fieldPercentageLabel}
                         {...input.amount}
                       />

@@ -68,6 +68,7 @@ const Template: ComponentStory<typeof MbInputAccount> = (args) => {
 
   const handleAmountInputChange = (e: any, index: number) => {
     const { value } = e.target
+    console.log(value)
     const list = [...inputList]
     list[index]['amount']['value'] = value
     if (value > 100 || value <= 0) {
