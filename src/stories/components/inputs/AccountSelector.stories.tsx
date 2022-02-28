@@ -45,7 +45,17 @@ const Template: ComponentStory<typeof MbInputAccount> = (args) => {
   }
 
   const handleAddClick = () => {
-    console.log('add another account action')
+    if (inputList.length + 1 === 20) return
+    setInputList([
+      ...inputList,
+      {
+        account: {
+          placeholder: 'Name of the account',
+          value: '',
+          status: EControlStatus.NORMAL,
+        },
+      },
+    ])
   }
 
   return (
@@ -93,7 +103,7 @@ const Template: ComponentStory<typeof MbInputAccount> = (args) => {
         <div className="text-center">
           <MbAction
             state={
-              inputList.length + 1 === 100 ? EState.DISABLED : EState.ACTIVE
+              inputList.length + 1 === 20 ? EState.DISABLED : EState.ACTIVE
             }
             size={ESize.BIG}
             onClick={handleAddClick}
