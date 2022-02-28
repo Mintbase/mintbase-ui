@@ -1,5 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { useState } from 'react'
+import { EIconName, ESize, EState, MbAction, MbIcon, MbInput } from '../../..'
 import { MbInputAccount } from '../../../components/inputs/input-account/InputAccount'
 import { EControlStatus } from '../../../components/inputs/input-field/inputField'
 
@@ -49,14 +50,58 @@ const Template: ComponentStory<typeof MbInputAccount> = (args) => {
 
   return (
     <MbInputAccount
-      maxAmount={20}
-      inputList={inputList}
-      removeInputHandler={handleRemoveClick}
-      accountInputChangeHandler={handleAccountInputChange}
       subtitle="Add accounts to easily switch between."
       smallSubtitle="Add up to 20 accounts"
-      footerTitle="Add Another Account"
-      footerAction={handleAddClick}
+      inputs={
+        <div>
+          {inputList.length > 0 &&
+            inputList.map((input, index) => {
+              return (
+                <div key={index} className="flex items-center space-x-12 mb-12">
+                  <MbInput
+                    type="text"
+                    id={index.toString()}
+                    hasIcon={input.account.status !== EControlStatus.NORMAL}
+                    placeholder={input.account.placeholder}
+                    value={input.account.value}
+                    inputSize={ESize.BIG}
+                    controlStatus={input.account.status}
+                    onChange={(e: any) => handleAccountInputChange(e, index)}
+                    {...input.account}
+                  />
+                  <div
+                    className={`${
+                      inputList.length > 1
+                        ? 'cursor-pointer'
+                        : 'cursor-not-allowed'
+                    }`}
+                    onClick={() => handleRemoveClick(index)}
+                  >
+                    <MbIcon
+                      name={EIconName.DELETE}
+                      size="24px"
+                      color="blue-300"
+                      darkColor="blue-100"
+                    />
+                  </div>
+                </div>
+              )
+            })}
+        </div>
+      }
+      footer={
+        <div className="text-center">
+          <MbAction
+            state={
+              inputList.length + 1 === 100 ? EState.DISABLED : EState.ACTIVE
+            }
+            size={ESize.BIG}
+            onClick={handleAddClick}
+          >
+            <span>Add Another Account</span>
+          </MbAction>
+        </div>
+      }
     />
   )
 }
