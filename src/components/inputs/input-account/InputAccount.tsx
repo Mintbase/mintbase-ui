@@ -28,19 +28,6 @@ export const MbInputAccount = (props: InputAccountProps) => {
         <div>{inputs}</div>
       </section>
       <footer className="text-center py-24 lg:py-32 border-t border-gray-150 dark:border-gray-700 flex flex-col lg:flex-row justify-center items-center lg:relative">
-        {/* <MbAction
-          state={
-            inputList.length + 1 === maxAmount ? EState.DISABLED : EState.ACTIVE
-          }
-          size={ESize.BIG}
-          onClick={footerAction}
-        >
-          <span>{footerTitle}</span>
-        </MbAction>
-
-        {leftFooterContent && (
-          <div className="center-extra-btns">{leftFooterContent}</div>
-        )} */}
         {footer}
       </footer>
     </main>
