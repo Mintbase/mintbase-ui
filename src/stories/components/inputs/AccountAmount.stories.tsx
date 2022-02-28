@@ -4,6 +4,7 @@ import { ESize, EType, EState } from '../../../consts/properties'
 import { MbInputAccount } from '../../../components/inputs/input-account/InputAccount'
 import { EControlStatus } from '../../../components/inputs/input-field/inputField'
 import { MbButton } from '../../../components/buttons/button/Button'
+import { EIconName, MbAction, MbIcon, MbInput } from '../../..'
 
 export default {
   title: 'Components/Inputs',
@@ -17,7 +18,7 @@ const LeftFooterActions = ({
   isReadyForTransfer: boolean
 }) => {
   return (
-    <div className="flex space-x-12">
+    <div className="flex space-x-12 w-full justify-end">
       <MbButton
         size={ESize.MEDIUM}
         btnType={EType.SECONDARY}
@@ -68,7 +69,6 @@ const Template: ComponentStory<typeof MbInputAccount> = (args) => {
 
   const handleAmountInputChange = (e: any, index: number) => {
     const { value } = e.target
-    console.log(value)
     const list = [...inputList]
     list[index]['amount']['value'] = value
     if (value > 100 || value <= 0) {
@@ -111,26 +111,83 @@ const Template: ComponentStory<typeof MbInputAccount> = (args) => {
 
   return (
     <MbInputAccount
-      maxAmount={100}
-      inputList={inputList}
-      removeInputHandler={handleRemoveClick}
-      accountInputChangeHandler={handleAccountInputChange}
-      amountInputChangeHandler={handleAmountInputChange}
       subtitle="Airdrop to multiple accounts, up to 100 accounts."
       smallSubtitle="Amount of tokens and recipient account"
-      footerTitle="Add Account"
-      leftFooterContent={
-        <LeftFooterActions
-          isReadyForTransfer={
-            inputList.filter(
-              (elm) =>
-                elm.account.status === EControlStatus.VALID &&
-                elm.amount.status === EControlStatus.VALID
-            ).length === inputList.length
-          }
-        />
+      inputs={
+        <div>
+          {inputList.length > 0 &&
+            inputList.map((input, index) => {
+              return (
+                <div key={index} className="flex items-center space-x-12 mb-12">
+                  <div className="w-24">
+                    <MbInput
+                      type="number"
+                      id={index.toString()}
+                      placeholder={input.amount.placeholder}
+                      value={input.amount.value}
+                      inputSize={ESize.BIG}
+                      controlStatus={input.amount.status}
+                      onChange={(e) => handleAmountInputChange(e, index)}
+                      hasPercentageLabel
+                      {...input.amount}
+                    />
+                  </div>
+                  <MbInput
+                    type="text"
+                    id={index.toString()}
+                    hasIcon={input.account.status !== EControlStatus.NORMAL}
+                    placeholder={input.account.placeholder}
+                    value={input.account.value}
+                    inputSize={ESize.BIG}
+                    controlStatus={input.account.status}
+                    onChange={(e: any) => handleAccountInputChange(e, index)}
+                    {...input.account}
+                  />
+                  <div
+                    className={`${
+                      inputList.length > 1
+                        ? 'cursor-pointer'
+                        : 'cursor-not-allowed'
+                    }`}
+                    onClick={() => handleRemoveClick(index)}
+                  >
+                    <MbIcon
+                      name={EIconName.DELETE}
+                      size="24px"
+                      color="blue-300"
+                      darkColor="blue-100"
+                    />
+                  </div>
+                </div>
+              )
+            })}
+        </div>
       }
-      footerAction={handleAddClick}
+      footer={
+        <div className="flex justify-between items-center w-full">
+          <div className="w-full flex justify-end">
+            <MbAction
+              state={
+                inputList.length + 1 === 100 ? EState.DISABLED : EState.ACTIVE
+              }
+              size={ESize.BIG}
+              onClick={handleAddClick}
+            >
+              <span>Add Account</span>
+            </MbAction>
+          </div>
+
+          <LeftFooterActions
+            isReadyForTransfer={
+              inputList.filter(
+                (elm) =>
+                  elm.account.status === EControlStatus.VALID &&
+                  elm.amount.status === EControlStatus.VALID
+              ).length === inputList.length
+            }
+          />
+        </div>
+      }
     />
   )
 }
