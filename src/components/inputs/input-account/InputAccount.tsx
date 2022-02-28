@@ -6,7 +6,6 @@ import { MbAccordion } from '../../accordion/Accordion'
 import { MbIcon } from '../../icon/Icon'
 import { EControlStatus, MbInput } from '../input-field/inputField'
 import './inputaccount.css'
-import debounce from 'lodash.debounce'
 
 type TInputListGroup = {
   amount?: TInput
