@@ -8,6 +8,7 @@ import { iconType } from './fileFunctions'
 
 interface MediaImportProps {
   isProfileImage?: boolean
+  isHeaderImage?: boolean
   acceptedFormats: string[]
   idealDimensions: string
   maxSize: number
