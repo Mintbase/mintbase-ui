@@ -3,7 +3,12 @@ import { EIconName } from '../../..'
 
 interface InputTagsProps {
   label: string
-  tags: string[]
+  tags: TTags[]
+}
+
+interface TTags {
+  label: string
+  value: string
 }
 
 const InputTags = (props: InputTagsProps) => {
@@ -14,14 +19,16 @@ const InputTags = (props: InputTagsProps) => {
       <div className="wrap-options">
         {tags?.map((tag, index) => (
           <div key={index}>
-            <div>
+            <div className="flex gap-4 items-center rounded-full w-max cursor-pointer relative bg-blue-300 dark:bg-blue-100">
               <MbIcon
                 name={EIconName.CLOSE}
                 size="16px"
                 color="white"
                 darkColor="black"
               />
-              <div>{tag.label}</div>
+              <div className="p-big-90 pt-2 text-white dark:text-black">
+                {tag.label}
+              </div>
             </div>
           </div>
         ))}
