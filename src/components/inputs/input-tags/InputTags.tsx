@@ -1,3 +1,6 @@
+import { MbIcon } from '../..'
+import { EIconName } from '../../..'
+
 interface InputTagsProps {
   label: string
   tags: string[]
@@ -11,15 +14,15 @@ const InputTags = (props: InputTagsProps) => {
       <div className="wrap-options">
         {tags?.map((tag, index) => (
           <div key={index}>
-              <div>
-                  
-                  </div>
-            <MbChip
-              isChecked={true}
-              handleClick={() => null}
-              disabled={false}
-              label={tag}
-            ></MbChip>
+            <div>
+              <MbIcon
+                name={EIconName.CLOSE}
+                size="16px"
+                color="white"
+                darkColor="black"
+              />
+              <div>{tag.label}</div>
+            </div>
           </div>
         ))}
       </div>
