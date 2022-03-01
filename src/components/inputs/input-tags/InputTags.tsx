@@ -15,7 +15,7 @@ export const MbInputTags = (props: InputTagsProps) => {
   const { label, tags } = props
   return (
     <>
-      <label className="label">{{ label }}</label>
+      <label className="label">{ label }</label>
       <div className="wrap-options">
         {tags?.map((tag, index) => (
           <div key={index}>
