@@ -1,6 +1,7 @@
 /// <reference types="react" />
 interface MediaImportProps {
     isProfileImage?: boolean;
+    isHeaderImage?: boolean;
     acceptedFormats: string[];
     idealDimensions: string;
     maxSize: number;

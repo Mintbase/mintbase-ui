@@ -297,6 +297,7 @@ declare const MbModal: (props: ModalProps) => JSX.Element;
 
 interface MediaImportProps {
     isProfileImage?: boolean;
+    isHeaderImage?: boolean;
     acceptedFormats: string[];
     idealDimensions: string;
     maxSize: number;
