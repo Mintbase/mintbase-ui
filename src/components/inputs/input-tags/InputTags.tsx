@@ -11,7 +11,7 @@ interface TTags {
   value: string
 }
 
-const InputTags = (props: InputTagsProps) => {
+export const MbInputTags = (props: InputTagsProps) => {
   const { label, tags } = props
   return (
     <>
@@ -37,5 +37,3 @@ const InputTags = (props: InputTagsProps) => {
     </>
   )
 }
-
-export default InputTags
