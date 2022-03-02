@@ -1,0 +1,4 @@
+.input-tags {
+  @apply p-16;
+  max-height: 48px;
+}
