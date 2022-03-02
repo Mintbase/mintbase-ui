@@ -96,6 +96,7 @@ export const MbInputTags = (props: InputTagsProps) => {
         ))}
         <label className="flex w-full">
           <input
+            id="tags"
             placeholder={localTags.length > 0 ? '' : placeholder}
             type="text"
             className={`input-field-tags ${getFontType(ESize.BIG)}`}

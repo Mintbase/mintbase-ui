@@ -16,4 +16,5 @@ export const InputTags = Template.bind({})
 InputTags.args = {
   label: 'Tags',
   tags: [],
+  placeholder: 'Input to add tags'
 }
