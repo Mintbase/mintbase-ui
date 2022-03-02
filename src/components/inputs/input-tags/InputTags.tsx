@@ -3,17 +3,6 @@ import { MbIcon } from '../..'
 import { EIconName, ESize, getFontType } from '../../..'
 import './../Input.css'
 import './InputTags.css'
-
-const ENTER_KEY_CODE = 188
-const COMMA_KEY_CODE = 13
-const DELETE_KEY_CODE = 8
-
-const preventEnterSubmit = (event: any) => {
-  const keyCode = event.keyCode ? event.keyCode : event.which
-
-  if (keyCode === 13) event.preventDefault()
-}
-
 interface InputTagsProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string
   maxTags: number
@@ -41,6 +30,16 @@ export const MbInputTags = forwardRef<HTMLInputElement, InputTagsProps>(
   ) => {
     const [localTags, setLocalTags] = useState<string[]>([])
     const [isInvalid, setIsInvalid] = useState(false)
+
+    const ENTER_KEY_CODE = 188
+    const COMMA_KEY_CODE = 13
+    const DELETE_KEY_CODE = 8
+
+    const preventEnterSubmit = (event: any) => {
+      const keyCode = event.keyCode ? event.keyCode : event.which
+
+      if (keyCode === 13) event.preventDefault()
+    }
 
     const handleKeyUp = (event: any) => {
       const keyCode = event.keyCode ? event.keyCode : event.which
@@ -85,7 +84,7 @@ export const MbInputTags = forwardRef<HTMLInputElement, InputTagsProps>(
     }, [localTags])
 
     return (
-      <>
+      <div>
         <label className="label">{label}</label>
         <div
           className={`main-input default ${
@@ -124,7 +123,7 @@ export const MbInputTags = forwardRef<HTMLInputElement, InputTagsProps>(
             />
           </label>
         </div>
-      </>
+      </div>
     )
   }
 )
