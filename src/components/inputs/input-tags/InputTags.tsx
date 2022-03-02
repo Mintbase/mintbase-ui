@@ -74,7 +74,7 @@ export const MbInputTags = (props: InputTagsProps) => {
       <div
         className={`main-input default ${
           isInvalid ? 'invalid' : ''
-        } input-tags`}
+        } input-tags no-scrollbar`}
       >
         {localTags?.map((tag, index) => (
           <div key={index} className="mr-8">
