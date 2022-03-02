@@ -7,5 +7,5 @@ interface InputTagsProps extends React.InputHTMLAttributes<HTMLInputElement> {
     onTagsChange: (tags: string[]) => void;
     onMaxTags: () => void;
 }
-export declare const MbInputTags: (props: InputTagsProps) => JSX.Element;
+export declare const MbInputTags: import("react").ForwardRefExoticComponent<InputTagsProps & import("react").RefAttributes<HTMLInputElement>>;
 export {};

@@ -186,7 +186,7 @@ interface InputTagsProps extends React.InputHTMLAttributes<HTMLInputElement> {
     onTagsChange: (tags: string[]) => void;
     onMaxTags: () => void;
 }
-declare const MbInputTags: (props: InputTagsProps) => JSX.Element;
+declare const MbInputTags: React$1.ForwardRefExoticComponent<InputTagsProps & React$1.RefAttributes<HTMLInputElement>>;
 
 interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
     options: TSelectOption[];
