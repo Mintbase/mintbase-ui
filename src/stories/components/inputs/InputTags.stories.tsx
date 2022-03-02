@@ -15,5 +15,5 @@ const Template: ComponentStory<typeof MbInputTags> = (args) => (
 export const InputTags = Template.bind({})
 InputTags.args = {
   label: 'Tags',
-  tags: [{label: 'test', value: 'test'}],
+  tags: [],
 }
