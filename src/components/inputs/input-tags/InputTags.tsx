@@ -16,15 +16,21 @@ const preventEnterSubmit = (event: any) => {
 
 interface InputTagsProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string
+  maxTags: number
   onTagsChange: (tags: string[]) => void
+  onMaxTags: () => void
 }
 
 export const MbInputTags = (props: InputTagsProps) => {
-  const { label, placeholder, onTagsChange } = props
+  const { label, placeholder, maxTags, onTagsChange } = props
   const [localTags, setLocalTags] = useState<string[]>([])
 
   const handleKeyUp = (event: any) => {
     const keyCode = event.keyCode ? event.keyCode : event.which
+
+    if (localTags.length === maxTags) {
+      return
+    }
 
     if (keyCode === ENTER_KEY_CODE || keyCode === COMMA_KEY_CODE) {
       const tag = event.target.value.trim().split(',')
