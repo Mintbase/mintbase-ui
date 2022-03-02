@@ -58,7 +58,7 @@ export const MbInputTags = (props: InputTagsProps) => {
         return
       }
 
-      setLocalTags([...tags, tag[0]])
+      setLocalTags([...localTags, tag[0]])
 
       event.target.value = ''
     }
@@ -76,7 +76,7 @@ export const MbInputTags = (props: InputTagsProps) => {
   }
 
   const removeTag = (index: number) => {
-    const _tags = tags.slice()
+    const _tags = localTags.slice()
 
     _tags.splice(index, 1)
     setLocalTags(_tags)
@@ -86,8 +86,8 @@ export const MbInputTags = (props: InputTagsProps) => {
     <>
       <label className="label">{label}</label>
       <div className="main-input default input-tags">
-        {tags?.map((tag, index) => (
-          <div key={index} className="mr-12">
+        {localTags?.map((tag, index) => (
+          <div key={index} className="mr-8">
             <div className="flex gap-0.5 items-center rounded-full w-max cursor-pointer relative bg-blue-300 dark:bg-blue-100 py-4 px-8">
               <MbIcon
                 name={EIconName.CLOSE}
@@ -103,7 +103,7 @@ export const MbInputTags = (props: InputTagsProps) => {
         ))}
         <label className="flex w-full">
           <input
-            placeholder={tags.length > 0 ? '' : placeholder}
+            placeholder={localTags.length > 0 ? '' : placeholder}
             type="text"
             className={`input-field-tags ${getFontType(ESize.BIG)}`}
             onKeyDown={handleKeyDown}
