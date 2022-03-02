@@ -1,5 +1,5 @@
 .input-tags {
-  @apply p-16 flex items-center rounded overflow-x-auto;
+  @apply p-16 flex items-center rounded overflow-x-scroll overflow-y-hidden;
   max-height: 48px;
 }
 
