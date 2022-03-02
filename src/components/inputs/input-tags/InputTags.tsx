@@ -24,13 +24,12 @@ interface InputTagsProps extends React.InputHTMLAttributes<HTMLInputElement> {
 export const MbInputTags = (props: InputTagsProps) => {
   const { label, placeholder, maxTags, onTagsChange } = props
   const [localTags, setLocalTags] = useState<string[]>([])
+  const [isInvalid, setIsInvalid] = useState(false)
 
   const handleKeyUp = (event: any) => {
     const keyCode = event.keyCode ? event.keyCode : event.which
 
-    if (localTags.length === maxTags) {
-      return
-    }
+    if (isInvalid) return
 
     if (keyCode === ENTER_KEY_CODE || keyCode === COMMA_KEY_CODE) {
       const tag = event.target.value.trim().split(',')
@@ -47,6 +46,7 @@ export const MbInputTags = (props: InputTagsProps) => {
 
   const handleKeyDown = (event: any) => {
     preventEnterSubmit(event)
+    if (isInvalid) return
 
     const keyCode = event.keyCode ? event.keyCode : event.which
 
@@ -64,13 +64,18 @@ export const MbInputTags = (props: InputTagsProps) => {
   }
 
   useEffect(() => {
+    setIsInvalid(localTags.length > maxTags)
     onTagsChange(localTags)
   }, [localTags])
 
   return (
     <>
       <label className="label">{label}</label>
-      <div className="main-input default input-tags">
+      <div
+        className={`main-input default ${
+          isInvalid ? 'invalid' : ''
+        } input-tags`}
+      >
         {localTags?.map((tag, index) => (
           <div key={index} className="mr-8">
             <div className="flex gap-0.5 items-center rounded-full w-max cursor-pointer relative bg-blue-300 dark:bg-blue-100 py-4 px-8">
