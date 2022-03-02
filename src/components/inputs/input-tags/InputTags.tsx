@@ -16,40 +16,15 @@ const preventEnterSubmit = (event: any) => {
 
 interface InputTagsProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string
-  tags: string[]
+  onTagsChange: (tags: string[]) => void
 }
 
-// interface TTags {
-//   label: string
-//   value: string
-// }
-
 export const MbInputTags = (props: InputTagsProps) => {
-  const { label, tags, placeholder } = props
-  const tagsLimit = 4
-  const maxTagLength = 16
+  const { label, placeholder, onTagsChange } = props
   const [localTags, setLocalTags] = useState<string[]>([])
-
-  useEffect(() => {
-    if (tags.length === 0) {
-      setLocalTags(['Mintbase'])
-    }
-  }, [])
-
-  //   useEffect(() => {
-  //     if (tags.length === 0) return
-  //   }, [tags])
 
   const handleKeyUp = (event: any) => {
     const keyCode = event.keyCode ? event.keyCode : event.which
-
-    // if (tags.length > tagsLimit - 1) {
-    //   dispatch({
-    //     type: actions.SET_ERROR,
-    //     payload: 'Exceeded number of allowed tags.',
-    //   })
-    //   return
-    // }
 
     if (keyCode === ENTER_KEY_CODE || keyCode === COMMA_KEY_CODE) {
       const tag = event.target.value.trim().split(',')
@@ -70,7 +45,7 @@ export const MbInputTags = (props: InputTagsProps) => {
     const keyCode = event.keyCode ? event.keyCode : event.which
 
     if (keyCode === DELETE_KEY_CODE && event.target.value === '') {
-      removeTag(tags.length - 1)
+      removeTag(localTags.length - 1)
       return
     }
   }
@@ -82,6 +57,10 @@ export const MbInputTags = (props: InputTagsProps) => {
     setLocalTags(_tags)
   }
 
+  useEffect(() => {
+    onTagsChange(localTags)
+  }, [localTags])
+
   return (
     <>
       <label className="label">{label}</label>
@@ -89,12 +68,15 @@ export const MbInputTags = (props: InputTagsProps) => {
         {localTags?.map((tag, index) => (
           <div key={index} className="mr-8">
             <div className="flex gap-0.5 items-center rounded-full w-max cursor-pointer relative bg-blue-300 dark:bg-blue-100 py-4 px-8">
-              <MbIcon
-                name={EIconName.CLOSE}
-                size="16px"
-                color="white"
-                darkColor="black"
-              />
+              <div onClick={() => removeTag(index)}>
+                <MbIcon
+                  name={EIconName.CLOSE}
+                  size="16px"
+                  color="white"
+                  darkColor="black"
+                />
+              </div>
+
               <div className="p-med-90 pt-2 text-white dark:text-black">
                 {tag}
               </div>
