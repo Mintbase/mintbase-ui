@@ -1,20 +1,87 @@
+import { useEffect, useState } from 'react'
 import { MbIcon } from '../..'
 import { EIconName, ESize, getFontType } from '../../..'
 import './../Input.css'
 import './InputTags.css'
 
-interface InputTagsProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  label: string
-  tags: TTags[]
+const ENTER_KEY_CODE = 188
+const COMMA_KEY_CODE = 13
+const DELETE_KEY_CODE = 8
+
+const preventEnterSubmit = (event: any) => {
+  const keyCode = event.keyCode ? event.keyCode : event.which
+
+  if (keyCode === 13) event.preventDefault()
 }
 
-interface TTags {
+interface InputTagsProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string
-  value: string
+  tags: string[]
 }
+
+// interface TTags {
+//   label: string
+//   value: string
+// }
 
 export const MbInputTags = (props: InputTagsProps) => {
   const { label, tags, placeholder } = props
+  const tagsLimit = 4
+  const maxTagLength = 16
+  const [localTags, setLocalTags] = useState<string[]>([])
+
+  useEffect(() => {
+    if (tags.length === 0) {
+      setLocalTags(['Mintbase'])
+    }
+  }, [])
+
+  //   useEffect(() => {
+  //     if (tags.length === 0) return
+  //   }, [tags])
+
+  const handleKeyUp = (event: any) => {
+    const keyCode = event.keyCode ? event.keyCode : event.which
+
+    // if (tags.length > tagsLimit - 1) {
+    //   dispatch({
+    //     type: actions.SET_ERROR,
+    //     payload: 'Exceeded number of allowed tags.',
+    //   })
+    //   return
+    // }
+
+    if (keyCode === ENTER_KEY_CODE || keyCode === COMMA_KEY_CODE) {
+      const tag = event.target.value.trim().split(',')
+
+      if (tag.length === 0 || tag[0] === '') {
+        return
+      }
+
+      setLocalTags([...tags, tag[0]])
+
+      event.target.value = ''
+    }
+  }
+
+  const handleKeyDown = (event: any) => {
+    preventEnterSubmit(event)
+
+    const keyCode = event.keyCode ? event.keyCode : event.which
+
+    if (keyCode === DELETE_KEY_CODE && event.target.value === '') {
+      removeTag(tags.length - 1)
+      return
+    }
+  }
+
+  const removeTag = (index: number) => {
+    const _tags = tags.slice()
+
+    _tags.splice(index, 1)
+    setLocalTags(_tags)
+  }
+
   return (
     <>
       <label className="label">{label}</label>
@@ -29,7 +96,7 @@ export const MbInputTags = (props: InputTagsProps) => {
                 darkColor="black"
               />
               <div className="p-med-90 pt-2 text-white dark:text-black">
-                {tag.label}
+                {tag}
               </div>
             </div>
           </div>
@@ -39,6 +106,8 @@ export const MbInputTags = (props: InputTagsProps) => {
             placeholder={tags.length > 0 ? '' : placeholder}
             type="text"
             className={`input-field-tags ${getFontType(ESize.BIG)}`}
+            onKeyDown={handleKeyDown}
+            onKeyUp={handleKeyUp}
           />
         </label>
       </div>
