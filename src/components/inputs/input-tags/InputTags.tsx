@@ -36,6 +36,7 @@ export const MbInputTags = forwardRef<HTMLInputElement, InputTagsProps>(
     const ENTER_KEY_CODE = 188
     const COMMA_KEY_CODE = 13
     const DELETE_KEY_CODE = 8
+    const SPACE_KEY_CODE = 32
 
     const preventEnterSubmit = (event: any) => {
       const keyCode = event.keyCode ? event.keyCode : event.which
@@ -48,7 +49,11 @@ export const MbInputTags = forwardRef<HTMLInputElement, InputTagsProps>(
 
       if (isInvalid) return
 
-      if (keyCode === ENTER_KEY_CODE || keyCode === COMMA_KEY_CODE) {
+      if (
+        keyCode === ENTER_KEY_CODE ||
+        keyCode === COMMA_KEY_CODE ||
+        keyCode === SPACE_KEY_CODE
+      ) {
         const tag = event.target.value.trim().split(',')
 
         if (tag.length === 0 || tag[0] === '') {
