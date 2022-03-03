@@ -1,11 +1,12 @@
 import { forwardRef, useEffect, useState } from 'react'
 import { MbIcon } from '../..'
-import { EIconName, ESize, getFontType } from '../../..'
+import { EIconName, ESize, getFontType, getInputLabelFontType } from '../../..'
 import './../Input.css'
 import './InputTags.css'
 interface InputTagsProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string
   maxTags: number
+  inputSize?: ESize
   onTagsChange: (tags: string[]) => void
   onMaxTags: () => void
 }
@@ -18,6 +19,7 @@ export const MbInputTags = forwardRef<HTMLInputElement, InputTagsProps>(
       disabled,
       className,
       placeholder,
+      inputSize = ESize.MEDIUM,
       label,
       maxTags,
       value,
@@ -85,11 +87,17 @@ export const MbInputTags = forwardRef<HTMLInputElement, InputTagsProps>(
 
     return (
       <div>
-        <label className="block mb-8 dark:text-white p-med-90">{label}</label>
+        <label
+          className={`block mb-8 dark:text-white p-med-90 ${getInputLabelFontType(
+            inputSize
+          )}`}
+        >
+          {label}
+        </label>
         <div
           className={`main-input default ${
             isInvalid ? 'invalid' : ''
-          } input-tags no-scrollbar`}
+          } ${inputSize} input-tags no-scrollbar`}
         >
           {localTags?.map((tag, index) => (
             <div key={index} className="mr-8">
@@ -116,7 +124,7 @@ export const MbInputTags = forwardRef<HTMLInputElement, InputTagsProps>(
               placeholder={localTags.length > 0 ? '' : placeholder}
               type="text"
               value={value}
-              className={`input-field-tags ${getFontType(ESize.BIG)}`}
+              className={`input-field-tags ${getFontType(inputSize)}`}
               onKeyDown={handleKeyDown}
               onKeyUp={handleKeyUp}
               {...restProps}
