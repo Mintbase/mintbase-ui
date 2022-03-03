@@ -2,7 +2,7 @@ import React from 'react';
 import { PaginationProps } from '../navigation/pagination/Pagination';
 import './table.css';
 interface TableProps extends React.HTMLAttributes<HTMLDivElement> {
-    title: string;
+    title?: string;
     pagination?: PaginationProps;
     onAmountItemsChange?: (page: number) => void;
 }
