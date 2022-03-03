@@ -1,11 +1,12 @@
 import { forwardRef, useEffect, useState } from 'react'
 import { MbIcon } from '../..'
-import { EIconName, ESize, getFontType } from '../../..'
+import { EIconName, ESize, getFontType, getInputLabelFontType } from '../../..'
 import './../Input.css'
 import './InputTags.css'
 interface InputTagsProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string
   maxTags: number
+  inputSize?: ESize
   onTagsChange: (tags: string[]) => void
   onMaxTags: () => void
 }
@@ -18,6 +19,7 @@ export const MbInputTags = forwardRef<HTMLInputElement, InputTagsProps>(
       disabled,
       className,
       placeholder,
+      inputSize = ESize.MEDIUM,
       label,
       maxTags,
       value,
@@ -34,6 +36,7 @@ export const MbInputTags = forwardRef<HTMLInputElement, InputTagsProps>(
     const ENTER_KEY_CODE = 188
     const COMMA_KEY_CODE = 13
     const DELETE_KEY_CODE = 8
+    const SPACE_KEY_CODE = 32
 
     const preventEnterSubmit = (event: any) => {
       const keyCode = event.keyCode ? event.keyCode : event.which
@@ -46,7 +49,11 @@ export const MbInputTags = forwardRef<HTMLInputElement, InputTagsProps>(
 
       if (isInvalid) return
 
-      if (keyCode === ENTER_KEY_CODE || keyCode === COMMA_KEY_CODE) {
+      if (
+        keyCode === ENTER_KEY_CODE ||
+        keyCode === COMMA_KEY_CODE ||
+        keyCode === SPACE_KEY_CODE
+      ) {
         const tag = event.target.value.trim().split(',')
 
         if (tag.length === 0 || tag[0] === '') {
@@ -85,11 +92,17 @@ export const MbInputTags = forwardRef<HTMLInputElement, InputTagsProps>(
 
     return (
       <div>
-        <label className="label">{label}</label>
+        <label
+          className={`block mb-8 dark:text-white p-med-90 ${getInputLabelFontType(
+            inputSize
+          )}`}
+        >
+          {label}
+        </label>
         <div
           className={`main-input default ${
             isInvalid ? 'invalid' : ''
-          } input-tags no-scrollbar`}
+          } input-tags ${inputSize} no-scrollbar`}
         >
           {localTags?.map((tag, index) => (
             <div key={index} className="mr-8">
@@ -116,7 +129,7 @@ export const MbInputTags = forwardRef<HTMLInputElement, InputTagsProps>(
               placeholder={localTags.length > 0 ? '' : placeholder}
               type="text"
               value={value}
-              className={`input-field-tags ${getFontType(ESize.BIG)}`}
+              className={`input-field-tags ${getFontType(inputSize)}`}
               onKeyDown={handleKeyDown}
               onKeyUp={handleKeyUp}
               {...restProps}

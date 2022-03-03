@@ -1,5 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import React from 'react'
+import { ESize } from '../../../consts'
 import { MbInput, MbInputTags } from '../../../index'
 
 export default {
@@ -16,5 +17,6 @@ export const InputTags = Template.bind({})
 InputTags.args = {
   label: 'Tags',
   tags: [],
-  placeholder: 'Input to add tags'
+  placeholder: 'Input to add tags',
+  inputSize: ESize.MEDIUM,
 }
