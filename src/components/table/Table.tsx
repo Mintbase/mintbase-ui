@@ -4,7 +4,7 @@ import { MbPagination } from '../navigation/pagination/Pagination'
 import { PaginationProps } from '../navigation/pagination/Pagination'
 import './table.css'
 interface TableProps extends React.HTMLAttributes<HTMLDivElement> {
-  title: string
+  title?: string
   pagination?: PaginationProps
   onAmountItemsChange?: (page: number) => void
 }
@@ -30,9 +30,12 @@ export const MbTable = (props: TableProps) => {
 
   return (
     <section className="bg-white dark:bg-gray-850 rounded">
-      <header className="p-24 border-b border-gray-200 dark:border-gray-800 dark:text-white p-big-130">
-        {title}
-      </header>
+      {title && (
+        <header className="p-24 border-b border-gray-200 dark:border-gray-800 dark:text-white p-big-130">
+          {title}
+        </header>
+      )}
+
       <div className="overflow-auto">
         <table className="w-full">{children}</table>
       </div>
