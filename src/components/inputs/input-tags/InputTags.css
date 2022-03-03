@@ -6,17 +6,17 @@
   @apply bg-transparent placeholder-gray-500 text-black dark:text-white focus:outline-none w-full;
 }
 
-.input-wrapper.big {
+.input-tags.big {
   @apply p-16;
   max-height: 48px;
 }
 
-.input-wrapper.medium {
+.input-tags.medium {
   @apply p-12;
   max-height: 40px;
 }
 
-.input-wrapper.small {
+.input-tags.small {
   @apply p-10;
   max-height: 34px;
 }

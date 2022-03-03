@@ -97,7 +97,7 @@ export const MbInputTags = forwardRef<HTMLInputElement, InputTagsProps>(
         <div
           className={`main-input default ${
             isInvalid ? 'invalid' : ''
-          } ${inputSize} input-tags no-scrollbar`}
+          } input-tags ${inputSize} no-scrollbar`}
         >
           {localTags?.map((tag, index) => (
             <div key={index} className="mr-8">
