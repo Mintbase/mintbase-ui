@@ -183,6 +183,7 @@ declare const MbTextArea: React$1.ForwardRefExoticComponent<TextareaProps & Reac
 interface InputTagsProps extends React.InputHTMLAttributes<HTMLInputElement> {
     label: string;
     maxTags: number;
+    inputSize?: ESize;
     onTagsChange: (tags: string[]) => void;
     onMaxTags: () => void;
 }
