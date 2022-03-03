@@ -85,7 +85,7 @@ export const MbInputTags = forwardRef<HTMLInputElement, InputTagsProps>(
 
     return (
       <div>
-        <label className="label">{label}</label>
+        <label className="block mb-8 dark:text-white p-med-90">{label}</label>
         <div
           className={`main-input default ${
             isInvalid ? 'invalid' : ''
