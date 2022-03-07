@@ -29,9 +29,19 @@ const AudioControls = ({
         }}
       >
         {isPlaying ? (
-          <MbIcon name={EIconName.PAUSE} size="42px" color="black" />
+          <MbIcon
+            name={EIconName.PAUSE}
+            size="42px"
+            color="black"
+            darkColor="white"
+          />
         ) : (
-          <MbIcon name={EIconName.PLAY} size="42px" color="black" />
+          <MbIcon
+            name={EIconName.PLAY}
+            size="42px"
+            color="black"
+            darkColor="white"
+          />
         )}
       </div>
     </div>
@@ -79,8 +89,6 @@ export const MbAudioPlayer = ({ src }: { src: string }) => {
 
   return (
     <div>
-      <AudioControls isPlaying={isPlaying} onPlayPauseClick={handlePlayPause} />
-
       <>
         <input
           type="range"
@@ -91,15 +99,13 @@ export const MbAudioPlayer = ({ src }: { src: string }) => {
           onChange={onChange}
           className="cursor-pointer w-full h-px bg-black dark:bg-white appearance-none slider-thumb"
         />
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            padding: '0 10px',
-          }}
-        >
-          <div>{display(progress.playedSeconds)}</div>
+        <div className="flex justify-between items-center p-med-90 text-gray-700 dark:text-gray-300">
+          <div className="">{display(progress.playedSeconds)}</div>
+          <AudioControls
+            isPlaying={isPlaying}
+            onPlayPauseClick={handlePlayPause}
+          />
+
           <div>{duration}</div>
         </div>
       </>
