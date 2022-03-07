@@ -10,7 +10,7 @@ const Template: ComponentStory<typeof MbAudioPlayer> = (args) => (
   <MbAudioPlayer {...args}></MbAudioPlayer>
 )
 
-export const Accordion = Template.bind({})
-Accordion.args = {
+export const Audio = Template.bind({})
+Audio.args = {
   src: 'https://arweave.net/iRgcsFwp3l8nG3hld4WEQioP384c5QuFpXxvqqFJloQ',
 }
