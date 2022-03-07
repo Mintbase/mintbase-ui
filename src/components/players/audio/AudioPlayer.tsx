@@ -25,14 +25,18 @@ const AudioControls = ({
     <div>
       {!isLoading && (
         <div
+          className="cursor-pointer"
           onClick={(e) => {
             e.stopPropagation()
             console.log('cenas')
             onPlayPauseClick(!isPlaying)
           }}
         >
-          {/* {isPlaying ? <PauseIcon /> : <PlayIcon />} */}
-          <MbIcon name={EIconName.AUDIO} size="24px" color="black" />
+          {isPlaying ? (
+            <MbIcon name={EIconName.PAUSE} size="42px" color="black" />
+          ) : (
+            <MbIcon name={EIconName.PLAY} size="42px" color="black" />
+          )}
         </div>
       )}
     </div>
