@@ -20,6 +20,7 @@ Info.args = {
   boxInfo: {
     title: 'Listed Tokens',
     description: '300',
+    isNumber: true,
   },
 }
 
@@ -36,7 +37,7 @@ export const InfoWithIcon = Template.bind({})
 InfoWithIcon.args = {
   boxInfo: {
     title: 'Info with icon',
-    description: '300',
+    description: 'Icon',
     upperIcon: EIconName.INFO,
   },
 }
