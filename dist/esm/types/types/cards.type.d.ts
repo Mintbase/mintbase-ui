@@ -30,6 +30,7 @@ export declare type TInfoCard = {
     descriptionImage?: string;
     lowerLeftText?: string;
     isBigDescription?: boolean;
+    isNumber?: boolean;
     size?: ESize;
     handleDescriptionClick?: () => void;
 };
