@@ -75,6 +75,7 @@
   "dependencies": {
     "material-icons": "^1.10.4",
     "react-inlinesvg": "^2.3.0",
+    "react-player": "^2.9.0",
     "react-tooltip": "^4.2.21"
   }
 }
