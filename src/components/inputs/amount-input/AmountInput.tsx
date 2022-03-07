@@ -69,8 +69,9 @@ export const MbAmountInput = (props: AmountButtonProps) => {
           } w-full dark:text-white outline-none bg-transparent mt-2 ${
             disabled ? 'text-gray-500' : ''
           }`}
-          value={amount}
+          placeholder={'1'}
           onChange={handleContentChanges}
+          type="number"
           {...restProps}
         />
         <div className={`flex ${btnSize === ESize.SMALL ? 'gap-8' : 'gap-12'}`}>
