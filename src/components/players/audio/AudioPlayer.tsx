@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import ReactPlayer from 'react-player'
 import { EIconName } from '../../../consts'
 import { MbIcon } from '../../icon/Icon'
+import './AudioPlayer.css'
 
 function display(seconds: number) {
   const format = (val: any) => `0${Math.floor(val)}`.slice(-2)
