@@ -30,3 +30,4 @@ export { MbAmountInput } from './inputs/amount-input/AmountInput';
 export { MbNetworkMenu } from './dropdowns/network-menu/NetworkMenu';
 export { MbMenuWrapper } from './dropdowns/menu-wrapper/MenuWrapper';
 export { MbColorIndicator } from './color-indicator/ColorIndicator';
+export { MbAudioPlayer } from './players/audio/AudioPlayer';
