@@ -51,5 +51,7 @@ export enum EIconName {
   GITHUB = 'github',
   DISCORD = 'discord',
   MINTBASE = 'mintbase',
+  PLAY = 'play',
+  PAUSE = 'pause',
   NONE = 'none',
 }

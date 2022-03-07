@@ -52,6 +52,8 @@ import errorIcon from './assets/error.svg'
 import successIcon from './assets/success.svg'
 import editionsIcon from './assets/editions.svg'
 import burnIcon from './assets/burn.svg'
+import playIcon from './assets/play.svg'
+import pauseIcon from './assets/pause.svg'
 
 enum IconType {
   MINTBASE = 'mintbase',
@@ -110,7 +112,9 @@ const customIcons: { [key: string]: string } = {
   [EIconName.SUCCESS]: successIcon,
   [EIconName.EDITIONS]: editionsIcon,
   [EIconName.BURN]: burnIcon,
-  [EIconName.NONE]: ''
+  [EIconName.PLAY]: playIcon,
+  [EIconName.PAUSE]: pauseIcon,
+  [EIconName.NONE]: '',
 }
 
 export const MbIcon = ({
