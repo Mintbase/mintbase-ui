@@ -100,7 +100,7 @@ export const MbAudioPlayer = ({ src }: { src: string }) => {
           className="cursor-pointer w-full h-px bg-black dark:bg-white appearance-none slider-thumb"
         />
         <div className="flex justify-between items-center p-med-90 text-gray-700 dark:text-gray-300 mt-12">
-          <div className="">{display(progress.playedSeconds)}</div>
+          <div>{display(progress.playedSeconds)}</div>
           <AudioControls
             isPlaying={isPlaying}
             onPlayPauseClick={handlePlayPause}
