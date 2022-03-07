@@ -13,32 +13,27 @@ function display(seconds: number) {
 }
 
 const AudioControls = ({
-  isLoading,
   isPlaying,
   onPlayPauseClick,
 }: {
   isPlaying: boolean
-  isLoading: boolean
   onPlayPauseClick: (value: boolean) => void
 }) => {
   return (
     <div>
-      {!isLoading && (
-        <div
-          className="cursor-pointer"
-          onClick={(e) => {
-            e.stopPropagation()
-            console.log('cenas')
-            onPlayPauseClick(!isPlaying)
-          }}
-        >
-          {isPlaying ? (
-            <MbIcon name={EIconName.PAUSE} size="42px" color="black" />
-          ) : (
-            <MbIcon name={EIconName.PLAY} size="42px" color="black" />
-          )}
-        </div>
-      )}
+      <div
+        className="cursor-pointer"
+        onClick={(e) => {
+          e.stopPropagation()
+          onPlayPauseClick(!isPlaying)
+        }}
+      >
+        {isPlaying ? (
+          <MbIcon name={EIconName.PAUSE} size="42px" color="black" />
+        ) : (
+          <MbIcon name={EIconName.PLAY} size="42px" color="black" />
+        )}
+      </div>
     </div>
   )
 }
@@ -46,7 +41,6 @@ const AudioControls = ({
 export const MbAudioPlayer = ({ src }: { src: string }) => {
   const playerRef = useRef(null)
   const [isPlaying, setIsPlaying] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
   const [duration, setDuration] = useState('')
 
   const [progress, setProgress] = useState<{
@@ -85,36 +79,30 @@ export const MbAudioPlayer = ({ src }: { src: string }) => {
 
   return (
     <div>
-      <AudioControls
-        isLoading={isLoading}
-        isPlaying={isPlaying}
-        onPlayPauseClick={handlePlayPause}
-      />
+      <AudioControls isPlaying={isPlaying} onPlayPauseClick={handlePlayPause} />
 
-      {!isLoading && (
-        <>
-          <input
-            type="range"
-            min="0"
-            max="1"
-            step="any"
-            value={progress.played}
-            onChange={onChange}
-            className="cursor-pointer w-full h-px bg-black dark:bg-white appearance-none slider-thumb"
-          />
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              padding: '0 10px',
-            }}
-          >
-            <div>{display(progress.playedSeconds)}</div>
-            <div>{duration}</div>
-          </div>
-        </>
-      )}
+      <>
+        <input
+          type="range"
+          min="0"
+          max="1"
+          step="any"
+          value={progress.played}
+          onChange={onChange}
+          className="cursor-pointer w-full h-px bg-black dark:bg-white appearance-none slider-thumb"
+        />
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            padding: '0 10px',
+          }}
+        >
+          <div>{display(progress.playedSeconds)}</div>
+          <div>{duration}</div>
+        </div>
+      </>
 
       <ReactPlayer
         ref={playerRef}
