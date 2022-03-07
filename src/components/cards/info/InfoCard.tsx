@@ -30,6 +30,7 @@ export const MbInfoCard = ({ boxInfo }: { boxInfo: TInfoCard }) => {
     handleDescriptionClick,
     upperIcon = EIconName.NONE,
     isBigDescription = true,
+    isNumber,
     lowerLeftText,
     size = ESize.MEDIUM,
   } = boxInfo
@@ -38,9 +39,9 @@ export const MbInfoCard = ({ boxInfo }: { boxInfo: TInfoCard }) => {
 
   const getDescriptionFont = () => {
     if (size === 'small') {
-      return isBigDescription ? 'p-big-90' : 'p-small-90'
+      return isBigDescription && isNumber ? 'p-big-90' : 'p-small-90'
     }
-    return isBigDescription ? 'p-sub-90' : 'p-big-90'
+    return isBigDescription && isNumber ? 'p-sub-90' : 'p-big-90'
   }
 
   const getTitleFont = () => {
