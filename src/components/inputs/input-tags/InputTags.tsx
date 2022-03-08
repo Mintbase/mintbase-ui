@@ -70,8 +70,6 @@ export const MbInputTags = forwardRef<HTMLInputElement, InputTagsProps>(
       preventEnterSubmit(event)
       const keyCode = event.keyCode ? event.keyCode : event.which
 
-      if (isInvalid && keyCode !== DELETE_KEY_CODE) return
-
       if (keyCode === DELETE_KEY_CODE && event.target.value === '') {
         removeTag(localTags.length - 1)
         return
