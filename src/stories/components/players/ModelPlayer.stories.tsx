@@ -12,5 +12,12 @@ const Template: ComponentStory<typeof MbModelPlayer> = (args) => (
 
 export const Model = Template.bind({})
 Model.args = {
-  src: 'https://arweave.net/iRgcsFwp3l8nG3hld4WEQioP384c5QuFpXxvqqFJloQ',
+  posterImg: (
+    <img
+      width={200}
+      height={200}
+      src="https://coldcdn.com/api/cdn/bronil/S2v4L8aF9bd2Lv4JwJtTXuX-MxxG1yFDP5-feckMv18"
+    />
+  ),
+  modelSrc: 'https://arweave.net/Np7BNpULjMZ4H4R7gyju1agRnblKS6Wfslg_Z3hJiHw',
 }
