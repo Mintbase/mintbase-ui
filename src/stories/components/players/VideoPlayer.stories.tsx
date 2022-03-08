@@ -7,10 +7,12 @@ export default {
 } as ComponentMeta<typeof MbVideoPlayer>
 
 const Template: ComponentStory<typeof MbVideoPlayer> = (args) => (
-  <MbVideoPlayer {...args}></MbVideoPlayer>
+  <div className="flex justify-center w-64 h-64">
+    <MbVideoPlayer {...args}></MbVideoPlayer>
+  </div>
 )
 
-export const Audio = Template.bind({})
-Audio.args = {
-  src: 'https://arweave.net/iRgcsFwp3l8nG3hld4WEQioP384c5QuFpXxvqqFJloQ',
+export const Video = Template.bind({})
+Video.args = {
+  src: 'https://coldcdn.com/api/cdn/bronil/ig584SKbu2n3y7_UAAoXpLkPnuXMxXfmhFCCN_jgx6M#t=0.1',
 }
