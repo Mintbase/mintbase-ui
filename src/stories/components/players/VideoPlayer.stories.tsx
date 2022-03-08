@@ -15,4 +15,5 @@ const Template: ComponentStory<typeof MbVideoPlayer> = (args) => (
 export const Video = Template.bind({})
 Video.args = {
   src: 'https://coldcdn.com/api/cdn/bronil/ig584SKbu2n3y7_UAAoXpLkPnuXMxXfmhFCCN_jgx6M#t=0.1',
+  type: 'video/mp4',
 }
