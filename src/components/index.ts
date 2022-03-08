@@ -31,3 +31,5 @@ export { MbNetworkMenu } from './dropdowns/network-menu/NetworkMenu'
 export { MbMenuWrapper } from './dropdowns/menu-wrapper/MenuWrapper'
 export { MbColorIndicator } from './color-indicator/ColorIndicator'
 export { MbAudioPlayer } from './players/audio/AudioPlayer'
+export { MbVideoPlayer } from './players/video/VideoPlayer'
+
