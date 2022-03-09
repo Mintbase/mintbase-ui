@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from 'react'
 import { ESize } from '../../../consts'
 import { MbButton } from '../../buttons/button/Button'
 
+import('@google/model-viewer/dist/model-viewer')
+
 export const MbModelPlayer = ({
   modelSrc,
   posterImg,
@@ -11,9 +13,6 @@ export const MbModelPlayer = ({
   posterImg: JSX.Element
 }) => {
   const [animations, setAnimations] = useState<any>([])
-  useEffect(() => {
-    import('@google/model-viewer/dist/model-viewer')
-  }, [])
 
   const elementRef = useRef<any>()
 

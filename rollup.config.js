@@ -18,11 +18,13 @@ const config = [
         format: 'cjs',
         sourcemap: true,
         name: packageJson.name,
+        inlineDynamicImports: true,
       },
       {
         file: packageJson.module,
         format: 'esm',
         sourcemap: true,
+        inlineDynamicImports: true,
       },
     ],
     plugins: [
@@ -46,7 +48,6 @@ const config = [
     output: [{ file: 'dist/index.d.ts', format: 'esm' }],
     external: [/\.css$/],
     plugins: [dts()],
-    inlineDynamicImports: true,
   },
 ]
 
