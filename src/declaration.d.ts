@@ -10,7 +10,13 @@ declare namespace JSX {
 interface ModelViewerJSX {
   src: string
   poster?: string
-  // ... others
+  reveal: string
+  'animation-name': string
+  'shadow-intensity': string
+  autoplay: boolean
+  ar: boolean
+  'ar-modes': string
+  'camera-controls': boolean
 }
 
 interface ModelViewerElement extends Element {
