@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
+import { ESize } from '../../../consts'
 import { MbAction } from '../../action/Action'
+import { MbButton } from '../../buttons/button/Button'
 
 export const MbModelPlayer = ({
   modelSrc,
@@ -30,17 +32,25 @@ export const MbModelPlayer = ({
       style={{ height: '100%', width: '100%' }}
       ref={elementRef}
       src={modelSrc}
-      //   reveal="interaction"
+      reveal="interaction"
       animation-name={animations?.length > 0 ? animations[0] : ''}
       shadow-intensity="1"
-      //   autoplay={false}
-      //   ar={true}
+      autoplay={false}
+      ar={true}
       ar-modes="webxr scene-viewer quick-look"
       camera-controls
       {...restProps}
     >
-      <div slot="poster">{posterImg}</div>
-      <MbAction slot="poster">Click to show 3D model</MbAction>
+      <div slot="poster" className="relative">
+        {posterImg}
+        <div className="absolute bottom-2 left-2">
+          <MbButton
+            slot="poster"
+            label="3D model"
+            size={ESize.SMALL}
+          ></MbButton>
+        </div>
+      </div>
     </model-viewer>
   )
 }
