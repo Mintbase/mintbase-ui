@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
 import { ESize } from '../../../consts'
-import { MbAction } from '../../action/Action'
 import { MbButton } from '../../buttons/button/Button'
 
 export const MbModelPlayer = ({
