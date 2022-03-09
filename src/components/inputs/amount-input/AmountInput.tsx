@@ -11,10 +11,10 @@ interface AmountButtonProps
 }
 
 export const MbAmountInput = (props: AmountButtonProps) => {
-  const [amount, setAmount] = useState(1)
+  const [amount, setAmount] = useState<any>(1)
 
   const {
-    maxAmount,
+    maxAmount = 50,
     disabled,
     btnSize = ESize.MEDIUM,
     onValueChange,
@@ -42,12 +42,14 @@ export const MbAmountInput = (props: AmountButtonProps) => {
     const isNumber = RegExp(/^\d*?$/).test(value)
 
     if (value === '' || value === '0' || !isNumber) {
-      setAmount(0)
+      setAmount(undefined)
       return
     }
 
-    const calValue = Math.min(Math.max(parseInt(value), 1), maxAmount)
-    setAmount(calValue)
+    console.log(Number(value), maxAmount)
+    if (Number(value) <= maxAmount) {
+      setAmount(Number(value))
+    }
   }
 
   useEffect(() => {
@@ -72,6 +74,7 @@ export const MbAmountInput = (props: AmountButtonProps) => {
           placeholder={'1'}
           onChange={handleContentChanges}
           type="number"
+          value={amount}
           {...restProps}
         />
         <div className={`flex ${btnSize === ESize.SMALL ? 'gap-8' : 'gap-12'}`}>
