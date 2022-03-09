@@ -367,6 +367,11 @@ declare const MbAudioPlayer: ({ src }: {
     src: string;
 }) => JSX.Element;
 
+declare const MbModelPlayer: ({ modelSrc, posterImg, ...restProps }: {
+    modelSrc: string;
+    posterImg: JSX.Element;
+}) => JSX.Element;
+
 declare const MbVideoPlayer: ({ src, type, }: {
     src: string;
     type: string;
@@ -397,4 +402,4 @@ interface ToggleProps extends React.InputHTMLAttributes<HTMLInputElement> {
     label?: string;
 }
 
-export { ALL_TYPES, AUDIO_TYPES, EControlStatus, EIconName, ESize, ESmallCardType, EState, EType, FILE_TYPES, IMAGE_TYPES, Item, MbAccordion, MbAction, MbAmountInput, MbAudioPlayer, MbBody, MbButton, MbCheckbox, MbChip, MbColorIndicator, MbDropdownMenu, MbHead, MbIcon, MbInfoCard, MbInput, MbInputAccount, MbInputSelect, MbInputTags, MbItemsPerPage, MbLogo, MbMediaImport, MbMenuWrapper, MbModal, MbNetworkMenu, MbPagination, MbRadioButton, MbSmallCard, MbStatefulButton, MbSwitch, MbTab, MbTable, MbTabs, MbText, MbTextArea, MbThingCard, MbTooltip, MbVideoPlayer, TColor, TColorDetail, THREED_TYPES, TInfoCard, TNetworkOption, TSmallCard, TThingCard, ToggleProps, VIDEO_TYPES, colorsArray, getFontType, getInputLabelFontType };
+export { ALL_TYPES, AUDIO_TYPES, EControlStatus, EIconName, ESize, ESmallCardType, EState, EType, FILE_TYPES, IMAGE_TYPES, Item, MbAccordion, MbAction, MbAmountInput, MbAudioPlayer, MbBody, MbButton, MbCheckbox, MbChip, MbColorIndicator, MbDropdownMenu, MbHead, MbIcon, MbInfoCard, MbInput, MbInputAccount, MbInputSelect, MbInputTags, MbItemsPerPage, MbLogo, MbMediaImport, MbMenuWrapper, MbModal, MbModelPlayer, MbNetworkMenu, MbPagination, MbRadioButton, MbSmallCard, MbStatefulButton, MbSwitch, MbTab, MbTable, MbTabs, MbText, MbTextArea, MbThingCard, MbTooltip, MbVideoPlayer, TColor, TColorDetail, THREED_TYPES, TInfoCard, TNetworkOption, TSmallCard, TThingCard, ToggleProps, VIDEO_TYPES, colorsArray, getFontType, getInputLabelFontType };
