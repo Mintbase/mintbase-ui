@@ -46,8 +46,8 @@ const config = [
     output: [{ file: 'dist/index.d.ts', format: 'esm' }],
     external: [/\.css$/],
     plugins: [dts()],
+    inlineDynamicImports: true,
   },
-  inlineDynamicImports,
 ]
 
 export default config
