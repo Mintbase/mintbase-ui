@@ -11,11 +11,6 @@ export const MbModelPlayer = ({
   posterImg: JSX.Element
 }) => {
   const [animations, setAnimations] = useState<any>([])
-  // useEffect(() => {
-  //   if (typeof window !== 'undefined') {
-  //     import('@google/model-viewer/dist/model-viewer')
-  //   }
-  // }, [])
 
   const elementRef = useRef<any>()
 
