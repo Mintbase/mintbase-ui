@@ -47,6 +47,7 @@ const config = [
     external: [/\.css$/],
     plugins: [dts()],
   },
+  inlineDynamicImports,
 ]
 
 export default config
