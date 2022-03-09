@@ -11,13 +11,24 @@ export const MbModelPlayer = ({
   posterImg: JSX.Element
 }) => {
   const [animations, setAnimations] = useState<any>([])
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      import('@google/model-viewer/dist/model-viewer')
-    }
-  }, [])
 
   const elementRef = useRef<any>()
+
+  useEffect(() => {
+    const viewer = document.createElement('script')
+
+    viewer.src =
+      'https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js'
+    viewer.type = 'module'
+
+    document.body.appendChild(viewer)
+    const legacy = document.createElement('script')
+
+    legacy.src =
+      'https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js'
+    legacy.type = 'nomodule'
+    document.body.appendChild(legacy)
+  }, [])
 
   useEffect(() => {
     elementRef.current.addEventListener('load', handleEvent)
@@ -33,10 +44,10 @@ export const MbModelPlayer = ({
       style={{ height: '100%', width: '100%' }}
       ref={elementRef}
       src={modelSrc}
-      reveal="interaction"
+      reveal=""
       animation-name={animations?.length > 0 ? animations[0] : ''}
       shadow-intensity="1"
-      autoplay={false}
+      autoplay={true}
       ar={true}
       ar-modes="webxr scene-viewer quick-look"
       camera-controls
