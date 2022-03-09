@@ -18,14 +18,14 @@ export const MbModelPlayer = ({
     const viewer = document.createElement('script')
 
     viewer.src =
-      'https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js'
+      'https://unpkg.com/@google/model-viewer@1.10.1/dist/model-viewer.min.js'
     viewer.type = 'module'
 
     document.body.appendChild(viewer)
     const legacy = document.createElement('script')
 
     legacy.src =
-      'https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js'
+      'https://unpkg.com/@google/model-viewer@1.10.1/dist/model-viewer-legacy.js'
     legacy.type = 'nomodule'
     document.body.appendChild(legacy)
   }, [])
@@ -44,10 +44,10 @@ export const MbModelPlayer = ({
       style={{ height: '100%', width: '100%' }}
       ref={elementRef}
       src={modelSrc}
-      reveal=""
+      reveal="interaction"
       animation-name={animations?.length > 0 ? animations[0] : ''}
       shadow-intensity="1"
-      autoplay={true}
+      autoplay={false}
       ar={true}
       ar-modes="webxr scene-viewer quick-look"
       camera-controls
