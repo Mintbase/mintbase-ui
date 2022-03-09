@@ -18,11 +18,13 @@ const config = [
         format: 'cjs',
         sourcemap: true,
         name: packageJson.name,
+        inlineDynamicImports: true,
       },
       {
         file: packageJson.module,
         format: 'esm',
         sourcemap: true,
+        inlineDynamicImports: true,
       },
     ],
     plugins: [
