@@ -16,7 +16,7 @@ const Template: ComponentStory<typeof MbAmountInput> = (args) => (
 
 export const AmountInput = Template.bind({})
 AmountInput.args = {
-  max: 20,
+  maxAmount: 20,
   disabled: true,
   onValueChange: (amount) => console.log(amount),
 }
