@@ -12,7 +12,9 @@ export const MbModelPlayer = ({
 }) => {
   const [animations, setAnimations] = useState<any>([])
   useEffect(() => {
-    import('@google/model-viewer/dist/model-viewer')
+    if (typeof window !== 'undefined') {
+      import('@google/model-viewer/dist/model-viewer')
+    }
   }, [])
 
   const elementRef = useRef<any>()
