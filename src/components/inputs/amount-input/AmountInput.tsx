@@ -1,11 +1,13 @@
 import { forwardRef, useEffect, useState } from 'react'
 import { ESize, getFontType } from '../../..'
+import { EControlStatus } from '../input-field/inputField'
 import './AmountInput.css'
 
 interface AmountButtonProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
   maxAmount: number
   btnSize?: ESize
+  controlStatus: EControlStatus
   onValueChange: (amount: number) => void
 }
 
@@ -17,6 +19,7 @@ export const MbAmountInput = forwardRef<HTMLInputElement, AmountButtonProps>(
       maxAmount = 50,
       disabled,
       btnSize = ESize.MEDIUM,
+      controlStatus = EControlStatus.NORMAL,
       placeholder,
       value,
       type,
@@ -68,8 +71,8 @@ export const MbAmountInput = forwardRef<HTMLInputElement, AmountButtonProps>(
         <div
           className={` ${getFontType(
             btnSize
-          )} flex bg-gray-100 dark:bg-gray-900 p-8 rounded w-full ${
-            disabled ? 'bg-gray-200 dark:bg-gray-700' : ''
+          )} flex main-input bg-gray-100 dark:bg-gray-900 p-8 rounded w-full ${
+            disabled ? 'bg-gray-200 dark:bg-gray-700' : controlStatus
           }`}
         >
           <input

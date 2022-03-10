@@ -1,5 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import React from 'react'
+import { EControlStatus } from '../../../components'
 import { MbAmountInput } from '../../../components/inputs/amount-input/AmountInput'
 
 export default {
@@ -19,4 +20,5 @@ AmountInput.args = {
   maxAmount: 20,
   disabled: true,
   onValueChange: (amount) => console.log(amount),
+  controlStatus: EControlStatus.NORMAL,
 }
