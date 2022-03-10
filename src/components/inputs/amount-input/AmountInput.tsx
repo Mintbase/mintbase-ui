@@ -54,7 +54,6 @@ export const MbAmountInput = forwardRef<HTMLInputElement, AmountButtonProps>(
         return
       }
 
-      console.log(Number(value), maxAmount)
       if (Number(value) <= maxAmount) {
         setAmount(Number(value))
       }
