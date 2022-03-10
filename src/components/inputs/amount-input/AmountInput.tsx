@@ -7,7 +7,7 @@ interface AmountButtonProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
   maxAmount: number
   btnSize?: ESize
-  controlStatus: EControlStatus
+  controlStatus?: EControlStatus
   onValueChange: (amount: number) => void
 }
 
@@ -57,9 +57,8 @@ export const MbAmountInput = forwardRef<HTMLInputElement, AmountButtonProps>(
         return
       }
 
-      if (Number(value) <= maxAmount) {
-        setAmount(Number(value))
-      }
+      setAmount(Number(value))
+
     }
 
     useEffect(() => {
