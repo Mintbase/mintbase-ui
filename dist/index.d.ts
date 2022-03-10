@@ -330,11 +330,10 @@ declare const MbInputAccount: (props: InputAccountProps) => JSX.Element;
 
 interface AmountButtonProps extends React.InputHTMLAttributes<HTMLInputElement> {
     maxAmount: number;
-    disabled?: boolean;
     btnSize?: ESize;
     onValueChange: (amount: number) => void;
 }
-declare const MbAmountInput: (props: AmountButtonProps) => JSX.Element;
+declare const MbAmountInput: React$1.ForwardRefExoticComponent<AmountButtonProps & React$1.RefAttributes<HTMLInputElement>>;
 
 declare type TNetworkOption = {
     label: string;
