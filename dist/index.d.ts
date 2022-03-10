@@ -331,6 +331,7 @@ declare const MbInputAccount: (props: InputAccountProps) => JSX.Element;
 interface AmountButtonProps extends React.InputHTMLAttributes<HTMLInputElement> {
     maxAmount: number;
     btnSize?: ESize;
+    controlStatus: EControlStatus;
     onValueChange: (amount: number) => void;
 }
 declare const MbAmountInput: React$1.ForwardRefExoticComponent<AmountButtonProps & React$1.RefAttributes<HTMLInputElement>>;
