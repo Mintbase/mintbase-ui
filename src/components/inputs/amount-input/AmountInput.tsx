@@ -28,7 +28,7 @@ export const MbAmountInput = forwardRef<HTMLInputElement, AmountButtonProps>(
     },
     ref
   ) => {
-    const [amount, setAmount] = useState<any>(1)
+    const [amount, setAmount] = useState<any>('1')
 
     const handlePlus = () => {
       if (disabled) return
@@ -53,12 +53,13 @@ export const MbAmountInput = forwardRef<HTMLInputElement, AmountButtonProps>(
       const isNumber = RegExp(/^\d*?$/).test(value)
 
       if (value === '' || value === '0' || !isNumber) {
-        setAmount(undefined)
+        setAmount('')
         return
       }
 
-      setAmount(Number(value))
-
+      if (Number(value) <= maxAmount) {
+        setAmount(Number(value))
+      }
     }
 
     useEffect(() => {
@@ -85,7 +86,7 @@ export const MbAmountInput = forwardRef<HTMLInputElement, AmountButtonProps>(
             disabled={disabled}
             required={required}
             onChange={handleContentChanges}
-            type="number"
+            type="text"
             value={amount}
             {...restProps}
           />
