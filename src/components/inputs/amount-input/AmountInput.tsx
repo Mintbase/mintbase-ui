@@ -8,7 +8,7 @@ interface AmountButtonProps
   maxAmount: number
   btnSize?: ESize
   controlStatus?: EControlStatus
-  onValueChange: (amount: number) => void
+  onValueChange: (amount: string) => void
 }
 
 export const MbAmountInput = forwardRef<HTMLInputElement, AmountButtonProps>(
@@ -28,21 +28,21 @@ export const MbAmountInput = forwardRef<HTMLInputElement, AmountButtonProps>(
     },
     ref
   ) => {
-    const [amount, setAmount] = useState<any>('1')
+    const [amount, setAmount] = useState('1')
 
     const handlePlus = () => {
       if (disabled) return
-      const updated = amount + 1
+      const updated = Number(amount) + 1
       if (updated === maxAmount + 1) return
-      setAmount(amount + 1)
+      setAmount((Number(amount) + 1).toString())
     }
 
     const handleMinus = () => {
       if (disabled) return
-      if (amount === 0) return
-      const updated = amount - 1
+      if (amount === '0') return
+      const updated = Number(amount) - 1
       if (updated <= 0) return
-      setAmount(amount - 1)
+      setAmount((Number(amount) - 1).toString())
     }
 
     const handleContentChanges = (
@@ -58,7 +58,7 @@ export const MbAmountInput = forwardRef<HTMLInputElement, AmountButtonProps>(
       }
 
       if (Number(value) <= maxAmount) {
-        setAmount(Number(value))
+        setAmount(value)
       }
     }
 
