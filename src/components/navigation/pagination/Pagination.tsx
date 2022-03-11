@@ -45,14 +45,14 @@ export const MbPagination = (props: PaginationProps) => {
     const lastPageIndex = totalPageCount
 
     if (!shouldShowLeftDots && shouldShowRightDots) {
-      const leftItemCount = 5
+      const leftItemCount = 3
       const leftRange = range(1, leftItemCount)
 
       setPaginationRange([...leftRange, DOTS, totalPageCount])
     }
 
     if (shouldShowLeftDots && !shouldShowRightDots) {
-      const rightItemCount = 5
+      const rightItemCount = 3
       const rightRange = range(
         totalPageCount - rightItemCount + 1,
         totalPageCount
@@ -105,12 +105,12 @@ export const MbPagination = (props: PaginationProps) => {
           />
         </div>
         {paginationRange && (
-          <ul className="px-24 flex justify-center items-center space-x-12 text-blue-300 dark:text-blue-100">
+          <ul className="px-4 md:px-24 flex justify-center items-center space-x-4 md:space-x-12 text-blue-300 dark:text-blue-100">
             {paginationRange.map((pageNumber, index) => {
               if (pageNumber === DOTS) {
                 return (
                   <li
-                    className="page-number p-med-90"
+                    className="page-number p-small-90 md:p-med-90"
                     onClick={() => {
                       if (index > 1) {
                         onPageChange(currentPage + 3)

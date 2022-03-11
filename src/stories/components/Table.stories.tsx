@@ -93,20 +93,6 @@ const bodyItems = [
     expired: '1 day',
     tx: '...',
   },
-  {
-    amount: '57.6 N',
-    account: 'mintbase.near',
-    created: '1 hour ago',
-    expired: '1 day',
-    tx: '...',
-  },
-  {
-    amount: '107.6 N',
-    account: 'mintbase.near',
-    created: '1 hour ago',
-    expired: '1 day',
-    tx: '...',
-  },
 ]
 
 const Template: ComponentStory<typeof MbTable> = (args) => {
