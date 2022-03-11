@@ -41,7 +41,7 @@ export const MbTable = (props: TableProps) => {
       </div>
 
       {pagination && (
-        <footer className="border-t border-gray-200 dark:border-gray-800 p-24 grid md:grid-cols-3 items-center">
+        <footer className="border-t border-gray-200 dark:border-gray-800 py-24 md:px-24 grid md:grid-cols-3 items-center">
           {onAmountItemsChange && (
             <div className="order-2 md:order-1 flex justify-center md:justify-start">
               <MbItemsPerPage
