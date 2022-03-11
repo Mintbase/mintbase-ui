@@ -6,7 +6,7 @@ interface AmountButtonProps extends React.InputHTMLAttributes<HTMLInputElement> 
     maxAmount: number;
     btnSize?: ESize;
     controlStatus?: EControlStatus;
-    onValueChange: (amount: number) => void;
+    onValueChange: (amount: string) => void;
 }
 export declare const MbAmountInput: import("react").ForwardRefExoticComponent<AmountButtonProps & import("react").RefAttributes<HTMLInputElement>>;
 export {};
