@@ -13,6 +13,7 @@ interface MediaImportProps {
   idealDimensions: string
   maxSize: number
   uploadedFile: File
+  placeholderImageURL?: string
   errorMessage?: string
   handleFileAdd: (file: File) => void
   handleFileRemove: () => void
@@ -31,11 +32,12 @@ export const MbMediaImport = (props: MediaImportProps) => {
     idealDimensions,
     maxSize,
     uploadedFile,
+    placeholderImageURL,
     errorMessage,
     handleFileAdd,
     handleFileRemove,
   } = props
-
+  
   const [imageUrl, setImageUrl] = useState<any>('')
 
   const dragRef = useRef(0)
@@ -79,7 +81,7 @@ export const MbMediaImport = (props: MediaImportProps) => {
     handleFileAdd(file)
   }
 
-  const removeFile = (e: any) => {
+  const removeFile = (e: Event) => {
     e.preventDefault()
     handleFileRemove()
   }
@@ -92,6 +94,34 @@ export const MbMediaImport = (props: MediaImportProps) => {
 
   return (
     <>
+      {(placeholderImageURL && !uploadedFile) && (
+        <>
+          <div className="pb-12">
+            <div
+              className={`flex items-center justify-center w-full rounded-lg bg-gray-100 dark:bg-gray-900 w-full py-24 ${
+                isProfileImage && imageUrl ? 'py-24' : 'overflow-hidden'
+              }`}
+            >
+              <div
+                className={` ${
+                  isProfileImage
+                    ? 'w-24 h-24 sm:h-32 sm:w-32 rounded-full overflow-hidden'
+                    : isHeaderImage
+                    ? 'h-32 sm:h-64 w-full'
+                    : 'h-48 w-48 sm:h-64 sm:w-64'
+                }`}
+              >
+                <img className="w-full h-full object-cover" src={placeholderImageURL} />
+              </div>
+            </div>
+          </div>
+
+          <label className="block sm:hidden text-blue-300 dark:text-blue-100 p-med-90 text-center">
+            Change File
+            <input type="file" className="hidden" onChange={handleFileChange} />
+          </label>
+        </>
+      )}
       {uploadedFile && (
         <>
           <div className="pb-12">
