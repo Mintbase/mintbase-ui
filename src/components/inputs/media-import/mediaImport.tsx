@@ -6,6 +6,7 @@ import { isMobile } from '../../../consts/mobile'
 import AcceptedFormats from './acceptedFormats'
 import { iconType } from './fileFunctions'
 
+const DEFAULT_MAX_FILE_SIZE_MB = 500
 interface MediaImportProps {
   isProfileImage?: boolean
   isHeaderImage?: boolean
@@ -16,7 +17,8 @@ interface MediaImportProps {
   placeholderImageURL?: string
   errorMessage?: string
   handleFileAdd: (file: File) => void
-  handleFileRemove: () => void
+  handleFileRemove: () => void,
+  maxFileSize?: number
 }
 
 const preventBrowserDefaults = (e: Event) => {
@@ -36,9 +38,11 @@ export const MbMediaImport = (props: MediaImportProps) => {
     errorMessage,
     handleFileAdd,
     handleFileRemove,
+    maxFileSize = DEFAULT_MAX_FILE_SIZE_MB,
   } = props
   
   const [imageUrl, setImageUrl] = useState<any>('')
+  const [internalErrorMessage, setInternalErrorMessage] = useState<string | null>(null)
 
   const dragRef = useRef(0)
   const [dragOverlay, setDragOverlay] = useState(false)
@@ -74,14 +78,27 @@ export const MbMediaImport = (props: MediaImportProps) => {
     handleFileAdd(event.dataTransfer.files[0])
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleFileChange = (e: any) => {
     if (!(e?.target?.files.length > 0)) return
     const file = e.target.files[0]
-
+    setInternalErrorMessage(null)
+    
+    // validate file size and accepted formats
+    const { size } = file
+    if (size / 1024 / 1024 > maxFileSize) {
+        setInternalErrorMessage(`This file exceeds ${maxFileSize}mb`)
+        return
+    }
+    if (!acceptedFormats.includes(file.type)) {
+      setInternalErrorMessage('This media type is not accepted')
+      return
+    }
     handleFileAdd(file)
   }
 
-  const removeFile = (e: Event) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const removeFile = (e: any) => {
     e.preventDefault()
     handleFileRemove()
   }
@@ -91,6 +108,9 @@ export const MbMediaImport = (props: MediaImportProps) => {
       setImageUrl(URL.createObjectURL(uploadedFile))
     }
   }, [uploadedFile])
+
+
+  const displayErrorMessage = errorMessage || internalErrorMessage
 
   return (
     <>
@@ -162,7 +182,7 @@ export const MbMediaImport = (props: MediaImportProps) => {
 
           <label className="block sm:hidden text-blue-300 dark:text-blue-100 p-med-90 text-center">
             Change File
-            <input type="file" className="hidden" onChange={handleFileChange} />
+            <input type="file" className="hidden" onChange={handleFileChange} accept={acceptedFormats.join(", ")} />
           </label>
         </>
       )}
@@ -178,7 +198,7 @@ export const MbMediaImport = (props: MediaImportProps) => {
                 ? 'bg-gray-100 dark:bg-gray-900'
                 : 'bg-blue-300-15 dark:bg-blue-100-15 hover:bg-gray-100 dark:hover:bg-gray-900'
             } w-full py-32 sm:py-48 group text-center cursor-pointer ${
-              errorMessage ? 'ring-1 ring-error-300 dark:ring-error-100' : ''
+              displayErrorMessage ? 'ring-1 ring-error-300 dark:ring-error-100' : ''
             }`}
           >
             <div className="h-full w-full text-center flex flex-col items-center justify-center p-med-90">
@@ -195,10 +215,10 @@ export const MbMediaImport = (props: MediaImportProps) => {
                 </p>
               )}
             </div>
-            {errorMessage && (
+            {displayErrorMessage && (
               <div className="flex justify-center items-center pt-16">
                 <p className="text-error-300 dark:text-error-100 cap-big-90 pr-12">
-                  {errorMessage}
+                  {displayErrorMessage}
                 </p>
                 <MbIcon
                   name={EIconName.ERROR}
@@ -208,7 +228,7 @@ export const MbMediaImport = (props: MediaImportProps) => {
                 />
               </div>
             )}
-            <input type="file" className="hidden" onChange={handleFileChange} />
+            <input type="file" className="hidden" onChange={handleFileChange} accept={acceptedFormats.join(", ")} />
           </label>
         </div>
         <AcceptedFormats
