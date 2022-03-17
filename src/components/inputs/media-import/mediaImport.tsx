@@ -17,7 +17,7 @@ interface MediaImportProps {
   placeholderImageURL?: string
   errorMessage?: string
   handleFileAdd: (file: File) => void
-  handleFileRemove: () => void,
+  handleFileRemove: () => void
   maxFileSize?: number
 }
 
