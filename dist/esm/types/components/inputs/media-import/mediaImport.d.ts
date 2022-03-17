@@ -10,6 +10,7 @@ interface MediaImportProps {
     errorMessage?: string;
     handleFileAdd: (file: File) => void;
     handleFileRemove: () => void;
+    maxFileSize?: number;
 }
 export declare const MbMediaImport: (props: MediaImportProps) => JSX.Element;
 export {};
