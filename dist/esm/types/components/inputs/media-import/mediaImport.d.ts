@@ -6,6 +6,7 @@ interface MediaImportProps {
     idealDimensions: string;
     maxSize: number;
     uploadedFile: File;
+    placeholderImageURL?: string;
     errorMessage?: string;
     handleFileAdd: (file: File) => void;
     handleFileRemove: () => void;
