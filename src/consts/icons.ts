@@ -39,6 +39,7 @@ export enum EIconName {
   ERROR = 'error',
   SUCCESS = 'check_circle',
   EDITIONS = 'filter_none',
+  COPY = 'copy',
   BURN = 'local_fire_department',
   FACEBOOK = 'facebook',
   INSTAGRAM = 'instagram',
