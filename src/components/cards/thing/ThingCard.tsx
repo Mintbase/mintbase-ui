@@ -70,11 +70,7 @@ export const MbThingCard = ({ loading = false, cardInfo }: CardProps) => {
             {upperLeftText}
           </p>
         </div>
-        {upperRightElement && (
-          <div className="flex">
-            {upperRightElement}
-          </div>
-        )}
+        {upperRightElement && <div className="flex">{upperRightElement}</div>}
       </div>
       <div className="flex flex-col justify-center items-center thing-card-image">
         <div
@@ -91,7 +87,7 @@ export const MbThingCard = ({ loading = false, cardInfo }: CardProps) => {
         </div>
       </div>
       <div className="flex flex-row justify-between text-black dark:text-white mt-12">
-        <div className="p-big-90 w-8/12 sm:w-10/12 truncate">{midLeftText}</div>
+        <div className="p-big-90 sm:w-48 w-64 truncate">{midLeftText}</div>
         <div className="p-big-90">{midRightText}</div>
       </div>
       <div className="flex flex-row justify-between text-gray-200 mt-12">
