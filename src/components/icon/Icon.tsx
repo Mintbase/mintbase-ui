@@ -51,6 +51,7 @@ import infoIcon from './assets/info.svg'
 import errorIcon from './assets/error.svg'
 import successIcon from './assets/success.svg'
 import editionsIcon from './assets/editions.svg'
+import copyIcon from './assets/copy.svg'
 import burnIcon from './assets/burn.svg'
 import playIcon from './assets/play.svg'
 import pauseIcon from './assets/pause.svg'
@@ -111,6 +112,7 @@ const customIcons: { [key: string]: string } = {
   [EIconName.ERROR]: errorIcon,
   [EIconName.SUCCESS]: successIcon,
   [EIconName.EDITIONS]: editionsIcon,
+  [EIconName.COPY]: copyIcon,
   [EIconName.BURN]: burnIcon,
   [EIconName.PLAY]: playIcon,
   [EIconName.PAUSE]: pauseIcon,
