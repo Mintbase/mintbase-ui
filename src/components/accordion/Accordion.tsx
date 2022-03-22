@@ -6,11 +6,13 @@ interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
   title: string
   isOpen?: boolean
   isFixedAccordion?: boolean
+  isVerified?: boolean
   extraIcon?: JSX.Element
 }
 
 export const MbAccordion = (props: AccordionProps) => {
-  const { title, isOpen, isFixedAccordion, extraIcon, children } = props
+  const { title, isOpen, isFixedAccordion, extraIcon, isVerified, children } =
+    props
 
   const [isExpanded, setIsExpanded] = useState(isOpen)
 
@@ -27,7 +29,17 @@ export const MbAccordion = (props: AccordionProps) => {
         } ${isExpanded ? 'border-b border-gray-150 dark:border-gray-700' : ''}`}
         onClick={toggle}
       >
-        <div className="p-big-130">{title}</div>
+        <div className="p-big-130">
+          {title}
+          {isVerified && (
+            <MbIcon
+              name={EIconName.VERIFIED}
+              size="24px"
+              color="blue-300"
+              darkColor="blue-100"
+            ></MbIcon>
+          )}
+        </div>
         <div className="space-x-24 flex">
           {extraIcon && extraIcon}
           {!isFixedAccordion && (
