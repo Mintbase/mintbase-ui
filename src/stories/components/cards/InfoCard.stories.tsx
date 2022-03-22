@@ -21,6 +21,7 @@ Info.args = {
     title: 'Listed Tokens',
     description: '300',
     isNumber: true,
+    isVerifiedStore: false,
   },
 }
 
