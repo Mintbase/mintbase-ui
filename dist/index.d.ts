@@ -254,8 +254,9 @@ declare const MbTabs: (props: TabsProps) => JSX.Element;
 declare type TextProps = React__default.HTMLAttributes<HTMLDivElement>;
 declare const MbText: (props: TextProps) => JSX.Element;
 
-declare const MbTooltip: ({ text, place, component, }: {
+declare const MbTooltip: ({ text, id, place, component, }: {
     text: string;
+    id: string;
     place: Place;
     component: JSX.Element;
 }) => JSX.Element;
