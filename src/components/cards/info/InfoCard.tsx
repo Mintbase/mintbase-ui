@@ -3,6 +3,7 @@ import { EIconName } from '../../../consts/icons'
 import { ESize } from '../../../consts/properties'
 import { TInfoCard } from '../../../types/cards.type'
 import { MbIcon } from '../../icon/Icon'
+import { MbTooltip } from '../../tooltip/Tooltip'
 import './infocard.css'
 
 const LoadingInfoBox = ({ size }: { size: ESize }) => {
@@ -33,6 +34,7 @@ export const MbInfoCard = ({ boxInfo }: { boxInfo: TInfoCard }) => {
     isNumber,
     lowerLeftText,
     size = ESize.MEDIUM,
+    isVerifiedStore,
   } = boxInfo
 
   if (loading) return <LoadingInfoBox size={size} />
@@ -101,6 +103,21 @@ export const MbInfoCard = ({ boxInfo }: { boxInfo: TInfoCard }) => {
                 onClick={handleDescriptionClick}
               >
                 {description}
+                {isVerifiedStore && (
+                  <MbTooltip
+                    text="Verified Store"
+                    place="right"
+                    component={
+                      <MbIcon
+                        name={EIconName.VERIFIED}
+                        size="20px"
+                        color="blue-300"
+                        darkColor="blue-100"
+                        className="ml-4"
+                      ></MbIcon>
+                    }
+                  ></MbTooltip>
+                )}
               </div>
             </div>
           )}
