@@ -41,6 +41,7 @@ export const MbAccordion = (props: AccordionProps) => {
           {isVerifiedToken && (
             <MbTooltip
               text="Token from Verified Store"
+              id="verified-token"
               place="right"
               component={
                 <MbIcon
