@@ -7,13 +7,19 @@ interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
   title: string
   isOpen?: boolean
   isFixedAccordion?: boolean
-  isVerified?: boolean
+  isVerifiedToken?: boolean
   extraIcon?: JSX.Element
 }
 
 export const MbAccordion = (props: AccordionProps) => {
-  const { title, isOpen, isFixedAccordion, extraIcon, isVerified, children } =
-    props
+  const {
+    title,
+    isOpen,
+    isFixedAccordion,
+    extraIcon,
+    isVerifiedToken,
+    children,
+  } = props
 
   const [isExpanded, setIsExpanded] = useState(isOpen)
 
@@ -32,7 +38,7 @@ export const MbAccordion = (props: AccordionProps) => {
       >
         <div className="flex gap-12 items-center p-big-130">
           {title}
-          {isVerified && (
+          {isVerifiedToken && (
             <MbTooltip
               text="Token from Verified Store"
               place="right"
