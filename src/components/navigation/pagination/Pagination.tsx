@@ -38,8 +38,8 @@ export const MbPagination = (props: PaginationProps) => {
     const leftSiblingIndex = Math.max(currentPage - 1, 1)
     const rightSiblingIndex = Math.min(currentPage + 1, totalPageCount)
 
-    const shouldShowLeftDots = leftSiblingIndex > 2
-    const shouldShowRightDots = rightSiblingIndex < totalPageCount - 2
+    const shouldShowLeftDots = leftSiblingIndex > 1
+    const shouldShowRightDots = rightSiblingIndex < totalPageCount - 1
 
     const firstPageIndex = 1
     const lastPageIndex = totalPageCount
@@ -73,7 +73,7 @@ export const MbPagination = (props: PaginationProps) => {
   }, [totalItems, itemsPerPage, currentPage])
 
   if (paginationRange) {
-    if (currentPage === 0 || paginationRange.length < 2) {
+    if (currentPage === 0 || paginationRange.length < 1) {
       return null
     }
   }
@@ -113,9 +113,9 @@ export const MbPagination = (props: PaginationProps) => {
                     className="page-number p-small-90 md:p-med-90"
                     onClick={() => {
                       if (index > 1) {
-                        onPageChange(currentPage + 3)
+                        onPageChange(currentPage + 2)
                       } else {
-                        onPageChange(currentPage - 3)
+                        onPageChange(currentPage - 2)
                       }
                     }}
                     key={index}
