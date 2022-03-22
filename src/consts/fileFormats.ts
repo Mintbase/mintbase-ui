@@ -3,6 +3,7 @@ export const VIDEO_TYPES = ['video/webm', 'video/mp4']
 export const IMAGE_TYPES = [
   'image/png',
   'image/jpeg',
+  'image/jpg',
   'image/gif',
   'image/svg+xml',
 ]
