@@ -7,6 +7,7 @@ interface AccordionProps extends React__default.HTMLAttributes<HTMLDivElement> {
     title: string;
     isOpen?: boolean;
     isFixedAccordion?: boolean;
+    isVerifiedToken?: boolean;
     extraIcon?: JSX.Element;
 }
 declare const MbAccordion: (props: AccordionProps) => JSX.Element;
@@ -135,6 +136,7 @@ declare type TInfoCard = {
     isBigDescription?: boolean;
     isNumber?: boolean;
     size?: ESize;
+    isVerifiedStore?: boolean;
     handleDescriptionClick?: () => void;
 };
 
@@ -392,7 +394,7 @@ declare type TColor = {
 declare const colorsArray: TColorDetail[];
 
 declare const getFontType: (size: string) => "p-big-90" | "p-med-90" | "p-small-90" | undefined;
-declare const getInputLabelFontType: (inputSize: string) => "p-med-90" | "p-small-90" | "cap-big-90" | undefined;
+declare const getInputLabelFontType: (inputSize: string) => "cap-big-90" | "p-med-90" | "p-small-90" | undefined;
 
 declare const AUDIO_TYPES: string[];
 declare const VIDEO_TYPES: string[];
