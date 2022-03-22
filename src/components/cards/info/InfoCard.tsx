@@ -106,6 +106,7 @@ export const MbInfoCard = ({ boxInfo }: { boxInfo: TInfoCard }) => {
                 {isVerifiedStore && (
                   <MbTooltip
                     text="Verified Store"
+                    id='verified-store'
                     place="right"
                     component={
                       <MbIcon
