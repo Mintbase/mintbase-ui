@@ -4,24 +4,28 @@ import './tooltip.css'
 
 export const MbTooltip = ({
   text,
+  id,
   place = 'bottom',
   component,
 }: {
   text: string
+  id: string
   place: Place
   component: JSX.Element
 }) => {
   return (
     <>
-      <span data-tip data-for="tooltip" className="w-min flex cursor-pointer">
+      <span data-tip data-for={id} className="w-min flex cursor-pointer">
         {component}
       </span>
 
       <ReactTooltip
-        id="tooltip"
+        id={id}
         type="info"
         effect="solid"
+        clickable
         place={place}
+        class="tooltip"
         backgroundColor="rgba(0,0,0,0.6)"
         arrowColor="transparent"
         getContent={() => {
