@@ -87,8 +87,8 @@ export const MbThingCard = ({ loading = false, cardInfo }: CardProps) => {
         </div>
       </div>
       <div className="flex flex-row justify-between text-black dark:text-white mt-12">
-        <div className="p-big-90 w-48 sm:w-64 truncate">{midLeftText}</div>
-        <div className="p-big-90 w-24 text-right">{midRightText}</div>
+        <div className="p-big-90 w-54 truncate">{midLeftText}</div>
+        <div className="p-big-90 text-right">{midRightText}</div>
       </div>
       <div className="flex flex-row justify-between text-gray-200 mt-12">
         <div
