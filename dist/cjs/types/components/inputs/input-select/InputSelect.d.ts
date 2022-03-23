@@ -3,6 +3,7 @@ import './InputSelect.css';
 interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
     options: TSelectOption[];
     onValueChange: (value: string) => void;
+    value?: string;
 }
 declare type TSelectOption = {
     value: string;

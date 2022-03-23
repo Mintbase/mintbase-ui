@@ -198,6 +198,7 @@ declare const MbInputTags: React$1.ForwardRefExoticComponent<InputTagsProps & Re
 interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
     options: TSelectOption[];
     onValueChange: (value: string) => void;
+    value?: string;
 }
 declare type TSelectOption = {
     value: string;
