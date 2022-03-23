@@ -5,6 +5,7 @@ import './InputSelect.css'
 interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
   options: TSelectOption[]
   onValueChange: (value: string) => void
+  value?: string
 }
 
 type TSelectOption = {
@@ -13,8 +14,7 @@ type TSelectOption = {
 }
 
 export const MbInputSelect = (props: SelectProps) => {
-  const { disabled, options, onValueChange, ...restProps } = props
-
+  const { disabled, options, value, onValueChange, ...restProps } = props
   return (
     <div
       className={`select-wrapper flex items-center justify-between rounded relative ${
@@ -29,7 +29,12 @@ export const MbInputSelect = (props: SelectProps) => {
         {...restProps}
       >
         {options.map((option) => (
-          <option value={option.value}>{option.label}</option>
+          <option 
+            value={option.value}
+            selected={option.value === value}
+          >
+            {option.label}
+          </option>
         ))}
       </select>
       <MbIcon
