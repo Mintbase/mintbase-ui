@@ -100,7 +100,7 @@ export const MbThingCard = ({ loading = false, cardInfo }: CardProps) => {
         <div className="p-med-90 flex flex-row items-center text-black dark:text-white space-x-8">
           <div className="p-small-90 w-8/12">{botRightText}</div>
           <div>
-            <MbIcon name={botRightIcon} size="12px" color="mb-gray-500" />
+            <MbIcon name={botRightIcon} size="12px" color="gray-500" />
           </div>
         </div>
       </div>
