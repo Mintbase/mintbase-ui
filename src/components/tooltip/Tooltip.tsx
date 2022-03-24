@@ -18,7 +18,6 @@ export const MbTooltip = ({
       <span data-tip data-for={id} className="w-min flex cursor-pointer">
         {component}
       </span>
-
       <ReactTooltip
         id={id}
         type="info"
