@@ -48,7 +48,7 @@ const Icon = () => {
 }
 
 const Template: ComponentStory<typeof MbThingCard> = (args) => (
-  <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-24">
+  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-24">
     <MbThingCard {...args} />
   </div>
 )
@@ -64,7 +64,7 @@ Thing.args = {
         src="https://coldcdn.com/api/cdn/bronil/JXl58b_p9iYzeFutFC5GcDCjsxppyFt5rRkQt4Su4LU"
       />
     ),
-    isCenterImage: true,
+    nftTypeIcon: EIconName.IMAGE,
     midLeftText: 'Thing Name',
     midRightText: '10 N',
     botLeftImage:
