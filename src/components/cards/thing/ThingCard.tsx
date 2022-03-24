@@ -40,7 +40,7 @@ export const MbThingCard = ({ loading = false, cardInfo }: CardProps) => {
     upperLeftText,
     upperRightElement,
     centerElement,
-    isCenterImage,
+    nftTypeIcon,
     midLeftText,
     midRightText,
     botLeftImage,
@@ -77,9 +77,9 @@ export const MbThingCard = ({ loading = false, cardInfo }: CardProps) => {
           className="h-full w-full rounded overflow-hidden relative pt-56 sm:pt-72 lg:pt-68"
           onClick={onCenterElementClick}
         >
-          {isCenterImage && (
+          {nftTypeIcon && (
             <div className="w-5 h-5 bg-black rounded-full absolute top-3 left-3 z-10 flex items-center justify-center">
-              <MbIcon name={EIconName.IMAGE} size="14px" color="white" />
+              <MbIcon name={nftTypeIcon} size="14px" color="white" />
             </div>
           )}
 
