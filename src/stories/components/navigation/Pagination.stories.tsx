@@ -19,8 +19,9 @@ const Template: ComponentStory<typeof MbPagination> = (args: any) => {
     <MbPagination
       onPageChange={handle}
       currentPage={currentPage}
-      itemsPerPage={15}
-      totalItems={150}
+      itemsPerPage={args.itemsPerPage || 15}
+      totalItems={args.totalItems || 50}
+      hasLabel={args.hasLabel}
     />
   )
 }
