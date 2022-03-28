@@ -22,6 +22,7 @@ const Template: ComponentStory<typeof MbPagination> = (args: any) => {
       itemsPerPage={args.itemsPerPage || 15}
       totalItems={args.totalItems || 50}
       hasLabel={args.hasLabel}
+      altDisplayType={args.altDisplayType}
     />
   )
 }
