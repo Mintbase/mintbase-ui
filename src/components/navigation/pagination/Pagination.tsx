@@ -9,6 +9,7 @@ export interface PaginationProps {
   currentPage: any
   itemsPerPage: number
   hasLabel?: boolean
+  altDisplayType?: string
 }
 
 const DOTS = '...'
@@ -20,7 +21,7 @@ const range = (start: any, end: any) => {
 }
 
 export const MbPagination = (props: PaginationProps) => {
-  const { onPageChange, currentPage, itemsPerPage, totalItems, hasLabel } =
+  const { onPageChange, currentPage, itemsPerPage, totalItems, hasLabel, altDisplayType } =
     props
 
   const [paginationRange, setPaginationRange] = useState<any[]>([])
@@ -165,7 +166,7 @@ export const MbPagination = (props: PaginationProps) => {
       </div>
       {hasLabel && (
         <div className="text-center pt-24 p-small-90 text-gray-700 dark:text-gray-300">
-          Showing {showingCount} of {props.totalItems} NFTs
+          Showing {showingCount} of {props.totalItems} {altDisplayType || 'NFTs'}
         </div>
       )}
     </div>
