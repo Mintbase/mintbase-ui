@@ -23,16 +23,14 @@ export const MbInputSelect = (props: SelectProps) => {
     >
       <select
         id="select"
+        value={value}
         className="select-field appearance-none relative z-10"
         disabled={disabled}
         onChange={(event) => onValueChange(event.target.value)}
         {...restProps}
       >
         {options.map((option) => (
-          <option 
-            value={option.value}
-            selected={option.value === value}
-          >
+          <option value={option.value}>
             {option.label}
           </option>
         ))}
