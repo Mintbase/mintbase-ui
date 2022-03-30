@@ -16,5 +16,9 @@
 }
 
 .action.caution {
-  @apply text-mb-red bg-mb-red-15 dark:bg-mb-red-35;
+  @apply text-error-300 hover:bg-mb-red-15 dark:text-error-100 dark:hover:bg-mb-red-35;
+}
+
+.action.caution:focus {
+  @apply bg-mb-red-15 dark:bg-mb-red-35;
 }
