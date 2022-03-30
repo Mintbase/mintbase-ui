@@ -4,6 +4,7 @@
 
 .modal-section {
   min-height: 300px;
+  width: 90%;
   @apply relative my-4 max-w-3xl bg-white dark:bg-gray-850 rounded dark:text-white mx-24;
 }
 
