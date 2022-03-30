@@ -4,20 +4,14 @@
 
 .modal-section {
   min-height: 300px;
-  min-width: 90%;
+  width: 90%;
   @apply relative my-4 max-w-3xl bg-white dark:bg-gray-850 rounded dark:text-white mx-24;
 }
 
 @screen md {
   .modal-section {
     @apply mx-0;
-    min-width: 400px;
+    width: 600px;
     min-height: 400px;
-  }
-}
-
-@screen lg {
-  .modal-section {
-    min-width: 600px;
   }
 }
