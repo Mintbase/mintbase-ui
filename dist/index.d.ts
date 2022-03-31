@@ -231,6 +231,7 @@ declare const MbBody: (props: React__default.HTMLAttributes<HTMLDivElement>) => 
 declare const MbTable: (props: TableProps) => JSX.Element;
 
 interface TabProps extends React__default.HTMLAttributes<HTMLDivElement> {
+    label: JSX.Element;
     isActive?: boolean;
     extraFilter?: string;
     onExtraFilterChange?: (isSelected: boolean) => void;
