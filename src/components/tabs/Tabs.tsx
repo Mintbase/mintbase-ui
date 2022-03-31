@@ -65,7 +65,7 @@ export const MbTabs = (props: TabsProps) => {
   }
 
   const allTabs = React.Children.map(children, (child: any) => child)
-  const tabsTitle = allTabs?.map((tab: TTab) => tab.props.title)
+  const tabsTitle = allTabs?.map((tab: TTab) => tab.props.label)
   const tabsContent = allTabs?.map((tab: TTab) => tab.props.children)
   const tabsWithExtraFilter = getExtraFiltersIndex(allTabs)
 
@@ -77,7 +77,7 @@ export const MbTabs = (props: TabsProps) => {
         <ul className="flex justify-between bg-gray-50 dark:bg-gray-800 px-24 md:px-64 overflow-x-scroll md:overflow-visible no-scrollbar">
           {tabsTitle?.length && (
             <div className="flex items-center space-x-12 sm:space-x-24">
-              {tabsTitle.map((title, index) => (
+              {tabsTitle.map((label, index) => (
                 <li
                   onClick={() => {
                     setSelectedOrder('')
@@ -85,7 +85,10 @@ export const MbTabs = (props: TabsProps) => {
                   }}
                   key={index}
                 >
-                  <MbTab isActive={index === activeIndex} title={title}></MbTab>
+                  <MbTab
+                    isActive={index === activeIndex}
+                    label={<span>{label}</span>}
+                  ></MbTab>
                 </li>
               ))}
             </div>
