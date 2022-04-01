@@ -3,6 +3,7 @@ import './tab.css';
 export interface TabProps extends React.HTMLAttributes<HTMLDivElement> {
     label: JSX.Element;
     isActive?: boolean;
+    isSmall?: boolean;
     extraFilter?: string;
     onExtraFilterChange?: (isSelected: boolean) => void;
 }
