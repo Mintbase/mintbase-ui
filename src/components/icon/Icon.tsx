@@ -55,6 +55,7 @@ import copyIcon from './assets/copy.svg'
 import burnIcon from './assets/burn.svg'
 import playIcon from './assets/play.svg'
 import pauseIcon from './assets/pause.svg'
+import downloadIcon from './assets/download.svg'
 
 enum IconType {
   MINTBASE = 'mintbase',
@@ -83,6 +84,7 @@ const customIcons: { [key: string]: string } = {
   [EIconName.THREED]: threeDIcon,
   [EIconName.VIDEO]: videoIcon,
   [EIconName.FILE]: fileIcon,
+  [EIconName.DOWNLOAD]: downloadIcon,
   [EIconName.IMAGE]: imageIcon,
   [EIconName.AUDIO]: audioIcon,
   [EIconName.COMPARE_ARROWS]: compareArrowsIcon,
