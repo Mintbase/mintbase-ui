@@ -67,6 +67,7 @@ declare enum EIconName {
     FULLSCREEN_EXIT = "fullscreen_exit",
     MORE = "more_horiz",
     DELETE = "delete_forever",
+    DOWNLOAD = "download",
     SHARE = "share",
     MENU = "menu",
     SEARCH = "search",
