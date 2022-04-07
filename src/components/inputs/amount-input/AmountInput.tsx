@@ -97,6 +97,7 @@ export const MbAmountInput = forwardRef<HTMLInputElement, AmountButtonProps>(
               className={`amount-button ${
                 disabled ? 'disabled' : ''
               } ${btnSize}`}
+              type="button"
               onClick={handleMinus}
             >
               <span className="mt-2">-</span>
@@ -105,6 +106,7 @@ export const MbAmountInput = forwardRef<HTMLInputElement, AmountButtonProps>(
               className={`amount-button ${
                 disabled ? 'disabled' : ''
               } ${btnSize}`}
+              type="button"
               onClick={handlePlus}
             >
               <span className="mt-2">+</span>
