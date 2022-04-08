@@ -83,11 +83,13 @@ export const MbInfoCard = ({ boxInfo }: { boxInfo: TInfoCard }) => {
           ></MbIcon>
         )}
         {descriptionImage && descriptionIcon === EIconName.NONE && (
-          <div className="w-6 h-6 rounded-full overflow-hidden">
-            <img
-              className="h-full w-full object-cover"
-              src={descriptionImage}
-            />
+          <div>
+            <div className="w-6 h-6 rounded-full overflow-hidden">
+              <img
+                className="h-full w-full object-cover"
+                src={descriptionImage}
+              />
+            </div>
           </div>
         )}
 
@@ -106,7 +108,7 @@ export const MbInfoCard = ({ boxInfo }: { boxInfo: TInfoCard }) => {
                 {isVerifiedStore && (
                   <MbTooltip
                     text="Verified Store"
-                    id='verified-store'
+                    id="verified-store"
                     place="right"
                     component={
                       <MbIcon
