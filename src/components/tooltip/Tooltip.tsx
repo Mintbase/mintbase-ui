@@ -7,11 +7,13 @@ export const MbTooltip = ({
   id,
   place = 'bottom',
   component,
+  extraProps = {}
 }: {
   text: string
   id: string
   place: Place
   component: JSX.Element
+  extraProps?: Record<string, any>
 }) => {
   return (
     <>
@@ -30,6 +32,7 @@ export const MbTooltip = ({
         getContent={() => {
           return <span className="cap-big-90">{text}</span>
         }}
+        {...extraProps}
       />
     </>
   )
