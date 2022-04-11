@@ -4,7 +4,7 @@ https://www.figma.com/file/5FBWHNOhXcTFpHRfSUHX2o/Mintbase-Design-System-%26-Pro
 
 
 ## How to run storybook locally
-
+ 
 ```
 npm run storybook
 ```
