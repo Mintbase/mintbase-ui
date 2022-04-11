@@ -2,5 +2,7 @@
 import { TInfoCard } from '../../../types/cards.type';
 import './infocard.css';
 export declare const MbInfoCard: ({ boxInfo }: {
-    boxInfo: TInfoCard;
+    boxInfo: TInfoCard & {
+        upperTooltip?: string;
+    };
 }) => JSX.Element;
