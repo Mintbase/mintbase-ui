@@ -21,7 +21,7 @@ const LoadingInfoBox = ({ size }: { size: ESize }) => {
   )
 }
 
-export const MbInfoCard = ({ boxInfo }: { boxInfo: TInfoCard }) => {
+export const MbInfoCard = ({ boxInfo }: { boxInfo: TInfoCard & { upperTooltip?: string } }) => {
   const {
     loading = false,
     title,
@@ -30,6 +30,7 @@ export const MbInfoCard = ({ boxInfo }: { boxInfo: TInfoCard }) => {
     descriptionImage,
     handleDescriptionClick,
     upperIcon = EIconName.NONE,
+    upperTooltip,
     isBigDescription = true,
     isNumber,
     lowerLeftText,
@@ -53,6 +54,26 @@ export const MbInfoCard = ({ boxInfo }: { boxInfo: TInfoCard }) => {
     return 'p-small-90'
   }
 
+  const getUpperIcon = () => {
+    return <MbIcon
+        name={upperIcon}
+        size="20px"
+        color="blue-300"
+        darkColor="blue-100"
+      ></MbIcon>
+  }
+
+  const getUpperIconTooltip = () => {
+    // sorry for the hack, needed unique ID
+    return <MbTooltip
+      text={upperTooltip as string}
+      id={`infocard-${title.replace(" ", "-").toLowerCase()}-tooltip`}
+      place="left"
+      component={getUpperIcon()}
+    />
+
+  }
+
   return (
     <div className={`info-card ${size}`}>
       <div
@@ -64,12 +85,7 @@ export const MbInfoCard = ({ boxInfo }: { boxInfo: TInfoCard }) => {
 
         {upperIcon !== EIconName.NONE && (
           <div className="absolute right-0 mt-4">
-            <MbIcon
-              name={upperIcon}
-              size="20px"
-              color="blue-300"
-              darkColor="blue-100"
-            ></MbIcon>
+            {upperTooltip ? getUpperIconTooltip() : getUpperIcon()}
           </div>
         )}
       </div>
