@@ -55,20 +55,24 @@ export const MbThingCard = ({ loading = false, cardInfo }: CardProps) => {
     <div className="base-card thing p-12">
       <div className="flex flex-row justify-between items-center text-black dark:text-white mb-12">
         <div className="flex space-x-8 items-center">
-          <div className="flex" onClick={onUpperLeftClick}>
-            <MbIcon
-              name={upperLeftIcon}
-              size="20px"
-              color="black"
-              darkColor="white"
-            />
-          </div>
-          <p
-            className="p-small-90 text-gray-700 dark:text-gray-300"
-            style={{ marginTop: '4px' }}
-          >
-            {upperLeftText}
-          </p>
+          {upperLeftIcon && (
+            <div className="flex" onClick={onUpperLeftClick}>
+              <MbIcon
+                name={upperLeftIcon}
+                size="20px"
+                color="black"
+                darkColor="white"
+              />
+            </div>
+          )}
+          {upperLeftText && (
+            <p
+              className="p-small-90 text-gray-700 dark:text-gray-300"
+              style={{ marginTop: '4px' }}
+            >
+              {upperLeftText}
+            </p>
+          )}
         </div>
         {upperRightElement && <div className="flex">{upperRightElement}</div>}
       </div>
