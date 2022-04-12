@@ -36,7 +36,7 @@ const LoadingCard = () => {
 export const MbThingCard = ({ loading = false, cardInfo }: CardProps) => {
   if (loading) return <LoadingCard />
   const {
-    upperLeftIcon = EIconName.LIKE,
+    upperLeftIcon,
     upperLeftText,
     upperRightElement,
     centerElement,
