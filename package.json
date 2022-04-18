@@ -1,5 +1,5 @@
 {
-  "name": "mintbase-react-components",
+  "name": "mintbase-ui",
   "version": "0.1.0",
   "private": true,
   "main": "dist/cjs/index.js",
