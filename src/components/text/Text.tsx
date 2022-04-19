@@ -8,7 +8,6 @@ type TextProps = {
 } & React.HTMLAttributes<HTMLDivElement>
 
 export const MbText = (props: TextProps) => {
-  
   if (props.semanticHtmlTag) {
     return createElement(props.semanticHtmlTag, { className: props.className }, props.children)
   }
