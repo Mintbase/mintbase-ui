@@ -258,7 +258,10 @@ declare type TFilterOptions = {
 };
 declare const MbTabs: (props: TabsProps) => JSX.Element;
 
-declare type TextProps = React__default.HTMLAttributes<HTMLDivElement>;
+declare type SemanticHtmlTextTypes = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span' | 'em';
+declare type TextProps = {
+    semanticHtmlTag?: SemanticHtmlTextTypes;
+} & React__default.HTMLAttributes<HTMLDivElement>;
 declare const MbText: (props: TextProps) => JSX.Element;
 
 declare const MbTooltip: ({ text, id, place, component, extraProps }: {
