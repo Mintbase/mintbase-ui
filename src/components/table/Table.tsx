@@ -29,7 +29,7 @@ export const MbBody = (props: HeaderBodyProps) => {
 
   return (
     <tbody className={`p-24 dark:text-white p-med-90 body-table ${extraClass}`}>
-      {props.children}
+      {children}
     </tbody>
   )
 }
