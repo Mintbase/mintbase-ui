@@ -9,17 +9,26 @@ interface TableProps extends React.HTMLAttributes<HTMLDivElement> {
   onAmountItemsChange?: (page: number) => void
 }
 
-export const MbHead = (props: React.HTMLAttributes<HTMLDivElement>) => {
+interface HeaderBodyProps extends React.HTMLAttributes<HTMLDivElement> {
+  extraClass?: string
+}
+
+export const MbHead = (props: HeaderBodyProps) => {
+  const { children, extraClass = '' } = props
   return (
-    <thead className="headers table-fixed border-b-2 border-gray-200 text-left dark:border-gray-900 text-gray-700 dark:text-gray-300 p-med-90">
-      {props.children}
+    <thead
+      className={`headers table-fixed border-b-2 border-gray-200 text-left dark:border-gray-900 text-gray-700 dark:text-gray-300 p-med-90 ${extraClass}`}
+    >
+      {children}
     </thead>
   )
 }
 
-export const MbBody = (props: React.HTMLAttributes<HTMLDivElement>) => {
+export const MbBody = (props: HeaderBodyProps) => {
+  const { children, extraClass = '' } = props
+
   return (
-    <tbody className="p-24 dark:text-white p-med-90 body-table">
+    <tbody className={`p-24 dark:text-white p-med-90 body-table ${extraClass}`}>
       {props.children}
     </tbody>
   )
