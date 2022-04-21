@@ -10,7 +10,8 @@
 
 @screen md {
   .modal-section {
-    @apply mx-0;
+    @apply mx-0;    
+    width: 600px;
     min-height: 400px;
   }
 }
