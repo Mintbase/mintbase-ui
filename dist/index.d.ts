@@ -137,14 +137,14 @@ declare type TInfoCard = {
     isBigDescription?: boolean;
     isNumber?: boolean;
     size?: ESize;
+    isLink?: boolean;
     isVerifiedStore?: boolean;
+    upperTooltip?: string;
     handleDescriptionClick?: () => void;
 };
 
 declare const MbInfoCard: ({ boxInfo }: {
-    boxInfo: TInfoCard & {
-        upperTooltip?: string;
-    };
+    boxInfo: TInfoCard;
 }) => JSX.Element;
 
 interface CardProps$1 extends React__default.ComponentProps<'div'> {
