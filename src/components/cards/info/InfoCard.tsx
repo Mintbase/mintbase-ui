@@ -21,20 +21,20 @@ const LoadingInfoBox = ({ size }: { size: ESize }) => {
   )
 }
 
-export const MbInfoCard = ({ boxInfo }: { boxInfo: TInfoCard & { upperTooltip?: string } }) => {
+export const MbInfoCard = ({ boxInfo }: { boxInfo: TInfoCard }) => {
   const {
     loading = false,
     title,
     description,
     descriptionIcon = EIconName.NONE,
     descriptionImage,
-    handleDescriptionClick,
     upperIcon = EIconName.NONE,
     upperTooltip,
     isBigDescription = true,
     isNumber,
     lowerLeftText,
     size = ESize.MEDIUM,
+    isLink,
     isVerifiedStore,
   } = boxInfo
 
@@ -55,23 +55,26 @@ export const MbInfoCard = ({ boxInfo }: { boxInfo: TInfoCard & { upperTooltip?: 
   }
 
   const getUpperIcon = () => {
-    return <MbIcon
+    return (
+      <MbIcon
         name={upperIcon}
         size="20px"
         color="blue-300"
         darkColor="blue-100"
       ></MbIcon>
+    )
   }
 
   const getUpperIconTooltip = () => {
     // sorry for the hack, needed unique ID
-    return <MbTooltip
-      text={upperTooltip as string}
-      id={`infocard-${title.replace(" ", "-").toLowerCase()}-tooltip`}
-      place="left"
-      component={getUpperIcon()}
-    />
-
+    return (
+      <MbTooltip
+        text={upperTooltip as string}
+        id={`infocard-${title.replace(' ', '-').toLowerCase()}-tooltip`}
+        place="left"
+        component={getUpperIcon()}
+      />
+    )
   }
 
   return (
@@ -114,11 +117,10 @@ export const MbInfoCard = ({ boxInfo }: { boxInfo: TInfoCard & { upperTooltip?: 
             <div>
               <div
                 className={`${getDescriptionFont()} ${
-                  handleDescriptionClick
+                  isLink
                     ? 'text-blue-300 dark:text-blue-100 cursor-pointer'
                     : 'text-black dark:text-white'
                 } inline-flex align-middle`}
-                onClick={handleDescriptionClick}
               >
                 {description}
                 {isVerifiedStore && (
