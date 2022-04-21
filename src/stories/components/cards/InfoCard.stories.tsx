@@ -49,7 +49,7 @@ InfoWithAction.args = {
     title: 'Info with action',
     description: 'Click me',
     upperIcon: EIconName.INFO,
-    handleDescriptionClick: () => console.log('clicked'),
+    isLink: true,
   },
 }
 
