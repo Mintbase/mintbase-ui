@@ -229,11 +229,8 @@ interface TableProps extends React__default.HTMLAttributes<HTMLDivElement> {
     pagination?: PaginationProps;
     onAmountItemsChange?: (page: number) => void;
 }
-interface HeaderBodyProps extends React__default.HTMLAttributes<HTMLDivElement> {
-    extraClass?: string;
-}
-declare const MbHead: (props: HeaderBodyProps) => JSX.Element;
-declare const MbBody: (props: HeaderBodyProps) => JSX.Element;
+declare const MbHead: (props: React__default.HTMLAttributes<HTMLDivElement>) => JSX.Element;
+declare const MbBody: (props: React__default.HTMLAttributes<HTMLDivElement>) => JSX.Element;
 declare const MbTable: (props: TableProps) => JSX.Element;
 
 interface TabProps extends React__default.HTMLAttributes<HTMLDivElement> {

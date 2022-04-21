@@ -6,10 +6,7 @@ interface TableProps extends React.HTMLAttributes<HTMLDivElement> {
     pagination?: PaginationProps;
     onAmountItemsChange?: (page: number) => void;
 }
-interface HeaderBodyProps extends React.HTMLAttributes<HTMLDivElement> {
-    extraClass?: string;
-}
-export declare const MbHead: (props: HeaderBodyProps) => JSX.Element;
-export declare const MbBody: (props: HeaderBodyProps) => JSX.Element;
+export declare const MbHead: (props: React.HTMLAttributes<HTMLDivElement>) => JSX.Element;
+export declare const MbBody: (props: React.HTMLAttributes<HTMLDivElement>) => JSX.Element;
 export declare const MbTable: (props: TableProps) => JSX.Element;
 export {};
