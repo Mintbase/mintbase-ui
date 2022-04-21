@@ -21,11 +21,7 @@ const LoadingInfoBox = ({ size }: { size: ESize }) => {
   )
 }
 
-export const MbInfoCard = ({
-  boxInfo,
-}: {
-  boxInfo: TInfoCard & { upperTooltip?: string }
-}) => {
+export const MbInfoCard = ({ boxInfo }: { boxInfo: TInfoCard }) => {
   const {
     loading = false,
     title,
