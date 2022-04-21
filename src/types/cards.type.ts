@@ -36,5 +36,6 @@ export type TInfoCard = {
   size?: ESize
   isLink?: boolean
   isVerifiedStore?: boolean
+  upperTooltip?: string
   handleDescriptionClick?: () => void
 }
