@@ -6,6 +6,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     btnType?: EType;
     state?: EState;
     size?: ESize;
+    customClass?: string;
 }
-export declare const MbButton: ({ label, state, size, btnType, ...props }: ButtonProps) => JSX.Element;
+export declare const MbButton: ({ label, state, size, btnType, customClass, ...props }: ButtonProps) => JSX.Element;
 export {};

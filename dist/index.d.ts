@@ -43,8 +43,9 @@ interface ButtonProps extends React__default.ButtonHTMLAttributes<HTMLButtonElem
     btnType?: EType;
     state?: EState;
     size?: ESize;
+    customClass?: string;
 }
-declare const MbButton: ({ label, state, size, btnType, ...props }: ButtonProps) => JSX.Element;
+declare const MbButton: ({ label, state, size, btnType, customClass, ...props }: ButtonProps) => JSX.Element;
 
 declare enum EIconName {
     CHECK = "check",
@@ -405,7 +406,7 @@ declare type TColor = {
 
 declare const colorsArray: TColorDetail[];
 
-declare const getFontType: (size: string) => "p-big-90" | "p-med-90" | "p-small-90" | undefined;
+declare const getFontType: (size: string) => "p-big-90" | "p-med-90" | "p-small-90";
 declare const getInputLabelFontType: (inputSize: string) => "cap-big-90" | "p-med-90" | "p-small-90" | undefined;
 
 declare const AUDIO_TYPES: string[];
