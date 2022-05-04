@@ -8,6 +8,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   btnType?: EType
   state?: EState
   size?: ESize
+  customClass?: string
 }
 
 const getLoadingSize = (currentSize: string) => {
@@ -18,6 +19,8 @@ const getLoadingSize = (currentSize: string) => {
       return 'w-4 h-4'
     case 'big':
       return 'w-5 h-5'
+    default:
+      return 'w-4 h-4'
   }
 }
 
@@ -44,15 +47,16 @@ export const MbButton = ({
   state = EState.ACTIVE,
   size = ESize.MEDIUM,
   btnType = EType.PRIMARY,
+  customClass,
   ...props
 }: ButtonProps) => {
   const isLoading = state === EState.LOADING
   return (
     <button
       type="button"
-      className={`button ${btnType} ${state} ${size} ${getFontType(
-        size
-      )} relative`}
+      className={`button ${btnType} ${state} ${
+        customClass ? customClass : `${size} ${getFontType(size)}`
+      } relative`}
       {...props}
     >
       <span className={isLoading ? 'invisible' : 'visible'}>{label}</span>

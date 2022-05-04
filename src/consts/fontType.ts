@@ -6,6 +6,8 @@ export const getFontType = (size: string) => {
       return 'p-med-90'
     case 'small':
       return 'p-small-90'
+    default:
+      return 'p-med-90'
   }
 }
 
