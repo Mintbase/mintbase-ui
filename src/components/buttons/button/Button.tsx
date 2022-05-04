@@ -18,6 +18,8 @@ const getLoadingSize = (currentSize: string) => {
       return 'w-4 h-4'
     case 'big':
       return 'w-5 h-5'
+    default:
+      return 'w-4 h-4'
   }
 }
 

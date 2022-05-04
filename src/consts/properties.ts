@@ -10,6 +10,7 @@ export enum EState {
 }
 
 export enum ESize {
+  EXTRA_SMALL = "extra-small",
   SMALL = 'small',
   MEDIUM = 'medium',
   BIG = 'big',
