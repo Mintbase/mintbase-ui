@@ -18,10 +18,6 @@
   height: 26px;
 }
 
-.button.extra-small {
-  padding: 8px;
-}
-
 .button.primary {
   @apply rounded dark:bg-white dark:text-black bg-black text-white transition-all duration-500;
 }
