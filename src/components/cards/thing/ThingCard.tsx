@@ -92,7 +92,7 @@ export const MbThingCard = ({ loading = false, cardInfo }: CardProps) => {
       </div>
       <div className="flex flex-row justify-between text-black dark:text-white mt-12">
         <div className="p-big-90 w-52 truncate">{midLeftText}</div>
-        <div className="p-big-90 text-right">{midRightText}</div>
+        <div className="p-big-90 text-right break-all">{midRightText}</div>
       </div>
       <div className="flex flex-row justify-between text-gray-200 mt-12">
         <div
@@ -102,7 +102,7 @@ export const MbThingCard = ({ loading = false, cardInfo }: CardProps) => {
           <img className="h-full w-full object-cover" src={botLeftImage} />
         </div>
         <div className="p-med-90 flex flex-row items-center text-black dark:text-white space-x-8">
-          <div className="p-small-90 w-8/12">{botRightText}</div>
+          <div className="p-small-90">{botRightText}</div>
           <div>
             <MbIcon name={botRightIcon} size="12px" color="gray-500" />
           </div>
