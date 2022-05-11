@@ -41,7 +41,7 @@ export const MbModal = (props: ModalProps) => {
                   />
                 </div>
               </header>
-              <div className="p-24">{children}</div>
+              <div>{children}</div>
             </section>
           </div>
         </>
