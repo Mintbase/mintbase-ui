@@ -24,7 +24,7 @@ export const MbBody = (props: React.HTMLAttributes<HTMLDivElement>) => {
   const { children, className = '' } = props
 
   return (
-    <tbody className={`p-24 dark:text-white p-med-90 body-table ${className}`}>
+    <tbody className={`dark:text-white p-med-90 body-table ${className}`}>
       {children}
     </tbody>
   )
