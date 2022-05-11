@@ -24,6 +24,7 @@ export declare type TSmallCard = {
 export declare type TInfoCard = {
     loading?: boolean;
     title: string;
+    titleIcon?: JSX.Element;
     description?: string;
     upperIcon?: EIconName;
     descriptionIcon?: EIconName;

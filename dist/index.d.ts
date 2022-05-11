@@ -130,6 +130,7 @@ declare type TSmallCard = {
 declare type TInfoCard = {
     loading?: boolean;
     title: string;
+    titleIcon?: JSX.Element;
     description?: string;
     upperIcon?: EIconName;
     descriptionIcon?: EIconName;
