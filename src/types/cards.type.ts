@@ -26,6 +26,7 @@ export type TSmallCard = {
 export type TInfoCard = {
   loading?: boolean
   title: string
+  titleIcon?: JSX.Element
   description?: string
   upperIcon?: EIconName
   descriptionIcon?: EIconName

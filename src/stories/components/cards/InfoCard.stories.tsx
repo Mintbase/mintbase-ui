@@ -1,6 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import React from 'react'
 import { MbInfoCard } from '../../../components/cards/info/InfoCard'
+import { MbIcon } from '../../../components/icon/Icon'
 import { EIconName } from '../../../consts/icons'
 
 export default {
@@ -19,6 +20,17 @@ export const Info = Template.bind({})
 Info.args = {
   boxInfo: {
     title: 'Listed Tokens',
+    description: '300',
+    isNumber: true,
+    isVerifiedStore: false,
+  },
+}
+
+export const InfoWithTitleIcon = Template.bind({})
+InfoWithTitleIcon.args = {
+  boxInfo: {
+    title: 'Listed Tokens',
+    titleIcon: <MbIcon color='black' name={EIconName.CIRCLE} />,
     description: '300',
     isNumber: true,
     isVerifiedStore: false,
