@@ -25,6 +25,7 @@ export const MbInfoCard = ({ boxInfo }: { boxInfo: TInfoCard }) => {
   const {
     loading = false,
     title,
+    titleIcon,
     description,
     descriptionIcon = EIconName.NONE,
     descriptionImage,
@@ -80,8 +81,9 @@ export const MbInfoCard = ({ boxInfo }: { boxInfo: TInfoCard }) => {
   return (
     <div className={`info-card ${size}`}>
       <div
-        className={`flex justify-between items-center title-wrapper ${size} relative`}
+        className={`flex ${titleIcon ? 'gap-12' : 'justify-between'} items-center title-wrapper ${size} relative`}
       >
+        {titleIcon && titleIcon}
         <div className={`${getTitleFont()} text-gray-700 dark:text-gray-300`}>
           {title}
         </div>
@@ -116,11 +118,10 @@ export const MbInfoCard = ({ boxInfo }: { boxInfo: TInfoCard }) => {
           {description && (
             <div>
               <div
-                className={`${getDescriptionFont()} ${
-                  isLink
-                    ? 'text-blue-300 dark:text-blue-100 cursor-pointer'
-                    : 'text-black dark:text-white'
-                } inline-flex align-middle`}
+                className={`${getDescriptionFont()} ${isLink
+                  ? 'text-blue-300 dark:text-blue-100 cursor-pointer'
+                  : 'text-black dark:text-white'
+                  } inline-flex align-middle`}
               >
                 {description}
                 {isVerifiedStore && (
