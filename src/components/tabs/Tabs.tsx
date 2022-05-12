@@ -74,7 +74,11 @@ export const MbTabs = (props: TabsProps) => {
   return (
     <>
       <div className="relative md:initial">
-        <ul className="flex justify-between bg-gray-50 dark:bg-gray-800 px-24 md:px-48 overflow-x-scroll no-scrollbar">
+        <ul
+          className={`flex justify-between bg-gray-50 dark:bg-gray-800 px-24 md:px-48 ${
+            !filterOptions ? 'overflow-x-scroll no-scrollbar' : ''
+          }`}
+        >
           {tabsTitle?.length && (
             <div className="flex items-center space-x-12 sm:space-x-24">
               {tabsTitle.map((label, index) => (
