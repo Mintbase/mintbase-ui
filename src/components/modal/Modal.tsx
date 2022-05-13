@@ -22,10 +22,13 @@ export const MbModal = (props: ModalProps) => {
   return (
     <>
       {open && (
-        <>
+        <div onClick={onClose}>
           <div className="fixed inset-0 bg-black bg-opacity-75 overflow-y-auto h-full w-full z-50"></div>
           <div className="modal">
-            <section className="modal-section">
+            <section
+              className="modal-section"
+              onClick={(e) => e.stopPropagation()}
+            >
               <header className="flex items-center p-24 border-b border-gray-150 dark:border-gray-700 justify-between sticky">
                 <div>
                   <div className="p-big-130">{title}</div>
@@ -44,7 +47,7 @@ export const MbModal = (props: ModalProps) => {
               <div>{children}</div>
             </section>
           </div>
-        </>
+        </div>
       )}
     </>
   )
