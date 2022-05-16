@@ -421,4 +421,14 @@ interface ToggleProps extends React.InputHTMLAttributes<HTMLInputElement> {
     label?: string;
 }
 
-export { ALL_TYPES, AUDIO_TYPES, EControlStatus, EIconName, ESize, ESmallCardType, EState, EType, FILE_TYPES, IMAGE_TYPES, Item, MbAccordion, MbAction, MbAmountInput, MbAudioPlayer, MbBody, MbButton, MbCheckbox, MbChip, MbColorIndicator, MbDropdownMenu, MbHead, MbIcon, MbInfoCard, MbInput, MbInputAccount, MbInputSelect, MbInputTags, MbItemsPerPage, MbLogo, MbMediaImport, MbMenuWrapper, MbModal, MbModelPlayer, MbNetworkMenu, MbPagination, MbRadioButton, MbSmallCard, MbStatefulButton, MbSwitch, MbTab, MbTable, MbTabs, MbText, MbTextArea, MbThingCard, MbTooltip, MbVideoPlayer, TColor, TColorDetail, THREED_TYPES, TInfoCard, TNetworkOption, TSmallCard, TThingCard, ToggleProps, VIDEO_TYPES, colorsArray, getFontType, getInputLabelFontType };
+declare enum ScreenBreakpoint {
+    SM = "sm",
+    MD = "md",
+    LG = "lg",
+    XL = "xl"
+}
+declare type TScreenBreakpoint = ScreenBreakpoint.LG | ScreenBreakpoint.MD | ScreenBreakpoint.SM | ScreenBreakpoint.XL;
+declare const getBreakpointValue: (value: ScreenBreakpoint) => number;
+declare const getCurrentBreakpoint: () => TScreenBreakpoint;
+
+export { ALL_TYPES, AUDIO_TYPES, EControlStatus, EIconName, ESize, ESmallCardType, EState, EType, FILE_TYPES, IMAGE_TYPES, Item, MbAccordion, MbAction, MbAmountInput, MbAudioPlayer, MbBody, MbButton, MbCheckbox, MbChip, MbColorIndicator, MbDropdownMenu, MbHead, MbIcon, MbInfoCard, MbInput, MbInputAccount, MbInputSelect, MbInputTags, MbItemsPerPage, MbLogo, MbMediaImport, MbMenuWrapper, MbModal, MbModelPlayer, MbNetworkMenu, MbPagination, MbRadioButton, MbSmallCard, MbStatefulButton, MbSwitch, MbTab, MbTable, MbTabs, MbText, MbTextArea, MbThingCard, MbTooltip, MbVideoPlayer, ScreenBreakpoint, TColor, TColorDetail, THREED_TYPES, TInfoCard, TNetworkOption, TScreenBreakpoint, TSmallCard, TThingCard, ToggleProps, VIDEO_TYPES, colorsArray, getBreakpointValue, getCurrentBreakpoint, getFontType, getInputLabelFontType };
