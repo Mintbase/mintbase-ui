@@ -5,6 +5,7 @@ import { ESize } from '../../../consts/properties'
 import { MbIcon } from '../../icon/Icon'
 import './inputfield.css'
 import './../Input.css'
+import { getCurrentBreakpoint, ScreenBreakpoint } from '../../../utils'
 
 export enum EControlStatus {
   NORMAL = 'normal',
@@ -40,7 +41,10 @@ export const MbInput = forwardRef<HTMLInputElement, InputProps>(
     ref
   ) => {
     const getIconSize = () => {
-      return inputSize === 'big' ? '24px' : '20px'
+      return inputSize === 'big' &&
+        getCurrentBreakpoint() !== ScreenBreakpoint.SM
+        ? '24px'
+        : '20px'
     }
 
     return (
