@@ -35,7 +35,5 @@ export const getCurrentBreakpoint = (): TScreenBreakpoint => {
       currentBreakpoint = auxBreakpoint
     }
   }
-
-  console.log(currentBreakpoint)
   return currentBreakpoint
 }
