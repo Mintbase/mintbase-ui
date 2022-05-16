@@ -3,13 +3,13 @@
 }
 
 .input-wrapper.big {
-  @apply p-16;
-  max-height: 48px;
+  @apply p-12;
+  max-height: 40px;
 }
 
 .input-wrapper.medium {
-  @apply p-12;
-  max-height: 40px;
+  @apply p-10;
+  max-height: 34px;
 }
 
 .input-wrapper.small {
@@ -24,6 +24,18 @@
 @screen md {
   .input-field.textarea {
     height: 136px;
+  }
+}
+
+@screen sm {
+  .input-wrapper.big {
+    @apply p-16;
+    max-height: 48px;
+  }
+
+  .input-wrapper.medium {
+    @apply p-12;
+    max-height: 40px;
   }
 }
 
