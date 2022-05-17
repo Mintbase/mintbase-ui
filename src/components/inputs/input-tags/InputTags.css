@@ -7,16 +7,28 @@
 }
 
 .input-tags.big {
-  @apply p-16;
-  max-height: 48px;
+  @apply p-12;
+  max-height: 40px;
 }
 
 .input-tags.medium {
-  @apply p-12;
-  max-height: 40px;
+  @apply p-10;
+  max-height: 34px;
 }
 
 .input-tags.small {
   @apply p-10;
   max-height: 34px;
+}
+
+@screen sm {
+  .input-tags.big {
+    @apply p-16;
+    max-height: 48px;
+  }
+
+  .input-tags.medium {
+    @apply p-12;
+    max-height: 40px;
+  }
 }
