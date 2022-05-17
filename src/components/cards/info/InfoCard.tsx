@@ -114,7 +114,7 @@ export const MbInfoCard = ({ boxInfo }: { boxInfo: TInfoCard }) => {
           </div>
         )}
 
-        <div className="flex justify-between w-full items-baseline">
+        <div className="flex flex-wrap justify-between w-full items-baseline">
           {description && (
             <div>
               <div
