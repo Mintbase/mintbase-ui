@@ -1,21 +1,35 @@
 /* Buttons */
 
 .button.big {
-  padding: 12px 52px;
-  min-width: 145px;
-  height: 42px;
-}
-
-.button.medium {
   padding: 8px 32px;
   min-width: 100px;
   height: 32px;
+}
+
+.button.medium {
+  padding: 6px 24px;
+  min-width: 80px;
+  height: 26px;
 }
 
 .button.small {
   padding: 6px 24px;
   min-width: 80px;
   height: 26px;
+}
+
+@screen sm {
+  .button.big {
+    padding: 12px 52px;
+    min-width: 145px;
+    height: 42px;
+  }
+
+  .button.medium {
+    padding: 8px 32px;
+    min-width: 100px;
+    height: 32px;
+  }
 }
 
 .button.primary {
