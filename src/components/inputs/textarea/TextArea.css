@@ -3,16 +3,28 @@
 }
 
 .textarea-wrapper.big {
-  @apply p-16;
-  height: 160px;
+  @apply p-12;
+  height: 130px;
 }
 
 .textarea-wrapper.medium {
-  @apply p-12;
-  height: 130px;
+  height: 100px;
+  @apply p-10;
 }
 
 .textarea-wrapper.small {
   height: 100px;
   @apply p-10;
+}
+
+@screen sm {
+  .textarea-wrapper.big {
+    @apply p-16;
+    height: 160px;
+  }
+
+  .textarea-wrapper.medium {
+    @apply p-12;
+    height: 130px;
+  }
 }
