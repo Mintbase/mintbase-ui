@@ -15,6 +15,7 @@ export const MbCheckbox = forwardRef<HTMLInputElement, ToggleProps>(
             checked={checked}
             {...restProps}
             ref={ref}
+            disabled={disabled}
           />
           <div
             className={`checkbox-item ${disabled ? 'disabled' : ''} ${
