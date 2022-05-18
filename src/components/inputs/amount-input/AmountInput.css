@@ -15,7 +15,7 @@
 }
 
 .amount-button.big {
-  @apply w-9 h-8;
+  @apply w-8 h-7;
 }
 
 .amount-button.small {
@@ -23,5 +23,15 @@
 }
 
 .amount-button.medium {
-  @apply w-8 h-7;
+  @apply w-7 h-6;
+}
+
+@screen sm {
+  .amount-button.big {
+    @apply w-9 h-8;
+  }
+
+  .amount-button.medium {
+    @apply w-8 h-7;
+  }
 }
