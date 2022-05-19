@@ -7,6 +7,7 @@ interface CardProps extends React.ComponentProps<'div'> {
     loading?: boolean;
     card: TSmallCard;
     cardType: ESmallCardType;
+    isBigStoreCard?: boolean;
 }
-export declare const MbSmallCard: ({ loading, cardType, card, }: CardProps) => JSX.Element;
+export declare const MbSmallCard: ({ loading, cardType, card, isBigStoreCard, }: CardProps) => JSX.Element;
 export {};

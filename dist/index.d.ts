@@ -153,8 +153,9 @@ interface CardProps$1 extends React__default.ComponentProps<'div'> {
     loading?: boolean;
     card: TSmallCard;
     cardType: ESmallCardType;
+    isBigStoreCard?: boolean;
 }
-declare const MbSmallCard: ({ loading, cardType, card, }: CardProps$1) => JSX.Element;
+declare const MbSmallCard: ({ loading, cardType, card, isBigStoreCard, }: CardProps$1) => JSX.Element;
 
 interface CardProps extends React__default.ComponentProps<'div'> {
     loading?: boolean;
