@@ -11,10 +11,20 @@ interface CardProps extends React.ComponentProps<'div'> {
   isBigStoreCard?: boolean
 }
 
-const LoadingCard = ({ cardType }: { cardType: string }) => {
+const LoadingCard = ({
+  cardType,
+  isBigStoreCard,
+}: {
+  cardType: string
+  isBigStoreCard: boolean
+}) => {
   return (
     <div className={`base-card ${cardType}`}>
-      <div className="flex flex-col justify-center items-center animate-pulse card-wrapper">
+      <div
+        className={`flex flex-col justify-center items-center animate-pulse card-wrapper ${
+          isBigStoreCard ? 'big-store' : ''
+        }`}
+      >
         <div className="h-full w-full rounded bg-gray-600"></div>
       </div>
       <div className="flex justify-center mt-12 animate-pulse">
@@ -30,7 +40,8 @@ export const MbSmallCard = ({
   card,
   isBigStoreCard = false,
 }: CardProps) => {
-  if (loading) return <LoadingCard cardType={cardType} />
+  if (loading)
+    return <LoadingCard cardType={cardType} isBigStoreCard={isBigStoreCard} />
   const { title, centerElement, onCardClick } = card
 
   return (
@@ -42,7 +53,9 @@ export const MbSmallCard = ({
       >
         {centerElement}
       </div>
-      <div className="text-center text-black dark:text-white mt-12">
+      <div
+        className="text-center text-black dark:text-white mt-12"
+      >
         <div className="p-big-90">{title}</div>
       </div>
     </div>
