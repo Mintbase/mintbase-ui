@@ -28,4 +28,5 @@ Store.args = {
     title: 'Store Name',
   },
   loading: false,
+  isBigStoreCard: false,
 }
