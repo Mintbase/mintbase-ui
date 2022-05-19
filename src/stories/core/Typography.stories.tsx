@@ -12,6 +12,8 @@ export const Typography = () => (
       use the class in MbText component:
       {`<MbText className="[typoname]"></MbText>`}
     </MbText>
+    <MbText className="display-130 mb-2">display-130</MbText>
+    <MbText className="display-90 mb-2">display-90</MbText>
     <MbText className="heading-130 mb-2">heading-130</MbText>
     <MbText className="heading-90 mb-2">heading-90</MbText>
     <MbText className="h1-130 mb-2">h1-130</MbText>
