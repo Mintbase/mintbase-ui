@@ -3,13 +3,21 @@
 }
 
 .store .card-wrapper {
-  height: 96px;
+  height: 72px;
   @apply rounded overflow-hidden;
 }
 
-@screen lg {
+.store .card-wrapper.big-store {
+  height: 122px;
+}
+
+@screen md {
   .store .card-wrapper {
-    height: 72px;
+    height: 96px;
+  }
+
+  .store .card-wrapper.big-store {
+    height: 168px;
   }
 }
 

@@ -22,6 +22,7 @@ module.exports = {
     24: '24px',
     29: '29px',
     35: '35px',
+    48: '48px',
   },
   extend: {
     flex: {
@@ -121,6 +122,7 @@ module.exports = {
       32: '32px',
       34: '34px',
       38: '38px',
+      50: '50px',
     },
     maxWidth: {
       64: '16rem',

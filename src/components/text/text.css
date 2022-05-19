@@ -1,4 +1,12 @@
 /* Typography */
+.display-130 {
+  @apply font-authentic-sans-130 text-35 sm:text-48 leading-38 sm:leading-50;
+}
+
+.display-90 {
+  @apply font-authentic-sans-90 text-35 sm:text-48 leading-38 sm:leading-50;
+}
+
 .heading-130 {
   @apply font-authentic-sans-130 text-29 sm:text-35 leading-34 sm:leading-38;
 }
