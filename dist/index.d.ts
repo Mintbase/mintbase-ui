@@ -320,6 +320,7 @@ declare const MbRadioButton: React$1.ForwardRefExoticComponent<ToggleProps & Rea
 interface ModalProps extends React.HTMLAttributes<HTMLDivElement> {
     title: string;
     subtitle?: string;
+    topElement?: JSX.Element;
     open: boolean;
     onClose: () => void;
 }
