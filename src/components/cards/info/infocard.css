@@ -22,7 +22,7 @@
   @apply pb-8;
 }
 
-@screen md {
+@screen lg {
   .info-card.small {
     min-width: 160px;
   }
