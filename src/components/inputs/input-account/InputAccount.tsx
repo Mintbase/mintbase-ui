@@ -21,7 +21,7 @@ export const MbInputAccount = (props: InputAccountProps) => {
 
         <div>{inputs}</div>
       </section>
-      <footer className="text-center py-24 lg:py-32 border-t border-gray-150 dark:border-gray-700 flex flex-col lg:flex-row justify-center items-center lg:relative">
+      <footer className="text-center pt-24 border-t border-gray-150 dark:border-gray-700 flex flex-col lg:flex-row justify-center items-center lg:relative">
         {footer}
       </footer>
     </main>
