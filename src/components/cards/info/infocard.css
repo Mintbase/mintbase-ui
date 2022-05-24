@@ -10,7 +10,6 @@
 
 .info-card.small {
   @apply p-8;
-  min-width: 160px;
   min-height: 46px;
 }
 
@@ -21,4 +20,10 @@
 
 .info-card .title-wrapper.small {
   @apply pb-8;
+}
+
+@screen lg {
+  .info-card.small {
+    min-width: 160px;
+  }
 }
