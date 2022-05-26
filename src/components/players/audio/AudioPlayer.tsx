@@ -83,7 +83,6 @@ export const MbAudioPlayer = ({ src }: { src: string }) => {
   }
 
   useEffect(() => {
-    console.log(src)
     if (progress.played >= 0.99) setIsPlaying(false)
   }, [progress])
 
