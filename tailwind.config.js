@@ -7,21 +7,22 @@ module.exports = {
   variants: {
     extend: {},
   },
-  purge: {
-    enabled: true,
-    content: ['./src/**/*.tsx'],
-    defaultExtractor: (content) => {
-      // this can help identify possible matches being stripped. 
-      // inspired by https://stackoverflow.com/a/65583198/296073
-      return content.match(/[\w-/:]+(?<!:)/g) || []
-    },
-    options: {
-      // we may need to populate this as we notice any visual regressions
-      // in particular, responsive elements tend to get dropped.
-      // see also: https://v2.tailwindcss.com/docs/optimizing-for-production#writing-purgeable-html
-      safelist: []
-    }
-  },
+  content: ['./src/**/*.tsx'],
+  // purge: {
+  //   enabled: true,
+  //   content: ['./src/**/*.tsx'],
+  //   defaultExtractor: (content) => {
+  //     // this can help identify possible matches being stripped. 
+  //     // inspired by https://stackoverflow.com/a/65583198/296073
+  //     return content.match(/[\w-/:]+(?<!:)/g) || []
+  //   },
+  //   options: {
+  //     // we may need to populate this as we notice any visual regressions
+  //     // in particular, responsive elements tend to get dropped.
+  //     // see also: https://v2.tailwindcss.com/docs/optimizing-for-production#writing-purgeable-html
+  //     safelist: []
+  //   }
+  // },
   plugins: [
     plugin(function ({ addUtilities }) {
       addUtilities({
