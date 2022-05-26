@@ -17,6 +17,7 @@ AmountAccountSplitsList.args = {
   subtitle:
     'Split revenue clears after each sale. Needs at least two accounts. The minter will receive 100% of split revenue unless splits are added.',
   smallSubtitle: 'Select up to 25 accounts',
+  isPercentage: true,
   accountExists: () => {
     return true
   },
