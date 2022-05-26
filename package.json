@@ -75,8 +75,11 @@
     "typescript": "^4.5.4"
   },
   "dependencies": {
+    "@types/lodash": "^4.14.182",
+    "lodash": "^4.17.21",
     "react-inlinesvg": "^2.3.0",
     "react-player": "^2.9.0",
-    "react-tooltip": "^4.2.21"
+    "react-tooltip": "^4.2.21",
+    "uuidv4": "^6.2.13"
   }
 }
