@@ -33,7 +33,7 @@ export const MbNearAmountAccount = ({
     save: () => void
   }
   isPercentage?: boolean
-  sendFinalState: (state: Record<string, TInputState>) => void
+  sendFinalState?: (state: Record<string, TInputState>) => void
   totalAmount: number
   transferTemplate: {
     available: number
@@ -204,7 +204,7 @@ export const MbNearAmountAccount = ({
         : false
     setValid(isValidForm)
 
-    if (isValidForm) {
+    if (isValidForm && sendFinalState) {
       sendFinalState(state)
     }
   }, [state])
