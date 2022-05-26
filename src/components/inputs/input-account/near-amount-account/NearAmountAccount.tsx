@@ -7,11 +7,11 @@ import { MbAction } from '../../../action/Action'
 import { MbButton } from '../../../buttons/button/Button'
 import { MbInfoCard } from '../../../cards/info/InfoCard'
 import { MbIcon } from '../../../icon/Icon'
-import { AmountAccountInput } from '../../amount-account-input/AmountAccountInput'
+import { MbAmountAccountInput } from '../../amount-account-input/AmountAccountInput'
 import { MbInput, EControlStatus } from '../../input-field/inputField'
 import { MbInputAccount } from '../InputAccount'
 
-export const MbSplitsInput = ({
+export const MbNearAmountAccount = ({
   subtitle,
   smallSubtitle,
   defaultState,
@@ -233,7 +233,7 @@ export const MbSplitsInput = ({
 
                 if (editable) {
                   return (
-                    <AmountAccountInput
+                    <MbAmountAccountInput
                       key={id}
                       id={id}
                       validateAccount={validateAccount}

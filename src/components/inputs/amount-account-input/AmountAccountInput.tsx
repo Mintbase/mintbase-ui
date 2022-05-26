@@ -4,7 +4,7 @@ import { ESize, EIconName } from '../../../consts'
 import { MbIcon } from '../../icon/Icon'
 import { MbInput, EControlStatus } from '../input-field/inputField'
 
-export const AmountAccountInput = ({
+export const MbAmountAccountInput = ({
   id,
   validateAccount,
   validateAmount,

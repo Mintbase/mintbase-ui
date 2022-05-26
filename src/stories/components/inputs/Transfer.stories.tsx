@@ -1,19 +1,19 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import React from 'react'
-import { EControlStatus, MbInfoCard, MbSplitsInput } from '../../../components'
+import { MbNearAmountAccount } from '../../..'
 
 export default {
   title: 'Components/Inputs',
-  component: MbSplitsInput,
+  component: MbNearAmountAccount,
   argTypes: {},
-} as ComponentMeta<typeof MbSplitsInput>
+} as ComponentMeta<typeof MbNearAmountAccount>
 
-const Template: ComponentStory<typeof MbSplitsInput> = (args) => (
-  <MbSplitsInput {...args} />
+const Template: ComponentStory<typeof MbNearAmountAccount> = (args) => (
+  <MbNearAmountAccount {...args} />
 )
 
-export const Transfer = Template.bind({})
-Transfer.args = {
+export const TransferList = Template.bind({})
+TransferList.args = {
   transferTemplate: { available: 5 },
   totalAmount: 12,
   subtitle: 'Airdrop to multiple accounts',
