@@ -407,6 +407,53 @@ declare type TColor = {
     hex: string;
 };
 
+interface ToggleProps extends React.InputHTMLAttributes<HTMLInputElement> {
+    label?: string;
+}
+
+declare type TInputState = {
+    amount: {
+        value: number;
+        valid: boolean;
+    };
+    account: {
+        value: string;
+        valid: boolean;
+    };
+    editable: boolean;
+    cleared: boolean;
+};
+
+declare const MbNearAmountAccount: ({ subtitle, smallSubtitle, defaultState, accountExists, defaultAccountsCounter, saveButton, isPercentage, sendFinalState, totalAmount, transferTemplate, }: {
+    subtitle: string;
+    smallSubtitle: string;
+    defaultState: Record<string, TInputState>;
+    accountExists: (account: string) => Promise<boolean>;
+    defaultAccountsCounter: number;
+    saveButton?: {
+        text: string;
+        save: () => void;
+    } | undefined;
+    isPercentage?: boolean | undefined;
+    sendFinalState?: ((state: Record<string, TInputState>) => void) | undefined;
+    totalAmount: number;
+    transferTemplate: {
+        available: number;
+    };
+}) => JSX.Element;
+
+declare const MbAmountAccountInput: ({ id, validateAccount, validateAmount, handleChangeAmount, handleChangeAccount, handleAddNewItem, handleRemoveItem, isPercentage, isCleared, }: {
+    id: string;
+    validateAmount: (id: any, amount: number) => boolean;
+    validateAccount: (id: any, value: string) => Promise<boolean>;
+    handleChangeAmount: (id: string, amount: number) => void;
+    handleChangeAccount: (id: string, account: string) => Promise<void>;
+    handleAddNewItem: () => void;
+    handleRemoveItem: (id: string) => void;
+    isPercentage?: boolean | undefined;
+    isCleared?: boolean | undefined;
+}) => JSX.Element;
+
 declare const colorsArray: TColorDetail[];
 
 declare const getFontType: (size: string) => "p-big-90" | "p-med-90" | "p-small-90";
@@ -419,10 +466,6 @@ declare const THREED_TYPES: string[];
 declare const FILE_TYPES: string[];
 declare const ALL_TYPES: string[];
 
-interface ToggleProps extends React.InputHTMLAttributes<HTMLInputElement> {
-    label?: string;
-}
-
 declare enum ScreenBreakpoint {
     SM = "sm",
     MD = "md",
@@ -433,4 +476,4 @@ declare type TScreenBreakpoint = ScreenBreakpoint.LG | ScreenBreakpoint.MD | Scr
 declare const getBreakpointValue: (value: ScreenBreakpoint) => number;
 declare const getCurrentBreakpoint: () => TScreenBreakpoint;
 
-export { ALL_TYPES, AUDIO_TYPES, EControlStatus, EIconName, ESize, ESmallCardType, EState, EType, FILE_TYPES, IMAGE_TYPES, Item, MbAccordion, MbAction, MbAmountInput, MbAudioPlayer, MbBody, MbButton, MbCheckbox, MbChip, MbColorIndicator, MbDropdownMenu, MbHead, MbIcon, MbInfoCard, MbInput, MbInputAccount, MbInputSelect, MbInputTags, MbItemsPerPage, MbLogo, MbMediaImport, MbMenuWrapper, MbModal, MbModelPlayer, MbNetworkMenu, MbPagination, MbRadioButton, MbSmallCard, MbStatefulButton, MbSwitch, MbTab, MbTable, MbTabs, MbText, MbTextArea, MbThingCard, MbTooltip, MbVideoPlayer, ScreenBreakpoint, TColor, TColorDetail, THREED_TYPES, TInfoCard, TNetworkOption, TScreenBreakpoint, TSmallCard, TThingCard, ToggleProps, VIDEO_TYPES, colorsArray, getBreakpointValue, getCurrentBreakpoint, getFontType, getInputLabelFontType };
+export { ALL_TYPES, AUDIO_TYPES, EControlStatus, EIconName, ESize, ESmallCardType, EState, EType, FILE_TYPES, IMAGE_TYPES, Item, MbAccordion, MbAction, MbAmountAccountInput, MbAmountInput, MbAudioPlayer, MbBody, MbButton, MbCheckbox, MbChip, MbColorIndicator, MbDropdownMenu, MbHead, MbIcon, MbInfoCard, MbInput, MbInputAccount, MbInputSelect, MbInputTags, MbItemsPerPage, MbLogo, MbMediaImport, MbMenuWrapper, MbModal, MbModelPlayer, MbNearAmountAccount, MbNetworkMenu, MbPagination, MbRadioButton, MbSmallCard, MbStatefulButton, MbSwitch, MbTab, MbTable, MbTabs, MbText, MbTextArea, MbThingCard, MbTooltip, MbVideoPlayer, ScreenBreakpoint, TColor, TColorDetail, THREED_TYPES, TInfoCard, TInputState, TNetworkOption, TScreenBreakpoint, TSmallCard, TThingCard, ToggleProps, VIDEO_TYPES, colorsArray, getBreakpointValue, getCurrentBreakpoint, getFontType, getInputLabelFontType };
