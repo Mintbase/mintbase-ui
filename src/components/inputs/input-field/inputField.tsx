@@ -76,6 +76,10 @@ export const MbInput = forwardRef<HTMLInputElement, InputProps>(
               value={value}
               required={required}
               className={`input-field ${getFontType(inputSize)}`}
+              onWheel={(e) => {
+                if (type !== 'number') return
+                e.currentTarget.blur()
+              }}
               {...restProps}
             />
             {hasPercentageLabel && (
