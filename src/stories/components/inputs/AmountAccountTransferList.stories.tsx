@@ -18,7 +18,6 @@ AmountAccountTransferList.args = {
   totalAmount: 12,
   subtitle: 'Airdrop to multiple accounts',
   smallSubtitle: 'Amount of tokens and recipient account',
-  isPercentage: true,
   saveButton: {
     text: 'Save',
     save: () => console.log('saved'),
