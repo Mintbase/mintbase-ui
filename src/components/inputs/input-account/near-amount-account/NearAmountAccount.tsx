@@ -181,11 +181,18 @@ export const MbNearAmountAccount = ({
   }
 
   const reset = () => {
-    setState({
-      ...defaultState,
-      ...addFieldsToState(0),
-    })
-    setUsed(initialUsedAmount)
+    if (isStoreSettings) {
+      setState({
+        ...addFieldsToState(0),
+      })
+    } else {
+      setState({
+        ...defaultState,
+        ...addFieldsToState(0),
+      })
+    }
+
+    setUsed(isStoreSettings ? 0 : initialUsedAmount)
     Object.keys(state).forEach((id) => {
       const amountInput = document.getElementById(
         `amount-${id}`
@@ -274,6 +281,7 @@ export const MbNearAmountAccount = ({
                     >
                       <div className="w-24">
                         <MbInput
+                          id={`amount-${id}`}
                           type="number"
                           placeholder={'1'}
                           inputSize={ESize.BIG}
@@ -284,6 +292,7 @@ export const MbNearAmountAccount = ({
                         />
                       </div>
                       <MbInput
+                        id={`account-${id}`}
                         type="text"
                         hasIcon={false}
                         placeholder={'account.near'}
