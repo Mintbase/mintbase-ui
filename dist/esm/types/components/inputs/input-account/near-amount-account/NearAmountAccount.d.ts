@@ -1,11 +1,12 @@
 /// <reference types="react" />
 import { TInputState } from '../../../../types';
-export declare const MbNearAmountAccount: ({ subtitle, smallSubtitle, defaultState, accountExists, defaultAccountsCounter, saveButton, isPercentage, sendFinalState, isValidInfo, totalAmount, transferTemplate, }: {
+export declare const MbNearAmountAccount: ({ subtitle, smallSubtitle, defaultState, accountExists, defaultAccountsCounter, initialUsedAmount, saveButton, isPercentage, sendFinalState, isValidInfo, totalAmount, transferTemplate, }: {
     subtitle: string;
     smallSubtitle: string;
     defaultState: Record<string, TInputState>;
     accountExists: (account: string) => Promise<boolean>;
     defaultAccountsCounter: number;
+    initialUsedAmount?: number | undefined;
     saveButton?: {
         text: string;
         save: () => void;
