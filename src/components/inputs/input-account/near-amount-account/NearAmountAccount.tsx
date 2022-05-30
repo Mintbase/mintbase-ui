@@ -134,7 +134,7 @@ export const MbNearAmountAccount = ({
     newState[id].amount.value = amount
     newState[id].cleared = false
     setState(newState)
-    if (newState[id].amount.valid) {
+    if (newState[id].amount.valid || newState[id].amount.value === 0) {
       setUsed(sumStateAmounts(newState))
     }
   }
