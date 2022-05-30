@@ -424,7 +424,7 @@ declare type TInputState = {
     cleared: boolean;
 };
 
-declare const MbNearAmountAccount: ({ subtitle, smallSubtitle, defaultState, accountExists, defaultAccountsCounter, saveButton, isPercentage, sendFinalState, totalAmount, transferTemplate, }: {
+declare const MbNearAmountAccount: ({ subtitle, smallSubtitle, defaultState, accountExists, defaultAccountsCounter, saveButton, isPercentage, sendFinalState, isValidInfo, totalAmount, transferTemplate, }: {
     subtitle: string;
     smallSubtitle: string;
     defaultState: Record<string, TInputState>;
@@ -436,10 +436,11 @@ declare const MbNearAmountAccount: ({ subtitle, smallSubtitle, defaultState, acc
     } | undefined;
     isPercentage?: boolean | undefined;
     sendFinalState?: ((state: Record<string, TInputState>) => void) | undefined;
+    isValidInfo?: ((valid: boolean) => void) | undefined;
     totalAmount: number;
-    transferTemplate: {
+    transferTemplate?: {
         available: number;
-    };
+    } | undefined;
 }) => JSX.Element;
 
 declare const MbAmountAccountInput: ({ id, validateAccount, validateAmount, handleChangeAmount, handleChangeAccount, handleAddNewItem, handleRemoveItem, isPercentage, isCleared, }: {
