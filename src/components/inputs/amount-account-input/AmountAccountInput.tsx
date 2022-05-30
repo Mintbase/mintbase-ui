@@ -1,6 +1,6 @@
 import { debounce } from 'lodash'
 import { useEffect, useState } from 'react'
-import { ESize, EIconName } from '../../../consts'
+import { ESize, EIconName, EState } from '../../../consts'
 import { MbIcon } from '../../icon/Icon'
 import { MbInput, EControlStatus } from '../input-field/inputField'
 
@@ -67,7 +67,7 @@ export const MbAmountAccountInput = ({
       <MbInput
         type="text"
         id={`account-${id}`}
-        hasIcon={false}
+        hasIcon={!(isCleared || !account)}
         placeholder={'account.near'}
         inputSize={ESize.BIG}
         controlStatus={
