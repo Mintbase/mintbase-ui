@@ -24,6 +24,8 @@ export const MbNearAmountAccount = ({
   isValidInfo,
   totalAmount = 100,
   transferTemplate,
+  isStoreSettings,
+  removeFromSettings,
 }: {
   subtitle: string
   smallSubtitle: string
@@ -42,6 +44,8 @@ export const MbNearAmountAccount = ({
   transferTemplate?: {
     available: number
   }
+  isStoreSettings?: boolean
+  removeFromSettings?: (id: string) => void
 }) => {
   const [used, setUsed] = useState<number>(0)
   const [state, setState] = useState<Record<string, TInputState>>({})
@@ -69,7 +73,7 @@ export const MbNearAmountAccount = ({
             value: 0,
             valid: false,
           },
-          editable: true,
+          editable: false,
           cleared: false,
         },
       }
@@ -99,14 +103,17 @@ export const MbNearAmountAccount = ({
   }
 
   const sumStateAmounts = (state: Record<string, TInputState>) => {
-    return Object.values(state)
-      .filter((elm) => elm.amount.valid)
-      .reduce((prev, curr) => {
-        if (curr.amount.valid) {
-          return curr.amount.value + prev
-        }
-        return 0
-      }, 0)
+    return (
+      initialUsedAmount +
+      Object.values(state)
+        .filter((elm) => elm.amount.valid)
+        .reduce((prev, curr) => {
+          if (curr.amount.valid) {
+            return curr.amount.value + prev
+          }
+          return 0
+        }, 0)
+    )
   }
 
   const handleRemoveItem = (id: string) => {
@@ -120,6 +127,10 @@ export const MbNearAmountAccount = ({
     setState(newState)
     ;(document.getElementById(`amount-${id}`) as HTMLInputElement).value = ''
     ;(document.getElementById(`account-${id}`) as HTMLInputElement).value = ''
+
+    if (isStoreSettings && removeFromSettings) {
+      removeFromSettings(id)
+    }
   }
   const handleChangeAmount = (id: string, amount: number) => {
     const newState = { ...state }
@@ -284,14 +295,21 @@ export const MbNearAmountAccount = ({
                         controlStatus={EControlStatus.NORMAL}
                         value={account.value}
                       />
-                      <div className="invisible">
-                        <MbIcon
-                          name={EIconName.DELETE}
-                          size="24px"
-                          color="blue-300"
-                          darkColor="blue-100"
-                        />
-                      </div>
+                      {isStoreSettings && (
+                        <div
+                          className={`cursor-pointer`}
+                          onClick={() => {
+                            handleRemoveItem(id)
+                          }}
+                        >
+                          <MbIcon
+                            name={EIconName.DELETE}
+                            size="24px"
+                            color="blue-300"
+                            darkColor="blue-100"
+                          />
+                        </div>
+                      )}
                     </div>
                   )
                 }
