@@ -17,6 +17,7 @@ export const MbNearAmountAccount = ({
   defaultState,
   accountExists,
   defaultAccountsCounter = 0,
+  initialUsedAmount = 0,
   saveButton,
   isPercentage,
   sendFinalState,
@@ -29,6 +30,7 @@ export const MbNearAmountAccount = ({
   defaultState: Record<string, TInputState>
   accountExists: (account: string) => Promise<boolean>
   defaultAccountsCounter: number
+  initialUsedAmount?: number
   saveButton?: {
     text: string
     save: () => void
@@ -175,7 +177,7 @@ export const MbNearAmountAccount = ({
       ...defaultState,
       ...addFieldsToState(0),
     })
-    setUsed(0)
+    setUsed(initialUsedAmount)
     Object.keys(state).forEach((id) => {
       const amountInput = document.getElementById(
         `amount-${id}`
