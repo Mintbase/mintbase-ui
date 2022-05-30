@@ -20,6 +20,7 @@ export const MbNearAmountAccount = ({
   saveButton,
   isPercentage,
   sendFinalState,
+  isValidInfo,
   totalAmount = 100,
   transferTemplate,
 }: {
@@ -34,8 +35,9 @@ export const MbNearAmountAccount = ({
   }
   isPercentage?: boolean
   sendFinalState?: (state: Record<string, TInputState>) => void
+  isValidInfo?: (valid: boolean) => void
   totalAmount: number
-  transferTemplate: {
+  transferTemplate?: {
     available: number
   }
 }) => {
@@ -195,15 +197,19 @@ export const MbNearAmountAccount = ({
       ).length > 0
     )
     const filterState = Object.keys(state).filter(
-      (key) => state[key].account.value && state[key].amount.value
+      (key) =>
+        state[key].account.value &&
+        state[key].account.valid &&
+        state[key].amount.value &&
+        state[key].amount.valid
     )
-    const isValidForm =
-      filterState.length > 0
-        ? filterState.every((key) => {
-            return state[key].amount.valid
-          })
-        : false
+    const isValidForm = filterState.length > 0
+
     setValid(isValidForm)
+
+    if (isValidInfo) {
+      isValidInfo(isValidForm)
+    }
 
     if (isValidForm && sendFinalState) {
       sendFinalState(state)
