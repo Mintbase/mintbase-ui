@@ -103,17 +103,14 @@ export const MbNearAmountAccount = ({
   }
 
   const sumStateAmounts = (state: Record<string, TInputState>) => {
-    return (
-      initialUsedAmount +
-      Object.values(state)
-        .filter((elm) => elm.amount.valid)
-        .reduce((prev, curr) => {
-          if (curr.amount.valid) {
-            return curr.amount.value + prev
-          }
-          return 0
-        }, 0)
-    )
+    return Object.values(state)
+      .filter((elm) => elm.amount.valid)
+      .reduce((prev, curr) => {
+        if (curr.amount.valid) {
+          return curr.amount.value + prev
+        }
+        return 0
+      }, 0)
   }
 
   const handleRemoveItem = (id: string) => {
@@ -123,7 +120,7 @@ export const MbNearAmountAccount = ({
     newState[id].amount.valid = false
     newState[id].account.valid = false
     newState[id].cleared = true
-    setUsed(sumStateAmounts(newState))
+    setUsed(initialUsedAmount + sumStateAmounts(newState))
     setState(newState)
     ;(document.getElementById(`amount-${id}`) as HTMLInputElement).value = ''
     ;(document.getElementById(`account-${id}`) as HTMLInputElement).value = ''
