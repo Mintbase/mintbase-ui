@@ -199,13 +199,12 @@ export const MbNearAmountAccount = ({
       ).length > 0
     )
     const filterState = Object.keys(state).filter(
-      (key) =>
-        state[key].account.value &&
-        state[key].account.valid &&
-        state[key].amount.value &&
-        state[key].amount.valid
+      (key) => state[key].account.value && state[key].amount.value
     )
-    const isValidForm = filterState.length > 0
+    const isValidForm =
+      filterState.filter(
+        (key) => state[key].amount.valid && state[key].account.valid
+      ).length === filterState.length
 
     setValid(isValidForm)
 
