@@ -67,7 +67,7 @@ export const MbAmountAccountInput = ({
       <MbInput
         type="text"
         id={`account-${id}`}
-        hasIcon={isCleared || !account ? false : true}
+        hasIcon={!(isCleared || !account)}
         placeholder={'account.near'}
         inputSize={ESize.BIG}
         controlStatus={
