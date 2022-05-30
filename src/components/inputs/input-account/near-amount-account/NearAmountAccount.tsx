@@ -120,6 +120,7 @@ export const MbNearAmountAccount = ({
     newState[id].amount.valid = false
     newState[id].account.valid = false
     newState[id].cleared = true
+    newState[id].editable = true
     setUsed(sumStateAmounts(newState))
     setState(newState)
     ;(document.getElementById(`amount-${id}`) as HTMLInputElement).value = ''
