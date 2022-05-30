@@ -133,9 +133,9 @@ export const MbNearAmountAccount = ({
   const handleChangeAmount = (id: string, amount: number) => {
     const newState = { ...state }
     newState[id].amount.value = amount
-    newState[id].cleared = false
+    newState[id].cleared = amount === 0
     setState(newState)
-    if (newState[id].amount.valid) {
+    if (newState[id].amount.valid || newState[id].cleared) {
       setUsed(sumStateAmounts(newState))
     }
   }
