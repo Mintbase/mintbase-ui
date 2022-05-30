@@ -21,4 +21,5 @@ AmountAccountSplitsList.args = {
   accountExists: () => {
     return true
   },
+  initialUsedAmount: 50,
 }

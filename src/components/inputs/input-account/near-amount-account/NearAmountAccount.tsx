@@ -43,7 +43,7 @@ export const MbNearAmountAccount = ({
     available: number
   }
 }) => {
-  const [used, setUsed] = useState<number>(0)
+  const [used, setUsed] = useState<number>(initialUsedAmount)
   const [state, setState] = useState<Record<string, TInputState>>({})
   const [isValid, setValid] = useState(false)
   const [hasFilledFields, setHasFilledFields] = useState(false)
