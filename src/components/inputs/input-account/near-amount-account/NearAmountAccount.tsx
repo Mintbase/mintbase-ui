@@ -73,7 +73,7 @@ export const MbNearAmountAccount = ({
             value: 0,
             valid: false,
           },
-          editable: false,
+          editable: true,
           cleared: false,
         },
       }
