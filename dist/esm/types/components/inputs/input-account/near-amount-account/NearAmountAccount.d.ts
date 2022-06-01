@@ -1,6 +1,6 @@
 /// <reference types="react" />
 import { TInputState } from '../../../../types';
-export declare const MbNearAmountAccount: ({ subtitle, smallSubtitle, defaultState, accountExists, defaultAccountsCounter, initialUsedAmount, saveButton, isPercentage, sendFinalState, isValidInfo, totalAmount, transferTemplate, isStoreSettings, removeFromSettings, }: {
+export declare const MbNearAmountAccount: ({ subtitle, smallSubtitle, defaultState, accountExists, defaultAccountsCounter, initialUsedAmount, saveButton, isPercentage, sendFinalState, isValidInfo, totalAmount, transferTemplate, isStoreSettings, }: {
     subtitle: string;
     smallSubtitle: string;
     defaultState: Record<string, TInputState>;
@@ -19,5 +19,4 @@ export declare const MbNearAmountAccount: ({ subtitle, smallSubtitle, defaultSta
         available: number;
     } | undefined;
     isStoreSettings?: boolean | undefined;
-    removeFromSettings?: ((id: string) => void) | undefined;
 }) => JSX.Element;
