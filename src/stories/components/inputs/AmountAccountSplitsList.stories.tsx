@@ -28,6 +28,7 @@ AmountAccountSplitsList.args = {
       return true
     },
   },
+  defaultAccountsCounter: 1,
   isStoreSettings: false,
   initialUsedAmount: 12,
   defaultState: {

@@ -227,8 +227,7 @@ export const MbNearAmountAccount = ({
 
     const filterState = Object.keys(state).filter(
       (key) =>
-        state[key].account.value &&
-        state[key].amount.value &&
+        (state[key].account.value || state[key].amount.value) &&
         state[key].editable
     )
 
