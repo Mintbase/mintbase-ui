@@ -331,7 +331,6 @@ interface MediaImportProps {
     isHeaderImage?: boolean;
     acceptedFormats: string[];
     idealDimensions: string;
-    maxSize: number;
     uploadedFile: File;
     placeholderImageURL?: string;
     handleFileAdd: (file: File) => void;
