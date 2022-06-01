@@ -15,7 +15,6 @@ const Template: ComponentStory<typeof MbMediaImport> = (args) => {
   const maxSize = 5
 
   const uploadFile = (file: File) => {
-    console.log('fileE:0', file)
     setFileUploaded(file)
   }
 
