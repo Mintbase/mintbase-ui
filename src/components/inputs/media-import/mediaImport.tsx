@@ -5,8 +5,6 @@ import { ALL_TYPES, IMAGE_TYPES } from '../../../consts/fileFormats'
 import { isMobile } from '../../../consts/mobile'
 import AcceptedFormats from './acceptedFormats'
 import { iconType, modelsHandler } from './fileFunctions'
-
-const DEFAULT_MAX_FILE_SIZE_MB = 500
 interface MediaImportProps {
   isProfileImage?: boolean
   isHeaderImage?: boolean
@@ -36,7 +34,7 @@ export const MbMediaImport = (props: MediaImportProps) => {
     placeholderImageURL,
     handleFileAdd,
     handleFileRemove,
-    maxFileSize = DEFAULT_MAX_FILE_SIZE_MB,
+    maxFileSize = 5,
   } = props
 
   const [imageUrl, setImageUrl] = useState<any>('')
