@@ -34,7 +34,7 @@ export const MbNearAmountAccount = ({
   initialUsedAmount?: number
   saveButton?: {
     text: string
-    save: () => void
+    save: () => boolean
   }
   isPercentage?: boolean
   sendFinalState?: (state: Record<string, TInputState>) => void
@@ -50,6 +50,8 @@ export const MbNearAmountAccount = ({
   const [isValid, setValid] = useState(false)
   const [removedDefaultField, setRemovedDefaultField] = useState(false)
   const [hasFilledFields, setHasFilledFields] = useState(false)
+  const [isSaved, setIsSaved] = useState(false)
+  const [allCleared, setAllCleared] = useState(false)
 
   const addFieldsToState = (defaultAmount = 0) => {
     let auxState: Record<string, TInputState> = {}
@@ -131,10 +133,14 @@ export const MbNearAmountAccount = ({
     }
   }
   const handleChangeAmount = (id: string, amount: number) => {
+    setAllCleared(false)
     const newState = { ...state }
     newState[id].amount.value = amount
     newState[id].cleared = amount === 0
     setState(newState)
+    if (isStoreSettings && Object.keys(defaultState).includes(id)) {
+      setRemovedDefaultField(false)
+    }
     if (newState[id].amount.valid || newState[id].cleared) {
       setUsed(sumStateAmounts(newState))
     }
@@ -145,6 +151,11 @@ export const MbNearAmountAccount = ({
     newState[id].account.value = account
     newState[id].cleared = false
     setState(newState)
+    setAllCleared(false)
+
+    if (isStoreSettings && Object.keys(defaultState).includes(id)) {
+      setRemovedDefaultField(false)
+    }
   }
 
   const validateAmountById = (id: string, valid: boolean) => {
@@ -201,20 +212,25 @@ export const MbNearAmountAccount = ({
       accountInput.value = ''
       state[id].cleared = true
     })
+    setAllCleared(true)
   }
 
   useEffect(() => {
     setHasFilledFields(
       Object.keys(state).filter(
-        (key) => state[key].account.value || state[key].amount.value
+        (key) =>
+          state[key].editable &&
+          (state[key].account.value || state[key].amount.value)
       ).length > 0
     )
+    setIsSaved(false)
+
     const filterState = Object.keys(state).filter(
       (key) =>
-        state[key].account.value &&
-        state[key].amount.value &&
+        (state[key].account.value || state[key].amount.value) &&
         state[key].editable
     )
+
     const isValidForm =
       filterState.length > 0 &&
       filterState.filter(
@@ -225,6 +241,7 @@ export const MbNearAmountAccount = ({
       ).length === filterState.length
 
     const isFinalValid = isValidForm || removedDefaultField
+
     setValid(isFinalValid)
 
     if (isValidInfo) {
@@ -364,10 +381,14 @@ export const MbNearAmountAccount = ({
             </div>
             <div className="flex items-center justify-center md:justify-end gap-24">
               <MbAction
-                state={hasFilledFields ? EState.ACTIVE : EState.DISABLED}
+                state={
+                  hasFilledFields && !allCleared
+                    ? EState.ACTIVE
+                    : EState.DISABLED
+                }
                 onClick={(e) => {
                   e.preventDefault()
-                  if (!hasFilledFields) return
+                  if (!hasFilledFields && allCleared) return
                   reset()
                 }}
               >
@@ -378,8 +399,18 @@ export const MbNearAmountAccount = ({
                   btnType={EType.PRIMARY}
                   label={saveButton.text}
                   size={ESize.MEDIUM}
-                  state={isValid ? EState.ACTIVE : EState.DISABLED}
-                  onClick={saveButton.save}
+                  state={
+                    isValid
+                      ? isSaved
+                        ? EState.DISABLED
+                        : EState.ACTIVE
+                      : EState.DISABLED
+                  }
+                  onClick={() => {
+                    if (!isValid || isSaved) return
+                    setRemovedDefaultField(false)
+                    setIsSaved(saveButton.save)
+                  }}
                   disabled={!isValid}
                 />
               )}
