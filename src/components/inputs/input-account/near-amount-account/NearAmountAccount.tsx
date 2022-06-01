@@ -125,11 +125,10 @@ export const MbNearAmountAccount = ({
     setRemovedDefaultField(false)
     ;(document.getElementById(`amount-${id}`) as HTMLInputElement).value = ''
     ;(document.getElementById(`account-${id}`) as HTMLInputElement).value = ''
-    
+
     if (isStoreSettings && Object.keys(defaultState).includes(id)) {
       setRemovedDefaultField(true)
     }
-
   }
   const handleChangeAmount = (id: string, amount: number) => {
     const newState = { ...state }
