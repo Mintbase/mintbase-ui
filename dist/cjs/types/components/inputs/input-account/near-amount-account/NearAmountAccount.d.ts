@@ -9,7 +9,7 @@ export declare const MbNearAmountAccount: ({ subtitle, smallSubtitle, defaultSta
     initialUsedAmount?: number | undefined;
     saveButton?: {
         text: string;
-        save: () => void;
+        save: () => boolean;
     } | undefined;
     isPercentage?: boolean | undefined;
     sendFinalState?: ((state: Record<string, TInputState>) => void) | undefined;

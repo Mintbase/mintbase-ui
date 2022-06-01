@@ -432,7 +432,7 @@ declare const MbNearAmountAccount: ({ subtitle, smallSubtitle, defaultState, acc
     initialUsedAmount?: number | undefined;
     saveButton?: {
         text: string;
-        save: () => void;
+        save: () => boolean;
     } | undefined;
     isPercentage?: boolean | undefined;
     sendFinalState?: ((state: Record<string, TInputState>) => void) | undefined;
