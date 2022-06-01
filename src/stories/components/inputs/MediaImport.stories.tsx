@@ -12,8 +12,6 @@ export default {
 const Template: ComponentStory<typeof MbMediaImport> = (args) => {
   const [fileUploaded, setFileUploaded] = useState<File>()
 
-  const maxSize = 5
-
   const uploadFile = (file: File) => {
     setFileUploaded(file)
   }
@@ -27,7 +25,6 @@ const Template: ComponentStory<typeof MbMediaImport> = (args) => {
       isProfileImage
       uploadedFile={fileUploaded}
       idealDimensions="500x500px"
-      maxSize={maxSize}
       handleFileAdd={uploadFile}
       handleFileRemove={removeFile}
       {...args}
@@ -38,4 +35,5 @@ const Template: ComponentStory<typeof MbMediaImport> = (args) => {
 export const MediaImport = Template.bind({})
 MediaImport.args = {
   acceptedFormats: ALL_TYPES,
+  maxFileSize: 5,
 }
