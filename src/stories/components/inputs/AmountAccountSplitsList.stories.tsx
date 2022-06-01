@@ -23,8 +23,12 @@ AmountAccountSplitsList.args = {
   },
   saveButton: {
     text: 'Save',
-    save: () => console.log('saved'),
+    save: () => {
+      console.log('saved')
+      return true
+    },
   },
+  defaultAccountsCounter: 1,
   isStoreSettings: false,
   initialUsedAmount: 12,
   defaultState: {
