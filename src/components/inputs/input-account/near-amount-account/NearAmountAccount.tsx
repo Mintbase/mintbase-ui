@@ -48,6 +48,7 @@ export const MbNearAmountAccount = ({
   const [used, setUsed] = useState<number>(0)
   const [state, setState] = useState<Record<string, TInputState>>({})
   const [isValid, setValid] = useState(false)
+  const [removedDefaultField, setRemovedDefaultField] = useState(false)
   const [hasFilledFields, setHasFilledFields] = useState(false)
 
   const addFieldsToState = (defaultAmount = 0) => {
@@ -121,8 +122,13 @@ export const MbNearAmountAccount = ({
     newState[id].editable = true
     setUsed(sumStateAmounts(newState))
     setState(newState)
+    setRemovedDefaultField(false)
     ;(document.getElementById(`amount-${id}`) as HTMLInputElement).value = ''
     ;(document.getElementById(`account-${id}`) as HTMLInputElement).value = ''
+
+    if (isStoreSettings && Object.keys(defaultState).includes(id)) {
+      setRemovedDefaultField(true)
+    }
   }
   const handleChangeAmount = (id: string, amount: number) => {
     const newState = { ...state }
@@ -204,20 +210,28 @@ export const MbNearAmountAccount = ({
       ).length > 0
     )
     const filterState = Object.keys(state).filter(
-      (key) => state[key].account.value && state[key].amount.value
+      (key) =>
+        state[key].account.value &&
+        state[key].amount.value &&
+        state[key].editable
     )
     const isValidForm =
+      filterState.length > 0 &&
       filterState.filter(
-        (key) => state[key].amount.valid && state[key].account.valid
+        (key) =>
+          state[key].amount.valid &&
+          state[key].account.valid &&
+          state[key].editable
       ).length === filterState.length
 
-    setValid(isValidForm)
+    const isFinalValid = isValidForm || removedDefaultField
+    setValid(isFinalValid)
 
     if (isValidInfo) {
-      isValidInfo(isValidForm)
+      isValidInfo(isFinalValid)
     }
 
-    if (isValidForm && sendFinalState) {
+    if (isFinalValid && sendFinalState) {
       sendFinalState(state)
     }
   }, [state])
