@@ -25,7 +25,6 @@ export const MbNearAmountAccount = ({
   totalAmount = 100,
   transferTemplate,
   isStoreSettings,
-  removeFromSettings,
 }: {
   subtitle: string
   smallSubtitle: string
@@ -45,7 +44,6 @@ export const MbNearAmountAccount = ({
     available: number
   }
   isStoreSettings?: boolean
-  removeFromSettings?: (id: string) => void
 }) => {
   const [used, setUsed] = useState<number>(0)
   const [state, setState] = useState<Record<string, TInputState>>({})
@@ -125,10 +123,6 @@ export const MbNearAmountAccount = ({
     setState(newState)
     ;(document.getElementById(`amount-${id}`) as HTMLInputElement).value = ''
     ;(document.getElementById(`account-${id}`) as HTMLInputElement).value = ''
-
-    if (isStoreSettings && removeFromSettings) {
-      removeFromSettings(id)
-    }
   }
   const handleChangeAmount = (id: string, amount: number) => {
     const newState = { ...state }
