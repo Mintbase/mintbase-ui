@@ -223,7 +223,6 @@ export const MbNearAmountAccount = ({
           (state[key].account.value || state[key].amount.value)
       ).length > 0
     )
-    console.log(hasFilledFields)
     setIsSaved(false)
 
     const filterState = Object.keys(state).filter(
@@ -233,7 +232,6 @@ export const MbNearAmountAccount = ({
         state[key].editable
     )
 
-    console.log(filterState)
     const isValidForm =
       filterState.length > 0 &&
       filterState.filter(
@@ -244,8 +242,6 @@ export const MbNearAmountAccount = ({
       ).length === filterState.length
 
     const isFinalValid = isValidForm || removedDefaultField
-
-    console.log(isValidForm, removedDefaultField)
 
     setValid(isFinalValid)
 
