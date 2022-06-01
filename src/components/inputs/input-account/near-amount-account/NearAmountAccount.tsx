@@ -25,7 +25,6 @@ export const MbNearAmountAccount = ({
   totalAmount = 100,
   transferTemplate,
   isStoreSettings,
-  removeFromSettings,
 }: {
   subtitle: string
   smallSubtitle: string
@@ -45,7 +44,6 @@ export const MbNearAmountAccount = ({
     available: number
   }
   isStoreSettings?: boolean
-  removeFromSettings?: (id: string) => void
 }) => {
   const [used, setUsed] = useState<number>(0)
   const [state, setState] = useState<Record<string, TInputState>>({})
@@ -127,14 +125,11 @@ export const MbNearAmountAccount = ({
     setRemovedDefaultField(false)
     ;(document.getElementById(`amount-${id}`) as HTMLInputElement).value = ''
     ;(document.getElementById(`account-${id}`) as HTMLInputElement).value = ''
-
+    
     if (isStoreSettings && Object.keys(defaultState).includes(id)) {
       setRemovedDefaultField(true)
     }
 
-    if (isStoreSettings && removeFromSettings) {
-      removeFromSettings(id)
-    }
   }
   const handleChangeAmount = (id: string, amount: number) => {
     const newState = { ...state }
@@ -188,18 +183,13 @@ export const MbNearAmountAccount = ({
   }
 
   const reset = () => {
-    if (isStoreSettings) {
-      setState({
-        ...addFieldsToState(0),
-      })
-    } else {
-      setState({
-        ...defaultState,
-        ...addFieldsToState(0),
-      })
+    const newState = {
+      ...defaultState,
+      ...addFieldsToState(0),
     }
+    setState(newState)
 
-    setUsed(isStoreSettings ? 0 : initialUsedAmount)
+    setUsed(sumStateAmounts(newState))
     Object.keys(state).forEach((id) => {
       const amountInput = document.getElementById(
         `amount-${id}`
