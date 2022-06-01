@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { MbIcon } from '../..'
 import { EIconName } from '../../..'
-import { IMAGE_TYPES } from '../../../consts/fileFormats'
+import { ALL_TYPES, IMAGE_TYPES } from '../../../consts/fileFormats'
 import { isMobile } from '../../../consts/mobile'
 import AcceptedFormats from './acceptedFormats'
-import { iconType } from './fileFunctions'
+import { iconType, modelsHandler } from './fileFunctions'
 
 const DEFAULT_MAX_FILE_SIZE_MB = 500
 interface MediaImportProps {
@@ -15,7 +15,6 @@ interface MediaImportProps {
   maxSize: number
   uploadedFile: File
   placeholderImageURL?: string
-  errorMessage?: string
   handleFileAdd: (file: File) => void
   handleFileRemove: () => void
   maxFileSize?: number
@@ -30,19 +29,20 @@ export const MbMediaImport = (props: MediaImportProps) => {
   const {
     isProfileImage,
     isHeaderImage,
-    acceptedFormats,
     idealDimensions,
+    acceptedFormats,
     maxSize,
     uploadedFile,
     placeholderImageURL,
-    errorMessage,
     handleFileAdd,
     handleFileRemove,
     maxFileSize = DEFAULT_MAX_FILE_SIZE_MB,
   } = props
-  
+
   const [imageUrl, setImageUrl] = useState<any>('')
-  const [internalErrorMessage, setInternalErrorMessage] = useState<string | null>(null)
+  const [internalErrorMessage, setInternalErrorMessage] = useState<
+    string | null
+  >(null)
 
   const dragRef = useRef(0)
   const [dragOverlay, setDragOverlay] = useState(false)
@@ -79,22 +79,29 @@ export const MbMediaImport = (props: MediaImportProps) => {
   }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const handleFileChange = (e: any) => {
+  const handleFileChange = async (e: any) => {
     if (!(e?.target?.files.length > 0)) return
     const file = e.target.files[0]
     setInternalErrorMessage(null)
-    
+
+    const tFile = await modelsHandler(file)
+    const correctFile = acceptedFormats.find((item) => item === tFile.type)
+
     // validate file size and accepted formats
     const { size } = file
-    if (size / 1024 / 1024 > maxFileSize) {
+
+    if (correctFile) {
+      if (size / 1024 / 1024 <= maxFileSize) {
+        console.log(tFile)
+        handleFileAdd(tFile)
+      } else {
         setInternalErrorMessage(`This file exceeds ${maxFileSize}mb`)
         return
-    }
-    if (!acceptedFormats.includes(file.type)) {
+      }
+    } else {
       setInternalErrorMessage('This media type is not accepted')
       return
     }
-    handleFileAdd(file)
   }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -109,12 +116,9 @@ export const MbMediaImport = (props: MediaImportProps) => {
     }
   }, [uploadedFile])
 
-
-  const displayErrorMessage = errorMessage || internalErrorMessage
-
   return (
     <>
-      {(placeholderImageURL && !uploadedFile) && (
+      {placeholderImageURL && !uploadedFile && (
         <>
           <div className="pb-12">
             <div
@@ -131,7 +135,10 @@ export const MbMediaImport = (props: MediaImportProps) => {
                     : 'h-48 w-48 sm:h-64 sm:w-64'
                 }`}
               >
-                <img className="w-full h-full object-cover" src={placeholderImageURL} />
+                <img
+                  className="w-full h-full object-cover"
+                  src={placeholderImageURL}
+                />
               </div>
             </div>
           </div>
@@ -182,7 +189,7 @@ export const MbMediaImport = (props: MediaImportProps) => {
 
           <label className="block sm:hidden text-blue-300 dark:text-blue-100 p-med-90 text-center">
             Change File
-            <input type="file" className="hidden" onChange={handleFileChange} accept={acceptedFormats.join(", ")} />
+            <input type="file" className="hidden" onChange={handleFileChange} />
           </label>
         </>
       )}
@@ -198,7 +205,9 @@ export const MbMediaImport = (props: MediaImportProps) => {
                 ? 'bg-gray-100 dark:bg-gray-900'
                 : 'bg-blue-300-15 dark:bg-blue-100-15 hover:bg-gray-100 dark:hover:bg-gray-900'
             } w-full py-32 sm:py-48 group text-center cursor-pointer ${
-              displayErrorMessage ? 'ring-1 ring-error-300 dark:ring-error-100' : ''
+              internalErrorMessage
+                ? 'ring-1 ring-error-300 dark:ring-error-100'
+                : ''
             }`}
           >
             <div className="h-full w-full text-center flex flex-col items-center justify-center p-med-90">
@@ -215,10 +224,10 @@ export const MbMediaImport = (props: MediaImportProps) => {
                 </p>
               )}
             </div>
-            {displayErrorMessage && (
+            {internalErrorMessage && (
               <div className="flex justify-center items-center pt-16">
                 <p className="text-error-300 dark:text-error-100 cap-big-90 pr-12">
-                  {displayErrorMessage}
+                  {internalErrorMessage}
                 </p>
                 <MbIcon
                   name={EIconName.ERROR}
@@ -228,7 +237,7 @@ export const MbMediaImport = (props: MediaImportProps) => {
                 />
               </div>
             )}
-            <input type="file" className="hidden" onChange={handleFileChange} accept={acceptedFormats.join(", ")} />
+            <input type="file" className="hidden" onChange={handleFileChange} />
           </label>
         </div>
         <AcceptedFormats

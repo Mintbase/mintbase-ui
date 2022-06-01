@@ -19,3 +19,21 @@ export const iconType = (fileType: string) => {
     return EIconName.FILE
   }
 }
+
+export const modelsHandler = async (originalFile: File): Promise<File> => {
+  if (originalFile.name.split('.')[1].startsWith('glb'))
+    return new File(
+      [new Blob([await originalFile.arrayBuffer()])],
+      originalFile.name,
+      { type: 'model/gltf-binary' }
+    )
+
+  if (originalFile.name.split('.')[1].startsWith('gltf'))
+    return new File(
+      [new Blob([await originalFile.arrayBuffer()])],
+      originalFile.name,
+      { type: 'model/gltf+json' }
+    )
+
+  return originalFile
+}
