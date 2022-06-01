@@ -92,7 +92,6 @@ export const MbMediaImport = (props: MediaImportProps) => {
 
     if (correctFile) {
       if (size / 1024 / 1024 <= maxFileSize) {
-        console.log(tFile)
         handleFileAdd(tFile)
       } else {
         setInternalErrorMessage(`This file exceeds ${maxFileSize}mb`)
@@ -113,6 +112,8 @@ export const MbMediaImport = (props: MediaImportProps) => {
   useEffect(() => {
     if (uploadedFile && IMAGE_TYPES.includes(uploadedFile.type)) {
       setImageUrl(URL.createObjectURL(uploadedFile))
+    } else {
+      setImageUrl(null)
     }
   }, [uploadedFile])
 
