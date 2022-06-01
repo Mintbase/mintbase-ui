@@ -221,7 +221,10 @@ export const MbNearAmountAccount = ({
       ).length > 0
     )
     const filterState = Object.keys(state).filter(
-      (key) => state[key].account.value && state[key].amount.value
+      (key) =>
+        state[key].account.value &&
+        state[key].amount.value &&
+        state[key].editable
     )
     const isValidForm =
       filterState.length > 0 &&
@@ -232,13 +235,14 @@ export const MbNearAmountAccount = ({
           state[key].editable
       ).length === filterState.length
 
-    setValid(isValidForm || removedDefaultField)
+    const isFinalValid = isValidForm || removedDefaultField
+    setValid(isFinalValid)
 
     if (isValidInfo) {
-      isValidInfo(isValidForm)
+      isValidInfo(isFinalValid)
     }
 
-    if (isValidForm && sendFinalState) {
+    if (isFinalValid && sendFinalState) {
       sendFinalState(state)
     }
   }, [state])
