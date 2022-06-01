@@ -232,7 +232,6 @@ export const MbNearAmountAccount = ({
           state[key].account.valid
       ).length === filterState.length
 
-    console.log(filterState)
     setValid(isValidForm)
 
     if (isValidInfo) {
