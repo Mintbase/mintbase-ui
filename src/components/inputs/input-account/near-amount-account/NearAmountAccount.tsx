@@ -50,6 +50,7 @@ export const MbNearAmountAccount = ({
   const [used, setUsed] = useState<number>(0)
   const [state, setState] = useState<Record<string, TInputState>>({})
   const [isValid, setValid] = useState(false)
+  const [removedDefaultField, setRemovedDefaultField] = useState(false)
   const [hasFilledFields, setHasFilledFields] = useState(false)
 
   const addFieldsToState = (defaultAmount = 0) => {
@@ -123,8 +124,13 @@ export const MbNearAmountAccount = ({
     newState[id].editable = true
     setUsed(sumStateAmounts(newState))
     setState(newState)
+    setRemovedDefaultField(false)
     ;(document.getElementById(`amount-${id}`) as HTMLInputElement).value = ''
     ;(document.getElementById(`account-${id}`) as HTMLInputElement).value = ''
+
+    if (isStoreSettings && Object.keys(defaultState).includes(id)) {
+      setRemovedDefaultField(true)
+    }
 
     if (isStoreSettings && removeFromSettings) {
       removeFromSettings(id)
@@ -218,10 +224,15 @@ export const MbNearAmountAccount = ({
       (key) => state[key].account.value && state[key].amount.value
     )
     const isValidForm =
+      filterState.length > 0 &&
       filterState.filter(
-        (key) => state[key].amount.valid && state[key].account.valid
+        (key) =>
+          !Object.keys(defaultState).includes(key) &&
+          state[key].amount.valid &&
+          state[key].account.valid
       ).length === filterState.length
 
+    console.log(filterState)
     setValid(isValidForm)
 
     if (isValidInfo) {
@@ -375,9 +386,13 @@ export const MbNearAmountAccount = ({
                   btnType={EType.PRIMARY}
                   label={saveButton.text}
                   size={ESize.MEDIUM}
-                  state={isValid ? EState.ACTIVE : EState.DISABLED}
+                  state={
+                    isValid || removedDefaultField
+                      ? EState.ACTIVE
+                      : EState.DISABLED
+                  }
                   onClick={saveButton.save}
-                  disabled={!isValid}
+                  disabled={!isValid || !removedDefaultField}
                 />
               )}
             </div>
