@@ -227,12 +227,12 @@ export const MbNearAmountAccount = ({
       filterState.length > 0 &&
       filterState.filter(
         (key) =>
-          !Object.keys(defaultState).includes(key) &&
           state[key].amount.valid &&
-          state[key].account.valid
+          state[key].account.valid &&
+          state[key].editable
       ).length === filterState.length
 
-    setValid(isValidForm)
+    setValid(isValidForm || removedDefaultField)
 
     if (isValidInfo) {
       isValidInfo(isValidForm)
@@ -385,13 +385,9 @@ export const MbNearAmountAccount = ({
                   btnType={EType.PRIMARY}
                   label={saveButton.text}
                   size={ESize.MEDIUM}
-                  state={
-                    isValid || removedDefaultField
-                      ? EState.ACTIVE
-                      : EState.DISABLED
-                  }
+                  state={isValid ? EState.ACTIVE : EState.DISABLED}
                   onClick={saveButton.save}
-                  disabled={!isValid || !removedDefaultField}
+                  disabled={!isValid}
                 />
               )}
             </div>
