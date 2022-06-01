@@ -10,7 +10,6 @@ interface MediaImportProps {
   isHeaderImage?: boolean
   acceptedFormats: string[]
   idealDimensions: string
-  maxSize: number
   uploadedFile: File
   placeholderImageURL?: string
   handleFileAdd: (file: File) => void
@@ -29,7 +28,6 @@ export const MbMediaImport = (props: MediaImportProps) => {
     isHeaderImage,
     idealDimensions,
     acceptedFormats,
-    maxSize,
     uploadedFile,
     placeholderImageURL,
     handleFileAdd,
@@ -258,7 +256,7 @@ export const MbMediaImport = (props: MediaImportProps) => {
         <AcceptedFormats
           acceptedFormats={acceptedFormats}
           idealDimensions={idealDimensions}
-          maxSize={maxSize}
+          maxSize={maxFileSize}
         />
       </div>
     </>
