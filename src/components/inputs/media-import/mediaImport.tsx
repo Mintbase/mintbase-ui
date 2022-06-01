@@ -82,6 +82,7 @@ export const MbMediaImport = (props: MediaImportProps) => {
   const handleFileChange = async (e: any) => {
     if (!(e?.target?.files.length > 0)) return
     const file = e.target.files[0]
+
     setInternalErrorMessage(null)
 
     const tFile = await modelsHandler(file)
@@ -92,7 +93,6 @@ export const MbMediaImport = (props: MediaImportProps) => {
 
     if (correctFile) {
       if (size / 1024 / 1024 <= maxFileSize) {
-        console.log(tFile)
         handleFileAdd(tFile)
       } else {
         setInternalErrorMessage(`This file exceeds ${maxFileSize}mb`)
@@ -113,6 +113,8 @@ export const MbMediaImport = (props: MediaImportProps) => {
   useEffect(() => {
     if (uploadedFile && IMAGE_TYPES.includes(uploadedFile.type)) {
       setImageUrl(URL.createObjectURL(uploadedFile))
+    } else {
+      setImageUrl(null)
     }
   }, [uploadedFile])
 
@@ -145,7 +147,12 @@ export const MbMediaImport = (props: MediaImportProps) => {
 
           <label className="block sm:hidden text-blue-300 dark:text-blue-100 p-med-90 text-center">
             Change File
-            <input type="file" className="hidden" onChange={handleFileChange} />
+            <input
+              type="file"
+              className="hidden"
+              onChange={handleFileChange}
+              onClick={(e) => ((e.target as HTMLInputElement).value = '')}
+            />
           </label>
         </>
       )}
@@ -189,7 +196,12 @@ export const MbMediaImport = (props: MediaImportProps) => {
 
           <label className="block sm:hidden text-blue-300 dark:text-blue-100 p-med-90 text-center">
             Change File
-            <input type="file" className="hidden" onChange={handleFileChange} />
+            <input
+              type="file"
+              className="hidden"
+              onChange={handleFileChange}
+              onClick={(e) => ((e.target as HTMLInputElement).value = '')}
+            />
           </label>
         </>
       )}
@@ -237,7 +249,12 @@ export const MbMediaImport = (props: MediaImportProps) => {
                 />
               </div>
             )}
-            <input type="file" className="hidden" onChange={handleFileChange} />
+            <input
+              type="file"
+              className="hidden"
+              onChange={handleFileChange}
+              onClick={(e) => ((e.target as HTMLInputElement).value = '')}
+            />
           </label>
         </div>
         <AcceptedFormats
