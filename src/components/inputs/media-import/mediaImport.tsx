@@ -80,10 +80,11 @@ export const MbMediaImport = (props: MediaImportProps) => {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleFileChange = async (e: any) => {
+    console.log(e)
     if (!(e?.target?.files.length > 0)) return
     const file = e.target.files[0]
     setInternalErrorMessage(null)
-
+    console.log('11111::!::!:!:!', file)
     const tFile = await modelsHandler(file)
     const correctFile = acceptedFormats.find((item) => item === tFile.type)
 
@@ -110,12 +111,17 @@ export const MbMediaImport = (props: MediaImportProps) => {
   }
 
   useEffect(() => {
+    console.log(uploadedFile)
     if (uploadedFile && IMAGE_TYPES.includes(uploadedFile.type)) {
       setImageUrl(URL.createObjectURL(uploadedFile))
     } else {
       setImageUrl(null)
     }
   }, [uploadedFile])
+
+  useEffect(() => {
+    console.log(imageUrl)
+  }, [imageUrl])
 
   return (
     <>
@@ -146,7 +152,12 @@ export const MbMediaImport = (props: MediaImportProps) => {
 
           <label className="block sm:hidden text-blue-300 dark:text-blue-100 p-med-90 text-center">
             Change File
-            <input type="file" className="hidden" onChange={handleFileChange} />
+            <input
+              type="file"
+              className="hidden"
+              onChange={handleFileChange}
+              onClick={(e) => ((e.target as HTMLInputElement).value = '')}
+            />
           </label>
         </>
       )}
@@ -190,7 +201,12 @@ export const MbMediaImport = (props: MediaImportProps) => {
 
           <label className="block sm:hidden text-blue-300 dark:text-blue-100 p-med-90 text-center">
             Change File
-            <input type="file" className="hidden" onChange={handleFileChange} />
+            <input
+              type="file"
+              className="hidden"
+              onChange={handleFileChange}
+              onClick={(e) => ((e.target as HTMLInputElement).value = '')}
+            />
           </label>
         </>
       )}
@@ -238,7 +254,12 @@ export const MbMediaImport = (props: MediaImportProps) => {
                 />
               </div>
             )}
-            <input type="file" className="hidden" onChange={handleFileChange} />
+            <input
+              type="file"
+              className="hidden"
+              onChange={handleFileChange}
+              onClick={(e) => ((e.target as HTMLInputElement).value = '')}
+            />
           </label>
         </div>
         <AcceptedFormats
