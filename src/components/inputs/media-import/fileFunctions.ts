@@ -35,13 +35,5 @@ export const fileHandler = async (originalFile: File): Promise<File> => {
       { type: 'model/gltf+json' }
     )
 
-  if (originalFile.type === 'video/mpeg') {
-    return new File(
-      [new Blob([await originalFile.arrayBuffer()])],
-      originalFile.name,
-      { type: 'audio/mpeg' }
-    )
-  }
-
   return originalFile
 }
