@@ -1,4 +1,4 @@
-export const AUDIO_TYPES = ['audio/ogg', 'audio/mp3']
+export const AUDIO_TYPES = ['audio/ogg', 'audio/mp3', 'audio/mpeg']
 export const VIDEO_TYPES = ['video/webm', 'video/mp4', 'video/mpeg']
 export const IMAGE_TYPES = [
   'image/png',
