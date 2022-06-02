@@ -1,5 +1,5 @@
 export const AUDIO_TYPES = ['audio/ogg', 'audio/mp3', 'audio/mpeg']
-export const VIDEO_TYPES = ['video/webm', 'video/mp4', 'video/mpeg']
+export const VIDEO_TYPES = ['video/webm', 'video/mp4']
 export const IMAGE_TYPES = [
   'image/png',
   'image/jpeg',
@@ -10,7 +10,7 @@ export const THREED_TYPES = [
   'model/gltf-binary',
   'model/gltf+json',
   'application/octet-stream',
-  'glb'
+  'glb',
 ]
 export const FILE_TYPES = ['application/pdf']
 
