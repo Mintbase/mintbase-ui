@@ -13,13 +13,15 @@ const AcceptedFormats = ({
   useEffect(() => {
     setFormats(acceptedFormats.map((format) => `.${format.split('/').pop()}`))
   }, [acceptedFormats])
+
+  console.log(formats.join(' / '))
   return (
     <p className="hidden sm:block p-med-90 text-gray-700 dark:text-gray-500 pt-12 text-center">
       {acceptedFormats && (
         <>
           Accepted Formats:{' '}
           <span className="text-black dark:text-white">
-            {formats.join(' / ')}
+            {[...new Set(formats)].join(' / ')}
           </span>{' '}
           {(idealDimensions || maxSize) && <>|</>}{' '}
         </>
