@@ -248,7 +248,7 @@ export const MbNearAmountAccount = ({
       isValidInfo(isFinalValid)
     }
 
-    if (isFinalValid && sendFinalState) {
+    if (sendFinalState) {
       sendFinalState(state)
     }
   }, [state])
