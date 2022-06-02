@@ -71,13 +71,15 @@ export const MbMediaImport = (props: MediaImportProps) => {
       return
     }
 
-    handleFileAdd(event.dataTransfer.files[0])
+    handleFileChange(event.dataTransfer.files[0], true)
   }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const handleFileChange = async (e: any) => {
-    if (!(e?.target?.files.length > 0)) return
-    const file = e.target.files[0]
+  const handleFileChange = async (e: any, isDrag?: boolean) => {
+    if (!isDrag) {
+      if (!(e?.target?.files.length > 0)) return
+    }
+    const file = isDrag ? e : e.target.files[0]
 
     setInternalErrorMessage(null)
 
