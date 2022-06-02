@@ -9,18 +9,13 @@ const AcceptedFormats = ({
   idealDimensions: string
   maxSize: number
 }) => {
-  const [formats, setFormats] = useState<string[]>([])
-  useEffect(() => {
-    setFormats(acceptedFormats.map((format) => `.${format.split('/').pop()}`))
-  }, [acceptedFormats])
-
   return (
     <p className="hidden sm:block p-med-90 text-gray-700 dark:text-gray-500 pt-12 text-center">
       {acceptedFormats && (
         <>
           Accepted Formats:{' '}
           <span className="text-black dark:text-white">
-            {[...new Set(formats)].join(' / ')}
+            {[...new Set(acceptedFormats)].join(', ')}
           </span>{' '}
           {(idealDimensions || maxSize) && <>|</>}{' '}
         </>
