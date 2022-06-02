@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { MbIcon } from '../..'
 import { EIconName } from '../../..'
-import { ALL_TYPES, IMAGE_TYPES } from '../../../consts/fileFormats'
+import { IMAGE_TYPES } from '../../../consts/fileFormats'
 import { isMobile } from '../../../consts/mobile'
 import AcceptedFormats from './acceptedFormats'
-import { iconType, modelsHandler } from './fileFunctions'
+import { fileHandler, iconType } from './fileFunctions'
 interface MediaImportProps {
   isProfileImage?: boolean
   isHeaderImage?: boolean
@@ -83,7 +83,7 @@ export const MbMediaImport = (props: MediaImportProps) => {
 
     setInternalErrorMessage(null)
 
-    const tFile = await modelsHandler(file)
+    const tFile = await fileHandler(file)
     const correctFile = acceptedFormats.find((item) => item === tFile.type)
 
     // validate file size and accepted formats

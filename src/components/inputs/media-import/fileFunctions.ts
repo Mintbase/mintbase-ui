@@ -2,7 +2,7 @@ import {
   AUDIO_TYPES,
   IMAGE_TYPES,
   THREED_TYPES,
-  VIDEO_TYPES
+  VIDEO_TYPES,
 } from '../../../consts/fileFormats'
 import { EIconName } from '../../../consts/icons'
 
@@ -20,7 +20,7 @@ export const iconType = (fileType: string) => {
   }
 }
 
-export const modelsHandler = async (originalFile: File): Promise<File> => {
+export const fileHandler = async (originalFile: File): Promise<File> => {
   if (originalFile.name.split('.')[1].startsWith('glb'))
     return new File(
       [new Blob([await originalFile.arrayBuffer()])],
@@ -34,6 +34,14 @@ export const modelsHandler = async (originalFile: File): Promise<File> => {
       originalFile.name,
       { type: 'model/gltf+json' }
     )
+
+  if (originalFile.type === 'video/mpeg') {
+    return new File(
+      [new Blob([await originalFile.arrayBuffer()])],
+      originalFile.name,
+      { type: 'audio/mpeg' }
+    )
+  }
 
   return originalFile
 }
