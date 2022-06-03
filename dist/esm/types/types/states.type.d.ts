@@ -10,3 +10,10 @@ export declare type TInputState = {
     editable: boolean;
     cleared: boolean;
 };
+export declare type TNearAccountState = {
+    account: {
+        value: string;
+        valid: boolean;
+    };
+    cleared: boolean;
+};
