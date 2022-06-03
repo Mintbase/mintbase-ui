@@ -56,6 +56,8 @@ import burnIcon from './assets/burn.svg'
 import playIcon from './assets/play.svg'
 import pauseIcon from './assets/pause.svg'
 import downloadIcon from './assets/download.svg'
+import eyeIcon from './assets/eye.svg'
+import imageNotSupportedIcon from './assets/image_not_supported.svg'
 
 enum IconType {
   MINTBASE = 'mintbase',
@@ -118,6 +120,8 @@ const customIcons: { [key: string]: string } = {
   [EIconName.BURN]: burnIcon,
   [EIconName.PLAY]: playIcon,
   [EIconName.PAUSE]: pauseIcon,
+  [EIconName.EYE]: eyeIcon,
+  [EIconName.IMAGE_NOT_SUPPORTED]: imageNotSupportedIcon,
   [EIconName.NONE]: '',
 }
 
