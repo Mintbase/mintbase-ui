@@ -104,6 +104,8 @@ declare enum EIconName {
     MINTBASE = "mintbase",
     PLAY = "play",
     PAUSE = "pause",
+    EYE = "eye",
+    IMAGE_NOT_SUPPORTED = "image_not_supported",
     NONE = "none"
 }
 
