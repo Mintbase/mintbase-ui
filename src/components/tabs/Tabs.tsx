@@ -73,11 +73,9 @@ export const MbTabs = (props: TabsProps) => {
 
   return (
     <>
-      <div className="relative md:initial">
+      <div className="relative">
         <ul
-          className={`flex justify-between bg-gray-50 dark:bg-gray-800 px-24 md:px-48 ${
-            !filterOptions ? 'overflow-x-scroll no-scrollbar' : ''
-          }`}
+          className={`flex justify-between bg-gray-50 dark:bg-gray-800 px-24 md:px-48 overflow-x-scroll no-scrollbar`}
         >
           {tabsTitle?.length && (
             <div className="flex items-center space-x-12 sm:space-x-24">
@@ -172,11 +170,6 @@ export const MbTabs = (props: TabsProps) => {
                         darkColor="blue-100"
                       />
                     </div>
-                    <MbDropdownMenu
-                      isOpen={showOrderOpts}
-                      items={options}
-                      className="center-pos hidden md:block"
-                    />
                   </li>
                 </MbMenuWrapper>
               </div>
@@ -188,7 +181,7 @@ export const MbTabs = (props: TabsProps) => {
           <MbDropdownMenu
             isOpen={showOrderOpts}
             items={options}
-            className="right-0 md:hidden"
+            className="right-0"
           />
         )}
       </div>
