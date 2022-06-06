@@ -464,6 +464,17 @@ declare const MbAmountAccountInput: ({ id, validateAccount, validateAmount, hand
     isCleared?: boolean | undefined;
 }) => JSX.Element;
 
+declare const MbRowSelectList: ({ elements, deleteRow, addMinters, removeMinters, }: {
+    elements: {
+        id: string;
+        content: JSX.Element;
+        isDisabled: boolean;
+    }[];
+    deleteRow: (id: string) => void;
+    addMinters: () => void;
+    removeMinters: (ids: string[]) => void;
+}) => JSX.Element;
+
 declare const MbNearAccountList: ({ subtitle, smallSubtitle, accountExists, saveButton, }: {
     subtitle: string;
     smallSubtitle: string;
@@ -496,4 +507,4 @@ declare type TScreenBreakpoint = ScreenBreakpoint.LG | ScreenBreakpoint.MD | Scr
 declare const getBreakpointValue: (value: ScreenBreakpoint) => number;
 declare const getCurrentBreakpoint: () => TScreenBreakpoint;
 
-export { ALL_TYPES, AUDIO_TYPES, EControlStatus, EIconName, ESize, ESmallCardType, EState, EType, FILE_TYPES, IMAGE_TYPES, Item, MbAccordion, MbAction, MbAmountAccountInput, MbAmountInput, MbAudioPlayer, MbBody, MbButton, MbCheckbox, MbChip, MbColorIndicator, MbDropdownMenu, MbHead, MbIcon, MbInfoCard, MbInput, MbInputAccount, MbInputSelect, MbInputTags, MbItemsPerPage, MbLogo, MbMediaImport, MbMenuWrapper, MbModal, MbModelPlayer, MbNearAccountList, MbNearAmountAccount, MbNetworkMenu, MbPagination, MbRadioButton, MbSmallCard, MbStatefulButton, MbSwitch, MbTab, MbTable, MbTabs, MbText, MbTextArea, MbThingCard, MbTooltip, MbVideoPlayer, ScreenBreakpoint, TColor, TColorDetail, THREED_TYPES, TInfoCard, TInputState, TNearAccountState, TNetworkOption, TScreenBreakpoint, TSmallCard, TThingCard, ToggleProps, VIDEO_TYPES, colorsArray, getBreakpointValue, getCurrentBreakpoint, getFontType, getInputLabelFontType };
+export { ALL_TYPES, AUDIO_TYPES, EControlStatus, EIconName, ESize, ESmallCardType, EState, EType, FILE_TYPES, IMAGE_TYPES, Item, MbAccordion, MbAction, MbAmountAccountInput, MbAmountInput, MbAudioPlayer, MbBody, MbButton, MbCheckbox, MbChip, MbColorIndicator, MbDropdownMenu, MbHead, MbIcon, MbInfoCard, MbInput, MbInputAccount, MbInputSelect, MbInputTags, MbItemsPerPage, MbLogo, MbMediaImport, MbMenuWrapper, MbModal, MbModelPlayer, MbNearAccountList, MbNearAmountAccount, MbNetworkMenu, MbPagination, MbRadioButton, MbRowSelectList, MbSmallCard, MbStatefulButton, MbSwitch, MbTab, MbTable, MbTabs, MbText, MbTextArea, MbThingCard, MbTooltip, MbVideoPlayer, ScreenBreakpoint, TColor, TColorDetail, THREED_TYPES, TInfoCard, TInputState, TNearAccountState, TNetworkOption, TScreenBreakpoint, TSmallCard, TThingCard, ToggleProps, VIDEO_TYPES, colorsArray, getBreakpointValue, getCurrentBreakpoint, getFontType, getInputLabelFontType };
