@@ -20,7 +20,7 @@ export const MbNearAccountList = ({
   accountExists: (account: string) => Promise<boolean>
   saveButton?: {
     text: string
-    save: () => boolean
+    save: (accounts: string[]) => void
   }
 }) => {
   const [used, setUsed] = useState<number>(0)
@@ -193,7 +193,11 @@ export const MbNearAccountList = ({
                   state={isValid ? EState.ACTIVE : EState.DISABLED}
                   onClick={() => {
                     if (!isValid) return
-                    saveButton.save
+                    saveButton.save(
+                      Object.values(state)
+                        .filter((value) => value.account.value)
+                        .map((elm) => elm.account.value)
+                    )
                   }}
                   disabled={!isValid}
                 />
