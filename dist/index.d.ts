@@ -481,7 +481,7 @@ declare const MbNearAccountList: ({ subtitle, smallSubtitle, accountExists, save
     accountExists: (account: string) => Promise<boolean>;
     saveButton?: {
         text: string;
-        save: () => boolean;
+        save: (accounts: string[]) => void;
     } | undefined;
 }) => JSX.Element;
 
