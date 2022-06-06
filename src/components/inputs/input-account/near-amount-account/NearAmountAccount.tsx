@@ -1,14 +1,13 @@
-import { send } from 'process'
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { uuid } from 'uuidv4'
-import { ESize, EIconName, EState, EType } from '../../../../consts'
+import { EIconName, ESize, EState, EType } from '../../../../consts'
 import { TInputState } from '../../../../types'
 import { MbAction } from '../../../action/Action'
 import { MbButton } from '../../../buttons/button/Button'
 import { MbInfoCard } from '../../../cards/info/InfoCard'
 import { MbIcon } from '../../../icon/Icon'
 import { MbAmountAccountInput } from '../../amount-account-input/AmountAccountInput'
-import { MbInput, EControlStatus } from '../../input-field/inputField'
+import { EControlStatus, MbInput } from '../../input-field/inputField'
 import { MbInputAccount } from '../InputAccount'
 
 export const MbNearAmountAccount = ({
