@@ -26,6 +26,7 @@ Profile.args = {
       />
     ),
     title: 'Account Name',
+    subtitle: 'Owner',
   },
   loading: false,
 }
