@@ -19,6 +19,7 @@ export declare type TThingCard = {
 export declare type TSmallCard = {
     centerElement: JSX.Element;
     title: string;
+    subtitle?: string;
     onCardClick?: () => void;
 };
 export declare type TInfoCard = {
