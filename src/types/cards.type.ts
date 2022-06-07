@@ -20,6 +20,7 @@ export type TThingCard = {
 export type TSmallCard = {
   centerElement: JSX.Element
   title: string
+  subtitle?: string
   onCardClick?: () => void
 }
 

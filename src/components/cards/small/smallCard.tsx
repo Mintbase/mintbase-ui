@@ -42,7 +42,7 @@ export const MbSmallCard = ({
 }: CardProps) => {
   if (loading)
     return <LoadingCard cardType={cardType} isBigStoreCard={isBigStoreCard} />
-  const { title, centerElement, onCardClick } = card
+  const { title, subtitle, centerElement, onCardClick } = card
 
   return (
     <div className={`base-card small ${cardType}`} onClick={onCardClick}>
@@ -54,8 +54,13 @@ export const MbSmallCard = ({
         {centerElement}
       </div>
       <div className="text-center text-black dark:text-white mt-12">
-        <div className="p-big-90 truncate px-24">{title}</div>
+        <div className="p-big-90 truncate md:px-24">{title}</div>
       </div>
+      {subtitle && (
+        <div className="p-small-90 text-gray-700 dark:text-gray-300 truncate px-24 mt-4 text-center">
+          {subtitle}
+        </div>
+      )}
     </div>
   )
 }

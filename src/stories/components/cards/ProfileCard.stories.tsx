@@ -4,7 +4,7 @@ import { MbSmallCard } from '../../../components/cards/small/smallCard'
 import { ESmallCardType } from '../../../consts/properties'
 
 export default {
-  title: 'Components/Cards',
+  title: 'Components/Cards/Profile',
   component: MbSmallCard,
   argTypes: {},
 } as ComponentMeta<typeof MbSmallCard>
@@ -26,6 +26,22 @@ Profile.args = {
       />
     ),
     title: 'Account Name',
+  },
+  loading: false,
+}
+
+export const ProfileWithSubtitle = Template.bind({})
+ProfileWithSubtitle.args = {
+  cardType: ESmallCardType.PROFILE,
+  card: {
+    centerElement: (
+      <img
+        className="h-full w-full object-cover"
+        src="https://coldcdn.com/api/cdn/bronil/JXl58b_p9iYzeFutFC5GcDCjsxppyFt5rRkQt4Su4LU"
+      />
+    ),
+    title: 'Account Name',
+    subtitle: 'Owner',
   },
   loading: false,
 }
