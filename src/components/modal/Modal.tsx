@@ -4,14 +4,14 @@ import './modal.css'
 import { useEffect } from 'react'
 
 interface ModalProps extends React.HTMLAttributes<HTMLDivElement> {
-  title: string
+  topTitle: string | JSX.Element
   subtitle?: string
   topElement?: JSX.Element
   open: boolean
   onClose: () => void
 }
 export const MbModal = (props: ModalProps) => {
-  const { open, onClose, title, children, subtitle, topElement } = props
+  const { open, onClose, topTitle, children, subtitle, topElement } = props
 
   useEffect(() => {
     if (open) {
@@ -32,7 +32,7 @@ export const MbModal = (props: ModalProps) => {
             >
               <header className="flex items-center p-24 border-b border-gray-150 dark:border-gray-700 justify-between sticky">
                 <div>
-                  <div className="p-big-130">{title}</div>
+                  <div className="p-big-130">{topTitle}</div>
                   {subtitle && <div className="pt-4 p-med-90">{subtitle}</div>}
                 </div>
                 <div className='flex items-center gap-12'>
