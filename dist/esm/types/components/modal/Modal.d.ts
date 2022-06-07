@@ -1,7 +1,7 @@
 /// <reference types="react" />
 import './modal.css';
 interface ModalProps extends React.HTMLAttributes<HTMLDivElement> {
-    title: string;
+    topTitle: string | JSX.Element;
     subtitle?: string;
     topElement?: JSX.Element;
     open: boolean;

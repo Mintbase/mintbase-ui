@@ -321,7 +321,7 @@ declare const MbChip: (props: ChipProps) => JSX.Element;
 declare const MbRadioButton: React$1.ForwardRefExoticComponent<ToggleProps & React$1.RefAttributes<HTMLInputElement>>;
 
 interface ModalProps extends React.HTMLAttributes<HTMLDivElement> {
-    title: string;
+    topTitle: string | JSX.Element;
     subtitle?: string;
     topElement?: JSX.Element;
     open: boolean;
