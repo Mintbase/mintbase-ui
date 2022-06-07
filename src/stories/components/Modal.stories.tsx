@@ -25,7 +25,7 @@ const Template: ComponentStory<typeof MbModal> = (args) => {
       <MbModal
         {...args}
         open={open}
-        title="Info"
+        topTitle="Info"
         onClose={() => setIsOpen(false)}
       >
         <div className="p-24">
@@ -59,7 +59,7 @@ const TopElementTemplate: ComponentStory<typeof MbModal> = (args) => {
       <MbModal
         {...args}
         open={open}
-        title="Info"
+        topTitle="Info"
         onClose={() => setIsOpen(false)}
         topElement={
           <MbAction>
