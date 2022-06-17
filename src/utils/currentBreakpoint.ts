@@ -1,4 +1,3 @@
-import resolveConfig from 'tailwindcss/resolveConfig'
 import tailwindConfig from '../mintbase-theme'
 
 export enum ScreenBreakpoint {
