@@ -51,23 +51,25 @@ export const MbRowSelectList = ({
                         : ''
                     }`}
                   >
-                    <td className="flex items-center gap-12">
-                      {!isDisabled && (
-                        <MbCheckbox
-                          checked={isElementSelected(id)}
-                          onChange={(e) => {
-                            if (isElementSelected(id)) {
-                              setCheckedList(
-                                checkedList.filter((elm) => elm !== id)
-                              )
-                              return
-                            }
-                            setCheckedList([...checkedList, id])
-                          }}
-                        />
-                      )}
+                    <td>
+                      <div className="flex items-center gap-12">
+                        {!isDisabled && (
+                          <MbCheckbox
+                            checked={isElementSelected(id)}
+                            onChange={(e) => {
+                              if (isElementSelected(id)) {
+                                setCheckedList(
+                                  checkedList.filter((elm) => elm !== id)
+                                )
+                                return
+                              }
+                              setCheckedList([...checkedList, id])
+                            }}
+                          />
+                        )}
 
-                      {content}
+                        {content}
+                      </div>
                     </td>
                     {isDisabled ? (
                       <></>
