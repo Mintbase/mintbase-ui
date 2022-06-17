@@ -11,7 +11,7 @@ export const MbInputAccount = (props: InputAccountProps) => {
 
   return (
     <main>
-      <section className="p-2 h-72 overflow-y-scroll">
+      <section className="p-2 h-72 overflow-y-scroll w-full">
         <header>
           <p className="p-big-90 text-gray-700 dark:text-gray-300 mb-16">
             {subtitle}
