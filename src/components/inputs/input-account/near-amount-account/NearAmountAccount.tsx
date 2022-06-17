@@ -10,6 +10,8 @@ import { MbAmountAccountInput } from '../../amount-account-input/AmountAccountIn
 import { EControlStatus, MbInput } from '../../input-field/inputField'
 import { MbInputAccount } from '../InputAccount'
 
+const REGEX_INTEGER_ONLY = /^[1-9]\d*$/
+
 export const MbNearAmountAccount = ({
   subtitle,
   smallSubtitle,
@@ -174,9 +176,11 @@ export const MbNearAmountAccount = ({
     const newState = { ...state }
     delete newState[id]
 
+    const regexTest = REGEX_INTEGER_ONLY.test(amount.toString())
+
     const valid = transferTemplate
-      ? transferTemplate.available - used - amount >= 0 && amount > 0
-      : totalAmount - used - amount >= 0 && amount > 0
+      ? transferTemplate.available - used - amount >= 0 && regexTest
+      : totalAmount - used - amount >= 0 && regexTest
 
     validateAmountById(id, valid)
 
