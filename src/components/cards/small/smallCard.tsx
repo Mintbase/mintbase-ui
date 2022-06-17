@@ -54,7 +54,7 @@ export const MbSmallCard = ({
         {centerElement}
       </div>
       <div className="text-center text-black dark:text-white mt-12">
-        <div className="p-big-90 truncate md:px-24">{title}</div>
+        <div className="p-big-90 truncate w-5/6 m-auto">{title}</div>
       </div>
       {subtitle && (
         <div className="p-small-90 text-gray-700 dark:text-gray-300 truncate px-24 mt-4 text-center">
