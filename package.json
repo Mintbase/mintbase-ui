@@ -81,6 +81,7 @@
     "react-inlinesvg": "^2.3.0",
     "react-player": "^2.9.0",
     "react-tooltip": "^4.2.21",
+    "type-fest": "^2.13.1",
     "uuidv4": "^6.2.13"
   }
 }
