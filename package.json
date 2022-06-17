@@ -1,6 +1,6 @@
 {
   "name": "mintbase-ui",
-  "version": "0.3.2-rc",
+  "version": "0.3.3-rc",
   "private": false,
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
