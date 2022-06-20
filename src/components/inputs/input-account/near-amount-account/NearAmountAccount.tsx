@@ -306,7 +306,7 @@ export const MbNearAmountAccount = ({
                       <div className="w-24">
                         <MbInput
                           id={`amount-${id}`}
-                          type="tel"
+                          pattern="\d*"
                           placeholder={'1'}
                           inputSize={ESize.BIG}
                           controlStatus={EControlStatus.NORMAL}

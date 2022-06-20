@@ -44,6 +44,7 @@ export const MbAmountAccountInput = ({
       <div className="w-24">
         <MbInput
           type="tel"
+          pattern="\d*"
           id={`amount-${id}`}
           placeholder={'1'}
           inputSize={ESize.BIG}
