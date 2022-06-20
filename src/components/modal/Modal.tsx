@@ -24,8 +24,8 @@ export const MbModal = (props: ModalProps) => {
     <>
       {open && (
         <div onClick={onClose}>
-          <div className="fixed inset-0 bg-black bg-opacity-75 overflow-y-auto h-full w-full z-50"></div>
-          <div className="modal">
+          <div className="fixed inset-0 bg-black bg-opacity-75 overflow-y-auto h-full w-full z-50 w3-animate-opacity"></div>
+          <div className="modal w3-animate-opacity">
             <section
               className="modal-section"
               onClick={(e) => e.stopPropagation()}
@@ -35,7 +35,7 @@ export const MbModal = (props: ModalProps) => {
                   <div className="p-big-130">{topTitle}</div>
                   {subtitle && <div className="pt-4 p-med-90">{subtitle}</div>}
                 </div>
-                <div className='flex items-center gap-12'>
+                <div className="flex items-center gap-12">
                   {topElement && topElement}
                   <div onClick={onClose}>
                     <MbIcon
