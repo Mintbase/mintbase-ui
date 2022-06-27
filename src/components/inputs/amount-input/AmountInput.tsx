@@ -86,7 +86,7 @@ export const MbAmountInput = forwardRef<HTMLInputElement, AmountButtonProps>(
             disabled={disabled}
             required={required}
             onChange={handleContentChanges}
-            type="text"
+            type="tel"
             value={amount}
             {...restProps}
           />
