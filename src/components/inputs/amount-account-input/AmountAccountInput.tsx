@@ -43,7 +43,7 @@ export const MbAmountAccountInput = ({
     <div className="flex items-center space-x-12 mb-12">
       <div className="w-24">
         <MbInput
-          type="number"
+          type="tel"
           id={`amount-${id}`}
           placeholder={'1'}
           inputSize={ESize.BIG}
