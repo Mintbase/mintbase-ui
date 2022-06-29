@@ -81,7 +81,9 @@ export const MbInfoCard = ({ boxInfo }: { boxInfo: TInfoCard }) => {
   return (
     <div className={`info-card ${size}`}>
       <div
-        className={`flex ${titleIcon ? 'gap-12' : 'justify-between'} items-center title-wrapper ${size} relative`}
+        className={`flex ${
+          titleIcon ? 'gap-12' : 'justify-between'
+        } items-center title-wrapper ${size} relative`}
       >
         {titleIcon && titleIcon}
         <div className={`${getTitleFont()} text-gray-700 dark:text-gray-300`}>
@@ -116,12 +118,15 @@ export const MbInfoCard = ({ boxInfo }: { boxInfo: TInfoCard }) => {
 
         <div className="flex flex-wrap justify-between w-full items-baseline">
           {description && (
-            <div>
+            <div className={`${lowerLeftText ? '' : 'w-full'}`}>
               <div
-                className={`${getDescriptionFont()} ${isLink
-                  ? 'text-blue-300 dark:text-blue-100 cursor-pointer'
-                  : 'text-black dark:text-white'
-                  } inline-flex align-middle`}
+                className={`${getDescriptionFont()} ${
+                  isLink
+                    ? 'text-blue-300 dark:text-blue-100 cursor-pointer'
+                    : 'text-black dark:text-white'
+                } ${
+                  lowerLeftText ? 'inline-flex' : 'w-5/6 truncate'
+                } align-middle`}
               >
                 {description}
                 {isVerifiedStore && (
