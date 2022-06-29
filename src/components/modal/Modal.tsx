@@ -28,11 +28,11 @@ export const MbModal = (props: ModalProps) => {
             var element = document.getElementById('modal-wrapper')
             if (!element) return
             element.classList.add('modal-hide')
-            setTimeout(onClose, 400)
+            setTimeout(onClose, 300)
           }}
         >
           <div className="fixed inset-0 bg-black bg-opacity-75 overflow-y-auto h-full w-full z-50"></div>
-          <div id="modal-wrapper" className="modal modal-show">
+          <div id="modal-wrapper" className="modal modal-scale">
             <section
               className="modal-section"
               onClick={(e) => e.stopPropagation()}
@@ -49,7 +49,7 @@ export const MbModal = (props: ModalProps) => {
                       var element = document.getElementById('modal-wrapper')
                       if (!element) return
                       element.classList.add('modal-hide')
-                      setTimeout(onClose, 400)
+                      setTimeout(onClose, 300)
                     }}
                   >
                     <MbIcon

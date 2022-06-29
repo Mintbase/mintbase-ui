@@ -22,27 +22,31 @@
   }
 }
 
-.modal-show {
-  animation: show 0.4s;
+.modal-scale {
+  animation: scale 0.3s ease-in-out;
 }
-@keyframes show {
-  from {
+
+@keyframes scale {
+  0% {
+    transform: scale(0.7);
     opacity: 0;
   }
-  to {
+  100% {
+    transform: scale(1);
     opacity: 1;
   }
 }
 
 .modal-hide {
-  animation: hide 0.4s;
-  animation-fill-mode: forwards;
+  animation: unscale 0.3s ease-in-out;
 }
-@keyframes hide {
+@keyframes unscale {
   0% {
+    transform: scale(1);
     opacity: 1;
   }
   100% {
+    transform: scale(0.7);
     opacity: 0;
   }
 }
