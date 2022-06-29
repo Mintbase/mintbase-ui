@@ -23,9 +23,16 @@ export const MbModal = (props: ModalProps) => {
   return (
     <>
       {open && (
-        <div onClick={onClose}>
+        <div
+          onClick={() => {
+            var element = document.getElementById('modal-wrapper')
+            if (!element) return
+            element.classList.add('modal-hide')
+            setTimeout(onClose, 300)
+          }}
+        >
           <div className="fixed inset-0 bg-black bg-opacity-75 overflow-y-auto h-full w-full z-50"></div>
-          <div className="modal">
+          <div id="modal-wrapper" className="modal modal-scale">
             <section
               className="modal-section"
               onClick={(e) => e.stopPropagation()}
@@ -35,9 +42,16 @@ export const MbModal = (props: ModalProps) => {
                   <div className="p-big-130">{topTitle}</div>
                   {subtitle && <div className="pt-4 p-med-90">{subtitle}</div>}
                 </div>
-                <div className='flex items-center gap-12'>
+                <div className="flex items-center gap-12">
                   {topElement && topElement}
-                  <div onClick={onClose}>
+                  <div
+                    onClick={() => {
+                      var element = document.getElementById('modal-wrapper')
+                      if (!element) return
+                      element.classList.add('modal-hide')
+                      setTimeout(onClose, 300)
+                    }}
+                  >
                     <MbIcon
                       name={EIconName.CLOSE}
                       size="20px"
