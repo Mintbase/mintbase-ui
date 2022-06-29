@@ -57,5 +57,7 @@ export enum EIconName {
   PAUSE = 'pause',
   EYE = 'eye',
   IMAGE_NOT_SUPPORTED = 'image_not_supported',
+  MINTBASE_DARK_BADGE = 'mintbase_dark_badge',
+  MINTBASE_LIGHT_BADGE = 'mintbase_light_badge',
   NONE = 'none',
 }
