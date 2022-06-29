@@ -10,7 +10,7 @@
 
 @screen md {
   .modal-section {
-    @apply mx-0;    
+    @apply mx-0;
     width: 600px;
     min-height: 400px;
   }
@@ -19,5 +19,34 @@
 @screen lg {
   .modal-section {
     width: 800px;
+  }
+}
+
+.modal-scale {
+  animation: scale 0.3s ease-in-out;
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.modal-hide {
+  animation: unscale 0.3s ease-in-out;
+}
+@keyframes unscale {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.7);
+    opacity: 0;
   }
 }
