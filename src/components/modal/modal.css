@@ -22,10 +22,10 @@
   }
 }
 
-.w3-animate-opacity {
-  animation: opac 0.6s;
+.modal-show {
+  animation: show 0.4s;
 }
-@keyframes opac {
+@keyframes show {
   from {
     opacity: 0;
   }
@@ -34,11 +34,11 @@
   }
 }
 
-.w3-animate-show {
-  animation: show 0.8s;
+.modal-hide {
+  animation: hide 0.4s;
   animation-fill-mode: forwards;
 }
-@keyframes show {
+@keyframes hide {
   0% {
     opacity: 1;
   }
