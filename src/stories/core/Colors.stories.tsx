@@ -8,7 +8,7 @@ export const Colors = () => (
   <>
     <p className="heading-130 mb-8">Colors</p>
     {colorsArray.map((elm) => (
-      <section className="mb-8" key={elm.sectionTitle}>
+      <section className="mb-12" key={elm.sectionTitle}>
         <p className="h1-130 mb-4">{elm.sectionTitle}</p>
         <div className="flex flex-wrap gap-8">
           {elm.colors.map((color) => (
