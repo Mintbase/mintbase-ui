@@ -41,6 +41,7 @@ export const MbThingCard = ({ loading = false, cardInfo }: CardProps) => {
     upperRightElement,
     centerElement,
     nftTypeIcon,
+    extraMidLeftElement,
     midLeftText,
     midRightText,
     botLeftImage,
@@ -90,7 +91,10 @@ export const MbThingCard = ({ loading = false, cardInfo }: CardProps) => {
           <div className="absolute inset-0">{centerElement}</div>
         </div>
       </div>
-      <div className="flex flex-row justify-between text-black dark:text-white mt-12">
+      <div className="p-med-90 text-gray-700 dark:text-gray-300 mt-12 w-5/6 truncate">
+        {extraMidLeftElement}
+      </div>
+      <div className="flex flex-row justify-between text-black dark:text-white mt-8">
         <div className="p-big-90 w-52 truncate">{midLeftText}</div>
         <div className="p-big-90 text-right break-all">{midRightText}</div>
       </div>
