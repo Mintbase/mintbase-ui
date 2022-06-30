@@ -58,6 +58,8 @@ import pauseIcon from './assets/pause.svg'
 import downloadIcon from './assets/download.svg'
 import eyeIcon from './assets/eye.svg'
 import imageNotSupportedIcon from './assets/image_not_supported.svg'
+import mintbaseDarkBadgeIcon from './assets/mintbase_dark_badge.svg'
+import mintbaseLightBadgeIcon from './assets/mintbase_light_badge.svg'
 
 enum IconType {
   MINTBASE = 'mintbase',
@@ -122,6 +124,8 @@ const customIcons: { [key: string]: string } = {
   [EIconName.PAUSE]: pauseIcon,
   [EIconName.EYE]: eyeIcon,
   [EIconName.IMAGE_NOT_SUPPORTED]: imageNotSupportedIcon,
+  [EIconName.MINTBASE_DARK_BADGE]: mintbaseDarkBadgeIcon,
+  [EIconName.MINTBASE_LIGHT_BADGE]: mintbaseLightBadgeIcon,
   [EIconName.NONE]: '',
 }
 
