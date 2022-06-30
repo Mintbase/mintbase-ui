@@ -7,6 +7,7 @@ export type TThingCard = {
   upperRightElement?: JSX.Element
   centerElement: JSX.Element
   nftTypeIcon?: EIconName
+  extraMidLeftElement?: JSX.Element
   midLeftText: string
   midRightText: string
   botLeftImage?: string

@@ -7,7 +7,7 @@ import { MbIcon } from '../../../components/icon/Icon'
 import { EIconName } from '../../../consts/icons'
 
 export default {
-  title: 'Components/Cards',
+  title: 'Components/Cards/Thing',
   component: MbThingCard,
   argTypes: {},
 } as ComponentMeta<typeof MbThingCard>
@@ -65,6 +65,43 @@ Thing.args = {
       />
     ),
     nftTypeIcon: EIconName.IMAGE,
+    midLeftText: 'Thing Name',
+    midRightText: '10 N',
+    botLeftImage:
+      'https://coldcdn.com/api/cdn/bronil/JXl58b_p9iYzeFutFC5GcDCjsxppyFt5rRkQt4Su4LU',
+    botRightText: '5/10',
+    botRightIcon: EIconName.EDITIONS,
+    onBotLeftImageClick: () => null,
+    onCenterElementClick: () => null,
+    onUpperLeftClick: () => null,
+    onUpperRightClick: () => null,
+  },
+  loading: false,
+}
+
+export const ThingWithStoreName = Template.bind({})
+ThingWithStoreName.args = {
+  cardInfo: {
+    upperLeftText: '1',
+    upperRightElement: <Icon></Icon>,
+    centerElement: (
+      <img
+        className="h-full w-full object-cover"
+        src="https://coldcdn.com/api/cdn/bronil/JXl58b_p9iYzeFutFC5GcDCjsxppyFt5rRkQt4Su4LU"
+      />
+    ),
+    nftTypeIcon: EIconName.IMAGE,
+    extraMidLeftElement: (
+      <div className="flex gap-4 items-center">
+        <p>Store Name</p>{' '}
+        <MbIcon
+          name={EIconName.VERIFIED}
+          size="16px"
+          color="blue-300"
+          darkColor="blue-100"
+        />
+      </div>
+    ),
     midLeftText: 'Thing Name',
     midRightText: '10 N',
     botLeftImage:

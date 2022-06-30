@@ -349,7 +349,7 @@ export const MbNearAmountAccount = ({
         }
         footer={
           <div className="grid grid-cols-1 md:grid-cols-2 justify-between items-center w-full gap-24">
-            <div className="grid grid-cols-2 gap-12">
+            <div className="grid grid-cols-2 gap-12 text-left">
               {transferTemplate ? (
                 <>
                   <MbInfoCard
