@@ -28,7 +28,9 @@ export const MbPill = ({
   return (
     <div>
       <div className={`p-5 md:p-6 rounded ${getColors()} w-auto inline-block`}>
-        <MbText className="p-small-130 uppercase">{text}</MbText>
+        <MbText className="p-small-130 uppercase tracking-widest">
+          {text}
+        </MbText>
       </div>
     </div>
   )
