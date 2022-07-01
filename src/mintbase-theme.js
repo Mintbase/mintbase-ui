@@ -31,6 +31,8 @@ module.exports = {
     padding: {
       2: '2px',
       4: '4px',
+      5: '5px',
+      6: '6px',
       8: '8px',
       10: '10px',
       12: '12px',
@@ -72,11 +74,11 @@ module.exports = {
       'mb-blackblue': '#070C2B',
       purple: {
         100: '#E087FF',
-        300:'#8C4FE5',
+        300: '#8C4FE5',
       },
       orange: {
         100: '#FF9470',
-        300: '#FF6C3B'
+        300: '#FF6C3B',
       },
       gray: {
         50: '#F9F9F9',
