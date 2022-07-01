@@ -37,3 +37,4 @@ export { MbNearAmountAccount } from './inputs/input-account/near-amount-account/
 export { MbAmountAccountInput } from './inputs/amount-account-input/AmountAccountInput'
 export { MbRowSelectList } from './row-select/RowSelectList'
 export { MbNearAccountList } from './inputs/input-account/near-account-list/NearAccountList'
+export { MbPill } from './pills/Pill'
