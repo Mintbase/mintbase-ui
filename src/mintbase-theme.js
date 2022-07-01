@@ -70,6 +70,14 @@ module.exports = {
       'mb-red-35': '#3A1C2A',
       'mb-red-15': '#FFDEDE',
       'mb-blackblue': '#070C2B',
+      purple: {
+        100: '#E087FF',
+        300:'#8C4FE5',
+      },
+      orange: {
+        100: '#FF9470',
+        300: '#FF6C3B'
+      },
       gray: {
         50: '#F9F9F9',
         100: '#F3F4F8',
