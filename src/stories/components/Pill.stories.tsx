@@ -14,5 +14,5 @@ const Template: ComponentStory<typeof MbPill> = (args) => <MbPill {...args} />
 export const Pill = Template.bind({})
 Pill.args = {
   text: 'Mint',
-  pillTemplate: EPillTemplate.MINT,
+  pillTemplate: EPillTemplate.BLACK,
 }

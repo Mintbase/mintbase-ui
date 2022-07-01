@@ -1,8 +1,8 @@
 export enum EPillTemplate {
-  MINT = 'mint',
-  LIST = 'list',
-  TRANSFER = 'transfer',
-  SALE = 'sale',
-  BURN = 'burn',
-  BID = 'bid',
+  BLACK = 'black',
+  PURPLE = 'purple',
+  BLUE = 'blue',
+  GREEN = 'green',
+  RED = 'red',
+  ORANGE = 'orange',
 }
