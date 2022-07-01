@@ -6,6 +6,7 @@ import './table.css'
 interface TableProps extends React.HTMLAttributes<HTMLDivElement> {
   title?: string
   pagination?: PaginationProps
+  showItemsPerPage?: boolean
   onAmountItemsChange?: (page: number) => void
 }
 
@@ -31,7 +32,8 @@ export const MbBody = (props: React.HTMLAttributes<HTMLDivElement>) => {
 }
 
 export const MbTable = (props: TableProps) => {
-  const { title, children, pagination, onAmountItemsChange } = props
+  const { title, children, pagination, onAmountItemsChange, showItemsPerPage } =
+    props
 
   return (
     <section className="bg-white dark:bg-gray-850 rounded">
@@ -46,8 +48,12 @@ export const MbTable = (props: TableProps) => {
       </div>
 
       {pagination && (
-        <footer className="border-t border-gray-200 dark:border-gray-800 py-24 md:px-24 grid md:grid-cols-3 items-center">
-          {onAmountItemsChange && (
+        <footer
+          className={`border-t border-gray-200 dark:border-gray-800 py-24 md:px-24 grid items-center ${
+            showItemsPerPage ? 'md:grid-cols-3' : ' md:grid-cols-2'
+          }`}
+        >
+          {showItemsPerPage && onAmountItemsChange && (
             <div className="order-2 md:order-1 flex justify-center md:justify-start">
               <MbItemsPerPage
                 currentValue={pagination.itemsPerPage}
@@ -56,7 +62,11 @@ export const MbTable = (props: TableProps) => {
             </div>
           )}
 
-          <div className="p-med-90 dark:text-white text-center hidden md:block order-2">
+          <div
+            className={`p-med-90 dark:text-white hidden md:block order-2 ${
+              showItemsPerPage ? 'text-center' : 'text-right'
+            }`}
+          >
             {pagination.itemsPerPage * pagination.currentPage <
             pagination.totalItems
               ? `1 - ${pagination.itemsPerPage}`
