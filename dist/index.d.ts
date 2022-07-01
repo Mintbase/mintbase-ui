@@ -236,6 +236,7 @@ declare const MbPagination: (props: PaginationProps) => JSX.Element | null;
 interface TableProps extends React__default.HTMLAttributes<HTMLDivElement> {
     title?: string;
     pagination?: PaginationProps;
+    showItemsPerPage?: boolean;
     onAmountItemsChange?: (page: number) => void;
 }
 declare const MbHead: (props: React__default.HTMLAttributes<HTMLDivElement>) => JSX.Element;

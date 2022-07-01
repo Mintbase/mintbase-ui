@@ -4,6 +4,7 @@ import './table.css';
 interface TableProps extends React.HTMLAttributes<HTMLDivElement> {
     title?: string;
     pagination?: PaginationProps;
+    showItemsPerPage?: boolean;
     onAmountItemsChange?: (page: number) => void;
 }
 export declare const MbHead: (props: React.HTMLAttributes<HTMLDivElement>) => JSX.Element;
