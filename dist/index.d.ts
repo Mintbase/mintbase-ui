@@ -138,7 +138,7 @@ declare type TInfoCard = {
     title: string;
     titleIcon?: JSX.Element;
     description?: string;
-    upperIcon?: EIconName;
+    upperIcon?: JSX.Element;
     descriptionIcon?: EIconName;
     descriptionImage?: string;
     lowerLeftText?: string;
@@ -146,8 +146,6 @@ declare type TInfoCard = {
     isNumber?: boolean;
     size?: ESize;
     isLink?: boolean;
-    isVerifiedStore?: boolean;
-    upperTooltip?: string;
     handleDescriptionClick?: () => void;
 };
 
