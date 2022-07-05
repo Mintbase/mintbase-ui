@@ -30,7 +30,7 @@ export const InfoWithTitleIcon = Template.bind({})
 InfoWithTitleIcon.args = {
   boxInfo: {
     title: 'Listed Tokens',
-    titleIcon: <MbIcon color='black' name={EIconName.CIRCLE} />,
+    titleIcon: <MbIcon color="black" name={EIconName.CIRCLE} />,
     description: '300',
     isNumber: true,
     isVerifiedStore: false,
@@ -51,7 +51,14 @@ InfoWithIcon.args = {
   boxInfo: {
     title: 'Info with icon',
     description: 'Icon',
-    upperIcon: EIconName.INFO,
+    upperIcon: (
+      <MbIcon
+        name={EIconName.INFO}
+        size="20px"
+        color="blue-300"
+        darkColor="blue-100"
+      />
+    ),
   },
 }
 
@@ -60,7 +67,14 @@ InfoWithAction.args = {
   boxInfo: {
     title: 'Info with action',
     description: 'Click me',
-    upperIcon: EIconName.INFO,
+    upperIcon: (
+      <MbIcon
+        name={EIconName.INFO}
+        size="20px"
+        color="blue-300"
+        darkColor="blue-100"
+      />
+    ),
     isLink: true,
   },
 }
