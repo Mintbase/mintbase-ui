@@ -9,7 +9,6 @@ export interface PaginationProps {
   currentPage: any
   itemsPerPage: number
   hasLabel?: boolean
-  altDisplayType?: string
 }
 
 const DOTS = '...'
@@ -21,7 +20,7 @@ const range = (start: any, end: any) => {
 }
 
 export const MbPagination = (props: PaginationProps) => {
-  const { onPageChange, currentPage, itemsPerPage, totalItems, hasLabel, altDisplayType } =
+  const { onPageChange, currentPage, itemsPerPage, totalItems, hasLabel } =
     props
 
   const [paginationRange, setPaginationRange] = useState<any[]>([])
@@ -45,7 +44,6 @@ export const MbPagination = (props: PaginationProps) => {
     const firstPageIndex = 1
     const lastPageIndex = totalPageCount
 
-  
     if (!shouldShowLeftDots && shouldShowRightDots) {
       const leftItemCount = 3
       const leftRange = range(1, leftItemCount)
@@ -90,10 +88,11 @@ export const MbPagination = (props: PaginationProps) => {
     onPageChange(currentPage - 1)
   }
 
-  const showingCount = props.totalItems > props.itemsPerPage 
-    ? props.itemsPerPage
-    : props.totalItems
-  
+  const showingCount =
+    props.totalItems > props.itemsPerPage
+      ? props.itemsPerPage
+      : props.totalItems
+
   return (
     <div className="flex flex-col ">
       <div className="flex items-center justify-center">
@@ -166,7 +165,7 @@ export const MbPagination = (props: PaginationProps) => {
       </div>
       {hasLabel && (
         <div className="text-center pt-24 p-small-90 text-gray-700 dark:text-gray-300">
-          Showing {showingCount} of {props.totalItems} {altDisplayType || 'NFTs'}
+          Showing {showingCount} of {props.totalItems}
         </div>
       )}
     </div>
