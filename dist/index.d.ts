@@ -229,7 +229,6 @@ interface PaginationProps {
     currentPage: any;
     itemsPerPage: number;
     hasLabel?: boolean;
-    altDisplayType?: string;
 }
 declare const MbPagination: (props: PaginationProps) => JSX.Element | null;
 
