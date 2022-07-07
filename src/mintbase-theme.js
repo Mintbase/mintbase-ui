@@ -4,6 +4,7 @@ module.exports = {
     md: '768px',
     lg: '976px',
     xl: '1440px',
+    xxl: '1920px',
   },
   fontFamily: {
     'authentic-sans-90': ['AuthenticSans-90', 'sans-serif'],
