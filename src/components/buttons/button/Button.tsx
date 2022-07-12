@@ -1,6 +1,10 @@
 import React from 'react'
+import { EIconName } from '../../../consts'
 import { getFontType } from '../../../consts/fontType'
 import { ESize, EState, EType } from '../../../consts/properties'
+import { Item, MbDropdownMenu } from '../../dropdowns/dropdown-menu/DropdownMenu'
+import { MbMenuWrapper } from '../../dropdowns/menu-wrapper/MenuWrapper'
+import { MbIcon } from '../../icon/Icon'
 import './button.css'
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -9,6 +13,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   state?: EState
   size?: ESize
   customClass?: string
+  dropDownItems?: Item[] | undefined
 }
 
 const getLoadingSize = (currentSize: string) => {
@@ -47,20 +52,48 @@ export const MbButton = ({
   state = EState.ACTIVE,
   size = ESize.MEDIUM,
   btnType = EType.PRIMARY,
+  dropDownItems = undefined,
   customClass,
   ...props
 }: ButtonProps) => {
   const isLoading = state === EState.LOADING
+  const [isDropdownOpen, setIsDropdownOpen] = React.useState(false)
+
   return (
-    <button
-      type="button"
-      className={`button ${btnType} ${state} ${
-        customClass ? customClass : `${size} ${getFontType(size)}`
-      } relative`}
-      {...props}
-    >
-      <span className={isLoading ? 'invisible' : 'visible'}>{label}</span>
-      {isLoading && <LoadingAnimation btnType={btnType} size={size} />}
-    </button>
+    <div className={`${dropDownItems ? 'flex gap-4' : ''}`}>
+      <button
+        type="button"
+        className={`button ${btnType} ${state} ${
+          customClass ? customClass : `${size} ${getFontType(size)}`
+        } relative`}
+        {...props}
+      >
+        <span className={isLoading ? 'invisible' : 'visible'}>{label}</span>
+        {isLoading && <LoadingAnimation btnType={btnType} size={size} />}
+      </button>
+      {dropDownItems && (
+        <div className="relative">
+          <MbMenuWrapper setIsOpen={setIsDropdownOpen}>
+            <button
+              type="button"
+              className={`button ${btnType}`}
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+            >
+              <MbIcon
+                name={EIconName.ARROW_DROP_DOWN}
+                size="30px"
+                color="white"
+                darkColor="white"
+              />
+            </button>
+            <MbDropdownMenu
+              items={dropDownItems}
+              isOpen={isDropdownOpen}
+              className="left-0"
+            />
+          </MbMenuWrapper>
+        </div>
+      )}
+    </div>
   )
 }

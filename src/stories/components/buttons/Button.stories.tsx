@@ -43,3 +43,23 @@ Caution.args = {
   btnType: EType.PRIMARY,
   size: ESize.MEDIUM,
 }
+
+const items = [
+  {
+    content: <span>Generate QR Code</span>,
+    onClick: () => console.log('asdasd'),
+  },
+  {
+    content: <span>Create Deeplink</span>,
+    onClick: () => console.log('asdasd'),
+  },
+]
+
+export const Dropdown = Template.bind({})
+Dropdown.args = {
+  label: 'Dropdown',
+  state: EState.ACTIVE,
+  btnType: EType.PRIMARY,
+  size: ESize.MEDIUM,
+  dropDownItems: items,
+}
