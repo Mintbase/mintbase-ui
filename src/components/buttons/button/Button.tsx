@@ -115,7 +115,9 @@ export const MbButton = ({
             <div>
               <button
                 type="button"
-                className={`button ${btnType} ${state} dropdown-btn ${size}-icon`}
+                className={`button ${btnType} ${
+                  state === EState.LOADING ? EState.DISABLED : state
+                } dropdown-btn ${size}-icon`}
               >
                 <div className="pointer-events-none	">
                   <MbIcon
