@@ -37,7 +37,6 @@ const getLoadingSize = (currentSize: string) => {
 }
 
 const getCurrentColor = (btnType: EType, state: EState): TIconColors => {
-  console.log('entao')
   switch (btnType) {
     case EType.PRIMARY:
       if (state === EState.DISABLED) {
@@ -108,7 +107,6 @@ export const MbButton = ({
           className="relative"
           onClick={() => {
             if (state !== EState.DISABLED && state !== EState.LOADING) {
-              console.log('aqui', isDropdownOpen)
               setIsDropdownOpen(!isDropdownOpen)
             }
           }}
