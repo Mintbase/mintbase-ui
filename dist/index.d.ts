@@ -38,14 +38,28 @@ interface ActionProps extends React__default.ButtonHTMLAttributes<HTMLButtonElem
 }
 declare const MbAction: ({ state, size, className, ...props }: ActionProps) => JSX.Element;
 
+interface Item {
+    content: JSX.Element;
+    selected?: boolean;
+    icon?: JSX.Element;
+    onClick?: () => void;
+}
+interface DropdownMenuProps {
+    items: Item[];
+    isOpen: boolean;
+    className?: string;
+}
+declare const MbDropdownMenu: (props: DropdownMenuProps) => JSX.Element | null;
+
 interface ButtonProps extends React__default.ButtonHTMLAttributes<HTMLButtonElement> {
     label?: string;
     btnType?: EType;
     state?: EState;
     size?: ESize;
     customClass?: string;
+    dropDownItems?: Item[] | undefined;
 }
-declare const MbButton: ({ label, state, size, btnType, customClass, ...props }: ButtonProps) => JSX.Element;
+declare const MbButton: ({ label, state, size, btnType, dropDownItems, customClass, ...props }: ButtonProps) => JSX.Element;
 
 declare enum EIconName {
     CHECK = "check",
@@ -285,19 +299,6 @@ interface LogoProps {
     className?: string;
 }
 declare const MbLogo: ({ src, width, className, }: LogoProps) => JSX.Element;
-
-interface Item {
-    content: JSX.Element;
-    selected?: boolean;
-    icon?: JSX.Element;
-    onClick?: () => void;
-}
-interface DropdownMenuProps {
-    items: Item[];
-    isOpen: boolean;
-    className?: string;
-}
-declare const MbDropdownMenu: (props: DropdownMenuProps) => JSX.Element | null;
 
 interface MbStatefulButtonProps {
     indicator: JSX.Element;
