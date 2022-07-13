@@ -41,7 +41,6 @@ export const MbRowSelectList = ({
             {elements &&
               elements.map((element) => {
                 const { id, content, isDisabled } = element
-                console.log(id)
                 return (
                   <tr
                     key={id}
