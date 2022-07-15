@@ -1,6 +1,7 @@
 /// <reference types="react" />
 import { TInputState } from '../../../../types';
-export declare const MbNearAmountAccount: ({ subtitle, smallSubtitle, defaultState, accountExists, defaultAccountsCounter, initialUsedAmount, saveButton, isPercentage, sendFinalState, isValidInfo, totalAmount, transferTemplate, isStoreSettings, }: {
+import { Item } from '../../../dropdowns/dropdown-menu/DropdownMenu';
+export declare const MbNearAmountAccount: ({ subtitle, smallSubtitle, defaultState, accountExists, defaultAccountsCounter, initialUsedAmount, saveButton, isPercentage, sendFinalState, isValidInfo, totalAmount, transferTemplate, isStoreSettings, dropdownItems, }: {
     subtitle: string;
     smallSubtitle: string;
     defaultState: Record<string, TInputState>;
@@ -19,4 +20,5 @@ export declare const MbNearAmountAccount: ({ subtitle, smallSubtitle, defaultSta
         available: number;
     } | undefined;
     isStoreSettings?: boolean | undefined;
+    dropdownItems?: Item[] | undefined;
 }) => JSX.Element;
