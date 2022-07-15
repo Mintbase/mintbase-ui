@@ -6,6 +6,7 @@ import { TNearAccountState } from '../../../../types'
 import { MbAction } from '../../../action/Action'
 import { MbButton } from '../../../buttons/button/Button'
 import { MbInfoCard } from '../../../cards/info/InfoCard'
+import { Item } from '../../../dropdowns/dropdown-menu/DropdownMenu'
 import { EControlStatus, MbInput } from '../../input-field/inputField'
 import { MbInputAccount } from '../InputAccount'
 
@@ -14,6 +15,7 @@ export const MbNearAccountList = ({
   smallSubtitle,
   accountExists,
   saveButton,
+  dropdownItems
 }: {
   subtitle: string
   smallSubtitle: string
@@ -22,6 +24,7 @@ export const MbNearAccountList = ({
     text: string
     save: (accounts: string[]) => void
   }
+  dropdownItems?: Item[]
 }) => {
   const [used, setUsed] = useState<number>(0)
   const [state, setState] = useState<Record<string, TNearAccountState>>({})
@@ -199,6 +202,7 @@ export const MbNearAccountList = ({
                         .map((elm) => elm.account.value)
                     )
                   }}
+                  dropDownItems={dropdownItems}
                   disabled={!isValid}
                 />
               )}

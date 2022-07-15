@@ -1,21 +1,23 @@
 import { useState } from 'react'
-import { EIconName, ESize, EState, EType } from '../../consts'
+import { EIconName, EState, EType } from '../../consts'
 import { MbAction } from '../action/Action'
 import { MbButton } from '../buttons/button/Button'
 import { MbInfoCard } from '../cards/info/InfoCard'
+import { Item } from '../dropdowns/dropdown-menu/DropdownMenu'
 import { MbIcon } from '../icon/Icon'
 import { MbInputAccount } from '../inputs/input-account/InputAccount'
 import { MbBody, MbHead, MbTable } from '../table/Table'
-import { MbText } from '../text/Text'
 import { MbCheckbox } from '../toggles/checkbox/Checkbox'
 
 export const MbRowSelectList = ({
   elements,
+  dropdownItems,
   deleteRow,
   addMinters,
   removeMinters,
 }: {
   elements: { id: string; content: JSX.Element; isDisabled: boolean }[]
+  dropdownItems?: Item[]
   deleteRow: (id: string) => void
   addMinters: () => void
   removeMinters: (ids: string[]) => void
@@ -127,6 +129,7 @@ export const MbRowSelectList = ({
                 btnType={EType.PRIMARY}
                 state={EState.CAUTION}
                 label="Remove"
+                dropDownItems={dropdownItems}
                 onClick={() => removeMinters(checkedList)}
               />
             ) : (
