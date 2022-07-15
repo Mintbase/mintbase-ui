@@ -136,7 +136,7 @@ export const MbButton = ({
             <MbDropdownMenu
               items={dropDownItems}
               isOpen={isDropdownOpen}
-              className="left-0"
+              className="right-0 md:left-0 md:right-auto"
             />
           </MbMenuWrapper>
         </div>
