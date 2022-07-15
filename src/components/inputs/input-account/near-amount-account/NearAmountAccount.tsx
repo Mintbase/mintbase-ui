@@ -5,6 +5,7 @@ import { TInputState } from '../../../../types'
 import { MbAction } from '../../../action/Action'
 import { MbButton } from '../../../buttons/button/Button'
 import { MbInfoCard } from '../../../cards/info/InfoCard'
+import { Item } from '../../../dropdowns/dropdown-menu/DropdownMenu'
 import { MbIcon } from '../../../icon/Icon'
 import { MbAmountAccountInput } from '../../amount-account-input/AmountAccountInput'
 import { EControlStatus, MbInput } from '../../input-field/inputField'
@@ -26,6 +27,7 @@ export const MbNearAmountAccount = ({
   totalAmount = 100,
   transferTemplate,
   isStoreSettings,
+  dropdownItems,
 }: {
   subtitle: string
   smallSubtitle: string
@@ -45,6 +47,7 @@ export const MbNearAmountAccount = ({
     available: number
   }
   isStoreSettings?: boolean
+  dropdownItems?: Item[]
 }) => {
   const [used, setUsed] = useState<number>(0)
   const [state, setState] = useState<Record<string, TInputState>>({})
@@ -414,6 +417,7 @@ export const MbNearAmountAccount = ({
                     setRemovedDefaultField(false)
                     setIsSaved(saveButton.save)
                   }}
+                  dropDownItems={dropdownItems}
                   disabled={!isValid}
                 />
               )}
