@@ -468,18 +468,19 @@ declare const MbAmountAccountInput: ({ id, validateAccount, validateAmount, hand
     isCleared?: boolean | undefined;
 }) => JSX.Element;
 
-declare const MbRowSelectList: ({ elements, deleteRow, addMinters, removeMinters, }: {
+declare const MbRowSelectList: ({ elements, dropdownItems, deleteRow, addMinters, removeMinters, }: {
     elements: {
         id: string;
         content: JSX.Element;
         isDisabled: boolean;
     }[];
+    dropdownItems?: Item[] | undefined;
     deleteRow: (id: string) => void;
     addMinters: () => void;
     removeMinters: (ids: string[]) => void;
 }) => JSX.Element;
 
-declare const MbNearAccountList: ({ subtitle, smallSubtitle, accountExists, saveButton, }: {
+declare const MbNearAccountList: ({ subtitle, smallSubtitle, accountExists, saveButton, dropdownItems }: {
     subtitle: string;
     smallSubtitle: string;
     accountExists: (account: string) => Promise<boolean>;
@@ -487,6 +488,7 @@ declare const MbNearAccountList: ({ subtitle, smallSubtitle, accountExists, save
         text: string;
         save: (accounts: string[]) => void;
     } | undefined;
+    dropdownItems?: Item[] | undefined;
 }) => JSX.Element;
 
 declare enum EPillTemplate {
