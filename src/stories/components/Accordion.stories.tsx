@@ -11,25 +11,7 @@ export default {
 
 const Template: ComponentStory<typeof MbAccordion> = (args) => (
   <MbAccordion {...args}>
-    <p className="p-24">
-      This is the description.This is the description.This is the
-      description.This is the description.This is the description.This is the
-      description.This is the description.This is the description.This is the
-      description.This is the description.This is the description.This is the
-      description.This is the description.This is the description.This is the
-      description.This is the description.This is the description.This is the
-      description.This is the description.This is the description.This is the
-      description.This is the description.This is the description.This is the
-      description.This is the description.This is the description.This is the
-      description.This is the description.This is the description.This is the
-      description.This is the description.This is the description.This is the
-      description.This is the description.This is the description.This is the
-      description.This is the description.This is the description.This is the
-      description.This is the description.This is the description.This is the
-      description.This is the description.This is the description.This is the
-      description.This is the description.This is the description.This is the
-      description.END
-    </p>
+    <p className="p-24">This is the description.</p>
   </MbAccordion>
 )
 

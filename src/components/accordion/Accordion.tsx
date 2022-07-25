@@ -76,7 +76,7 @@ export const MbAccordion = (props: AccordionProps) => {
         </div>
       </header>
       <section
-        className={`relative overflow-hidden transition-all duration-500 ${showContent}`}
+        className={`overflow-hidden transition-all duration-500 ${showContent}`}
       >
         {children}
       </section>
