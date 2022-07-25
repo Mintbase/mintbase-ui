@@ -30,7 +30,7 @@ export const MbAccordion = (props: AccordionProps) => {
 
   const rotateIcon = isExpanded ? 'rotate-180' : 'rotate-0'
 
-  const showContent = isExpanded ? 'max-h-screen' : 'max-h-0'
+  const showContent = isExpanded ? 'max-h-xl' : 'max-h-0'
 
   return (
     <main className="rounded bg-white dark:bg-gray-850 dark:text-white">
