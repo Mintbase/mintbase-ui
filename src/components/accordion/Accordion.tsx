@@ -14,7 +14,7 @@ interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
 export const MbAccordion = (props: AccordionProps) => {
   const {
     title,
-    isOpen,
+    isOpen = false,
     isFixedAccordion,
     extraIcon,
     isVerifiedToken,
@@ -27,6 +27,8 @@ export const MbAccordion = (props: AccordionProps) => {
     if (isFixedAccordion) return
     setIsExpanded(!isExpanded)
   }
+
+  const rotateIcon = isExpanded ? 'rotate-180' : 'rotate-0'
 
   return (
     <main className="rounded bg-white dark:bg-gray-850 dark:text-white">
@@ -58,14 +60,11 @@ export const MbAccordion = (props: AccordionProps) => {
           {extraIcon && extraIcon}
           {!isFixedAccordion && (
             <MbIcon
-              name={
-                !isExpanded
-                  ? EIconName.ARROW_EXPAND_MORE
-                  : EIconName.ARROW_EXPAND_LESS
-              }
+              name={EIconName.ARROW_EXPAND_MORE}
               size="20px"
               color="black"
               darkColor="white"
+              className={`transform transition ease-in duration-200 ${rotateIcon}`}
             />
           )}
         </div>
