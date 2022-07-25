@@ -30,7 +30,7 @@ export const MbAccordion = (props: AccordionProps) => {
 
   const rotateIcon = isExpanded ? 'rotate-180' : 'rotate-0'
 
-  const showContent = isExpanded ? 'max-h-24' : 'max-h-0'
+  const showContent = isExpanded ? 'max-h-full' : 'max-h-0'
 
   return (
     <main className="rounded bg-white dark:bg-gray-850 dark:text-white">
@@ -39,7 +39,7 @@ export const MbAccordion = (props: AccordionProps) => {
           isFixedAccordion ? '' : 'cursor-pointer'
         } ${
           isExpanded ? 'border-b border-gray-150 dark:border-gray-700' : ''
-        } transition-all ease-in-out duration-200`}
+        } transition-all ease-in-out duration-150`}
         onClick={toggle}
       >
         <div className="flex gap-12 items-center p-big-130">
