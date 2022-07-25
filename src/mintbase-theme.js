@@ -135,6 +135,9 @@ module.exports = {
       38: '38px',
       50: '50px',
     },
+    maxHeight: {
+      xl: '2000px'
+    },
     maxWidth: {
       64: '16rem',
       '40%': '40%',
