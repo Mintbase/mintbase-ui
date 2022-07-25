@@ -1,4 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
+import React from 'react'
 import { EIconName, MbIcon } from '../..'
 import { MbAccordion } from '../../components/accordion/Accordion'
 
@@ -10,7 +11,25 @@ export default {
 
 const Template: ComponentStory<typeof MbAccordion> = (args) => (
   <MbAccordion {...args}>
-    <p className="p-24">This is the description.</p>
+    <p className="p-24">
+      This is the description.This is the description.This is the
+      description.This is the description.This is the description.This is the
+      description.This is the description.This is the description.This is the
+      description.This is the description.This is the description.This is the
+      description.This is the description.This is the description.This is the
+      description.This is the description.This is the description.This is the
+      description.This is the description.This is the description.This is the
+      description.This is the description.This is the description.This is the
+      description.This is the description.This is the description.This is the
+      description.This is the description.This is the description.This is the
+      description.This is the description.This is the description.This is the
+      description.This is the description.This is the description.This is the
+      description.This is the description.This is the description.This is the
+      description.This is the description.This is the description.This is the
+      description.This is the description.This is the description.This is the
+      description.This is the description.This is the description.This is the
+      description.END
+    </p>
   </MbAccordion>
 )
 
