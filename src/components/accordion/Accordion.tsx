@@ -30,12 +30,16 @@ export const MbAccordion = (props: AccordionProps) => {
 
   const rotateIcon = isExpanded ? 'rotate-180' : 'rotate-0'
 
+  const showContent = isExpanded ? 'max-h-24' : 'max-h-0'
+
   return (
     <main className="rounded bg-white dark:bg-gray-850 dark:text-white">
       <header
-        className={`flex justify-between items-center p-24 ${
+        className={`flex justify-between items-center p-24 border-b-0 ${
           isFixedAccordion ? '' : 'cursor-pointer'
-        } ${isExpanded ? 'border-b border-gray-150 dark:border-gray-700' : ''}`}
+        } ${
+          isExpanded ? 'border-b border-gray-150 dark:border-gray-700' : ''
+        } transition-all ease-in-out duration-200`}
         onClick={toggle}
       >
         <div className="flex gap-12 items-center p-big-130">
@@ -64,12 +68,16 @@ export const MbAccordion = (props: AccordionProps) => {
               size="20px"
               color="black"
               darkColor="white"
-              className={`transform transition ease-in duration-200 ${rotateIcon}`}
+              className={`transform transition ease-in-out duration-200 ${rotateIcon}`}
             />
           )}
         </div>
       </header>
-      {isExpanded && <section>{children}</section>}
+      <section
+        className={`overflow-hidden transition-all ease-in-out duration-300 ${showContent}`}
+      >
+        {children}
+      </section>
     </main>
   )
 }
