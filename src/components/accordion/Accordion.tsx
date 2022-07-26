@@ -35,12 +35,10 @@ export const MbAccordion = (props: AccordionProps) => {
   return (
     <main className="rounded bg-white dark:bg-gray-850 dark:text-white">
       <header
-        className={`flex justify-between items-center p-24 ${
+        className={`flex justify-between items-center p-24 border-gray-150 dark:border-gray-700 ${
           isFixedAccordion ? '' : 'cursor-pointer'
         } ${
-          isExpanded
-            ? 'border-b border-gray-150 dark:border-gray-700'
-            : 'border-b-0'
+          isExpanded ? 'border-b' : 'border-b-0'
         } transition-all duration-300`}
         onClick={toggle}
       >
