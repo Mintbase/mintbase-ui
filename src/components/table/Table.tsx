@@ -4,7 +4,7 @@ import { MbPagination } from '../navigation/pagination/Pagination'
 import { PaginationProps } from '../navigation/pagination/Pagination'
 import './table.css'
 interface TableProps extends React.HTMLAttributes<HTMLDivElement> {
-  title?: string
+  tableTitle?: string | JSX.Element
   pagination?: PaginationProps
   showItemsPerPage?: boolean
   onAmountItemsChange?: (page: number) => void
@@ -32,14 +32,19 @@ export const MbBody = (props: React.HTMLAttributes<HTMLDivElement>) => {
 }
 
 export const MbTable = (props: TableProps) => {
-  const { title, children, pagination, onAmountItemsChange, showItemsPerPage } =
-    props
+  const {
+    tableTitle,
+    children,
+    pagination,
+    onAmountItemsChange,
+    showItemsPerPage,
+  } = props
 
   return (
     <section className="bg-white dark:bg-gray-850 rounded">
-      {title && (
+      {tableTitle && (
         <header className="p-24 border-b border-gray-200 dark:border-gray-800 dark:text-white p-big-130">
-          {title}
+          {tableTitle}
         </header>
       )}
 

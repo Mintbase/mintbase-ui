@@ -1,4 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
+import React from 'react'
 import { useEffect, useState } from 'react'
 import { MbTable, MbBody, MbHead } from '../../components/table/Table'
 
@@ -163,5 +164,5 @@ const Template: ComponentStory<typeof MbTable> = (args) => {
 
 export const Table = Template.bind({})
 Table.args = {
-  title: 'Trading History',
+  tableTitle: 'Trading History',
 }
