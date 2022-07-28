@@ -13,7 +13,7 @@
 
 .content-hide {
   max-height: 0;
-  animation: contentHide 0.3s ease-icontentHide-out;
+  animation: contentHide 0.3s ease-in-out;
 }
 @keyframes contentHide {
   0% {
