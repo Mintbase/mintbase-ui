@@ -1,5 +1,5 @@
 .content-show {
-  animation: contentShow 0.5s ease-in-out;
+  animation: contentShow 0.65s ease-in-out;
 }
 
 @keyframes contentShow {
@@ -13,7 +13,7 @@
 
 .content-hide {
   max-height: 0;
-  animation: contentHide 0.3s ease-in-out;
+  animation: contentHide 0.25s ease-in-out;
 }
 @keyframes contentHide {
   0% {
