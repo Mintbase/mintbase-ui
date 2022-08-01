@@ -60,7 +60,9 @@ export const MbTextArea = forwardRef<HTMLTextAreaElement, TextareaProps>(
               placeholder={placeholder}
               value={value}
               onChange={(e) => {
-                setCount(e.target.value.length)
+                if (maxChars) {
+                  setCount(e.target.value.length)
+                }
                 if (!onChange) return
                 onChange(e)
               }}
