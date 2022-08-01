@@ -4,7 +4,7 @@ import { ESize } from '../../../consts/properties'
 import { EControlStatus } from '../../inputs/input-field/inputField'
 import './TextArea.css'
 import './../Input.css'
-import MbCharCounter from '../../counters/CharCounter'
+import { MbCharCounter } from '../../counters/CharCounter'
 
 interface TextareaProps
   extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
