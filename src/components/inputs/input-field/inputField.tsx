@@ -53,8 +53,6 @@ export const MbInput = forwardRef<HTMLInputElement, InputProps>(
         : '20px'
     }
 
-    const maxReached = count === maxChars
-
     return (
       <>
         {label && (
@@ -82,19 +80,17 @@ export const MbInput = forwardRef<HTMLInputElement, InputProps>(
               placeholder={placeholder}
               type={type}
               value={value}
+              maxLength={maxChars}
               required={required}
               className={`input-field ${getFontType(inputSize)}`}
               onWheel={(e) => {
                 if (type !== 'number') return
                 e.currentTarget.blur()
               }}
-              onKeyDown={(event) => {
-                if (!maxReached) return
-                if (event.key === 'Backspace') return
-                event.preventDefault()
-              }}
               onChange={(e) => {
-                setCount(e.target.value.length)
+                if (maxChars) {
+                  setCount(e.target.value.length)
+                }
                 if (!onChange) return
                 onChange(e)
               }}
