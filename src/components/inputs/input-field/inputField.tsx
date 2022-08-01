@@ -3,7 +3,7 @@ import { getFontType, getInputLabelFontType } from '../../../consts/fontType'
 import { EIconName } from '../../../consts/icons'
 import { ESize } from '../../../consts/properties'
 import { getCurrentBreakpoint, ScreenBreakpoint } from '../../../utils'
-import MbCharCounter from '../../counters/charCounter'
+import { MbCharCounter } from '../../counters/CharCounter'
 import { MbIcon } from '../../icon/Icon'
 import './../Input.css'
 import './inputfield.css'
@@ -134,12 +134,14 @@ export const MbInput = forwardRef<HTMLInputElement, InputProps>(
             </div>
           )}
         </div>
-        {maxChars && (
+        {maxChars ? (
           <MbCharCounter
             counter={count}
             inputSize={inputSize}
             maxChars={maxChars}
           />
+        ) : (
+          <></>
         )}
       </>
     )
