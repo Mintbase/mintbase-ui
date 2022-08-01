@@ -1,15 +1,17 @@
-import { forwardRef } from 'react'
+import { forwardRef, useState } from 'react'
 import { getFontType, getInputLabelFontType } from '../../../consts/fontType'
 import { ESize } from '../../../consts/properties'
 import { EControlStatus } from '../../inputs/input-field/inputField'
 import './TextArea.css'
 import './../Input.css'
+import MbCharCounter from '../../counters/CharCounter'
 
 interface TextareaProps
   extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   label?: string
   controlStatus: EControlStatus
   inputSize?: ESize
+  maxChars?: number
 }
 
 export const MbTextArea = forwardRef<HTMLTextAreaElement, TextareaProps>(
@@ -22,6 +24,7 @@ export const MbTextArea = forwardRef<HTMLTextAreaElement, TextareaProps>(
       placeholder,
       controlStatus = EControlStatus.NORMAL,
       label,
+      maxChars,
       onChange,
       value,
       inputSize = ESize.MEDIUM,
@@ -29,6 +32,8 @@ export const MbTextArea = forwardRef<HTMLTextAreaElement, TextareaProps>(
     },
     ref
   ) => {
+    const [count, setCount] = useState(0)
+
     return (
       <>
         {label && (
@@ -50,14 +55,31 @@ export const MbTextArea = forwardRef<HTMLTextAreaElement, TextareaProps>(
         >
           <label className="w-full">
             <textarea
+              maxLength={maxChars}
               className={`textarea ${getFontType(inputSize)}`}
               placeholder={placeholder}
               value={value}
+              onChange={(e) => {
+                if (maxChars) {
+                  setCount(e.target.value.length)
+                }
+                if (!onChange) return
+                onChange(e)
+              }}
               {...restProps}
               ref={ref}
             ></textarea>
           </label>
         </div>
+        {maxChars ? (
+          <MbCharCounter
+            counter={count}
+            inputSize={inputSize}
+            maxChars={maxChars}
+          />
+        ) : (
+          <></>
+        )}
       </>
     )
   }
