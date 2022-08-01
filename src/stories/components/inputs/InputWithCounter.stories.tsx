@@ -21,8 +21,8 @@ export default {
 
 const Template: ComponentStory<typeof MbInput> = (args) => <MbInput {...args} />
 
-export const Input = Template.bind({})
-Input.args = {
+export const InputWithCharsCounter = Template.bind({})
+InputWithCharsCounter.args = {
   label: 'Label',
   hasIcon: true,
   disabled: false,
@@ -35,4 +35,5 @@ Input.args = {
   onChange: (event: any) => {
     console.log(event.target.value)
   },
+  maxChars: 25,
 }
