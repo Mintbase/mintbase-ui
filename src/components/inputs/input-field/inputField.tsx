@@ -1,11 +1,12 @@
-import React, { forwardRef } from 'react'
+import React, { forwardRef, useState } from 'react'
 import { getFontType, getInputLabelFontType } from '../../../consts/fontType'
 import { EIconName } from '../../../consts/icons'
 import { ESize } from '../../../consts/properties'
-import { MbIcon } from '../../icon/Icon'
-import './inputfield.css'
-import './../Input.css'
 import { getCurrentBreakpoint, ScreenBreakpoint } from '../../../utils'
+import { MbCharCounter } from '../../counters/CharCounter'
+import { MbIcon } from '../../icon/Icon'
+import './../Input.css'
+import './inputfield.css'
 
 export enum EControlStatus {
   NORMAL = 'normal',
@@ -19,6 +20,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   controlStatus: EControlStatus
   inputSize?: ESize
   hasPercentageLabel?: boolean
+  maxChars?: number
 }
 
 export const MbInput = forwardRef<HTMLInputElement, InputProps>(
@@ -35,11 +37,15 @@ export const MbInput = forwardRef<HTMLInputElement, InputProps>(
       value,
       type,
       hasIcon,
+      maxChars,
       inputSize = ESize.MEDIUM,
+      onChange,
       ...restProps
     },
     ref
   ) => {
+    const [count, setCount] = useState(0)
+
     const getIconSize = () => {
       return inputSize === 'big' &&
         getCurrentBreakpoint() !== ScreenBreakpoint.SM
@@ -74,11 +80,19 @@ export const MbInput = forwardRef<HTMLInputElement, InputProps>(
               placeholder={placeholder}
               type={type}
               value={value}
+              maxLength={maxChars}
               required={required}
               className={`input-field ${getFontType(inputSize)}`}
               onWheel={(e) => {
                 if (type !== 'number') return
                 e.currentTarget.blur()
+              }}
+              onChange={(e) => {
+                if (maxChars) {
+                  setCount(e.target.value.length)
+                }
+                if (!onChange) return
+                onChange(e)
               }}
               {...restProps}
             />
@@ -116,6 +130,15 @@ export const MbInput = forwardRef<HTMLInputElement, InputProps>(
             </div>
           )}
         </div>
+        {maxChars ? (
+          <MbCharCounter
+            counter={count}
+            inputSize={inputSize}
+            maxChars={maxChars}
+          />
+        ) : (
+          <></>
+        )}
       </>
     )
   }

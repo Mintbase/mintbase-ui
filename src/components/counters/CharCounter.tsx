@@ -1,7 +1,7 @@
 import { ESize } from '../../consts'
 import { MbText } from '../text/Text'
 
-const MbCharCounter = ({
+export const MbCharCounter = ({
   inputSize,
   maxChars,
   counter,
@@ -33,5 +33,3 @@ const MbCharCounter = ({
     </MbText>
   )
 }
-
-export default MbCharCounter
