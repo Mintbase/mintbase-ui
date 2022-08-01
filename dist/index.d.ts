@@ -200,6 +200,7 @@ interface InputProps extends React__default.InputHTMLAttributes<HTMLInputElement
     controlStatus: EControlStatus;
     inputSize?: ESize;
     hasPercentageLabel?: boolean;
+    maxChars?: number;
 }
 declare const MbInput: React__default.ForwardRefExoticComponent<InputProps & React__default.RefAttributes<HTMLInputElement>>;
 
