@@ -23,8 +23,8 @@ const Template: ComponentStory<typeof MbTextArea> = (args) => (
   <MbTextArea {...args} />
 )
 
-export const TextArea = Template.bind({})
-TextArea.args = {
+export const TextAreaWithCounter = Template.bind({})
+TextAreaWithCounter.args = {
   label: 'Label',
   hasIcon: true,
   disabled: false,
@@ -37,4 +37,5 @@ TextArea.args = {
   onChange: (event: any) => {
     console.log(event.target.value)
   },
+  maxChars: 10
 }
