@@ -208,6 +208,7 @@ interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement
     label?: string;
     controlStatus: EControlStatus;
     inputSize?: ESize;
+    maxChars?: number;
 }
 declare const MbTextArea: React$1.ForwardRefExoticComponent<TextareaProps & React$1.RefAttributes<HTMLTextAreaElement>>;
 
