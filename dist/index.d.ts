@@ -201,6 +201,7 @@ interface InputProps extends React__default.InputHTMLAttributes<HTMLInputElement
     inputSize?: ESize;
     hasPercentageLabel?: boolean;
     maxChars?: number;
+    initialCounter?: number;
 }
 declare const MbInput: React__default.ForwardRefExoticComponent<InputProps & React__default.RefAttributes<HTMLInputElement>>;
 
@@ -209,6 +210,7 @@ interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement
     controlStatus: EControlStatus;
     inputSize?: ESize;
     maxChars?: number;
+    initialCounter?: number;
 }
 declare const MbTextArea: React$1.ForwardRefExoticComponent<TextareaProps & React$1.RefAttributes<HTMLTextAreaElement>>;
 

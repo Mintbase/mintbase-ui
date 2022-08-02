@@ -14,6 +14,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
     inputSize?: ESize;
     hasPercentageLabel?: boolean;
     maxChars?: number;
+    initialCounter?: number;
 }
 export declare const MbInput: React.ForwardRefExoticComponent<InputProps & React.RefAttributes<HTMLInputElement>>;
 export {};
