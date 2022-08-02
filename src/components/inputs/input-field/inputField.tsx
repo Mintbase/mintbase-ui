@@ -21,6 +21,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   inputSize?: ESize
   hasPercentageLabel?: boolean
   maxChars?: number
+  initialCounter?: number
 }
 
 export const MbInput = forwardRef<HTMLInputElement, InputProps>(
@@ -38,13 +39,14 @@ export const MbInput = forwardRef<HTMLInputElement, InputProps>(
       type,
       hasIcon,
       maxChars,
+      initialCounter = 0,
       inputSize = ESize.MEDIUM,
       onChange,
       ...restProps
     },
     ref
   ) => {
-    const [count, setCount] = useState(value ? value.toString().length : 0)
+    const [count, setCount] = useState(initialCounter)
 
     const getIconSize = () => {
       return inputSize === 'big' &&
