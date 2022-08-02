@@ -44,7 +44,7 @@ export const MbInput = forwardRef<HTMLInputElement, InputProps>(
     },
     ref
   ) => {
-    const [count, setCount] = useState(0)
+    const [count, setCount] = useState(value ? value.toString().length : 0)
 
     const getIconSize = () => {
       return inputSize === 'big' &&

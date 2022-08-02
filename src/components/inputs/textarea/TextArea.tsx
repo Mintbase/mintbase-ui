@@ -32,7 +32,7 @@ export const MbTextArea = forwardRef<HTMLTextAreaElement, TextareaProps>(
     },
     ref
   ) => {
-    const [count, setCount] = useState(0)
+    const [count, setCount] = useState(value ? value.toString().length : 0)
 
     return (
       <>
