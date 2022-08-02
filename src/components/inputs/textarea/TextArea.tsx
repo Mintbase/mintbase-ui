@@ -12,6 +12,7 @@ interface TextareaProps
   controlStatus: EControlStatus
   inputSize?: ESize
   maxChars?: number
+  initialCounter?: number
 }
 
 export const MbTextArea = forwardRef<HTMLTextAreaElement, TextareaProps>(
@@ -25,6 +26,7 @@ export const MbTextArea = forwardRef<HTMLTextAreaElement, TextareaProps>(
       controlStatus = EControlStatus.NORMAL,
       label,
       maxChars,
+      initialCounter = 0,
       onChange,
       value,
       inputSize = ESize.MEDIUM,
@@ -32,7 +34,7 @@ export const MbTextArea = forwardRef<HTMLTextAreaElement, TextareaProps>(
     },
     ref
   ) => {
-    const [count, setCount] = useState(value ? value.toString().length : 0)
+    const [count, setCount] = useState(initialCounter)
 
     return (
       <>
