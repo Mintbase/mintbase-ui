@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { MbIcon } from '..'
 import { EIconName } from '../..'
 import { MbTooltip } from '../tooltip/Tooltip'
+import './Accordion.css'
 
 interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
   title: string
@@ -23,14 +24,27 @@ export const MbAccordion = (props: AccordionProps) => {
 
   const [isExpanded, setIsExpanded] = useState(isOpen)
 
+  const contentAnimation = () => {
+    var wrapper = document.getElementById('content-wrapper')
+
+    if (!wrapper) return
+
+    if (wrapper.clientHeight) {
+      wrapper.style.height = '0'
+    } else {
+      var content = document.getElementById('content')
+      if (!content) return
+      wrapper.style.height = content.clientHeight + 'px'
+    }
+  }
+
   const toggle = () => {
     if (isFixedAccordion) return
     setIsExpanded(!isExpanded)
+    contentAnimation()
   }
 
   const rotateIcon = isExpanded ? 'rotate-180' : 'rotate-0'
-
-  const showContent = isExpanded ? 'max-h-xl' : 'max-h-0'
 
   return (
     <main className="rounded bg-white dark:bg-gray-850 dark:text-white">
@@ -68,15 +82,13 @@ export const MbAccordion = (props: AccordionProps) => {
               size="20px"
               color="black"
               darkColor="white"
-              className={`transform transition ease-in-out duration-200 ${rotateIcon}`}
+              className={`transform transition ease-in-out duration-300 ${rotateIcon}`}
             />
           )}
         </div>
       </header>
-      <section
-        className={`overflow-hidden transition-all duration-500 ${showContent}`}
-      >
-        {children}
+      <section id="content-wrapper">
+        <div id="content">{children}</div>
       </section>
     </main>
   )
