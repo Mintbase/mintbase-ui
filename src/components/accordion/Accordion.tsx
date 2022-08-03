@@ -54,6 +54,15 @@ export const MbAccordion = (props: AccordionProps) => {
     contentAnimation()
   }, [isFixedAccordion])
 
+  useEffect(() => {
+    if (!isOpen) return
+    contentAnimation()
+  }, [isOpen])
+
+  useEffect(() => {
+    contentAnimation()
+  }, [children])
+
   return (
     <main
       className="rounded bg-white dark:bg-gray-850 dark:text-white"
