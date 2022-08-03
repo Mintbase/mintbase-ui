@@ -1,21 +1,5 @@
-/* .content-show {
-  transform: scaleY(1);
-  transition: transform 0.3s ease-in-out;
-
-}
-
-.content-hide {
-  transform: scaleY(0);
-  transform-origin: top;
-  transition: transform 0.3s ease-in-out;
-} */
-
 #content-wrapper {
-  -moz-transition: height 0.5s;
-  -ms-transition: height 0.5s;
-  -o-transition: height 0.5s;
-  -webkit-transition: height 0.5s;
-  transition: height 0.5s;
   height: 0;
   overflow: hidden;
+  transition: height 0.3s;
 }
