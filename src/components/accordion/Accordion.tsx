@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { MbIcon } from '..'
 import { EIconName } from '../..'
 import { MbTooltip } from '../tooltip/Tooltip'
+import './Accordion.css'
 
 interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
   title: string
@@ -30,7 +31,7 @@ export const MbAccordion = (props: AccordionProps) => {
 
   const rotateIcon = isExpanded ? 'rotate-180' : 'rotate-0'
 
-  const showContent = isExpanded ? 'max-h-xl' : 'max-h-0'
+  const showContent = isExpanded ? 'content-show' : 'content-hide'
 
   return (
     <main className="rounded bg-white dark:bg-gray-850 dark:text-white">
@@ -39,7 +40,7 @@ export const MbAccordion = (props: AccordionProps) => {
           isFixedAccordion ? '' : 'cursor-pointer'
         } ${
           isExpanded ? 'border-b' : 'border-b-0'
-        } transition-all duration-300`}
+        } transition-all duration-400`}
         onClick={toggle}
       >
         <div className="flex gap-12 items-center p-big-130">
@@ -68,16 +69,12 @@ export const MbAccordion = (props: AccordionProps) => {
               size="20px"
               color="black"
               darkColor="white"
-              className={`transform transition ease-in-out duration-200 ${rotateIcon}`}
+              className={`transform transition ease-in-out duration-300 ${rotateIcon}`}
             />
           )}
         </div>
       </header>
-      <section
-        className={`overflow-hidden transition-all duration-500 ${showContent}`}
-      >
-        {children}
-      </section>
+      <section className={showContent}>{children}</section>
     </main>
   )
 }
