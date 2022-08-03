@@ -1,4 +1,5 @@
 #content-wrapper {
+  display: contents;
   height: 0;
   overflow: hidden;
   transition: height 0.3s;
