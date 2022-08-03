@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { MbIcon } from '..'
 import { EIconName } from '../..'
 import { MbTooltip } from '../tooltip/Tooltip'
@@ -24,15 +24,18 @@ export const MbAccordion = (props: AccordionProps) => {
 
   const [isExpanded, setIsExpanded] = useState(isOpen)
 
-  const contentAnimation = () => {
-    var wrapper = document.getElementById('content-wrapper')
+  const contentRef = useRef<HTMLElement>(null)
 
+  const contentAnimation = () => {
+    const wrapper = contentRef.current?.children[1] as HTMLElement
+    const content = contentRef.current?.children[1]?.children[0] as HTMLElement
+
+    if (!content) return
     if (!wrapper) return
 
     if (wrapper.clientHeight) {
       wrapper.style.height = '0'
     } else {
-      var content = document.getElementById('content')
       if (!content) return
       wrapper.style.height = content.clientHeight + 'px'
     }
@@ -46,8 +49,16 @@ export const MbAccordion = (props: AccordionProps) => {
 
   const rotateIcon = isExpanded ? 'rotate-180' : 'rotate-0'
 
+  useEffect(() => {
+    if (!isFixedAccordion) return
+    contentAnimation()
+  }, [isFixedAccordion])
+
   return (
-    <main className="rounded bg-white dark:bg-gray-850 dark:text-white">
+    <main
+      className="rounded bg-white dark:bg-gray-850 dark:text-white"
+      ref={contentRef}
+    >
       <header
         className={`flex justify-between items-center p-24 border-gray-150 dark:border-gray-700 ${
           isFixedAccordion ? '' : 'cursor-pointer'
