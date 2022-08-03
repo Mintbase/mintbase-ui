@@ -30,6 +30,7 @@ export const MbAccordion = (props: AccordionProps) => {
   const content = contentRef.current?.children[1]?.children[0] as HTMLElement
 
   const contentAnimation = () => {
+    if (isFixedAccordion) return
     if (!content) return
     if (!wrapper) return
 
@@ -54,11 +55,6 @@ export const MbAccordion = (props: AccordionProps) => {
   }
 
   const rotateIcon = isExpanded ? 'rotate-180' : 'rotate-0'
-
-  useEffect(() => {
-    if (!isFixedAccordion) return
-    contentAnimation()
-  }, [isFixedAccordion])
 
   useEffect(() => {
     if (!isOpen) return
@@ -113,7 +109,7 @@ export const MbAccordion = (props: AccordionProps) => {
           )}
         </div>
       </header>
-      <section id="content-wrapper">
+      <section id={`${!isFixedAccordion ? 'content-wrapper' : ''}`}>
         <div id="content">{children}</div>
       </section>
     </main>
