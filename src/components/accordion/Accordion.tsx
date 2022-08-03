@@ -29,7 +29,7 @@ export const MbAccordion = (props: AccordionProps) => {
 
     if (!wrapper) return
 
-    if (wrapper?.clientHeight) {
+    if (wrapper.clientHeight) {
       wrapper.style.height = '0'
     } else {
       var content = document.getElementById('content')
