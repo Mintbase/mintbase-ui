@@ -26,18 +26,24 @@ export const MbAccordion = (props: AccordionProps) => {
 
   const contentRef = useRef<HTMLElement>(null)
 
-  const contentAnimation = () => {
-    const wrapper = contentRef.current?.children[1] as HTMLElement
-    const content = contentRef.current?.children[1]?.children[0] as HTMLElement
+  const wrapper = contentRef.current?.children[1] as HTMLElement
+  const content = contentRef.current?.children[1]?.children[0] as HTMLElement
 
+  const contentAnimation = () => {
     if (!content) return
     if (!wrapper) return
+
+    const addHeight = () => (wrapper.style.height = content.clientHeight + 'px')
+
+    if (content.clientHeight !== wrapper.clientHeight && wrapper.clientHeight) {
+      addHeight()
+      return
+    }
 
     if (wrapper.clientHeight) {
       wrapper.style.height = '0'
     } else {
-      if (!content) return
-      wrapper.style.height = content.clientHeight + 'px'
+      addHeight()
     }
   }
 
@@ -57,11 +63,11 @@ export const MbAccordion = (props: AccordionProps) => {
   useEffect(() => {
     if (!isOpen) return
     contentAnimation()
-  }, [isOpen])
+  }, [wrapper, content])
 
   useEffect(() => {
     contentAnimation()
-  }, [children])
+  }, [content?.clientHeight])
 
   return (
     <main
