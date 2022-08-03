@@ -24,9 +24,23 @@ export const MbAccordion = (props: AccordionProps) => {
 
   const [isExpanded, setIsExpanded] = useState(isOpen)
 
+  const contentAnimation = () => {
+    var wrapper = document.getElementById('content-wrapper')
+    if (!wrapper) return
+    if (wrapper?.clientHeight) {
+      wrapper.style.height = '0'
+    } else {
+      var content = document.getElementById('content')
+      if (!content) return
+      console.log(content.clientHeight)
+      wrapper.style.height = content.clientHeight + 'px'
+    }
+  }
+
   const toggle = () => {
     if (isFixedAccordion) return
     setIsExpanded(!isExpanded)
+    contentAnimation()
   }
 
   const rotateIcon = isExpanded ? 'rotate-180' : 'rotate-0'
@@ -40,7 +54,7 @@ export const MbAccordion = (props: AccordionProps) => {
           isFixedAccordion ? '' : 'cursor-pointer'
         } ${
           isExpanded ? 'border-b' : 'border-b-0'
-        } transition-all duration-400`}
+        } transition-all duration-300`}
         onClick={toggle}
       >
         <div className="flex gap-12 items-center p-big-130">
@@ -74,7 +88,9 @@ export const MbAccordion = (props: AccordionProps) => {
           )}
         </div>
       </header>
-      <section className={showContent}>{children}</section>
+      <section id="content-wrapper">
+        <div id="content">{children}</div>
+      </section>
     </main>
   )
 }
