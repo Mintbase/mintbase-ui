@@ -48,5 +48,6 @@ Accordion.args = {
       darkColor="blue-100"
     />
   ),
+  isFixedAccordion: false,
   isVerified: false,
 }
