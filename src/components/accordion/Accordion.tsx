@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { MbIcon } from '..'
 import { EIconName } from '../..'
 import { MbTooltip } from '../tooltip/Tooltip'
@@ -12,58 +12,108 @@ interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
   extraIcon?: JSX.Element
 }
 
+interface ContentElement {
+  wrapper: HTMLElement | undefined
+  content: HTMLElement | undefined
+}
+
+interface AccordionStatus {
+  isDirty: boolean
+  isExpanded: boolean
+}
+
 export const MbAccordion = (props: AccordionProps) => {
   const {
     title,
-    isOpen,
+    isOpen = false,
     isFixedAccordion,
     extraIcon,
     isVerifiedToken,
     children,
   } = props
 
-  const [isExpanded, setIsExpanded] = useState(isOpen)
+  const [accordionStatus, setAccordionStatus] = useState<AccordionStatus>({
+    isExpanded: isOpen,
+    isDirty: false,
+  })
+  const [contentElements, setContentElements] = useState<ContentElement>({
+    wrapper: undefined,
+    content: undefined,
+  })
+  const [wrapperId, setWrapperId] = useState('')
 
   const contentRef = useRef<HTMLElement>(null)
 
-  const wrapper = contentRef.current?.children[1] as HTMLElement
-  const content = contentRef.current?.children[1]?.children[0] as HTMLElement
-
-  const contentAnimation = () => {
+  const contentAnimation = (): void => {
     if (isFixedAccordion) return
-    if (!content) return
-    if (!wrapper) return
+
+    const { wrapper, content } = contentElements
+
+    if (!wrapper || !content) return
 
     const addHeight = () => (wrapper.style.height = content.clientHeight + 'px')
 
-    if (content.clientHeight !== wrapper.clientHeight && wrapper.clientHeight) {
+    if (
+      content.clientHeight !== wrapper.clientHeight &&
+      wrapper.clientHeight &&
+      isExpanded
+    ) {
       addHeight()
       return
     }
 
-    if (wrapper.clientHeight) {
+    if (wrapper.clientHeight && isDirty) {
       wrapper.style.height = '0'
     } else {
       addHeight()
     }
   }
 
-  const toggle = () => {
+  const toggle = (): void => {
     if (isFixedAccordion) return
-    setIsExpanded(!isExpanded)
+    setAccordionStatus({
+      isDirty: true,
+      isExpanded: !accordionStatus.isExpanded,
+    })
     contentAnimation()
   }
 
-  const rotateIcon = isExpanded ? 'rotate-180' : 'rotate-0'
+  const rotateIcon = accordionStatus.isExpanded ? 'rotate-180' : 'rotate-0'
+
+  const { isDirty, isExpanded } = accordionStatus
+
+  const getWrapperId = (): string => {
+    if (isFixedAccordion) {
+      return ''
+    }
+
+    if (isDirty) {
+      return 'content-wrapper'
+    } else if (isOpen) {
+      return ''
+    }
+    return 'content-wrapper'
+  }
+
+  useLayoutEffect(() => {
+    if (contentRef) {
+      const wrapper = contentRef.current?.children[1] as HTMLElement
+      setContentElements({
+        wrapper,
+        content: wrapper?.children[0] as HTMLElement,
+      })
+    }
+  }, [contentRef])
 
   useEffect(() => {
-    if (!isOpen) return
+    if (!isExpanded) return
     contentAnimation()
-  }, [wrapper, content])
+  }, [contentElements?.content?.clientHeight])
 
   useEffect(() => {
+    setWrapperId(getWrapperId())
     contentAnimation()
-  }, [content?.clientHeight])
+  }, [isDirty])
 
   return (
     <main
@@ -74,8 +124,8 @@ export const MbAccordion = (props: AccordionProps) => {
         className={`flex justify-between items-center p-24 border-gray-150 dark:border-gray-700 ${
           isFixedAccordion ? '' : 'cursor-pointer'
         } ${
-          isExpanded ? 'border-b' : 'border-b-0'
-        } transition-all duration-300`}
+          isExpanded || isFixedAccordion ? 'border-b' : 'border-b-0'
+        } transition-all duration-200`}
         onClick={toggle}
       >
         <div className="flex gap-12 items-center p-big-130">
@@ -109,7 +159,7 @@ export const MbAccordion = (props: AccordionProps) => {
           )}
         </div>
       </header>
-      <section id={`${!isFixedAccordion ? 'content-wrapper' : ''}`}>
+      <section id={wrapperId}>
         <div id="content">{children}</div>
       </section>
     </main>
