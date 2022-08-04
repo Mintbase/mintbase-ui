@@ -1,10 +1,10 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import React from 'react'
-import { EIconName, MbIcon } from '../..'
-import { MbAccordion } from '../../components/accordion/Accordion'
+import { MbAccordion, MbIcon } from '../../../components'
+import { EIconName } from '../../../consts'
 
 export default {
-  title: 'Components/Accordion',
+  title: 'Components/Accordion/Accordion',
   component: MbAccordion,
   argTypes: {},
 } as ComponentMeta<typeof MbAccordion>

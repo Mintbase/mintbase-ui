@@ -40,7 +40,6 @@ export const MbAccordion = (props: AccordionProps) => {
     wrapper: undefined,
     content: undefined,
   })
-  const [wrapperId, setWrapperId] = useState('')
 
   const contentRef = useRef<HTMLElement>(null)
 
@@ -54,9 +53,10 @@ export const MbAccordion = (props: AccordionProps) => {
     const addHeight = () => (wrapper.style.height = content.clientHeight + 'px')
 
     if (
-      content.clientHeight !== wrapper.clientHeight &&
-      wrapper.clientHeight &&
-      isExpanded
+      (content.clientHeight !== wrapper.clientHeight &&
+        wrapper.clientHeight &&
+        isExpanded) ||
+      (isOpen && !isDirty)
     ) {
       addHeight()
       return
@@ -69,6 +69,10 @@ export const MbAccordion = (props: AccordionProps) => {
     }
   }
 
+  const rotateIcon = accordionStatus.isExpanded ? 'rotate-180' : 'rotate-0'
+
+  const { isDirty, isExpanded } = accordionStatus
+
   const toggle = (): void => {
     if (isFixedAccordion) return
     setAccordionStatus({
@@ -76,23 +80,6 @@ export const MbAccordion = (props: AccordionProps) => {
       isExpanded: !accordionStatus.isExpanded,
     })
     contentAnimation()
-  }
-
-  const rotateIcon = accordionStatus.isExpanded ? 'rotate-180' : 'rotate-0'
-
-  const { isDirty, isExpanded } = accordionStatus
-
-  const getWrapperId = (): string => {
-    if (isFixedAccordion) {
-      return ''
-    }
-
-    if (isDirty) {
-      return 'content-wrapper'
-    } else if (isOpen) {
-      return ''
-    }
-    return 'content-wrapper'
   }
 
   useLayoutEffect(() => {
@@ -111,7 +98,6 @@ export const MbAccordion = (props: AccordionProps) => {
   }, [contentElements?.content?.clientHeight])
 
   useEffect(() => {
-    setWrapperId(getWrapperId())
     contentAnimation()
   }, [isDirty])
 
@@ -146,7 +132,7 @@ export const MbAccordion = (props: AccordionProps) => {
             ></MbTooltip>
           )}
         </div>
-        <div className="space-x-24 flex">
+        <div className="space-x-24 flex items-center">
           {extraIcon && extraIcon}
           {!isFixedAccordion && (
             <MbIcon
@@ -159,7 +145,7 @@ export const MbAccordion = (props: AccordionProps) => {
           )}
         </div>
       </header>
-      <section id={wrapperId}>
+      <section id={`${!isFixedAccordion ? 'content-wrapper' : ''}`}>
         <div id="content">{children}</div>
       </section>
     </main>
