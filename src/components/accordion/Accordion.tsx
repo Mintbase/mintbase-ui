@@ -79,7 +79,6 @@ export const MbAccordion = (props: AccordionProps) => {
       isDirty: true,
       isExpanded: !accordionStatus.isExpanded,
     })
-    contentAnimation()
   }
 
   useLayoutEffect(() => {
@@ -99,7 +98,11 @@ export const MbAccordion = (props: AccordionProps) => {
 
   useEffect(() => {
     contentAnimation()
-  }, [isDirty])
+  }, [isDirty, accordionStatus])
+
+  useEffect(() => {
+    contentAnimation()
+  }, [children])
 
   return (
     <main
