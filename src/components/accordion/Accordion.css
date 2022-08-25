@@ -1,5 +1,13 @@
 #content-wrapper {
+  transition: height 0.25s ease-out;
   height: 0;
   overflow: hidden;
-  transition: height 0.3s;
+}
+
+.notExpanded {
+  height: 0 !important;
+}
+
+.fixedAccordion {
+  height: auto;
 }

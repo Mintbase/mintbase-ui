@@ -25,8 +25,7 @@ const Template: ComponentStory<typeof MbAccordion> = (args) => {
 
   return (
     <MbAccordion {...args}>
-      <p className="p-24">
-        {' '}
+      <div className="p-24">
         <MbText className="p-med-90 mb-8 dark:text-white">Header Image</MbText>
         <MbMediaImport
           acceptedFormats={IMAGE_TYPES}
@@ -36,7 +35,7 @@ const Template: ComponentStory<typeof MbAccordion> = (args) => {
           idealDimensions="1500x500px"
           maxFileSize={1}
         />
-      </p>
+      </div>
     </MbAccordion>
   )
 }
