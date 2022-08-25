@@ -220,7 +220,7 @@ export const MbMediaImport = (props: MediaImportProps) => {
                 : ''
             }`}
           >
-            <div className="h-full w-full text-center flex flex-col items-center justify-center p-med-90">
+            <div className="h-full w-full text-center flex flex-col items-center justify-center p-med-90 relative">
               <p className="text-blue-300 dark:text-blue-100">Upload File</p>
               <p className="text-gray-600 dark:text-gray-300 hidden sm:block">
                 (or just drop your file here)
@@ -233,20 +233,21 @@ export const MbMediaImport = (props: MediaImportProps) => {
                   Remove File
                 </p>
               )}
+              {internalErrorMessage && (
+                <div className="flex justify-center items-center absolute top-10">
+                  <p className="text-error-300 dark:text-error-100 cap-big-90 pr-12">
+                    {internalErrorMessage}
+                  </p>
+                  <MbIcon
+                    name={EIconName.ERROR}
+                    size="20px"
+                    color="error-300 "
+                    darkColor="error-100"
+                  />
+                </div>
+              )}
             </div>
-            {internalErrorMessage && (
-              <div className="flex justify-center items-center pt-16">
-                <p className="text-error-300 dark:text-error-100 cap-big-90 pr-12">
-                  {internalErrorMessage}
-                </p>
-                <MbIcon
-                  name={EIconName.ERROR}
-                  size="20px"
-                  color="error-300 "
-                  darkColor="error-100"
-                />
-              </div>
-            )}
+
             <input
               type="file"
               className="hidden"
