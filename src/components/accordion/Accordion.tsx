@@ -1,6 +1,7 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { MbIcon } from '..'
 import { EIconName } from '../..'
+import { useMutationObserver } from '../../hooks/useMutationObserver'
 import { MbTooltip } from '../tooltip/Tooltip'
 import './Accordion.css'
 
@@ -12,13 +13,7 @@ interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
   extraIcon?: JSX.Element
 }
 
-interface ContentElement {
-  wrapper: HTMLElement | undefined
-  content: HTMLElement | undefined
-}
-
 interface AccordionStatus {
-  isDirty: boolean
   isExpanded: boolean
 }
 
@@ -34,78 +29,49 @@ export const MbAccordion = (props: AccordionProps) => {
 
   const [accordionStatus, setAccordionStatus] = useState<AccordionStatus>({
     isExpanded: isOpen,
-    isDirty: false,
-  })
-  const [contentElements, setContentElements] = useState<ContentElement>({
-    wrapper: undefined,
-    content: undefined,
   })
 
-  const contentRef = useRef<HTMLElement>(null)
+  const [contentHeight, setContentHeight] = useState<number | undefined>()
 
-  const contentAnimation = (): void => {
-    if (isFixedAccordion) return
+  const contentRef = useRef<HTMLDivElement>(null)
 
-    const { wrapper, content } = contentElements
-
-    if (!wrapper || !content) return
-
-    const addHeight = () => (wrapper.style.height = content.clientHeight + 'px')
-
-    if (
-      (content.clientHeight !== wrapper.clientHeight &&
-        wrapper.clientHeight &&
-        isExpanded) ||
-      (isOpen && !isDirty)
-    ) {
-      addHeight()
-      return
-    }
-
-    if (wrapper.clientHeight && isDirty) {
-      wrapper.style.height = '0'
-    } else {
-      addHeight()
-    }
-  }
+  const { height } = useMutationObserver(contentRef, () => {
+    return
+  })
 
   const rotateIcon = accordionStatus.isExpanded ? 'rotate-180' : 'rotate-0'
 
-  const { isDirty, isExpanded } = accordionStatus
+  const { isExpanded } = accordionStatus
 
   const toggle = (): void => {
     if (isFixedAccordion) return
     setAccordionStatus({
-      isDirty: true,
-      isExpanded: !accordionStatus.isExpanded,
+      isExpanded: !isExpanded,
     })
-    contentAnimation()
   }
 
-  useLayoutEffect(() => {
-    if (contentRef) {
-      const wrapper = contentRef.current?.children[1] as HTMLElement
-      setContentElements({
-        wrapper,
-        content: wrapper?.children[0] as HTMLElement,
-      })
+  useEffect(() => {
+    if (isExpanded) {
+      if (height !== undefined && height > 0) {
+        setContentHeight(height)
+      }
     }
-  }, [contentRef])
+  }, [height, isExpanded])
 
-  useEffect(() => {
-    if (!isExpanded) return
-    contentAnimation()
-  }, [contentElements?.content?.clientHeight])
+  let accordionStyleClass = ''
 
-  useEffect(() => {
-    contentAnimation()
-  }, [isDirty])
+  if (!isFixedAccordion) {
+    if (isExpanded) {
+      accordionStyleClass = 'expanded'
+    } else {
+      accordionStyleClass = 'notExpanded'
+    }
+  } else {
+    accordionStyleClass = 'fixedAccordion'
+  }
 
   return (
-    <main
-      className="rounded bg-white dark:bg-gray-850 dark:text-white"
-      ref={contentRef}
-    >
+    <main className="rounded bg-white dark:bg-gray-850 dark:text-white accordion">
       <header
         className={`flex justify-between items-center p-24 border-gray-150 dark:border-gray-700 ${
           isFixedAccordion ? '' : 'cursor-pointer'
@@ -145,7 +111,12 @@ export const MbAccordion = (props: AccordionProps) => {
           )}
         </div>
       </header>
-      <section id={`${!isFixedAccordion ? 'content-wrapper' : ''}`}>
+      <section
+        id={`${!isFixedAccordion ? 'content-wrapper' : ''}`}
+        style={{ height: contentHeight }}
+        className={accordionStyleClass}
+        ref={contentRef}
+      >
         <div id="content">{children}</div>
       </section>
     </main>
