@@ -77,7 +77,7 @@ export const MbTabs = (props: TabsProps) => {
         <ul
           className={`flex justify-between bg-gray-50 dark:bg-gray-800 px-24 md:px-48 overflow-x-scroll no-scrollbar`}
         >
-          {tabsTitle?.length && (
+          {tabsTitle?.length ? (
             <div className="flex items-center space-x-12 sm:space-x-24">
               {tabsTitle.map((label, index) => (
                 <li
@@ -94,15 +94,15 @@ export const MbTabs = (props: TabsProps) => {
                 </li>
               ))}
             </div>
-          )}
+          ) : null}
 
-          {((tabsWithExtraFilter?.length &&
+          {(tabsWithExtraFilter?.length &&
             tabsWithExtraFilter.includes(activeIndex)) ||
-            (filterOptions && options)) && (
+          (filterOptions && options) ? (
             <li className="flex items-center mx-12 md:hidden">
               <div className="w-0.5 bg-gray-200 dark:bg-gray-600 h-8 rounded"></div>
             </li>
-          )}
+          ) : null}
 
           <div className="flex items-center space-x-12 sm:space-x-24">
             {tabsWithExtraFilter?.length
@@ -138,7 +138,7 @@ export const MbTabs = (props: TabsProps) => {
                 })
               : null}
 
-            {filterOptions && options && (
+            {filterOptions && options ? (
               <div>
                 <MbMenuWrapper setIsOpen={setShowOrderOpts}>
                   <li
@@ -173,22 +173,23 @@ export const MbTabs = (props: TabsProps) => {
                   </li>
                 </MbMenuWrapper>
               </div>
-            )}
+            ) : null}
           </div>
         </ul>
 
-        {filterOptions && options && (
+        {filterOptions && options ? (
           <MbDropdownMenu
             isOpen={showOrderOpts}
             items={options}
             className="right-0"
           />
-        )}
+        ) : null}
       </div>
-      {tabsContent?.length &&
-        tabsContent?.map((content, index) => {
-          return index === activeIndex && <div key={index}>{content}</div>
-        })}
+      {tabsContent?.length
+        ? tabsContent?.map((content, index) => {
+            return index === activeIndex && <div key={index}>{content}</div>
+          })
+        : null}
     </>
   )
 }
