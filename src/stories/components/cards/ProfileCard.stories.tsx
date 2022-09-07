@@ -22,7 +22,7 @@ Profile.args = {
     centerElement: (
       <img
         className="h-full w-full object-cover"
-        src="https://coldcdn.com/api/cdn/bronil/JXl58b_p9iYzeFutFC5GcDCjsxppyFt5rRkQt4Su4LU"
+        src="https://i.imgur.com/gu26H6Z.png"
       />
     ),
     title: 'Account Name',
@@ -37,7 +37,7 @@ ProfileWithSubtitle.args = {
     centerElement: (
       <img
         className="h-full w-full object-cover"
-        src="https://coldcdn.com/api/cdn/bronil/JXl58b_p9iYzeFutFC5GcDCjsxppyFt5rRkQt4Su4LU"
+        src="https://i.imgur.com/gu26H6Z.png"
       />
     ),
     title: 'Account Name',

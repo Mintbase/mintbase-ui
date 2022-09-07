@@ -95,7 +95,7 @@ InfoWithImage.args = {
     description: 'Image Description',
     descriptionIcon: EIconName.NONE,
     descriptionImage:
-      'https://coldcdn.com/api/cdn/bronil/JXl58b_p9iYzeFutFC5GcDCjsxppyFt5rRkQt4Su4LU',
+      'https://i.imgur.com/gu26H6Z.png',
   },
 }
 
