@@ -106,7 +106,9 @@ export const MbThingCard = ({ loading = false, cardInfo }: CardProps) => {
           >
             <img className="h-full w-full object-cover" src={botLeftImage} />
           </div>
-        ) : null}
+        ) : (
+          <div></div>
+        )}
         <div className="p-med-90 flex flex-row items-center text-black dark:text-white space-x-8">
           <div className="p-small-90">{botRightText}</div>
           <div>
