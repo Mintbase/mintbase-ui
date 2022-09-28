@@ -97,6 +97,7 @@ export const MbButton = ({
         className={`button ${btnType} ${state} ${
           customClass ? customClass : `${size} ${getFontType(size)}`
         } relative`}
+        disabled={state === EState.DISABLED}
         {...props}
       >
         <span className={isLoading ? 'invisible' : 'visible'}>{label}</span>
