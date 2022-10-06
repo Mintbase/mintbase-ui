@@ -13,16 +13,16 @@ export type TThingCard = {
   botLeftImage?: string
   botRightText?: string
   botRightIcon?: EIconName
-  onUpperLeftClick?: () => void
-  onCenterElementClick?: () => void
-  onBotLeftImageClick?: () => void
+  onUpperLeftClick?: (e?:React.MouseEvent<HTMLElement>) => void
+  onCenterElementClick?: (e?:React.MouseEvent<HTMLElement>) => void
+  onBotLeftImageClick?: (e?:React.MouseEvent<HTMLElement>) => void
 }
 
 export type TSmallCard = {
   centerElement: JSX.Element
   title: string
   subtitle?: string
-  onCardClick?: () => void
+  onCardClick?: (e?:React.MouseEvent<HTMLElement>) => void
 }
 
 export type TInfoCard = {
@@ -38,5 +38,5 @@ export type TInfoCard = {
   isNumber?: boolean
   size?: ESize
   isLink?: boolean
-  handleDescriptionClick?: () => void
+  handleDescriptionClick?: (e?:React.MouseEvent<HTMLElement>) => void
 }
