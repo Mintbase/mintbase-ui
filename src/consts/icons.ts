@@ -59,5 +59,11 @@ export enum EIconName {
   IMAGE_NOT_SUPPORTED = 'image_not_supported',
   MINTBASE_DARK_BADGE = 'mintbase_dark_badge',
   MINTBASE_LIGHT_BADGE = 'mintbase_light_badge',
+  PARAS_LIGHT_BADGE = 'paras_badge_light',
+  PARAS_DARK_BADGE = 'paras_badge_badge',
+  APOLLO42_LIGHT_BADGE = 'apollo42_badge_light',
+  APOLLO42_DARK_BADGE = 'apollo42_badge_badge',
+  FEWFAR_LIGHT_BADGE = 'fewfar_badge_light',
+  FEWFAR_DARK_BADGE = 'fewfar_badge_badge',
   NONE = 'none',
 }
