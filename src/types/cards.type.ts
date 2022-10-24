@@ -10,7 +10,7 @@ export type TThingCard = {
   extraMidLeftElement?: JSX.Element
   midLeftText: string
   midRightText: string
-  botLeftImage?: string
+  botLeftImage?: JSX.Element
   botRightText?: string
   botRightIcon?: EIconName
   onUpperLeftClick?: (e?:React.MouseEvent<HTMLElement>) => void
