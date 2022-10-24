@@ -155,12 +155,12 @@ export const MbMediaImport = (props: MediaImportProps) => {
 
           <div className="flex gap-12 justify-center sm:hidden p-med-90">
             <p
-              className="text-error-300 dark:text-error-100"
+              className="text-error-300 dark:text-error-100 cursor-pointer"
               onClick={removeFile}
             >
               Remove File
             </p>
-            <label className="text-blue-300 dark:text-blue-100">
+            <label className="text-blue-300 dark:text-blue-100 cursor-pointer">
               Change File
               <input
                 type="file"
@@ -212,12 +212,12 @@ export const MbMediaImport = (props: MediaImportProps) => {
 
           <div className="flex gap-12 justify-center sm:hidden p-med-90">
             <p
-              className="text-error-300 dark:text-error-100"
+              className="text-error-300 dark:text-error-100 cursor-pointer"
               onClick={removeFile}
             >
               Remove File
             </p>
-            <label className="text-blue-300 dark:text-blue-100">
+            <label className="text-blue-300 dark:text-blue-100 cursor-pointer">
               Change File
               <input
                 type="file"
