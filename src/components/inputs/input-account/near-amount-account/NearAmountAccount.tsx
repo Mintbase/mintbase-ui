@@ -28,6 +28,7 @@ export const MbNearAmountAccount = ({
   transferTemplate,
   isStoreSettings,
   dropdownItems,
+  usedAmount,
 }: {
   subtitle: string
   smallSubtitle: string
@@ -48,6 +49,7 @@ export const MbNearAmountAccount = ({
   }
   isStoreSettings?: boolean
   dropdownItems?: Item[]
+  usedAmount: (amount: number) => void
 }) => {
   const [used, setUsed] = useState<number>(0)
   const [state, setState] = useState<Record<string, TInputState>>({})
@@ -273,6 +275,10 @@ export const MbNearAmountAccount = ({
       ...addFieldsToState(defaultAccountsCounter),
     })
   }, [defaultState])
+
+  useEffect(() => {
+    usedAmount(used)
+  }, [used])
 
   return (
     <>

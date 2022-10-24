@@ -25,6 +25,9 @@ AmountAccountTransferList.args = {
   accountExists: () => {
     return true
   },
+  usedAmount: (val) => {
+    console.log(val)
+  }
 }
 
 export const AmountAccountSplitsList = Template.bind({})
