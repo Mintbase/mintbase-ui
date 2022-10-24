@@ -108,6 +108,7 @@ export const MbMediaImport = (props: MediaImportProps) => {
     e.preventDefault()
     if (placeholderUrl) {
       setPlaceholderUrl('')
+      return
     }
     handleFileRemove()
   }
@@ -254,15 +255,7 @@ export const MbMediaImport = (props: MediaImportProps) => {
               <p className="text-gray-600 dark:text-gray-300 hidden sm:block">
                 (or just drop your file here)
               </p>
-              {uploadedFile && (
-                <p
-                  className="text-error-300 dark:text-error-100 hidden sm:block pt-24"
-                  onClick={removeFile}
-                >
-                  Remove File
-                </p>
-              )}
-              {placeholderUrl && (
+              {(uploadedFile || placeholderUrl) && (
                 <p
                   className="text-error-300 dark:text-error-100 hidden sm:block pt-24"
                   onClick={removeFile}
