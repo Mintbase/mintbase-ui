@@ -36,6 +36,7 @@ export const MbMediaImport = (props: MediaImportProps) => {
   } = props
 
   const [imageUrl, setImageUrl] = useState<any>('')
+  const [placeholderUrl, setPlaceholderUrl] = useState('')
   const [internalErrorMessage, setInternalErrorMessage] = useState<
     string | null
   >(null)
@@ -105,6 +106,9 @@ export const MbMediaImport = (props: MediaImportProps) => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const removeFile = (e: any) => {
     e.preventDefault()
+    if (placeholderUrl) {
+      setPlaceholderUrl('')
+    }
     handleFileRemove()
   }
 
@@ -116,9 +120,14 @@ export const MbMediaImport = (props: MediaImportProps) => {
     }
   }, [uploadedFile])
 
+  useEffect(() => {
+    if (!placeholderImageURL) return
+    setPlaceholderUrl(placeholderImageURL)
+  }, [placeholderImageURL])
+
   return (
     <>
-      {placeholderImageURL && !uploadedFile && (
+      {placeholderUrl && !uploadedFile && (
         <>
           <div className="pb-12">
             <div
@@ -137,21 +146,29 @@ export const MbMediaImport = (props: MediaImportProps) => {
               >
                 <img
                   className="w-full h-full object-cover"
-                  src={placeholderImageURL}
+                  src={placeholderUrl}
                 />
               </div>
             </div>
           </div>
 
-          <label className="block sm:hidden text-blue-300 dark:text-blue-100 p-med-90 text-center">
-            Change File
-            <input
-              type="file"
-              className="hidden"
-              onChange={handleFileChange}
-              onClick={(e) => ((e.target as HTMLInputElement).value = '')}
-            />
-          </label>
+          <div className="flex gap-12 justify-center sm:hidden p-med-90">
+            <p
+              className="text-error-300 dark:text-error-100"
+              onClick={removeFile}
+            >
+              Remove File
+            </p>
+            <label className="text-blue-300 dark:text-blue-100">
+              Change File
+              <input
+                type="file"
+                className="hidden"
+                onChange={handleFileChange}
+                onClick={(e) => ((e.target as HTMLInputElement).value = '')}
+              />
+            </label>
+          </div>
         </>
       )}
       {uploadedFile && (
@@ -192,18 +209,30 @@ export const MbMediaImport = (props: MediaImportProps) => {
             </div>
           </div>
 
-          <label className="block sm:hidden text-blue-300 dark:text-blue-100 p-med-90 text-center">
-            Change File
-            <input
-              type="file"
-              className="hidden"
-              onChange={handleFileChange}
-              onClick={(e) => ((e.target as HTMLInputElement).value = '')}
-            />
-          </label>
+          <div className="flex gap-12 justify-center sm:hidden p-med-90">
+            <p
+              className="text-error-300 dark:text-error-100"
+              onClick={removeFile}
+            >
+              Remove File
+            </p>
+            <label className="text-blue-300 dark:text-blue-100">
+              Change File
+              <input
+                type="file"
+                className="hidden"
+                onChange={handleFileChange}
+                onClick={(e) => ((e.target as HTMLInputElement).value = '')}
+              />
+            </label>
+          </div>
         </>
       )}
-      <div className={`${uploadedFile && isMobile() ? 'hidden' : ''}`}>
+      <div
+        className={`${
+          (uploadedFile || placeholderUrl) && isMobile() ? 'hidden' : ''
+        }`}
+      >
         <div className="flex items-center justify-center w-full">
           <label
             onDragEnter={handleDragIn}
@@ -226,6 +255,14 @@ export const MbMediaImport = (props: MediaImportProps) => {
                 (or just drop your file here)
               </p>
               {uploadedFile && (
+                <p
+                  className="text-error-300 dark:text-error-100 hidden sm:block pt-24"
+                  onClick={removeFile}
+                >
+                  Remove File
+                </p>
+              )}
+              {placeholderUrl && (
                 <p
                   className="text-error-300 dark:text-error-100 hidden sm:block pt-24"
                   onClick={removeFile}

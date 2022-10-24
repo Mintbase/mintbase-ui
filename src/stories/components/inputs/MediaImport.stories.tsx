@@ -1,4 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
+import React from 'react'
 import { useState } from 'react'
 import { ALL_TYPES } from '../../../consts/fileFormats'
 import { MbMediaImport } from './../../../components/inputs/media-import/mediaImport'
@@ -23,17 +24,17 @@ const Template: ComponentStory<typeof MbMediaImport> = (args) => {
   return (
     <MbMediaImport
       isProfileImage
-      uploadedFile={fileUploaded}
+      uploadedFile={fileUploaded as File}
       idealDimensions="500x500px"
       handleFileAdd={uploadFile}
       handleFileRemove={removeFile}
-      {...args}
+      acceptedFormats={ALL_TYPES}
+      maxFileSize={5}
+      placeholderImageURL={args.placeholderImageURL}
     />
   )
 }
 
 export const MediaImport = Template.bind({})
 MediaImport.args = {
-  acceptedFormats: ALL_TYPES,
-  maxFileSize: 5,
 }
