@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import { EIconName } from '../../../consts/icons'
 import { MbIcon } from '../../icon/Icon'
 import './pagination.css'
@@ -9,6 +9,16 @@ export interface PaginationProps {
   currentPage: any
   itemsPerPage: number
   hasLabel?: boolean
+  isNextPagination?: boolean
+  children: React.ReactNode
+}
+
+interface PaginationLinksProps {
+  onPageChange: (currentPage: number) => void
+  currentPage: any
+  children: React.ReactNode
+  isNextPagination?: boolean
+  paginationRange: any
 }
 
 const DOTS = '...'
@@ -19,9 +29,88 @@ const range = (start: any, end: any) => {
   return Array.from({ length }, (_, idx) => idx + start)
 }
 
+const PaginationLinks = ({
+  paginationRange,
+  onPageChange,
+  currentPage,
+  isNextPagination,
+  children,
+}: PaginationLinksProps): JSX.Element => {
+  if (isNextPagination) {
+    return paginationRange.map((pageNumber: number | string, index: number) => {
+      if (pageNumber === DOTS) {
+        return (
+          <li
+            className="page-number p-small-90 md:p-med-90"
+            onClick={() => {
+              if (index > 1) {
+                onPageChange(currentPage + 2)
+              } else {
+                onPageChange(currentPage - 2)
+              }
+            }}
+            key={index}
+          >
+            {children}
+          </li>
+        )
+      }
+      return (
+        <li
+          className={`page-number p-med-90 ${
+            pageNumber === currentPage ? 'active' : ''
+          }`}
+          onClick={() => onPageChange(Number(pageNumber))}
+          key={index}
+        >
+          {children}
+        </li>
+      )
+    })
+  }
+
+  return paginationRange.map((pageNumber: number | string, index: number) => {
+    if (pageNumber === DOTS) {
+      return (
+        <li
+          className="page-number p-small-90 md:p-med-90"
+          onClick={() => {
+            if (index > 1) {
+              onPageChange(currentPage + 2)
+            } else {
+              onPageChange(currentPage - 2)
+            }
+          }}
+          key={index}
+        >
+          {DOTS}
+        </li>
+      )
+    }
+    return (
+      <li
+        className={`page-number p-med-90 ${
+          pageNumber === currentPage ? 'active' : ''
+        }`}
+        onClick={() => onPageChange(Number(pageNumber))}
+        key={index}
+      >
+        {pageNumber}
+      </li>
+    )
+  })
+}
+
 export const MbPagination = (props: PaginationProps) => {
-  const { onPageChange, currentPage, itemsPerPage, totalItems, hasLabel } =
-    props
+  const {
+    onPageChange,
+    currentPage,
+    itemsPerPage,
+    totalItems,
+    hasLabel,
+    isNextPagination,
+    children,
+  } = props
 
   const [paginationRange, setPaginationRange] = useState<any[]>([])
   const totalPageCount = Math.ceil(totalItems / itemsPerPage)
@@ -111,36 +200,13 @@ export const MbPagination = (props: PaginationProps) => {
         </div>
         {paginationRange && (
           <ul className="px-4 md:px-24 flex justify-center items-center space-x-4 md:space-x-12 text-blue-300 dark:text-blue-100">
-            {paginationRange.map((pageNumber, index) => {
-              if (pageNumber === DOTS) {
-                return (
-                  <li
-                    className="page-number p-small-90 md:p-med-90"
-                    onClick={() => {
-                      if (index > 1) {
-                        onPageChange(currentPage + 2)
-                      } else {
-                        onPageChange(currentPage - 2)
-                      }
-                    }}
-                    key={index}
-                  >
-                    {DOTS}
-                  </li>
-                )
-              }
-              return (
-                <li
-                  className={`page-number p-med-90 ${
-                    pageNumber === currentPage ? 'active' : ''
-                  }`}
-                  onClick={() => onPageChange(pageNumber)}
-                  key={index}
-                >
-                  {pageNumber}
-                </li>
-              )
-            })}
+            <PaginationLinks
+              onPageChange={onPageChange}
+              currentPage={currentPage}
+              children={children}
+              isNextPagination={isNextPagination}
+              paginationRange={paginationRange}
+            />
           </ul>
         )}
         <div
