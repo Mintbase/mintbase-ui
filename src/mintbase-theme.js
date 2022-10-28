@@ -50,6 +50,7 @@ module.exports = {
       0: '0px',
       2: '2px',
       4: '4px',
+      6: '6px',
       8: '8px',
       10: '10px',
       12: '12px',
@@ -136,7 +137,7 @@ module.exports = {
       50: '50px',
     },
     maxHeight: {
-      xl: '2000px'
+      xl: '2000px',
     },
     maxWidth: {
       64: '16rem',
@@ -155,6 +156,7 @@ module.exports = {
   },
   space: {
     4: '4px',
+    6: '6px',
     8: '8px',
     12: '12px',
     24: '24px',

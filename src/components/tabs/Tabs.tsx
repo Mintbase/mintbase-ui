@@ -78,7 +78,7 @@ export const MbTabs = (props: TabsProps) => {
           className={`flex justify-between bg-gray-50 dark:bg-gray-800 px-24 md:px-48 overflow-x-scroll no-scrollbar`}
         >
           {tabsTitle?.length ? (
-            <div className="flex items-center space-x-12 sm:space-x-24">
+            <div className="flex items-center space-x-6 sm:space-x-12">
               {tabsTitle.map((label, index) => (
                 <li
                   onClick={() => {
@@ -99,12 +99,12 @@ export const MbTabs = (props: TabsProps) => {
           {(tabsWithExtraFilter?.length &&
             tabsWithExtraFilter.includes(activeIndex)) ||
           (filterOptions && options) ? (
-            <li className="flex items-center mx-12 md:hidden">
+            <li className="flex items-center mx-6 md:hidden">
               <div className="w-0.5 bg-gray-200 dark:bg-gray-600 h-8 rounded"></div>
             </li>
           ) : null}
 
-          <div className="flex items-center space-x-12 sm:space-x-24">
+          <div className="flex items-center space-x-6 sm:space-x-12">
             {tabsWithExtraFilter?.length
               ? tabsWithExtraFilter.map((tabIndex) => {
                   const currentTab: TTab = allTabs[tabIndex]
