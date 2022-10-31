@@ -82,14 +82,14 @@ export const MbTable = (props: TableProps) => {
               showItemsPerPage ? 'md:grid-cols-3' : ' md:grid-cols-2'
             }`}
           >
-            {showItemsPerPage && onAmountItemsChange && (
+            {showItemsPerPage && onAmountItemsChange ? (
               <div className="order-2 md:order-1 flex justify-center md:justify-start">
                 <MbItemsPerPage
                   currentValue={pagination.itemsPerPage}
                   onItemsPage={(nr) => onAmountItemsChange(nr)}
                 />
               </div>
-            )}
+            ) : null}
 
             <div
               className={`p-med-90 dark:text-white hidden md:block order-2 ${
