@@ -145,7 +145,7 @@ const Template: ComponentStory<typeof MbTable> = (args) => {
           <td>TX</td>
         </tr>
       </MbHead>
-      <MbBody>
+      <MbBody loading={args.loading}>
         {items.map((elm, index) => {
           return (
             <tr key={index}>
@@ -165,4 +165,5 @@ const Template: ComponentStory<typeof MbTable> = (args) => {
 export const Table = Template.bind({})
 Table.args = {
   tableTitle: 'Trading History',
+  loading: false,
 }
