@@ -5,12 +5,13 @@ import { useMutationObserver } from '../../hooks/useMutationObserver'
 import { MbTooltip } from '../tooltip/Tooltip'
 import './Accordion.css'
 
-interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
-  title: string
+interface AccordionProps {
+  title: string | JSX.Element
   isOpen?: boolean
   isFixedAccordion?: boolean
   isVerifiedToken?: boolean
   extraIcon?: JSX.Element
+  children: React.ReactNode
 }
 
 interface AccordionStatus {
