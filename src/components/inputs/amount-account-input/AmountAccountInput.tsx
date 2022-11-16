@@ -57,6 +57,7 @@ export const MbAmountAccountInput = ({
           onChange={debounce(async (e) => {
             const value = e.target.value ?? null
             const valid = validateAmount(id, Number(value))
+            console.log('valll:', valid)
             setIsAmountValid(valid)
             setAmount(value)
             handleChangeAmount(id, Number(value))
