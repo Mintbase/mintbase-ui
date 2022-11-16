@@ -57,7 +57,7 @@ AmountAccountSplitsList.args = {
       cleared: false,
     },
   },
-  maxAmountPerAccount: 99,
+  maxAmountPerAccount: 11,
 }
 
 export const AmountAccountWithDropdown = Template.bind({})
