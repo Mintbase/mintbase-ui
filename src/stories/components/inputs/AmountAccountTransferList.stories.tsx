@@ -49,14 +49,14 @@ AmountAccountSplitsList.args = {
   defaultAccountsCounter: 1,
   isStoreSettings: false,
   initialUsedAmount: 12,
-  // defaultState: {
-  //   ['mintbase']: {
-  //     account: { valid: true, value: 'mintbase.near' },
-  //     amount: { valid: true, value: 12 },
-  //     editable: false,
-  //     cleared: false,
-  //   },
-  // },
+  defaultState: {
+    ['mintbase']: {
+      account: { valid: true, value: 'mintbase.near' },
+      amount: { valid: true, value: 12 },
+      editable: false,
+      cleared: false,
+    },
+  },
   maxAmountPerAccount: 99,
 }
 

@@ -167,7 +167,6 @@ export const MbNearAmountAccount = ({
   }
 
   const validateAmountById = (id: string, valid: boolean) => {
-    console.log('valid:', valid)
     if (valid) setUsed(used + state[id].amount.value)
     const newState = { ...state }
     newState[id].amount.valid = valid
