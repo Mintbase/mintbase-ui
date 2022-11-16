@@ -29,6 +29,7 @@ export const MbNearAmountAccount = ({
   isStoreSettings,
   dropdownItems,
   usedAmount,
+  maxAmountPerAccount,
 }: {
   subtitle: string
   smallSubtitle: string
@@ -50,6 +51,7 @@ export const MbNearAmountAccount = ({
   isStoreSettings?: boolean
   dropdownItems?: Item[]
   usedAmount?: (amount: number) => void
+  maxAmountPerAccount?: number
 }) => {
   const [used, setUsed] = useState<number>(0)
   const [state, setState] = useState<Record<string, TInputState>>({})
@@ -187,9 +189,13 @@ export const MbNearAmountAccount = ({
       ? transferTemplate.available - used - amount >= 0 && regexTest
       : totalAmount - used - amount >= 0 && regexTest
 
-    validateAmountById(id, valid)
+    const finalValidInfo = maxAmountPerAccount
+      ? amount <= maxAmountPerAccount && valid
+      : valid
 
-    return valid
+    validateAmountById(id, finalValidInfo)
+
+    return finalValidInfo
   }
 
   const validateAccount = async (id: string, account: string) => {

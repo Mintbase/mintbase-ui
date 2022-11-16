@@ -27,7 +27,7 @@ AmountAccountTransferList.args = {
   },
   usedAmount: (val) => {
     console.log(val)
-  }
+  },
 }
 
 export const AmountAccountSplitsList = Template.bind({})
@@ -57,6 +57,7 @@ AmountAccountSplitsList.args = {
       cleared: false,
     },
   },
+  maxAmountPerAccount: 99,
 }
 
 export const AmountAccountWithDropdown = Template.bind({})
