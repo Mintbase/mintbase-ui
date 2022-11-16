@@ -71,8 +71,8 @@ export const MbInput = forwardRef<HTMLInputElement, InputProps>(
         )}
         <div
           className={`main-input input-wrapper ${inputSize} flex items-center justify-between rounded ${
-            disabled ? 'disabled' : 'default ' + controlStatus
-          } ${className}`}
+            disabled ? 'disabled' : 'default'
+          } ${controlStatus} ${className}`}
         >
           <label className="flex w-full">
             <input

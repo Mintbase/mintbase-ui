@@ -229,6 +229,12 @@ export const MbNearAmountAccount = ({
     setAllCleared(true)
   }
 
+  const defaultAmountStatus = (amount: number): EControlStatus => {
+    if (maxAmountPerAccount && amount > maxAmountPerAccount)
+      return EControlStatus.INVALID
+    return EControlStatus.NORMAL
+  }
+
   useEffect(() => {
     setHasFilledFields(
       Object.keys(state).filter(
@@ -325,7 +331,7 @@ export const MbNearAmountAccount = ({
                           type="number"
                           placeholder={'1'}
                           inputSize={ESize.BIG}
-                          controlStatus={EControlStatus.NORMAL}
+                          controlStatus={defaultAmountStatus(amount.value)}
                           disabled
                           hasPercentageLabel={isPercentage}
                           value={amount.value}
