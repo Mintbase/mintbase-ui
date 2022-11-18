@@ -149,6 +149,7 @@ export const MbNearAmountAccount = ({
     if (isStoreSettings && Object.keys(defaultState).includes(id)) {
       setRemovedDefaultField(false)
     }
+
     if (newState[id].amount.valid || newState[id].cleared) {
       setUsed(sumStateAmounts(newState))
     }
@@ -185,9 +186,11 @@ export const MbNearAmountAccount = ({
 
     const regexTest = REGEX_INTEGER_ONLY.test(amount.toString())
 
+    const auxUsed = sumStateAmounts(newState)
+
     const valid = transferTemplate
-      ? transferTemplate.available - used - amount >= 0 && regexTest
-      : totalAmount - used - amount >= 0 && regexTest
+      ? transferTemplate.available - auxUsed - amount >= 0 && regexTest
+      : totalAmount - auxUsed - amount >= 0 && regexTest
 
     const finalValidInfo = maxAmountPerAccount
       ? amount <= maxAmountPerAccount && valid
