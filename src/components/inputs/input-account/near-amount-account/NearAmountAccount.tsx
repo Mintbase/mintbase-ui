@@ -150,7 +150,6 @@ export const MbNearAmountAccount = ({
       setRemovedDefaultField(false)
     }
 
-    console.log(newState[id])
     if (newState[id].amount.valid || newState[id].cleared) {
       setUsed(sumStateAmounts(newState))
     }
@@ -172,7 +171,6 @@ export const MbNearAmountAccount = ({
     if (valid) setUsed(used + state[id].amount.value)
     const newState = { ...state }
     newState[id].amount.valid = valid
-    console.log(newState[id].amount.valid)
     setState(newState)
   }
 
