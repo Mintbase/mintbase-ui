@@ -30,6 +30,7 @@ export const MbNearAmountAccount = ({
   dropdownItems,
   usedAmount,
   maxAmountPerAccount,
+  allowEmptyState,
 }: {
   subtitle: string
   smallSubtitle: string
@@ -52,6 +53,7 @@ export const MbNearAmountAccount = ({
   dropdownItems?: Item[]
   usedAmount?: (amount: number) => void
   maxAmountPerAccount?: number
+  allowEmptyState?: boolean
 }) => {
   const [used, setUsed] = useState<number>(0)
   const [state, setState] = useState<Record<string, TInputState>>({})
@@ -255,13 +257,14 @@ export const MbNearAmountAccount = ({
     )
 
     const isValidForm =
-      filterState.length > 0 &&
-      filterState.filter(
-        (key) =>
-          state[key].amount.valid &&
-          state[key].account.valid &&
-          state[key].editable
-      ).length === filterState.length
+      (filterState.length > 0 &&
+        filterState.filter(
+          (key) =>
+            state[key].amount.valid &&
+            state[key].account.valid &&
+            state[key].editable
+        ).length === filterState.length) ||
+      allowEmptyState
 
     const isFinalValid = isValidForm || removedDefaultField
 
