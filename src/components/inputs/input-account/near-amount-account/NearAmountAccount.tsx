@@ -268,7 +268,9 @@ export const MbNearAmountAccount = ({
             state[key].editable
         ).length === filterState.length) ||
       (allowEmptyState &&
-        !filterState.filter((key) => !state[key].account.valid).length)
+        !filterState.filter(
+          (key) => !state[key].account.valid || !state[key].amount.valid
+        ).length)
 
     const isFinalValid = isValidForm || removedDefaultField
 
