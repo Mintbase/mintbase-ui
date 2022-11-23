@@ -204,7 +204,10 @@ export const MbNearAmountAccount = ({
   }
 
   const validateAccount = async (id: string, account: string) => {
-    const valid = await accountExists(account)
+    const valid =
+      (await accountExists(account)) &&
+      !Object.values(state).filter((elm) => elm.account.value === account)
+        .length
 
     validateAccountById(id, valid)
 
