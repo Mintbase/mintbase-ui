@@ -34,7 +34,7 @@ const Template: ComponentStory<typeof MbTabs> = (args) => {
       >
         <MbTab
           label={<span>NFTs</span>}
-          extraFilter="Show only listed"
+          extraFilter={{ label: 'Show only listed' }}
           onExtraFilterChange={(value) => console.log(value)}
         >
           List of NFTs

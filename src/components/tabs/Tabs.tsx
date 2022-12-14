@@ -109,11 +109,16 @@ export const MbTabs = (props: TabsProps) => {
               ? tabsWithExtraFilter.map((tabIndex) => {
                   const currentTab: TTab = allTabs[tabIndex]
                   const { extraFilter, onExtraFilterChange } = currentTab.props
+                  if (!extraFilter) return
+                  const { label, isSelected } = extraFilter
+
                   if (tabIndex === activeIndex)
                     return (
                       <li
                         className={`order-by ${
-                          selectedFilter ? 'selected' : 'unselected'
+                          selectedFilter || isSelected
+                            ? 'selected'
+                            : 'unselected'
                         }`}
                         onClick={() => {
                           if (!onExtraFilterChange) return
@@ -125,12 +130,12 @@ export const MbTabs = (props: TabsProps) => {
                         <div className="flex p-12 sm:p-16 items-center">
                           <div
                             className={`${
-                              selectedFilter
+                              selectedFilter || isSelected
                                 ? 'text-mb-red'
                                 : 'text-blue-300 dark:text-blue-100'
                             } p-med-90 pr-10 whitespace-nowrap`}
                           >
-                            {extraFilter}
+                            {extraFilter?.label}
                           </div>
                         </div>
                       </li>
