@@ -5,7 +5,8 @@ export interface TabProps extends React.HTMLAttributes<HTMLDivElement> {
   label: JSX.Element
   isActive?: boolean
   isSmall?: boolean
-  extraFilter?: { label: string; isSelected?: boolean }
+  extraFilter?: string
+  isExtraFilterSelected?: boolean
   onExtraFilterChange?: (isSelected: boolean) => void
 }
 

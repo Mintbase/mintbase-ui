@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
-import { MbDropdownMenu, Item } from '../dropdowns/dropdown-menu/DropdownMenu'
+import React, { useEffect, useState } from 'react'
 import { EIconName } from '../../consts/icons'
+import { Item, MbDropdownMenu } from '../dropdowns/dropdown-menu/DropdownMenu'
+import { MbMenuWrapper } from '../dropdowns/menu-wrapper/MenuWrapper'
 import { MbIcon } from '../icon/Icon'
 import { MbTab, TabProps } from './Tab'
-import { MbMenuWrapper } from '../dropdowns/menu-wrapper/MenuWrapper'
 
 interface TabsProps extends React.HTMLAttributes<HTMLDivElement> {
   activeIndex: number
@@ -58,7 +58,9 @@ export const MbTabs = (props: TabsProps) => {
   const getExtraFiltersIndex = (array: any) => {
     let indexes: number[] = []
     array.map((tab: TTab, index: number) => {
-      if (tab.props.extraFilter) indexes.push(index)
+      if (tab.props.extraFilter) {
+        indexes.push(index)
+      }
     })
 
     return indexes
@@ -68,6 +70,11 @@ export const MbTabs = (props: TabsProps) => {
   const tabsTitle = allTabs?.map((tab: TTab) => tab.props.label)
   const tabsContent = allTabs?.map((tab: TTab) => tab.props.children)
   const tabsWithExtraFilter = getExtraFiltersIndex(allTabs)
+
+  useEffect(() => {
+    if (!allTabs) return
+    setSelectedFilter(!!allTabs[activeIndex].props.isExtraFilterSelected)
+  }, [activeIndex])
 
   if (!children || !allTabs) return <></>
 
@@ -110,15 +117,12 @@ export const MbTabs = (props: TabsProps) => {
                   const currentTab: TTab = allTabs[tabIndex]
                   const { extraFilter, onExtraFilterChange } = currentTab.props
                   if (!extraFilter) return
-                  const { label, isSelected } = extraFilter
 
                   if (tabIndex === activeIndex)
                     return (
                       <li
                         className={`order-by ${
-                          selectedFilter || isSelected
-                            ? 'selected'
-                            : 'unselected'
+                          selectedFilter ? 'selected' : 'unselected'
                         }`}
                         onClick={() => {
                           if (!onExtraFilterChange) return
@@ -130,12 +134,12 @@ export const MbTabs = (props: TabsProps) => {
                         <div className="flex p-12 sm:p-16 items-center">
                           <div
                             className={`${
-                              selectedFilter || isSelected
+                              selectedFilter
                                 ? 'text-mb-red'
                                 : 'text-blue-300 dark:text-blue-100'
                             } p-med-90 pr-10 whitespace-nowrap`}
                           >
-                            {extraFilter?.label}
+                            {extraFilter}
                           </div>
                         </div>
                       </li>
