@@ -7,5 +7,5 @@
 }
 
 .body-table td {
-  @apply p-24 dark:text-white;
+  @apply px-24 py-12 dark:text-white;
 }
