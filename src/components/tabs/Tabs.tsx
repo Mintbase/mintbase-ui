@@ -58,7 +58,7 @@ export const MbTabs = (props: TabsProps) => {
   const getExtraFiltersIndex = (array: any) => {
     let indexes: number[] = []
     array.map((tab: TTab, index: number) => {
-      if (tab.props.extraFilter) {
+      if (tab?.props?.extraFilter) {
         indexes.push(index)
       }
     })
@@ -67,13 +67,13 @@ export const MbTabs = (props: TabsProps) => {
   }
 
   const allTabs = React.Children.map(children, (child: any) => child)
-  const tabsTitle = allTabs?.map((tab: TTab) => tab.props.label)
-  const tabsContent = allTabs?.map((tab: TTab) => tab.props.children)
+  const tabsTitle = allTabs?.map((tab: TTab) => tab?.props?.label)
+  const tabsContent = allTabs?.map((tab: TTab) => tab?.props?.children)
   const tabsWithExtraFilter = getExtraFiltersIndex(allTabs)
 
   useEffect(() => {
     if (!allTabs) return
-    setSelectedFilter(!!allTabs[activeIndex].props.isExtraFilterSelected)
+    setSelectedFilter(!!allTabs[activeIndex]?.props?.isExtraFilterSelected)
   }, [activeIndex])
 
   if (!children || !allTabs) return <></>
