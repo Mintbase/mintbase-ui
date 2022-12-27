@@ -36,22 +36,6 @@ const Template: ComponentStory<typeof MbModal> = (args) => {
             at viverra purus. Sed aliquet augue mi, a pharetra lorem interdum
             nec. Aliquam interdum augue diam, vitae varius arcu sodales in.
             Morbi luctus lectus a elit suscipit, nec imperdiet nibh luctus.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-            at viverra purus. Sed aliquet augue mi, a pharetra lorem interdum
-            nec. Aliquam interdum augue diam, vitae varius arcu sodales in.
-            Morbi luctus lectus a elit suscipit, nec imperdiet nibh luctus.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-            at viverra purus. Sed aliquet augue mi, a pharetra lorem interdum
-            nec. Aliquam interdum augue diam, vitae varius arcu sodales in.
-            Morbi luctus lectus a elit suscipit, nec imperdiet nibh luctus.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-            at viverra purus. Sed aliquet augue mi, a pharetra lorem interdum
-            nec. Aliquam interdum augue diam, vitae varius arcu sodales in.
-            Morbi luctus lectus a elit suscipit, nec imperdiet nibh luctus.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-            at viverra purus. Sed aliquet augue mi, a pharetra lorem interdum
-            nec. Aliquam interdum augue diam, vitae varius arcu sodales in.
-            Morbi luctus lectus a elit suscipit, nec imperdiet nibh luctus.
           </p>
         </div>
       </MbModal>
