@@ -4,6 +4,7 @@ import { MbButton } from '../../components/buttons/button/Button'
 import { MbModal } from '../../components/modal/Modal'
 import { MbAction } from '../../components/action/Action'
 import { ESize, EState, EType } from '../../consts/properties'
+import React from 'react'
 
 export default {
   title: 'Components/Modal',
@@ -31,6 +32,22 @@ const Template: ComponentStory<typeof MbModal> = (args) => {
         <div className="p-24">
           <p className="p-big-130 pb-16">Number of Tokens</p>
           <p className="p-big-90">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+            at viverra purus. Sed aliquet augue mi, a pharetra lorem interdum
+            nec. Aliquam interdum augue diam, vitae varius arcu sodales in.
+            Morbi luctus lectus a elit suscipit, nec imperdiet nibh luctus.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+            at viverra purus. Sed aliquet augue mi, a pharetra lorem interdum
+            nec. Aliquam interdum augue diam, vitae varius arcu sodales in.
+            Morbi luctus lectus a elit suscipit, nec imperdiet nibh luctus.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+            at viverra purus. Sed aliquet augue mi, a pharetra lorem interdum
+            nec. Aliquam interdum augue diam, vitae varius arcu sodales in.
+            Morbi luctus lectus a elit suscipit, nec imperdiet nibh luctus.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+            at viverra purus. Sed aliquet augue mi, a pharetra lorem interdum
+            nec. Aliquam interdum augue diam, vitae varius arcu sodales in.
+            Morbi luctus lectus a elit suscipit, nec imperdiet nibh luctus.
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
             at viverra purus. Sed aliquet augue mi, a pharetra lorem interdum
             nec. Aliquam interdum augue diam, vitae varius arcu sodales in.
