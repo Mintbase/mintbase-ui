@@ -1,3 +1,4 @@
+import React from 'react'
 import { MbIcon } from '../../components/icon/Icon'
 import { EIconName } from '../../consts/icons'
 
