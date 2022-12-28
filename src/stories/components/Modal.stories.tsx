@@ -4,6 +4,7 @@ import { MbButton } from '../../components/buttons/button/Button'
 import { MbModal } from '../../components/modal/Modal'
 import { MbAction } from '../../components/action/Action'
 import { ESize, EState, EType } from '../../consts/properties'
+import React from 'react'
 
 export default {
   title: 'Components/Modal',
