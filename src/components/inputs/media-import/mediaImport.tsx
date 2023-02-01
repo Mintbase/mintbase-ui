@@ -5,7 +5,7 @@ import { IMAGE_TYPES } from '../../../consts/fileFormats'
 import { isMobile } from '../../../consts/mobile'
 import { MbIcon } from '../../icon/Icon'
 import AcceptedFormats from './acceptedFormats'
-import { fileHandler, iconType } from './fileFunctions'
+import { iconType, fileHandler } from './fileFunctions'
 interface MediaImportProps {
   isProfileImage?: boolean
   isHeaderImage?: boolean
