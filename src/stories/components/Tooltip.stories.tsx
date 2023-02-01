@@ -12,7 +12,7 @@ export default {
 const Template: ComponentStory<typeof MbTooltip> = (args) => (
   <>
     <p className="med-p mb-12">
-      hover the icon. place can be 'top', 'bottom', 'left' or 'right'
+      hover the icon
     </p>
     <div className="w-full md:w-3/4 flex items-center mt-24 ml-96">
       <MbTooltip {...args} />
@@ -26,5 +26,4 @@ Tooltip.args = {
   component: (
     <MbIcon size="26px" name={EIconName.MINTBASE} color="mb-blackblue" />
   ),
-  place: 'left',
 }
