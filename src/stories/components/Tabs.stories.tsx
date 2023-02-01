@@ -1,4 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
+import React from 'react'
 import { useState } from 'react'
 import { MbTab } from '../../components/tabs/Tab'
 import { MbTabs } from '../../components/tabs/Tabs'
@@ -34,6 +35,7 @@ const Template: ComponentStory<typeof MbTabs> = (args) => {
         <MbTab
           label={<span>NFTs</span>}
           extraFilter="Show only listed"
+          isExtraFilterSelected
           onExtraFilterChange={(value) => console.log(value)}
         >
           List of NFTs

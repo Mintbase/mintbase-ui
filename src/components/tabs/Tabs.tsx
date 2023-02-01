@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
-import { MbDropdownMenu, Item } from '../dropdowns/dropdown-menu/DropdownMenu'
+import React, { useEffect, useState } from 'react'
 import { EIconName } from '../../consts/icons'
+import { Item, MbDropdownMenu } from '../dropdowns/dropdown-menu/DropdownMenu'
+import { MbMenuWrapper } from '../dropdowns/menu-wrapper/MenuWrapper'
 import { MbIcon } from '../icon/Icon'
 import { MbTab, TabProps } from './Tab'
-import { MbMenuWrapper } from '../dropdowns/menu-wrapper/MenuWrapper'
 
 interface TabsProps extends React.HTMLAttributes<HTMLDivElement> {
   activeIndex: number
@@ -58,29 +58,34 @@ export const MbTabs = (props: TabsProps) => {
   const getExtraFiltersIndex = (array: any) => {
     let indexes: number[] = []
     array.map((tab: TTab, index: number) => {
-      if (tab.props.extraFilter) indexes.push(index)
+      if (tab?.props?.extraFilter) {
+        indexes.push(index)
+      }
     })
 
     return indexes
   }
 
   const allTabs = React.Children.map(children, (child: any) => child)
-  const tabsTitle = allTabs?.map((tab: TTab) => tab.props.label)
-  const tabsContent = allTabs?.map((tab: TTab) => tab.props.children)
+  const tabsTitle = allTabs?.map((tab: TTab) => tab?.props?.label)
+  const tabsContent = allTabs?.map((tab: TTab) => tab?.props?.children)
   const tabsWithExtraFilter = getExtraFiltersIndex(allTabs)
+
+  useEffect(() => {
+    if (!allTabs) return
+    setSelectedFilter(!!allTabs[activeIndex]?.props?.isExtraFilterSelected)
+  }, [activeIndex])
 
   if (!children || !allTabs) return <></>
 
   return (
     <>
-      <div className="relative md:initial">
+      <div className="relative">
         <ul
-          className={`flex justify-between bg-gray-50 dark:bg-gray-800 px-24 md:px-48 ${
-            !filterOptions ? 'overflow-x-scroll no-scrollbar' : ''
-          }`}
+          className={`flex justify-between bg-gray-50 dark:bg-gray-800 px-24 md:px-48 overflow-x-scroll no-scrollbar`}
         >
-          {tabsTitle?.length && (
-            <div className="flex items-center space-x-12 sm:space-x-24">
+          {tabsTitle?.length ? (
+            <div className="flex items-center space-x-6 sm:space-x-12">
               {tabsTitle.map((label, index) => (
                 <li
                   onClick={() => {
@@ -96,21 +101,23 @@ export const MbTabs = (props: TabsProps) => {
                 </li>
               ))}
             </div>
-          )}
+          ) : null}
 
-          {((tabsWithExtraFilter?.length &&
+          {(tabsWithExtraFilter?.length &&
             tabsWithExtraFilter.includes(activeIndex)) ||
-            (filterOptions && options)) && (
-            <li className="flex items-center mx-12 md:hidden">
+          (filterOptions && options) ? (
+            <li className="flex items-center mx-6 md:hidden">
               <div className="w-0.5 bg-gray-200 dark:bg-gray-600 h-8 rounded"></div>
             </li>
-          )}
+          ) : null}
 
-          <div className="flex items-center space-x-12 sm:space-x-24">
+          <div className="flex items-center space-x-6 sm:space-x-12">
             {tabsWithExtraFilter?.length
               ? tabsWithExtraFilter.map((tabIndex) => {
                   const currentTab: TTab = allTabs[tabIndex]
                   const { extraFilter, onExtraFilterChange } = currentTab.props
+                  if (!extraFilter) return
+
                   if (tabIndex === activeIndex)
                     return (
                       <li
@@ -140,7 +147,7 @@ export const MbTabs = (props: TabsProps) => {
                 })
               : null}
 
-            {filterOptions && options && (
+            {filterOptions && options ? (
               <div>
                 <MbMenuWrapper setIsOpen={setShowOrderOpts}>
                   <li
@@ -172,30 +179,26 @@ export const MbTabs = (props: TabsProps) => {
                         darkColor="blue-100"
                       />
                     </div>
-                    <MbDropdownMenu
-                      isOpen={showOrderOpts}
-                      items={options}
-                      className="center-pos hidden md:block"
-                    />
                   </li>
                 </MbMenuWrapper>
               </div>
-            )}
+            ) : null}
           </div>
         </ul>
 
-        {filterOptions && options && (
+        {filterOptions && options ? (
           <MbDropdownMenu
             isOpen={showOrderOpts}
             items={options}
-            className="right-0 md:hidden"
+            className="right-0"
           />
-        )}
+        ) : null}
       </div>
-      {tabsContent?.length &&
-        tabsContent?.map((content, index) => {
-          return index === activeIndex && <div key={index}>{content}</div>
-        })}
+      {tabsContent?.length
+        ? tabsContent?.map((content, index) => {
+            return index === activeIndex && <div key={index}>{content}</div>
+          })
+        : null}
     </>
   )
 }

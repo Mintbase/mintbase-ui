@@ -5,7 +5,7 @@ import { ESize } from '../../../consts/properties'
 import { MbInput, EControlStatus } from '../../../index'
 
 export default {
-  title: 'Components/Inputs',
+  title: 'Components/Inputs/Input',
   component: MbInput,
   argTypes: {
     controlStatus: {

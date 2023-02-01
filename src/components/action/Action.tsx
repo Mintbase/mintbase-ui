@@ -17,6 +17,7 @@ export const MbAction = ({
   return (
     <button
       className={`action ${state} ${getFontType(size)} ${className}`}
+      disabled={state === EState.DISABLED}
       {...props}
     >
       {props.children}

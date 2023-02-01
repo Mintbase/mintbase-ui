@@ -7,20 +7,22 @@ export type TThingCard = {
   upperRightElement?: JSX.Element
   centerElement: JSX.Element
   nftTypeIcon?: EIconName
+  extraMidLeftElement?: JSX.Element
   midLeftText: string
   midRightText: string
-  botLeftImage?: string
+  botLeftImage?: JSX.Element
   botRightText?: string
   botRightIcon?: EIconName
-  onUpperLeftClick?: () => void
-  onCenterElementClick?: () => void
-  onBotLeftImageClick?: () => void
+  onUpperLeftClick?: (e?:React.MouseEvent<HTMLElement>) => void
+  onCenterElementClick?: (e?:React.MouseEvent<HTMLElement>) => void
+  onBotLeftImageClick?: (e?:React.MouseEvent<HTMLElement>) => void
 }
 
 export type TSmallCard = {
   centerElement: JSX.Element
   title: string
-  onCardClick?: () => void
+  subtitle?: string
+  onCardClick?: (e?:React.MouseEvent<HTMLElement>) => void
 }
 
 export type TInfoCard = {
@@ -28,7 +30,7 @@ export type TInfoCard = {
   title: string
   titleIcon?: JSX.Element
   description?: string
-  upperIcon?: EIconName
+  upperIcon?: JSX.Element
   descriptionIcon?: EIconName
   descriptionImage?: string
   lowerLeftText?: string
@@ -36,7 +38,5 @@ export type TInfoCard = {
   isNumber?: boolean
   size?: ESize
   isLink?: boolean
-  isVerifiedStore?: boolean
-  upperTooltip?: string
-  handleDescriptionClick?: () => void
+  handleDescriptionClick?: (e?:React.MouseEvent<HTMLElement>) => void
 }

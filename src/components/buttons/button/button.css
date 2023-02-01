@@ -65,9 +65,36 @@
 }
 
 .button.secondary.disabled {
-  @apply bg-transparent text-gray-400 cursor-not-allowed ring-gray-400;
+  @apply bg-transparent text-gray-400 dark:text-gray-600 cursor-not-allowed ring-gray-400;
 }
 
 .button.secondary.caution {
   @apply bg-transparent text-error-300 ring-error-300 dark:text-error-100 dark:ring-error-100;
+}
+
+.dropdown-btn.small-icon {
+  width: 26px;
+  height: 26px;
+}
+
+.dropdown-btn.medium-icon {
+  width: 26px;
+  height: 26px;
+}
+
+.dropdown-btn.big-icon {
+  width: 32px;
+  height: 32px;
+}
+
+@screen sm {
+  .dropdown-btn.medium-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .dropdown-btn.big-icon {
+    width: 42px;
+    height: 42px;
+  }
 }

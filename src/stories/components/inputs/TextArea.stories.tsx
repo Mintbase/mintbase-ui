@@ -5,7 +5,7 @@ import { ESize } from '../../../consts/properties'
 import { MbTextArea, EControlStatus } from '../../../index'
 
 export default {
-  title: 'Components/Inputs',
+  title: 'Components/Inputs/TextArea',
   component: MbTextArea,
   argTypes: {
     controlStatus: {

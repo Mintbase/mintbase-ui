@@ -7,7 +7,7 @@
 }
 
 .amount-button.disabled {
-  @apply cursor-not-allowed border-none bg-gray-500;
+  @apply cursor-not-allowed border-none bg-gray-500 dark:bg-gray-500;
 }
 
 .amount-button span {

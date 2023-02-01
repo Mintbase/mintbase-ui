@@ -1,11 +1,12 @@
-import React, { forwardRef } from 'react'
+import React, { forwardRef, useState } from 'react'
 import { getFontType, getInputLabelFontType } from '../../../consts/fontType'
 import { EIconName } from '../../../consts/icons'
 import { ESize } from '../../../consts/properties'
-import { MbIcon } from '../../icon/Icon'
-import './inputfield.css'
-import './../Input.css'
 import { getCurrentBreakpoint, ScreenBreakpoint } from '../../../utils'
+import { MbCharCounter } from '../../counters/CharCounter'
+import { MbIcon } from '../../icon/Icon'
+import './../Input.css'
+import './inputfield.css'
 
 export enum EControlStatus {
   NORMAL = 'normal',
@@ -19,6 +20,8 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   controlStatus: EControlStatus
   inputSize?: ESize
   hasPercentageLabel?: boolean
+  maxChars?: number
+  initialCounter?: number
 }
 
 export const MbInput = forwardRef<HTMLInputElement, InputProps>(
@@ -35,11 +38,16 @@ export const MbInput = forwardRef<HTMLInputElement, InputProps>(
       value,
       type,
       hasIcon,
+      maxChars,
+      initialCounter = 0,
       inputSize = ESize.MEDIUM,
+      onChange,
       ...restProps
     },
     ref
   ) => {
+    const [count, setCount] = useState(initialCounter)
+
     const getIconSize = () => {
       return inputSize === 'big' &&
         getCurrentBreakpoint() !== ScreenBreakpoint.SM
@@ -63,19 +71,31 @@ export const MbInput = forwardRef<HTMLInputElement, InputProps>(
         )}
         <div
           className={`main-input input-wrapper ${inputSize} flex items-center justify-between rounded ${
-            disabled ? 'disabled' : 'default ' + controlStatus
-          } ${className}`}
+            disabled ? 'disabled' : 'default'
+          } ${controlStatus} ${className}`}
         >
           <label className="flex w-full">
             <input
               id={id}
               disabled={disabled}
               ref={ref}
-              placeholder={hasPercentageLabel ? '' : placeholder}
+              placeholder={placeholder}
               type={type}
               value={value}
+              maxLength={maxChars}
               required={required}
               className={`input-field ${getFontType(inputSize)}`}
+              onWheel={(e) => {
+                if (type !== 'number') return
+                e.currentTarget.blur()
+              }}
+              onChange={(e) => {
+                if (maxChars) {
+                  setCount(e.target.value.length)
+                }
+                if (!onChange) return
+                onChange(e)
+              }}
               {...restProps}
             />
             {hasPercentageLabel && (
@@ -112,6 +132,15 @@ export const MbInput = forwardRef<HTMLInputElement, InputProps>(
             </div>
           )}
         </div>
+        {maxChars ? (
+          <MbCharCounter
+            counter={count}
+            inputSize={inputSize}
+            maxChars={maxChars}
+          />
+        ) : (
+          <></>
+        )}
       </>
     )
   }

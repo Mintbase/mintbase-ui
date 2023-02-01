@@ -106,6 +106,27 @@ export const colorsArray: TColorDetail[] = [
     ],
   },
   {
+    sectionTitle: 'Additional',
+    colors: [
+      {
+        class: 'purple-300',
+        hex: tailwindConfig.extend.colors.purple[300],
+      },
+      {
+        class: 'purple-100',
+        hex: tailwindConfig.extend.colors.purple[100],
+      },
+      {
+        class: 'orange-300',
+        hex: tailwindConfig.extend.colors.orange[300],
+      },
+      {
+        class: 'orange-100',
+        hex: tailwindConfig.extend.colors.orange[100],
+      },
+    ],
+  },
+  {
     sectionTitle: 'State',
     colors: [
       {

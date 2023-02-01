@@ -29,14 +29,12 @@ export const MbInfoCard = ({ boxInfo }: { boxInfo: TInfoCard }) => {
     description,
     descriptionIcon = EIconName.NONE,
     descriptionImage,
-    upperIcon = EIconName.NONE,
-    upperTooltip,
+    upperIcon,
     isBigDescription = true,
     isNumber,
     lowerLeftText,
     size = ESize.MEDIUM,
     isLink,
-    isVerifiedStore,
   } = boxInfo
 
   if (loading) return <LoadingInfoBox size={size} />
@@ -55,44 +53,19 @@ export const MbInfoCard = ({ boxInfo }: { boxInfo: TInfoCard }) => {
     return 'p-small-90'
   }
 
-  const getUpperIcon = () => {
-    return (
-      <MbIcon
-        name={upperIcon}
-        size="20px"
-        color="blue-300"
-        darkColor="blue-100"
-      ></MbIcon>
-    )
-  }
-
-  const getUpperIconTooltip = () => {
-    // sorry for the hack, needed unique ID
-    return (
-      <MbTooltip
-        text={upperTooltip as string}
-        id={`infocard-${title.replace(' ', '-').toLowerCase()}-tooltip`}
-        place="left"
-        component={getUpperIcon()}
-      />
-    )
-  }
-
   return (
     <div className={`info-card ${size}`}>
       <div
-        className={`flex ${titleIcon ? 'gap-12' : 'justify-between'} items-center title-wrapper ${size} relative`}
+        className={`flex ${
+          titleIcon ? 'gap-12' : 'justify-between'
+        } items-center title-wrapper ${size} relative`}
       >
         {titleIcon && titleIcon}
         <div className={`${getTitleFont()} text-gray-700 dark:text-gray-300`}>
           {title}
         </div>
 
-        {upperIcon !== EIconName.NONE && (
-          <div className="absolute right-0 mt-4">
-            {upperTooltip ? getUpperIconTooltip() : getUpperIcon()}
-          </div>
-        )}
+        {upperIcon && <div className="absolute right-0 mt-4">{upperIcon}</div>}
       </div>
       <div className="flex space-x-12 items-center">
         {descriptionIcon !== EIconName.NONE && !descriptionImage && (
@@ -116,30 +89,17 @@ export const MbInfoCard = ({ boxInfo }: { boxInfo: TInfoCard }) => {
 
         <div className="flex flex-wrap justify-between w-full items-baseline">
           {description && (
-            <div>
+            <div className={`${lowerLeftText ? '' : 'w-full'}`}>
               <div
-                className={`${getDescriptionFont()} ${isLink
-                  ? 'text-blue-300 dark:text-blue-100 cursor-pointer'
-                  : 'text-black dark:text-white'
-                  } inline-flex align-middle`}
+                className={`${getDescriptionFont()} ${
+                  isLink
+                    ? 'text-blue-300 dark:text-blue-100 cursor-pointer'
+                    : 'text-black dark:text-white'
+                } ${
+                  lowerLeftText ? 'inline-flex' : 'w-5/6 truncate'
+                } align-middle`}
               >
                 {description}
-                {isVerifiedStore && (
-                  <MbTooltip
-                    text="Verified Store"
-                    id="verified-store"
-                    place="right"
-                    component={
-                      <MbIcon
-                        name={EIconName.VERIFIED}
-                        size="20px"
-                        color="blue-300"
-                        darkColor="blue-100"
-                        className="ml-4"
-                      ></MbIcon>
-                    }
-                  ></MbTooltip>
-                )}
               </div>
             </div>
           )}

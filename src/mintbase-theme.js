@@ -4,6 +4,7 @@ module.exports = {
     md: '768px',
     lg: '976px',
     xl: '1440px',
+    xxl: '1920px',
   },
   fontFamily: {
     'authentic-sans-90': ['AuthenticSans-90', 'sans-serif'],
@@ -31,6 +32,8 @@ module.exports = {
     padding: {
       2: '2px',
       4: '4px',
+      5: '5px',
+      6: '6px',
       8: '8px',
       10: '10px',
       12: '12px',
@@ -47,6 +50,7 @@ module.exports = {
       0: '0px',
       2: '2px',
       4: '4px',
+      6: '6px',
       8: '8px',
       10: '10px',
       12: '12px',
@@ -70,6 +74,14 @@ module.exports = {
       'mb-red-35': '#3A1C2A',
       'mb-red-15': '#FFDEDE',
       'mb-blackblue': '#070C2B',
+      purple: {
+        100: '#E087FF',
+        300: '#8C4FE5',
+      },
+      orange: {
+        100: '#FF9470',
+        300: '#FF6C3B',
+      },
       gray: {
         50: '#F9F9F9',
         100: '#F3F4F8',
@@ -124,6 +136,9 @@ module.exports = {
       38: '38px',
       50: '50px',
     },
+    maxHeight: {
+      xl: '2000px',
+    },
     maxWidth: {
       64: '16rem',
       '40%': '40%',
@@ -141,6 +156,7 @@ module.exports = {
   },
   space: {
     4: '4px',
+    6: '6px',
     8: '8px',
     12: '12px',
     24: '24px',

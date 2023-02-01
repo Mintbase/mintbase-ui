@@ -2,13 +2,9 @@
   @apply rounded p-12 bg-gray-50 dark:bg-gray-800;
 }
 
+.info-card.small,
 .info-card.medium,
 .info-card.big {
-  @apply p-12;
-  min-height: 72px;
-}
-
-.info-card.small {
   @apply p-8;
   min-height: 46px;
 }
@@ -25,5 +21,13 @@
 @screen lg {
   .info-card.small {
     min-width: 160px;
+  }
+}
+
+@screen sm {
+  .info-card.medium,
+  .info-card.big {
+    @apply p-12;
+    min-height: 72px;
   }
 }

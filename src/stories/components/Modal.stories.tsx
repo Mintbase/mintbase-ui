@@ -4,6 +4,7 @@ import { MbButton } from '../../components/buttons/button/Button'
 import { MbModal } from '../../components/modal/Modal'
 import { MbAction } from '../../components/action/Action'
 import { ESize, EState, EType } from '../../consts/properties'
+import React from 'react'
 
 export default {
   title: 'Components/Modal',
@@ -25,7 +26,7 @@ const Template: ComponentStory<typeof MbModal> = (args) => {
       <MbModal
         {...args}
         open={open}
-        title="Info"
+        topTitle="Info"
         onClose={() => setIsOpen(false)}
       >
         <div className="p-24">
@@ -59,7 +60,7 @@ const TopElementTemplate: ComponentStory<typeof MbModal> = (args) => {
       <MbModal
         {...args}
         open={open}
-        title="Info"
+        topTitle="Info"
         onClose={() => setIsOpen(false)}
         topElement={
           <MbAction>
