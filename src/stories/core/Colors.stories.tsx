@@ -14,7 +14,7 @@ export const Colors = () => (
           {elm.colors.map((color) => (
             <div key={color.class}>
               <div
-                className={`w-24 h-24 ${color.class} rounded-md ${
+                className={`w-24 h-24 bg-${color.class} rounded-md ${
                   color.class.includes('white') ? 'border-2 border-black' : ''
                 }`}
               ></div>
