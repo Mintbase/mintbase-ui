@@ -8,7 +8,7 @@ export const MbTooltip = ({
   component: JSX.Element
 }) => {
   return (
-    <div className='relative'>
+    <div className="relative">
       <span className="w-min mb-tooltip flex cursor-pointer">
         {component}
         <span className="tooltip-text">
