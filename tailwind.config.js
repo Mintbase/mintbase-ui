@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const mintbaseTheme = require('./src/mintbase-theme')
 const plugin = require('tailwindcss/plugin')
 
@@ -7,6 +8,21 @@ module.exports = {
   variants: {
     extend: {},
   },
+  safelist: ['bg-mb-red',
+  {
+    pattern: /bg-(gray)-(50|100|150|200|300|400|500|600|700|800|850|900)/,
+  },
+  {
+    pattern: /bg-(mb-red)-(35|15)/,
+  },
+  {
+    pattern: /bg-(blue)-(300-35|100|100-35|100-15)/,
+  },
+  {
+    pattern: /bg-(success|warning|error)-(300|100)/,
+  }
+],
+  content: ['./src/**/*.tsx'],
   plugins: [
     plugin(function ({ addUtilities }) {
       addUtilities({

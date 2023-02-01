@@ -1,5 +1,5 @@
-import { MbIcon } from '../..'
-import { EIconName } from '../../..'
+import { EIconName} from '../../../consts'
+import { MbIcon } from '../../icon/Icon'
 import './InputSelect.css'
 
 interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {

@@ -1,6 +1,7 @@
+import { EIconName } from '../../consts'
+import { MbIcon } from '../icon/Icon'
 import React, { useEffect, useRef, useState } from 'react'
-import { MbIcon } from '..'
-import { EIconName } from '../..'
+
 import { useMutationObserver } from '../../hooks/useMutationObserver'
 import { MbTooltip } from '../tooltip/Tooltip'
 import './Accordion.css'

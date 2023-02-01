@@ -1,6 +1,7 @@
 import { forwardRef, useEffect, useState } from 'react'
-import { MbIcon } from '../..'
-import { EIconName, ESize, getFontType, getInputLabelFontType } from '../../..'
+import { EIconName, ESize, getFontType, getInputLabelFontType } from '../../../consts'
+import { MbIcon } from '../../icon/Icon'
+
 import './../Input.css'
 import './InputTags.css'
 interface InputTagsProps extends React.InputHTMLAttributes<HTMLInputElement> {
