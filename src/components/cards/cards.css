@@ -1,3 +1,7 @@
 .base-card {
   @apply bg-white dark:bg-gray-850 rounded dark:hover:bg-gray-800 hover:bg-gray-50 cursor-pointer inline-block transition-all duration-500;
 }
+
+.base-card:hover{
+  transform:scale(1.01)
+}

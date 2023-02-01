@@ -1,6 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import { EIconName, MbIcon } from '../..'
 import { MbAccordion } from '../../components/accordion/Accordion'
+import { MbIcon } from '../../components/icon/Icon'
+import { EIconName } from '../../consts'
 
 export default {
   title: 'Components/Accordion',

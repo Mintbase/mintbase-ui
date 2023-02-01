@@ -1,5 +1,5 @@
 import { forwardRef, useEffect, useState } from 'react'
-import { ESize, getFontType } from '../../..'
+import { ESize, getFontType } from '../../../consts'
 import { EControlStatus } from '../input-field/inputField'
 import './AmountInput.css'
 
