@@ -78,9 +78,7 @@ export const MbTable = (props: TableProps) => {
           </div>
         ) : (
           <footer
-            className={`border-t border-gray-200 dark:border-gray-800 py-24 md:px-24 grid items-center ${
-              showItemsPerPage ? 'md:grid-cols-3' : ' md:grid-cols-2'
-            }`}
+            className={`flex-column-reverse border-t border-gray-200 w-full dark:border-gray-800 py-24 md:px-24 flex items-center`}
           >
             {showItemsPerPage && onAmountItemsChange ? (
               <div className="order-2 md:order-1 flex justify-center md:justify-start">
@@ -92,9 +90,7 @@ export const MbTable = (props: TableProps) => {
             ) : null}
 
             <div
-              className={`p-med-90 dark:text-white hidden md:block order-2 ${
-                showItemsPerPage ? 'text-center' : 'text-right'
-              }`}
+              className={`p-med-90 dark:text-white hidden md:block flex-1 text-right`}
             >
               {pagination.itemsPerPage * pagination.currentPage <
               pagination.totalItems
@@ -102,7 +98,7 @@ export const MbTable = (props: TableProps) => {
                 : pagination.totalItems}{' '}
               of {pagination.totalItems}
             </div>
-            <div className="flex justify-center md:justify-end mb-24 md:mb-0 order-1 md:order-3">
+            <div className="flex justify-end align-right items-right flex-1">
               <MbPagination
                 currentPage={pagination.currentPage}
                 itemsPerPage={pagination.itemsPerPage}
