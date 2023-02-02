@@ -1,5 +1,6 @@
 @import '../public/assets/fonts/fonts.css';
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-@tailwind screens;
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/utilities';
+@import 'tailwindcss/screens';
+@import 'tailwindcss/components';
