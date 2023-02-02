@@ -1,4 +1,5 @@
 @import '../public/assets/fonts/fonts.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -65,3 +66,4 @@
 .bg-opacity-95 {
   --tw-bg-opacity: 0.95;
 }
+
