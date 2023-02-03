@@ -22,7 +22,7 @@
   background: rgba(0,0,0,0.6);
   border: 1px solid transparent;
   font-size: 12px;
-  content: attr(aria-label); 
+  content: attr(data-tooltip); 
   border-radius: 4px;
   max-height: 28px;
   padding: 8px;

@@ -20,7 +20,7 @@ export const MbTooltip = ({
 
   return (
     <div className="relative">
-      <span className={`w-min mb-tooltip flex ${cssClass} ${classname} cursor-pointer`} aria-label={text}>
+      <span className={`w-min mb-tooltip flex ${cssClass} ${classname} cursor-pointer`} data-tooltip={text}>
         {component}
       </span>
     </div>
