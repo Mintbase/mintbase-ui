@@ -8,7 +8,19 @@ module.exports = {
   variants: {
     extend: {},
   },
-  safelist: ['bg-mb-red',
+  safelist: ['bg-mb-red','text-white', 'dark',
+  {
+    pattern: /dark:(blue)-(300-35|100|100-35|100-15)/,
+  },
+  {
+    pattern: /dark:bg-(gray)-(50|100|150|200|300|400|500|600|700|800|850|900)/,
+  },
+  {
+    pattern: /text-(gray)-(50|100|150|200|300|400|500|600|700|800|850|900)/,
+  },
+  {
+    pattern: /text-(blue)-(300-35|100|100-35|100-15)/,
+  },
   {
     pattern: /bg-(gray)-(50|100|150|200|300|400|500|600|700|800|850|900)/,
   },
