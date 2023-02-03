@@ -91,7 +91,7 @@ export const MbThingCard = ({ loading = false, cardInfo }: CardProps) => {
           <div className="absolute inset-0">{centerElement}</div>
         </div>
       </div>
-      <div className="p-med-90 text-gray-700 dark:text-gray-300 mt-12 w-5/6 truncate">
+      <div className="p-med-90 text-gray-700 dark:text-gray-300 mt-12 w-5/6 extraMidLeftEl">
         {extraMidLeftElement}
       </div>
       <div className="flex flex-row justify-between text-black dark:text-white mt-8">

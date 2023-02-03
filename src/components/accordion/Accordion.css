@@ -1,7 +1,6 @@
 #content-wrapper {
   transition: height 0.25s ease-out;
   height: 0;
-  overflow: hidden;
 }
 
 .notExpanded {
