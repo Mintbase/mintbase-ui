@@ -14,7 +14,7 @@ type TSelectOption = {
 }
 
 export const MbInputSelect = (props: SelectProps) => {
-  const { disabled, options, value, onValueChange, ...restProps } = props
+  const { options, value, onValueChange, ...restProps } = props
   return (
     <div
       className={`select-wrapper flex items-center justify-between rounded relative ${
