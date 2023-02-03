@@ -1,6 +1,35 @@
-.__react_component_tooltip[data-id='tooltip'] {
-  padding: 8px;
+.mb-tooltip:focus::before,
+.mb-tooltip:hover::before{
+  opacity: 1;
+  transition: opacity 0.3s ease-out;
+}
+
+.tooltip-fixed::before {
+  position: fixed;
+
+}
+
+.tooltip-absolute::before{
+  position:absolute
+}
+
+.mb-tooltip::before{
+  opacity:0;
+  color: #fff;
+  font-family: AuthenticSans-90,sans-serif;
+  line-height: 13px;
+  max-height: 28px;
+  background: rgba(0,0,0,0.6);
+  border: 1px solid transparent;
+  font-size: 12px;
+  content: attr(aria-label); 
   border-radius: 4px;
   max-height: 28px;
-  display: flex;
+  padding: 8px;
+  width: auto;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index:999;
+  margin-top: -20px;
+  margin-left: -20px;
 }

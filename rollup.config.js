@@ -8,6 +8,13 @@ import dts from 'rollup-plugin-dts'
 import url from '@rollup/plugin-url'
 import summary from 'rollup-plugin-summary'
 import packageJson from './package.json'
+import gzipPlugin from 'rollup-plugin-gzip'
+
+import { brotliCompress } from 'zlib'
+import { promisify } from 'util'
+
+const brotliPromise = promisify(brotliCompress)
+
 
 const config = [
   {
@@ -41,6 +48,10 @@ const config = [
       typescript({ tsconfig: './tsconfig.json' }),
       terser(),
       summary(),
+      gzipPlugin({
+        customCompression: content => brotliPromise(Buffer.from(content)),
+        fileName: '.br',
+      })
     ],
   },
   {
