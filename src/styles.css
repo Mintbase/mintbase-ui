@@ -1,9 +1,8 @@
 @import '../public/assets/fonts/fonts.css';
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-@tailwind screens;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import 'tailwindcss/screens';
 
 
 .base-card.store > div > div {
@@ -11,19 +10,15 @@
   background-color: rgb(249 249 249/var(--tw-bg-opacity));
 }
 
-
 .dark .base-card.store > div > div {
   --tw-bg-opacity: 1;
     background-color: rgb(40 42 58/var(--tw-bg-opacity));
 }
 
-
-
 .dark .dark\:hover\:bg-mb-red-35:hover {
   --tw-bg-opacity: 1;
   background-color: rgba(58,28,42,var(--tw-bg-opacity));
 }
-
 
 .bg-opacity-1 {
   --tw-bg-opacity: 1;
