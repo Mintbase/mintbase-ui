@@ -1,10 +1,5 @@
 name:  Telegram new-release notification
 
-#on:
-#  push:
-#    branches:
-#      - main # Change this to your default branch
-
 on:
   release:
     types: [released]
