@@ -1,13 +1,12 @@
 import React from 'react'
 import { EIconName } from '../../consts'
 import { MbIcon } from '../icon/Icon'
-import './chips.css'
 
 interface ChipsProps extends React.HTMLAttributes<HTMLElement> {
   removeChip: () => void
 }
 
-export const MbChips = (props: ChipsProps) => {
+export const MbTag = (props: ChipsProps) => {
   const { removeChip, children } = props
 
   return (
