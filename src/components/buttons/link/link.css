@@ -11,7 +11,8 @@
   min-height: 26px;
   text-align: center;
   color: #000;
-  border: 1px solid rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(148, 150, 161, 1)
+  ;
 }
 
 .smallSocialIcon {
