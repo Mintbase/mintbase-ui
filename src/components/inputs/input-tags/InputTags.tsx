@@ -105,6 +105,9 @@ export const MbInputTags = forwardRef<HTMLInputElement, InputTagsProps>(
           {localTags?.map((tag, index) => (
             <div key={index} className="mr-8">
               <div className="flex gap-0.5 items-center rounded-full w-max cursor-pointer relative bg-blue-300 dark:bg-blue-100 py-4 px-8">
+                <div className="p-med-90 pt-2 text-white dark:text-black">
+                  {tag}
+                </div>
                 <div onClick={() => removeTag(index)}>
                   <MbIcon
                     name={EIconName.CLOSE}
@@ -112,10 +115,6 @@ export const MbInputTags = forwardRef<HTMLInputElement, InputTagsProps>(
                     color="white"
                     darkColor="black"
                   />
-                </div>
-
-                <div className="p-med-90 pt-2 text-white dark:text-black">
-                  {tag}
                 </div>
               </div>
             </div>
