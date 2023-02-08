@@ -3,7 +3,7 @@ import React from 'react'
 import { MbTag } from '../../components/tag/Tag'
 
 export default {
-  title: 'Components/Chips',
+  title: 'Components/Tag',
   component: MbTag,
   argTypes: {},
 } as ComponentMeta<typeof MbTag>
