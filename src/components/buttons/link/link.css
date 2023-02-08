@@ -3,16 +3,15 @@
   min-height: 24px;
   display: flex;
   align-items: center;
-  font-family: "AuthenticSans-130";
+  font-family: "AuthenticSans-90";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 90;
   font-size: 12px;
   line-height: 14px;
   min-height: 26px;
   text-align: center;
   color: #000;
-  border: 1px solid rgba(148, 150, 161, 1)
-  ;
+  border: 1px solid rgba(148, 150, 161, 1);
 }
 
 .smallSocialIcon {
