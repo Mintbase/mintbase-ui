@@ -69,5 +69,8 @@ export enum EIconName {
   SATORI_DARK_BADGE = 'satori_badge_dark',
   TENK_LIGHT_BADGE = 'tenk_badge_light',
   TENK_DARK_BADGE = 'tenk_badge_dark',
+  NEAR_SOCIAL= 'near_social_icon',
+  NEAR_SOCIAL_LONG = 'near_social_long',
+  WEB = 'web',
   NONE = 'none',
 }
