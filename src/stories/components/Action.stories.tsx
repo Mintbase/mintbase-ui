@@ -1,4 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
+import React from 'react'
 import { MbAction } from '../../components/action/Action'
 import { ESize, EState } from '../../consts/properties'
 

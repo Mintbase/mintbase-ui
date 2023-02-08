@@ -38,3 +38,4 @@ export { MbAmountAccountInput } from './inputs/amount-account-input/AmountAccoun
 export { MbRowSelectList } from './row-select/RowSelectList'
 export { MbNearAccountList } from './inputs/input-account/near-account-list/NearAccountList'
 export { MbPill } from './pills/Pill'
+export { MbTag } from './tag/Tag'
