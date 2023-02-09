@@ -70,6 +70,9 @@ import tenkDarkBadgeIcon from './assets/tenk_badge_dark.svg'
 import imageNotSupportedIcon from './assets/image_not_supported.svg'
 import mintbaseDarkBadgeIcon from './assets/mintbase_dark_badge.svg'
 import mintbaseLightBadgeIcon from './assets/mintbase_light_badge.svg'
+import webIcon from './assets/web.svg'
+import nearSocialSmallIcon from './assets/nearsocial-icon.svg'
+import nearSocialLongIcon from './assets/nearsocial-long.svg'
 
 enum IconType {
   MINTBASE = 'mintbase',
@@ -146,6 +149,9 @@ const customIcons: { [key: string]: string } = {
   [EIconName.SATORI_LIGHT_BADGE]: satoriLightBadgeIcon,
   [EIconName.TENK_DARK_BADGE]: tenkDarkBadgeIcon,
   [EIconName.TENK_LIGHT_BADGE]: tenkLightBadgeIcon,
+  [EIconName.NEAR_SOCIAL]: nearSocialSmallIcon,
+  [EIconName.NEAR_SOCIAL_LONG]: nearSocialLongIcon,
+  [EIconName.WEB]: webIcon,
   [EIconName.NONE]: '',
 }
 
@@ -154,12 +160,14 @@ export const MbIcon = ({
   color = 'mb-blackblue',
   darkColor,
   size = '24px',
+  height,
   className = '',
 }: {
   name: EIconName
   color: string
   darkColor?: string
   size?: string
+  height?: string
   className?: string
 }) => {
   const iconType = () => {
@@ -175,7 +183,7 @@ export const MbIcon = ({
             <InlineSVG
               src={customIcons[name as string]}
               width={size}
-              height={size}
+              height={height || size}
               className={`fill-current text-${color} dark:text-${darkColor}`}
             />
           ),
