@@ -25,19 +25,6 @@ export const parameters = {
       },
     ],
   },
-  backgrounds: {
-    default: 'dark',
-    values: [
-      {
-        name: 'light',
-        value: '#ffffff',
-      },
-      {
-        name: 'dark',
-        value: '#111',
-      },
-    ],
-  },
   darkMode: {
     dark: { ...themes.dark },
     light: { ...themes.light },

@@ -53,7 +53,20 @@
 }
 
 .button.secondary {
-  @apply rounded ring-1 dark:text-white dark:ring-white dark:ring-white bg-transparent text-black ring-black transition-all duration-500;
+  @apply rounded dark:text-white bg-transparent text-black  transition-all duration-500;
+  border: 1px solid rgba(148, 150, 161, 1);
+}
+.button.secondary:hover { 
+  border: 1px solid rgba(0, 0, 0, 1);
+  background: #EBEDFB;
+}
+
+.dark .button.secondary{
+  border: 1px solid rgba(91, 93, 107, 1);}
+
+.dark .button.secondary:hover{
+  border: 1px solid rgba(255, 255, 255, 1);
+  background: #2B2E42;
 }
 
 .button.secondary:not(.disabled):not(.loading):focus {
