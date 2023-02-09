@@ -1,6 +1,7 @@
 export { MbAccordion } from './accordion/Accordion'
 export { MbAction } from './action/Action'
 export { MbButton } from './buttons/button/Button'
+export { MbButtonLink } from './buttons/link/Link'
 export { MbInfoCard } from './cards/info/InfoCard'
 export { MbSmallCard } from './cards/small/smallCard'
 export { MbThingCard } from './cards/thing/ThingCard'
