@@ -15,7 +15,7 @@ type TIconColors = {
   light: string
 }
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  label?: string
+  label?: string | JSX.Element
   btnType?: EType
   state?: EState
   size?: ESize
