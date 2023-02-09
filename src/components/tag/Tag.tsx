@@ -3,11 +3,11 @@ import { EIconName } from '../../consts'
 import { MbIcon } from '../icon/Icon'
 
 interface ChipsProps extends React.HTMLAttributes<HTMLElement> {
-  removeChip: () => void
+  removeTag: () => void
 }
 
 export const MbTag = (props: ChipsProps) => {
-  const { removeChip, children } = props
+  const { removeTag, children } = props
 
   return (
     <div className="flex gap-12 items-center rounded-full w-max relative bg-white dark:bg-gray-850 py-6 px-12">
@@ -15,7 +15,7 @@ export const MbTag = (props: ChipsProps) => {
       <div
         className="cursor-pointer"
         title="Remove"
-        onClick={() => removeChip()}
+        onClick={() => removeTag()}
       >
         <MbIcon
           name={EIconName.CLOSE}
