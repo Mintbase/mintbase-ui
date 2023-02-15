@@ -8,6 +8,7 @@ import { MbTab, TabProps } from './Tab'
 interface TabsProps extends React.HTMLAttributes<HTMLDivElement> {
   activeIndex: number
   filterOptions?: TFilterOptions
+  firstElement?: JSX.Element
   onTabChange: (index: number) => void
   onOrderByChange: (selected: string) => void
 }
@@ -23,8 +24,14 @@ type TFilterOptions = {
 }
 
 export const MbTabs = (props: TabsProps) => {
-  const { children, onTabChange, onOrderByChange, activeIndex, filterOptions } =
-    props
+  const {
+    children,
+    onTabChange,
+    onOrderByChange,
+    activeIndex,
+    filterOptions,
+    firstElement,
+  } = props
   const [showOrderOpts, setShowOrderOpts] = useState(false)
   const [selectedOrder, setSelectedOrder] = useState(
     filterOptions?.defaultOptionId ?? ''
@@ -50,13 +57,13 @@ export const MbTabs = (props: TabsProps) => {
 
   const handleOptionSelect = (option: string) => {
     setShowOrderOpts(!showOrderOpts)
-    let auxOption = option === selectedOrder ? '' : option
+    const auxOption = option === selectedOrder ? '' : option
     setSelectedOrder(auxOption)
     onOrderByChange(auxOption)
   }
 
   const getExtraFiltersIndex = (array: any) => {
-    let indexes: number[] = []
+    const indexes: number[] = []
     array.map((tab: TTab, index: number) => {
       if (tab?.props?.extraFilter) {
         indexes.push(index)
@@ -86,6 +93,8 @@ export const MbTabs = (props: TabsProps) => {
         >
           {tabsTitle?.length ? (
             <div className="flex items-center space-x-6 sm:space-x-12">
+              {firstElement ? firstElement : null}
+
               {tabsTitle.map((label, index) => (
                 <li
                   onClick={() => {
