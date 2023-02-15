@@ -85,8 +85,6 @@ export const MbTabs = (props: TabsProps) => {
 
   if (!children || !allTabs) return <></>
 
-  console.log(allTabs, tabsTitle)
-
   return (
     <>
       <div className="relative">
