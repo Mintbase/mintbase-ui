@@ -1,12 +1,10 @@
 import React from 'react'
-import { ESmallCardType } from '../../../consts/properties'
-import { TSmallCard } from '../../../types/cards.type'
 
-interface CardProps extends React.ComponentProps<'div'> {
+interface StoreInfoCardProps {
   loading?: boolean
-  card: TSmallCard
-  cardType: ESmallCardType
-  isBigStoreCard?: boolean
+  imageElement: JSX.Element
+  storeName: JSX.Element | string
+  storeStats: { label: string; value: number }[]
 }
 
 const LoadingCard = ({
@@ -32,15 +30,11 @@ const LoadingCard = ({
   )
 }
 
-export const MbStoreInfoCard = ({
-  loading = false,
-  cardType = ESmallCardType.STORE,
-  card,
-  isBigStoreCard = false,
-}: CardProps) => {
+export const MbStoreInfoCard = (props: StoreInfoCardProps) => {
+  const { imageElement, storeStats, loading, storeName } = props
+
   if (loading)
     return <LoadingCard cardType={cardType} isBigStoreCard={isBigStoreCard} />
-  const { title, subtitle, centerElement, onCardClick } = card
 
   return (
     <div className={`base-card small ${cardType}`} onClick={onCardClick}>
