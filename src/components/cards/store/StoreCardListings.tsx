@@ -17,7 +17,7 @@ export const MbStoreCardListings = (props: StoreCardListingsProps) => {
     <div className="rounded bg-white dark:bg-gray-850 p-12 md:p-24 w-max">
       <div className="flex flex-col gap-24">
         <div className="flex gap-24 items-center">
-          <div className="w-24 h-24 rounded cursor-pointer">
+          <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-24 md:h-24 rounded cursor-pointer">
             {loading ? (
               <div className="rounded animate-pulse w-full h-full bg-gray-600"></div>
             ) : (
@@ -63,15 +63,15 @@ export const MbStoreCardListings = (props: StoreCardListingsProps) => {
           <div className="flex gap-12 mt-8">
             {loading ? (
               <>
-                <div className="animate-pulse w-32 h-32 bg-gray-600 rounded"></div>
-                <div className="animate-pulse w-32 h-32 bg-gray-600 rounded"></div>
-                <div className="animate-pulse w-32 h-32 bg-gray-600 rounded"></div>
+                <div className="animate-pulse w-16 h-16 sm:w-24 sm:h-24 md:w-32 md:h-32 bg-gray-600 rounded"></div>
+                <div className="animate-pulse w-16 h-16 sm:w-24 sm:h-24 md:w-32 md:h-32 bg-gray-600 rounded"></div>
+                <div className="animate-pulse w-16 h-16 sm:w-24 sm:h-24 md:w-32 md:h-32 bg-gray-600 rounded"></div>
               </>
             ) : latestListings ? (
               latestListings.map((nft, index) => (
                 <a href={nft.url}>
                   <div
-                    className="w-32 h-32 rounded relative cursor-pointer"
+                    className="w-16 h-16 sm:w-24 sm:h-24 md:w-32 md:h-32 rounded relative cursor-pointer"
                     key={`${nft.id}-${index}`}
                   >
                     <img
