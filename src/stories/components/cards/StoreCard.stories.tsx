@@ -4,7 +4,7 @@ import { MbSmallCard } from '../../../components/cards/small/smallCard'
 import { ESmallCardType } from '../../../consts/properties'
 
 export default {
-  title: 'Components/Cards',
+  title: 'Components/Cards/StoreCard',
   component: MbSmallCard,
   argTypes: {},
 } as ComponentMeta<typeof MbSmallCard>
@@ -15,8 +15,8 @@ const Template: ComponentStory<typeof MbSmallCard> = (args) => (
   </div>
 )
 
-export const Store = Template.bind({})
-Store.args = {
+export const StoreCard = Template.bind({})
+StoreCard.args = {
   cardType: ESmallCardType.STORE,
   card: {
     centerElement: (

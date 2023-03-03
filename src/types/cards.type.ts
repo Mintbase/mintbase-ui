@@ -13,16 +13,16 @@ export type TThingCard = {
   botLeftImage?: JSX.Element
   botRightText?: string
   botRightIcon?: EIconName
-  onUpperLeftClick?: (e?:React.MouseEvent<HTMLElement>) => void
-  onCenterElementClick?: (e?:React.MouseEvent<HTMLElement>) => void
-  onBotLeftImageClick?: (e?:React.MouseEvent<HTMLElement>) => void
+  onUpperLeftClick?: (e?: React.MouseEvent<HTMLElement>) => void
+  onCenterElementClick?: (e?: React.MouseEvent<HTMLElement>) => void
+  onBotLeftImageClick?: (e?: React.MouseEvent<HTMLElement>) => void
 }
 
 export type TSmallCard = {
   centerElement: JSX.Element
   title: string
   subtitle?: string
-  onCardClick?: (e?:React.MouseEvent<HTMLElement>) => void
+  onCardClick?: (e?: React.MouseEvent<HTMLElement>) => void
 }
 
 export type TInfoCard = {
@@ -38,5 +38,15 @@ export type TInfoCard = {
   isNumber?: boolean
   size?: ESize
   isLink?: boolean
-  handleDescriptionClick?: (e?:React.MouseEvent<HTMLElement>) => void
+  handleDescriptionClick?: (e?: React.MouseEvent<HTMLElement>) => void
+}
+
+export interface StoreCardListingsProps {
+  storeName: string | JSX.Element
+  storeUrl: string
+  storeImage: string
+  totalMinted: string
+  owners: string
+  latestListings: { id: string; image: string; price: string; url: string }[]
+  loading?: boolean
 }
