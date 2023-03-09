@@ -15,7 +15,7 @@ const LoadingInfoBox = ({ size }: { size: ESize }) => {
         <div className="h-4 w-16 bg-gray-600 rounded"></div>
       </div>
       <div className="flex space-x-12 items-center animate-pulse">
-        <div className="h-6 w-32 rounded bg-gray-600"></div>
+        <div className="h-6 w-2/3 rounded bg-gray-600"></div>
       </div>
     </div>
   )
