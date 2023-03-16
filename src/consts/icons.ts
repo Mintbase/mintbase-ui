@@ -3,6 +3,8 @@ export enum EIconName {
   VERIFIED = 'verified',
   CLOSE = 'close',
   ARROW_UP = 'arrow_upward',
+  ARROW_BACK = 'arrow_back',
+  ARROW_FORWARD = 'arrow_forward',
   MOON = 'nightlight_round',
   SUN = 'light_mode',
   TICKET = 'local_activity',
