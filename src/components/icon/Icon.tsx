@@ -16,6 +16,8 @@ import checkIcon from './assets/check.svg'
 import verifiedIcon from './assets/verified.svg'
 import closeIcon from './assets/close.svg'
 import arrowUpIcon from './assets/arrow_up.svg'
+import arrowBackIcon from './assets/arrow_back.svg'
+import arrowForwardIcon from './assets/arrow_forward.svg'
 import moonIcon from './assets/moon.svg'
 import sunIcon from './assets/sun.svg'
 import ticketIcon from './assets/ticket.svg'
@@ -96,6 +98,8 @@ const customIcons: { [key: string]: string } = {
   [EIconName.VERIFIED]: verifiedIcon,
   [EIconName.CLOSE]: closeIcon,
   [EIconName.ARROW_UP]: arrowUpIcon,
+  [EIconName.ARROW_BACK]: arrowBackIcon,
+  [EIconName.ARROW_FORWARD]: arrowForwardIcon,
   [EIconName.MOON]: moonIcon,
   [EIconName.SUN]: sunIcon,
   [EIconName.TICKET]: ticketIcon,
