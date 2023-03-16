@@ -22,7 +22,7 @@ export const Icons = () => (
           className={`w-32 rounded-md inline-block text-center m-8`}
         >
           <div className="h-24 bg-gray-100 flex items-center justify-center w-full">
-            <MbIcon name={name} color="mb-red" size="40px" />
+            <MbIcon name={name} color="mb-blackblue" size="40px" />
           </div>
           <div className="bg-gray-200 py-8">
             <p className="cap-big-90">{icon}</p>
