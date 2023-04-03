@@ -76,6 +76,7 @@ import webIcon from './assets/web.svg'
 import nearSocialSmallIcon from './assets/nearsocial-icon.svg'
 import nearSocialLongIcon from './assets/nearsocial-long.svg'
 import filtersIcon from './assets/filters.svg'
+import notificationsIcon from './assets/notifications.svg'
 
 enum IconType {
   MINTBASE = 'mintbase',
@@ -121,6 +122,7 @@ const customIcons: { [key: string]: string } = {
   [EIconName.MENU]: menuIcon,
   [EIconName.SEARCH]: searchIcon,
   [EIconName.FILTERS]: filtersIcon,
+  [EIconName.NOTIFICATIONS]: notificationsIcon,
   [EIconName.ARROW_BACK_BIG]: arrowBackBigIcon,
   [EIconName.ARROW_FORWARD_BIG]: arrowForwardBigIcon,
   [EIconName.ARROW_BACK_SMALL]: arrowBackSmallIcon,
