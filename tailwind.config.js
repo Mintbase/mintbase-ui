@@ -9,7 +9,10 @@ module.exports = {
   //   content: ['./src/**/*.tsx'],
   // },
   variants: {
-    extend: {},
+    extend: {
+      display: ['group-hover'],
+      rotate: ['group-hover'],
+    },
   },
   plugins: [
     plugin(function ({ addUtilities }) {
