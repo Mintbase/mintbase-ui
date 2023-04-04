@@ -9,10 +9,16 @@ export default {
 } as ComponentMeta<typeof MbDropdownHoverMenu>
 
 const Template: ComponentStory<typeof MbDropdownHoverMenu> = (args) => (
-  <MbDropdownHoverMenu {...args}></MbDropdownHoverMenu>
+  <MbDropdownHoverMenu {...args}>
+    <ul>
+      <li>Activity</li>
+      <li>Analytics</li>
+      <li>Accounts</li>
+    </ul>
+  </MbDropdownHoverMenu>
 )
 
 export const DropdownHoverMenu = Template.bind({})
 DropdownHoverMenu.args = {
-    title: 'Explore'
+  title: 'Explore',
 }
