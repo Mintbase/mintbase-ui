@@ -16,7 +16,7 @@ export const MbDropdownHoverMenu = (props: DropdownHoverMenuProps) => {
         <div
           id="menu-items"
           className={`invisible opacity-0 group-hover:opacity-100 group-hover:visible flex absolute flex-col
-          transition-all ease-in-out duration-500 bg-white dark:bg-gray-850 p-24 rounded-b ${className}`}
+          transition-all ease-in-out duration-500 bg-white dark:bg-gray-850 p-12 rounded-b ${className}`}
         >
           <div className="dark:text-white">{children}</div>
         </div>
