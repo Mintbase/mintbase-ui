@@ -77,6 +77,7 @@ import nearSocialSmallIcon from './assets/nearsocial-icon.svg'
 import nearSocialLongIcon from './assets/nearsocial-long.svg'
 import filtersIcon from './assets/filters.svg'
 import notificationsIcon from './assets/notifications.svg'
+import rocketIcon from './assets/rocket.svg'
 
 enum IconType {
   MINTBASE = 'mintbase',
@@ -160,6 +161,7 @@ const customIcons: { [key: string]: string } = {
   [EIconName.NEAR_SOCIAL]: nearSocialSmallIcon,
   [EIconName.NEAR_SOCIAL_LONG]: nearSocialLongIcon,
   [EIconName.WEB]: webIcon,
+  [EIconName.ROCKET]: rocketIcon,
   [EIconName.NONE]: '',
 }
 
