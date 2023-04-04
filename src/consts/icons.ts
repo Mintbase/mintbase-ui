@@ -22,6 +22,7 @@ export enum EIconName {
   MORE = 'more_horiz',
   DELETE = 'delete_forever',
   DOWNLOAD = 'download',
+  BOOK = 'book',
   SHARE = 'share',
   MENU = 'menu',
   SEARCH = 'search',
