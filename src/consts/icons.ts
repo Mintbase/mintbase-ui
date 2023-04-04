@@ -13,6 +13,7 @@ export enum EIconName {
   FILE = 'insert_drive_file',
   IMAGE = 'image',
   AUDIO = 'music_note',
+  SHIFT = 'shift',
   COMPARE_ARROWS = 'compare_arrows',
   REPORT = 'report_problem',
   ARROW_DROP_DOWN = 'arrow_drop_down',
