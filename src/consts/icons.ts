@@ -19,6 +19,7 @@ export enum EIconName {
   ARROW_DROP_UP = 'arrow_drop_up',
   FULLSCREEN = 'fullscreen',
   FULLSCREEN_EXIT = 'fullscreen_exit',
+  ROCKET = 'rocket',
   MORE = 'more_horiz',
   DELETE = 'delete_forever',
   DOWNLOAD = 'download',
