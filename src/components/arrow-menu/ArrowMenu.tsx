@@ -11,7 +11,7 @@ export const MbArrowMenu = (props: ArrowMenuProps) => {
   const { title, isActive } = props
   return (
     <div className="flex group">
-      <div className={`arrow-menu ${isActive ? 'active' : ''} small`}>
+      <div className={`arrow-menu ${isActive ? 'active' : ''}`}>
         <div className="flex space-x-8 items-center">
           <span className="p-med-130 ">{title}</span>
           <MbIcon
