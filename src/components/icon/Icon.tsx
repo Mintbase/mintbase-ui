@@ -79,6 +79,7 @@ import filtersIcon from './assets/filters.svg'
 import notificationsIcon from './assets/notifications.svg'
 import bookIcon from './assets/book.svg'
 import rocketIcon from './assets/rocket.svg'
+import shifIcon from './assets/shift.svg'
 
 enum IconType {
   MINTBASE = 'mintbase',
@@ -164,6 +165,7 @@ const customIcons: { [key: string]: string } = {
   [EIconName.WEB]: webIcon,
   [EIconName.BOOK]: bookIcon,
   [EIconName.ROCKET]: rocketIcon,
+  [EIconName.SHIFT]: shifIcon,
   [EIconName.NONE]: '',
 }
 
