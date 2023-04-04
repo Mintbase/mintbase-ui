@@ -41,3 +41,4 @@ export { MbNearAccountList } from './inputs/input-account/near-account-list/Near
 export { MbPill } from './pills/Pill'
 export { MbTag } from './tag/Tag'
 export { MbArrowMenu } from './arrow-menu/ArrowMenu'
+export { MbDropdownHoverMenu } from './dropdowns/dropdown-hover-menu/DropdownHoverMenu'
