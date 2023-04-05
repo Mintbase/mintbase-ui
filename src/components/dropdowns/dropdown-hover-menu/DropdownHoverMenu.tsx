@@ -40,7 +40,7 @@ export const MbDropdownHoverMenu = (props: DropdownHoverMenuProps) => {
     <>
       <div
         id="dropdown-bg"
-        className="hidden absolute bg-black bg-opacity-30 overflow-y-auto h-screen right-0 left-0 z-30"
+        className="hidden fixed bg-black bg-opacity-30 overflow-y-auto h-screen right-0 left-0 z-30"
       ></div>
 
       <div
