@@ -1,6 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import React from 'react'
 import { MbDropdownHoverMenu } from '../../../components/dropdowns/dropdown-hover-menu/DropdownHoverMenu'
+import { MbArrowMenu } from '../../../components/arrow-menu/ArrowMenu'
 
 export default {
   title: 'Components/Dropdowns/DropdownHoverMenu',
@@ -24,4 +25,5 @@ const Template: ComponentStory<typeof MbDropdownHoverMenu> = (args) => (
 export const DropdownHoverMenu = Template.bind({})
 DropdownHoverMenu.args = {
   title: 'Explore',
+  dropdownButton: <MbArrowMenu title="Explore" />,
 }
