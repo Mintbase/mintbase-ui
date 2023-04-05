@@ -13,6 +13,7 @@ export const MbDropdownHoverMenu = (props: DropdownHoverMenuProps) => {
     <div id="dropdown-hover-menu" className="group h-auto w-min">
       <MbArrowMenu title={title} />
       <div className="hidden group-hover:block fixed bg-black bg-opacity-30 overflow-y-auto h-screen right-0 left-0 z-30"></div>
+      
       <div
         id="menu-items"
         className={`invisible opacity-0 group-hover:opacity-100 group-hover:visible flex absolute flex-col
