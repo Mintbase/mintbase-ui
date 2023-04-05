@@ -1,5 +1,4 @@
 import { MbArrowMenu } from '../../arrow-menu/ArrowMenu'
-import './dropdownHoverMenu.css'
 
 interface DropdownHoverMenuProps {
   className?: string
@@ -11,21 +10,16 @@ export const MbDropdownHoverMenu = (props: DropdownHoverMenuProps) => {
   const { title, className, children } = props
 
   return (
-    <>
-      <div className="group h-auto w-min">
-        <MbArrowMenu title={title} />
-        <div
-          className="invisible opacity-0 group-hover:opacity-100 group-hover:visible fixed 
-          transition-all ease-in-out duration-500 bg-black bg-opacity-30 h-screen w-full"
-        >
-          <div
-            id="menu-items"
-            className={`bg-white dark:bg-gray-850 p-24 rounded-b dark:text-white flex flex-col absolute ${className}`}
-          >
-            {children}
-          </div>
-        </div>
+    <div id="dropdown-hover-menu" className="group h-auto w-min">
+      <MbArrowMenu title={title} />
+      <div className="hidden group-hover:block fixed bg-black bg-opacity-30 overflow-y-auto h-screen right-0 left-0 z-30"></div>
+      <div
+        id="menu-items"
+        className={`invisible opacity-0 group-hover:opacity-100 group-hover:visible flex absolute flex-col
+          transition-all ease-in-out duration-500 bg-white dark:bg-gray-850 p-24 rounded-b z-40 ${className}`}
+      >
+        <div className="dark:text-white">{children}</div>
       </div>
-    </>
+    </div>
   )
 }
