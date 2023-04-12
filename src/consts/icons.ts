@@ -14,6 +14,7 @@ export enum EIconName {
   IMAGE = 'image',
   AUDIO = 'music_note',
   SHIFT = 'shift',
+  ORDER_BY = 'order_by',
   COMPARE_ARROWS = 'compare_arrows',
   REPORT = 'report_problem',
   ARROW_DROP_DOWN = 'arrow_drop_down',
