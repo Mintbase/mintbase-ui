@@ -1,3 +1,11 @@
 #dropdown-bg {
   top: 60px;
 }
+
+.visible-menu {
+  @apply opacity-100 visible transition-all ease-in-out duration-500;
+}
+
+.hidden-menu {
+  @apply invisible opacity-0;
+}
