@@ -14,7 +14,7 @@ export const MbDropdownHoverMenu = (props: DropdownHoverMenuProps) => {
 
   const hideClasses = () => {
     const bg = document.getElementById('dropdown-bg')
-    const items = document.getElementById('menu-items')
+    const items = wrapperRef?.current?.children[1]
 
     bg?.classList.remove('block')
     bg?.classList.add('hidden')
@@ -24,7 +24,7 @@ export const MbDropdownHoverMenu = (props: DropdownHoverMenuProps) => {
 
   const showClasses = () => {
     const bg = document.getElementById('dropdown-bg')
-    const items = document.getElementById('menu-items')
+    const items = wrapperRef?.current?.children[1]
 
     bg?.classList.remove('hidden')
     bg?.classList.add('block')
@@ -62,7 +62,7 @@ export const MbDropdownHoverMenu = (props: DropdownHoverMenuProps) => {
 
       <div
         id="dropdown-hover-menu"
-        className=" h-auto w-min"
+        className="h-auto w-min"
         ref={wrapperRef}
         onClick={hideClasses}
       >
