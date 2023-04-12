@@ -12,26 +12,43 @@ export const MbDropdownHoverMenu = (props: DropdownHoverMenuProps) => {
 
   const wrapperRef = useRef<HTMLDivElement>(null)
 
+  const hideClasses = () => {
+    const bg = document.getElementById('dropdown-bg')
+    const items = document.getElementById('menu-items')
+
+    bg?.classList.remove('block')
+    bg?.classList.add('hidden')
+    items?.classList.remove('visible-menu')
+    items?.classList.add('hidden-menu')
+  }
+
+  const showClasses = () => {
+    const bg = document.getElementById('dropdown-bg')
+    const items = document.getElementById('menu-items')
+
+    bg?.classList.remove('hidden')
+    bg?.classList.add('block')
+    items?.classList.remove('hidden-menu')
+    items?.classList.add('visible-menu')
+  }
+
   useEffect(() => {
     if (wrapperRef && wrapperRef.current) {
       const currentRef = wrapperRef.current
-      const bg = document.getElementById('dropdown-bg')
 
-      const showBg = () => {
-        bg?.classList.remove('hidden')
-        bg?.classList.add('block')
+      const showHoverMenu = () => {
+        showClasses()
       }
 
-      const hideBg = () => {
-        bg?.classList.remove('block')
-        bg?.classList.add('hidden')
+      const hideHoverMenu = () => {
+        hideClasses()
       }
 
-      currentRef.addEventListener('mouseenter', showBg)
-      currentRef.addEventListener('mouseleave', hideBg)
+      currentRef.addEventListener('mouseenter', showHoverMenu)
+      currentRef.addEventListener('mouseleave', hideHoverMenu)
       return () => {
-        currentRef.removeEventListener('mouseenter', showBg)
-        currentRef.removeEventListener('mouseleave', hideBg)
+        currentRef.removeEventListener('mouseenter', showHoverMenu)
+        currentRef.removeEventListener('mouseleave', hideHoverMenu)
       }
     }
   }, [wrapperRef])
@@ -43,19 +60,21 @@ export const MbDropdownHoverMenu = (props: DropdownHoverMenuProps) => {
         className="hidden fixed bg-black bg-opacity-30 overflow-y-auto h-screen right-0 left-0 z-30"
       ></div>
 
-      <div
-        id="dropdown-hover-menu"
-        className="group h-auto w-min"
-        ref={wrapperRef}
-      >
+      <div id="dropdown-hover-menu" className=" h-auto w-min" ref={wrapperRef}>
         {dropdownButton}
 
         <div
           id="menu-items"
-          className={`invisible opacity-0 group-hover:opacity-100 group-hover:visible flex absolute flex-col
-          transition-all ease-in-out duration-500 bg-white dark:bg-gray-850 p-24 rounded-b z-40 ${className}`}
+          className={`hidden-menu flex absolute flex-col bg-white dark:bg-gray-850 p-24 rounded-b z-40 ${className}`}
         >
-          <div className="dark:text-white">{children}</div>
+          <div
+            className="dark:text-white"
+            onClick={() => {
+              hideClasses()
+            }}
+          >
+            {children}
+          </div>
         </div>
       </div>
     </>
