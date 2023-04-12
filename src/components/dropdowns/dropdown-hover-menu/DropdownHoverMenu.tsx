@@ -60,19 +60,19 @@ export const MbDropdownHoverMenu = (props: DropdownHoverMenuProps) => {
         className="hidden fixed bg-black bg-opacity-30 overflow-y-auto h-screen right-0 left-0 z-30"
       ></div>
 
-      <div id="dropdown-hover-menu" className=" h-auto w-min" ref={wrapperRef}>
+      <div
+        id="dropdown-hover-menu"
+        className=" h-auto w-min"
+        ref={wrapperRef}
+        onClick={hideClasses}
+      >
         {dropdownButton}
 
         <div
           id="menu-items"
           className={`hidden-menu flex absolute flex-col bg-white dark:bg-gray-850 p-24 rounded-b z-40 ${className}`}
         >
-          <div
-            className="dark:text-white"
-            onClick={() => {
-              hideClasses()
-            }}
-          >
+          <div className="dark:text-white" onClick={hideClasses}>
             {children}
           </div>
         </div>
