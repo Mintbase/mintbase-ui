@@ -24,7 +24,7 @@ export const MbInputSelect = (props: SelectProps) => {
       <select
         id="select"
         value={value}
-        className="select-field appearance-none relative z-10"
+        className="select-field appearance-none relative z-10 p-med-90"
         disabled={disabled}
         onChange={(event) => onValueChange(event.target.value)}
         {...restProps}
