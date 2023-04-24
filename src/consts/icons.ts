@@ -81,5 +81,6 @@ export enum EIconName {
   NEAR_SOCIAL_LONG = 'near_social_long',
   WEB = 'web',
   USDC = 'usdc',
+  NEAR = 'near',
   NONE = 'none',
 }
