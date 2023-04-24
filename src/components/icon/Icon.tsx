@@ -81,6 +81,7 @@ import bookIcon from './assets/book.svg'
 import rocketIcon from './assets/rocket.svg'
 import shifIcon from './assets/shift.svg'
 import oderByIcon from './assets/order_by.svg'
+import usdcIcon from './assets/usdc.svg'
 
 enum IconType {
   MINTBASE = 'mintbase',
@@ -168,6 +169,7 @@ const customIcons: { [key: string]: string } = {
   [EIconName.ROCKET]: rocketIcon,
   [EIconName.SHIFT]: shifIcon,
   [EIconName.ORDER_BY]: oderByIcon,
+  [EIconName.USDC]: usdcIcon,
   [EIconName.NONE]: '',
 }
 
