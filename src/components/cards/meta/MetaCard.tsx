@@ -90,7 +90,7 @@ const MbMetaCardInfo = ({ data }: {data: MetaCardInfoProps}):JSX.Element => {
       </div>
       <div className="flex flex-row justify-between text-black dark:text-white mt-8">
         <div className="p-med-90 w-3/4 truncate ">{nftTitle}</div>
-        <div className="p-med-130 text-right break-all flex gap-1 ">{price.slice(0, -1)} {price.endsWith('N') ? <img src="/icons/near.svg" width="12" height="12" className="svgImage nearIcon" /> : null}</div>
+        <div className="p-med-130 text-right break-all flex gap-1 ">{price.slice(0, -1)} {price.endsWith('N') ? <img src="/icons/near.svg" width="12" height="12" className="svgImage nearIcon" /> : '-'}</div>
       </div>
       <div className="flex flex-row justify-between text-gray-200 mt-12">
         {minterImage ? (
