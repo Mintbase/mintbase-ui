@@ -5,21 +5,18 @@ import './metacard.css'
 import './../cards.css'
 
 interface MetaCardHeaderProps {
-
     onMetaCardImageClick: () => void
     nftTypeIcon?: EIconName;
     metaCardImage: JSX.Element
 }
 
 interface MetaCardInfoProps {
-
     storeNameElement: JSX.Element,
     nftTitle: string,
     minterImage: JSX.Element,
     tokenListings: string,
     price: string,
     onMinterImageClick: (e: any) => any
-
 }
 interface MetaCardProps extends React.ComponentProps<'li'> {
   loading?: boolean
