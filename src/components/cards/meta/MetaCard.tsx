@@ -5,18 +5,18 @@ import './metacard.css'
 import './../cards.css'
 
 interface MetaCardHeaderProps {
-    onMetaCardImageClick: () => void
-    nftTypeIcon?: EIconName;
-    metaCardImage: JSX.Element
+  onMetaCardImageClick: () => void
+  nftTypeIcon?: EIconName
+  metaCardImage: JSX.Element
 }
 
 interface MetaCardInfoProps {
-    storeNameElement: JSX.Element,
-    nftTitle: string,
-    minterImage: JSX.Element,
-    tokenListings: string,
-    price: string,
-    onMinterImageClick: (e: any) => any
+  storeNameElement: JSX.Element
+  nftTitle: string
+  minterImage: JSX.Element
+  tokenListings: string
+  priceWidget: JSX.Element
+  onMinterImageClick: (e: any) => any
 }
 interface MetaCardProps extends React.ComponentProps<'li'> {
   loading?: boolean
@@ -24,14 +24,13 @@ interface MetaCardProps extends React.ComponentProps<'li'> {
   metaCardInfo: MetaCardInfoProps
 }
 
-
 const LoadingCard = () => {
   return (
     <li className="base-card thing">
       <div className="flex flex-col justify-center items-center animate-pulse loading-card-image">
         <div className="h-full w-full rounded bg-gray-600"></div>
       </div>
-      <div className='p-12'>
+      <div className="p-12">
         <div className="flex flex-row justify-between mt-12 animate-pulse">
           <div className="h-4 w-1/4 rounded bg-gray-600"></div>
         </div>
@@ -50,12 +49,8 @@ const LoadingCard = () => {
   )
 }
 
-const MbMetaCardHeader = ({ data }: {data: MetaCardHeaderProps}) => {
-  const {
-    metaCardImage,
-    nftTypeIcon,
-    onMetaCardImageClick,
-  } = data
+const MbMetaCardHeader = ({ data }: { data: MetaCardHeaderProps }) => {
+  const { metaCardImage, nftTypeIcon, onMetaCardImageClick } = data
 
   return (
     <header className="flex flex-col cover justify-center items-center metaCardImage">
@@ -74,23 +69,24 @@ const MbMetaCardHeader = ({ data }: {data: MetaCardHeaderProps}) => {
   )
 }
 
-const MbMetaCardInfo = ({ data }: {data: MetaCardInfoProps}):JSX.Element => {
+const MbMetaCardInfo = ({ data }: { data: MetaCardInfoProps }): JSX.Element => {
   const {
     storeNameElement,
     nftTitle,
     minterImage,
     tokenListings,
-    price,
-    onMinterImageClick } = data
+    priceWidget,
+    onMinterImageClick,
+  } = data
 
   return (
-    <footer className='px-12 pb-12'>
+    <footer className="px-12 pb-12">
       <div className="p-small-90  text-gray-700 dark:text-gray-300 mt-12 w-5/6  extraMidLeftEl">
         {storeNameElement}
       </div>
       <div className="flex flex-row justify-between text-black dark:text-white mt-8">
         <div className="p-med-90 w-3/4 truncate ">{nftTitle}</div>
-        <div className="p-med-130 text-right break-all flex gap-1 ">{price.slice(0, -1)} {price.endsWith('N') ? <img src="/icons/near.svg" width="12" height="12" className="svgImage nearIcon" /> : '-'}</div>
+        {priceWidget}
       </div>
       <div className="flex flex-row justify-between text-gray-200 mt-12">
         {minterImage ? (
@@ -111,7 +107,11 @@ const MbMetaCardInfo = ({ data }: {data: MetaCardInfoProps}):JSX.Element => {
   )
 }
 
-export const MbMetaCard = ({ loading = false, metaCardInfo, metaCardHeaderData }: MetaCardProps): JSX.Element => {
+export const MbMetaCard = ({
+  loading = false,
+  metaCardInfo,
+  metaCardHeaderData,
+}: MetaCardProps): JSX.Element => {
   if (loading) return <LoadingCard />
 
   return (
