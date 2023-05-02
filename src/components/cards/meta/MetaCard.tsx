@@ -84,7 +84,7 @@ const MbMetaCardInfo = ({ data }: { data: MetaCardInfoProps }): JSX.Element => {
       <div className="p-small-90  text-gray-700 dark:text-gray-300 mt-12 w-5/6  extraMidLeftEl">
         {storeNameElement}
       </div>
-      <div className="flex flex-row justify-between text-black dark:text-white mt-8">
+      <div className="flex flex-row justify-between text-black dark:text-white mt-8 items-center">
         <div className="p-med-90 w-3/4 truncate ">{nftTitle}</div>
         {priceWidget}
       </div>
