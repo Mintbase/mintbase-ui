@@ -1,19 +1,19 @@
 /* Buttons */
 
 .button.big {
-  padding: 8px 24px;
+  padding: 8px 16px;
   min-width: 100px;
   height: 32px;
 }
 
 .button.medium {
-  padding: 6px 24px;
+  padding: 6px 16px;
   min-width: 80px;
   height: 26px;
 }
 
 .button.small {
-  padding: 6px 24px;
+  padding: 6px 16px;
   min-width: 80px;
   height: 26px;
 }
@@ -26,7 +26,7 @@
   }
 
   .button.medium {
-    padding: 8px 32px;
+    padding: 8px 16px;
     min-width: 100px;
     height: 32px;
   }
