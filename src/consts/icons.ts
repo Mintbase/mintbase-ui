@@ -27,6 +27,8 @@ export enum EIconName {
   DOWNLOAD = 'download',
   BOOK = 'book',
   SHARE = 'share',
+  SIMPLE_SHARE = 'simple_share',
+  HAND_COINS = 'hand_coins',
   MENU = 'menu',
   SEARCH = 'search',
   CIRCLE = 'circle',
