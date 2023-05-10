@@ -85,6 +85,11 @@ import usdcIcon from './assets/usdc.svg'
 import nearIcon from './assets/near.svg'
 import simpleShareIcon from './assets/simple_share.svg'
 import handCoinsIcon from './assets/hand_coins.svg'
+import coinsIcon from './assets/coins.svg'
+import flashIcon from './assets/flash.svg'
+import handRaiseIcon from './assets/hand_raise.svg'
+import handShakeIcon from './assets/hand_shake.svg'
+import houseIcon from './assets/house.svg'
 
 enum IconType {
   MINTBASE = 'mintbase',
@@ -176,6 +181,11 @@ const customIcons: { [key: string]: string } = {
   [EIconName.NEAR]: nearIcon,
   [EIconName.HAND_COINS]: handCoinsIcon,
   [EIconName.SIMPLE_SHARE]: simpleShareIcon,
+  [EIconName.COINS]: coinsIcon,
+  [EIconName.FLASH]: flashIcon,
+  [EIconName.HAND_RAISE]: handRaiseIcon,
+  [EIconName.HAND_SHAKE]: handShakeIcon,
+  [EIconName.HOUSE]: houseIcon,
   [EIconName.NONE]: '',
 }
 
