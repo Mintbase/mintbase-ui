@@ -85,12 +85,11 @@ import usdcIcon from './assets/usdc.svg'
 import nearIcon from './assets/near.svg'
 import simpleShareIcon from './assets/simple_share.svg'
 import handCoinsIcon from './assets/hand_coins.svg'
-import coinsPurpleIcon from './assets/coins_purple.svg'
-import flashPurpleIcon from './assets/flash_purple.svg'
-import handRaisePurpleIcon from './assets/hand_raise_purple.svg'
-import handShakePurpleIcon from './assets/hand_shake_purple.svg'
-import housePurpleIcon from './assets/house_purple.svg'
-import rocketPurpleIcon from './assets/rocket_purple.svg'
+import coinsIcon from './assets/coins.svg'
+import flashIcon from './assets/flash.svg'
+import handRaiseIcon from './assets/hand_raise.svg'
+import handShakeIcon from './assets/hand_shake.svg'
+import houseIcon from './assets/house.svg'
 
 enum IconType {
   MINTBASE = 'mintbase',
@@ -182,12 +181,11 @@ const customIcons: { [key: string]: string } = {
   [EIconName.NEAR]: nearIcon,
   [EIconName.HAND_COINS]: handCoinsIcon,
   [EIconName.SIMPLE_SHARE]: simpleShareIcon,
-  [EIconName.COINS_PURPLE]: coinsPurpleIcon,
-  [EIconName.FLASH_PURPLE]: flashPurpleIcon,
-  [EIconName.HAND_RAISE_PURPLE]: handRaisePurpleIcon,
-  [EIconName.HAND_SHAKE_PURPLE]: handShakePurpleIcon,
-  [EIconName.HOUSE_PURPLE]: housePurpleIcon,
-  [EIconName.ROCKET_PURPLE]: rocketPurpleIcon,
+  [EIconName.COINS]: coinsIcon,
+  [EIconName.FLASH]: flashIcon,
+  [EIconName.HAND_RAISE]: handRaiseIcon,
+  [EIconName.HAND_SHAKE]: handShakeIcon,
+  [EIconName.HOUSE]: houseIcon,
   [EIconName.NONE]: '',
 }
 
