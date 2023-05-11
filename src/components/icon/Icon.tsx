@@ -82,6 +82,7 @@ import rocketIcon from './assets/rocket.svg'
 import shifIcon from './assets/shift.svg'
 import oderByIcon from './assets/order_by.svg'
 import usdcIcon from './assets/usdc.svg'
+import usdtIcon from './assets/usdt.svg'
 import nearIcon from './assets/near.svg'
 import simpleShareIcon from './assets/simple_share.svg'
 import handCoinsIcon from './assets/hand_coins.svg'
@@ -178,6 +179,7 @@ const customIcons: { [key: string]: string } = {
   [EIconName.SHIFT]: shifIcon,
   [EIconName.ORDER_BY]: oderByIcon,
   [EIconName.USDC]: usdcIcon,
+  [EIconName.USDT]: usdtIcon,
   [EIconName.NEAR]: nearIcon,
   [EIconName.HAND_COINS]: handCoinsIcon,
   [EIconName.SIMPLE_SHARE]: simpleShareIcon,
