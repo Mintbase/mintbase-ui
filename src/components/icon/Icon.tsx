@@ -91,6 +91,10 @@ import flashIcon from './assets/flash.svg'
 import handRaiseIcon from './assets/hand_raise.svg'
 import handShakeIcon from './assets/hand_shake.svg'
 import houseIcon from './assets/house.svg'
+import sellIcon from './assets/sell.svg'
+import sendIcon from './assets/send.svg'
+import multiplyIcon from './assets/multiply.svg'
+import backspaceIcon from './assets/backspace.svg'
 
 enum IconType {
   MINTBASE = 'mintbase',
@@ -188,6 +192,10 @@ const customIcons: { [key: string]: string } = {
   [EIconName.HAND_RAISE]: handRaiseIcon,
   [EIconName.HAND_SHAKE]: handShakeIcon,
   [EIconName.HOUSE]: houseIcon,
+  [EIconName.SEND]: sendIcon,
+  [EIconName.SELL]: sellIcon,
+  [EIconName.MULTIPLY]: multiplyIcon,
+  [EIconName.BACKSPACE]: backspaceIcon,
   [EIconName.NONE]: '',
 }
 
