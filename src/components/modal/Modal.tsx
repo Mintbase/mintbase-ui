@@ -12,7 +12,7 @@ interface ModalProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 export const MbModal = (props: ModalProps) => {
   const { open, onClose, topTitle, children, subtitle, topElement } = props
-  const root = window.document.documentElement
+  const root = document.documentElement
 
   useEffect(() => {
     if (open) {
