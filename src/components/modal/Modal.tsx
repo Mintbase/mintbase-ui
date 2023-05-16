@@ -12,13 +12,12 @@ interface ModalProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 export const MbModal = (props: ModalProps) => {
   const { open, onClose, topTitle, children, subtitle, topElement } = props
-  const root = document.documentElement
 
   useEffect(() => {
     if (open) {
-      root.classList.add('overflow-hidden')
+      document.documentElement.classList.add('overflow-hidden')
     } else {
-      root.classList.remove('overflow-hidden')
+      document.documentElement.classList.remove('overflow-hidden')
     }
   }, [open])
   return (
