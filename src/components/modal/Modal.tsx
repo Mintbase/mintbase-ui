@@ -12,12 +12,13 @@ interface ModalProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 export const MbModal = (props: ModalProps) => {
   const { open, onClose, topTitle, children, subtitle, topElement } = props
+  const root = window.document.documentElement
 
   useEffect(() => {
     if (open) {
-      document.body.classList.add('overflow-hidden')
+      root.classList.add('overflow-hidden')
     } else {
-      document.body.classList.remove('overflow-hidden')
+      root.classList.remove('overflow-hidden')
     }
   }, [open])
   return (
@@ -25,7 +26,7 @@ export const MbModal = (props: ModalProps) => {
       {open && (
         <div
           onClick={() => {
-            var element = document.getElementById('modal-wrapper')
+            const element = document.getElementById('modal-wrapper')
             if (!element) return
             element.classList.add('modal-hide')
             setTimeout(onClose, 300)
@@ -46,7 +47,7 @@ export const MbModal = (props: ModalProps) => {
                   {topElement && topElement}
                   <div
                     onClick={() => {
-                      var element = document.getElementById('modal-wrapper')
+                      const element = document.getElementById('modal-wrapper')
                       if (!element) return
                       element.classList.add('modal-hide')
                       setTimeout(onClose, 300)
