@@ -1,8 +1,3 @@
-
-
-## ⚠️⚠️ In active development  ⚠️⚠️
-This package is under active development. Expect breaking changes often.
-
 # Mintbase UI
 
 <p align="center">
@@ -15,9 +10,12 @@ This package is under active development. Expect breaking changes often.
 <img src='https://img.shields.io/bundlephobia/min/mintbase-ui' />
 </p>
 
-This library contains most UI (React) components Mintbase uses on its main app (https://mintbase.io).
+This library contains most UI (React) components Mintbase uses on its main website (https://mintbase.xyz).
 
-[Storybook][1]
+🖌️ [Storybook][1]
+
+## ⚠️⚠️ In active development  ⚠️⚠️
+This package is under active development. Expect breaking changes often.
 
 ## Install
 
