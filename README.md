@@ -9,7 +9,7 @@ This package is under active development. Expect breaking changes often.
 
 <img src="https://img.shields.io/github/v/release/mintbase/mintbase-ui" />
 <img src="https://img.shields.io/github/release-date/mintbase/mintbase-ui" />
-<img src="https://img.shields.io/github/actions/workflow/status/mintbase/mintbase-ui/branch-publish.yml" />
+<img src="https://img.shields.io/github/actions/workflow/status/mintbase/mintbase-ui/build.yml" />
 <a href="https://coveralls.io/github/Mintbase/mintbase-ui?branch=beta" target="_blank"> <img src="https://coveralls.io/repos/github/Mintbase/mintbase-ui/badge.svg?branch=beta"/> </a>
 <img src='https://img.shields.io/npm/dw/mintbase-ui' />
 <img src='https://img.shields.io/bundlephobia/min/mintbase-ui' />
