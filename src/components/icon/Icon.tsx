@@ -95,7 +95,7 @@ import sellIcon from './assets/sell.svg'
 import sendIcon from './assets/send.svg'
 import multiplyIcon from './assets/multiply.svg'
 import backspaceIcon from './assets/backspace.svg'
-import creditCard from './assets/credit_score.svg'
+import creditCard from './assets/credit_card.svg'
 
 enum IconType {
   MINTBASE = 'mintbase',
