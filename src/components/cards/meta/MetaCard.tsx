@@ -7,6 +7,7 @@ import './../cards.css'
 interface MetaCardHeaderProps {
   onMetaCardImageClick: () => void
   nftTypeIcon?: EIconName
+  showCreditCardIcon?: boolean
   metaCardImage: JSX.Element
 }
 
@@ -50,7 +51,12 @@ const LoadingCard = () => {
 }
 
 const MbMetaCardHeader = ({ data }: { data: MetaCardHeaderProps }) => {
-  const { metaCardImage, nftTypeIcon, onMetaCardImageClick } = data
+  const {
+    metaCardImage,
+    nftTypeIcon,
+    showCreditCardIcon,
+    onMetaCardImageClick,
+  } = data
 
   return (
     <header className="flex flex-col cover justify-center items-center metaCardImage">
@@ -58,11 +64,19 @@ const MbMetaCardHeader = ({ data }: { data: MetaCardHeaderProps }) => {
         className="h-full w-full rounded-t-md overflow-hidden relative pt-56 sm:pt-72 lg:pt-68"
         onClick={onMetaCardImageClick}
       >
-        {nftTypeIcon ? (
-          <div className="w-5 h-5 bg-black rounded-full absolute top-3 left-3 z-10 flex items-center justify-center">
-            <MbIcon name={nftTypeIcon} size="14px" color="white" />
-          </div>
-        ) : null}
+        <div className="flex gap-8 items-center absolute top-3 left-3 z-10">
+          {nftTypeIcon ? (
+            <div className="w-5 h-5 bg-black rounded-full flex items-center justify-center">
+              <MbIcon name={nftTypeIcon} size="14px" color="white" />
+            </div>
+          ) : null}
+          {showCreditCardIcon ? (
+            <div className="w-5 h-5 bg-black rounded-full flex items-center justify-center">
+              <MbIcon name={EIconName.CREDIT_CARD} size="14px" color="white" />
+            </div>
+          ) : null}
+        </div>
+
         <div className="absolute inset-0">{metaCardImage}</div>
       </div>
     </header>
