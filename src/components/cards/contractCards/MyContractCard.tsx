@@ -8,7 +8,7 @@ import { EState } from '../../../consts/properties'
 import { MbAction } from '../../action/Action'
 import { UrlObject } from 'url'
 
-export interface MyContractCardProps {
+export interface ContractCardProps {
   storeId: string
   isMinter: boolean
   shouldSeeSettings: boolean
@@ -24,7 +24,7 @@ export interface MyContractCardProps {
   tooltip?: JSX.Element
 }
 
-const MbMyContractCardHeader = ({
+const MbContractCardHeader = ({
   storeCardHeaderBg,
   Image,
 }: {
@@ -42,7 +42,7 @@ const MbMyContractCardHeader = ({
   )
 }
 
-const MbMyContractHeaderProfilePic = ({
+const MbContractHeaderProfilePic = ({
   profilePic,
   Image,
 }: {
@@ -58,7 +58,7 @@ const MbMyContractHeaderProfilePic = ({
   )
 }
 
-const MyContractCard = (props: MyContractCardProps) => {
+export const MbContractCard = (props: ContractCardProps) => {
   const {
     storeId,
     isMinter,
@@ -80,9 +80,9 @@ const MyContractCard = (props: MyContractCardProps) => {
       <div className="flex flex-col gap-4 lg:gap-12">
         <Link href={contractNftsUrl}>
           <a className="base-card bg-white dark:bg-gray-850 rounded dark:hover:bg-gray-800 hover:bg-gray-50 cursor-pointer inline-block transition-all duration-500 w-full">
-            <MbMyContractCardHeader storeCardHeaderBg={bgImage} Image={Image} />
+            <MbContractCardHeader storeCardHeaderBg={bgImage} Image={Image} />
             <div className="flex items-center gap-10 lg:gap-9">
-              <MbMyContractHeaderProfilePic
+              <MbContractHeaderProfilePic
                 profilePic={profileImage}
                 Image={Image}
               />
@@ -153,5 +153,3 @@ const MyContractCard = (props: MyContractCardProps) => {
     </div>
   )
 }
-
-export default MyContractCard
