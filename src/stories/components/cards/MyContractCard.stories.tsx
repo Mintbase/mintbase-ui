@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import React, { Children } from 'react'
-import { MbContractCard } from '../../../components/cards/contractCards/MyContractCard'
+import { MbContractCard } from '../../../components/cards/contractCards/ContractCard'
 
 export default {
   title: 'Components/Cards',

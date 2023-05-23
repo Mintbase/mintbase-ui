@@ -32,7 +32,7 @@ const MbContractCardHeader = ({
   Image: React.ElementType
 }): JSX.Element => {
   return (
-    <div className="flex flex-col cover justify-center items-center metaCardImage">
+    <div className="flex flex-col cover justify-center items-center">
       <div className="w-full rounded-t-md overflow-hidden relative">
         <div className="w-full flex my-contract-Bg-Img relative">
           <Image src={storeCardHeaderBg} />
@@ -58,7 +58,7 @@ const MbContractHeaderProfilePic = ({
   )
 }
 
-export const MbContractCard = (props: ContractCardProps) => {
+export const MbContractCard = (contractCardProps: ContractCardProps) => {
   const {
     storeId,
     isMinter,
@@ -73,13 +73,13 @@ export const MbContractCard = (props: ContractCardProps) => {
     Image,
     Link,
     tooltip,
-  } = props
+  } = contractCardProps
 
   return (
-    <div className="rounded bg-white dark:bg-gray-850 store-listings-card">
+    <div className="rounded bg-white dark:bg-gray-850">
       <div className="flex flex-col gap-4 lg:gap-12">
         <Link href={contractNftsUrl}>
-          <a className="base-card bg-white dark:bg-gray-850 rounded dark:hover:bg-gray-800 hover:bg-gray-50 cursor-pointer inline-block transition-all duration-500 w-full">
+          <a className="base-card bg-white dark:bg-gray-850 rounded cursor-pointer inline-block w-full">
             <MbContractCardHeader storeCardHeaderBg={bgImage} Image={Image} />
             <div className="flex items-center gap-10 lg:gap-9">
               <MbContractHeaderProfilePic
@@ -96,11 +96,9 @@ export const MbContractCard = (props: ContractCardProps) => {
 
                     {isVerified && <div className="mb-0.5">{tooltip}</div>}
                   </div>
-                  <div>
-                    <MbText className="p-small-90 text-gray-300 dark:text-gray-300 mt-2.5 lg:mt-3">
-                      Role: {isMinter ? 'Minter' : 'Owner'}
-                    </MbText>
-                  </div>
+                  <MbText className="p-small-90 text-gray-300 dark:text-gray-300 mt-2.5 lg:mt-3">
+                    Role: {isMinter ? 'Minter' : 'Owner'}
+                  </MbText>
                 </div>
               </div>
             </div>
