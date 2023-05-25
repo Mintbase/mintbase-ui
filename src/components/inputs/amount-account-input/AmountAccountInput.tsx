@@ -49,9 +49,9 @@ export const MbAmountAccountInput = ({
     handleChangeAccount(id, value)
   }, 500)
 
-  const handleDebounceFor1500 = debounce(async (e) => {
+  const handleDebounceFor1000 = debounce(async (e) => {
     handleInputChange(id, e.target.value)
-  }, 1500)
+  }, 1000)
 
   const combineDebounceFunctions = (
     func1: (event: ChangeEvent<HTMLInputElement>) => void,
@@ -97,7 +97,7 @@ export const MbAmountAccountInput = ({
         }
         onChange={combineDebounceFunctions(
           handleDebounceFor500,
-          handleDebounceFor1500
+          handleDebounceFor1000
         )}
       />
       <div
