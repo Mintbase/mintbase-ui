@@ -64,6 +64,8 @@ export const MbNearAmountAccount = ({
   const [isSaved, setIsSaved] = useState(false)
   const [allCleared, setAllCleared] = useState(false)
   const [errorMessage, setErrorMessage] = useState('')
+  const [isTouchedOnce, setIsTouchedOnce] = useState(false)
+  const [isEdited, setIsEdited] = useState(false)
 
   const addFieldsToState = (defaultAmount = 0) => {
     let auxState: Record<string, TInputState> = {}
@@ -101,6 +103,8 @@ export const MbNearAmountAccount = ({
     updatedInputs[+index] = value as unknown as Record<string, TInputState>
 
     let itemIds = Object.keys(state).map((id) => id)
+    setIsTouchedOnce(true)
+    setIsEdited(isEdited || isTouchedOnce)
 
     if (
       (+index === itemIds.length - 1 && value !== '') ||
@@ -108,9 +112,7 @@ export const MbNearAmountAccount = ({
     ) {
       setErrorMessage('You have reached the max limit!')
       updatedInputs.push({})
-    } else {
-      handleAddNewItem(+index)
-    }
+    } else if (!isEdited) handleAddNewItem(+index)
   }
 
   const handleAddNewItem = (index?: number) => {
