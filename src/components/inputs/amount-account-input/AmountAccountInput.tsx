@@ -1,5 +1,5 @@
 import { debounce } from 'lodash'
-import { useEffect, useState } from 'react'
+import { ChangeEvent, useEffect, useState } from 'react'
 import { ESize, EIconName, EState } from '../../../consts'
 import { MbIcon } from '../../icon/Icon'
 import { MbInput, EControlStatus } from '../input-field/inputField'
@@ -11,6 +11,7 @@ export const MbAmountAccountInput = ({
   handleChangeAmount,
   handleChangeAccount,
   handleAddNewItem,
+  handleInputChange,
   handleRemoveItem,
   isPercentage,
   isCleared,
@@ -21,6 +22,7 @@ export const MbAmountAccountInput = ({
   handleChangeAmount: (id: string, amount: number) => void
   handleChangeAccount: (id: string, account: string) => Promise<void>
   handleAddNewItem: () => void
+  handleInputChange: (index: string, value: string) => void
   handleRemoveItem: (id: string) => void
   isPercentage?: boolean
   isCleared?: boolean
@@ -39,6 +41,28 @@ export const MbAmountAccountInput = ({
     setAmount(null)
   }, [isCleared])
 
+  const handleDebounceFor500 = debounce(async (e) => {
+    const value = e.target.value ?? null
+    const valid = await validateAccount(id, value)
+    setIsAccountValid(valid)
+    setAccount(value)
+    handleChangeAccount(id, value)
+  }, 500)
+
+  const handleDebounceFor1500 = debounce(async (e) => {
+    handleInputChange(id, e.target.value)
+  }, 1500)
+
+  const combineDebounceFunctions = (
+    func1: (event: ChangeEvent<HTMLInputElement>) => void,
+    func2: (event: ChangeEvent<HTMLInputElement>) => void
+  ) => {
+    return (event: ChangeEvent<HTMLInputElement>) => {
+      func1(event)
+      func2(event)
+    }
+  }
+
   return (
     <div className="flex items-center space-x-12 mb-12">
       <div className="w-24">
@@ -54,13 +78,7 @@ export const MbAmountAccountInput = ({
               ? EControlStatus.VALID
               : EControlStatus.INVALID
           }
-          onChange={debounce(async (e) => {
-            const value = e.target.value ?? null
-            const valid = validateAmount(id, Number(value))
-            setIsAmountValid(valid)
-            setAmount(value)
-            handleChangeAmount(id, Number(value))
-          }, 500)}
+          onChange={handleDebounceFor500}
           hasPercentageLabel={isPercentage}
         />
       </div>
@@ -77,13 +95,10 @@ export const MbAmountAccountInput = ({
             ? EControlStatus.VALID
             : EControlStatus.INVALID
         }
-        onChange={debounce(async (e) => {
-          const value = e.target.value ?? null
-          const valid = await validateAccount(id, value)
-          setIsAccountValid(valid)
-          setAccount(value)
-          handleChangeAccount(id, value)
-        }, 500)}
+        onChange={combineDebounceFunctions(
+          handleDebounceFor500,
+          handleDebounceFor1500
+        )}
       />
       <div
         className={`cursor-pointer`}

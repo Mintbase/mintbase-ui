@@ -10,6 +10,7 @@ import { MbIcon } from '../../../icon/Icon'
 import { MbAmountAccountInput } from '../../amount-account-input/AmountAccountInput'
 import { EControlStatus, MbInput } from '../../input-field/inputField'
 import { MbInputAccount } from '../InputAccount'
+import { MbText } from '../../../text/Text'
 
 const REGEX_INTEGER_ONLY = /^[1-9]\d*$/
 
@@ -62,6 +63,7 @@ export const MbNearAmountAccount = ({
   const [hasFilledFields, setHasFilledFields] = useState(false)
   const [isSaved, setIsSaved] = useState(false)
   const [allCleared, setAllCleared] = useState(false)
+  const [errorMessage, setErrorMessage] = useState('')
 
   const addFieldsToState = (defaultAmount = 0) => {
     let auxState: Record<string, TInputState> = {}
@@ -69,7 +71,7 @@ export const MbNearAmountAccount = ({
       ? transferTemplate.available > 50
         ? 50
         : transferTemplate.available
-      : 25
+      : 1
     for (let i = 0; i < inputAmount - defaultAmount; i++) {
       const id = uuid()
 
@@ -93,12 +95,31 @@ export const MbNearAmountAccount = ({
     return auxState
   }
 
-  const handleAddNewItem = () => {
+  const handleInputChange = (index: string, value?: string) => {
+    console.log('I AM GETTING CALLED')
+    let updatedInputs = [...[state]]
+    const maxValue = 24
+    updatedInputs[+index] = value as unknown as Record<string, TInputState>
+
+    let itemIds = Object.keys(state).map((id) => id)
+
+    if (
+      (+index === itemIds.length - 1 && value !== '') ||
+      itemIds.length >= maxValue
+    ) {
+      setErrorMessage('You have reached the max limit!')
+      updatedInputs.push({})
+    } else {
+      handleAddNewItem(+index)
+    }
+  }
+
+  const handleAddNewItem = (index?: number) => {
     const id = uuid()
 
     setState({
       ...state,
-      [id]: {
+      [index ? index : id]: {
         account: {
           value: '',
           valid: false,
@@ -327,6 +348,7 @@ export const MbNearAmountAccount = ({
                       handleChangeAccount={handleChangeAccount}
                       handleRemoveItem={handleRemoveItem}
                       handleAddNewItem={handleAddNewItem}
+                      handleInputChange={handleInputChange}
                       isPercentage={isPercentage}
                       isCleared={state[id].cleared}
                     />
@@ -378,6 +400,9 @@ export const MbNearAmountAccount = ({
                   )
                 }
               })}
+              <MbText className="mt-3 p-small-130 text-mb-red">
+                {errorMessage}
+              </MbText>
             </div>
           </>
         }
