@@ -107,7 +107,7 @@ export const MbAmountAccountInput = ({
         }}
       >
         <MbIcon
-          name={EIconName.DELETE}
+          name={EIconName.CLOSE}
           size="24px"
           color="blue-300"
           darkColor="blue-100"
