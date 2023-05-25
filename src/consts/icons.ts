@@ -17,6 +17,7 @@ export enum EIconName {
   ORDER_BY = 'order_by',
   COMPARE_ARROWS = 'compare_arrows',
   CREDIT_CARD = 'credit_card',
+  TERMINAL = 'terminal',
   REPORT = 'report_problem',
   ARROW_DROP_DOWN = 'arrow_drop_down',
   ARROW_DROP_UP = 'arrow_drop_up',

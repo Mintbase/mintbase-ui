@@ -96,6 +96,7 @@ import sendIcon from './assets/send.svg'
 import multiplyIcon from './assets/multiply.svg'
 import backspaceIcon from './assets/backspace.svg'
 import creditCard from './assets/credit_card.svg'
+import terminalIcon from './assets/terminal.svg'
 
 enum IconType {
   MINTBASE = 'mintbase',
@@ -198,6 +199,7 @@ const customIcons: { [key: string]: string } = {
   [EIconName.SELL]: sellIcon,
   [EIconName.MULTIPLY]: multiplyIcon,
   [EIconName.BACKSPACE]: backspaceIcon,
+  [EIconName.TERMINAL]: terminalIcon,
   [EIconName.NONE]: '',
 }
 
