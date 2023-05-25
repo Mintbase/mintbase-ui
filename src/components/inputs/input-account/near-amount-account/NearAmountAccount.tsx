@@ -96,7 +96,6 @@ export const MbNearAmountAccount = ({
   }
 
   const handleInputChange = (index: string, value?: string) => {
-    console.log('I AM GETTING CALLED')
     let updatedInputs = [...[state]]
     const maxValue = 24
     updatedInputs[+index] = value as unknown as Record<string, TInputState>
