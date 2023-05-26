@@ -361,7 +361,6 @@ export const MbNearAmountAccount = ({
                       handleChangeAccount={handleChangeAccount}
                       handleRemoveItem={handleRemoveItem}
                       handleAddNewItem={handleAddNewItem}
-                      handleInputChange={handleInputChange}
                       isPercentage={isPercentage}
                       isCleared={state[id].cleared}
                     />
@@ -413,9 +412,22 @@ export const MbNearAmountAccount = ({
                   )
                 }
               })}
-              <MbText className="mt-3 p-small-130 text-mb-red">
-                {errorMessage}
-              </MbText>
+              {errorMessage !== '' && (
+                <MbText className="mt-3 p-small-130 text-mb-red">
+                  {errorMessage}
+                </MbText>
+              )}
+              <MbAction
+                state={
+                  itemIds.length >= maxValue ? EState.DISABLED : EState.ACTIVE
+                }
+                onClick={(e) => {
+                  e.preventDefault()
+                  handleAddNewItem()
+                }}
+              >
+                <span>Add Another Account</span>
+              </MbAction>
             </div>
           </>
         }
