@@ -109,12 +109,12 @@ export const MbNearAmountAccount = ({
     }
   }, [itemIds.length >= maxValue])
 
-  const handleAddNewItem = (index?: number) => {
+  const handleAddNewItem = () => {
     const id = uuid()
 
     setState({
       ...state,
-      [index ? index : id]: {
+      [id]: {
         account: {
           value: '',
           valid: false,

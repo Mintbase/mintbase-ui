@@ -1,6 +1,6 @@
 import { debounce } from 'lodash'
-import { ChangeEvent, useEffect, useState } from 'react'
-import { ESize, EIconName, EState } from '../../../consts'
+import { useEffect, useState } from 'react'
+import { ESize, EIconName } from '../../../consts'
 import { MbIcon } from '../../icon/Icon'
 import { MbInput, EControlStatus } from '../input-field/inputField'
 
