@@ -97,23 +97,17 @@ export const MbNearAmountAccount = ({
     return auxState
   }
 
-  const handleInputChange = (index: string, value?: string) => {
-    let updatedInputs = [...[state]]
-    const maxValue = 24
-    updatedInputs[+index] = value as unknown as Record<string, TInputState>
+  const maxValue = 25
+  let itemIds = Object.keys(state).map((id) => id)
 
-    let itemIds = Object.keys(state).map((id) => id)
-    setIsTouchedOnce(true)
-    setIsEdited(isEdited || isTouchedOnce)
-
-    if (
-      (+index === itemIds.length - 1 && value !== '') ||
-      itemIds.length >= maxValue
-    ) {
+  useEffect(() => {
+    if (itemIds.length >= maxValue) {
       setErrorMessage('You have reached the max limit!')
-      updatedInputs.push({})
-    } else if (!isEdited) handleAddNewItem(+index)
-  }
+    }
+    return () => {
+      setErrorMessage('')
+    }
+  }, [itemIds.length >= maxValue])
 
   const handleAddNewItem = (index?: number) => {
     const id = uuid()
