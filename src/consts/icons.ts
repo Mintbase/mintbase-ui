@@ -22,6 +22,7 @@ export enum EIconName {
   SIMPLE_CREDIT_CARD = 'simple_credit_card',
   CREDIT_CARD = 'credit_card',
   TERMINAL = 'terminal',
+  FORWARD = 'forward',
   REPORT = 'report_problem',
   ARROW_DROP_DOWN = 'arrow_drop_down',
   ARROW_DROP_UP = 'arrow_drop_up',
