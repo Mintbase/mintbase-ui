@@ -102,6 +102,7 @@ import shieldCheckIcon from './assets/shield_check.svg'
 import chartpieIcon from './assets/chartpie.svg'
 import simpleCreditCardIcon from './assets/simple_credit_card.svg'
 import stablesIcon from './assets/stables.svg'
+import forwardIcon from './assets/forward.svg'
 
 enum IconType {
   MINTBASE = 'mintbase',
@@ -148,6 +149,7 @@ const customIcons: { [key: string]: string } = {
   [EIconName.MENU]: menuIcon,
   [EIconName.SEARCH]: searchIcon,
   [EIconName.FILTERS]: filtersIcon,
+  [EIconName.FORWARD]: forwardIcon,
   [EIconName.NOTIFICATIONS]: notificationsIcon,
   [EIconName.ARROW_BACK_BIG]: arrowBackBigIcon,
   [EIconName.ARROW_FORWARD_BIG]: arrowForwardBigIcon,
