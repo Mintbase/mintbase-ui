@@ -140,24 +140,40 @@ export const MbNearAmountAccount = ({
       }, 0)
   }
 
+  const handleRemoveInputField = (id: string) => {
+    setState((prevState) => {
+      const updatedState = { ...prevState }
+      delete updatedState[id]
+      return updatedState
+    })
+  }
+
   const handleRemoveItem = (id: string) => {
     const newState = { ...state }
-    newState[id].amount.value = 0
-    newState[id].account.value = ''
-    newState[id].amount.valid = false
-    newState[id].account.valid = false
-    newState[id].cleared = true
-    newState[id].editable = true
-    setUsed(sumStateAmounts(newState))
-    setState(newState)
-    setRemovedDefaultField(false)
-    ;(document.getElementById(`amount-${id}`) as HTMLInputElement).value = ''
-    ;(document.getElementById(`account-${id}`) as HTMLInputElement).value = ''
+    const keys = Object.keys(state)
+    const firstKey = keys[0]
 
-    if (isStoreSettings && Object.keys(defaultState).includes(id)) {
-      setRemovedDefaultField(true)
+    if (firstKey === id) {
+      newState[id].amount.value = 0
+      newState[id].account.value = ''
+      newState[id].amount.valid = false
+      newState[id].account.valid = false
+      newState[id].cleared = true
+      newState[id].editable = true
+      setUsed(sumStateAmounts(newState))
+      setState(newState)
+      setRemovedDefaultField(false)
+      ;(document.getElementById(`amount-${id}`) as HTMLInputElement).value = ''
+      ;(document.getElementById(`account-${id}`) as HTMLInputElement).value = ''
+
+      if (isStoreSettings && Object.keys(defaultState).includes(id)) {
+        setRemovedDefaultField(true)
+      }
     }
+
+    if (firstKey !== id) handleRemoveInputField(id)
   }
+
   const handleChangeAmount = (id: string, amount: number) => {
     setAllCleared(false)
     const newState = { ...state }
@@ -179,6 +195,8 @@ export const MbNearAmountAccount = ({
     newState[id].cleared = false
     setState(newState)
     setAllCleared(false)
+    setIsTouchedOnce(true)
+    setIsEdited(isEdited || isTouchedOnce)
 
     if (isStoreSettings && Object.keys(defaultState).includes(id)) {
       setRemovedDefaultField(false)
