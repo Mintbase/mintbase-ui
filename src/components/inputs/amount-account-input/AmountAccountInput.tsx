@@ -11,7 +11,6 @@ export const MbAmountAccountInput = ({
   handleChangeAmount,
   handleChangeAccount,
   handleAddNewItem,
-  handleInputChange,
   handleRemoveItem,
   isPercentage,
   isCleared,
@@ -22,7 +21,6 @@ export const MbAmountAccountInput = ({
   handleChangeAmount: (id: string, amount: number) => void
   handleChangeAccount: (id: string, account: string) => Promise<void>
   handleAddNewItem: () => void
-  handleInputChange: (index: string, value: string) => void
   handleRemoveItem: (id: string) => void
   isPercentage?: boolean
   isCleared?: boolean
@@ -48,20 +46,6 @@ export const MbAmountAccountInput = ({
     setAccount(value)
     handleChangeAccount(id, value)
   }, 500)
-
-  const handleDebounceFor1000 = debounce(async (e) => {
-    handleInputChange(id, e.target.value)
-  }, 1000)
-
-  const combineDebounceFunctions = (
-    func1: (event: ChangeEvent<HTMLInputElement>) => void,
-    func2: (event: ChangeEvent<HTMLInputElement>) => void
-  ) => {
-    return (event: ChangeEvent<HTMLInputElement>) => {
-      func1(event)
-      func2(event)
-    }
-  }
 
   return (
     <div className="flex items-center space-x-12 mb-12">
@@ -95,10 +79,7 @@ export const MbAmountAccountInput = ({
             ? EControlStatus.VALID
             : EControlStatus.INVALID
         }
-        onChange={combineDebounceFunctions(
-          handleDebounceFor500,
-          handleDebounceFor1000
-        )}
+        onChange={handleDebounceFor500}
       />
       <div
         className={`cursor-pointer`}
