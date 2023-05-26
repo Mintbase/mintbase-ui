@@ -101,6 +101,7 @@ import fadersIcon from './assets/faders.svg'
 import shieldCheckIcon from './assets/shield_check.svg'
 import chartpieIcon from './assets/chartpie.svg'
 import simpleCreditCardIcon from './assets/simple_credit_card.svg'
+import stablesIcon from './assets/stables.svg'
 
 enum IconType {
   MINTBASE = 'mintbase',
@@ -208,6 +209,7 @@ const customIcons: { [key: string]: string } = {
   [EIconName.SHIELD_CHECK]: shieldCheckIcon,
   [EIconName.SIMPLE_CREDIT_CARD]: simpleCreditCardIcon,
   [EIconName.CHARTPIE]: chartpieIcon,
+  [EIconName.STABLES]: stablesIcon,
   [EIconName.NONE]: '',
 }
 
