@@ -5,6 +5,7 @@ export enum EIconName {
   ARROW_UP = 'arrow_upward',
   ARROW_BACK = 'arrow_back',
   ARROW_FORWARD = 'arrow_forward',
+  ARROW_DIAGONAL = 'arrow_diagonal',
   MOON = 'nightlight_round',
   SUN = 'light_mode',
   TICKET = 'local_activity',
