@@ -2,6 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 import React from 'react'
 import { useEffect, useState } from 'react'
 import { MbTable, MbBody, MbHead } from '../../components/table/Table'
+import { MbCheckbox } from '../../components'
 
 export default {
   title: 'Components/Table',
@@ -96,6 +97,32 @@ const bodyItems = [
   },
 ]
 
+const checkboxList = [
+  {
+    id: 1,
+    title: 'Mintbase Only',
+  },
+]
+
+const checkboxElements = checkboxList?.map((checkbox) => {
+  return {
+    content: (
+      <MbCheckbox
+        label={checkbox?.title}
+        onChange={() => {
+          // selectFilter({
+          //   id: `${title}: ${name}`,
+          //   label: title,
+          //   value: name,
+          // })
+        }}
+        checked={true}
+      />
+    ),
+    id: checkbox?.id,
+  }
+})
+
 const Template: ComponentStory<typeof MbTable> = (args) => {
   const [currentPage, setCurrentPage] = useState(1)
   const [itemsPerPage, setItemsPerPage] = useState(10)
@@ -135,6 +162,7 @@ const Template: ComponentStory<typeof MbTable> = (args) => {
       {...args}
       pagination={paginationProps}
       onAmountItemsChange={changeAmountPerPage}
+      checkboxElements={checkboxElements}
     >
       <MbHead>
         <tr id="headers">
