@@ -7,11 +7,20 @@ interface ModalProps extends React.HTMLAttributes<HTMLDivElement> {
   topTitle: string | JSX.Element
   subtitle?: string
   topElement?: JSX.Element
+  topElementFirst?: boolean
   open: boolean
   onClose: () => void
 }
 export const MbModal = (props: ModalProps) => {
-  const { open, onClose, topTitle, children, subtitle, topElement } = props
+  const {
+    open,
+    onClose,
+    topTitle,
+    children,
+    subtitle,
+    topElement,
+    topElementFirst,
+  } = props
 
   useEffect(() => {
     if (open) {
@@ -38,12 +47,23 @@ export const MbModal = (props: ModalProps) => {
               onClick={(e) => e.stopPropagation()}
             >
               <header className="flex items-center p-24 border-b border-gray-150 dark:border-gray-700 justify-between sticky">
-                <div>
-                  <div className="p-big-130">{topTitle}</div>
-                  {subtitle && <div className="pt-4 p-med-90">{subtitle}</div>}
+                <div
+                  className={`${topElementFirst ? 'flex items-center' : ''}`}
+                >
+                  {topElementFirst && (
+                    <div className="order-first">
+                      {topElement && topElement}
+                    </div>
+                  )}
+                  <div>
+                    <div className="p-big-130">{topTitle}</div>
+                    {subtitle && (
+                      <div className="pt-4 p-med-90">{subtitle}</div>
+                    )}
+                  </div>
                 </div>
                 <div className="flex items-center gap-12">
-                  {topElement && topElement}
+                  {!topElementFirst && <div>{topElement && topElement}</div>}
                   <div
                     onClick={() => {
                       const element = document.getElementById('modal-wrapper')
