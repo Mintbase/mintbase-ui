@@ -67,6 +67,7 @@ const TopElementTemplate: ComponentStory<typeof MbModal> = (args) => {
             <span>Help</span>
           </MbAction>
         }
+        topElementFirst={true}
       >
         <div className="p-24">
           <p className="p-big-130 pb-16">Number of Tokens</p>
