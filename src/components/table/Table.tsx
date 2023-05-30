@@ -9,6 +9,7 @@ interface TableProps extends React.HTMLAttributes<HTMLDivElement> {
   showItemsPerPage?: boolean
   onAmountItemsChange?: (page: number) => void
   loading?: boolean
+  checkboxElements?: { id: number; content: JSX.Element }[]
 }
 
 export const MbHead = (props: React.HTMLAttributes<HTMLDivElement>) => {
@@ -57,13 +58,18 @@ export const MbTable = (props: TableProps) => {
     onAmountItemsChange,
     showItemsPerPage,
     loading,
+    checkboxElements,
   } = props
 
   return (
     <section className="bg-white dark:bg-gray-850 rounded">
-      {tableTitle && (
+      {(tableTitle || checkboxElements) && (
         <header className="p-24 border-b border-gray-200 dark:border-gray-800 dark:text-white p-big-130">
-          {tableTitle}
+          <div>{tableTitle ?? null}</div>
+          {checkboxElements &&
+            checkboxElements?.map((element) => (
+              <div className="flex mt-5 py-24">{element?.content}</div>
+            ))}
         </header>
       )}
 
