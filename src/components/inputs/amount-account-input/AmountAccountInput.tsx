@@ -1,6 +1,6 @@
 import { debounce } from 'lodash'
 import { useEffect, useState } from 'react'
-import { ESize, EIconName } from '../../../consts'
+import { ESize, EIconName, EState } from '../../../consts'
 import { MbIcon } from '../../icon/Icon'
 import { MbInput, EControlStatus } from '../input-field/inputField'
 
@@ -39,14 +39,6 @@ export const MbAmountAccountInput = ({
     setAmount(null)
   }, [isCleared])
 
-  const handleDebounceFor500 = debounce(async (e) => {
-    const value = e.target.value ?? null
-    const valid = await validateAccount(id, value)
-    setIsAccountValid(valid)
-    setAccount(value)
-    handleChangeAccount(id, value)
-  }, 500)
-
   return (
     <div className="flex items-center space-x-12 mb-12">
       <div className="w-24">
@@ -62,7 +54,13 @@ export const MbAmountAccountInput = ({
               ? EControlStatus.VALID
               : EControlStatus.INVALID
           }
-          onChange={handleDebounceFor500}
+          onChange={debounce(async (e) => {
+            const value = e.target.value ?? null
+            const valid = validateAmount(id, Number(value))
+            setIsAmountValid(valid)
+            setAmount(value)
+            handleChangeAmount(id, Number(value))
+          }, 500)}
           hasPercentageLabel={isPercentage}
         />
       </div>
@@ -79,7 +77,13 @@ export const MbAmountAccountInput = ({
             ? EControlStatus.VALID
             : EControlStatus.INVALID
         }
-        onChange={handleDebounceFor500}
+        onChange={debounce(async (e) => {
+          const value = e.target.value ?? null
+          const valid = await validateAccount(id, value)
+          setIsAccountValid(valid)
+          setAccount(value)
+          handleChangeAccount(id, value)
+        }, 500)}
       />
       <div
         className={`cursor-pointer`}
@@ -88,7 +92,7 @@ export const MbAmountAccountInput = ({
         }}
       >
         <MbIcon
-          name={EIconName.CLOSE}
+          name={EIconName.DELETE}
           size="24px"
           color="blue-300"
           darkColor="blue-100"
