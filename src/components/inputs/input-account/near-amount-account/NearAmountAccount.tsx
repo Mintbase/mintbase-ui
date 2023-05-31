@@ -67,6 +67,9 @@ export const MbNearAmountAccount = ({
   const [isTouchedOnce, setIsTouchedOnce] = useState(false)
   const [isEdited, setIsEdited] = useState(false)
 
+  console.log('IS SAVED', isSaved)
+  console.log('IS VALID', isValid)
+
   const addFieldsToState = (defaultAmount = 0) => {
     let auxState: Record<string, TInputState> = {}
     const inputAmount = transferTemplate?.available
@@ -234,6 +237,8 @@ export const MbNearAmountAccount = ({
 
     validateAmountById(id, finalValidInfo)
 
+    console.log('AMOUNT VALIDATE', finalValidInfo)
+
     return finalValidInfo
   }
 
@@ -244,6 +249,8 @@ export const MbNearAmountAccount = ({
         .length
 
     validateAccountById(id, valid)
+
+    console.log('ACCOUNT VALIDATE', valid)
 
     return valid
   }
@@ -306,7 +313,18 @@ export const MbNearAmountAccount = ({
           (key) => !state[key].account.valid || !state[key].amount.valid
         ).length)
 
+    console.log(
+      'filter STATE',
+      !filterState.filter(
+        (key) => !state[key].account.valid || !state[key].amount.valid
+      ).length
+    )
+    console.log('STATE INSIDE', state)
+
+    console.log(' IS VALID FORM', isValidForm)
     const isFinalValid = isValidForm || removedDefaultField
+
+    console.log('IS FINAL VALID', isFinalValid)
 
     setValid(isFinalValid)
 
