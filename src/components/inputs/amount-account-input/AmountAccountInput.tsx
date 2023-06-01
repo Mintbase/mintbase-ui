@@ -23,6 +23,7 @@ export const MbAmountAccountInput = ({
   isPercentage?: boolean
   isCleared?: boolean
 }) => {
+  
   const [isAccountValid, setIsAccountValid] = useState(false)
   const [isAmountValid, setIsAmountValid] = useState(false)
 
@@ -94,7 +95,7 @@ export const MbAmountAccountInput = ({
         }}
       >
         <MbIcon
-          name={EIconName.DELETE}
+          name={EIconName.CLOSE}
           size="24px"
           color="blue-300"
           darkColor="blue-100"
