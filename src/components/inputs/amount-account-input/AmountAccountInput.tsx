@@ -93,6 +93,7 @@ export const MbAmountAccountInput = ({
           handleRemoveItem(id)
         }}
       >
+        
         <MbIcon
           name={EIconName.DELETE}
           size="24px"
