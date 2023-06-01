@@ -85,13 +85,7 @@ export const MbAmountAccountInput = ({
             ? EControlStatus.VALID
             : EControlStatus.INVALID
         }
-        onChange={debounce(async (e) => {
-          const value = e.target.value ?? null
-          const valid = await validateAccount(id, value)
-          setIsAccountValid(valid)
-          setAccount(value)
-          handleChangeAccount(id, value)
-        }, 500)}
+        onChange={handleDebounceFor500}
       />
       <div
         className={`cursor-pointer`}
