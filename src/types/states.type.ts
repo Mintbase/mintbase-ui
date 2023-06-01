@@ -9,6 +9,7 @@ export type TInputState = {
   }
   editable: boolean
   cleared: boolean
+  value?: string
 }
 
 export type TNearAccountState = {
