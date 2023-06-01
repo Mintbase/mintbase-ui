@@ -10,6 +10,7 @@ import { MbIcon } from '../../../icon/Icon'
 import { MbAmountAccountInput } from '../../amount-account-input/AmountAccountInput'
 import { EControlStatus, MbInput } from '../../input-field/inputField'
 import { MbInputAccount } from '../InputAccount'
+import { MbText } from '../../../text/Text'
 
 const REGEX_INTEGER_ONLY = /^[1-9]\d*$/
 
@@ -62,6 +63,9 @@ export const MbNearAmountAccount = ({
   const [hasFilledFields, setHasFilledFields] = useState(false)
   const [isSaved, setIsSaved] = useState(false)
   const [allCleared, setAllCleared] = useState(false)
+  const [errorMessage, setErrorMessage] = useState('')
+  const [isTouchedOnce, setIsTouchedOnce] = useState(false)
+  const [isEdited, setIsEdited] = useState(false)
 
   const addFieldsToState = (defaultAmount = 0) => {
     let auxState: Record<string, TInputState> = {}
@@ -69,7 +73,7 @@ export const MbNearAmountAccount = ({
       ? transferTemplate.available > 50
         ? 50
         : transferTemplate.available
-      : 25
+      : 1
     for (let i = 0; i < inputAmount - defaultAmount; i++) {
       const id = uuid()
 
@@ -92,6 +96,18 @@ export const MbNearAmountAccount = ({
 
     return auxState
   }
+
+  const maxValue = 25
+  const itemIds = Object.keys(state).map((id) => id)
+
+  useEffect(() => {
+    if (itemIds.length >= maxValue) {
+      setErrorMessage('You have reached the max limit!')
+    }
+    return () => {
+      setErrorMessage('')
+    }
+  }, [itemIds.length >= maxValue])
 
   const handleAddNewItem = () => {
     const id = uuid()
@@ -124,8 +140,19 @@ export const MbNearAmountAccount = ({
       }, 0)
   }
 
+  const handleRemoveInputField = (id: string) => {
+    setState((prevState) => {
+      const updatedState = { ...prevState }
+      delete updatedState[id]
+      return updatedState
+    })
+  }
+
   const handleRemoveItem = (id: string) => {
     const newState = { ...state }
+    const keys = Object.keys(state)
+    const firstKey = keys[0]
+
     newState[id].amount.value = 0
     newState[id].account.value = ''
     newState[id].amount.valid = false
@@ -141,7 +168,10 @@ export const MbNearAmountAccount = ({
     if (isStoreSettings && Object.keys(defaultState).includes(id)) {
       setRemovedDefaultField(true)
     }
+
+    if (firstKey !== id) handleRemoveInputField(id)
   }
+
   const handleChangeAmount = (id: string, amount: number) => {
     setAllCleared(false)
     const newState = { ...state }
@@ -163,6 +193,8 @@ export const MbNearAmountAccount = ({
     newState[id].cleared = false
     setState(newState)
     setAllCleared(false)
+    setIsTouchedOnce(true)
+    setIsEdited(isEdited || isTouchedOnce)
 
     if (isStoreSettings && Object.keys(defaultState).includes(id)) {
       setRemovedDefaultField(false)
@@ -326,7 +358,6 @@ export const MbNearAmountAccount = ({
                       handleChangeAmount={handleChangeAmount}
                       handleChangeAccount={handleChangeAccount}
                       handleRemoveItem={handleRemoveItem}
-                      handleAddNewItem={handleAddNewItem}
                       isPercentage={isPercentage}
                       isCleared={state[id].cleared}
                     />
@@ -367,7 +398,7 @@ export const MbNearAmountAccount = ({
                           }}
                         >
                           <MbIcon
-                            name={EIconName.DELETE}
+                            name={EIconName.CLOSE}
                             size="24px"
                             color="blue-300"
                             darkColor="blue-100"
@@ -378,6 +409,22 @@ export const MbNearAmountAccount = ({
                   )
                 }
               })}
+              {errorMessage !== '' && (
+                <MbText className="mt-3 p-small-130 text-mb-red">
+                  {errorMessage}
+                </MbText>
+              )}
+              <MbAction
+                state={
+                  itemIds.length >= maxValue ? EState.DISABLED : EState.ACTIVE
+                }
+                onClick={(e) => {
+                  e.preventDefault()
+                  handleAddNewItem()
+                }}
+              >
+                <span>Add Another Account</span>
+              </MbAction>
             </div>
           </>
         }

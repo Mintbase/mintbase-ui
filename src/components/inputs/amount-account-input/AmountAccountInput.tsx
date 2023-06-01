@@ -1,8 +1,8 @@
 import { debounce } from 'lodash'
 import { useEffect, useState } from 'react'
-import { ESize, EIconName, EState } from '../../../consts'
+import { EIconName, ESize } from '../../../consts'
 import { MbIcon } from '../../icon/Icon'
-import { MbInput, EControlStatus } from '../input-field/inputField'
+import { EControlStatus, MbInput } from '../input-field/inputField'
 
 export const MbAmountAccountInput = ({
   id,
@@ -10,7 +10,6 @@ export const MbAmountAccountInput = ({
   validateAmount,
   handleChangeAmount,
   handleChangeAccount,
-  handleAddNewItem,
   handleRemoveItem,
   isPercentage,
   isCleared,
@@ -20,7 +19,6 @@ export const MbAmountAccountInput = ({
   validateAccount: (id: any, value: string) => Promise<boolean>
   handleChangeAmount: (id: string, amount: number) => void
   handleChangeAccount: (id: string, account: string) => Promise<void>
-  handleAddNewItem: () => void
   handleRemoveItem: (id: string) => void
   isPercentage?: boolean
   isCleared?: boolean
@@ -39,6 +37,22 @@ export const MbAmountAccountInput = ({
     setAmount(null)
   }, [isCleared])
 
+  const handleDebounceFor500 = debounce(async (e) => {
+    const value = e.target.value ?? null
+    const valid = await validateAccount(id, value)
+    setIsAccountValid(valid)
+    setAccount(value)
+    handleChangeAccount(id, value)
+  }, 500)
+
+  const handleAmountDebounceFor500 = debounce(async (e) => {
+    const value = e.target.value ?? null
+    const valid = validateAmount(id, Number(value))
+    setIsAmountValid(valid)
+    setAmount(value)
+    handleChangeAmount(id, Number(value))
+  }, 500)
+
   return (
     <div className="flex items-center space-x-12 mb-12">
       <div className="w-24">
@@ -54,13 +68,7 @@ export const MbAmountAccountInput = ({
               ? EControlStatus.VALID
               : EControlStatus.INVALID
           }
-          onChange={debounce(async (e) => {
-            const value = e.target.value ?? null
-            const valid = validateAmount(id, Number(value))
-            setIsAmountValid(valid)
-            setAmount(value)
-            handleChangeAmount(id, Number(value))
-          }, 500)}
+          onChange={handleAmountDebounceFor500}
           hasPercentageLabel={isPercentage}
         />
       </div>
