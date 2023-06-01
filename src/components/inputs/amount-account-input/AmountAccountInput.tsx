@@ -23,6 +23,7 @@ export const MbAmountAccountInput = ({
   isPercentage?: boolean
   isCleared?: boolean
 }) => {
+  
   const [isAccountValid, setIsAccountValid] = useState(false)
   const [isAmountValid, setIsAmountValid] = useState(false)
 
