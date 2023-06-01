@@ -85,7 +85,13 @@ export const MbAmountAccountInput = ({
             ? EControlStatus.VALID
             : EControlStatus.INVALID
         }
-        onChange={handleDebounceFor500}
+        onChange={debounce(async (e) => {
+          const value = e.target.value ?? null
+          const valid = await validateAccount(id, value)
+          setIsAccountValid(valid)
+          setAccount(value)
+          handleChangeAccount(id, value)
+        }, 500)}
       />
       <div
         className={`cursor-pointer`}
@@ -94,7 +100,7 @@ export const MbAmountAccountInput = ({
         }}
       >
         <MbIcon
-          name={EIconName.CLOSE}
+          name={EIconName.DELETE}
           size="24px"
           color="blue-300"
           darkColor="blue-100"
