@@ -64,7 +64,7 @@ export const MbTable = (props: TableProps) => {
   return (
     <section className="bg-white dark:bg-gray-850 rounded">
       {(tableTitle || checkboxElements) && (
-        <header className="p-24 border-b border-gray-200 dark:border-gray-800 dark:text-white p-big-130">
+        <header className="p-12 md:p-24 border-b border-gray-200 dark:border-gray-800 dark:text-white p-big-130">
           <div>{tableTitle ?? null}</div>
           {checkboxElements &&
             checkboxElements?.map((element) => (
