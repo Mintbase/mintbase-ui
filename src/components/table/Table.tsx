@@ -68,7 +68,7 @@ export const MbTable = (props: TableProps) => {
           <div>{tableTitle ?? null}</div>
           {checkboxElements &&
             checkboxElements?.map((element) => (
-              <div className="flex mt-5 py-24">{element?.content}</div>
+              <div className="flex mt-5 py-12 md:py-24">{element?.content}</div>
             ))}
         </header>
       )}
@@ -79,12 +79,12 @@ export const MbTable = (props: TableProps) => {
 
       {pagination ? (
         loading ? (
-          <div className="py-24 px-24 w-full animate-pulse">
+          <div className="py-12 md:py-24 px-24 w-full animate-pulse">
             <div className="h-4 bg-gray-600 rounded"></div>
           </div>
         ) : (
           <footer
-            className={`border-t border-gray-200 dark:border-gray-800 py-24 md:px-24 grid items-center ${
+            className={`border-t border-gray-200 dark:border-gray-800 py-12 md:py-24 md:px-24 grid items-center ${
               showItemsPerPage ? 'md:grid-cols-3' : ' md:grid-cols-2'
             }`}
           >
@@ -108,7 +108,7 @@ export const MbTable = (props: TableProps) => {
                 : pagination.totalItems}{' '}
               of {pagination.totalItems}
             </div>
-            <div className="flex justify-center md:justify-end mb-24 md:mb-0 order-1 md:order-3">
+            <div className="flex justify-center md:justify-end order-1 md:order-3">
               <MbPagination
                 currentPage={pagination.currentPage}
                 itemsPerPage={pagination.itemsPerPage}
