@@ -74,7 +74,7 @@ export const MbAccordion = (props: AccordionProps) => {
   return (
     <main className="rounded bg-white dark:bg-gray-850 dark:text-white accordion">
       <header
-        className={`flex justify-between items-center p-24 border-gray-150 dark:border-gray-700 ${
+        className={`flex justify-between items-center p-12 md:p-24 border-gray-150 dark:border-gray-700 ${
           isFixedAccordion ? '' : 'cursor-pointer'
         } ${
           isExpanded || isFixedAccordion ? 'border-b' : 'border-b-0'
