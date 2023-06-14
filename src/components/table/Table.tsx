@@ -68,7 +68,7 @@ export const MbTable = (props: TableProps) => {
           <div>{tableTitle ?? null}</div>
           {checkboxElements &&
             checkboxElements?.map((element) => (
-              <div className="flex mt-5 py-12 md:py-24">{element?.content}</div>
+              <div className="flex mt-5 py-8 md:py-12">{element?.content}</div>
             ))}
         </header>
       )}
