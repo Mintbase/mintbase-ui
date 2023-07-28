@@ -6,12 +6,14 @@ import { MbIcon } from '../icon/Icon'
 export const MbActionText = ({
   size,
   text,
+  copyText,
   iconTab,
   iconCopy,
   link,
 }: {
   size: ESize
   text: string
+  copyText?: string
   iconTab?: boolean
   iconCopy?: boolean
   link?: string
@@ -30,7 +32,7 @@ export const MbActionText = ({
   }
 
   const handleCopy = async () => {
-    await navigator.clipboard.writeText(text)
+    await navigator.clipboard.writeText(copyText || link || text)
     setShowLinkCopiedText(true)
     setTimeout(() => setShowLinkCopiedText(false), 3000)
   }
