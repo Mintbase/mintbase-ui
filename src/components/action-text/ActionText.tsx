@@ -3,7 +3,7 @@ import { EIconName, ESize } from '../../consts'
 import { MbText } from '../text/Text'
 import { MbIcon } from '../icon/Icon'
 
-const ActionText = ({
+export const MbActionText = ({
   size,
   text,
   iconTab,
@@ -50,9 +50,7 @@ const ActionText = ({
     <div className="flex items-center justify-center gap-8">
       <a
         href={link}
-        className={`flex items-center justify-center gap-0.5 opacity-100 hover:opacity-70 transition ease-in-out duration-500 ${
-          link ? 'cursor-pointer' : 'cursor-default'
-        }`}
+        className="flex items-center justify-center gap-0.5 opacity-100 hover:opacity-70 transition ease-in-out duration-500 cursor-pointer"
         {...(iconTab && { target: 'blank' })}
       >
         <MbText
@@ -92,5 +90,3 @@ const ActionText = ({
     </div>
   )
 }
-
-export default ActionText
