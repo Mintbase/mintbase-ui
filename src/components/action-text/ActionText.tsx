@@ -77,7 +77,7 @@ export const MbActionText = ({
               color={`${
                 showLinkCopiedText
                   ? 'blue-300 dark:text-blue-100'
-                  : 'gray-700 dark-text-gray-300 group-hover:text-blue-300 dark:group-hover:text-blue-100'
+                  : 'gray-700 dark:text-gray-300 group-hover:text-blue-300 dark:group-hover:text-blue-100'
               } transition ease-in-out duration-500`}
               size={iconSize}
             />
