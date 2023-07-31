@@ -104,6 +104,7 @@ import simpleCreditCardIcon from './assets/simple_credit_card.svg'
 import stablesIcon from './assets/stables.svg'
 import forwardIcon from './assets/forward.svg'
 import arrowDiagonalIcon from './assets/arrow_diagonal.svg'
+import editIcon from './assets/edit.svg'
 
 enum IconType {
   MINTBASE = 'mintbase',
@@ -168,6 +169,7 @@ const customIcons: { [key: string]: string } = {
   [EIconName.ERROR]: errorIcon,
   [EIconName.SUCCESS]: successIcon,
   [EIconName.EDITIONS]: editionsIcon,
+  [EIconName.EDIT]: editIcon,
   [EIconName.COPY]: copyIcon,
   [EIconName.BURN]: burnIcon,
   [EIconName.PLAY]: playIcon,
