@@ -66,6 +66,7 @@ export enum EIconName {
   ERROR = 'error',
   SUCCESS = 'check_circle',
   EDITIONS = 'filter_none',
+  EDIT = 'edit',
   FILTERS = 'filters',
   COPY = 'copy',
   BURN = 'local_fire_department',
