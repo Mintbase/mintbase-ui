@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { EIconName, ESize } from '../../consts'
 import { MbText } from '../text/Text'
 import { MbIcon } from '../icon/Icon'
+import './action-text.css'
 
 export const MbActionText = ({
   size,
@@ -83,7 +84,7 @@ export const MbActionText = ({
             />
           </div>
           {showLinkCopiedText ? (
-            <div className="p-8 bg-black bg-opacity-60 rounded absolute -top-8 z-50 left-1/2 transform -translate-x-1/2">
+            <div className="copied-info p-8 bg-black bg-opacity-60 rounded absolute -top-8 left-1/2 transform -translate-x-1/2">
               <MbText className="text-white cap-big-90">Copied!</MbText>
             </div>
           ) : null}
