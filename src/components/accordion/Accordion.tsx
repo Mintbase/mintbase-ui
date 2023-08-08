@@ -52,12 +52,16 @@ export const MbAccordion = (props: AccordionProps) => {
   }
 
   useEffect(() => {
-    if (isExpanded || isOpen) {
+    if (isExpanded) {
       if (height !== undefined && height > 0) {
         setContentHeight(height)
       }
     }
-  }, [height, isExpanded, isOpen])
+  }, [height, isExpanded])
+
+  useEffect(() => {
+    setAccordionStatus({ isExpanded: isOpen })
+  }, [isOpen])
 
   let accordionStyleClass = ''
 
