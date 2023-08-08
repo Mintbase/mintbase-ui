@@ -102,7 +102,7 @@ export const MbAccordion = (props: AccordionProps) => {
             ></MbTooltip>
           )}
         </div>
-        <div className="space-x-24 flex items-center">
+        <div className="flex gap-12 items-center">
           {extraIcon && extraIcon}
           {!isFixedAccordion && (
             <MbIcon
