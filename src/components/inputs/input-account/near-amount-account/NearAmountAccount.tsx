@@ -214,7 +214,7 @@ export const MbNearAmountAccount = ({
     setState(newState)
   }
 
-  const validateAmount = (id: string, amount: number) => {
+  const validateAmount = (id: string, amount: string) => {
     const newState = { ...state }
     delete newState[id]
 
@@ -222,12 +222,14 @@ export const MbNearAmountAccount = ({
 
     const auxUsed = sumStateAmounts(newState)
 
-    const valid = transferTemplate
-      ? transferTemplate.available - auxUsed - amount >= 0 && regexTest
-      : totalAmount - auxUsed - amount >= 0 && regexTest
+    const valid =
+      regexTest &&
+      (transferTemplate
+        ? transferTemplate.available - auxUsed - parseInt(amount, 10) >= 0
+        : totalAmount - auxUsed - parseInt(amount, 10) >= 0)
 
     const finalValidInfo = maxAmountPerAccount
-      ? amount <= maxAmountPerAccount && valid
+      ? Number(amount) <= maxAmountPerAccount && valid
       : valid
 
     validateAmountById(id, finalValidInfo)
@@ -354,7 +356,9 @@ export const MbNearAmountAccount = ({
                       key={id}
                       id={id}
                       validateAccount={validateAccount}
-                      validateAmount={validateAmount}
+                      validateAmount={(id, amount) =>
+                        validateAmount(id, amount.toString())
+                      }
                       handleChangeAmount={handleChangeAmount}
                       handleChangeAccount={handleChangeAccount}
                       handleRemoveItem={handleRemoveItem}
@@ -377,7 +381,7 @@ export const MbNearAmountAccount = ({
                           controlStatus={defaultAmountStatus(amount.value)}
                           disabled
                           hasPercentageLabel={isPercentage}
-                          value={amount.value}
+                          value={amount.value.toString()}
                         />
                       </div>
                       <MbInput
