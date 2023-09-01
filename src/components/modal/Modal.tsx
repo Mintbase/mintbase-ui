@@ -40,7 +40,7 @@ export const MbModal = (props: ModalProps) => {
             setTimeout(onClose, 300)
           }}
         >
-          <div className="fixed inset-0 bg-black bg-opacity-75 overflow-y-auto h-full w-full z-50"></div>
+          <div className="modal-bg"></div>
           <div id="modal-wrapper" className="modal modal-scale">
             <section
               className="modal-section"
