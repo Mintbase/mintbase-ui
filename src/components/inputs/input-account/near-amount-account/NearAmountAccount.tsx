@@ -360,6 +360,7 @@ export const MbNearAmountAccount = ({
                       handleRemoveItem={handleRemoveItem}
                       isPercentage={isPercentage}
                       isCleared={state[id].cleared}
+                      prefillAmount={totalAmount === 1 ? 1 : null}
                     />
                   )
                 } else {
