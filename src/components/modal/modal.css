@@ -1,5 +1,11 @@
+.modal-bg {
+  @apply fixed inset-0 bg-black bg-opacity-75 overflow-y-auto h-full w-full;
+  z-index: 99999;
+}
+
 .modal {
-  @apply justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none;
+  @apply justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 outline-none focus:outline-none;
+  z-index: 99999;
 }
 
 .modal-section {
