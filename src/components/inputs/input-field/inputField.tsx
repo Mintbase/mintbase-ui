@@ -22,6 +22,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   hasPercentageLabel?: boolean
   maxChars?: number
   initialCounter?: number
+  defaultValue?: number | undefined
 }
 
 export const MbInput = forwardRef<HTMLInputElement, InputProps>(
@@ -40,6 +41,7 @@ export const MbInput = forwardRef<HTMLInputElement, InputProps>(
       hasIcon,
       maxChars,
       initialCounter = 0,
+      defaultValue,
       inputSize = ESize.MEDIUM,
       onChange,
       ...restProps
@@ -84,6 +86,7 @@ export const MbInput = forwardRef<HTMLInputElement, InputProps>(
               value={value}
               maxLength={maxChars}
               required={required}
+              defaultValue={defaultValue}
               className={`input-field ${getFontType(inputSize)}`}
               onWheel={(e) => {
                 if (type !== 'number') return
