@@ -23,7 +23,6 @@ export const MbAmountAccountInput = ({
   isPercentage?: boolean
   isCleared?: boolean
 }) => {
-  
   const [isAccountValid, setIsAccountValid] = useState(false)
   const [isAmountValid, setIsAmountValid] = useState(false)
 
@@ -58,7 +57,7 @@ export const MbAmountAccountInput = ({
     <div className="flex items-center space-x-12 mb-12">
       <div className="w-24">
         <MbInput
-          type="tel"
+          type="text"
           id={`amount-${id}`}
           placeholder={'1'}
           inputSize={ESize.BIG}
