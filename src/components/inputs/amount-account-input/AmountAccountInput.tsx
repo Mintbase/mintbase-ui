@@ -68,12 +68,13 @@ export const MbAmountAccountInput = ({
           controlStatus={
             isCleared || !amount
               ? EControlStatus.NORMAL
-              : isAmountValid
+              : isAmountValid || amount === '1'
               ? EControlStatus.VALID
               : EControlStatus.INVALID
           }
           onChange={handleAmountDebounceFor500}
           hasPercentageLabel={isPercentage}
+          disabled={amount === '1'}
           defaultValue={amount === '1' ? 1 : undefined}
         />
       </div>
