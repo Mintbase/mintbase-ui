@@ -378,7 +378,8 @@ export const MbNearAmountAccount = ({
                           controlStatus={defaultAmountStatus(amount.value)}
                           disabled
                           hasPercentageLabel={isPercentage}
-                          value={amount.value}
+                          value={totalAmount !== 1 ? amount.value : undefined}
+                          defaultValue={totalAmount === 1 ? 1 : undefined}
                         />
                       </div>
                       <MbInput
