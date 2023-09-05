@@ -29,16 +29,14 @@ export const MbAmountAccountInput = ({
   const [isAmountValid, setIsAmountValid] = useState(false)
 
   const [account, setAccount] = useState<string | null>(null)
-  const [amount, setAmount] = useState<string | null>(
-    prefillAmount !== null ? prefillAmount.toString() : null
-  ) // Set the initial value based on prefillAmount
+  const [amount, setAmount] = useState<string | null>(null)
 
   useEffect(() => {
     if (!isCleared) return
     setIsAmountValid(false)
     setIsAccountValid(false)
     setAccount(null)
-    setAmount(prefillAmount !== null ? prefillAmount.toString() : null)
+    setAmount(null)
   }, [isCleared])
 
   const handleDebounceFor500 = debounce(async (e) => {
@@ -53,7 +51,7 @@ export const MbAmountAccountInput = ({
     const value = e.target.value ?? null
     const valid = validateAmount(id, Number(value))
     setIsAmountValid(valid)
-    setAmount(prefillAmount !== null ? prefillAmount.toString() : value)
+    setAmount(value)
     handleChangeAmount(id, Number(value))
   }, 500)
 
@@ -74,8 +72,8 @@ export const MbAmountAccountInput = ({
           }
           onChange={handleAmountDebounceFor500}
           hasPercentageLabel={isPercentage}
-          disabled={amount === '1'}
-          defaultValue={amount === '1' ? 1 : undefined}
+          disabled={!!prefillAmount}
+          defaultValue={prefillAmount ? 1 : undefined}
         />
       </div>
       <MbInput
