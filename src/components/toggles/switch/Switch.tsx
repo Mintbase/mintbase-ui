@@ -14,6 +14,7 @@ export const MbSwitch = forwardRef<HTMLInputElement, ToggleProps>(
           id={id}
           checked={checked}
           ref={ref}
+          disabled={disabled}
           {...restProps}
         />
         <label className="switch-label" htmlFor={id}>
