@@ -29,14 +29,16 @@ export const MbAmountAccountInput = ({
   const [isAmountValid, setIsAmountValid] = useState(false)
 
   const [account, setAccount] = useState<string | null>(null)
-  const [amount, setAmount] = useState<string | null>(null)
+  const [amount, setAmount] = useState<string | null>(
+    prefillAmount !== null ? prefillAmount.toString() : null
+  )
 
   useEffect(() => {
     if (!isCleared) return
     setIsAmountValid(false)
     setIsAccountValid(false)
     setAccount(null)
-    setAmount(null)
+    setAmount(prefillAmount !== null ? prefillAmount.toString() : null)
   }, [isCleared])
 
   const handleDebounceFor500 = debounce(async (e) => {
@@ -51,7 +53,7 @@ export const MbAmountAccountInput = ({
     const value = e.target.value ?? null
     const valid = validateAmount(id, Number(value))
     setIsAmountValid(valid)
-    setAmount(value)
+    setAmount(prefillAmount !== null ? prefillAmount.toString() : value)
     handleChangeAmount(id, Number(value))
   }, 500)
 
