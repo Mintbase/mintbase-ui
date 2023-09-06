@@ -47,7 +47,7 @@ export const MbAmountAccountInput = ({
     setIsAccountValid(valid)
     setAccount(value)
     handleChangeAccount(id, value)
-  }, 500)
+  })
 
   const handleAmountDebounceFor500 = debounce(async (e) => {
     const value = e.target.value ?? null
@@ -55,7 +55,7 @@ export const MbAmountAccountInput = ({
     setIsAmountValid(valid)
     setAmount(prefillAmount !== null ? prefillAmount.toString() : value)
     handleChangeAmount(id, Number(value))
-  }, 500)
+  })
 
   return (
     <div className="flex items-center space-x-12 mb-12">

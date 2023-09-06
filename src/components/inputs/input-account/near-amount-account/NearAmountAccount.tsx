@@ -85,8 +85,8 @@ export const MbNearAmountAccount = ({
             valid: false,
           },
           amount: {
-            value: 0,
-            valid: false,
+            value: totalAmount === 1 ? 1 : 0, // Set amount to 1 when totalAmount is 1
+            valid: totalAmount === 1,
           },
           editable: true,
           cleared: false,
@@ -153,16 +153,30 @@ export const MbNearAmountAccount = ({
     const keys = Object.keys(state)
     const firstKey = keys[0]
 
-    newState[id].amount.value = 0
+    if (totalAmount !== 1) {
+      // Clear the amount value except when totalAmount is 1
+      newState[id].amount.value = 0
+      newState[id].amount.valid = false
+    }
+
+    // Always clear the account value
     newState[id].account.value = ''
-    newState[id].amount.valid = false
     newState[id].account.valid = false
+
+    // Mark the item as cleared and editable
     newState[id].cleared = true
     newState[id].editable = true
+
+    //update used amount
     setUsed(sumStateAmounts(newState))
+
     setState(newState)
     setRemovedDefaultField(false)
-    ;(document.getElementById(`amount-${id}`) as HTMLInputElement).value = ''
+
+    // Clear the input field values using DOM manipulation
+    if (totalAmount !== 1) {
+      ;(document.getElementById(`amount-${id}`) as HTMLInputElement).value = ''
+    }
     ;(document.getElementById(`account-${id}`) as HTMLInputElement).value = ''
 
     if (isStoreSettings && Object.keys(defaultState).includes(id)) {
