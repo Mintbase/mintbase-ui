@@ -295,7 +295,7 @@ export const MbNearAmountAccount = ({
       (filterState.length > 0 &&
         filterState.filter(
           (key) =>
-            state[key].amount.valid &&
+            (totalAmount === 1 || state[key].amount.valid) &&
             state[key].account.valid &&
             state[key].editable
         ).length === filterState.length) ||
