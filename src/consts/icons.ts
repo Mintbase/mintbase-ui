@@ -105,4 +105,5 @@ export enum EIconName {
   USDT = 'usdt',
   NEAR = 'near',
   NONE = 'none',
+  BLOCK = 'block',
 }

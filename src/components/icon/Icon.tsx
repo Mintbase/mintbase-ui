@@ -105,6 +105,7 @@ import stablesIcon from './assets/stables.svg'
 import forwardIcon from './assets/forward.svg'
 import arrowDiagonalIcon from './assets/arrow_diagonal.svg'
 import editIcon from './assets/edit.svg'
+import blockIcon from './assets/block.svg'
 
 enum IconType {
   MINTBASE = 'mintbase',
@@ -216,6 +217,7 @@ const customIcons: { [key: string]: string } = {
   [EIconName.CHARTPIE]: chartpieIcon,
   [EIconName.STABLES]: stablesIcon,
   [EIconName.ARROW_DIAGONAL]: arrowDiagonalIcon,
+  [EIconName.BLOCK]: blockIcon,
   [EIconName.NONE]: '',
 }
 
