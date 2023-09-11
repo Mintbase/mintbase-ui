@@ -106,11 +106,11 @@ export const MbMediaImport = (props: MediaImportProps) => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const removeFile = (e: any) => {
     e.preventDefault()
+    handleFileRemove()
     if (placeholderUrl) {
       setPlaceholderUrl('')
       return
     }
-    handleFileRemove()
   }
 
   useEffect(() => {
