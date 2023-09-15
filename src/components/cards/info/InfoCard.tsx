@@ -54,7 +54,13 @@ export const MbInfoCard = ({ boxInfo }: { boxInfo: TInfoCard }) => {
   }
 
   return (
-    <div className={`info-card ${size}`}>
+    <div
+      className={`info-card ${size} ${
+        isLink
+          ? 'hover:bg-blue-300-15 dark:hover:bg-blue-100-15 group transition ease-in-out duration-500 cursor-pointer'
+          : ''
+      }`}
+    >
       <div
         className={`flex ${
           titleIcon ? 'gap-12' : 'justify-between'
