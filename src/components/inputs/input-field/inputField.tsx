@@ -23,6 +23,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   maxChars?: number
   initialCounter?: number
   defaultValue?: number | undefined
+  customIcon?: JSX.Element
 }
 
 export const MbInput = forwardRef<HTMLInputElement, InputProps>(
@@ -44,6 +45,7 @@ export const MbInput = forwardRef<HTMLInputElement, InputProps>(
       defaultValue,
       inputSize = ESize.MEDIUM,
       onChange,
+      customIcon,
       ...restProps
     },
     ref
@@ -134,6 +136,7 @@ export const MbInput = forwardRef<HTMLInputElement, InputProps>(
               )}
             </div>
           )}
+          {!!customIcon && !hasIcon && customIcon}
         </div>
         {maxChars ? (
           <MbCharCounter

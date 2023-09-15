@@ -3,6 +3,7 @@ import React from 'react'
 
 import { ESize } from '../../../consts/properties'
 import { MbInput, EControlStatus } from '../../../index'
+import { MbIcon, EIconName } from '../../../index'
 
 export default {
   title: 'Components/Inputs/Input',
@@ -25,6 +26,15 @@ export const Input = Template.bind({})
 Input.args = {
   label: 'Label',
   hasIcon: true,
+  customIcon: (
+    <MbIcon
+      name={EIconName.ARROW_DROP_DOWN}
+      className={`flex transform transition ease-in-out duration-300`}
+      size="16px"
+      color="blue-300"
+      darkColor="blue-100"
+    />
+  ),
   disabled: false,
   placeholder: 'Placeholder',
   type: 'text',
