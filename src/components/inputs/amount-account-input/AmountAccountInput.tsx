@@ -63,7 +63,7 @@ export const MbAmountAccountInput = ({
         <MbInput
           type="tel"
           id={`amount-${id}`}
-          placeholder={'1'}
+          placeholder="0"
           inputSize={ESize.BIG}
           controlStatus={
             isCleared || !amount

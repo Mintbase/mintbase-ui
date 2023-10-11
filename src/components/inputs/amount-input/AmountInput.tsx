@@ -82,7 +82,7 @@ export const MbAmountInput = forwardRef<HTMLInputElement, AmountButtonProps>(
               disabled ? 'text-gray-500' : ''
             }`}
             ref={ref}
-            placeholder={'1'}
+            placeholder="0"
             disabled={disabled}
             required={required}
             onChange={handleContentChanges}
