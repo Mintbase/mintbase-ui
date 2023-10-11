@@ -387,7 +387,7 @@ export const MbNearAmountAccount = ({
                         <MbInput
                           id={`amount-${id}`}
                           type="number"
-                          placeholder={'1'}
+                          placeholder="0"
                           inputSize={ESize.BIG}
                           controlStatus={defaultAmountStatus(amount.value)}
                           disabled
