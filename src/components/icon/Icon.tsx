@@ -106,6 +106,8 @@ import forwardIcon from './assets/forward.svg'
 import arrowDiagonalIcon from './assets/arrow_diagonal.svg'
 import editIcon from './assets/edit.svg'
 import blockIcon from './assets/block.svg'
+import walletIcon from './assets/wallet.svg'
+import robotIcon from './assets/robot.svg'
 
 enum IconType {
   MINTBASE = 'mintbase',
@@ -141,6 +143,8 @@ const customIcons: { [key: string]: string } = {
   [EIconName.AUDIO]: audioIcon,
   [EIconName.COMPARE_ARROWS]: compareArrowsIcon,
   [EIconName.CREDIT_CARD]: creditCard,
+  [EIconName.WALLET]: walletIcon,
+  [EIconName.ROBOT]: robotIcon,
   [EIconName.REPORT]: reportIcon,
   [EIconName.ARROW_DROP_DOWN]: arrowDropDownIcon,
   [EIconName.ARROW_DROP_UP]: arrowDropUpIcon,
