@@ -98,7 +98,7 @@ export const MbMediaImport = (props: MediaImportProps) => {
         return
       }
     } else {
-      setInternalErrorMessage('This media type is not accepted')
+      setInternalErrorMessage('This media type is not accepted.')
       return
     }
   }
@@ -132,18 +132,16 @@ export const MbMediaImport = (props: MediaImportProps) => {
         <>
           <div className="pb-12">
             <div
-              className={`flex items-center justify-center w-full rounded-lg bg-gray-100 dark:bg-gray-900 w-full py-24 ${
-                isProfileImage && imageUrl ? 'py-24' : 'overflow-hidden'
-              }`}
+              className={`flex items-center justify-center w-full rounded-lg bg-gray-100 dark:bg-gray-900 w-full py-24 ${isProfileImage && imageUrl ? 'py-24' : 'overflow-hidden'
+                }`}
             >
               <div
-                className={` ${
-                  isProfileImage
-                    ? 'w-24 h-24 sm:h-32 sm:w-32 rounded-full overflow-hidden'
-                    : isHeaderImage
+                className={` ${isProfileImage
+                  ? 'w-24 h-24 sm:h-32 sm:w-32 rounded-full overflow-hidden'
+                  : isHeaderImage
                     ? 'h-32 sm:h-64 w-full'
                     : 'h-48 w-48 sm:h-64 sm:w-64'
-                }`}
+                  }`}
               >
                 <img
                   className="w-full h-full object-cover"
@@ -176,19 +174,17 @@ export const MbMediaImport = (props: MediaImportProps) => {
         <>
           <div className="pb-12">
             <div
-              className={`flex items-center justify-center w-full rounded-lg bg-gray-100 dark:bg-gray-900 w-full py-24 ${
-                isProfileImage && imageUrl ? 'py-24' : 'overflow-hidden'
-              }`}
+              className={`flex items-center justify-center w-full rounded-lg bg-gray-100 dark:bg-gray-900 w-full py-24 ${isProfileImage && imageUrl ? 'py-24' : 'overflow-hidden'
+                }`}
             >
               {imageUrl ? (
                 <div
-                  className={` ${
-                    isProfileImage
-                      ? 'w-24 h-24 sm:h-32 sm:w-32 rounded-full overflow-hidden'
-                      : isHeaderImage
+                  className={` ${isProfileImage
+                    ? 'w-24 h-24 sm:h-32 sm:w-32 rounded-full overflow-hidden'
+                    : isHeaderImage
                       ? 'h-32 sm:h-64 w-full'
                       : 'h-48 w-48 sm:h-64 sm:w-64'
-                  }`}
+                    }`}
                 >
                   <img className="w-full h-full object-cover" src={imageUrl} />
                 </div>
@@ -230,9 +226,8 @@ export const MbMediaImport = (props: MediaImportProps) => {
         </>
       )}
       <div
-        className={`${
-          (uploadedFile || placeholderUrl) && isMobile() ? 'hidden' : ''
-        }`}
+        className={`${(uploadedFile || placeholderUrl) && isMobile() ? 'hidden' : ''
+          }`}
       >
         <div className="flex items-center justify-center w-full">
           <label
@@ -240,15 +235,13 @@ export const MbMediaImport = (props: MediaImportProps) => {
             onDragLeave={handleDragOut}
             onDragOver={handleDrag}
             onDrop={handleDrop}
-            className={`flex flex-col rounded-lg transition-all duration-500 ${
-              dragOverlay
-                ? 'bg-gray-100 dark:bg-gray-900'
-                : 'bg-blue-300-15 dark:bg-blue-100-15 hover:bg-gray-100 dark:hover:bg-gray-900'
-            } w-full py-32 sm:py-48 group text-center cursor-pointer ${
-              internalErrorMessage
+            className={`flex flex-col rounded-lg transition-all duration-500 ${dragOverlay
+              ? 'bg-gray-100 dark:bg-gray-900'
+              : 'bg-blue-300-15 dark:bg-blue-100-15 hover:bg-gray-100 dark:hover:bg-gray-900'
+              } w-full py-32 sm:py-48 group text-center cursor-pointer ${internalErrorMessage
                 ? 'ring-1 ring-error-300 dark:ring-error-100'
                 : ''
-            }`}
+              }`}
           >
             <div className="h-full w-full text-center flex flex-col items-center justify-center p-med-90 relative">
               <p className="text-blue-300 dark:text-blue-100">Upload File</p>
