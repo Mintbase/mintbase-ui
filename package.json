@@ -81,7 +81,6 @@
   },
   "dependencies": {
     "@types/lodash": "^4.14.182",
-    "caniuse-lite": "^1.0.30001600",
     "lodash": "^4.17.21",
     "react-inlinesvg": "^2.3.0",
     "react-player": "^2.9.0",
