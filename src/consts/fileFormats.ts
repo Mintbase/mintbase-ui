@@ -12,7 +12,7 @@ export const THREED_TYPES = [
   'application/octet-stream',
   'glb',
 ]
-export const FILE_TYPES = ['application/pdf']
+export const FILE_TYPES = ['application/pdf', 'application/zip']
 
 export const ALL_TYPES = [
   ...IMAGE_TYPES,
